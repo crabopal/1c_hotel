@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandSet>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
+	</CommandSet>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormWriteAndClose" id="88">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Save and close</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern und schließen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormWriteAndCloseExtendedTooltip" id="89"/>
+			</Button>
+			<Button name="FormCancelCommand" id="86">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CancelCommandAndClose</CommandName>
+				<ExtendedTooltip name="FormCancelCommandExtendedTooltip" id="87"/>
+			</Button>
+			<Button name="FormChangeExtraParameters" id="117">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ChangeExtraParameters</CommandName>
+				<ExtendedTooltip name="FormChangeExtraParametersExtendedTooltip" id="118"/>
+			</Button>
+			<Button name="FormSetDeletionMark" id="90">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.SetDeletionMarkAndClose</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="FormSetDeletionMarkExtendedTooltip" id="91"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupType" id="73">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupTypeExtendedTooltip" id="74"/>
+			<ChildItems>
+				<PictureDecoration name="DecorationRoomInterfaceType" id="81">
+					<Width>2</Width>
+					<Height>1</Height>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="DecorationRoomInterfaceTypeContextMenu" id="82"/>
+					<ExtendedTooltip name="DecorationRoomInterfaceTypeExtendedTooltip" id="83"/>
+				</PictureDecoration>
+				<InputField name="InterfaceType" id="16">
+					<DataPath>Object.InterfaceType</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="InterfaceTypeContextMenu" id="17"/>
+					<ExtendedTooltip name="InterfaceTypeExtendedTooltip" id="18"/>
+					<Events>
+						<Event name="OnChange">InterfaceTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="RoomInterfaceType" id="19">
+					<DataPath>Object.RoomInterfaceType</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Command</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Befehl</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команда</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChoiceParameters>
+						<app:item name="Filter.DeletionMark">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="RoomInterfaceTypeContextMenu" id="20"/>
+					<ExtendedTooltip name="RoomInterfaceTypeExtendedTooltip" id="21"/>
+					<Events>
+						<Event name="OnChange">RoomInterfaceTypeOnChange</Event>
+						<Event name="StartChoice">RoomInterfaceTypeStartChoice</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="GroupRoom" id="128">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupRoomExtendedTooltip" id="129"/>
+					<ChildItems>
+						<InputField name="Room" id="13">
+							<DataPath>Object.Room</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="RoomContextMenu" id="14"/>
+							<ExtendedTooltip name="RoomExtendedTooltip" id="15"/>
+						</InputField>
+						<InputField name="OldRoom" id="125">
+							<DataPath>Object.OldRoom</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="OldRoomContextMenu" id="126"/>
+							<ExtendedTooltip name="OldRoomExtendedTooltip" id="127"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupMessage" id="75">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Message to the guest</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nachricht an den Gast</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сообщение гостю</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupMessageExtendedTooltip" id="76"/>
+			<ChildItems>
+				<InputField name="Remarks" id="22">
+					<DataPath>Object.Remarks</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>4</Height>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="RemarksContextMenu" id="23"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="24"/>
+				</InputField>
+				<UsualGroup name="GroupMessageDeliveryStatus" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Message delivery status</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nachricht Lieferstatus</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус доставки сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupMessageDeliveryStatusExtendedTooltip" id="85"/>
+					<ChildItems>
+						<InputField name="MessageDateTime" id="25">
+							<DataPath>Object.MessageDateTime</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Date and time when the message should be shown to the guest</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Datum und Uhrzeit, zu der die Nachricht dem Gast angezeigt werden soll</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата и время, когда сообщение должно быть показано гостю</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="MessageDateTimeContextMenu" id="26"/>
+							<ExtendedTooltip name="MessageDateTimeExtendedTooltip" id="27"/>
+						</InputField>
+						<CheckBoxField name="MessageIsDelivered" id="28">
+							<DataPath>Object.MessageIsDelivered</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Message was delivered at </v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Die Nachricht wurde zugestellt um</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сообщение доставлено в</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="MessageIsDeliveredContextMenu" id="29"/>
+							<ExtendedTooltip name="MessageIsDeliveredExtendedTooltip" id="30"/>
+						</CheckBoxField>
+						<LabelField name="MessageDeliveryDateTime" id="31">
+							<DataPath>Object.MessageDeliveryDateTime</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="MessageDeliveryDateTimeContextMenu" id="32"/>
+							<ExtendedTooltip name="MessageDeliveryDateTimeExtendedTooltip" id="33"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupCommandStatus" id="77">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command status</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Befehl status</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус команды</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupCommandStatusExtendedTooltip" id="78"/>
+			<ChildItems>
+				<CheckBoxField name="IsProcessed" id="43">
+					<DataPath>Object.IsProcessed</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsProcessedContextMenu" id="44"/>
+					<ExtendedTooltip name="IsProcessedExtendedTooltip" id="45"/>
+				</CheckBoxField>
+				<CheckBoxField name="PeriodOfStayExtensionIsRequested" id="92">
+					<DataPath>Object.PeriodOfStayExtensionIsRequested</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PeriodOfStayExtensionIsRequestedContextMenu" id="93"/>
+					<ExtendedTooltip name="PeriodOfStayExtensionIsRequestedExtendedTooltip" id="94"/>
+				</CheckBoxField>
+				<CheckBoxField name="GuestNameChangeIsRequested" id="98">
+					<DataPath>Object.GuestNameChangeIsRequested</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="GuestNameChangeIsRequestedContextMenu" id="99"/>
+					<ExtendedTooltip name="GuestNameChangeIsRequestedExtendedTooltip" id="100"/>
+				</CheckBoxField>
+				<CheckBoxField name="RoomChangeIsRequested" id="122">
+					<DataPath>Object.RoomChangeIsRequested</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="RoomChangeIsRequestedContextMenu" id="123"/>
+					<ExtendedTooltip name="RoomChangeIsRequestedExtendedTooltip" id="124"/>
+				</CheckBoxField>
+				<CheckBoxField name="ExtraParametersChangeIsRequested" id="119">
+					<DataPath>Object.ExtraParametersChangeIsRequested</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ExtraParametersChangeIsRequestedContextMenu" id="120"/>
+					<ExtendedTooltip name="ExtraParametersChangeIsRequestedExtendedTooltip" id="121"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsProcessingError" id="106">
+					<DataPath>Object.IsProcessingError</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsProcessingErrorContextMenu" id="107"/>
+					<ExtendedTooltip name="IsProcessingErrorExtendedTooltip" id="108"/>
+				</CheckBoxField>
+				<CheckBoxField name="DeletionMark" id="70">
+					<DataPath>Object.DeletionMark</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is deleted</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wird gelöscht</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Помечена на удаление</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="71"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="72"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsCanceled" id="46">
+					<DataPath>Object.IsCanceled</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is canceled at </v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gekündigt wird um </v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отменена в </v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsCanceledContextMenu" id="47"/>
+					<ExtendedTooltip name="IsCanceledExtendedTooltip" id="48"/>
+				</CheckBoxField>
+				<LabelField name="CancellationDate" id="40">
+					<DataPath>Object.CancellationDate</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CancellationDateContextMenu" id="41"/>
+					<ExtendedTooltip name="CancellationDateExtendedTooltip" id="42"/>
+				</LabelField>
+				<LabelField name="CancellationAuthor" id="37">
+					<DataPath>Object.CancellationAuthor</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>by</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>von</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CancellationAuthorContextMenu" id="38"/>
+					<ExtendedTooltip name="CancellationAuthorExtendedTooltip" id="39"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group" id="79">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupExtendedTooltip" id="80"/>
+			<ChildItems>
+				<UsualGroup name="GroupParameters" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="GroupParametersExtendedTooltip" id="56"/>
+					<ChildItems>
+						<UsualGroup name="Group1" id="57">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group1ExtendedTooltip" id="58"/>
+							<ChildItems>
+								<InputField name="Number" id="1">
+									<DataPath>Object.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="NumberContextMenu" id="2"/>
+									<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+								</InputField>
+								<InputField name="Date" id="4">
+									<DataPath>Object.Date</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DateContextMenu" id="5"/>
+									<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+									<Events>
+										<Event name="OnChange">DateOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="Author" id="34">
+									<DataPath>Object.Author</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="AuthorContextMenu" id="35"/>
+									<ExtendedTooltip name="AuthorExtendedTooltip" id="36"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group2" id="68">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group2ExtendedTooltip" id="69"/>
+							<ChildItems>
+								<InputField name="Hotel" id="7">
+									<DataPath>Object.Hotel</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>false</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="HotelContextMenu" id="8"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="9"/>
+									<Events>
+										<Event name="OnChange">HotelOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="ParentDoc" id="10">
+									<DataPath>Object.ParentDoc</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="ParentDocContextMenu" id="11"/>
+									<ExtendedTooltip name="ParentDocExtendedTooltip" id="12"/>
+								</InputField>
+								<InputField name="GuestIndexInRoom" id="109">
+									<DataPath>Object.GuestIndexInRoom</DataPath>
+									<ContextMenu name="GuestIndexInRoomContextMenu" id="110"/>
+									<ExtendedTooltip name="GuestIndexInRoomExtendedTooltip" id="111"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupErrorMessage" id="101">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Error message</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Fehlermeldung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сообщение об ошибке</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="GroupErrorMessageExtendedTooltip" id="102"/>
+					<ChildItems>
+						<InputField name="ErrorMessage" id="103">
+							<DataPath>Object.ErrorMessage</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ErrorMessageContextMenu" id="104"/>
+							<ExtendedTooltip name="ErrorMessageExtendedTooltip" id="105"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupExtraParameters" id="112">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Extra parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Extra-Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="GroupExtraParametersExtendedTooltip" id="113"/>
+					<ChildItems>
+						<InputField name="ExtraParameters" id="114">
+							<DataPath>Object.ExtraParameters</DataPath>
+							<ContextMenu name="ExtraParametersContextMenu" id="115"/>
+							<ExtendedTooltip name="ExtraParametersExtendedTooltip" id="116"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.RoomInterfaceStatus</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="OldDate" id="2">
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CancelCommandAndClose" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cancel and close</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Abbrechen und schließen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cancel interface command</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Befehl Schnittstelle Abbrechen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить команду интерфейса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CancelCommand</Action>
+		</Command>
+		<Command name="SetDeletionMarkAndClose" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set deletion mark and close</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Löschzeichen setzen und schließen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set deletion mark and close</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Löschzeichen setzen und schließen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SetDeletionMarkAndClose</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ChangeExtraParameters" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change extra parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ändern Sie zusätzliche Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить дополнительные параметры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change extra parameters</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ChangeExtraParameters</Action>
+		</Command>
+	</Commands>
+</Form>

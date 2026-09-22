@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Calendar" id="4">
+			<DataPath>Record.Calendar</DataPath>
+			<ContextMenu name="CalendarContextMenu" id="5"/>
+			<ExtendedTooltip name="CalendarExtendedTooltip" id="6"/>
+		</InputField>
+		<LabelDecoration name="Splitter1" id="30">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Splitter1ContextMenu" id="31"/>
+			<ExtendedTooltip name="Splitter1ExtendedTooltip" id="32"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupHeader" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="20"/>
+			<ChildItems>
+				<InputField name="Period" id="1">
+					<DataPath>Record.Period</DataPath>
+					<ContextMenu name="PeriodContextMenu" id="2"/>
+					<ExtendedTooltip name="PeriodExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Author" id="21">
+					<DataPath>Record.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="22"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="23"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Remarks" id="24">
+			<DataPath>Record.Remarks</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="RemarksContextMenu" id="25"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="26"/>
+		</InputField>
+		<LabelDecoration name="Splitter2" id="27">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Splitter2ContextMenu" id="28"/>
+			<ExtendedTooltip name="Splitter2ExtendedTooltip" id="29"/>
+		</LabelDecoration>
+		<InputField name="AccountingDate" id="16">
+			<DataPath>Record.AccountingDate</DataPath>
+			<ContextMenu name="AccountingDateContextMenu" id="17"/>
+			<ExtendedTooltip name="AccountingDateExtendedTooltip" id="18"/>
+		</InputField>
+		<InputField name="Hotel" id="10">
+			<DataPath>Record.Hotel</DataPath>
+			<ContextMenu name="HotelContextMenu" id="11"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="12"/>
+		</InputField>
+		<InputField name="RoomType" id="7">
+			<DataPath>Record.RoomType</DataPath>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Record.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="RoomTypeContextMenu" id="8"/>
+			<ExtendedTooltip name="RoomTypeExtendedTooltip" id="9"/>
+		</InputField>
+		<InputField name="CalendarDayType" id="13">
+			<DataPath>Record.CalendarDayType</DataPath>
+			<ContextMenu name="CalendarDayTypeContextMenu" id="14"/>
+			<ExtendedTooltip name="CalendarDayTypeExtendedTooltip" id="15"/>
+		</InputField>
+		<InputField name="PriceTag" id="33">
+			<DataPath>Record.PriceTag</DataPath>
+			<ContextMenu name="PriceTagContextMenu" id="34"/>
+			<ExtendedTooltip name="PriceTagExtendedTooltip" id="35"/>
+		</InputField>
+		<UsualGroup name="GroupRoomPrice" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room price</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmerpreis</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена номера</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupRoomPriceExtendedTooltip" id="37"/>
+			<ChildItems>
+				<InputField name="RoomPrice" id="38">
+					<DataPath>Record.RoomPrice</DataPath>
+					<ContextMenu name="RoomPriceContextMenu" id="39"/>
+					<ExtendedTooltip name="RoomPriceExtendedTooltip" id="40"/>
+					<Events>
+						<Event name="OnChange">RoomPriceOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="RoomPriceCurrency" id="41">
+					<DataPath>Record.RoomPriceCurrency</DataPath>
+					<Width>6</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="RoomPriceCurrencyContextMenu" id="42"/>
+					<ExtendedTooltip name="RoomPriceCurrencyExtendedTooltip" id="43"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.CalendarDaysByRoomTypes</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

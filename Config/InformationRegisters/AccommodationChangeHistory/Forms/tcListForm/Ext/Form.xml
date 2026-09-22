@@ -1,0 +1,1922 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Accommodation change history</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Änderungsverlauf die Unterbringungen</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>История изменений размещения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormRestore" id="354">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Restore</CommandName>
+				<ExtendedTooltip name="FormRestoreExtendedTooltip" id="355"/>
+			</Button>
+			<Button name="FormClose" id="28">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="FormCloseExtendedTooltip" id="29"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>~List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Accommodation" id="19">
+					<DataPath>List.Accommodation</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="AccommodationContextMenu" id="20"/>
+					<ExtendedTooltip name="AccommodationExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="Period" id="16">
+					<DataPath>List.Period</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Period</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Periode</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="PeriodContextMenu" id="17"/>
+					<ExtendedTooltip name="PeriodExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="User" id="25">
+					<DataPath>List.User</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="UserContextMenu" id="26"/>
+					<ExtendedTooltip name="UserExtendedTooltip" id="27"/>
+				</LabelField>
+				<LabelField name="Changes" id="22">
+					<DataPath>List.Changes</DataPath>
+					<AutoCellHeight>true</AutoCellHeight>
+					<Width>40</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>30</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ChangesContextMenu" id="23"/>
+					<ExtendedTooltip name="ChangesExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="AccommodationStatus" id="30">
+					<DataPath>List.AccommodationStatus</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Status</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Status</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="AccommodationStatusContextMenu" id="31"/>
+					<ExtendedTooltip name="AccommodationStatusExtendedTooltip" id="32"/>
+				</LabelField>
+				<LabelField name="Guest" id="165">
+					<DataPath>List.Guest</DataPath>
+					<ContextMenu name="GuestContextMenu" id="166"/>
+					<ExtendedTooltip name="GuestExtendedTooltip" id="167"/>
+				</LabelField>
+				<LabelField name="CheckInDate" id="69">
+					<DataPath>List.CheckInDate</DataPath>
+					<ContextMenu name="CheckInDateContextMenu" id="70"/>
+					<ExtendedTooltip name="CheckInDateExtendedTooltip" id="71"/>
+				</LabelField>
+				<LabelField name="Duration" id="141">
+					<DataPath>List.Duration</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Dur.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dauer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прод.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DurationContextMenu" id="142"/>
+					<ExtendedTooltip name="DurationExtendedTooltip" id="143"/>
+				</LabelField>
+				<LabelField name="CheckOutDate" id="72">
+					<DataPath>List.CheckOutDate</DataPath>
+					<ContextMenu name="CheckOutDateContextMenu" id="73"/>
+					<ExtendedTooltip name="CheckOutDateExtendedTooltip" id="74"/>
+				</LabelField>
+				<LabelField name="AccountingCheckInDate" id="389">
+					<DataPath>List.AccountingCheckInDate</DataPath>
+					<ContextMenu name="AccountingCheckInDateContextMenu" id="390"/>
+					<ExtendedTooltip name="AccountingCheckInDateExtendedTooltip" id="391"/>
+				</LabelField>
+				<LabelField name="AccountingCheckOutDate" id="392">
+					<DataPath>List.AccountingCheckOutDate</DataPath>
+					<ContextMenu name="AccountingCheckOutDateContextMenu" id="393"/>
+					<ExtendedTooltip name="AccountingCheckOutDateExtendedTooltip" id="394"/>
+				</LabelField>
+				<LabelField name="RoomType" id="324">
+					<DataPath>List.RoomType</DataPath>
+					<ContextMenu name="RoomTypeContextMenu" id="325"/>
+					<ExtendedTooltip name="RoomTypeExtendedTooltip" id="326"/>
+				</LabelField>
+				<LabelField name="AccommodationType" id="36">
+					<DataPath>List.AccommodationType</DataPath>
+					<ContextMenu name="AccommodationTypeContextMenu" id="37"/>
+					<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="38"/>
+				</LabelField>
+				<LabelField name="Room" id="300">
+					<DataPath>List.Room</DataPath>
+					<ContextMenu name="RoomContextMenu" id="301"/>
+					<ExtendedTooltip name="RoomExtendedTooltip" id="302"/>
+				</LabelField>
+				<LabelField name="GuestGroup" id="177">
+					<DataPath>List.GuestGroup</DataPath>
+					<ContextMenu name="GuestGroupContextMenu" id="178"/>
+					<ExtendedTooltip name="GuestGroupExtendedTooltip" id="179"/>
+				</LabelField>
+				<LabelField name="RoomRate" id="315">
+					<DataPath>List.RoomRate</DataPath>
+					<ContextMenu name="RoomRateContextMenu" id="316"/>
+					<ExtendedTooltip name="RoomRateExtendedTooltip" id="317"/>
+				</LabelField>
+				<LabelField name="PricePresentation" id="273">
+					<DataPath>List.PricePresentation</DataPath>
+					<ContextMenu name="PricePresentationContextMenu" id="274"/>
+					<ExtendedTooltip name="PricePresentationExtendedTooltip" id="275"/>
+				</LabelField>
+				<LabelField name="PriceCalculationDate" id="267">
+					<DataPath>List.PriceCalculationDate</DataPath>
+					<ContextMenu name="PriceCalculationDateContextMenu" id="268"/>
+					<ExtendedTooltip name="PriceCalculationDateExtendedTooltip" id="269"/>
+				</LabelField>
+				<LabelField name="Customer" id="102">
+					<DataPath>List.Customer</DataPath>
+					<ContextMenu name="CustomerContextMenu" id="103"/>
+					<ExtendedTooltip name="CustomerExtendedTooltip" id="104"/>
+				</LabelField>
+				<LabelField name="AccommodationTemplate" id="33">
+					<DataPath>List.AccommodationTemplate</DataPath>
+					<ContextMenu name="AccommodationTemplateContextMenu" id="34"/>
+					<ExtendedTooltip name="AccommodationTemplateExtendedTooltip" id="35"/>
+				</LabelField>
+				<LabelField name="Discount" id="114">
+					<DataPath>List.Discount</DataPath>
+					<ContextMenu name="DiscountContextMenu" id="115"/>
+					<ExtendedTooltip name="DiscountExtendedTooltip" id="116"/>
+				</LabelField>
+				<LabelField name="DiscountCard" id="117">
+					<DataPath>List.DiscountCard</DataPath>
+					<ContextMenu name="DiscountCardContextMenu" id="118"/>
+					<ExtendedTooltip name="DiscountCardExtendedTooltip" id="119"/>
+				</LabelField>
+				<LabelField name="ClientType" id="81">
+					<DataPath>List.ClientType</DataPath>
+					<ContextMenu name="ClientTypeContextMenu" id="82"/>
+					<ExtendedTooltip name="ClientTypeExtendedTooltip" id="83"/>
+				</LabelField>
+				<LabelField name="PlannedPaymentMethod" id="264">
+					<DataPath>List.PlannedPaymentMethod</DataPath>
+					<ContextMenu name="PlannedPaymentMethodContextMenu" id="265"/>
+					<ExtendedTooltip name="PlannedPaymentMethodExtendedTooltip" id="266"/>
+				</LabelField>
+				<LabelField name="RoomQuota" id="312">
+					<DataPath>List.RoomQuota</DataPath>
+					<ContextMenu name="RoomQuotaContextMenu" id="313"/>
+					<ExtendedTooltip name="RoomQuotaExtendedTooltip" id="314"/>
+				</LabelField>
+				<LabelField name="Agent" id="39">
+					<DataPath>List.Agent</DataPath>
+					<ContextMenu name="AgentContextMenu" id="40"/>
+					<ExtendedTooltip name="AgentExtendedTooltip" id="41"/>
+				</LabelField>
+				<LabelField name="AgentCommission" id="42">
+					<DataPath>List.AgentCommission</DataPath>
+					<ContextMenu name="AgentCommissionContextMenu" id="43"/>
+					<ExtendedTooltip name="AgentCommissionExtendedTooltip" id="44"/>
+				</LabelField>
+				<LabelField name="AgentCommissionServiceGroup" id="45">
+					<DataPath>List.AgentCommissionServiceGroup</DataPath>
+					<ContextMenu name="AgentCommissionServiceGroupContextMenu" id="46"/>
+					<ExtendedTooltip name="AgentCommissionServiceGroupExtendedTooltip" id="47"/>
+				</LabelField>
+				<LabelField name="AgentCommissionType" id="48">
+					<DataPath>List.AgentCommissionType</DataPath>
+					<ContextMenu name="AgentCommissionTypeContextMenu" id="49"/>
+					<ExtendedTooltip name="AgentCommissionTypeExtendedTooltip" id="50"/>
+				</LabelField>
+				<LabelField name="AnnulationReason" id="51">
+					<DataPath>List.AnnulationReason</DataPath>
+					<ContextMenu name="AnnulationReasonContextMenu" id="52"/>
+					<ExtendedTooltip name="AnnulationReasonExtendedTooltip" id="53"/>
+				</LabelField>
+				<LabelField name="Author" id="54">
+					<DataPath>List.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="55"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="56"/>
+				</LabelField>
+				<LabelField name="AuthorOfAnnulation" id="57">
+					<DataPath>List.AuthorOfAnnulation</DataPath>
+					<ContextMenu name="AuthorOfAnnulationContextMenu" id="58"/>
+					<ExtendedTooltip name="AuthorOfAnnulationExtendedTooltip" id="59"/>
+				</LabelField>
+				<LabelField name="BoardPlace" id="60">
+					<DataPath>List.BoardPlace</DataPath>
+					<ContextMenu name="BoardPlaceContextMenu" id="61"/>
+					<ExtendedTooltip name="BoardPlaceExtendedTooltip" id="62"/>
+				</LabelField>
+				<LabelField name="Car" id="63">
+					<DataPath>List.Car</DataPath>
+					<ContextMenu name="CarContextMenu" id="64"/>
+					<ExtendedTooltip name="CarExtendedTooltip" id="65"/>
+				</LabelField>
+				<LabelField name="CheckOutOperationAuthor" id="75">
+					<DataPath>List.CheckOutOperationAuthor</DataPath>
+					<ContextMenu name="CheckOutOperationAuthorContextMenu" id="76"/>
+					<ExtendedTooltip name="CheckOutOperationAuthorExtendedTooltip" id="77"/>
+				</LabelField>
+				<LabelField name="CheckOutOperationTime" id="78">
+					<DataPath>List.CheckOutOperationTime</DataPath>
+					<ContextMenu name="CheckOutOperationTimeContextMenu" id="79"/>
+					<ExtendedTooltip name="CheckOutOperationTimeExtendedTooltip" id="80"/>
+				</LabelField>
+				<LabelField name="ClientTypeConfirmationText" id="84">
+					<DataPath>List.ClientTypeConfirmationText</DataPath>
+					<ContextMenu name="ClientTypeConfirmationTextContextMenu" id="85"/>
+					<ExtendedTooltip name="ClientTypeConfirmationTextExtendedTooltip" id="86"/>
+				</LabelField>
+				<LabelField name="Company" id="87">
+					<DataPath>List.Company</DataPath>
+					<ContextMenu name="CompanyContextMenu" id="88"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="89"/>
+				</LabelField>
+				<LabelField name="ConfirmationReply" id="90">
+					<DataPath>List.ConfirmationReply</DataPath>
+					<ContextMenu name="ConfirmationReplyContextMenu" id="91"/>
+					<ExtendedTooltip name="ConfirmationReplyExtendedTooltip" id="92"/>
+				</LabelField>
+				<LabelField name="ContactPerson" id="93">
+					<DataPath>List.ContactPerson</DataPath>
+					<ContextMenu name="ContactPersonContextMenu" id="94"/>
+					<ExtendedTooltip name="ContactPersonExtendedTooltip" id="95"/>
+				</LabelField>
+				<LabelField name="Contract" id="96">
+					<DataPath>List.Contract</DataPath>
+					<ContextMenu name="ContractContextMenu" id="97"/>
+					<ExtendedTooltip name="ContractExtendedTooltip" id="98"/>
+				</LabelField>
+				<LabelField name="CreditCard" id="99">
+					<DataPath>List.CreditCard</DataPath>
+					<ContextMenu name="CreditCardContextMenu" id="100"/>
+					<ExtendedTooltip name="CreditCardExtendedTooltip" id="101"/>
+				</LabelField>
+				<LabelField name="CustomerType" id="105">
+					<DataPath>List.CustomerType</DataPath>
+					<ContextMenu name="CustomerTypeContextMenu" id="106"/>
+					<ExtendedTooltip name="CustomerTypeExtendedTooltip" id="107"/>
+				</LabelField>
+				<LabelField name="Date" id="108">
+					<DataPath>List.Date</DataPath>
+					<ContextMenu name="DateContextMenu" id="109"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="110"/>
+				</LabelField>
+				<LabelField name="DateOfAnnulation" id="111">
+					<DataPath>List.DateOfAnnulation</DataPath>
+					<ContextMenu name="DateOfAnnulationContextMenu" id="112"/>
+					<ExtendedTooltip name="DateOfAnnulationExtendedTooltip" id="113"/>
+				</LabelField>
+				<LabelField name="DiscountConfirmationText" id="120">
+					<DataPath>List.DiscountConfirmationText</DataPath>
+					<ContextMenu name="DiscountConfirmationTextContextMenu" id="121"/>
+					<ExtendedTooltip name="DiscountConfirmationTextExtendedTooltip" id="122"/>
+				</LabelField>
+				<LabelField name="DiscountServiceGroup" id="123">
+					<DataPath>List.DiscountServiceGroup</DataPath>
+					<ContextMenu name="DiscountServiceGroupContextMenu" id="124"/>
+					<ExtendedTooltip name="DiscountServiceGroupExtendedTooltip" id="125"/>
+				</LabelField>
+				<LabelField name="DiscountSum" id="126">
+					<DataPath>List.DiscountSum</DataPath>
+					<ContextMenu name="DiscountSumContextMenu" id="127"/>
+					<ExtendedTooltip name="DiscountSumExtendedTooltip" id="128"/>
+				</LabelField>
+				<LabelField name="DiscountType" id="129">
+					<DataPath>List.DiscountType</DataPath>
+					<ContextMenu name="DiscountTypeContextMenu" id="130"/>
+					<ExtendedTooltip name="DiscountTypeExtendedTooltip" id="131"/>
+				</LabelField>
+				<CheckBoxField name="DoCharging" id="132">
+					<DataPath>List.DoCharging</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DoChargingContextMenu" id="133"/>
+					<ExtendedTooltip name="DoChargingExtendedTooltip" id="134"/>
+				</CheckBoxField>
+				<LabelField name="DoChargingToDate" id="135">
+					<DataPath>List.DoChargingToDate</DataPath>
+					<ContextMenu name="DoChargingToDateContextMenu" id="136"/>
+					<ExtendedTooltip name="DoChargingToDateExtendedTooltip" id="137"/>
+				</LabelField>
+				<CheckBoxField name="DoNotPrintRate" id="138">
+					<DataPath>List.DoNotPrintRate</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DoNotPrintRateContextMenu" id="139"/>
+					<ExtendedTooltip name="DoNotPrintRateExtendedTooltip" id="140"/>
+				</CheckBoxField>
+				<LabelField name="EMail" id="144">
+					<DataPath>List.EMail</DataPath>
+					<ContextMenu name="EMailContextMenu" id="145"/>
+					<ExtendedTooltip name="EMailExtendedTooltip" id="146"/>
+				</LabelField>
+				<LabelField name="ExchangeRateDate" id="147">
+					<DataPath>List.ExchangeRateDate</DataPath>
+					<ContextMenu name="ExchangeRateDateContextMenu" id="148"/>
+					<ExtendedTooltip name="ExchangeRateDateExtendedTooltip" id="149"/>
+				</LabelField>
+				<LabelField name="ExternalCode" id="150">
+					<DataPath>List.ExternalCode</DataPath>
+					<ContextMenu name="ExternalCodeContextMenu" id="151"/>
+					<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="152"/>
+				</LabelField>
+				<LabelField name="Fax" id="153">
+					<DataPath>List.Fax</DataPath>
+					<ContextMenu name="FaxContextMenu" id="154"/>
+					<ExtendedTooltip name="FaxExtendedTooltip" id="155"/>
+				</LabelField>
+				<LabelField name="FeeTerms" id="156">
+					<DataPath>List.FeeTerms</DataPath>
+					<ContextMenu name="FeeTermsContextMenu" id="157"/>
+					<ExtendedTooltip name="FeeTermsExtendedTooltip" id="158"/>
+				</LabelField>
+				<CheckBoxField name="FixReservationConditions" id="159">
+					<DataPath>List.FixReservationConditions</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="FixReservationConditionsContextMenu" id="160"/>
+					<ExtendedTooltip name="FixReservationConditionsExtendedTooltip" id="161"/>
+				</CheckBoxField>
+				<LabelField name="GuaranteeType" id="162">
+					<DataPath>List.GuaranteeType</DataPath>
+					<ContextMenu name="GuaranteeTypeContextMenu" id="163"/>
+					<ExtendedTooltip name="GuaranteeTypeExtendedTooltip" id="164"/>
+				</LabelField>
+				<LabelField name="GuestAge" id="168">
+					<DataPath>List.GuestAge</DataPath>
+					<ContextMenu name="GuestAgeContextMenu" id="169"/>
+					<ExtendedTooltip name="GuestAgeExtendedTooltip" id="170"/>
+				</LabelField>
+				<LabelField name="GuestCitizenship" id="171">
+					<DataPath>List.GuestCitizenship</DataPath>
+					<ContextMenu name="GuestCitizenshipContextMenu" id="172"/>
+					<ExtendedTooltip name="GuestCitizenshipExtendedTooltip" id="173"/>
+				</LabelField>
+				<LabelField name="GuestFullName" id="174">
+					<DataPath>List.GuestFullName</DataPath>
+					<ContextMenu name="GuestFullNameContextMenu" id="175"/>
+					<ExtendedTooltip name="GuestFullNameExtendedTooltip" id="176"/>
+				</LabelField>
+				<CheckBoxField name="HasOfficialLetter" id="180">
+					<DataPath>List.HasOfficialLetter</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="HasOfficialLetterContextMenu" id="181"/>
+					<ExtendedTooltip name="HasOfficialLetterExtendedTooltip" id="182"/>
+				</CheckBoxField>
+				<LabelField name="Hotel" id="183">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="184"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="185"/>
+				</LabelField>
+				<LabelField name="HotelProduct" id="186">
+					<DataPath>List.HotelProduct</DataPath>
+					<ContextMenu name="HotelProductContextMenu" id="187"/>
+					<ExtendedTooltip name="HotelProductExtendedTooltip" id="188"/>
+				</LabelField>
+				<LabelField name="HousekeepingRemarks" id="189">
+					<DataPath>List.HousekeepingRemarks</DataPath>
+					<ContextMenu name="HousekeepingRemarksContextMenu" id="190"/>
+					<ExtendedTooltip name="HousekeepingRemarksExtendedTooltip" id="191"/>
+				</LabelField>
+				<CheckBoxField name="IgnoreGroupChargingRules" id="342">
+					<DataPath>List.IgnoreGroupChargingRules</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IgnoreGroupChargingRulesContextMenu" id="343"/>
+					<ExtendedTooltip name="IgnoreGroupChargingRulesExtendedTooltip" id="344"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsByReservation" id="192">
+					<DataPath>List.IsByReservation</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsByReservationContextMenu" id="193"/>
+					<ExtendedTooltip name="IsByReservationExtendedTooltip" id="194"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsClosedForEdit" id="195">
+					<DataPath>List.IsClosedForEdit</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsClosedForEditContextMenu" id="196"/>
+					<ExtendedTooltip name="IsClosedForEditExtendedTooltip" id="197"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsMaster" id="198">
+					<DataPath>List.IsMaster</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsMasterContextMenu" id="199"/>
+					<ExtendedTooltip name="IsMasterExtendedTooltip" id="200"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsOneTimeChargeNecessary" id="201">
+					<DataPath>List.IsOneTimeChargeNecessary</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsOneTimeChargeNecessaryContextMenu" id="202"/>
+					<ExtendedTooltip name="IsOneTimeChargeNecessaryExtendedTooltip" id="203"/>
+				</CheckBoxField>
+				<LabelField name="LegalRepresentative" id="204">
+					<DataPath>List.LegalRepresentative</DataPath>
+					<ContextMenu name="LegalRepresentativeContextMenu" id="205"/>
+					<ExtendedTooltip name="LegalRepresentativeExtendedTooltip" id="206"/>
+				</LabelField>
+				<LabelField name="MarketingCode" id="207">
+					<DataPath>List.MarketingCode</DataPath>
+					<ContextMenu name="MarketingCodeContextMenu" id="208"/>
+					<ExtendedTooltip name="MarketingCodeExtendedTooltip" id="209"/>
+				</LabelField>
+				<LabelField name="MarketingCodeConfirmationText" id="210">
+					<DataPath>List.MarketingCodeConfirmationText</DataPath>
+					<ContextMenu name="MarketingCodeConfirmationTextContextMenu" id="211"/>
+					<ExtendedTooltip name="MarketingCodeConfirmationTextExtendedTooltip" id="212"/>
+				</LabelField>
+				<CheckBoxField name="MinibarIsOpen" id="213">
+					<DataPath>List.MinibarIsOpen</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="MinibarIsOpenContextMenu" id="214"/>
+					<ExtendedTooltip name="MinibarIsOpenExtendedTooltip" id="215"/>
+				</CheckBoxField>
+				<CheckBoxField name="NoPost" id="216">
+					<DataPath>List.NoPost</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="NoPostContextMenu" id="217"/>
+					<ExtendedTooltip name="NoPostExtendedTooltip" id="218"/>
+				</CheckBoxField>
+				<LabelField name="Number" id="219">
+					<DataPath>List.Number</DataPath>
+					<ContextMenu name="NumberContextMenu" id="220"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="221"/>
+				</LabelField>
+				<LabelField name="NumberOfAdditionalBeds" id="222">
+					<DataPath>List.NumberOfAdditionalBeds</DataPath>
+					<ContextMenu name="NumberOfAdditionalBedsContextMenu" id="223"/>
+					<ExtendedTooltip name="NumberOfAdditionalBedsExtendedTooltip" id="224"/>
+				</LabelField>
+				<LabelField name="NumberOfAdults" id="225">
+					<DataPath>List.NumberOfAdults</DataPath>
+					<ContextMenu name="NumberOfAdultsContextMenu" id="226"/>
+					<ExtendedTooltip name="NumberOfAdultsExtendedTooltip" id="227"/>
+				</LabelField>
+				<LabelField name="NumberOfBeds" id="228">
+					<DataPath>List.NumberOfBeds</DataPath>
+					<ContextMenu name="NumberOfBedsContextMenu" id="229"/>
+					<ExtendedTooltip name="NumberOfBedsExtendedTooltip" id="230"/>
+				</LabelField>
+				<LabelField name="NumberOfBedsPerRoom" id="231">
+					<DataPath>List.NumberOfBedsPerRoom</DataPath>
+					<ContextMenu name="NumberOfBedsPerRoomContextMenu" id="232"/>
+					<ExtendedTooltip name="NumberOfBedsPerRoomExtendedTooltip" id="233"/>
+				</LabelField>
+				<LabelField name="NumberOfChildren" id="234">
+					<DataPath>List.NumberOfChildren</DataPath>
+					<ContextMenu name="NumberOfChildrenContextMenu" id="235"/>
+					<ExtendedTooltip name="NumberOfChildrenExtendedTooltip" id="236"/>
+				</LabelField>
+				<LabelField name="NumberOfInfants" id="237">
+					<DataPath>List.NumberOfInfants</DataPath>
+					<ContextMenu name="NumberOfInfantsContextMenu" id="238"/>
+					<ExtendedTooltip name="NumberOfInfantsExtendedTooltip" id="239"/>
+				</LabelField>
+				<LabelField name="NumberOfPersons" id="240">
+					<DataPath>List.NumberOfPersons</DataPath>
+					<ContextMenu name="NumberOfPersonsContextMenu" id="241"/>
+					<ExtendedTooltip name="NumberOfPersonsExtendedTooltip" id="242"/>
+				</LabelField>
+				<LabelField name="NumberOfPersonsPerRoom" id="243">
+					<DataPath>List.NumberOfPersonsPerRoom</DataPath>
+					<ContextMenu name="NumberOfPersonsPerRoomContextMenu" id="244"/>
+					<ExtendedTooltip name="NumberOfPersonsPerRoomExtendedTooltip" id="245"/>
+				</LabelField>
+				<LabelField name="NumberOfRooms" id="246">
+					<DataPath>List.NumberOfRooms</DataPath>
+					<ContextMenu name="NumberOfRoomsContextMenu" id="247"/>
+					<ExtendedTooltip name="NumberOfRoomsExtendedTooltip" id="248"/>
+				</LabelField>
+				<LabelField name="NumberOfTeenagers" id="249">
+					<DataPath>List.NumberOfTeenagers</DataPath>
+					<ContextMenu name="NumberOfTeenagersContextMenu" id="250"/>
+					<ExtendedTooltip name="NumberOfTeenagersExtendedTooltip" id="251"/>
+				</LabelField>
+				<LabelField name="ParentDoc" id="252">
+					<DataPath>List.ParentDoc</DataPath>
+					<ContextMenu name="ParentDocContextMenu" id="253"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="254"/>
+				</LabelField>
+				<LabelField name="PayerAccommodation" id="255">
+					<DataPath>List.PayerAccommodation</DataPath>
+					<ContextMenu name="PayerAccommodationContextMenu" id="256"/>
+					<ExtendedTooltip name="PayerAccommodationExtendedTooltip" id="257"/>
+				</LabelField>
+				<LabelField name="Phone" id="261">
+					<DataPath>List.Phone</DataPath>
+					<ContextMenu name="PhoneContextMenu" id="262"/>
+					<ExtendedTooltip name="PhoneExtendedTooltip" id="263"/>
+				</LabelField>
+				<LabelField name="PriceChangeReason" id="270">
+					<DataPath>List.PriceChangeReason</DataPath>
+					<ContextMenu name="PriceChangeReasonContextMenu" id="271"/>
+					<ExtendedTooltip name="PriceChangeReasonExtendedTooltip" id="272"/>
+				</LabelField>
+				<LabelField name="QualityRating" id="276">
+					<DataPath>List.QualityRating</DataPath>
+					<ContextMenu name="QualityRatingContextMenu" id="277"/>
+					<ExtendedTooltip name="QualityRatingExtendedTooltip" id="278"/>
+				</LabelField>
+				<LabelField name="Rating" id="279">
+					<DataPath>List.Rating</DataPath>
+					<ContextMenu name="RatingContextMenu" id="280"/>
+					<ExtendedTooltip name="RatingExtendedTooltip" id="281"/>
+				</LabelField>
+				<LabelField name="RelationType" id="282">
+					<DataPath>List.RelationType</DataPath>
+					<ContextMenu name="RelationTypeContextMenu" id="283"/>
+					<ExtendedTooltip name="RelationTypeExtendedTooltip" id="284"/>
+				</LabelField>
+				<LabelField name="Remarks" id="285">
+					<DataPath>List.Remarks</DataPath>
+					<ContextMenu name="RemarksContextMenu" id="286"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="287"/>
+				</LabelField>
+				<LabelField name="ReportingCurrency" id="288">
+					<DataPath>List.ReportingCurrency</DataPath>
+					<ContextMenu name="ReportingCurrencyContextMenu" id="289"/>
+					<ExtendedTooltip name="ReportingCurrencyExtendedTooltip" id="290"/>
+				</LabelField>
+				<LabelField name="ReportingCurrencyExchangeRate" id="291">
+					<DataPath>List.ReportingCurrencyExchangeRate</DataPath>
+					<ContextMenu name="ReportingCurrencyExchangeRateContextMenu" id="292"/>
+					<ExtendedTooltip name="ReportingCurrencyExchangeRateExtendedTooltip" id="293"/>
+				</LabelField>
+				<LabelField name="Reservation" id="294">
+					<DataPath>List.Reservation</DataPath>
+					<ContextMenu name="ReservationContextMenu" id="295"/>
+					<ExtendedTooltip name="ReservationExtendedTooltip" id="296"/>
+				</LabelField>
+				<LabelField name="ReservationStatus" id="297">
+					<DataPath>List.ReservationStatus</DataPath>
+					<ContextMenu name="ReservationStatusContextMenu" id="298"/>
+					<ExtendedTooltip name="ReservationStatusExtendedTooltip" id="299"/>
+				</LabelField>
+				<LabelField name="RoomPropertiesCodes" id="303">
+					<DataPath>List.RoomPropertiesCodes</DataPath>
+					<ContextMenu name="RoomPropertiesCodesContextMenu" id="304"/>
+					<ExtendedTooltip name="RoomPropertiesCodesExtendedTooltip" id="305"/>
+				</LabelField>
+				<LabelField name="RoomPropertiesDescriptions" id="306">
+					<DataPath>List.RoomPropertiesDescriptions</DataPath>
+					<ContextMenu name="RoomPropertiesDescriptionsContextMenu" id="307"/>
+					<ExtendedTooltip name="RoomPropertiesDescriptionsExtendedTooltip" id="308"/>
+				</LabelField>
+				<LabelField name="RoomQuantity" id="309">
+					<DataPath>List.RoomQuantity</DataPath>
+					<ContextMenu name="RoomQuantityContextMenu" id="310"/>
+					<ExtendedTooltip name="RoomQuantityExtendedTooltip" id="311"/>
+				</LabelField>
+				<LabelField name="RoomRateServiceGroup" id="318">
+					<DataPath>List.RoomRateServiceGroup</DataPath>
+					<ContextMenu name="RoomRateServiceGroupContextMenu" id="319"/>
+					<ExtendedTooltip name="RoomRateServiceGroupExtendedTooltip" id="320"/>
+				</LabelField>
+				<LabelField name="RoomRateType" id="321">
+					<DataPath>List.RoomRateType</DataPath>
+					<ContextMenu name="RoomRateTypeContextMenu" id="322"/>
+					<ExtendedTooltip name="RoomRateTypeExtendedTooltip" id="323"/>
+				</LabelField>
+				<LabelField name="RoomTypeBeforeUpgrade" id="407">
+					<DataPath>List.RoomTypeBeforeUpgrade</DataPath>
+					<ContextMenu name="RoomTypeBeforeUpgradeContextMenu" id="408"/>
+					<ExtendedTooltip name="RoomTypeBeforeUpgradeExtendedTooltip" id="409"/>
+				</LabelField>
+				<LabelField name="RoomTypeUpgrade" id="327">
+					<DataPath>List.RoomTypeUpgrade</DataPath>
+					<ContextMenu name="RoomTypeUpgradeContextMenu" id="328"/>
+					<ExtendedTooltip name="RoomTypeUpgradeExtendedTooltip" id="329"/>
+				</LabelField>
+				<LabelField name="ServicePackageBeforeUpgrade" id="410">
+					<DataPath>List.ServicePackageBeforeUpgrade</DataPath>
+					<ContextMenu name="ServicePackageBeforeUpgradeContextMenu" id="411"/>
+					<ExtendedTooltip name="ServicePackageBeforeUpgradeExtendedTooltip" id="412"/>
+				</LabelField>
+				<LabelField name="ServicePackage" id="330">
+					<DataPath>List.ServicePackage</DataPath>
+					<ContextMenu name="ServicePackageContextMenu" id="331"/>
+					<ExtendedTooltip name="ServicePackageExtendedTooltip" id="332"/>
+				</LabelField>
+				<LabelField name="SourceOfBusiness" id="333">
+					<DataPath>List.SourceOfBusiness</DataPath>
+					<ContextMenu name="SourceOfBusinessContextMenu" id="334"/>
+					<ExtendedTooltip name="SourceOfBusinessExtendedTooltip" id="335"/>
+				</LabelField>
+				<LabelField name="TripPurpose" id="336">
+					<DataPath>List.TripPurpose</DataPath>
+					<ContextMenu name="TripPurposeContextMenu" id="337"/>
+					<ExtendedTooltip name="TripPurposeExtendedTooltip" id="338"/>
+				</LabelField>
+				<LabelField name="WaitTillDate" id="345">
+					<DataPath>List.WaitTillDate</DataPath>
+					<ContextMenu name="WaitTillDateContextMenu" id="346"/>
+					<ExtendedTooltip name="WaitTillDateExtendedTooltip" id="347"/>
+				</LabelField>
+				<CheckBoxField name="TurnOffAutomaticDiscounts" id="339">
+					<DataPath>List.TurnOffAutomaticDiscounts</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TurnOffAutomaticDiscountsContextMenu" id="340"/>
+					<ExtendedTooltip name="TurnOffAutomaticDiscountsExtendedTooltip" id="341"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsForFolioSplit" id="348">
+					<DataPath>List.IsForFolioSplit</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do folio split</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Getrennte Konnten</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Раздельные счета</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsForFolioSplitContextMenu" id="349"/>
+					<ExtendedTooltip name="IsForFolioSplitExtendedTooltip" id="350"/>
+				</CheckBoxField>
+				<LabelField name="SharePercent" id="351">
+					<DataPath>List.SharePercent</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Share %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Teilen %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доля %</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="SharePercentContextMenu" id="352"/>
+					<ExtendedTooltip name="SharePercentExtendedTooltip" id="353"/>
+				</LabelField>
+				<CheckBoxField name="IsComplimentary" id="356">
+					<DataPath>List.IsComplimentary</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsComplimentaryContextMenu" id="357"/>
+					<ExtendedTooltip name="IsComplimentaryExtendedTooltip" id="358"/>
+				</CheckBoxField>
+				<LabelField name="TouristicTaxAccountingDate" id="368">
+					<DataPath>List.TouristicTaxAccountingDate</DataPath>
+					<ContextMenu name="TouristicTaxAccountingDateContextMenu" id="369"/>
+					<ExtendedTooltip name="TouristicTaxAccountingDateExtendedTooltip" id="370"/>
+				</LabelField>
+				<LabelField name="TouristTaxRate" id="383">
+					<DataPath>List.TouristTaxRate</DataPath>
+					<ContextMenu name="TouristTaxRateContextMenu" id="384"/>
+					<ExtendedTooltip name="TouristTaxRateExtendedTooltip" id="385"/>
+				</LabelField>
+				<LabelField name="MinAmountPerDay" id="380">
+					<DataPath>List.MinAmountPerDay</DataPath>
+					<ContextMenu name="MinAmountPerDayContextMenu" id="381"/>
+					<ExtendedTooltip name="MinAmountPerDayExtendedTooltip" id="382"/>
+				</LabelField>
+				<LabelField name="DurationInDays" id="371">
+					<DataPath>List.DurationInDays</DataPath>
+					<ContextMenu name="DurationInDaysContextMenu" id="372"/>
+					<ExtendedTooltip name="DurationInDaysExtendedTooltip" id="373"/>
+				</LabelField>
+				<LabelField name="RateSumInBaseCurrency" id="374">
+					<DataPath>List.RateSumInBaseCurrency</DataPath>
+					<ContextMenu name="RateSumInBaseCurrencyContextMenu" id="375"/>
+					<ExtendedTooltip name="RateSumInBaseCurrencyExtendedTooltip" id="376"/>
+				</LabelField>
+				<LabelField name="BedsSetup" id="395">
+					<DataPath>List.BedsSetup</DataPath>
+					<ContextMenu name="BedsSetupContextMenu" id="396"/>
+					<ExtendedTooltip name="BedsSetupExtendedTooltip" id="397"/>
+				</LabelField>
+				<LabelField name="DiscountSumToDeductFromCommission" id="401">
+					<DataPath>List.DiscountSumToDeductFromCommission</DataPath>
+					<ContextMenu name="DiscountSumToDeductFromCommissionContextMenu" id="402"/>
+					<ExtendedTooltip name="DiscountSumToDeductFromCommissionExtendedTooltip" id="403"/>
+				</LabelField>
+				<LabelField name="TouristTaxSumInBaseCurrency" id="377">
+					<DataPath>List.TouristTaxSumInBaseCurrency</DataPath>
+					<ContextMenu name="TouristTaxSumInBaseCurrencyContextMenu" id="378"/>
+					<ExtendedTooltip name="TouristTaxSumInBaseCurrencyExtendedTooltip" id="379"/>
+				</LabelField>
+				<CheckBoxField name="TouristicTaxIsByMinAmount" id="386">
+					<DataPath>List.TouristicTaxIsByMinAmount</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TouristicTaxIsByMinAmountContextMenu" id="387"/>
+					<ExtendedTooltip name="TouristicTaxIsByMinAmountExtendedTooltip" id="388"/>
+				</CheckBoxField>
+				<LabelField name="TouristicTaxExemptionReason" id="359">
+					<DataPath>List.TouristicTaxExemptionReason</DataPath>
+					<ContextMenu name="TouristicTaxExemptionReasonContextMenu" id="360"/>
+					<ExtendedTooltip name="TouristicTaxExemptionReasonExtendedTooltip" id="361"/>
+				</LabelField>
+				<LabelField name="TouristicTaxExemptionReasonFillDate" id="362">
+					<DataPath>List.TouristicTaxExemptionReasonFillDate</DataPath>
+					<ContextMenu name="TouristicTaxExemptionReasonFillDateContextMenu" id="363"/>
+					<ExtendedTooltip name="TouristicTaxExemptionReasonFillDateExtendedTooltip" id="364"/>
+				</LabelField>
+				<LabelField name="TouristicTaxExemptionConfirmationData" id="365">
+					<DataPath>List.TouristicTaxExemptionConfirmationData</DataPath>
+					<ContextMenu name="TouristicTaxExemptionConfirmationDataContextMenu" id="366"/>
+					<ExtendedTooltip name="TouristicTaxExemptionConfirmationDataExtendedTooltip" id="367"/>
+				</LabelField>
+				<CheckBoxField name="Posted" id="404">
+					<DataPath>List.Posted</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PostedContextMenu" id="405"/>
+					<ExtendedTooltip name="PostedExtendedTooltip" id="406"/>
+				</CheckBoxField>
+				<CheckBoxField name="DeletionMark" id="398">
+					<DataPath>List.DeletionMark</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="399"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="400"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>SELECT
+	ChangeHistory.Accommodation AS Accommodation,
+	ChangeHistory.Period AS Period,
+	ChangeHistory.User AS User,
+	ChangeHistory.Changes AS Changes,
+	ChangeHistory.Number AS Number,
+	ChangeHistory.Date AS Date,
+	ChangeHistory.ParentDoc AS ParentDoc,
+	ChangeHistory.Hotel AS Hotel,
+	ChangeHistory.Customer AS Customer,
+	ChangeHistory.CustomerType AS CustomerType,
+	ChangeHistory.Contract AS Contract,
+	ChangeHistory.ContactPerson AS ContactPerson,
+	ChangeHistory.Phone AS Phone,
+	ChangeHistory.Fax AS Fax,
+	ChangeHistory.EMail AS EMail,
+	ChangeHistory.GuestGroup AS GuestGroup,
+	ChangeHistory.HotelProduct AS HotelProduct,
+	ChangeHistory.ReservationStatus AS ReservationStatus,
+	ChangeHistory.GuaranteeType AS GuaranteeType,
+	ChangeHistory.CheckInDate AS CheckInDate,
+	ChangeHistory.Duration AS Duration,
+	ChangeHistory.CheckOutDate AS CheckOutDate,
+	ChangeHistory.WaitTillDate AS WaitTillDate,
+	ChangeHistory.RoomQuota AS RoomQuota,
+	ChangeHistory.RoomType AS RoomType,
+	ChangeHistory.AccommodationType AS AccommodationType,
+	ChangeHistory.RoomQuantity AS RoomQuantity,
+	ChangeHistory.Room AS Room,
+	ChangeHistory.NumberOfBedsPerRoom AS NumberOfBedsPerRoom,
+	ChangeHistory.NumberOfPersonsPerRoom AS NumberOfPersonsPerRoom,
+	ChangeHistory.NumberOfPersons AS NumberOfPersons,
+	ChangeHistory.NumberOfRooms AS NumberOfRooms,
+	ChangeHistory.NumberOfBeds AS NumberOfBeds,
+	ChangeHistory.NumberOfAdditionalBeds AS NumberOfAdditionalBeds,
+	ChangeHistory.ClientType AS ClientType,
+	ChangeHistory.ClientTypeConfirmationText AS ClientTypeConfirmationText,
+	ChangeHistory.Guest AS Guest,
+	ChangeHistory.GuestFullName AS GuestFullName,
+	ChangeHistory.MarketingCode AS MarketingCode,
+	ChangeHistory.MarketingCodeConfirmationText AS MarketingCodeConfirmationText,
+	ChangeHistory.TripPurpose AS TripPurpose,
+	ChangeHistory.SourceOfBusiness AS SourceOfBusiness,
+	ChangeHistory.RoomRate AS RoomRate,
+	ChangeHistory.RoomRateType AS RoomRateType,
+	ChangeHistory.RoomRateServiceGroup AS RoomRateServiceGroup,
+	ChangeHistory.ServicePackageBeforeUpgrade AS ServicePackageBeforeUpgrade,
+	ChangeHistory.ServicePackage AS ServicePackage,
+	ChangeHistory.DiscountCard AS DiscountCard,
+	ChangeHistory.DiscountType AS DiscountType,
+	ChangeHistory.DiscountConfirmationText AS DiscountConfirmationText,
+	ChangeHistory.Discount AS Discount,
+	ChangeHistory.DiscountSum AS DiscountSum,
+	ChangeHistory.DiscountServiceGroup AS DiscountServiceGroup,
+	ChangeHistory.TurnOffAutomaticDiscounts AS TurnOffAutomaticDiscounts,
+	ChangeHistory.PlannedPaymentMethod AS PlannedPaymentMethod,
+	ChangeHistory.CreditCard AS CreditCard,
+	ChangeHistory.DoCharging AS DoCharging,
+	ChangeHistory.Company AS Company,
+	ChangeHistory.Rating AS Rating,
+	ChangeHistory.Car AS Car,
+	ChangeHistory.Remarks AS Remarks,
+	ChangeHistory.HousekeepingRemarks AS HousekeepingRemarks,
+	ChangeHistory.ConfirmationReply AS ConfirmationReply,
+	ChangeHistory.Agent AS Agent,
+	ChangeHistory.AgentCommission AS AgentCommission,
+	ChangeHistory.AgentCommissionType AS AgentCommissionType,
+	ChangeHistory.AgentCommissionServiceGroup AS AgentCommissionServiceGroup,
+	ChangeHistory.IsClosedForEdit AS IsClosedForEdit,
+	ChangeHistory.ExchangeRateDate AS ExchangeRateDate,
+	ChangeHistory.ReportingCurrency AS ReportingCurrency,
+	ChangeHistory.ReportingCurrencyExchangeRate AS ReportingCurrencyExchangeRate,
+	ChangeHistory.FeeTerms AS FeeTerms,
+	ChangeHistory.IsMaster AS IsMaster,
+	ChangeHistory.PricePresentation AS PricePresentation,
+	ChangeHistory.RoomTypeBeforeUpgrade AS RoomTypeBeforeUpgrade,
+	ChangeHistory.RoomTypeUpgrade AS RoomTypeUpgrade,
+	ChangeHistory.PriceChangeReason AS PriceChangeReason,
+	ChangeHistory.DoNotPrintRate AS DoNotPrintRate,
+	ChangeHistory.ExternalCode AS ExternalCode,
+	ChangeHistory.Author AS Author,
+	ChangeHistory.AuthorOfAnnulation AS AuthorOfAnnulation,
+	ChangeHistory.DateOfAnnulation AS DateOfAnnulation,
+	ChangeHistory.AnnulationReason AS AnnulationReason,
+	ChangeHistory.PriceCalculationDate AS PriceCalculationDate,
+	ChangeHistory.BoardPlace AS BoardPlace,
+	ChangeHistory.GuestAge AS GuestAge,
+	ChangeHistory.GuestCitizenship AS GuestCitizenship,
+	ChangeHistory.NumberOfAdults AS NumberOfAdults,
+	ChangeHistory.NumberOfTeenagers AS NumberOfTeenagers,
+	ChangeHistory.NumberOfChildren AS NumberOfChildren,
+	ChangeHistory.NumberOfInfants AS NumberOfInfants,
+	ChangeHistory.RoomPropertiesDescriptions AS RoomPropertiesDescriptions,
+	ChangeHistory.RoomPropertiesCodes AS RoomPropertiesCodes,
+	ChangeHistory.AccommodationTemplate AS AccommodationTemplate,
+	ChangeHistory.NoPost AS NoPost,
+	ChangeHistory.RelationType AS RelationType,
+	ChangeHistory.LegalRepresentative AS LegalRepresentative,
+	ChangeHistory.IgnoreGroupChargingRules AS IgnoreGroupChargingRules,
+	ChangeHistory.IsByReservation AS IsByReservation,
+	ChangeHistory.AccommodationStatus AS AccommodationStatus,
+	ChangeHistory.IsOneTimeChargeNecessary AS IsOneTimeChargeNecessary,
+	ChangeHistory.PayerAccommodation AS PayerAccommodation,
+	ChangeHistory.HasOfficialLetter AS HasOfficialLetter,
+	ChangeHistory.FixReservationConditions AS FixReservationConditions,
+	ChangeHistory.MinibarIsOpen AS MinibarIsOpen,
+	ChangeHistory.CheckOutOperationTime AS CheckOutOperationTime,
+	ChangeHistory.CheckOutOperationAuthor AS CheckOutOperationAuthor,
+	ChangeHistory.Reservation AS Reservation,
+	ChangeHistory.QualityRating AS QualityRating,
+	ChangeHistory.DoChargingToDate AS DoChargingToDate,
+	ChangeHistory.IsForFolioSplit AS IsForFolioSplit,
+	ChangeHistory.SharePercent AS SharePercent,
+	ChangeHistory.IsComplimentary AS IsComplimentary,
+	ChangeHistory.TouristicTaxAccountingDate AS TouristicTaxAccountingDate,
+	ChangeHistory.TouristicTaxExemptionReason AS TouristicTaxExemptionReason,
+	ChangeHistory.TouristicTaxExemptionReasonFillDate AS TouristicTaxExemptionReasonFillDate,
+	ChangeHistory.TouristicTaxExemptionConfirmationData AS TouristicTaxExemptionConfirmationData,
+	ChangeHistory.DurationInDays AS DurationInDays,
+	ChangeHistory.RateSumInBaseCurrency AS RateSumInBaseCurrency,
+	ChangeHistory.TouristTaxSumInBaseCurrency AS TouristTaxSumInBaseCurrency,
+	ChangeHistory.TouristTaxRate AS TouristTaxRate,
+	ChangeHistory.MinAmountPerDay AS MinAmountPerDay,
+	ChangeHistory.TouristicTaxIsByMinAmount AS TouristicTaxIsByMinAmount,
+	ChangeHistory.AccountingCheckInDate AS AccountingCheckInDate,
+	ChangeHistory.AccountingCheckOutDate AS AccountingCheckOutDate,
+	ChangeHistory.BedsSetup AS BedsSetup,
+	ChangeHistory.DiscountSumToDeductFromCommission AS DiscountSumToDeductFromCommission,
+	ChangeHistory.Posted AS Posted,
+	ChangeHistory.DeletionMark AS DeletionMark
+FROM
+	(SELECT
+		InformationRegisterReservationChangeHistory.Reservation AS Accommodation,
+		InformationRegisterReservationChangeHistory.Period AS Period,
+		InformationRegisterReservationChangeHistory.User AS User,
+		InformationRegisterReservationChangeHistory.Changes AS Changes,
+		InformationRegisterReservationChangeHistory.Number AS Number,
+		InformationRegisterReservationChangeHistory.Date AS Date,
+		InformationRegisterReservationChangeHistory.ParentDoc AS ParentDoc,
+		InformationRegisterReservationChangeHistory.Hotel AS Hotel,
+		InformationRegisterReservationChangeHistory.Customer AS Customer,
+		InformationRegisterReservationChangeHistory.CustomerType AS CustomerType,
+		InformationRegisterReservationChangeHistory.Contract AS Contract,
+		InformationRegisterReservationChangeHistory.ContactPerson AS ContactPerson,
+		InformationRegisterReservationChangeHistory.Phone AS Phone,
+		InformationRegisterReservationChangeHistory.Fax AS Fax,
+		InformationRegisterReservationChangeHistory.EMail AS EMail,
+		InformationRegisterReservationChangeHistory.GuestGroup AS GuestGroup,
+		InformationRegisterReservationChangeHistory.HotelProduct AS HotelProduct,
+		InformationRegisterReservationChangeHistory.ReservationStatus AS ReservationStatus,
+		InformationRegisterReservationChangeHistory.GuaranteeType AS GuaranteeType,
+		InformationRegisterReservationChangeHistory.CheckInDate AS CheckInDate,
+		InformationRegisterReservationChangeHistory.Duration AS Duration,
+		InformationRegisterReservationChangeHistory.CheckOutDate AS CheckOutDate,
+		InformationRegisterReservationChangeHistory.WaitTillDate AS WaitTillDate,
+		InformationRegisterReservationChangeHistory.RoomQuota AS RoomQuota,
+		InformationRegisterReservationChangeHistory.RoomType AS RoomType,
+		InformationRegisterReservationChangeHistory.AccommodationType AS AccommodationType,
+		InformationRegisterReservationChangeHistory.RoomQuantity AS RoomQuantity,
+		InformationRegisterReservationChangeHistory.Room AS Room,
+		InformationRegisterReservationChangeHistory.NumberOfBedsPerRoom AS NumberOfBedsPerRoom,
+		InformationRegisterReservationChangeHistory.NumberOfPersonsPerRoom AS NumberOfPersonsPerRoom,
+		InformationRegisterReservationChangeHistory.NumberOfPersons AS NumberOfPersons,
+		InformationRegisterReservationChangeHistory.NumberOfRooms AS NumberOfRooms,
+		InformationRegisterReservationChangeHistory.NumberOfBeds AS NumberOfBeds,
+		InformationRegisterReservationChangeHistory.NumberOfAdditionalBeds AS NumberOfAdditionalBeds,
+		InformationRegisterReservationChangeHistory.ClientType AS ClientType,
+		InformationRegisterReservationChangeHistory.ClientTypeConfirmationText AS ClientTypeConfirmationText,
+		InformationRegisterReservationChangeHistory.Guest AS Guest,
+		InformationRegisterReservationChangeHistory.GuestFullName AS GuestFullName,
+		InformationRegisterReservationChangeHistory.MarketingCode AS MarketingCode,
+		InformationRegisterReservationChangeHistory.MarketingCodeConfirmationText AS MarketingCodeConfirmationText,
+		InformationRegisterReservationChangeHistory.TripPurpose AS TripPurpose,
+		InformationRegisterReservationChangeHistory.SourceOfBusiness AS SourceOfBusiness,
+		InformationRegisterReservationChangeHistory.RoomRate AS RoomRate,
+		InformationRegisterReservationChangeHistory.RoomRateType AS RoomRateType,
+		InformationRegisterReservationChangeHistory.RoomRateServiceGroup AS RoomRateServiceGroup,
+		InformationRegisterReservationChangeHistory.ServicePackageBeforeUpgrade AS ServicePackageBeforeUpgrade,
+		InformationRegisterReservationChangeHistory.ServicePackage AS ServicePackage,
+		InformationRegisterReservationChangeHistory.DiscountCard AS DiscountCard,
+		InformationRegisterReservationChangeHistory.DiscountType AS DiscountType,
+		InformationRegisterReservationChangeHistory.DiscountConfirmationText AS DiscountConfirmationText,
+		InformationRegisterReservationChangeHistory.Discount AS Discount,
+		InformationRegisterReservationChangeHistory.DiscountSum AS DiscountSum,
+		InformationRegisterReservationChangeHistory.DiscountServiceGroup AS DiscountServiceGroup,
+		InformationRegisterReservationChangeHistory.TurnOffAutomaticDiscounts AS TurnOffAutomaticDiscounts,
+		InformationRegisterReservationChangeHistory.PlannedPaymentMethod AS PlannedPaymentMethod,
+		InformationRegisterReservationChangeHistory.CreditCard AS CreditCard,
+		InformationRegisterReservationChangeHistory.DoCharging AS DoCharging,
+		InformationRegisterReservationChangeHistory.Company AS Company,
+		InformationRegisterReservationChangeHistory.Rating AS Rating,
+		InformationRegisterReservationChangeHistory.Car AS Car,
+		InformationRegisterReservationChangeHistory.Remarks AS Remarks,
+		InformationRegisterReservationChangeHistory.HousekeepingRemarks AS HousekeepingRemarks,
+		InformationRegisterReservationChangeHistory.ConfirmationReply AS ConfirmationReply,
+		InformationRegisterReservationChangeHistory.Agent AS Agent,
+		InformationRegisterReservationChangeHistory.AgentCommission AS AgentCommission,
+		InformationRegisterReservationChangeHistory.AgentCommissionType AS AgentCommissionType,
+		InformationRegisterReservationChangeHistory.AgentCommissionServiceGroup AS AgentCommissionServiceGroup,
+		InformationRegisterReservationChangeHistory.IsClosedForEdit AS IsClosedForEdit,
+		InformationRegisterReservationChangeHistory.ExchangeRateDate AS ExchangeRateDate,
+		InformationRegisterReservationChangeHistory.ReportingCurrency AS ReportingCurrency,
+		InformationRegisterReservationChangeHistory.ReportingCurrencyExchangeRate AS ReportingCurrencyExchangeRate,
+		InformationRegisterReservationChangeHistory.FeeTerms AS FeeTerms,
+		InformationRegisterReservationChangeHistory.IsMaster AS IsMaster,
+		InformationRegisterReservationChangeHistory.PricePresentation AS PricePresentation,
+		InformationRegisterReservationChangeHistory.RoomTypeBeforeUpgrade AS RoomTypeBeforeUpgrade,
+		InformationRegisterReservationChangeHistory.RoomTypeUpgrade AS RoomTypeUpgrade,
+		InformationRegisterReservationChangeHistory.PriceChangeReason AS PriceChangeReason,
+		InformationRegisterReservationChangeHistory.DoNotPrintRate AS DoNotPrintRate,
+		InformationRegisterReservationChangeHistory.ExternalCode AS ExternalCode,
+		InformationRegisterReservationChangeHistory.Author AS Author,
+		InformationRegisterReservationChangeHistory.AuthorOfAnnulation AS AuthorOfAnnulation,
+		InformationRegisterReservationChangeHistory.DateOfAnnulation AS DateOfAnnulation,
+		InformationRegisterReservationChangeHistory.AnnulationReason AS AnnulationReason,
+		InformationRegisterReservationChangeHistory.PriceCalculationDate AS PriceCalculationDate,
+		InformationRegisterReservationChangeHistory.BoardPlace AS BoardPlace,
+		InformationRegisterReservationChangeHistory.GuestAge AS GuestAge,
+		InformationRegisterReservationChangeHistory.GuestCitizenship AS GuestCitizenship,
+		InformationRegisterReservationChangeHistory.NumberOfAdults AS NumberOfAdults,
+		InformationRegisterReservationChangeHistory.NumberOfTeenagers AS NumberOfTeenagers,
+		InformationRegisterReservationChangeHistory.NumberOfChildren AS NumberOfChildren,
+		InformationRegisterReservationChangeHistory.NumberOfInfants AS NumberOfInfants,
+		InformationRegisterReservationChangeHistory.RoomPropertiesDescriptions AS RoomPropertiesDescriptions,
+		InformationRegisterReservationChangeHistory.RoomPropertiesCodes AS RoomPropertiesCodes,
+		InformationRegisterReservationChangeHistory.AccommodationTemplate AS AccommodationTemplate,
+		InformationRegisterReservationChangeHistory.NoPost AS NoPost,
+		InformationRegisterReservationChangeHistory.RelationType AS RelationType,
+		InformationRegisterReservationChangeHistory.LegalRepresentative AS LegalRepresentative,
+		InformationRegisterReservationChangeHistory.IgnoreGroupChargingRules AS IgnoreGroupChargingRules,
+		InformationRegisterReservationChangeHistory.IsForFolioSplit AS IsForFolioSplit,
+		InformationRegisterReservationChangeHistory.SharePercent AS SharePercent,
+		InformationRegisterReservationChangeHistory.IsComplimentary AS IsComplimentary,
+		InformationRegisterReservationChangeHistory.TouristicTaxAccountingDate AS TouristicTaxAccountingDate,
+		InformationRegisterReservationChangeHistory.TouristicTaxExemptionReason AS TouristicTaxExemptionReason,
+		InformationRegisterReservationChangeHistory.TouristicTaxExemptionReasonFillDate AS TouristicTaxExemptionReasonFillDate,
+		InformationRegisterReservationChangeHistory.TouristicTaxExemptionConfirmationData AS TouristicTaxExemptionConfirmationData,
+		InformationRegisterReservationChangeHistory.DurationInDays AS DurationInDays,
+		InformationRegisterReservationChangeHistory.RateSumInBaseCurrency AS RateSumInBaseCurrency,
+		InformationRegisterReservationChangeHistory.TouristTaxSumInBaseCurrency AS TouristTaxSumInBaseCurrency,
+		InformationRegisterReservationChangeHistory.TouristTaxRate AS TouristTaxRate,
+		InformationRegisterReservationChangeHistory.MinAmountPerDay AS MinAmountPerDay,
+		InformationRegisterReservationChangeHistory.TouristicTaxIsByMinAmount AS TouristicTaxIsByMinAmount,
+		NULL AS IsByReservation,
+		NULL AS AccommodationStatus,
+		NULL AS IsOneTimeChargeNecessary,
+		NULL AS PayerAccommodation,
+		NULL AS HasOfficialLetter,
+		NULL AS FixReservationConditions,
+		NULL AS MinibarIsOpen,
+		NULL AS CheckOutOperationTime,
+		NULL AS CheckOutOperationAuthor,
+		NULL AS Reservation,
+		NULL AS QualityRating,
+		InformationRegisterReservationChangeHistory.DoChargingToDate AS DoChargingToDate,
+		NULL AS AccountingCheckInDate,
+		NULL AS AccountingCheckOutDate,
+		InformationRegisterReservationChangeHistory.BedsSetup AS BedsSetup,
+		InformationRegisterReservationChangeHistory.DiscountSumToDeductFromCommission AS DiscountSumToDeductFromCommission,
+		InformationRegisterReservationChangeHistory.Posted AS Posted,
+		InformationRegisterReservationChangeHistory.DeletionMark AS DeletionMark
+	FROM
+		InformationRegister.ReservationChangeHistory AS InformationRegisterReservationChangeHistory
+	WHERE
+		CASE
+				WHEN &amp;qReservationFilled
+					THEN InformationRegisterReservationChangeHistory.Reservation = &amp;qReservation
+				ELSE TRUE
+			END
+	
+	UNION ALL
+	
+	SELECT
+		InformationRegisterAccommodationChangeHistory.Accommodation,
+		InformationRegisterAccommodationChangeHistory.Period,
+		InformationRegisterAccommodationChangeHistory.User,
+		InformationRegisterAccommodationChangeHistory.Changes,
+		InformationRegisterAccommodationChangeHistory.Number,
+		InformationRegisterAccommodationChangeHistory.Date,
+		InformationRegisterAccommodationChangeHistory.ParentDoc,
+		InformationRegisterAccommodationChangeHistory.Hotel,
+		InformationRegisterAccommodationChangeHistory.Customer,
+		InformationRegisterAccommodationChangeHistory.CustomerType,
+		InformationRegisterAccommodationChangeHistory.Contract,
+		InformationRegisterAccommodationChangeHistory.ContactPerson,
+		InformationRegisterAccommodationChangeHistory.Phone,
+		InformationRegisterAccommodationChangeHistory.Fax,
+		InformationRegisterAccommodationChangeHistory.EMail,
+		InformationRegisterAccommodationChangeHistory.GuestGroup,
+		InformationRegisterAccommodationChangeHistory.HotelProduct,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.GuaranteeType,
+		InformationRegisterAccommodationChangeHistory.CheckInDate,
+		InformationRegisterAccommodationChangeHistory.Duration,
+		InformationRegisterAccommodationChangeHistory.CheckOutDate,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.RoomQuota,
+		InformationRegisterAccommodationChangeHistory.RoomType,
+		InformationRegisterAccommodationChangeHistory.AccommodationType,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.Room,
+		InformationRegisterAccommodationChangeHistory.NumberOfBedsPerRoom,
+		InformationRegisterAccommodationChangeHistory.NumberOfPersonsPerRoom,
+		InformationRegisterAccommodationChangeHistory.NumberOfPersons,
+		InformationRegisterAccommodationChangeHistory.NumberOfRooms,
+		InformationRegisterAccommodationChangeHistory.NumberOfBeds,
+		InformationRegisterAccommodationChangeHistory.NumberOfAdditionalBeds,
+		InformationRegisterAccommodationChangeHistory.ClientType,
+		InformationRegisterAccommodationChangeHistory.ClientTypeConfirmationText,
+		InformationRegisterAccommodationChangeHistory.Guest,
+		InformationRegisterAccommodationChangeHistory.GuestFullName,
+		InformationRegisterAccommodationChangeHistory.MarketingCode,
+		InformationRegisterAccommodationChangeHistory.MarketingCodeConfirmationText,
+		InformationRegisterAccommodationChangeHistory.TripPurpose,
+		InformationRegisterAccommodationChangeHistory.SourceOfBusiness,
+		InformationRegisterAccommodationChangeHistory.RoomRate,
+		InformationRegisterAccommodationChangeHistory.RoomRateType,
+		InformationRegisterAccommodationChangeHistory.RoomRateServiceGroup,
+		InformationRegisterAccommodationChangeHistory.ServicePackageBeforeUpgrade,
+		InformationRegisterAccommodationChangeHistory.ServicePackage,
+		InformationRegisterAccommodationChangeHistory.DiscountCard,
+		InformationRegisterAccommodationChangeHistory.DiscountType,
+		InformationRegisterAccommodationChangeHistory.DiscountConfirmationText,
+		InformationRegisterAccommodationChangeHistory.Discount,
+		InformationRegisterAccommodationChangeHistory.DiscountSum,
+		InformationRegisterAccommodationChangeHistory.DiscountServiceGroup,
+		InformationRegisterAccommodationChangeHistory.TurnOffAutomaticDiscounts,
+		InformationRegisterAccommodationChangeHistory.PlannedPaymentMethod,
+		InformationRegisterAccommodationChangeHistory.CreditCard,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.Company,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.Car,
+		InformationRegisterAccommodationChangeHistory.Remarks,
+		InformationRegisterAccommodationChangeHistory.HousekeepingRemarks,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.Agent,
+		InformationRegisterAccommodationChangeHistory.AgentCommission,
+		InformationRegisterAccommodationChangeHistory.AgentCommissionType,
+		InformationRegisterAccommodationChangeHistory.AgentCommissionServiceGroup,
+		InformationRegisterAccommodationChangeHistory.IsClosedForEdit,
+		InformationRegisterAccommodationChangeHistory.ExchangeRateDate,
+		InformationRegisterAccommodationChangeHistory.ReportingCurrency,
+		InformationRegisterAccommodationChangeHistory.ReportingCurrencyExchangeRate,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.IsMaster,
+		InformationRegisterAccommodationChangeHistory.PricePresentation,
+		InformationRegisterAccommodationChangeHistory.RoomTypeBeforeUpgrade,
+		InformationRegisterAccommodationChangeHistory.RoomTypeUpgrade,
+		InformationRegisterAccommodationChangeHistory.PriceChangeReason,
+		InformationRegisterAccommodationChangeHistory.DoNotPrintRate,
+		InformationRegisterAccommodationChangeHistory.ExternalCode,
+		InformationRegisterAccommodationChangeHistory.Author,
+		NULL,
+		NULL,
+		NULL,
+		InformationRegisterAccommodationChangeHistory.PriceCalculationDate,
+		InformationRegisterAccommodationChangeHistory.BoardPlace,
+		InformationRegisterAccommodationChangeHistory.GuestAge,
+		InformationRegisterAccommodationChangeHistory.GuestCitizenship,
+		InformationRegisterAccommodationChangeHistory.NumberOfAdults,
+		InformationRegisterAccommodationChangeHistory.NumberOfTeenagers,
+		InformationRegisterAccommodationChangeHistory.NumberOfChildren,
+		InformationRegisterAccommodationChangeHistory.NumberOfInfants,
+		InformationRegisterAccommodationChangeHistory.RoomPropertiesDescriptions,
+		InformationRegisterAccommodationChangeHistory.RoomPropertiesCodes,
+		InformationRegisterAccommodationChangeHistory.AccommodationTemplate,
+		InformationRegisterAccommodationChangeHistory.NoPost,
+		InformationRegisterAccommodationChangeHistory.RelationType,
+		InformationRegisterAccommodationChangeHistory.LegalRepresentative,
+		InformationRegisterAccommodationChangeHistory.IgnoreGroupChargingRules,
+		InformationRegisterAccommodationChangeHistory.IsForFolioSplit,
+		InformationRegisterAccommodationChangeHistory.SharePercent,
+		InformationRegisterAccommodationChangeHistory.IsComplimentary,
+		InformationRegisterAccommodationChangeHistory.TouristicTaxAccountingDate,
+		InformationRegisterAccommodationChangeHistory.TouristicTaxExemptionReason,
+		InformationRegisterAccommodationChangeHistory.TouristicTaxExemptionReasonFillDate,
+		InformationRegisterAccommodationChangeHistory.TouristicTaxExemptionConfirmationData,
+		InformationRegisterAccommodationChangeHistory.DurationInDays,
+		InformationRegisterAccommodationChangeHistory.RateSumInBaseCurrency,
+		InformationRegisterAccommodationChangeHistory.TouristTaxSumInBaseCurrency,
+		InformationRegisterAccommodationChangeHistory.TouristTaxRate,
+		InformationRegisterAccommodationChangeHistory.MinAmountPerDay,
+		InformationRegisterAccommodationChangeHistory.TouristicTaxIsByMinAmount,
+		InformationRegisterAccommodationChangeHistory.IsByReservation,
+		InformationRegisterAccommodationChangeHistory.AccommodationStatus,
+		InformationRegisterAccommodationChangeHistory.IsOneTimeChargeNecessary,
+		InformationRegisterAccommodationChangeHistory.PayerAccommodation,
+		InformationRegisterAccommodationChangeHistory.HasOfficialLetter,
+		InformationRegisterAccommodationChangeHistory.FixReservationConditions,
+		InformationRegisterAccommodationChangeHistory.MinibarIsOpen,
+		InformationRegisterAccommodationChangeHistory.CheckOutOperationTime,
+		InformationRegisterAccommodationChangeHistory.CheckOutOperationAuthor,
+		InformationRegisterAccommodationChangeHistory.Reservation,
+		InformationRegisterAccommodationChangeHistory.QualityRating,
+		InformationRegisterAccommodationChangeHistory.DoChargingToDate,
+		InformationRegisterAccommodationChangeHistory.AccountingCheckInDate,
+		InformationRegisterAccommodationChangeHistory.AccountingCheckOutDate,
+		InformationRegisterAccommodationChangeHistory.BedsSetup,
+		InformationRegisterAccommodationChangeHistory.DiscountSumToDeductFromCommission,
+		InformationRegisterAccommodationChangeHistory.Posted,
+		InformationRegisterAccommodationChangeHistory.DeletionMark
+	FROM
+		InformationRegister.AccommodationChangeHistory AS InformationRegisterAccommodationChangeHistory
+	WHERE
+		CASE
+				WHEN &amp;qAccommodationFilled
+					THEN InformationRegisterAccommodationChangeHistory.Accommodation = &amp;qAccommodation
+				ELSE TRUE
+			END) AS ChangeHistory</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Date</dcssch:dataPath>
+					<dcssch:field>Date</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuaranteeType</dcssch:dataPath>
+					<dcssch:field>GuaranteeType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Accommodation</dcssch:dataPath>
+					<dcssch:field>Accommodation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ContactPerson</dcssch:dataPath>
+					<dcssch:field>ContactPerson</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>User</dcssch:dataPath>
+					<dcssch:field>User</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MarketingCodeConfirmationText</dcssch:dataPath>
+					<dcssch:field>MarketingCodeConfirmationText</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Period</dcssch:dataPath>
+					<dcssch:field>Period</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CreditCard</dcssch:dataPath>
+					<dcssch:field>CreditCard</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Changes</dcssch:dataPath>
+					<dcssch:field>Changes</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Number</dcssch:dataPath>
+					<dcssch:field>Number</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CheckOutDate</dcssch:dataPath>
+					<dcssch:field>CheckOutDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Hotel</dcssch:dataPath>
+					<dcssch:field>Hotel</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfBedsPerRoom</dcssch:dataPath>
+					<dcssch:field>NumberOfBedsPerRoom</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ParentDoc</dcssch:dataPath>
+					<dcssch:field>ParentDoc</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Customer</dcssch:dataPath>
+					<dcssch:field>Customer</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CustomerType</dcssch:dataPath>
+					<dcssch:field>CustomerType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Contract</dcssch:dataPath>
+					<dcssch:field>Contract</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Phone</dcssch:dataPath>
+					<dcssch:field>Phone</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomType</dcssch:dataPath>
+					<dcssch:field>RoomType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Agent</dcssch:dataPath>
+					<dcssch:field>Agent</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Fax</dcssch:dataPath>
+					<dcssch:field>Fax</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>SharePercent</dcssch:dataPath>
+					<dcssch:field>SharePercent</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>EMail</dcssch:dataPath>
+					<dcssch:field>EMail</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuestGroup</dcssch:dataPath>
+					<dcssch:field>GuestGroup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MarketingCode</dcssch:dataPath>
+					<dcssch:field>MarketingCode</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>HotelProduct</dcssch:dataPath>
+					<dcssch:field>HotelProduct</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountSum</dcssch:dataPath>
+					<dcssch:field>DiscountSum</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ReservationStatus</dcssch:dataPath>
+					<dcssch:field>ReservationStatus</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomRateServiceGroup</dcssch:dataPath>
+					<dcssch:field>RoomRateServiceGroup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CheckInDate</dcssch:dataPath>
+					<dcssch:field>CheckInDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Duration</dcssch:dataPath>
+					<dcssch:field>Duration</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccommodationType</dcssch:dataPath>
+					<dcssch:field>AccommodationType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>WaitTillDate</dcssch:dataPath>
+					<dcssch:field>WaitTillDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomQuota</dcssch:dataPath>
+					<dcssch:field>RoomQuota</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AgentCommission</dcssch:dataPath>
+					<dcssch:field>AgentCommission</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfPersonsPerRoom</dcssch:dataPath>
+					<dcssch:field>NumberOfPersonsPerRoom</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomQuantity</dcssch:dataPath>
+					<dcssch:field>RoomQuantity</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Room</dcssch:dataPath>
+					<dcssch:field>Room</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfPersons</dcssch:dataPath>
+					<dcssch:field>NumberOfPersons</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AgentCommissionType</dcssch:dataPath>
+					<dcssch:field>AgentCommissionType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Car</dcssch:dataPath>
+					<dcssch:field>Car</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfRooms</dcssch:dataPath>
+					<dcssch:field>NumberOfRooms</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Guest</dcssch:dataPath>
+					<dcssch:field>Guest</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfBeds</dcssch:dataPath>
+					<dcssch:field>NumberOfBeds</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>BoardPlace</dcssch:dataPath>
+					<dcssch:field>BoardPlace</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PlannedPaymentMethod</dcssch:dataPath>
+					<dcssch:field>PlannedPaymentMethod</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoNotPrintRate</dcssch:dataPath>
+					<dcssch:field>DoNotPrintRate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomRate</dcssch:dataPath>
+					<dcssch:field>RoomRate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfAdditionalBeds</dcssch:dataPath>
+					<dcssch:field>NumberOfAdditionalBeds</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Discount</dcssch:dataPath>
+					<dcssch:field>Discount</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ClientType</dcssch:dataPath>
+					<dcssch:field>ClientType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountServiceGroup</dcssch:dataPath>
+					<dcssch:field>DiscountServiceGroup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountConfirmationText</dcssch:dataPath>
+					<dcssch:field>DiscountConfirmationText</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PricePresentation</dcssch:dataPath>
+					<dcssch:field>PricePresentation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ClientTypeConfirmationText</dcssch:dataPath>
+					<dcssch:field>ClientTypeConfirmationText</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>HousekeepingRemarks</dcssch:dataPath>
+					<dcssch:field>HousekeepingRemarks</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuestFullName</dcssch:dataPath>
+					<dcssch:field>GuestFullName</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ConfirmationReply</dcssch:dataPath>
+					<dcssch:field>ConfirmationReply</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TripPurpose</dcssch:dataPath>
+					<dcssch:field>TripPurpose</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoCharging</dcssch:dataPath>
+					<dcssch:field>DoCharging</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>SourceOfBusiness</dcssch:dataPath>
+					<dcssch:field>SourceOfBusiness</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomRateType</dcssch:dataPath>
+					<dcssch:field>RoomRateType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Rating</dcssch:dataPath>
+					<dcssch:field>Rating</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ServicePackage</dcssch:dataPath>
+					<dcssch:field>ServicePackage</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountCard</dcssch:dataPath>
+					<dcssch:field>DiscountCard</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Company</dcssch:dataPath>
+					<dcssch:field>Company</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountType</dcssch:dataPath>
+					<dcssch:field>DiscountType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TurnOffAutomaticDiscounts</dcssch:dataPath>
+					<dcssch:field>TurnOffAutomaticDiscounts</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Remarks</dcssch:dataPath>
+					<dcssch:field>Remarks</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AgentCommissionServiceGroup</dcssch:dataPath>
+					<dcssch:field>AgentCommissionServiceGroup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsClosedForEdit</dcssch:dataPath>
+					<dcssch:field>IsClosedForEdit</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ExchangeRateDate</dcssch:dataPath>
+					<dcssch:field>ExchangeRateDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ReportingCurrency</dcssch:dataPath>
+					<dcssch:field>ReportingCurrency</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ReportingCurrencyExchangeRate</dcssch:dataPath>
+					<dcssch:field>ReportingCurrencyExchangeRate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FeeTerms</dcssch:dataPath>
+					<dcssch:field>FeeTerms</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsMaster</dcssch:dataPath>
+					<dcssch:field>IsMaster</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfAdults</dcssch:dataPath>
+					<dcssch:field>NumberOfAdults</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomTypeUpgrade</dcssch:dataPath>
+					<dcssch:field>RoomTypeUpgrade</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PriceChangeReason</dcssch:dataPath>
+					<dcssch:field>PriceChangeReason</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ExternalCode</dcssch:dataPath>
+					<dcssch:field>ExternalCode</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Author</dcssch:dataPath>
+					<dcssch:field>Author</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AuthorOfAnnulation</dcssch:dataPath>
+					<dcssch:field>AuthorOfAnnulation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DateOfAnnulation</dcssch:dataPath>
+					<dcssch:field>DateOfAnnulation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AnnulationReason</dcssch:dataPath>
+					<dcssch:field>AnnulationReason</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PriceCalculationDate</dcssch:dataPath>
+					<dcssch:field>PriceCalculationDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuestAge</dcssch:dataPath>
+					<dcssch:field>GuestAge</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuestCitizenship</dcssch:dataPath>
+					<dcssch:field>GuestCitizenship</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfTeenagers</dcssch:dataPath>
+					<dcssch:field>NumberOfTeenagers</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfChildren</dcssch:dataPath>
+					<dcssch:field>NumberOfChildren</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NumberOfInfants</dcssch:dataPath>
+					<dcssch:field>NumberOfInfants</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomPropertiesDescriptions</dcssch:dataPath>
+					<dcssch:field>RoomPropertiesDescriptions</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsForFolioSplit</dcssch:dataPath>
+					<dcssch:field>IsForFolioSplit</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomPropertiesCodes</dcssch:dataPath>
+					<dcssch:field>RoomPropertiesCodes</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccommodationTemplate</dcssch:dataPath>
+					<dcssch:field>AccommodationTemplate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>NoPost</dcssch:dataPath>
+					<dcssch:field>NoPost</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RelationType</dcssch:dataPath>
+					<dcssch:field>RelationType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>LegalRepresentative</dcssch:dataPath>
+					<dcssch:field>LegalRepresentative</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IgnoreGroupChargingRules</dcssch:dataPath>
+					<dcssch:field>IgnoreGroupChargingRules</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsByReservation</dcssch:dataPath>
+					<dcssch:field>IsByReservation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccommodationStatus</dcssch:dataPath>
+					<dcssch:field>AccommodationStatus</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsOneTimeChargeNecessary</dcssch:dataPath>
+					<dcssch:field>IsOneTimeChargeNecessary</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PayerAccommodation</dcssch:dataPath>
+					<dcssch:field>PayerAccommodation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>HasOfficialLetter</dcssch:dataPath>
+					<dcssch:field>HasOfficialLetter</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FixReservationConditions</dcssch:dataPath>
+					<dcssch:field>FixReservationConditions</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MinibarIsOpen</dcssch:dataPath>
+					<dcssch:field>MinibarIsOpen</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CheckOutOperationTime</dcssch:dataPath>
+					<dcssch:field>CheckOutOperationTime</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CheckOutOperationAuthor</dcssch:dataPath>
+					<dcssch:field>CheckOutOperationAuthor</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Reservation</dcssch:dataPath>
+					<dcssch:field>Reservation</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>QualityRating</dcssch:dataPath>
+					<dcssch:field>QualityRating</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoChargingToDate</dcssch:dataPath>
+					<dcssch:field>DoChargingToDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsComplimentary</dcssch:dataPath>
+					<dcssch:field>IsComplimentary</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristicTaxExemptionReason</dcssch:dataPath>
+					<dcssch:field>TouristicTaxExemptionReason</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristicTaxExemptionReasonFillDate</dcssch:dataPath>
+					<dcssch:field>TouristicTaxExemptionReasonFillDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristicTaxExemptionConfirmationData</dcssch:dataPath>
+					<dcssch:field>TouristicTaxExemptionConfirmationData</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristicTaxAccountingDate</dcssch:dataPath>
+					<dcssch:field>TouristicTaxAccountingDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DurationInDays</dcssch:dataPath>
+					<dcssch:field>DurationInDays</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RateSumInBaseCurrency</dcssch:dataPath>
+					<dcssch:field>RateSumInBaseCurrency</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristTaxSumInBaseCurrency</dcssch:dataPath>
+					<dcssch:field>TouristTaxSumInBaseCurrency</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristTaxRate</dcssch:dataPath>
+					<dcssch:field>TouristTaxRate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MinAmountPerDay</dcssch:dataPath>
+					<dcssch:field>MinAmountPerDay</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>TouristicTaxIsByMinAmount</dcssch:dataPath>
+					<dcssch:field>TouristicTaxIsByMinAmount</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccountingCheckInDate</dcssch:dataPath>
+					<dcssch:field>AccountingCheckInDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccountingCheckOutDate</dcssch:dataPath>
+					<dcssch:field>AccountingCheckOutDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ServicePackageBeforeUpgrade</dcssch:dataPath>
+					<dcssch:field>ServicePackageBeforeUpgrade</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>RoomTypeBeforeUpgrade</dcssch:dataPath>
+					<dcssch:field>RoomTypeBeforeUpgrade</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>BedsSetup</dcssch:dataPath>
+					<dcssch:field>BedsSetup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DiscountSumToDeductFromCommission</dcssch:dataPath>
+					<dcssch:field>DiscountSumToDeductFromCommission</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Posted</dcssch:dataPath>
+					<dcssch:field>Posted</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DeletionMark</dcssch:dataPath>
+					<dcssch:field>DeletionMark</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>qAccommodation</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q accommodation</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:DocumentRef.Accommodation</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qAccommodationFilled</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q accommodation filled</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qReservation</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q reservation</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:DocumentRef.Reservation</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qReservationFilled</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q reservation filled</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Period</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="OneGuestMode" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>One guest mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>One guest mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим открытия персональной формы документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Restore" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Restore attributes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wiederherstellung Attributen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Back</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Restore</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="PeriodFrom">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="PeriodTo">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

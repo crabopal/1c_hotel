@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormRefresh" id="49">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Refresh</CommandName>
+				<ExtendedTooltip name="FormRefreshExtendedTooltip" id="50"/>
+			</Button>
+			<Button name="FormDeleteMessage" id="51">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.DeleteMessage</CommandName>
+				<ExtendedTooltip name="FormDeleteMessageExtendedTooltip" id="52"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupIntegrationService" id="56">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupIntegrationServiceExtendedTooltip" id="57"/>
+			<ChildItems>
+				<InputField name="IntegrationServiceName" id="53">
+					<DataPath>IntegrationServiceName</DataPath>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="IntegrationServiceNameContextMenu" id="54"/>
+					<ExtendedTooltip name="IntegrationServiceNameExtendedTooltip" id="55"/>
+					<Events>
+						<Event name="OnChange">IntegrationServiceNameOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="IntegrationServiceChannel" id="46">
+					<DataPath>IntegrationServiceChannel</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="IntegrationServiceChannelContextMenu" id="47"/>
+					<ExtendedTooltip name="IntegrationServiceChannelExtendedTooltip" id="48"/>
+					<Events>
+						<Event name="OnChange">IntegrationServiceChannelOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="MaximumNumber" id="69">
+					<DataPath>MaximumNumber</DataPath>
+					<ContextMenu name="MaximumNumberContextMenu" id="70"/>
+					<ExtendedTooltip name="MaximumNumberExtendedTooltip" id="71"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupSearchMode" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Search</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Suche</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupSearchModeExtendedTooltip" id="59"/>
+			<ChildItems>
+				<UsualGroup name="GroupPeriod" id="74">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="75"/>
+					<ChildItems>
+						<InputField name="PeriodFrom" id="76">
+							<DataPath>PeriodFrom</DataPath>
+							<ContextMenu name="PeriodFromContextMenu" id="77"/>
+							<ExtendedTooltip name="PeriodFromExtendedTooltip" id="78"/>
+							<Events>
+								<Event name="OnChange">PeriodFromOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="PeriodTo" id="79">
+							<DataPath>PeriodTo</DataPath>
+							<ContextMenu name="PeriodToContextMenu" id="80"/>
+							<ExtendedTooltip name="PeriodToExtendedTooltip" id="81"/>
+							<Events>
+								<Event name="OnChange">PeriodToOnChange</Event>
+							</Events>
+						</InputField>
+						<Button name="ChoosePeriod" id="82">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ChoosePeriod</CommandName>
+							<ExtendedTooltip name="ChoosePeriodExtendedTooltip" id="83"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupCode" id="72">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupCodeExtendedTooltip" id="73"/>
+					<ChildItems>
+						<InputField name="SenderCode" id="66">
+							<DataPath>SenderCode</DataPath>
+							<ContextMenu name="SenderCodeContextMenu" id="67"/>
+							<ExtendedTooltip name="SenderCodeExtendedTooltip" id="68"/>
+							<Events>
+								<Event name="OnChange">SenderCodeOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="RecipientCode" id="63">
+							<DataPath>RecipientCode</DataPath>
+							<ContextMenu name="RecipientCodeContextMenu" id="64"/>
+							<ExtendedTooltip name="RecipientCodeExtendedTooltip" id="65"/>
+							<Events>
+								<Event name="OnChange">RecipientCodeOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="IntegrationServiceMessages" id="1">
+			<Representation>List</Representation>
+			<ReadOnly>true</ReadOnly>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>IntegrationServiceMessages</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="IntegrationServiceMessagesContextMenu" id="2"/>
+			<AutoCommandBar name="IntegrationServiceMessagesCommandBar" id="3"/>
+			<ExtendedTooltip name="IntegrationServiceMessagesExtendedTooltip" id="4"/>
+			<SearchStringAddition name="IntegrationServiceMessagesSearchString" id="5">
+				<AdditionSource>
+					<Item>IntegrationServiceMessages</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="IntegrationServiceMessagesSearchStringContextMenu" id="6"/>
+				<ExtendedTooltip name="IntegrationServiceMessagesSearchStringExtendedTooltip" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="IntegrationServiceMessagesViewStatus" id="8">
+				<AdditionSource>
+					<Item>IntegrationServiceMessages</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="IntegrationServiceMessagesViewStatusContextMenu" id="9"/>
+				<ExtendedTooltip name="IntegrationServiceMessagesViewStatusExtendedTooltip" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="IntegrationServiceMessagesSearchControl" id="11">
+				<AdditionSource>
+					<Item>IntegrationServiceMessages</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="IntegrationServiceMessagesSearchControlContextMenu" id="12"/>
+				<ExtendedTooltip name="IntegrationServiceMessagesSearchControlExtendedTooltip" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="IntegrationServiceMessagesGroupID" id="38">
+					<ExtendedTooltip name="IntegrationServiceMessagesGroupIDExtendedTooltip" id="39"/>
+					<ChildItems>
+						<LabelField name="IntegrationServiceMessagesID" id="20">
+							<DataPath>IntegrationServiceMessages.ID</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesIDContextMenu" id="21"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesIDExtendedTooltip" id="22"/>
+						</LabelField>
+						<LabelField name="IntegrationServiceMessagesCorrelationId" id="23">
+							<DataPath>IntegrationServiceMessages.CorrelationId</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesCorrelationIdContextMenu" id="24"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesCorrelationIdExtendedTooltip" id="25"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="IntegrationServiceMessagesGroupCode" id="40">
+					<ExtendedTooltip name="IntegrationServiceMessagesGroupCodeExtendedTooltip" id="41"/>
+					<ChildItems>
+						<InputField name="IntegrationServiceMessagesSenderCode" id="26">
+							<DataPath>IntegrationServiceMessages.SenderCode</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesSenderCodeContextMenu" id="27"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesSenderCodeExtendedTooltip" id="28"/>
+						</InputField>
+						<InputField name="IntegrationServiceMessagesRecipientCode" id="29">
+							<DataPath>IntegrationServiceMessages.RecipientCode</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesRecipientCodeContextMenu" id="30"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesRecipientCodeExtendedTooltip" id="31"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="IntegrationServiceMessagesGroupDate" id="42">
+					<ExtendedTooltip name="IntegrationServiceMessagesGroupDateExtendedTooltip" id="43"/>
+					<ChildItems>
+						<InputField name="IntegrationServiceMessagesSendDate" id="14">
+							<DataPath>IntegrationServiceMessages.SendDate</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesSendDateContextMenu" id="15"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesSendDateExtendedTooltip" id="16"/>
+						</InputField>
+						<InputField name="IntegrationServiceMessagesExpirationDate" id="17">
+							<DataPath>IntegrationServiceMessages.ExpirationDate</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesExpirationDateContextMenu" id="18"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesExpirationDateExtendedTooltip" id="19"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="IntegrationServiceMessagesGroupInfo" id="44">
+					<ExtendedTooltip name="IntegrationServiceMessagesGroupInfoExtendedTooltip" id="45"/>
+					<ChildItems>
+						<InputField name="IntegrationServiceMessagesParameters" id="32">
+							<DataPath>IntegrationServiceMessages.Parameters</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesParametersContextMenu" id="33"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesParametersExtendedTooltip" id="34"/>
+						</InputField>
+						<InputField name="IntegrationServiceMessagesBodySize" id="35">
+							<DataPath>IntegrationServiceMessages.BodySize</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="IntegrationServiceMessagesBodySizeContextMenu" id="36"/>
+							<ExtendedTooltip name="IntegrationServiceMessagesBodySizeExtendedTooltip" id="37"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="IntegrationServiceMessages" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Integration service messages</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="SendDate" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Send date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Sende Datum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата отправки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ExpirationDate" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Expiration date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verfallsdatum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок годности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ID" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="CorrelationId" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Correlation ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Korrelations-ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID корреляции</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="SenderCode" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sender code</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Absendercode</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код отправителя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="RecipientCode" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Recipient code</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Empfängercode</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код получателя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Parameters" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="BodySize" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Size</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Größe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="IntegrationServiceChannel" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Integration service channel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Integrationsdienstkanal</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Канал службы интеграции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="IntegrationServiceName" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Integration service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Integrationsdienst</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервис интеграции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SenderCode" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sender code</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Absendercode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код отправителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="RecipientCode" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Recipient code</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Empfängercode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код получателя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="MaximumNumber" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Menge</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="PeriodFrom" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In the period from</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>In der Zeit von</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В периоде с</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="PeriodTo" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>to</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Vor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>по</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Refresh" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktualisierung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Refresh1</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="DeleteMessage" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Delete message</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nachricht löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить сообщение</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>DeleteMessage</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ChoosePeriod" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Choose period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор периода</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zeitraumauswahl</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Choose period</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SetDateInterval</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ChoosePeriod</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,1872 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockWholeInterface</WindowOpeningMode>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormPostAndClose" id="118">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="119"/>
+			</Button>
+			<Button name="FormCustomizeForm" id="163">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="FormCustomizeFormExtendedTooltip" id="164"/>
+			</Button>
+			<Button name="FormShowCheque" id="208">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ShowCheque</CommandName>
+				<ExtendedTooltip name="FormShowChequeExtendedTooltip" id="209"/>
+			</Button>
+			<Button name="FormHelp" id="161">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="FormHelpExtendedTooltip" id="162"/>
+			</Button>
+			<Button name="FormChangeHistory" id="233">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.ChangeHistory</CommandName>
+				<ExtendedTooltip name="FormChangeHistoryExtendedTooltip" id="234"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="ChoiceProcessing">ChoiceProcessing</Event>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="OnClose">OnClose</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupDates" id="239">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dates</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Datum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Даты</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupDatesExtendedTooltip" id="240"/>
+			<ChildItems>
+				<InputField name="AccountingDate" id="169">
+					<DataPath>Object.AccountingDate</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="AccountingDateContextMenu" id="170"/>
+					<ExtendedTooltip name="AccountingDateExtendedTooltip" id="171"/>
+				</InputField>
+				<InputField name="ExchangeRateDate" id="56">
+					<DataPath>Object.ExchangeRateDate</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ExchangeRateDateContextMenu" id="57"/>
+					<ExtendedTooltip name="ExchangeRateDateExtendedTooltip" id="58"/>
+					<Events>
+						<Event name="OnChange">ExchangeRateDateOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="AmountGroup" id="138">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Amount</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Summe</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="AmountGroupExtendedTooltip" id="139"/>
+			<ChildItems>
+				<UsualGroup name="GroupLeftColumn" id="243">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Linke Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupLeftColumnExtendedTooltip" id="244"/>
+					<ChildItems>
+						<UsualGroup name="GroupAmountAndCurrency" id="165">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Amount and currency</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма и валюта</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Betrag und Währung</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupAmountAndCurrencyExtendedTooltip" id="166"/>
+							<ChildItems>
+								<InputField name="Sum" id="32">
+									<DataPath>Object.Sum</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Summe</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:LargeTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<EditMode>EnterOnInput</EditMode>
+									<BackColor>style:BackgroundColorImportant</BackColor>
+									<Font ref="style:LargeTextFont" bold="true" kind="StyleItem"/>
+									<ContextMenu name="SumContextMenu" id="33"/>
+									<ExtendedTooltip name="SumExtendedTooltip" id="34"/>
+									<Events>
+										<Event name="OnChange">SumOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="PaymentCurrency" id="59">
+									<DataPath>Object.PaymentCurrency</DataPath>
+									<SkipOnInput>true</SkipOnInput>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<Font ref="style:LargeTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ContextMenu name="PaymentCurrencyContextMenu" id="60"/>
+									<ExtendedTooltip name="PaymentCurrencyExtendedTooltip" id="61"/>
+									<Events>
+										<Event name="OnChange">PaymentCurrencyOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="CreditCardData" id="122">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Payment card data</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные платежной карты</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zahlungskarteninformationen</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Behavior>PopUp</Behavior>
+							<CollapsedRepresentationTitle>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Payment card data</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные платежной карты</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zahlungskarteninformationen</v8:content>
+								</v8:item>
+							</CollapsedRepresentationTitle>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="CreditCardDataExtendedTooltip" id="123"/>
+							<ChildItems>
+								<UsualGroup name="Group4" id="231">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group4ExtendedTooltip" id="232"/>
+									<ChildItems>
+										<UsualGroup name="Group8" id="222">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group8ExtendedTooltip" id="223"/>
+											<ChildItems>
+												<InputField name="CreditCard" id="70">
+													<DataPath>Object.CreditCard</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>14</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<CreateButton>false</CreateButton>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+													<ContextMenu name="CreditCardContextMenu" id="71"/>
+													<ExtendedTooltip name="CreditCardExtendedTooltip" id="72"/>
+													<Events>
+														<Event name="OnChange">CreditCardOnChange</Event>
+														<Event name="Opening">CreditCardOpening</Event>
+													</Events>
+												</InputField>
+												<InputField name="ReferenceNumber" id="73">
+													<DataPath>Object.ReferenceNumber</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Ref. N</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ссылочн. №</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Ref. Nr.</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>18</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ReferenceNumberContextMenu" id="74"/>
+													<ExtendedTooltip name="ReferenceNumberExtendedTooltip" id="75"/>
+												</InputField>
+												<InputField name="MerchantID" id="212">
+													<DataPath>Object.MerchantID</DataPath>
+													<Width>18</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="MerchantIDContextMenu" id="213"/>
+													<ExtendedTooltip name="MerchantIDExtendedTooltip" id="214"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Group9" id="224">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group9ExtendedTooltip" id="225"/>
+											<ChildItems>
+												<InputField name="CardType" id="106">
+													<DataPath>Object.CardType</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>14</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+													<OpenButton>false</OpenButton>
+													<CreateButton>false</CreateButton>
+													<ContextMenu name="CardTypeContextMenu" id="107"/>
+													<ExtendedTooltip name="CardTypeExtendedTooltip" id="108"/>
+												</InputField>
+												<InputField name="AuthorizationCode" id="76">
+													<DataPath>Object.AuthorizationCode</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Auth. code</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код автор.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Auth. code</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>18</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="AuthorizationCodeContextMenu" id="77"/>
+													<ExtendedTooltip name="AuthorizationCodeExtendedTooltip" id="78"/>
+												</InputField>
+												<InputField name="TerminalNumber" id="79">
+													<DataPath>Object.TerminalNumber</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>18</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="TerminalNumberContextMenu" id="80"/>
+													<ExtendedTooltip name="TerminalNumberExtendedTooltip" id="81"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Group10" id="226">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group10ExtendedTooltip" id="227"/>
+											<ChildItems>
+												<InputField name="PANLast4Digits" id="203">
+													<DataPath>Object.PANLast4Digits</DataPath>
+													<ContextMenu name="PANLast4DigitsContextMenu" id="204"/>
+													<ExtendedTooltip name="PANLast4DigitsExtendedTooltip" id="205"/>
+												</InputField>
+												<InputField name="ReceiptNumber" id="217">
+													<DataPath>Object.ReceiptNumber</DataPath>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="ReceiptNumberContextMenu" id="218"/>
+													<ExtendedTooltip name="ReceiptNumberExtendedTooltip" id="219"/>
+												</InputField>
+												<InputField name="AuthorizationType" id="228">
+													<DataPath>Object.AuthorizationType</DataPath>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="AuthorizationTypeContextMenu" id="229"/>
+													<ExtendedTooltip name="AuthorizationTypeExtendedTooltip" id="230"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="CCDColumns" id="220">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="CCDColumnsExtendedTooltip" id="221"/>
+									<ChildItems>
+										<InputField name="SlipText" id="85">
+											<DataPath>Object.SlipText</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="SlipTextContextMenu" id="86"/>
+											<ExtendedTooltip name="SlipTextExtendedTooltip" id="87"/>
+										</InputField>
+										<InputField name="AnnulationSlipText" id="88">
+											<DataPath>Object.AnnulationSlipText</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="AnnulationSlipTextContextMenu" id="89"/>
+											<ExtendedTooltip name="AnnulationSlipTextExtendedTooltip" id="90"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupRightColumn" id="237">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Right column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rechte Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupRightColumnExtendedTooltip" id="238"/>
+					<ChildItems>
+						<InputField name="PaymentMethod" id="53">
+							<DataPath>Object.PaymentMethod</DataPath>
+							<TitleFont ref="style:LargeTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButton>false</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<BackColor>style:BackgroundColorImportant</BackColor>
+							<Font ref="style:LargeTextFont" bold="true" kind="StyleItem"/>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="PaymentMethodContextMenu" id="54"/>
+							<ExtendedTooltip name="PaymentMethodExtendedTooltip" id="55"/>
+							<Events>
+								<Event name="OnChange">PaymentMethodOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="PaymentSection" id="50">
+							<DataPath>Object.PaymentSection</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameters>
+								<app:item name="Filter.DeletionMark">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">false</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="PaymentSectionContextMenu" id="51"/>
+							<ExtendedTooltip name="PaymentSectionExtendedTooltip" id="52"/>
+							<Events>
+								<Event name="OnChange">PaymentSectionOnChange</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="VATRateGroup" id="140">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>VAT</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>НДС</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Mehrwertsteuer</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="VATRateGroupExtendedTooltip" id="141"/>
+							<ChildItems>
+								<InputField name="VATRate" id="35">
+									<DataPath>Object.VATRate</DataPath>
+									<SkipOnInput>true</SkipOnInput>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="VATRateContextMenu" id="36"/>
+									<ExtendedTooltip name="VATRateExtendedTooltip" id="37"/>
+									<Events>
+										<Event name="OnChange">VATRateOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="VATSum" id="38">
+									<DataPath>Object.VATSum</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<SkipOnInput>true</SkipOnInput>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>VAT amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>MwSt-Betrag</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма НДС</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="VATSumContextMenu" id="39"/>
+									<ExtendedTooltip name="VATSumExtendedTooltip" id="40"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Remarks" id="91">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="92"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="93"/>
+		</InputField>
+		<UsualGroup name="GroupAccountingSystemData" id="151">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accounting system data</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Buchhaltungssystem Daten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные бухгалтерской системы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupAccountingSystemDataExtendedTooltip" id="152"/>
+			<ChildItems>
+				<InputField name="PaymentDocNumber" id="153">
+					<DataPath>Object.PaymentDocNumber</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Acc. doc. N</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ док. в бух.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Buch. Dok. Nr.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="PaymentDocNumberContextMenu" id="154"/>
+					<ExtendedTooltip name="PaymentDocNumberExtendedTooltip" id="155"/>
+				</InputField>
+				<InputField name="PaymentDocDate" id="156">
+					<DataPath>Object.PaymentDocDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="PaymentDocDateContextMenu" id="157"/>
+					<ExtendedTooltip name="PaymentDocDateExtendedTooltip" id="158"/>
+				</InputField>
+				<InputField name="Company" id="17">
+					<DataPath>Object.Company</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="CompanyContextMenu" id="18"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="19"/>
+					<Events>
+						<Event name="OnChange">CompanyOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="PayerGroup" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плательщик</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zahler</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="PayerGroupExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="LeftColumn" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Linke Spalte</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="LeftColumnExtendedTooltip" id="4"/>
+					<ChildItems>
+						<InputField name="AccountingCustomer" id="20">
+							<DataPath>Object.AccountingCustomer</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Customer</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Плательщик</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Firma</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="AccountingCustomerContextMenu" id="21"/>
+							<ExtendedTooltip name="AccountingCustomerExtendedTooltip" id="22"/>
+							<Events>
+								<Event name="OnChange">AccountingCustomerOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="AccountingContract" id="23">
+							<DataPath>Object.AccountingContract</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Contract</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Договор</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Vertrag</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.AccountingCustomer</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="AccountingContractContextMenu" id="24"/>
+							<ExtendedTooltip name="AccountingContractExtendedTooltip" id="25"/>
+							<Events>
+								<Event name="OnChange">AccountingContractOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="RightColumn" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Right column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rechte Spalte</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="RightColumnExtendedTooltip" id="63"/>
+					<ChildItems>
+						<InputField name="Invoice" id="29">
+							<DataPath>Object.Invoice</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="InvoiceContextMenu" id="30"/>
+							<ExtendedTooltip name="InvoiceExtendedTooltip" id="31"/>
+							<Events>
+								<Event name="OnChange">InvoiceOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="GuestGroup" id="26">
+							<DataPath>Object.GuestGroup</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HorizontalStretch>false</HorizontalStretch>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="GuestGroupContextMenu" id="27"/>
+							<ExtendedTooltip name="GuestGroupExtendedTooltip" id="28"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupCashRegister" id="241">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cash shift</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kassenschicht</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupCashRegisterExtendedTooltip" id="242"/>
+			<ChildItems>
+				<InputField name="CashRegister" id="67">
+					<DataPath>Object.CashRegister</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="CashRegisterContextMenu" id="68"/>
+					<ExtendedTooltip name="CashRegisterExtendedTooltip" id="69"/>
+					<Events>
+						<Event name="OnChange">CashRegisterOnChange</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="SendPayerContacts" id="185">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="SendPayerContactsExtendedTooltip" id="186"/>
+					<ChildItems>
+						<UsualGroup name="SendPayerContactsChangeType" id="187">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="SendPayerContactsChangeTypeExtendedTooltip" id="188"/>
+							<ChildItems>
+								<RadioButtonField name="SendPayerContactsToOFD" id="189">
+									<DataPath>Object.SendPayerContactsToOFD</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Send to client via</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>An den Kunden senden über</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отправить в ОФД</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<RadioButtonType>RadioButtons</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>E-mail</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>E-mail</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>E-mail плательщика</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Phone</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Telefon</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Телефон плательщика</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Do not send</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Nicht senden</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Не отправлять</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="SendPayerContactsToOFDContextMenu" id="190"/>
+									<ExtendedTooltip name="SendPayerContactsToOFDExtendedTooltip" id="191"/>
+									<Events>
+										<Event name="OnChange">SendPayerContactsToOFDOnChange</Event>
+									</Events>
+								</RadioButtonField>
+								<UsualGroup name="SendPayerContactsRecipients" id="192">
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="SendPayerContactsRecipientsExtendedTooltip" id="193"/>
+									<ChildItems>
+										<InputField name="EmailToSendToOFD" id="194">
+											<DataPath>Object.EmailToSendToOFD</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>E-mail</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>E-mail</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>E-mail</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="EmailToSendToOFDContextMenu" id="195"/>
+											<ExtendedTooltip name="EmailToSendToOFDExtendedTooltip" id="196"/>
+										</InputField>
+										<InputField name="PhoneToSendToOFD" id="197">
+											<DataPath>Object.PhoneToSendToOFD</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Phone</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Telefon</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Телефон</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="PhoneToSendToOFDContextMenu" id="198"/>
+											<ExtendedTooltip name="PhoneToSendToOFDExtendedTooltip" id="199"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupParameters" id="142">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="143"/>
+			<ChildItems>
+				<UsualGroup name="GroupH" id="174">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Horizontal</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Horizontal</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Горизонтальная</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupHExtendedTooltip" id="175"/>
+					<ChildItems>
+						<UsualGroup name="HLeftColumn" id="147">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Left column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Левая колонка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Linke Spalte</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="HLeftColumnExtendedTooltip" id="148"/>
+							<ChildItems>
+								<UsualGroup name="Group1" id="120">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>1</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>1</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>1</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group1ExtendedTooltip" id="121"/>
+									<ChildItems>
+										<InputField name="Number" id="5">
+											<DataPath>Object.Number</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Number</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номер</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Nummer</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="NumberContextMenu" id="6"/>
+											<ExtendedTooltip name="NumberExtendedTooltip" id="7"/>
+										</InputField>
+										<InputField name="Date" id="8">
+											<DataPath>Object.Date</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>date</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>дата</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Datum</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="DateContextMenu" id="9"/>
+											<ExtendedTooltip name="DateExtendedTooltip" id="10"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupAnnulationParams" id="172">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Annulation parameters</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Annulation Parameter</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Параметры отмены</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupAnnulationParamsExtendedTooltip" id="173"/>
+									<ChildItems>
+										<InputField name="TypeOfAnnulation" id="94">
+											<DataPath>Object.TypeOfAnnulation</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TypeOfAnnulationContextMenu" id="95"/>
+											<ExtendedTooltip name="TypeOfAnnulationExtendedTooltip" id="96"/>
+										</InputField>
+										<InputField name="DateOfAnnulation" id="100">
+											<DataPath>Object.DateOfAnnulation</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>date</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>дата</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Datum</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="DateOfAnnulationContextMenu" id="101"/>
+											<ExtendedTooltip name="DateOfAnnulationExtendedTooltip" id="102"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="ExternalCode" id="103">
+									<DataPath>Object.ExternalCode</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Ext. system code</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Код во внеш. системе</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Ext. Systemcode</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ExternalCodeContextMenu" id="104"/>
+									<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="105"/>
+								</InputField>
+								<InputField name="ParentDoc" id="11">
+									<DataPath>Object.ParentDoc</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ParentDocContextMenu" id="12"/>
+									<ExtendedTooltip name="ParentDocExtendedTooltip" id="13"/>
+									<Events>
+										<Event name="StartChoice">ParentDocStartChoice</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="GroupAccountingCurrency" id="167">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Accounting currency</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Buchhaltungswährung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учетная валюта</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="GroupAccountingCurrencyExtendedTooltip" id="168"/>
+									<ChildItems>
+										<InputField name="AccountingCurrency" id="176">
+											<DataPath>Object.AccountingCurrency</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<HorizontalStretch>false</HorizontalStretch>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="AccountingCurrencyContextMenu" id="177"/>
+											<ExtendedTooltip name="AccountingCurrencyExtendedTooltip" id="178"/>
+										</InputField>
+										<InputField name="AccountingCurrencyExchangeRate" id="179">
+											<DataPath>Object.AccountingCurrencyExchangeRate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Exchange rate</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wechselkurs</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Курс обмена</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ContextMenu name="AccountingCurrencyExchangeRateContextMenu" id="180"/>
+											<ExtendedTooltip name="AccountingCurrencyExchangeRateExtendedTooltip" id="181"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="SumInAccountingCurrency" id="182">
+									<DataPath>Object.SumInAccountingCurrency</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Amount in accounting currency</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Betrag in Buchhaltungswährung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в учетной валюте</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="SumInAccountingCurrencyContextMenu" id="183"/>
+									<ExtendedTooltip name="SumInAccountingCurrencyExtendedTooltip" id="184"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="HRightColumn" id="149">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Right column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правая колонка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rechte Spalte</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="HRightColumnExtendedTooltip" id="150"/>
+							<ChildItems>
+								<InputField name="Author" id="115">
+									<DataPath>Object.Author</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="AuthorContextMenu" id="116"/>
+									<ExtendedTooltip name="AuthorExtendedTooltip" id="117"/>
+								</InputField>
+								<InputField name="AuthorOfAnnulation" id="97">
+									<DataPath>Object.AuthorOfAnnulation</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Annul. author</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Автор отмены</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Stornierungsautor</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="AuthorOfAnnulationContextMenu" id="98"/>
+									<ExtendedTooltip name="AuthorOfAnnulationExtendedTooltip" id="99"/>
+								</InputField>
+								<InputField name="Hotel" id="14">
+									<DataPath>Object.Hotel</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="HotelContextMenu" id="15"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="16"/>
+								</InputField>
+								<InputField name="CustomerPayment" id="144">
+									<DataPath>Object.CustomerPayment</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="CustomerPaymentContextMenu" id="145"/>
+									<ExtendedTooltip name="CustomerPaymentExtendedTooltip" id="146"/>
+								</InputField>
+								<UsualGroup name="GroupPaymentCurrency" id="245">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Payment currency</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zahlungswährung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Валюта оплаты</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="GroupPaymentCurrencyExtendedTooltip" id="246"/>
+									<ChildItems>
+										<InputField name="PaymentCurrency1" id="247">
+											<DataPath>Object.PaymentCurrency</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<HorizontalStretch>false</HorizontalStretch>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="PaymentCurrency1ContextMenu" id="248"/>
+											<ExtendedTooltip name="PaymentCurrency1ExtendedTooltip" id="249"/>
+										</InputField>
+										<InputField name="PaymentCurrencyExchangeRate" id="64">
+											<DataPath>Object.PaymentCurrencyExchangeRate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Exchange rate</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wechselkurs</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Курс обмена</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="PaymentCurrencyExchangeRateContextMenu" id="65"/>
+											<ExtendedTooltip name="PaymentCurrencyExchangeRateExtendedTooltip" id="66"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="Sum1" id="250">
+									<DataPath>Object.Sum</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Amount in payment currency</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Betrag in Zahlungswährung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в валюте платежа</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="Sum1ContextMenu" id="251"/>
+									<ExtendedTooltip name="Sum1ExtendedTooltip" id="252"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.CustomerPayment</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="SetNewDocNumber" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set new document number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить новый номер документа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Neue Dokumentnummer festlegen</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OldPaymentCurrency" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Old payment currency</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохраненная валюта платежа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Alte Zahlungswährung</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Currencies</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OldPaymentCurrencyExchangeRate" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Old payment currency exchange rate</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохраненный курс валюты платежа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Alter Zahlungswechselkurs</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>7</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ChequeIsPrinted" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cheque is printed</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PaymentIsAuthorized" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payment is authorized</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Платеж авторизован</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Die Zahlung ist erlaubt</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ArrPaymentTerminal" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Credit cards processing system</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="NewObjectRef" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New object ref</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.CustomerPayment</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EmployeePINCodeChecked" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Employee PIN code was checked</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Mitarbeiter-PIN-Code wurde geprüft</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПИН-код сотрудника проверен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="CurrentUser" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current user</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktueller Mitarbeiter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Employees</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="CreditCardProcessingSystem" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Credit card processing system</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CreditCardsProcessingSystemParameters</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ShowCheque" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show cheque</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Quittung anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать чек</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CheckSyntax</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ShowCheque</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.ChequeAttributes.StandardCommand.OpenByValue.Payment</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>5</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.CashInCashRegisters.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>6</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.CashRegisterDailyReceipts.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>7</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.CustomerAccounts.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.CustomerDeposits.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.InvoiceAccounts.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.Payments.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>AccountingRegister.PostingsFO.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>4</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionsExecute" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionsExecute</CommandName>
+				<ExtendedTooltip name="FormActionsExecuteExtendedTooltip" id="2"/>
+			</Button>
+			<Button name="FormHelp" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="FormHelpExtendedTooltip" id="4"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration1" id="5">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По нажатию на кнопку "Выполнить" программа автоматически продлит на 1 час тех гостей, которые должны были выехать ранее чем указанное в параметрах обработки время бесплатной задержки в минутах. Те гости, у которых время проживания закончилось, но время бесплатной задержки еще не вышло, будут показаны списком на экране.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By clicking the "Execute" button, the program will automatically extend period of stay for 1 hour to those guests who had to check-out more than the free of charge time in minutes specified in the parameters. Those guests who have not run out of this free of charge time will be shown on the screen.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Durch klicken auf die "Ausführen" verlängert das Programm automatisch die Aufenthaltsdauer um 1 Stunde für Gäste, die mehr als die in den Parametern angegebene freie Zeit in Minuten Auschecken mussten. Diejenigen Gäste, die diese Kostenlose Zeit nicht überschritten haben, werden auf dem Bildschirm angezeigt.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Decoration1ContextMenu" id="6"/>
+			<ExtendedTooltip name="Decoration1ExtendedTooltip" id="7"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupParameters" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="9"/>
+			<ChildItems>
+				<UsualGroup name="GroupActions" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>#FCEB9F</BackColor>
+					<ExtendedTooltip name="GroupActionsExtendedTooltip" id="11"/>
+					<ChildItems>
+						<Button name="SaveSettings" id="12">
+							<Type>Hyperlink</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Command.SaveSettings</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="SaveSettingsExtendedTooltip" id="13"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Hotel" id="24">
+					<DataPath>Object.Hotel</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="HotelContextMenu" id="25"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="26"/>
+					<Events>
+						<Event name="Clearing">HotelClearing</Event>
+					</Events>
+				</InputField>
+				<InputField name="FreeOfChargeCheckOutDelay" id="27">
+					<DataPath>Object.FreeOfChargeCheckOutDelay</DataPath>
+					<ChoiceButton>false</ChoiceButton>
+					<SpinButton>true</SpinButton>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=0</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="FreeOfChargeCheckOutDelayContextMenu" id="28"/>
+					<ExtendedTooltip name="FreeOfChargeCheckOutDelayExtendedTooltip" id="29"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.AutoExtendGuestsPeriodOfStay</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionsExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check if reservations were paid in time</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Eingang der Zahlung nach Buchung überprüfen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить поступление оплаты по брони</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionsExecute</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="SaveSettings" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save attributes setting</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Save attributes setting</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройку</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SaveSettings</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+	</Commands>
+</Form>

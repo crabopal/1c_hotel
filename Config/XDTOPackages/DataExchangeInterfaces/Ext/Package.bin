@@ -1,0 +1,26 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.1chotel.ru/interfaces/dataexchange/">
+	<valueType name="Period" base="xs:dateTime"/>
+	<valueType xmlns:d2p1="http://www.1chotel.ru/interfaces/dataexchange/" name="HotelCode" base="d2p1:Code"/>
+	<valueType xmlns:d2p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ClientTypeCode" base="d2p1:Code"/>
+	<valueType xmlns:d2p1="http://www.1chotel.ru/interfaces/dataexchange/" name="RoomRateCode" base="d2p1:Code"/>
+	<valueType name="ErrorDescription" base="xs:string" maxLength="2048"/>
+	<valueType name="Code" base="xs:string" maxLength="5"/>
+	<valueType name="LanguageCode" base="xs:string" maxLength="2"/>
+	<valueType xmlns:d2p1="http://www.1chotel.ru/interfaces/dataexchange/" name="DiscountTypeCode" base="d2p1:Code"/>
+	<valueType name="Remarks" base="xs:string" maxLength="2048"/>
+	<valueType name="ClientCode" base="xs:string" maxLength="12"/>
+	<valueType name="ClientResource" base="xs:decimal"/>
+	<objectType name="CheckIfDiscountCardNeedToBeIssued">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ErrorDescription" type="d3p1:ErrorDescription"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ClientResource" type="d3p1:ClientResource"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ClientTypeCode" type="d3p1:ClientTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="DiscountTypeCode" type="d3p1:DiscountTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ValidFrom" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ValidTo" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="Notification" type="d3p1:Remarks" nillable="true"/>
+	</objectType>
+	<objectType name="ReservationData">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="RoomRateCode" type="d3p1:RoomRateCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/dataexchange/" name="ClientTypeCode" type="d3p1:ClientTypeCode"/>
+	</objectType>
+</package>

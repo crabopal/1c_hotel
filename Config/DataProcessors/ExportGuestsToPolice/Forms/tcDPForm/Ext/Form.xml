@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormUnload" id="9">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Unload</CommandName>
+				<ExtendedTooltip name="FormUnloadExtendedTooltip" id="10"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration" id="77">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>The data of the guests who arrived during the selected period is uploaded to a text file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Die Daten der Gäste, die während des ausgewählten Zeitraums angekommen sind, werden in eine Textdatei hochgeladen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные гостей заехавших за выбранный период выгружаются в текстовый файл</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DecorationContextMenu" id="78"/>
+			<ExtendedTooltip name="DecorationExtendedTooltip" id="79"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupPeriod" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#FCEB9F</BackColor>
+			<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="2"/>
+			<ChildItems>
+				<InputField name="PeriodFrom" id="3">
+					<DataPath>Object.PeriodFrom</DataPath>
+					<ContextMenu name="PeriodFromContextMenu" id="4"/>
+					<ExtendedTooltip name="PeriodFromExtendedTooltip" id="5"/>
+				</InputField>
+				<InputField name="PeriodTo" id="6">
+					<DataPath>Object.PeriodTo</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>to</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>to</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="PeriodToContextMenu" id="7"/>
+					<ExtendedTooltip name="PeriodToExtendedTooltip" id="8"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ExportDir" id="11">
+			<DataPath>Object.ExportDir</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ExportDirContextMenu" id="12"/>
+			<ExtendedTooltip name="ExportDirExtendedTooltip" id="13"/>
+			<Events>
+				<Event name="StartChoice">ExportDirStartChoice</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupErrors" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Result</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Result</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupErrorsExtendedTooltip" id="15"/>
+			<ChildItems>
+				<SpreadSheetDocumentField name="SpreadsheetDocumentErrors" id="16">
+					<DataPath>SpreadsheetDocumentErrors</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="SpreadsheetDocumentErrorsContextMenu" id="17"/>
+					<ExtendedTooltip name="SpreadsheetDocumentErrorsExtendedTooltip" id="18"/>
+				</SpreadSheetDocumentField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupParameters" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="20"/>
+			<ChildItems>
+				<Button name="SaveSettings" id="21">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.SaveSettings</CommandName>
+					<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="SaveSettingsExtendedTooltip" id="22"/>
+				</Button>
+				<CheckBoxField name="ExportVirtualGuests" id="23">
+					<DataPath>Object.ExportVirtualGuests</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ExportVirtualGuestsContextMenu" id="24"/>
+					<ExtendedTooltip name="ExportVirtualGuestsExtendedTooltip" id="25"/>
+				</CheckBoxField>
+				<InputField name="Hotel" id="36">
+					<DataPath>Object.Hotel</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="HotelContextMenu" id="37"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="38"/>
+				</InputField>
+				<InputField name="Company" id="71">
+					<DataPath>Object.Company</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="CompanyContextMenu" id="72"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="73"/>
+				</InputField>
+				<InputField name="HotelName" id="86">
+					<DataPath>Object.HotelName</DataPath>
+					<ContextMenu name="HotelNameContextMenu" id="87"/>
+					<ExtendedTooltip name="HotelNameExtendedTooltip" id="88"/>
+				</InputField>
+				<InputField name="PoliceHotelID" id="80">
+					<DataPath>Object.PoliceHotelID</DataPath>
+					<ContextMenu name="PoliceHotelIDContextMenu" id="81"/>
+					<ExtendedTooltip name="PoliceHotelIDExtendedTooltip" id="82"/>
+				</InputField>
+				<InputField name="FileSeqNumber" id="83">
+					<DataPath>Object.FileSeqNumber</DataPath>
+					<ContextMenu name="FileSeqNumberContextMenu" id="84"/>
+					<ExtendedTooltip name="FileSeqNumberExtendedTooltip" id="85"/>
+				</InputField>
+				<InputField name="PoliceExportFormat" id="89">
+					<DataPath>Object.PoliceExportFormat</DataPath>
+					<ContextMenu name="PoliceExportFormatContextMenu" id="90"/>
+					<ExtendedTooltip name="PoliceExportFormatExtendedTooltip" id="91"/>
+				</InputField>
+				<InputField name="ExportDir1" id="74">
+					<DataPath>Object.ExportDir</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ExportDir1ContextMenu" id="75"/>
+					<ExtendedTooltip name="ExportDir1ExtendedTooltip" id="76"/>
+					<Events>
+						<Event name="StartChoice">ExportDirStartChoice</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ExportGuestsToPolice</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="SpreadsheetDocumentErrors" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Spreadsheet document errors</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="SaveSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save the settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellungen speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SaveSettings</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Unload" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Do export</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Export</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Process data export to the catalog selected</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Prozessdatenexport zum Katalog ausgewählt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить выгрузку данных в выбранный каталог</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Unload</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

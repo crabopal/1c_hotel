@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Connecting the device</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Anschließen des Geräts</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подключение устройства</v8:content>
+		</v8:item>
+	</Title>
+	<Width>35</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="DeviceType" id="1">
+			<DataPath>DeviceType</DataPath>
+			<ContextMenu name="DeviceTypeContextMenu" id="2"/>
+			<ExtendedTooltip name="DeviceTypeExtendedTooltip" id="3"/>
+		</InputField>
+		<InputField name="DeviceSettings" id="4">
+			<DataPath>DeviceSettings</DataPath>
+			<ContextMenu name="DeviceSettingsContextMenu" id="5"/>
+			<ExtendedTooltip name="DeviceSettingsExtendedTooltip" id="6"/>
+			<Events>
+				<Event name="StartChoice">DeviceSettingsStartChoice</Event>
+			</Events>
+		</InputField>
+		<CheckBoxField name="IsActive" id="7">
+			<DataPath>IsActive</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="IsActiveContextMenu" id="8"/>
+			<ExtendedTooltip name="IsActiveExtendedTooltip" id="9"/>
+		</CheckBoxField>
+		<Button name="Add" id="10">
+			<Type>UsualButton</Type>
+			<DefaultButton>true</DefaultButton>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CommandName>Form.Command.Add</CommandName>
+			<ExtendedTooltip name="AddExtendedTooltip" id="11"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="DeviceType" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Device type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gerätetypen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип устройства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.DeviceTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="DeviceSettings" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Device settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Geräteeinstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки устройства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ImageScannerConnectionParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.RibbonPrinterConnectionParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.BarcodesScannerConnectionParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.CreditCardsProcessingSystemParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.CustomerDisplayParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.DoorLockSystemParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.IdentityCardsSystemParameters</v8:Type>
+				<v8:Type>cfg:CatalogRef.CashRegisters</v8:Type>
+				<v8:Type>cfg:CatalogRef.CashAcceptorsConnectionParameters</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsActive" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is active</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ist aktiv</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Add" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveReportSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Add</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

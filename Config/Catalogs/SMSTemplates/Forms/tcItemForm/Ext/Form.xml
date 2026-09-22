@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="1">
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<InputField name="Code" id="3">
+					<DataPath>Object.Code</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="CodeContextMenu" id="4"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="5"/>
+				</InputField>
+				<InputField name="Sender" id="6">
+					<DataPath>Object.Sender</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>SMS Sender</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>SMS-Absender</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправитель СМС</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="SenderContextMenu" id="7"/>
+					<ExtendedTooltip name="SenderExtendedTooltip" id="8"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="9">
+			<DataPath>Object.Description</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description/subject</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bezeichnung/Thema</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование/тема</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<OpenButton>true</OpenButton>
+			<ContextMenu name="DescriptionContextMenu" id="10"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="11"/>
+			<Events>
+				<Event name="Opening">DescriptionOpening</Event>
+			</Events>
+		</InputField>
+		<InputField name="Parent" id="12">
+			<DataPath>Object.Parent</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parent folder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Elternteil</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Родитель</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="ParentContextMenu" id="13"/>
+			<ExtendedTooltip name="ParentExtendedTooltip" id="14"/>
+		</InputField>
+		<InputField name="ObjectType" id="163">
+			<DataPath>TypeDescription</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ObjectTypeContextMenu" id="164"/>
+			<ExtendedTooltip name="ObjectTypeExtendedTooltip" id="165"/>
+			<Events>
+				<Event name="OnChange">ObjectTypeOnChange</Event>
+			</Events>
+		</InputField>
+		<Pages name="GroupText" id="15">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="GroupTextExtendedTooltip" id="16"/>
+			<ChildItems>
+				<Page name="GroupSMSText" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Message text</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Mitteilungstext</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupSMSTextExtendedTooltip" id="18"/>
+					<ChildItems>
+						<Button name="ActionInsertAutoTextSMS" id="21">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ActionInsertAutoTextSMS</CommandName>
+							<ExtendedTooltip name="ActionInsertAutoTextSMSExtendedTooltip" id="22"/>
+						</Button>
+						<InputField name="SMSTextRu" id="140">
+							<DataPath>Object.SMSTextRu</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>7</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="SMSTextRuContextMenu" id="141"/>
+							<ExtendedTooltip name="SMSTextRuExtendedTooltip" id="142"/>
+						</InputField>
+						<InputField name="SMSTextEn" id="143">
+							<DataPath>Object.SMSTextEn</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>7</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="SMSTextEnContextMenu" id="144"/>
+							<ExtendedTooltip name="SMSTextEnExtendedTooltip" id="145"/>
+						</InputField>
+						<InputField name="SMSTextDe" id="146">
+							<DataPath>Object.SMSTextDe</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>7</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="SMSTextDeContextMenu" id="147"/>
+							<ExtendedTooltip name="SMSTextDeExtendedTooltip" id="148"/>
+						</InputField>
+						<InputField name="SelLanguage2" id="26">
+							<DataPath>SelLanguage</DataPath>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>false</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="SelLanguage2ContextMenu" id="27"/>
+							<ExtendedTooltip name="SelLanguage2ExtendedTooltip" id="28"/>
+							<Events>
+								<Event name="OnChange">SelLanguageOnChange</Event>
+								<Event name="Clearing">SelLanguageClearing</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="GroupInformation" id="35">
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupInformationExtendedTooltip" id="36"/>
+							<ChildItems>
+								<LabelField name="TNumberOfSMS" id="29">
+									<DataPath>TNumberOfSMS</DataPath>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ContextMenu name="TNumberOfSMSContextMenu" id="30"/>
+									<ExtendedTooltip name="TNumberOfSMSExtendedTooltip" id="31"/>
+								</LabelField>
+								<LabelField name="TMessageLength" id="32">
+									<DataPath>TMessageLength</DataPath>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ContextMenu name="TMessageLengthContextMenu" id="33"/>
+									<ExtendedTooltip name="TMessageLengthExtendedTooltip" id="34"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="GroupHTMLText" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>HTML text</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>HTML text</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>HTML текст</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupHTMLTextExtendedTooltip" id="20"/>
+					<ChildItems>
+						<Pages name="GroupHTMLPanel" id="40">
+							<PagesRepresentation>TabsOnBottom</PagesRepresentation>
+							<ExtendedTooltip name="GroupHTMLPanelExtendedTooltip" id="41"/>
+							<Events>
+								<Event name="OnCurrentPageChange">GroupHTMLPanelOnCurrentPageChange</Event>
+							</Events>
+							<ChildItems>
+								<Page name="GroupHTMLViewer" id="42">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Viewer</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Durchsicht</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Просмотр</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="GroupHTMLViewerExtendedTooltip" id="43"/>
+									<ChildItems>
+										<HTMLDocumentField name="HTMLViewer" id="137">
+											<DataPath>HTMLViewer</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="HTMLViewerContextMenu" id="138"/>
+											<ExtendedTooltip name="HTMLViewerExtendedTooltip" id="139"/>
+										</HTMLDocumentField>
+										<InputField name="SelLanguage" id="37">
+											<DataPath>SelLanguage</DataPath>
+											<ChoiceButton>false</ChoiceButton>
+											<ClearButton>false</ClearButton>
+											<SpinButton>false</SpinButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="SelLanguageContextMenu" id="38"/>
+											<ExtendedTooltip name="SelLanguageExtendedTooltip" id="39"/>
+											<Events>
+												<Event name="OnChange">SelLanguageOnChange</Event>
+												<Event name="Clearing">SelLanguageClearing</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="GroupReachEdit" id="44">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Reach edit</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Überarbeitung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Редактирование</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="GroupReachEditExtendedTooltip" id="45"/>
+									<ChildItems>
+										<UsualGroup name="GroupActionReader" id="66">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Toolbar</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Werkzeugleiste</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Панель инструментов</v8:content>
+												</v8:item>
+											</Title>
+											<TitleTextColor>style:FormTextColor</TitleTextColor>
+											<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupActionReaderExtendedTooltip" id="67"/>
+											<ChildItems>
+												<UsualGroup name="Group1" id="118">
+													<Group>AlwaysHorizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="Group1ExtendedTooltip" id="119"/>
+													<ChildItems>
+														<Button name="Font" id="98">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Font</CommandName>
+															<ExtendedTooltip name="FontExtendedTooltip" id="99"/>
+														</Button>
+														<Button name="Bold" id="68">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Bold</CommandName>
+															<ExtendedTooltip name="BoldExtendedTooltip" id="69"/>
+														</Button>
+														<Button name="Italic" id="70">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Italic</CommandName>
+															<ExtendedTooltip name="ItalicExtendedTooltip" id="71"/>
+														</Button>
+														<Button name="Underline" id="72">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Underline</CommandName>
+															<ExtendedTooltip name="UnderlineExtendedTooltip" id="73"/>
+														</Button>
+														<Button name="Strikeout" id="74">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Strikeout</CommandName>
+															<Picture>
+																<xr:Ref>CommonPicture.Remove</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</Picture>
+															<ExtendedTooltip name="StrikeoutExtendedTooltip" id="75"/>
+														</Button>
+														<Button name="AlignRight" id="92">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.AlignRight</CommandName>
+															<ExtendedTooltip name="AlignRightExtendedTooltip" id="93"/>
+														</Button>
+														<Button name="AlignCenter" id="90">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.AlignCenter</CommandName>
+															<ExtendedTooltip name="AlignCenterExtendedTooltip" id="91"/>
+														</Button>
+														<Button name="AlignLeft" id="88">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.AlignLeft</CommandName>
+															<ExtendedTooltip name="AlignLeftExtendedTooltip" id="89"/>
+														</Button>
+														<Button name="AlignJustify" id="94">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.AlignJustify</CommandName>
+															<ExtendedTooltip name="AlignJustifyExtendedTooltip" id="95"/>
+														</Button>
+														<Button name="Picture" id="84">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Command.ActionInsertPicture</CommandName>
+															<ExtendedTooltip name="PictureExtendedTooltip" id="85"/>
+														</Button>
+														<Button name="Hyperlink" id="161">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Hyperlink</CommandName>
+															<ExtendedTooltip name="HyperlinkExtendedTooltip" id="162"/>
+														</Button>
+														<Button name="Redo" id="110">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Redo</CommandName>
+															<ExtendedTooltip name="RedoExtendedTooltip" id="111"/>
+														</Button>
+														<Button name="Undo" id="108">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.Undo</CommandName>
+															<ExtendedTooltip name="UndoExtendedTooltip" id="109"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="Group2" id="120">
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="Group2ExtendedTooltip" id="121"/>
+													<ChildItems>
+														<Button name="IncreaseIndent" id="76">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.IncreaseIndent</CommandName>
+															<ExtendedTooltip name="IncreaseIndentExtendedTooltip" id="77"/>
+														</Button>
+														<Button name="DecreaseIndent" id="78">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.DecreaseIndent</CommandName>
+															<ExtendedTooltip name="DecreaseIndentExtendedTooltip" id="79"/>
+														</Button>
+														<Button name="LineSpacing" id="96">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.LineSpacing</CommandName>
+															<Picture>
+																<xr:Ref>StdPicture.ExternalDataSourceCubeDimensionTable</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</Picture>
+															<ExtendedTooltip name="LineSpacingExtendedTooltip" id="97"/>
+														</Button>
+														<Button name="BackColor" id="104">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.BackColor</CommandName>
+															<ExtendedTooltip name="BackColorExtendedTooltip" id="105"/>
+														</Button>
+														<Button name="TextColor" id="106">
+															<Type>UsualButton</Type>
+															<Representation>Picture</Representation>
+															<CommandName>Form.Item.HTMLEditor.StandardCommand.TextColor</CommandName>
+															<ExtendedTooltip name="TextColorExtendedTooltip" id="107"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<FormattedDocumentField name="HTMLEditor" id="63">
+											<DataPath>HTMLEditor</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="HTMLEditorContextMenu" id="64"/>
+											<ExtendedTooltip name="HTMLEditorExtendedTooltip" id="65"/>
+										</FormattedDocumentField>
+										<Button name="ActionInsertAutoTextHTML" id="56">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ActionInsertAutoTextHTML</CommandName>
+											<ExtendedTooltip name="ActionInsertAutoTextHTMLExtendedTooltip" id="57"/>
+										</Button>
+										<InputField name="SelLanguage1" id="48">
+											<DataPath>SelLanguage</DataPath>
+											<DropListButton>true</DropListButton>
+											<ChoiceButton>false</ChoiceButton>
+											<ClearButton>false</ClearButton>
+											<SpinButton>false</SpinButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="SelLanguage1ContextMenu" id="49"/>
+											<ExtendedTooltip name="SelLanguage1ExtendedTooltip" id="50"/>
+											<Events>
+												<Event name="OnChange">SelLanguageOnChange</Event>
+												<Event name="Clearing">SelLanguageClearing</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="GroupHTMLEdit" id="46">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>HTML</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>HTML</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>HTML</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="GroupHTMLEditExtendedTooltip" id="47"/>
+									<ChildItems>
+										<InputField name="HTMLTextRu" id="149">
+											<DataPath>Object.HTMLTextRu</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>7</Height>
+											<HorizontalStretch>true</HorizontalStretch>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="HTMLTextRuContextMenu" id="150"/>
+											<ExtendedTooltip name="HTMLTextRuExtendedTooltip" id="151"/>
+										</InputField>
+										<InputField name="HTMLTextEn" id="152">
+											<DataPath>Object.HTMLTextEn</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>7</Height>
+											<HorizontalStretch>true</HorizontalStretch>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="HTMLTextEnContextMenu" id="153"/>
+											<ExtendedTooltip name="HTMLTextEnExtendedTooltip" id="154"/>
+										</InputField>
+										<InputField name="HTMLTextDe" id="155">
+											<DataPath>Object.HTMLTextDe</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>7</Height>
+											<HorizontalStretch>true</HorizontalStretch>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="HTMLTextDeContextMenu" id="156"/>
+											<ExtendedTooltip name="HTMLTextDeExtendedTooltip" id="157"/>
+										</InputField>
+										<InputField name="SelLanguage3" id="158">
+											<DataPath>SelLanguage</DataPath>
+											<DropListButton>true</DropListButton>
+											<ChoiceButton>false</ChoiceButton>
+											<ClearButton>false</ClearButton>
+											<SpinButton>false</SpinButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="SelLanguage3ContextMenu" id="159"/>
+											<ExtendedTooltip name="SelLanguage3ExtendedTooltip" id="160"/>
+											<Events>
+												<Event name="OnChange">SelLanguageOnChange</Event>
+												<Event name="Clearing">SelLanguageClearing</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<CheckBoxField name="AttachDocumentPrintFormToEMail" id="125">
+			<DataPath>Object.AttachDocumentPrintFormToEMail</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="AttachDocumentPrintFormToEMailContextMenu" id="126"/>
+			<ExtendedTooltip name="AttachDocumentPrintFormToEMailExtendedTooltip" id="127"/>
+			<Events>
+				<Event name="OnChange">AttachDocumentPrintFormToEMailOnChange</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="ObjectPrintingFormRu" id="128">
+			<DataPath>Object.ObjectPrintingFormRu</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="ObjectPrintingFormRuContextMenu" id="129"/>
+			<ExtendedTooltip name="ObjectPrintingFormRuExtendedTooltip" id="130"/>
+			<Events>
+				<Event name="StartChoice">ObjectPrintingFormStartChoice</Event>
+			</Events>
+		</InputField>
+		<InputField name="ObjectPrintingFormEn" id="131">
+			<DataPath>Object.ObjectPrintingFormEn</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="ObjectPrintingFormEnContextMenu" id="132"/>
+			<ExtendedTooltip name="ObjectPrintingFormEnExtendedTooltip" id="133"/>
+			<Events>
+				<Event name="StartChoice">ObjectPrintingFormStartChoice</Event>
+			</Events>
+		</InputField>
+		<InputField name="ObjectPrintingFormDe" id="134">
+			<DataPath>Object.ObjectPrintingFormDe</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="ObjectPrintingFormDeContextMenu" id="135"/>
+			<ExtendedTooltip name="ObjectPrintingFormDeExtendedTooltip" id="136"/>
+			<Events>
+				<Event name="StartChoice">ObjectPrintingFormStartChoice</Event>
+			</Events>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.SMSTemplates</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="SelLanguage" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Language</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Sprache</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Язык</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Languages</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="TNumberOfSMS" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Number of SMS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl von SMS in der Mitteilung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во СМС в сообщ.</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TMessageLength" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Message length (chars)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Länge der Mitteilung (Symb.)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина сообщения (симв.)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="HTMLEditor" id="6">
+			<Type>
+				<v8:Type xmlns:fd="http://v8.1c.ru/8.2/data/formatted-document">fd:FormattedDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelLanguageOld" id="7">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Languages</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PrevHTMLPanelPage" id="8">
+			<Type/>
+		</Attribute>
+		<Attribute name="HTMLViewer" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>HTMLViewer</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TypeDescription" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Object type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Objekttyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionInsertAutoTextSMS" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insert autotext...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Autotext einfügen...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить автозамену...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Action insert auto text SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizardTableParameters</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionInsertAutoTextSMS</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ActionInsertAutoTextHTML" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insert autotext...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Autotext einfügen...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить автозамену...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Action insert auto text HTML</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizardTableParameters</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionInsertAutoTextHTML</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ActionInsertPicture" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insert picture...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bild einfügen...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить картинку...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Picture</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionInsertPicture</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

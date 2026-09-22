@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormPostAndClose" id="51">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write and close</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern und schließen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="52"/>
+			</Button>
+			<Button name="FormPost" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Post</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostExtendedTooltip" id="54"/>
+			</Button>
+			<Button name="FormWrite" id="55">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Save without posting</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern ohne posting</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить без проведения</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormWriteExtendedTooltip" id="56"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupDateNumberAndAuthor" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date, number and author</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Datum, Nummer und Autor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата, номер и автор</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupDateNumberAndAuthorExtendedTooltip" id="48"/>
+			<ChildItems>
+				<InputField name="Number" id="1">
+					<DataPath>Object.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="NumberContextMenu" id="2"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Date" id="4">
+					<DataPath>Object.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateContextMenu" id="5"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+					<Events>
+						<Event name="OnChange">DateOnChange</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="IsInFuture" id="60">
+					<DataPath>Object.IsInFuture</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsInFutureContextMenu" id="61"/>
+					<ExtendedTooltip name="IsInFutureExtendedTooltip" id="62"/>
+				</CheckBoxField>
+				<InputField name="Author" id="19">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="AuthorContextMenu" id="20"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="21"/>
+				</InputField>
+				<InputField name="Hotel" id="7">
+					<DataPath>Object.Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="8"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHeader" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="50"/>
+			<ChildItems>
+				<InputField name="PriceTagType" id="10">
+					<DataPath>Object.PriceTagType</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="PriceTagTypeContextMenu" id="11"/>
+					<ExtendedTooltip name="PriceTagTypeExtendedTooltip" id="12"/>
+				</InputField>
+				<CheckBoxField name="EndValueNotIncluded" id="57">
+					<DataPath>Object.EndValueNotIncluded</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="EndValueNotIncludedContextMenu" id="58"/>
+					<ExtendedTooltip name="EndValueNotIncludedExtendedTooltip" id="59"/>
+					<Events>
+						<Event name="OnChange">EndValueNotIncludedOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="RoomRatesApproved" id="16">
+					<DataPath>Object.RoomRatesApproved</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="RoomRatesApprovedContextMenu" id="17"/>
+					<ExtendedTooltip name="RoomRatesApprovedExtendedTooltip" id="18"/>
+					<Events>
+						<Event name="OnChange">RoomRatesApprovedOnChange</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="PriceTagRanges" id="22">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.PriceTagRanges</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="PriceTagRangesContextMenu" id="23"/>
+			<AutoCommandBar name="PriceTagRangesCommandBar" id="24">
+				<ChildItems>
+					<ButtonGroup name="PriceTagRangesGroupActions" id="73">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Actions</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Aktionen</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Действия</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="PriceTagRangesGroupActionsExtendedTooltip" id="74"/>
+						<ChildItems>
+							<Button name="PriceTagRangesAdd" id="63">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.PriceTagRanges.StandardCommand.Add</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Add</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Hinzufügen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="PriceTagRangesAddExtendedTooltip" id="64"/>
+							</Button>
+							<Button name="PriceTagRangesCopy" id="65">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.PriceTagRanges.StandardCommand.Copy</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Copy row</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Zeile kopieren</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Скопировать</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="PriceTagRangesCopyExtendedTooltip" id="66"/>
+							</Button>
+							<Button name="PriceTagRangesDelete" id="67">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.PriceTagRanges.StandardCommand.Delete</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.Delete</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Delete</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Löschen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Удалить</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="PriceTagRangesDeleteExtendedTooltip" id="68"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="PriceTagRangesGroupMoveRows" id="75">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Rows move</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Zeilen verschieben</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сдвиг строк</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="PriceTagRangesGroupMoveRowsExtendedTooltip" id="76"/>
+						<ChildItems>
+							<Button name="PriceTagRangesMoveUp" id="69">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.PriceTagRanges.StandardCommand.MoveUp</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Move up</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Nach oben</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Вверх</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="PriceTagRangesMoveUpExtendedTooltip" id="70"/>
+							</Button>
+							<Button name="PriceTagRangesMoveDown" id="71">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.PriceTagRanges.StandardCommand.MoveDown</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Move down</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Nach unten</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Вниз</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="PriceTagRangesMoveDownExtendedTooltip" id="72"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="PriceTagRangesExtendedTooltip" id="25"/>
+			<SearchStringAddition name="PriceTagRangesSearchString" id="26">
+				<AdditionSource>
+					<Item>PriceTagRanges</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PriceTagRangesSearchStringContextMenu" id="27"/>
+				<ExtendedTooltip name="PriceTagRangesSearchStringExtendedTooltip" id="28"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="PriceTagRangesViewStatus" id="29">
+				<AdditionSource>
+					<Item>PriceTagRanges</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PriceTagRangesViewStatusContextMenu" id="30"/>
+				<ExtendedTooltip name="PriceTagRangesViewStatusExtendedTooltip" id="31"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="PriceTagRangesSearchControl" id="32">
+				<AdditionSource>
+					<Item>PriceTagRanges</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="PriceTagRangesSearchControlContextMenu" id="33"/>
+				<ExtendedTooltip name="PriceTagRangesSearchControlExtendedTooltip" id="34"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="PriceTagRangesLineNumber" id="35">
+					<DataPath>Object.PriceTagRanges.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>4</Width>
+					<ContextMenu name="PriceTagRangesLineNumberContextMenu" id="36"/>
+					<ExtendedTooltip name="PriceTagRangesLineNumberExtendedTooltip" id="37"/>
+				</LabelField>
+				<InputField name="PriceTagRangesStartValue" id="38">
+					<DataPath>Object.PriceTagRanges.StartValue</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Start value &lt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Startwert &lt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нач. знач. &lt;</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>10</Width>
+					<ContextMenu name="PriceTagRangesStartValueContextMenu" id="39"/>
+					<ExtendedTooltip name="PriceTagRangesStartValueExtendedTooltip" id="40"/>
+				</InputField>
+				<InputField name="PriceTagRangesEndValue" id="41">
+					<DataPath>Object.PriceTagRanges.EndValue</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;= End value</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;= Endwert</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;= Кон. знач.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>10</Width>
+					<ContextMenu name="PriceTagRangesEndValueContextMenu" id="42"/>
+					<ExtendedTooltip name="PriceTagRangesEndValueExtendedTooltip" id="43"/>
+				</InputField>
+				<InputField name="PriceTagRangesPriceTag" id="44">
+					<DataPath>Object.PriceTagRanges.PriceTag</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="PriceTagRangesPriceTagContextMenu" id="45"/>
+					<ExtendedTooltip name="PriceTagRangesPriceTagExtendedTooltip" id="46"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Remarks" id="13">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="14"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="15"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.SetPriceTagRanges</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="WasModified" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document was modified</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dokument wurde geändert</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ был изменен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OldDate" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Old date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Altes Datum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.PriceTags.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.PriceTagRanges.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.SetPriceTagRangesChangeHistory.StandardCommand.OpenByValue.SetPriceTagRanges</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

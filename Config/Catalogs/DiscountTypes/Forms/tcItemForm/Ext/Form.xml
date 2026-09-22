@@ -1,0 +1,2342 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupColor" id="557">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Color</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Farbe</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Цвет</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupColorExtendedTooltip" id="558"/>
+				<ChildItems>
+					<Button name="FormSetColor" id="559">
+						<Type>CommandBarButton</Type>
+						<Representation>Text</Representation>
+						<CommandName>Form.Command.SetColor</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Color...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Farbe...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цвет...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="FormSetColorExtendedTooltip" id="560"/>
+					</Button>
+					<Button name="FormClearColor" id="561">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Command.ClearColor</CommandName>
+						<ExtendedTooltip name="FormClearColorExtendedTooltip" id="562"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupDecorationMessage" id="273">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group decoration message</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#FBD4D4</BackColor>
+			<ExtendedTooltip name="GroupDecorationMessageExtendedTooltip" id="274"/>
+			<ChildItems>
+				<PictureDecoration name="DecorationAttention" id="275">
+					<Width>2</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<Picture>
+						<xr:Ref>StdPicture.AppearanceExclamationMarkIcon</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="DecorationAttentionContextMenu" id="276"/>
+					<ExtendedTooltip name="DecorationAttentionExtendedTooltip" id="277"/>
+				</PictureDecoration>
+				<LabelDecoration name="DecorationMessage" id="278">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>69</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Vielleicht ist es unmöglich, die Art der Loyalität zu ändern. Es gibt Rabattkarten</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Changing the type of loyalty is impossible, maybe. there are discount cards</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменение вида лояльности невозвожно, тк. имеются дискотные карты</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DecorationMessageContextMenu" id="279"/>
+					<ExtendedTooltip name="DecorationMessageExtendedTooltip" id="280"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupLoyaltyType" id="134">
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupLoyaltyTypeExtendedTooltip" id="135"/>
+			<ChildItems>
+				<InputField name="LoyaltyType" id="136">
+					<DataPath>Object.LoyaltyType</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Font bold="true" kind="AutoFont"/>
+					<ContextMenu name="LoyaltyTypeContextMenu" id="137"/>
+					<ExtendedTooltip name="LoyaltyTypeExtendedTooltip" id="138"/>
+					<Events>
+						<Event name="OnChange">LoyaltyTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="Decoration3" id="188">
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Decoration3ContextMenu" id="189"/>
+					<ExtendedTooltip name="Decoration3ExtendedTooltip" id="190"/>
+				</LabelDecoration>
+				<InputField name="Code" id="5">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="6"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="7"/>
+				</InputField>
+				<InputField name="SortCode" id="14">
+					<DataPath>Object.SortCode</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="SortCodeContextMenu" id="15"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="16"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Header" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="HeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="GroupDescription" id="184">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group description</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupDescriptionExtendedTooltip" id="185"/>
+					<ChildItems>
+						<InputField name="Description" id="8">
+							<DataPath>Object.Description</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="DescriptionContextMenu" id="9"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="10"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupHotel" id="186">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group hotel</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupHotelExtendedTooltip" id="187"/>
+					<ChildItems>
+						<InputField name="Hotel" id="109">
+							<DataPath>Object.Hotel</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="HotelContextMenu" id="110"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="111"/>
+						</InputField>
+						<InputField name="Parent" id="11">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ParentContextMenu" id="12"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="13"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Decoration12" id="191">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration12ContextMenu" id="192"/>
+			<ExtendedTooltip name="Decoration12ExtendedTooltip" id="193"/>
+		</LabelDecoration>
+		<Pages name="Pages" id="139">
+			<VerticalStretch>true</VerticalStretch>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="140"/>
+			<ChildItems>
+				<Page name="PageBonuses" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Bonuses</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Boni</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бонусы</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="PageBonusesExtendedTooltip" id="142"/>
+					<ChildItems>
+						<UsualGroup name="Group7" id="479">
+							<VerticalStretch>true</VerticalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group7ExtendedTooltip" id="480"/>
+							<ChildItems>
+								<UsualGroup name="Group2" id="475">
+									<Width>43</Width>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group2ExtendedTooltip" id="476"/>
+									<ChildItems>
+										<InputField name="AccumulatingDiscountType1" id="423">
+											<DataPath>Object.AccumulatingDiscountType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Bonuses calculation algorithm</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Bonus-Berechnungsalgorithmus</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Алгоритм расчета бонусов</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="AccumulatingDiscountType1ContextMenu" id="424"/>
+											<ExtendedTooltip name="AccumulatingDiscountType1ExtendedTooltip" id="425"/>
+										</InputField>
+										<InputField name="ExternalAlgorithm" id="76">
+											<DataPath>Object.ExternalAlgorithm</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ExternalAlgorithmContextMenu" id="77"/>
+											<ExtendedTooltip name="ExternalAlgorithmExtendedTooltip" id="78"/>
+										</InputField>
+										<InputField name="BonusCalculationFactor" id="100">
+											<DataPath>Object.BonusCalculationFactor</DataPath>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="BonusCalculationFactorContextMenu" id="101"/>
+											<ExtendedTooltip name="BonusCalculationFactorExtendedTooltip" id="102"/>
+										</InputField>
+										<CheckBoxField name="DifferentBonusCalculationFactorsForServiceGroupsAllowed" id="420">
+											<DataPath>Object.DifferentBonusCalculationFactorsForServiceGroupsAllowed</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="DifferentBonusCalculationFactorsForServiceGroupsAllowedContextMenu" id="421"/>
+											<ExtendedTooltip name="DifferentBonusCalculationFactorsForServiceGroupsAllowedExtendedTooltip" id="422"/>
+											<Events>
+												<Event name="OnChange">DifferentBonusCalculationFactorsForServiceGroupsAllowedOnChange</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="CalculateBonusesByPayments" id="576">
+											<DataPath>Object.CalculateBonusesByPayments</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="CalculateBonusesByPaymentsContextMenu" id="577"/>
+											<ExtendedTooltip name="CalculateBonusesByPaymentsExtendedTooltip" id="578"/>
+										</CheckBoxField>
+										<CheckBoxField name="ExcludeBonusesPayments" id="234">
+											<DataPath>Object.ExcludeBonusesPayments</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="ExcludeBonusesPaymentsContextMenu" id="235"/>
+											<ExtendedTooltip name="ExcludeBonusesPaymentsExtendedTooltip" id="236"/>
+										</CheckBoxField>
+										<InputField name="BonusRateMultiplier" id="603">
+											<DataPath>Object.BonusRateMultiplier</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Convertion rate multiplier</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Multiplikator des Konvertierungskurses</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Множитель курса конвертации</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>8</Width>
+											<ContextMenu name="BonusRateMultiplierContextMenu" id="604"/>
+											<ExtendedTooltip name="BonusRateMultiplierExtendedTooltip" id="605"/>
+										</InputField>
+										<InputField name="MaxPercentPayment" id="203">
+											<DataPath>Object.MaxPercentPayment</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>If the field is empty, then 100% of the check amount is available.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wenn das Feld leer ist, stehen 100% des Scheckbetrags zur Verfügung.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Если поле пустое, тогда доступно 100% суммы чека</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="MaxPercentPaymentContextMenu" id="204"/>
+											<ExtendedTooltip name="MaxPercentPaymentExtendedTooltip" id="205"/>
+										</InputField>
+										<InputField name="DaysDelay" id="197">
+											<DataPath>Object.DaysDelay</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Bonuses will be awarded after days</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Boni werden nach Tagen vergeben</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Бонусы будут начислены по истечению дней</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="DaysDelayContextMenu" id="198"/>
+											<ExtendedTooltip name="DaysDelayExtendedTooltip" id="199"/>
+										</InputField>
+										<InputField name="Validity" id="237">
+											<DataPath>Object.Validity</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Срок действия карт лояльности в днях</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="ValidityContextMenu" id="238"/>
+											<ExtendedTooltip name="ValidityExtendedTooltip" id="239"/>
+										</InputField>
+										<InputField name="BonusesValidity" id="666">
+											<DataPath>Object.BonusesValidity</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Bonuses validity in days</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="BonusesValidityContextMenu" id="667"/>
+											<ExtendedTooltip name="BonusesValidityExtendedTooltip" id="668"/>
+										</InputField>
+										<LabelDecoration name="Decoration16" id="490">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Border width="1">
+												<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+											</Border>
+											<ContextMenu name="Decoration16ContextMenu" id="491"/>
+											<ExtendedTooltip name="Decoration16ExtendedTooltip" id="492"/>
+										</LabelDecoration>
+										<CheckBoxField name="ExternalBonusSystemIsUsed" id="103">
+											<DataPath>Object.ExternalBonusSystemIsUsed</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="ExternalBonusSystemIsUsedContextMenu" id="104"/>
+											<ExtendedTooltip name="ExternalBonusSystemIsUsedExtendedTooltip" id="105"/>
+										</CheckBoxField>
+										<InputField name="ExternalInteraction" id="582">
+											<DataPath>Object.ExternalInteraction</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ContextMenu name="ExternalInteractionContextMenu" id="583"/>
+											<ExtendedTooltip name="ExternalInteractionExtendedTooltip" id="584"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Group6" id="477">
+									<Width>43</Width>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group6ExtendedTooltip" id="478"/>
+									<ChildItems>
+										<LabelDecoration name="DecorationRestrictions" id="481">
+											<TextColor>style:AccentColor</TextColor>
+											<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Einschränkungen für Bonusberechnungen:</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Restrictions for bonuses calculations:</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ограничения на начисление бонусов:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="DecorationRestrictionsContextMenu" id="482"/>
+											<ExtendedTooltip name="DecorationRestrictionsExtendedTooltip" id="483"/>
+										</LabelDecoration>
+										<InputField name="MinQuantityCalculateDays" id="200">
+											<DataPath>Object.MinQuantityCalculateDays</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Minimum number of stay days</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Mindestaufenthaltstage</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Минимальное кол-во дней пребывания</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Bonuses will be added only if the guest has lived a minimum number of days</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Boni werden nur vergeben, wenn der Gast eine Mindestanzahl von Tagen gelebt hat</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Бонусы будут начислены только, если гость прожил минимальное количество дней</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="MinQuantityCalculateDaysContextMenu" id="201"/>
+											<ExtendedTooltip name="MinQuantityCalculateDaysExtendedTooltip" id="202"/>
+										</InputField>
+										<InputField name="NumberOfGuestVisits" id="493">
+											<DataPath>Object.NumberOfGuestVisits</DataPath>
+											<Width>8</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="NumberOfGuestVisitsContextMenu" id="494"/>
+											<ExtendedTooltip name="NumberOfGuestVisitsExtendedTooltip" id="495"/>
+										</InputField>
+										<UsualGroup name="GroupDirectSales" id="606">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Direct sales</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Direktvertrieb</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Прямые продажи</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupDirectSalesExtendedTooltip" id="607"/>
+											<ChildItems>
+												<CheckBoxField name="DirectSalesOnly" id="484">
+													<DataPath>Object.DirectSalesOnly</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="DirectSalesOnlyContextMenu" id="485"/>
+													<ExtendedTooltip name="DirectSalesOnlyExtendedTooltip" id="486"/>
+												</CheckBoxField>
+												<InputField name="CustomerType" id="487">
+													<DataPath>Object.CustomerType</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>If the "Direct sales only" flag is disabled and the customer type is not specified, bonuses are awarded to all guests.
+
+If the customer type is specified and the "Direct sales only" flag is disabled, bonuses will only be awarded to guests from customers with this type.
+
+If the customer type is specified and the "Direct sales only" flag is enabled, bonuses will be awarded to both direct sales guests and guests from customers with this type.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Wenn die Flagge "Nur Direktverkauf" deaktiviert ist und die Firmentyp nicht angegeben ist, werden Boni zu allen Gästen gutgeschrieben.
+
+Wenn die Firmentyp angegeben ist und die Flagge "Nur Direktverkauf" deaktiviert ist, werden Boni nur Gästen von Firmen mit diesem Typ gutgeschrieben.
+
+Wenn die Firmentyp angegeben ist und die Flagge "Nur Direktverkauf" aktiviert ist, werden Boni sowohl direktvertriebsgästen als auch Gästen von Firmen mit diesem Typ gutgeschrieben.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Если флаг "Только прямые продажи" выключен и тип контрагента не указан, то бонусы начисляются всем гостям.
+
+Если тип контрагента указан и флаг "Только прямые продажи" выключен, то бонусы будут начислены только гостям от контрагентов с таким типом.
+
+Если тип контрагента указан и флаг "Только прямые продажи" включен, то бонусы будут начислены как гостям по прямым продажам, так и гостям от контрагентов с таким типом.</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="CustomerTypeContextMenu" id="488"/>
+													<ExtendedTooltip name="CustomerTypeExtendedTooltip" id="489"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupRoomRates" id="515">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Calculate bonuses only for rates from the list:</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Berechnen Boni nur für Tarife aus der Liste:</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Рассчитывать бонусы только для тарифов из списка</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Collapsed>true</Collapsed>
+											<ControlRepresentation>Picture</ControlRepresentation>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="GroupRoomRatesExtendedTooltip" id="516"/>
+											<ChildItems>
+												<Table name="RoomRatesAllowed" id="496">
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<DataPath>Object.RoomRatesAllowed</DataPath>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="RoomRatesAllowedContextMenu" id="497"/>
+													<AutoCommandBar name="RoomRatesAllowedCommandBar" id="498"/>
+													<ExtendedTooltip name="RoomRatesAllowedExtendedTooltip" id="499"/>
+													<SearchStringAddition name="RoomRatesAllowedSearchString" id="500">
+														<AdditionSource>
+															<Item>RoomRatesAllowed</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="RoomRatesAllowedSearchStringContextMenu" id="501"/>
+														<ExtendedTooltip name="RoomRatesAllowedSearchStringExtendedTooltip" id="502"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="RoomRatesAllowedViewStatus" id="503">
+														<AdditionSource>
+															<Item>RoomRatesAllowed</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="RoomRatesAllowedViewStatusContextMenu" id="504"/>
+														<ExtendedTooltip name="RoomRatesAllowedViewStatusExtendedTooltip" id="505"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="RoomRatesAllowedSearchControl" id="506">
+														<AdditionSource>
+															<Item>RoomRatesAllowed</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="RoomRatesAllowedSearchControlContextMenu" id="507"/>
+														<ExtendedTooltip name="RoomRatesAllowedSearchControlExtendedTooltip" id="508"/>
+													</SearchControlAddition>
+													<ChildItems>
+														<LabelField name="RoomRatesAllowedLineNumber" id="509">
+															<DataPath>Object.RoomRatesAllowed.LineNumber</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="RoomRatesAllowedLineNumberContextMenu" id="510"/>
+															<ExtendedTooltip name="RoomRatesAllowedLineNumberExtendedTooltip" id="511"/>
+														</LabelField>
+														<InputField name="RoomRatesAllowedRoomRate" id="512">
+															<DataPath>Object.RoomRatesAllowed.RoomRate</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="RoomRatesAllowedRoomRateContextMenu" id="513"/>
+															<ExtendedTooltip name="RoomRatesAllowedRoomRateExtendedTooltip" id="514"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Decoration15" id="464">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Border width="1">
+								<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+							</Border>
+							<ContextMenu name="Decoration15ContextMenu" id="465"/>
+							<ExtendedTooltip name="Decoration15ExtendedTooltip" id="466"/>
+						</LabelDecoration>
+						<UsualGroup name="GroupNumberingRule" id="473">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group Rule for issuing discount cards</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gruppenregel für die Ausgabe von Rabattkarten</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа Правило выдачи дисконтных карт</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupNumberingRuleExtendedTooltip" id="474"/>
+							<ChildItems>
+								<UsualGroup name="GroupLoyaltyProgram" id="650">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Loyalty program</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Treueprogramm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Программа лояльности</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupLoyaltyProgramExtendedTooltip" id="651"/>
+									<ChildItems>
+										<CheckBoxField name="CreateDiscountCards" id="467">
+											<DataPath>Object.CreateDiscountCards</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="CreateDiscountCardsContextMenu" id="468"/>
+											<ExtendedTooltip name="CreateDiscountCardsExtendedTooltip" id="469"/>
+										</CheckBoxField>
+										<CheckBoxField name="RequirePresentationOfDiscountCardUponCheckIn" id="652">
+											<DataPath>Object.RequirePresentationOfDiscountCardUponCheckIn</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="RequirePresentationOfDiscountCardUponCheckInContextMenu" id="653"/>
+											<ExtendedTooltip name="RequirePresentationOfDiscountCardUponCheckInExtendedTooltip" id="654"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupDiscountCardIDAndDescriptionGenerationRules" id="566">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount card ID and description generation rules</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Regeln zum Ausfüllen der ID und des Namens von Rabattkarten</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Правила заполнения идентификатора и наименования дисконтных карт</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDiscountCardIDAndDescriptionGenerationRulesExtendedTooltip" id="567"/>
+									<ChildItems>
+										<InputField name="NumberingRule" id="470">
+											<DataPath>Object.NumberingRule</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Fill discount card ID by</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Rabattkarten-ID ausfüllen bis</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Способ заполнения ID дисконтных карт</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Phone</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Telefon</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер телефона</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Serial number (Code)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Seriennummer (Code)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Порядковый номер (Код)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Both- card number or phone</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Seriennummer oder Telefon</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер карты или телефон</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="NumberingRuleContextMenu" id="471"/>
+											<ExtendedTooltip name="NumberingRuleExtendedTooltip" id="472"/>
+										</InputField>
+										<InputField name="DiscountCardDescriptionTemplate" id="563">
+											<DataPath>Object.DiscountCardDescriptionTemplate</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>You can specify any discount type attribute as template using it's name in square brackets:
+[DiscountType] - the name of the discount type;
+[Client] - Short name of the client;
+[Client.FullName] - Full name of the client;
+[Identifier] - card identifier;
+...
+You can specify a combination of fields. For example in the form: [Client] - [Identifier]</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Sie können jedes Rabatttypattribut als Vorlage angeben, indem Sie seinen Namen in eckigen Klammern verwenden:
+[DiscountType] - der Name des Rabatttyps;
+[Kunde] - Kurzname des Kunden;
+[Client.FullName] - Vollständiger Name des Clients;
+[Kennung] - Kartenkennung;
+...
+Sie können beispielsweise eine Kombination von Feldern angeben: [Client] - [Identifier]</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Вы можете указать любой атрибут типа скидки в качестве шаблона, используя его название в квадратных скобках:
+[DiscountType] - наименование типа скидки;
+[Client] - Краткое ФИО клиента;
+[Client.FullName] - Полное имя клиента;
+[Identifier] - идентификатор карты;
+...
+Можно указывать, например, комбинацию полей: [Client] - [Identifier]</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>If empty, the client's surname and initials or card ID will be used (see program constants)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wenn leer, werden der Nachname und die Initialen des Kunden oder die Karten-ID verwendet (siehe Programmkonstanten)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Если пусто, будут использованы фамилия и инициалы клиента или ID карты (см. константы программы) </v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="DiscountCardDescriptionTemplateContextMenu" id="564"/>
+											<ExtendedTooltip name="DiscountCardDescriptionTemplateExtendedTooltip" id="565"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Decoration13" id="439">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Border width="1">
+								<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+							</Border>
+							<ContextMenu name="Decoration13ContextMenu" id="440"/>
+							<ExtendedTooltip name="Decoration13ExtendedTooltip" id="441"/>
+						</LabelDecoration>
+						<UsualGroup name="GroupInformClient" id="426">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupInformClientExtendedTooltip" id="427"/>
+							<ChildItems>
+								<UsualGroup name="Group8" id="533">
+									<Width>36</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group8ExtendedTooltip" id="534"/>
+									<ChildItems>
+										<CheckBoxField name="InformClientWhenCharging" id="428">
+											<DataPath>Object.InformClientWhenChargingOrStorno</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="InformClientWhenChargingContextMenu" id="429"/>
+											<ExtendedTooltip name="InformClientWhenChargingExtendedTooltip" id="430"/>
+											<Events>
+												<Event name="OnChange">InformClientWhenChargingOnChange</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupSMSTemplate" id="437">
+									<Enabled>false</Enabled>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupSMSTemplateExtendedTooltip" id="438"/>
+									<ChildItems>
+										<InputField name="DeliveryType" id="431">
+											<DataPath>Object.DeliveryType</DataPath>
+											<ContextMenu name="DeliveryTypeContextMenu" id="432"/>
+											<ExtendedTooltip name="DeliveryTypeExtendedTooltip" id="433"/>
+										</InputField>
+										<InputField name="SMSTemplate" id="434">
+											<DataPath>Object.SMSTemplate</DataPath>
+											<ContextMenu name="SMSTemplateContextMenu" id="435"/>
+											<ExtendedTooltip name="SMSTemplateExtendedTooltip" id="436"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupInformClientWhenCreationCard" id="517">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group inform client when creation card</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupInformClientWhenCreationCardExtendedTooltip" id="518"/>
+							<ChildItems>
+								<UsualGroup name="Group9" id="535">
+									<Width>36</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group9ExtendedTooltip" id="536"/>
+									<ChildItems>
+										<CheckBoxField name="InformClientWhenCreationCard" id="524">
+											<DataPath>Object.InformClientWhenCreationCard</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="InformClientWhenCreationCardContextMenu" id="525"/>
+											<ExtendedTooltip name="InformClientWhenCreationCardExtendedTooltip" id="526"/>
+											<Events>
+												<Event name="OnChange">InformClientWhenCreationCardOnChange</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupSMSTemplateInformClientWhenCreationCard" id="522">
+									<Enabled>false</Enabled>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupSMSTemplateInformClientWhenCreationCardExtendedTooltip" id="523"/>
+									<ChildItems>
+										<InputField name="DeliveryTypeInformClientWhenCreationCard" id="527">
+											<DataPath>Object.DeliveryTypeInformClientWhenCreationCard</DataPath>
+											<ContextMenu name="DeliveryTypeInformClientWhenCreationCardContextMenu" id="528"/>
+											<ExtendedTooltip name="DeliveryTypeInformClientWhenCreationCardExtendedTooltip" id="529"/>
+										</InputField>
+										<InputField name="SMSTemplateInformClientWhenCreationCard" id="530">
+											<DataPath>Object.SMSTemplateInformClientWhenCreationCard</DataPath>
+											<ContextMenu name="SMSTemplateInformClientWhenCreationCardContextMenu" id="531"/>
+											<ExtendedTooltip name="SMSTemplateInformClientWhenCreationCardExtendedTooltip" id="532"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="BonusesVerifyClientBySMS" id="414">
+							<DataPath>Object.VerifyClientBySMS</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>CheckBox</CheckBoxType>
+							<ContextMenu name="BonusesVerifyClientBySMSContextMenu" id="415"/>
+							<ExtendedTooltip name="BonusesVerifyClientBySMSExtendedTooltip" id="416"/>
+						</CheckBoxField>
+						<UsualGroup name="GroupCurrencyRates" id="608">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Bonus calculation rates</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Bonus-Nachzählungsraten</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Курсы пересчета бонусов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>PopUp</Behavior>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupCurrencyRatesExtendedTooltip" id="609"/>
+							<ChildItems>
+								<Table name="CurrencyRates" id="610">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<DataPath>CurrencyRates</DataPath>
+									<RowPictureDataPath>CurrencyRates.DefaultPicture</RowPictureDataPath>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="CurrencyRatesContextMenu" id="611"/>
+									<AutoCommandBar name="CurrencyRatesCommandBar" id="612"/>
+									<ExtendedTooltip name="CurrencyRatesExtendedTooltip" id="613"/>
+									<SearchStringAddition name="CurrencyRatesSearchString" id="614">
+										<AdditionSource>
+											<Item>CurrencyRates</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="CurrencyRatesSearchStringContextMenu" id="615"/>
+										<ExtendedTooltip name="CurrencyRatesSearchStringExtendedTooltip" id="616"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="CurrencyRatesViewStatus" id="617">
+										<AdditionSource>
+											<Item>CurrencyRates</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="CurrencyRatesViewStatusContextMenu" id="618"/>
+										<ExtendedTooltip name="CurrencyRatesViewStatusExtendedTooltip" id="619"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="CurrencyRatesSearchControl" id="620">
+										<AdditionSource>
+											<Item>CurrencyRates</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="CurrencyRatesSearchControlContextMenu" id="621"/>
+										<ExtendedTooltip name="CurrencyRatesSearchControlExtendedTooltip" id="622"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="CurrencyRatesBonusRate" id="623">
+											<DataPath>CurrencyRates.BonusRate</DataPath>
+											<ContextMenu name="CurrencyRatesBonusRateContextMenu" id="624"/>
+											<ExtendedTooltip name="CurrencyRatesBonusRateExtendedTooltip" id="625"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesCurrency" id="626">
+											<DataPath>CurrencyRates.Currency</DataPath>
+											<ContextMenu name="CurrencyRatesCurrencyContextMenu" id="627"/>
+											<ExtendedTooltip name="CurrencyRatesCurrencyExtendedTooltip" id="628"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesFactor" id="629">
+											<DataPath>CurrencyRates.Factor</DataPath>
+											<ContextMenu name="CurrencyRatesFactorContextMenu" id="630"/>
+											<ExtendedTooltip name="CurrencyRatesFactorExtendedTooltip" id="631"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesHotel" id="632">
+											<DataPath>CurrencyRates.Hotel</DataPath>
+											<ContextMenu name="CurrencyRatesHotelContextMenu" id="633"/>
+											<ExtendedTooltip name="CurrencyRatesHotelExtendedTooltip" id="634"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesPeriod" id="635">
+											<DataPath>CurrencyRates.Period</DataPath>
+											<ContextMenu name="CurrencyRatesPeriodContextMenu" id="636"/>
+											<ExtendedTooltip name="CurrencyRatesPeriodExtendedTooltip" id="637"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesRate" id="638">
+											<DataPath>CurrencyRates.Rate</DataPath>
+											<ContextMenu name="CurrencyRatesRateContextMenu" id="639"/>
+											<ExtendedTooltip name="CurrencyRatesRateExtendedTooltip" id="640"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesTravellerChequeRate" id="641">
+											<DataPath>CurrencyRates.TravellerChequeRate</DataPath>
+											<ContextMenu name="CurrencyRatesTravellerChequeRateContextMenu" id="642"/>
+											<ExtendedTooltip name="CurrencyRatesTravellerChequeRateExtendedTooltip" id="643"/>
+										</LabelField>
+										<LabelField name="CurrencyRatesDefaultPicture" id="644">
+											<DataPath>CurrencyRates.DefaultPicture</DataPath>
+											<ContextMenu name="CurrencyRatesDefaultPictureContextMenu" id="645"/>
+											<ExtendedTooltip name="CurrencyRatesDefaultPictureExtendedTooltip" id="646"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="PageCertificate" id="143">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Certificate</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zertifikat</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сертификаты</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="PageCertificateExtendedTooltip" id="144"/>
+					<ChildItems>
+						<InputField name="ValidityCertificate" id="240">
+							<DataPath>Object.Validity</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок действия сертификатов в днях</v8:content>
+								</v8:item>
+							</Title>
+							<Width>8</Width>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ValidityCertificateContextMenu" id="241"/>
+							<ExtendedTooltip name="ValidityCertificateExtendedTooltip" id="242"/>
+						</InputField>
+						<InputField name="ProformaInvoiceService" id="411">
+							<DataPath>Object.ProformaInvoiceService</DataPath>
+							<ContextMenu name="ProformaInvoiceServiceContextMenu" id="412"/>
+							<ExtendedTooltip name="ProformaInvoiceServiceExtendedTooltip" id="413"/>
+						</InputField>
+						<LabelDecoration name="Decoration14" id="442">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Border width="1">
+								<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+							</Border>
+							<ContextMenu name="Decoration14ContextMenu" id="443"/>
+							<ExtendedTooltip name="Decoration14ExtendedTooltip" id="444"/>
+						</LabelDecoration>
+						<UsualGroup name="GroupInformClientCertificate" id="445">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group inform client certificate</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group inform client certificate</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupInformClientCertificateExtendedTooltip" id="446"/>
+							<ChildItems>
+								<UsualGroup name="Group11" id="552">
+									<Width>36</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group11ExtendedTooltip" id="553"/>
+									<ChildItems>
+										<CheckBoxField name="InformClientWhenCharging1" id="447">
+											<DataPath>Object.InformClientWhenChargingOrStorno</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="InformClientWhenCharging1ContextMenu" id="448"/>
+											<ExtendedTooltip name="InformClientWhenCharging1ExtendedTooltip" id="449"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupSMSTemplateCertificate" id="450">
+									<Enabled>false</Enabled>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate certificate</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupSMSTemplateCertificateExtendedTooltip" id="451"/>
+									<ChildItems>
+										<InputField name="DeliveryType1" id="452">
+											<DataPath>Object.DeliveryType</DataPath>
+											<ContextMenu name="DeliveryType1ContextMenu" id="453"/>
+											<ExtendedTooltip name="DeliveryType1ExtendedTooltip" id="454"/>
+										</InputField>
+										<InputField name="SMSTemplate1" id="455">
+											<DataPath>Object.SMSTemplate</DataPath>
+											<ContextMenu name="SMSTemplate1ContextMenu" id="456"/>
+											<ExtendedTooltip name="SMSTemplate1ExtendedTooltip" id="457"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupInformClientWhenCreationCardCertificate" id="537">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group inform client when creation card</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group inform client when creation card certificate</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupInformClientWhenCreationCardCertificateExtendedTooltip" id="538"/>
+							<ChildItems>
+								<UsualGroup name="Group10" id="539">
+									<Width>36</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group10ExtendedTooltip" id="540"/>
+									<ChildItems>
+										<CheckBoxField name="InformClientWhenCreationCard1" id="541">
+											<DataPath>Object.InformClientWhenCreationCard</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="InformClientWhenCreationCard1ContextMenu" id="542"/>
+											<ExtendedTooltip name="InformClientWhenCreationCard1ExtendedTooltip" id="543"/>
+											<Events>
+												<Event name="OnChange">InformClientWhenCreationCardOnChange</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupSMSTemplateInformClientWhenCreationCardCertificate" id="544">
+									<Enabled>false</Enabled>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMSTemplate inform client when creation card certificate</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupSMSTemplateInformClientWhenCreationCardCertificateExtendedTooltip" id="545"/>
+									<ChildItems>
+										<InputField name="DeliveryTypeInformClientWhenCreationCard1" id="546">
+											<DataPath>Object.DeliveryTypeInformClientWhenCreationCard</DataPath>
+											<ContextMenu name="DeliveryTypeInformClientWhenCreationCard1ContextMenu" id="547"/>
+											<ExtendedTooltip name="DeliveryTypeInformClientWhenCreationCard1ExtendedTooltip" id="548"/>
+										</InputField>
+										<InputField name="SMSTemplateInformClientWhenCreationCard1" id="549">
+											<DataPath>Object.SMSTemplateInformClientWhenCreationCard</DataPath>
+											<ContextMenu name="SMSTemplateInformClientWhenCreationCard1ContextMenu" id="550"/>
+											<ExtendedTooltip name="SMSTemplateInformClientWhenCreationCard1ExtendedTooltip" id="551"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="CertificateVerifyClientBySMS" id="417">
+							<DataPath>Object.VerifyClientBySMS</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>CheckBox</CheckBoxType>
+							<ContextMenu name="CertificateVerifyClientBySMSContextMenu" id="418"/>
+							<ExtendedTooltip name="CertificateVerifyClientBySMSExtendedTooltip" id="419"/>
+						</CheckBoxField>
+						<UsualGroup name="GroupGiftID" id="658">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group gift ID</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gruppengeschenk-ID</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ИД сертификата</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupGiftIDExtendedTooltip" id="659"/>
+							<ChildItems>
+								<InputField name="NumberingRule1" id="663">
+									<DataPath>Object.NumberingRule</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Fill discount card ID by</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Rabattkarten-ID ausfüllen bis</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Способ заполнения ID</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Top</TitleLocation>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Phone</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Telefon</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Номер телефона</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Serial number</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Seriennummer</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Порядковый номер</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="NumberingRule1ContextMenu" id="664"/>
+									<ExtendedTooltip name="NumberingRule1ExtendedTooltip" id="665"/>
+								</InputField>
+								<CheckBoxField name="GenerateGiftId" id="655">
+									<DataPath>1/0:56c51c3e-2478-45b0-b9ad-2dc4b3b84296</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="GenerateGiftIdContextMenu" id="656"/>
+									<ExtendedTooltip name="GenerateGiftIdExtendedTooltip" id="657"/>
+								</CheckBoxField>
+								<InputField name="InitialGiftID" id="660">
+									<DataPath>1/0:cade5922-bf9a-47b7-bd05-8ee666d17a7c</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="InitialGiftIDContextMenu" id="661"/>
+									<ExtendedTooltip name="InitialGiftIDExtendedTooltip" id="662"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="PageDiscount" id="145">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Discount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rabatt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скидка</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="PageDiscountExtendedTooltip" id="146"/>
+					<ChildItems>
+						<UsualGroup name="Header1" id="281">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Шапка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Header1ExtendedTooltip" id="282"/>
+							<ChildItems>
+								<UsualGroup name="LeftColumn" id="283">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Левая колонка</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="LeftColumnExtendedTooltip" id="284"/>
+									<ChildItems>
+										<UsualGroup name="GroupIsValid" id="588">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Is valid</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Ist gültig</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Действует</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupIsValidExtendedTooltip" id="589"/>
+											<ChildItems>
+												<InputField name="DateValidFrom" id="291">
+													<DataPath>Object.DateValidFrom</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Discount is active from</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Rabatt ist aktiv ab</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Скидка активна с</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Left</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="DateValidFromContextMenu" id="292"/>
+													<ExtendedTooltip name="DateValidFromExtendedTooltip" id="293"/>
+												</InputField>
+												<InputField name="DateValidTo" id="332">
+													<DataPath>Object.DateValidTo</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>to (inclusive)</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>bis (einschließlich)</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>до (включительно)</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Left</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="DateValidToContextMenu" id="333"/>
+													<ExtendedTooltip name="DateValidToExtendedTooltip" id="334"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="DiscountServiceGroup" id="297">
+											<DataPath>Object.DiscountServiceGroup</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Services to apply discount to</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Dienstleistungen, auf die der Rabatt angewendet werden kann</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Услуги, на которые можно применить скидку</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="DiscountServiceGroupContextMenu" id="298"/>
+											<ExtendedTooltip name="DiscountServiceGroupExtendedTooltip" id="299"/>
+										</InputField>
+										<InputField name="WeekDays" id="585">
+											<DataPath>Object.WeekDays</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="WeekDaysContextMenu" id="586"/>
+											<ExtendedTooltip name="WeekDaysExtendedTooltip" id="587"/>
+											<Events>
+												<Event name="StartChoice">WeekDaysStartChoice</Event>
+												<Event name="Clearing">WeekDaysClearing</Event>
+											</Events>
+										</InputField>
+										<CheckBoxField name="IsAmountDiscount" id="305">
+											<DataPath>Object.IsAmountDiscount</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="IsAmountDiscountContextMenu" id="306"/>
+											<ExtendedTooltip name="IsAmountDiscountExtendedTooltip" id="307"/>
+										</CheckBoxField>
+										<UsualGroup name="GroupFreeOfChargeDays" id="595">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Free of charge days</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Kostenlose Tage</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Бесплатные дни</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="GroupFreeOfChargeDaysExtendedTooltip" id="596"/>
+											<ChildItems>
+												<InputField name="EachNDayIsFreeOfCharge" id="308">
+													<DataPath>Object.EachNDayIsFreeOfCharge</DataPath>
+													<TitleLocation>Left</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>3</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="EachNDayIsFreeOfChargeContextMenu" id="309"/>
+													<ExtendedTooltip name="EachNDayIsFreeOfChargeExtendedTooltip" id="310"/>
+												</InputField>
+												<InputField name="NumberOfFreeOfChargeDays" id="597">
+													<DataPath>Object.NumberOfFreeOfChargeDays</DataPath>
+													<TitleLocation>Left</TitleLocation>
+													<ContextMenu name="NumberOfFreeOfChargeDaysContextMenu" id="598"/>
+													<ExtendedTooltip name="NumberOfFreeOfChargeDaysExtendedTooltip" id="599"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<CheckBoxField name="DifferentDiscountPercentsForServiceGroupsAllowed" id="300">
+											<DataPath>Object.DifferentDiscountPercentsForServiceGroupsAllowed</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="DifferentDiscountPercentsForServiceGroupsAllowedContextMenu" id="301"/>
+											<ExtendedTooltip name="DifferentDiscountPercentsForServiceGroupsAllowedExtendedTooltip" id="302"/>
+										</CheckBoxField>
+										<CheckBoxField name="SubtractDiscountFromRoomRevenueAmount" id="554">
+											<DataPath>Object.SubtractDiscountFromRoomRevenueAmount</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="SubtractDiscountFromRoomRevenueAmountContextMenu" id="555"/>
+											<ExtendedTooltip name="SubtractDiscountFromRoomRevenueAmountExtendedTooltip" id="556"/>
+										</CheckBoxField>
+										<UsualGroup name="Group1" id="303">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>1</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>1</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group1ExtendedTooltip" id="304"/>
+											<ChildItems>
+												<CheckBoxField name="DoNotApplyDiscountsToTerms" id="647">
+													<DataPath>Object.DoNotApplyToTerms</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoNotApplyDiscountsToTermsContextMenu" id="648"/>
+													<ExtendedTooltip name="DoNotApplyDiscountsToTermsExtendedTooltip" id="649"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Group3" id="311">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>2</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>2</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>2</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group3ExtendedTooltip" id="312"/>
+											<ChildItems>
+												<CheckBoxField name="DoNotApplyToExternalInterfaces" id="313">
+													<DataPath>Object.DoNotApplyToExternalInterfaces</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="DoNotApplyToExternalInterfacesContextMenu" id="314"/>
+													<ExtendedTooltip name="DoNotApplyToExternalInterfacesExtendedTooltip" id="315"/>
+												</CheckBoxField>
+												<CheckBoxField name="DoNotExportToExternalInterfaces" id="316">
+													<DataPath>Object.DoNotExportToExternalInterfaces</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="DoNotExportToExternalInterfacesContextMenu" id="317"/>
+													<ExtendedTooltip name="DoNotExportToExternalInterfacesExtendedTooltip" id="318"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<CheckBoxField name="TurnOffAutomaticDiscounts" id="351">
+											<DataPath>Object.TurnOffAutomaticDiscounts</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="TurnOffAutomaticDiscountsContextMenu" id="352"/>
+											<ExtendedTooltip name="TurnOffAutomaticDiscountsExtendedTooltip" id="353"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="RightColumn" id="319">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Правая колонка</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="RightColumnExtendedTooltip" id="320"/>
+									<ChildItems>
+										<InputField name="Validity1" id="592">
+											<DataPath>Object.Validity</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Default validity in days for discount cards</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Standardgültigkeit in Tagen für Rabattkarten</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Срок действия дисконтных карт в днях</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="Validity1ContextMenu" id="593"/>
+											<ExtendedTooltip name="Validity1ExtendedTooltip" id="594"/>
+										</InputField>
+										<InputField name="PromoCode" id="600">
+											<DataPath>Object.PromoCode</DataPath>
+											<ContextMenu name="PromoCodeContextMenu" id="601"/>
+											<ExtendedTooltip name="PromoCodeExtendedTooltip" id="602"/>
+											<Events>
+												<Event name="OnChange">PromoCodeOnChange</Event>
+											</Events>
+										</InputField>
+										<UsualGroup name="GroupConfirmation" id="590">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Confirmation</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Bestätigung</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подтверждение</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupConfirmationExtendedTooltip" id="591"/>
+											<ChildItems>
+												<CheckBoxField name="AskForConfirmation" id="294">
+													<DataPath>Object.AskForConfirmation</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Ask for confirmation</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Bestätigung fragen</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Запрашивать подтверждение</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="AskForConfirmationContextMenu" id="295"/>
+													<ExtendedTooltip name="AskForConfirmationExtendedTooltip" id="296"/>
+												</CheckBoxField>
+												<InputField name="ConfirmationPattern" id="335">
+													<DataPath>Object.ConfirmationPattern</DataPath>
+													<TitleLocation>Top</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ConfirmationPatternContextMenu" id="336"/>
+													<ExtendedTooltip name="ConfirmationPatternExtendedTooltip" id="337"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Group4" id="338">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>3</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>3</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>3</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group4ExtendedTooltip" id="339"/>
+											<ChildItems>
+												<CheckBoxField name="IsManualDiscount" id="343">
+													<DataPath>Object.IsManualDiscount</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="IsManualDiscountContextMenu" id="344"/>
+													<ExtendedTooltip name="IsManualDiscountExtendedTooltip" id="345"/>
+												</CheckBoxField>
+												<CheckBoxField name="IsPersonalDiscount" id="340">
+													<DataPath>Object.IsPersonalDiscount</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="IsPersonalDiscountContextMenu" id="341"/>
+													<ExtendedTooltip name="IsPersonalDiscountExtendedTooltip" id="342"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Group5" id="346">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>4</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>4</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>4</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Group5ExtendedTooltip" id="347"/>
+											<ChildItems>
+												<CheckBoxField name="IsForIndividualsOnly" id="348">
+													<DataPath>Object.IsForIndividualsOnly</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="IsForIndividualsOnlyContextMenu" id="349"/>
+													<ExtendedTooltip name="IsForIndividualsOnlyExtendedTooltip" id="350"/>
+												</CheckBoxField>
+												<CheckBoxField name="IsForRackRatesOnly" id="579">
+													<DataPath>Object.IsForRackRatesOnly</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsForRackRatesOnlyContextMenu" id="580"/>
+													<ExtendedTooltip name="IsForRackRatesOnlyExtendedTooltip" id="581"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupClientType" id="568">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Client type</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Kundentyp</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип клиента</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupClientTypeExtendedTooltip" id="569"/>
+											<ChildItems>
+												<CheckBoxField name="ForceSetOfClientType" id="570">
+													<DataPath>Object.ForceSetOfClientType</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ForceSetOfClientTypeContextMenu" id="571"/>
+													<ExtendedTooltip name="ForceSetOfClientTypeExtendedTooltip" id="572"/>
+												</CheckBoxField>
+												<InputField name="ClientType" id="573">
+													<DataPath>Object.ClientType</DataPath>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="ClientTypeContextMenu" id="574"/>
+													<ExtendedTooltip name="ClientTypeExtendedTooltip" id="575"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupRoundingRules" id="354">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Rounding rules</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Rundungsregeln</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Правила округления</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="GroupRoundingRulesExtendedTooltip" id="355"/>
+											<ChildItems>
+												<CheckBoxField name="RoundPrice" id="356">
+													<DataPath>Object.RoundPrice</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>CheckBox</CheckBoxType>
+													<ContextMenu name="RoundPriceContextMenu" id="357"/>
+													<ExtendedTooltip name="RoundPriceExtendedTooltip" id="358"/>
+												</CheckBoxField>
+												<InputField name="RoundPriceType" id="359">
+													<DataPath>Object.RoundPriceType</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="RoundPriceTypeContextMenu" id="360"/>
+													<ExtendedTooltip name="RoundPriceTypeExtendedTooltip" id="361"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="RoundPriceDigits" id="362">
+											<DataPath>Object.RoundPriceDigits</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="RoundPriceDigitsContextMenu" id="363"/>
+											<ExtendedTooltip name="RoundPriceDigitsExtendedTooltip" id="364"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="IsAccumulatingDiscount" id="365">
+							<DataPath>Object.IsAccumulatingDiscount</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>CheckBox</CheckBoxType>
+							<ContextMenu name="IsAccumulatingDiscountContextMenu" id="366"/>
+							<ExtendedTooltip name="IsAccumulatingDiscountExtendedTooltip" id="367"/>
+							<Events>
+								<Event name="OnChange">IsAccumulatingDiscountOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="GroupAccummulatingDiscount" id="368">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Accummulating discount</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Kumulierender Rabatt</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Накопительная скидка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupAccummulatingDiscountExtendedTooltip" id="369"/>
+							<ChildItems>
+								<UsualGroup name="GroupLeftColumn" id="370">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Left column</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Linke Spalte</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Левая колонка</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupLeftColumnExtendedTooltip" id="371"/>
+									<ChildItems>
+										<InputField name="AccumulatingDiscountType" id="372">
+											<DataPath>Object.AccumulatingDiscountType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="AccumulatingDiscountTypeContextMenu" id="373"/>
+											<ExtendedTooltip name="AccumulatingDiscountTypeExtendedTooltip" id="374"/>
+											<Events>
+												<Event name="OnChange">AccumulatingDiscountTypeOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="AccumulatingDiscountDimension" id="375">
+											<DataPath>Object.AccumulatingDiscountDimension</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="AccumulatingDiscountDimensionContextMenu" id="376"/>
+											<ExtendedTooltip name="AccumulatingDiscountDimensionExtendedTooltip" id="377"/>
+										</InputField>
+										<CheckBoxField name="HasToBeDirectlyAssigned" id="405">
+											<DataPath>Object.HasToBeDirectlyAssigned</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="HasToBeDirectlyAssignedContextMenu" id="406"/>
+											<ExtendedTooltip name="HasToBeDirectlyAssignedExtendedTooltip" id="407"/>
+										</CheckBoxField>
+										<CheckBoxField name="IsPerPeriod" id="378">
+											<DataPath>Object.IsPerPeriod</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="IsPerPeriodContextMenu" id="379"/>
+											<ExtendedTooltip name="IsPerPeriodExtendedTooltip" id="380"/>
+										</CheckBoxField>
+										<CheckBoxField name="IsPerVisit" id="402">
+											<DataPath>Object.IsPerVisit</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>CheckBox</CheckBoxType>
+											<ContextMenu name="IsPerVisitContextMenu" id="403"/>
+											<ExtendedTooltip name="IsPerVisitExtendedTooltip" id="404"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupRightColumn" id="389">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Right column</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Rechte Spalte</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Правая колонка</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupRightColumnExtendedTooltip" id="390"/>
+									<ChildItems>
+										<InputField name="ExternalAlgorithm1" id="458">
+											<DataPath>Object.ExternalAlgorithm</DataPath>
+											<ContextMenu name="ExternalAlgorithm1ContextMenu" id="459"/>
+											<ExtendedTooltip name="ExternalAlgorithm1ExtendedTooltip" id="460"/>
+										</InputField>
+										<UsualGroup name="GroupAccummulationPeriod" id="394">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Accummulation period</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Akkumulationszeitraum</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период накопления</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupAccummulationPeriodExtendedTooltip" id="395"/>
+											<ChildItems>
+												<InputField name="AccumulatingDiscountPeriod" id="396">
+													<DataPath>Object.AccumulatingDiscountPeriod</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="AccumulatingDiscountPeriodContextMenu" id="397"/>
+													<ExtendedTooltip name="AccumulatingDiscountPeriodExtendedTooltip" id="398"/>
+												</InputField>
+												<InputField name="AccumulatingDiscountFromDate" id="399">
+													<DataPath>Object.AccumulatingDiscountFromDate</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>or period starts from date</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>oder Zeitraum beginnt ab dem Datum</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>или период начинается с даты</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="AccumulatingDiscountFromDateContextMenu" id="400"/>
+													<ExtendedTooltip name="AccumulatingDiscountFromDateExtendedTooltip" id="401"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="MLOS" id="461">
+											<DataPath>Object.MLOS</DataPath>
+											<Width>5</Width>
+											<ContextMenu name="MLOSContextMenu" id="462"/>
+											<ExtendedTooltip name="MLOSExtendedTooltip" id="463"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<LabelDecoration name="Decoration2" id="181">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration2ContextMenu" id="182"/>
+			<ExtendedTooltip name="Decoration2ExtendedTooltip" id="183"/>
+		</LabelDecoration>
+		<InputField name="Remarks" id="106">
+			<DataPath>Object.Remarks</DataPath>
+			<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="107"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="108"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.DiscountTypes</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Discounts" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Discounts</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.Discounts</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="CurrencyRates" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Currency rates</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>SELECT
+	InformationRegisterCurrencyRates.Period AS Period,
+	InformationRegisterCurrencyRates.Hotel AS Hotel,
+	InformationRegisterCurrencyRates.Currency AS Currency,
+	InformationRegisterCurrencyRates.Rate AS Rate,
+	InformationRegisterCurrencyRates.TravellerChequeRate AS TravellerChequeRate,
+	InformationRegisterCurrencyRates.Factor AS Factor,
+	InformationRegisterCurrencyRates.BonusRate AS BonusRate
+FROM
+	InformationRegister.CurrencyRates AS InformationRegisterCurrencyRates
+WHERE
+	InformationRegisterCurrencyRates.BonusRate &lt;&gt; 0</QueryText>
+				<MainTable>InformationRegister.CurrencyRates</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ItemColor" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Artikelfarbe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет элемента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ItemColorIsSet" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color is set</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ClearColor" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe entfernen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearColor</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SetColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Stellen Sie Farbe</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Set color</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionConditionalAppearance</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SetColor</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

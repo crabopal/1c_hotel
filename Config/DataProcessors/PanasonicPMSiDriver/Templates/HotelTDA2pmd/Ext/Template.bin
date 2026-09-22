@@ -1,0 +1,533 @@
+[Connection]
+Retry=0
+Plessy=0
+LowLevelDiag=0
+IPport=0,0,51000,,0,0
+Bcc=0,0,0,2,0,0,0
+AckNak=,0,
+Enq=[5],0,[6],[6]
+Block=0,1,2,1,1,3,1,0,0,0,0,,
+Ignore=0,0,0,0,0,0,0
+[DataLog]
+FileNames=0,$DeviceName$.wrk,$DeviceName$.log,
+Rules=0,00:00:00,,,,0,0,0,0,0,0,0,0,0,,0
+LogTypes=1000000000
+[General]
+Description=Panasonic PMSi - 1CHotel Interface for TCPIP
+ConnectType=Ip
+DeviceName=1CHOTEL
+Active=1
+MaxRetriesDef=3,6
+Priority=1
+InitialLink=InitialLink
+CloseLink=
+ResetAlarm=3
+DisableSeconds=10
+DefaultMasks=dd/mm/yyyy,,,,,,,,,,
+CommandControl=0,10
+HeartBeat=1,60000,HeartBeat,0
+QueuelessMode=0
+SeqNo=13810,0,999999999
+[Macros]
+1=EOL,[3]
+2=BOL,[2]
+3=COMMA,[44]
+[Alarm]
+Enabled=0
+Values=0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0
+Action1=1,MsgShow,
+Action2=2,MsgPrint,
+Action3=5,RestartDevice,
+Action4=6,RestartPMSI,
+Action5=9,Reboot,
+Action6=1,Email,
+TimeData=19,1,0,1
+[SystemEvents]
+E1=RESUME,1,11111111111,4
+E2=SUSPEND,1,11110101011,1
+[Message1]
+Description=Change COS (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,ChangeCOS,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,6,0,,,1,FOSCOS,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,8,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=COSNumber,14,3,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message2]
+Description=Ext Block 1 (COS 2) (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,EBLK1,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,8,0,,,1,FOSEBLK1,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,10,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message3]
+Description=Ext Block 2 (COS 3) (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,EBLK2,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,8,0,,,1,FOSEBLK2,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,10,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message4]
+Description=Ext Unblock (COS 1) (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,EUBLK,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=PBX,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,8,0,,,1,FOSEUBLK,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,10,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message5]
+Description=Wakeup Time Set (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,WTSet,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,9,0,,,1,FOSWT SET,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,11,5,0,,,0,0,0,,,0,14,,,0,0,0|||,0,0,
+Field3=Time,17,8,0,,,0,,0,,,0,15,,,0,0,0|||,0,0,
+Field4=Flag,26,1,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message6]
+Description=WakeUp Time Clear (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,WTClear,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,11,0,,,1,FOSWT CLEAR,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,13,5,0,,,0,0,0,,,0,14,,,0,0,0|||,0,0,
+[Message7]
+Description=DND & CF Set / Clear (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,DNDCFSet,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,12,0,,,1,FOSDNDCF SET,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,14,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=FWDType,20,5,0,,,0,,0,,,0,14,,FWD-DND-Type,0,0,0|||,0,0,
+Field4=FWDDirection,26,128,0,,,0,,0,,,0,0,,,0,0,0|||,0,0,
+[Message8]
+Description=DND & CF ALL CLEAR (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,DNDCFClear,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,14,0,,,1,FOSDNDCF CLEAR,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,16,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message9]
+Description=Message Lamp On (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,MWLOn,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,9,0,,,1,FOSMWL ON,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,11,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=CallBackExt,17,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message10]
+Description=Message Lamp Off (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,MWLOff,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,10,0,,,1,FOSMWL OFF,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,12,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=CallBackExt,18,5,0,,,0,,0,,,0,0,,,0,0,0|||,0,0,
+[Message11]
+Description=Guest Name Set (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,GNSet,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,9,0,,,1,FOSGN SET,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,11,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=Name,17,128,0,,,0,,0,,,0,0,,,0,0,0|||,0,0,
+[Message12]
+Description=Credit Limit Exceeded (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,EBLK1,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,12,0,,,1,FOSCREDLIMEX,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,14,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message13]
+Description=Set System Date & Time (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,SetSysClock,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,7,0,,,1,FOSSSDT,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Time,9,8,0,,,0,,0,,,0,15,,,0,0,0|||,0,0,
+Field3=Date,18,10,0,,,0,,0,,,0,5,,,0,0,0|||,0,0,
+[Message14]
+Description=Get System Date & Time (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=1
+Destination=PBX,GetSysClock,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=*Trigger1*,1,7,0,,,1,FOSGSDT,0,,,0,0,,,0,0,0|||,0,0,
+[Message15]
+Description=Check In (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=PBX,CheckIn,0,,,-1,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,8,0,,,1,FOSCHKIN,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,10,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=Cos_1,16,3,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field4=Name,20,128,0,,,0,,0,,,0,0,,,0,0,0|||,0,0,
+[Message16]
+Description=Check Out (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=PBX,CheckOut,0,,,-1,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,9,0,,,1,FOSCHKOUT,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,11,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=COSNumber,17,3,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message17]
+Description=Confirm Tone (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=PBX,ConfirmTone,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,7,0,,,1,FOSSCFT,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,9,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+Field3=ToneNumber,15,1,0,,,0,,0,,,0,0,,,0,0,0|||,0,0,
+[Message18]
+Description=Accept Tone (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=PBX,AcceptTone,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,5,0,,,1,FOSAT,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,7,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message19]
+Description=Reject Tone (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=PBX,RejectTone,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,5,0,,,1,FOSRT,0,,,0,0,,,0,0,0|||,0,0,
+Field2=Ext,7,5,0,,,0,,0,,,0,14,,,0,0,0|||,0,0,
+[Message20]
+Description=Suspend 1CHotel Activities (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=1CHotel,Freeze,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,6,0,,,1,FREEZE,0,,,0,0,,,0,0,0|||,0,0,
+[Message21]
+Description=Resume 1CHotel Activities (from 1CHotel)
+XmlFlag=0
+Action=0
+Type=0
+Destination=1CHotel,,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+Replicate=0,,,,
+Event=,UNFREEZE,0,,,0,0,0,_DestDevice_,0,_DestCommand_
+DataLogFlag=0
+Field1=Trigger,1,8,0,,,1,UNFREEZE,0,,,0,0,,,0,0,0|||,0,0,
+[Command1]
+Name=GD
+Description=Gather Digits (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXGD [Field2 L5] [Field3 CL128][EOL]
+Wait1=
+[Command2]
+Name=RCLNDV
+Description=Room Cleaned Vacant (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRCLNDV [Field3 L5][EOL]
+Wait1=
+[Command3]
+Name=RCLNDO
+Description=Room Cleaned Occupied (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRCLNDO [Field3 L5][EOL]
+Wait1=
+[Command4]
+Name=RDRTYV
+Description=Room Dirty Vacant (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRDRTYV [Field3 L5][EOL]
+Wait1=
+[Command5]
+Name=RDRTYO
+Description=Room Dirty Occupied (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRDRTYO [Field3 L5][EOL]
+Wait1=
+[Command6]
+Name=RINCLN
+Description=Room In Cleaning (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRINCLN [Field3 L5][EOL]
+Wait1=
+[Command7]
+Name=RWTINS
+Description=Room Cleaned Needs Check (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXRWTINS [Field3 L5][EOL]
+Wait1=
+[Command8]
+Name=ROUTSV
+Description=Room Out Of Service (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXROUTSV [Field3 L5][EOL]
+Wait1=
+[Command9]
+Name=MBEMP
+Description=MiniBar Empty (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXMBEMP [Field3 L5] [Field4][EOL]
+Wait1=
+[Command10]
+Name=MBFUL
+Description=MiniBar Full (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXMBFUL [Field3 L5][EOL]
+Wait1=
+[Command11]
+Name=COSChange
+Description=COS Change (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXCOS [Field2 L5] [Field3 L3][EOL]
+Wait1=
+[Command12]
+Name=EBLK1
+Description=Ext Block 1 (COS 2) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXEBLK1 [Field2 L5][EOL]
+Wait1=
+[Command13]
+Name=EBLK2
+Description=Ext Block 2 (COS 3) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXEBLK2 [Field2 L5][EOL]
+Wait1=
+[Command14]
+Name=EUBLK
+Description=Ext Unblock (COS1) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXEUBLK [Field2 L5][EOL]
+Wait1=
+[Command15]
+Name=WTSet
+Description=WakeUp Time Set (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT SET [Field2 L5] [Field3 L8] [Field5 L1][EOL]
+Wait1=
+[Command16]
+Name=WTClear
+Description=WakeUp Clear (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT CLEAR [Field2 L5][EOL]
+Wait1=
+[Command17]
+Name=WTConfirm
+Description=WakeUp Confirm (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT CONFIRM [Field2 L5] [Field3 L8] [Field4 D!D!L10] [Field5 L5][EOL]
+Wait1=
+[Command18]
+Name=WTConfirmOK
+Description=WakeUp Confirm OK (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT CONFMOK [Field2 L5] [Field3 L8] [Field4 D!D!L10][EOL]
+Wait1=
+[Command19]
+Name=WTConfirmNG
+Description=WakeUp Confirm NG (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT CONFMNG [Field2 L5] [Field3 L8] [Field4 D!D!L10][EOL]
+Wait1=
+[Command20]
+Name=WTRetry
+Description=WakeUp Time Retry (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXWT CONFMRE [Field2 L5] [Field3 L8] [Field4 D!D!L10] [Field5 L5][EOL]
+Wait1=
+[Command21]
+Name=DNDCFSetI
+Description=DND & CF Set (DND) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXDNDCF SET [Field2 L5] 65536[EOL]
+Wait1=
+[Command22]
+Name=DNDCFSetII
+Description=DND & CF Set (CF) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXDNDCF SET [Field2 L5] [Field3 L5] [Field4 CL48] [Field5 L5] [Field6 CL48][EOL]
+Wait1=
+[Command23]
+Name=DNDCFClear
+Description=DND & CF Clear (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXDNDCF CLEAR [Field2 L5][EOL]
+Wait1=
+[Command24]
+Name=MWLOn
+Description=Message Lamp On (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXMWL ON [Field2 L5] [Field3 L5][EOL]
+Wait1=
+[Command25]
+Name=MWLOff
+Description=Message Lamp Off (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXMWL OFF [Field2 L5] [Field3 L5][EOL]
+Wait1=
+[Command26]
+Name=GNSet
+Description=Guest Name Set (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXGN SET [Field2 L5] [Field3 CL128][EOL]
+Wait1=
+[Command27]
+Name=SDTR
+Description=PBX Date & Time Report (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXSDTR [Field2 L8] [Field3 D!D!L10][EOL]
+Wait1=
+[Command28]
+Name=ErrorMsg
+Description=Error Message (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBX Error Message[COMMA] [Field3 CL128][EOL]
+Wait1=
+[Command29]
+Name=InitialLink
+Description=Initial Link
+WaitTime=40,1
+Control=0,0,0
+Send1=[BOL]Welcome to the 1CHotel.[EOL]
+Wait1=
+[Command30]
+Name=HeartBeat
+Description=Heart Beat
+WaitTime=60,1
+Control=0,0,0
+Send1=[BOL][time]: PMSi is working![EOL]
+Wait1=
+[Command31]
+Name=Freeze
+Description=Suspend 1CHotel Activities (to 1CHotel)
+WaitTime=3,3
+Control=0,0,0
+Send1=
+Wait1=[EVENT UNFREEZE]
+[Command32]
+Name=SMDR-GOC
+Description=SMDR (Global Out Charge) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXSMDR [Field7 D!DD.MM.YY] [Field8 !HH:NN] [Field2 R5] [Field21 R5] [Field3 Z3] O [Field12 L32] [Field9 !N'SS] [Field10 L8] [Field17 R3] [Field18 Z8] [Field16 R10] [Field5 REMAP1][EOL]
+Wait1=
+[Command33]
+Name=SMDR-GOP
+Description=SMDR (Global Out Pulse) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXSMDR [Field7 D!DD.MM.YY] [Field8 !HH:NN] [Field2 R5] [Field21 R5] [Field3 Z3] O [Field12 L32] [Field9 !N'SS] [Field10 L8] [Field17 R3] [Field11 R8] [Field16 R10] [Field5 REMAP1][EOL]
+Wait1=
+[Command34]
+Name=SMDR-GIC
+Description=SMDR (Global In CLID#) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXSMDR [Field7 D!DD.MM.YY] [Field8 !HH:NN] [Field3 R5] [Field21 R5] [Field2 Z3] I [Field13 L32] [Field9 !N'SS] [Field10 L8] [Field17 R3] [Field18 R8] [Field16 R10] [Field5 REMAP1][EOL]
+Wait1=
+[Command35]
+Name=SMDR-GIN
+Description=SMDR (Global In CLID Name) (to 1CHotel)
+WaitTime=0,1
+Control=0,0,0
+Send1=[BOL]PBXSMDR [Field7 D!DD.MM.YY] [Field8 !HH:NN] [Field3 R5] [Field21 R5] [Field2 Z3] I [Field14 L32] [Field9 !N'SS] [Field10 L8] [Field17 R3] [Field18 R8] [Field16 R10] [Field5 REMAP1][EOL]
+Wait1=

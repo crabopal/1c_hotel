@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormExecute" id="18">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.DoFill</CommandName>
+				<ExtendedTooltip name="FormExecuteExtendedTooltip" id="19"/>
+			</Button>
+			<Button name="FormSave" id="20">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Save</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.SaveValues</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="FormSaveExtendedTooltip" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration2" id="41">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Durch klicken auf die "Ausführen" füllt das Programm die Preistabelle für die angegebenen Zimmerpreise nach Tagen aus. Die Tabelle wird vom Online-Buchungsmodul verwendet, um schnell die Kosten für mögliche Unterkunftsvarianten zu berechnen.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By clicking the "Execute" button, the program will fill in the price table for the specified room rates by days. The table is used by the online booking module to quickly calculate the cost of possible accommodation variants.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По нажатию на кнопку "Выполнить" программа заполнит таблицу цен по указанным тарифам по видам размещения по дням. Таблица используется модулем он-лайн бронирования для быстрого расчета стоимости возможных вариантов размещения.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Decoration2ContextMenu" id="42"/>
+			<ExtendedTooltip name="Decoration2ExtendedTooltip" id="43"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupPeriod" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="17"/>
+			<ChildItems>
+				<InputField name="PeriodFrom" id="10">
+					<DataPath>Object.PeriodFrom</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PeriodFromContextMenu" id="11"/>
+					<ExtendedTooltip name="PeriodFromExtendedTooltip" id="12"/>
+				</InputField>
+				<InputField name="PeriodTo" id="13">
+					<DataPath>Object.PeriodTo</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PeriodToContextMenu" id="14"/>
+					<ExtendedTooltip name="PeriodToExtendedTooltip" id="15"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Hotel" id="1">
+			<DataPath>Object.Hotel</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>false</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="HotelContextMenu" id="2"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="3"/>
+		</InputField>
+		<InputField name="RoomRate" id="7">
+			<DataPath>Object.RoomRate</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+			<ContextMenu name="RoomRateContextMenu" id="8"/>
+			<ExtendedTooltip name="RoomRateExtendedTooltip" id="9"/>
+		</InputField>
+		<InputField name="RoomType" id="4">
+			<DataPath>Object.RoomType</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="RoomTypeContextMenu" id="5"/>
+			<ExtendedTooltip name="RoomTypeExtendedTooltip" id="6"/>
+		</InputField>
+		<LabelDecoration name="Decoration1" id="38">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration1ContextMenu" id="39"/>
+			<ExtendedTooltip name="Decoration1ExtendedTooltip" id="40"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupExecute" id="22">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Выполнение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group status</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group execute</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupExecuteExtendedTooltip" id="23"/>
+			<ChildItems>
+				<PictureDecoration name="DecorationLongOperation" id="24">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Decoration long operation</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.LongOperation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="DecorationLongOperationContextMenu" id="25"/>
+					<ExtendedTooltip name="DecorationLongOperationExtendedTooltip" id="26"/>
+				</PictureDecoration>
+				<LabelDecoration name="DecorationStatus" id="27">
+					<TextColor>web:Seagreen</TextColor>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;fontsize 18&gt;&lt;color #808000&gt;&lt;bgcolor #FFFFFF&gt;Wait for completion&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;fontsize 16&gt;&lt;color #808000&gt;&lt;bgcolor #FFFFFF&gt;...&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;fontsize 18&gt;&lt;color #808000&gt;Warten Sie auf den Abschluss&lt;/&gt;&lt;/&gt;&lt;fontsize 10&gt;&lt;color #808000&gt;...&lt;/&gt;&lt;/&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;fontsize 18&gt;&lt;color #808000&gt;Ожидайте завершения&lt;/&gt;&lt;/&gt;&lt;fontsize 16&gt;&lt;color #808000&gt;...&lt;/&gt;&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<ContextMenu name="DecorationStatusContextMenu" id="28"/>
+					<ExtendedTooltip name="DecorationStatusExtendedTooltip" id="29"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupError" id="30">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group error</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group error</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа Ошибка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group error</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupErrorExtendedTooltip" id="31"/>
+			<ChildItems>
+				<PictureDecoration name="DecorationError" id="32">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Decoration long operation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Decoration error</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Stop</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="DecorationErrorContextMenu" id="33"/>
+					<ExtendedTooltip name="DecorationErrorExtendedTooltip" id="34"/>
+				</PictureDecoration>
+				<LabelDecoration name="DecorationErrorText" id="35">
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Font bold="true" kind="AutoFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Error</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Error</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка выполения</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DecorationErrorTextContextMenu" id="36"/>
+					<ExtendedTooltip name="DecorationErrorTextExtendedTooltip" id="37"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.FillRoomRateDailyPrices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="BackgroundJobUUID" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Background job UUID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="DoFill" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>RunDP</Action>
+		</Command>
+		<Command name="Save" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save attributes setting</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellung speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройку</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.SaveValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Save</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

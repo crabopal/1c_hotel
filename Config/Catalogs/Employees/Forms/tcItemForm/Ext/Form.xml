@@ -1,0 +1,2378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupColor" id="340">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Color</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Farbe</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Цвет</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupColorExtendedTooltip" id="341"/>
+				<ChildItems>
+					<Button name="FormSetColor" id="342">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.SetColor</CommandName>
+						<ExtendedTooltip name="FormSetColorExtendedTooltip" id="343"/>
+					</Button>
+					<Button name="FormClearColor" id="344">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ClearColor</CommandName>
+						<ExtendedTooltip name="FormClearColorExtendedTooltip" id="345"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Popup name="CommandPanel_OperationHistory" id="280">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Actions history</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Aktionsgeschichte</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>История изменений</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="CommandPanel_OperationHistoryExtendedTooltip" id="281"/>
+				<ChildItems>
+					<Button name="FormReservationOperationHistory" id="276">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.ReservationOperationHistory</CommandName>
+						<ExtendedTooltip name="FormReservationOperationHistoryExtendedTooltip" id="277"/>
+					</Button>
+					<Button name="FormResourceOperationHistory" id="278">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.ResourceOperationHistory</CommandName>
+						<ExtendedTooltip name="FormResourceOperationHistoryExtendedTooltip" id="279"/>
+					</Button>
+					<Button name="FormAccommodationOperationsHistory" id="274">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.AccommodationOperationsHistory</CommandName>
+						<ExtendedTooltip name="FormAccommodationOperationsHistoryExtendedTooltip" id="275"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Button name="FormClearLastVisitedList" id="282">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ClearLastVisitedList</CommandName>
+				<ExtendedTooltip name="FormClearLastVisitedListExtendedTooltip" id="283"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Group_Main" id="304">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main data</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Spezifikation</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные данные</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group_MainExtendedTooltip" id="305"/>
+			<ChildItems>
+				<UsualGroup name="Group_Main_Column1" id="291">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Employee name and code</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Name und Code des Mitarbeiters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя и код сотрудника</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group header</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group_Main_Column1ExtendedTooltip" id="292"/>
+					<ChildItems>
+						<UsualGroup name="GroupCodes" id="313">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Codes</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Code</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Коды</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCodesExtendedTooltip" id="314"/>
+							<ChildItems>
+								<InputField name="Description" id="4">
+									<DataPath>Object.Description</DataPath>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<ContextMenu name="DescriptionContextMenu" id="5"/>
+									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+									<Events>
+										<Event name="OnChange">DescriptionOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="Code" id="310">
+									<DataPath>Object.Code</DataPath>
+									<ContextMenu name="CodeContextMenu" id="311"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="312"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Parent" id="9">
+							<DataPath>Object.Parent</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ParentContextMenu" id="10"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="11"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Group_Main_Column2" id="293">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Infobase user settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Infobase-Benutzereinstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки пользователя базы данных</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group_Main_Column2ExtendedTooltip" id="294"/>
+					<ChildItems>
+						<UsualGroup name="Group_Main_Column2_Row1" id="378">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>1</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>1</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>1</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group_Main_Column2_Row1ExtendedTooltip" id="379"/>
+							<ChildItems>
+								<InputField name="PermissionGroup" id="37">
+									<DataPath>Object.PermissionGroup</DataPath>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="PermissionGroupContextMenu" id="38"/>
+									<ExtendedTooltip name="PermissionGroupExtendedTooltip" id="39"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group_Main_Column2_Row2" id="306">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>2</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group_Main_Column2_Row2ExtendedTooltip" id="307"/>
+							<ChildItems>
+								<CheckBoxField name="AllowAccessToSystem" id="40">
+									<DataPath>Object.AllowAccessToSystem</DataPath>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>CheckBox</CheckBoxType>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>BF=No; BT=Yes</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>BF=No; BT=Yes</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>BF=Нет; BT=Да</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="AllowAccessToSystemContextMenu" id="41"/>
+									<ExtendedTooltip name="AllowAccessToSystemExtendedTooltip" id="42"/>
+									<Events>
+										<Event name="OnChange">AllowAccessToSystemOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<Button name="InfobaseUserSettings" id="308">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.InfobaseUserSettings</CommandName>
+									<ExtendedTooltip name="InfobaseUserSettingsExtendedTooltip" id="309"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Group_Settings" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="Group_SettingsExtendedTooltip" id="8"/>
+			<ChildItems>
+				<Page name="Group_Page_Settings" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group page settings</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>CommonPicture.Settings</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<HorizontalAlign>Left</HorizontalAlign>
+					<ExtendedTooltip name="Group_Page_SettingsExtendedTooltip" id="16"/>
+					<ChildItems>
+						<InputField name="Hotel" id="31">
+							<DataPath>Object.Hotel</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<TextEdit>false</TextEdit>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="HotelContextMenu" id="32"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="33"/>
+						</InputField>
+						<InputField name="Company" id="51">
+							<DataPath>Object.Company</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="CompanyContextMenu" id="52"/>
+							<ExtendedTooltip name="CompanyExtendedTooltip" id="53"/>
+						</InputField>
+						<InputField name="Department" id="43">
+							<DataPath>Object.Department</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="DepartmentContextMenu" id="44"/>
+							<ExtendedTooltip name="DepartmentExtendedTooltip" id="45"/>
+						</InputField>
+						<InputField name="Position" id="34">
+							<DataPath>Object.Position</DataPath>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="PositionContextMenu" id="35"/>
+							<ExtendedTooltip name="PositionExtendedTooltip" id="36"/>
+							<Events>
+								<Event name="Opening">PositionOpening</Event>
+							</Events>
+						</InputField>
+						<InputField name="Workstation" id="48">
+							<DataPath>Object.Workstation</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="WorkstationContextMenu" id="49"/>
+							<ExtendedTooltip name="WorkstationExtendedTooltip" id="50"/>
+						</InputField>
+						<InputField name="EmployeePreferences" id="80">
+							<DataPath>Object.EmployeePreferences</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="EmployeePreferencesContextMenu" id="81"/>
+							<ExtendedTooltip name="EmployeePreferencesExtendedTooltip" id="82"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="Group_Page_Personal" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Personal data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Persönliche Daten</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Личные данные</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Individual</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Group_Page_PersonalExtendedTooltip" id="84"/>
+					<ChildItems>
+						<Pages name="Group_Personal" id="125">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group personal</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
+							<ExtendedTooltip name="Group_PersonalExtendedTooltip" id="126"/>
+							<ChildItems>
+								<Page name="Group_Personal_Page_Main" id="127">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Main data</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Grundlegend Daten</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основная информация</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Individual</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="Group_Personal_Page_MainExtendedTooltip" id="128"/>
+									<ChildItems>
+										<InputField name="LastName" id="85">
+											<DataPath>Object.LastName</DataPath>
+											<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="LastNameContextMenu" id="86"/>
+											<ExtendedTooltip name="LastNameExtendedTooltip" id="87"/>
+										</InputField>
+										<InputField name="FirstName" id="88">
+											<DataPath>Object.FirstName</DataPath>
+											<ContextMenu name="FirstNameContextMenu" id="89"/>
+											<ExtendedTooltip name="FirstNameExtendedTooltip" id="90"/>
+										</InputField>
+										<InputField name="SecondName" id="91">
+											<DataPath>Object.SecondName</DataPath>
+											<ContextMenu name="SecondNameContextMenu" id="92"/>
+											<ExtendedTooltip name="SecondNameExtendedTooltip" id="93"/>
+										</InputField>
+										<InputField name="DescriptionTranslations" id="17">
+											<DataPath>Object.DescriptionTranslations</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="DescriptionTranslationsContextMenu" id="18"/>
+											<ExtendedTooltip name="DescriptionTranslationsExtendedTooltip" id="19"/>
+											<Events>
+												<Event name="Opening">DescriptionTranslationsOpening</Event>
+											</Events>
+										</InputField>
+										<InputField name="Sex" id="97">
+											<DataPath>Object.Sex</DataPath>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="SexContextMenu" id="98"/>
+											<ExtendedTooltip name="SexExtendedTooltip" id="99"/>
+										</InputField>
+										<InputField name="DateOfBirth" id="100">
+											<DataPath>Object.DateOfBirth</DataPath>
+											<ContextMenu name="DateOfBirthContextMenu" id="101"/>
+											<ExtendedTooltip name="DateOfBirthExtendedTooltip" id="102"/>
+										</InputField>
+										<InputField name="Citizenship" id="94">
+											<DataPath>Object.Citizenship</DataPath>
+											<ChoiceButton>false</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="CitizenshipContextMenu" id="95"/>
+											<ExtendedTooltip name="CitizenshipExtendedTooltip" id="96"/>
+										</InputField>
+										<InputField name="Phones" id="106">
+											<DataPath>Object.Phones</DataPath>
+											<ContextMenu name="PhonesContextMenu" id="107"/>
+											<ExtendedTooltip name="PhonesExtendedTooltip" id="108"/>
+										</InputField>
+										<UsualGroup name="GroupPlaceOfBirth" id="360">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Group place of birth</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа место рождения</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Group place of birth</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group place of birth</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>AlwaysHorizontal</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupPlaceOfBirthExtendedTooltip" id="361"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationPlaceOfBirth" id="362">
+													<Width>12</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<TextColor>#333333</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Место рождения:</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Geburtsort:</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Place of birth:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="DecorationPlaceOfBirthContextMenu" id="363"/>
+													<ExtendedTooltip name="DecorationPlaceOfBirthExtendedTooltip" id="364"/>
+												</LabelDecoration>
+												<LabelDecoration name="DecorationPlaceOfBirthValue" id="365">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<SkipOnInput>false</SkipOnInput>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Заполнить</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Füllen</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Fill</v8:content>
+														</v8:item>
+													</Title>
+													<Hyperlink>true</Hyperlink>
+													<ContextMenu name="DecorationPlaceOfBirthValueContextMenu" id="366"/>
+													<ExtendedTooltip name="DecorationPlaceOfBirthValueExtendedTooltip" id="367"/>
+													<Events>
+														<Event name="Click">DecorationPlaceOfBirthValueClick</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupAddress" id="368">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Group address</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа Адрес проживания</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Group address</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group address</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupAddressExtendedTooltip" id="369"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationAddress" id="370">
+													<Width>12</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<TextColor>#333333</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Address:</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Adresse:</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Адрес проживания:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="DecorationAddressContextMenu" id="371"/>
+													<ExtendedTooltip name="DecorationAddressExtendedTooltip" id="372"/>
+												</LabelDecoration>
+												<LabelDecoration name="DecorationAddressValue" id="373">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<SkipOnInput>false</SkipOnInput>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Fill</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Füllen</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Заполнить</v8:content>
+														</v8:item>
+													</Title>
+													<Hyperlink>true</Hyperlink>
+													<ContextMenu name="DecorationAddressValueContextMenu" id="374"/>
+													<ExtendedTooltip name="DecorationAddressValueExtendedTooltip" id="375"/>
+													<Events>
+														<Event name="Click">DecorationAddressValueClick</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+								<Page name="Group_Personal_Page_ID" id="129">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Identity data</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Identitätsdaten</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Идентификационные данные</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Catalogs</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="Group_Personal_Page_IDExtendedTooltip" id="130"/>
+									<ChildItems>
+										<InputField name="IdentityDocumentType" id="131">
+											<DataPath>Object.IdentityDocumentType</DataPath>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ContextMenu name="IdentityDocumentTypeContextMenu" id="132"/>
+											<ExtendedTooltip name="IdentityDocumentTypeExtendedTooltip" id="133"/>
+										</InputField>
+										<UsualGroup name="GroupIDSeriesAndNumber" id="315">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Series and number</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Serie und Nummer</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Серия и номер</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupIDSeriesAndNumberExtendedTooltip" id="316"/>
+											<ChildItems>
+												<InputField name="IdentityDocumentSeries" id="134">
+													<DataPath>Object.IdentityDocumentSeries</DataPath>
+													<Width>11</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="IdentityDocumentSeriesContextMenu" id="135"/>
+													<ExtendedTooltip name="IdentityDocumentSeriesExtendedTooltip" id="136"/>
+												</InputField>
+												<InputField name="IdentityDocumentNumber" id="137">
+													<DataPath>Object.IdentityDocumentNumber</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Number</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Nummer</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Номер</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="IdentityDocumentNumberContextMenu" id="138"/>
+													<ExtendedTooltip name="IdentityDocumentNumberExtendedTooltip" id="139"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupIDValidPeriod" id="317">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Valid period</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Gültiger Zeitraum</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период действия</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupIDValidPeriodExtendedTooltip" id="318"/>
+											<ChildItems>
+												<InputField name="IdentityDocumentIssueDate" id="140">
+													<DataPath>Object.IdentityDocumentIssueDate</DataPath>
+													<ContextMenu name="IdentityDocumentIssueDateContextMenu" id="141"/>
+													<ExtendedTooltip name="IdentityDocumentIssueDateExtendedTooltip" id="142"/>
+												</InputField>
+												<InputField name="IdentityDocumentValidToDate" id="143">
+													<DataPath>Object.IdentityDocumentValidToDate</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Valid to date</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Gültig bis</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Действует до</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="IdentityDocumentValidToDateContextMenu" id="144"/>
+													<ExtendedTooltip name="IdentityDocumentValidToDateExtendedTooltip" id="145"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ID_Row1" id="152">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>I d row1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ID_Row1ExtendedTooltip" id="153"/>
+											<ChildItems>
+												<InputField name="IdentityDocumentUnitCode" id="146">
+													<DataPath>Object.IdentityDocumentUnitCode</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Issued by (unit code/description)</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Durch wen ausgestellt (Code/Beschreibung)</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кем выдан документ (код подразделения/описание)</v8:content>
+														</v8:item>
+													</Title>
+													<Width>14</Width>
+													<ContextMenu name="IdentityDocumentUnitCodeContextMenu" id="147"/>
+													<ExtendedTooltip name="IdentityDocumentUnitCodeExtendedTooltip" id="148"/>
+													<Events>
+														<Event name="OnChange">IdentityDocumentUnitCodeOnChange</Event>
+													</Events>
+												</InputField>
+												<InputField name="IdentityDocumentIssuedBy" id="149">
+													<DataPath>Object.IdentityDocumentIssuedBy</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="IdentityDocumentIssuedByContextMenu" id="150"/>
+													<ExtendedTooltip name="IdentityDocumentIssuedByExtendedTooltip" id="151"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ID_Row2" id="160">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>I d row1</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ID_Row2ExtendedTooltip" id="161"/>
+											<ChildItems>
+												<InputField name="MilitaryRank" id="154">
+													<DataPath>Object.MilitaryRank</DataPath>
+													<ClearButton>true</ClearButton>
+													<OpenButton>false</OpenButton>
+													<CreateButton>false</CreateButton>
+													<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+													<ContextMenu name="MilitaryRankContextMenu" id="155"/>
+													<ExtendedTooltip name="MilitaryRankExtendedTooltip" id="156"/>
+												</InputField>
+												<CheckBoxField name="InReserve" id="162">
+													<DataPath>Object.InReserve</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="InReserveContextMenu" id="163"/>
+													<ExtendedTooltip name="InReserveExtendedTooltip" id="164"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="TIN" id="165">
+											<DataPath>Object.TIN</DataPath>
+											<Width>14</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="TINContextMenu" id="166"/>
+											<ExtendedTooltip name="TINExtendedTooltip" id="167"/>
+										</InputField>
+										<UsualGroup name="GroupProxyDocument" id="334">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Document confirming the authority of the employee as the official representative of the organization</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Dokument, das die Befugnisse des Mitarbeiters als offizieller Vertreter der Organisation bestätigt</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Документ подтверждающий полномочия сотрудника как официального представителя организации</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="GroupProxyDocumentExtendedTooltip" id="335"/>
+											<ChildItems>
+												<InputField name="ProxyDocumentType" id="319">
+													<DataPath>Object.ProxyDocumentType</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Document type</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Dokumenttyp</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Тип документа</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ProxyDocumentTypeContextMenu" id="320"/>
+													<ExtendedTooltip name="ProxyDocumentTypeExtendedTooltip" id="321"/>
+												</InputField>
+												<UsualGroup name="GroupProxyDocumentSeriesAndNumber" id="336">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Document series and number</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Serie und Dokumentennummer</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Серия и номер документа</v8:content>
+														</v8:item>
+													</Title>
+													<Group>AlwaysHorizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupProxyDocumentSeriesAndNumberExtendedTooltip" id="337"/>
+													<ChildItems>
+														<InputField name="ProxyDocumentSeries" id="322">
+															<DataPath>Object.ProxyDocumentSeries</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Document series</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Dokument serie</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Серия документа</v8:content>
+																</v8:item>
+															</Title>
+															<Width>11</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<ContextMenu name="ProxyDocumentSeriesContextMenu" id="323"/>
+															<ExtendedTooltip name="ProxyDocumentSeriesExtendedTooltip" id="324"/>
+														</InputField>
+														<InputField name="ProxyDocumentNumber" id="325">
+															<DataPath>Object.ProxyDocumentNumber</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Number</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Nummer</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Номер</v8:content>
+																</v8:item>
+															</Title>
+															<HorizontalStretch>false</HorizontalStretch>
+															<ContextMenu name="ProxyDocumentNumberContextMenu" id="326"/>
+															<ExtendedTooltip name="ProxyDocumentNumberExtendedTooltip" id="327"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="GroupDocumentValidityPeriod" id="338">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Document validity period</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Gültigkeitsdauer des Dokuments</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Срок действия документа </v8:content>
+														</v8:item>
+													</Title>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupDocumentValidityPeriodExtendedTooltip" id="339"/>
+													<ChildItems>
+														<InputField name="ProxyDocumentIssueDate" id="328">
+															<DataPath>Object.ProxyDocumentIssueDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Issue date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Ausstellungsdatum</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата выдачи</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ProxyDocumentIssueDateContextMenu" id="329"/>
+															<ExtendedTooltip name="ProxyDocumentIssueDateExtendedTooltip" id="330"/>
+														</InputField>
+														<InputField name="ProxyDocumentValidToDate" id="331">
+															<DataPath>Object.ProxyDocumentValidToDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Valid to date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Gültig bis Datum</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Действует до</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ProxyDocumentValidToDateContextMenu" id="332"/>
+															<ExtendedTooltip name="ProxyDocumentValidToDateExtendedTooltip" id="333"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ID_Signature" id="266">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Signature</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Unterschrift</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подпись</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="ID_SignatureExtendedTooltip" id="267"/>
+											<ChildItems>
+												<CommandBar name="ID_Signature_CommandPanel" id="272">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>I d signature command panel</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ID_Signature_CommandPanelExtendedTooltip" id="273"/>
+													<ChildItems>
+														<Button name="UploadSignature" id="268">
+															<Type>CommandBarButton</Type>
+															<Representation>PictureAndText</Representation>
+															<CommandName>Form.Command.UploadSignature</CommandName>
+															<ExtendedTooltip name="UploadSignatureExtendedTooltip" id="269"/>
+														</Button>
+														<Button name="ClearSignature" id="270">
+															<Type>CommandBarButton</Type>
+															<Representation>PictureAndText</Representation>
+															<CommandName>Form.Command.ClearSignature</CommandName>
+															<ExtendedTooltip name="ClearSignatureExtendedTooltip" id="271"/>
+														</Button>
+													</ChildItems>
+												</CommandBar>
+												<PictureField name="Signature" id="263">
+													<DataPath>Signature</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<PictureSize>AutoSize</PictureSize>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="SignatureContextMenu" id="264"/>
+													<ExtendedTooltip name="SignatureExtendedTooltip" id="265"/>
+												</PictureField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="Group_Page_Email" id="168">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>E-Mail settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>E-Mail-Einstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки электронной почты</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.MailOutcoming</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Group_Page_EmailExtendedTooltip" id="169"/>
+					<ChildItems>
+						<UsualGroup name="Group_Email" id="302">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>E-mail</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>E-mail</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>E-mail</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<HorizontalAlign>Left</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group_EmailExtendedTooltip" id="303"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationSplitter1" id="357">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Font bold="true" kind="AutoFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Choose from common e-mail profiles</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Wählen Sie aus gängigen E-Mail-Profilen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выберите один из общих профилей электронной почты</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationSplitter1ContextMenu" id="358"/>
+									<ExtendedTooltip name="DecorationSplitter1ExtendedTooltip" id="359"/>
+								</LabelDecoration>
+								<UsualGroup name="EmailAccountGroup" id="349">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>E-Mail account</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>E-Mail account</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>E-Mail account</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Email account group</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="EmailAccountGroupExtendedTooltip" id="350"/>
+									<ChildItems>
+										<InputField name="EmailAccount" id="351">
+											<DataPath>Object.EmailAccount</DataPath>
+											<ClearButton>true</ClearButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="EmailAccountContextMenu" id="352"/>
+											<ExtendedTooltip name="EmailAccountExtendedTooltip" id="353"/>
+											<Events>
+												<Event name="OnChange">EmailAccountOnChange</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<LabelDecoration name="DecorationSplitter2" id="354">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Font bold="true" kind="AutoFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>or enter personal connection parameters</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>oder persönliche Verbindungsparameter festlegen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>или укажите персональные параметры подключения</v8:content>
+										</v8:item>
+									</Title>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Overline</v8ui:style>
+									</Border>
+									<ContextMenu name="DecorationSplitter2ContextMenu" id="355"/>
+									<ExtendedTooltip name="DecorationSplitter2ExtendedTooltip" id="356"/>
+								</LabelDecoration>
+								<UsualGroup name="Email_Addresses" id="118">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>E-Mail addresses</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>E-Mail-Adressen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>E-Mail адреса</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Email addresses</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="Email_AddressesExtendedTooltip" id="119"/>
+									<ChildItems>
+										<InputField name="EMail" id="109">
+											<DataPath>Object.EMail</DataPath>
+											<ContextMenu name="EMailContextMenu" id="110"/>
+											<ExtendedTooltip name="EMailExtendedTooltip" id="111"/>
+										</InputField>
+										<InputField name="ReplyToEMail" id="112">
+											<DataPath>Object.ReplyToEMail</DataPath>
+											<ContextMenu name="ReplyToEMailContextMenu" id="113"/>
+											<ExtendedTooltip name="ReplyToEMailExtendedTooltip" id="114"/>
+										</InputField>
+										<InputField name="BccEMail" id="115">
+											<DataPath>Object.BccEMail</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="BccEMailContextMenu" id="116"/>
+											<ExtendedTooltip name="BccEMailExtendedTooltip" id="117"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Email_SMTP" id="284">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>SMTP</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>SMTP</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>SMTP</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group SMTP</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="Email_SMTPExtendedTooltip" id="285"/>
+									<ChildItems>
+										<InputField name="InternetMailSMTPServerAddress" id="170">
+											<DataPath>Object.InternetMailSMTPServerAddress</DataPath>
+											<ContextMenu name="InternetMailSMTPServerAddressContextMenu" id="171"/>
+											<ExtendedTooltip name="InternetMailSMTPServerAddressExtendedTooltip" id="172"/>
+										</InputField>
+										<UsualGroup name="Email_Row1" id="218">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>SMTP port</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>SMTP port</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>SMTP port</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Email_Row1ExtendedTooltip" id="219"/>
+											<ChildItems>
+												<InputField name="InternetMailSMTPPort" id="173">
+													<DataPath>Object.InternetMailSMTPPort</DataPath>
+													<ContextMenu name="InternetMailSMTPPortContextMenu" id="174"/>
+													<ExtendedTooltip name="InternetMailSMTPPortExtendedTooltip" id="175"/>
+												</InputField>
+												<CheckBoxField name="InternetMailSMTPUseSSL" id="176">
+													<DataPath>Object.InternetMailSMTPUseSSL</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="InternetMailSMTPUseSSLContextMenu" id="177"/>
+													<ExtendedTooltip name="InternetMailSMTPUseSSLExtendedTooltip" id="178"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="InternetMailSMTPAuthentication" id="179">
+											<DataPath>Object.InternetMailSMTPAuthentication</DataPath>
+											<ClearButton>true</ClearButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="InternetMailSMTPAuthenticationContextMenu" id="180"/>
+											<ExtendedTooltip name="InternetMailSMTPAuthenticationExtendedTooltip" id="181"/>
+										</InputField>
+										<InputField name="InternetMailSMTPUser" id="182">
+											<DataPath>Object.InternetMailSMTPUser</DataPath>
+											<ContextMenu name="InternetMailSMTPUserContextMenu" id="183"/>
+											<ExtendedTooltip name="InternetMailSMTPUserExtendedTooltip" id="184"/>
+										</InputField>
+										<InputField name="InternetMailSMTPPassword" id="185">
+											<DataPath>Object.InternetMailSMTPPassword</DataPath>
+											<PasswordMode>true</PasswordMode>
+											<ContextMenu name="InternetMailSMTPPasswordContextMenu" id="186"/>
+											<ExtendedTooltip name="InternetMailSMTPPasswordExtendedTooltip" id="187"/>
+										</InputField>
+										<UsualGroup name="Email_Row2" id="220">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Secure authentication</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Sichere Authentifizierung</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Безопасная аутентификация</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Email_Row2ExtendedTooltip" id="221"/>
+											<ChildItems>
+												<LabelDecoration name="Decoration1" id="286">
+													<Visible>false</Visible>
+													<Width>24</Width>
+													<ContextMenu name="Decoration1ContextMenu" id="287"/>
+													<ExtendedTooltip name="Decoration1ExtendedTooltip" id="288"/>
+												</LabelDecoration>
+												<CheckBoxField name="InternetMailSMTPSecureAuthenticationOnly" id="188">
+													<DataPath>Object.InternetMailSMTPSecureAuthenticationOnly</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="InternetMailSMTPSecureAuthenticationOnlyContextMenu" id="189"/>
+													<ExtendedTooltip name="InternetMailSMTPSecureAuthenticationOnlyExtendedTooltip" id="190"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Email_Pop3" id="289">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>POP3</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>POP3</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>POP3</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group pop3</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="Email_Pop3ExtendedTooltip" id="290"/>
+									<ChildItems>
+										<CheckBoxField name="InternetMailPOP3BeforeSMTP" id="215">
+											<DataPath>Object.InternetMailPOP3BeforeSMTP</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="InternetMailPOP3BeforeSMTPContextMenu" id="216"/>
+											<ExtendedTooltip name="InternetMailPOP3BeforeSMTPExtendedTooltip" id="217"/>
+										</CheckBoxField>
+										<InputField name="InternetMailPOP3ServerAddress" id="191">
+											<DataPath>Object.InternetMailPOP3ServerAddress</DataPath>
+											<ContextMenu name="InternetMailPOP3ServerAddressContextMenu" id="192"/>
+											<ExtendedTooltip name="InternetMailPOP3ServerAddressExtendedTooltip" id="193"/>
+										</InputField>
+										<UsualGroup name="Email_Row3" id="222">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>POP3 port</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>POP3 port</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>POP3 port</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Email_Row3ExtendedTooltip" id="223"/>
+											<ChildItems>
+												<InputField name="InternetMailPOP3Port" id="194">
+													<DataPath>Object.InternetMailPOP3Port</DataPath>
+													<ContextMenu name="InternetMailPOP3PortContextMenu" id="195"/>
+													<ExtendedTooltip name="InternetMailPOP3PortExtendedTooltip" id="196"/>
+												</InputField>
+												<CheckBoxField name="InternetMailPOP3UseSSL" id="197">
+													<DataPath>Object.InternetMailPOP3UseSSL</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="InternetMailPOP3UseSSLContextMenu" id="198"/>
+													<ExtendedTooltip name="InternetMailPOP3UseSSLExtendedTooltip" id="199"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="InternetMailPOP3Authentication" id="200">
+											<DataPath>Object.InternetMailPOP3Authentication</DataPath>
+											<ClearButton>true</ClearButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="InternetMailPOP3AuthenticationContextMenu" id="201"/>
+											<ExtendedTooltip name="InternetMailPOP3AuthenticationExtendedTooltip" id="202"/>
+										</InputField>
+										<InputField name="InternetMailUser" id="203">
+											<DataPath>Object.InternetMailUser</DataPath>
+											<ContextMenu name="InternetMailUserContextMenu" id="204"/>
+											<ExtendedTooltip name="InternetMailUserExtendedTooltip" id="205"/>
+										</InputField>
+										<InputField name="InternetMailPassword" id="206">
+											<DataPath>Object.InternetMailPassword</DataPath>
+											<PasswordMode>true</PasswordMode>
+											<ContextMenu name="InternetMailPasswordContextMenu" id="207"/>
+											<ExtendedTooltip name="InternetMailPasswordExtendedTooltip" id="208"/>
+										</InputField>
+										<CheckBoxField name="InternetMailPOP3SecureAuthenticationOnly" id="209">
+											<DataPath>Object.InternetMailPOP3SecureAuthenticationOnly</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="InternetMailPOP3SecureAuthenticationOnlyContextMenu" id="210"/>
+											<ExtendedTooltip name="InternetMailPOP3SecureAuthenticationOnlyExtendedTooltip" id="211"/>
+										</CheckBoxField>
+										<InputField name="InternetMailTimeout" id="212">
+											<DataPath>Object.InternetMailTimeout</DataPath>
+											<ContextMenu name="InternetMailTimeoutContextMenu" id="213"/>
+											<ExtendedTooltip name="InternetMailTimeoutExtendedTooltip" id="214"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Group_Page_Housekeeping" id="376">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Housekeeping</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hauswirtschaft</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номерной фонд</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Occupied</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Group_Page_HousekeepingExtendedTooltip" id="377"/>
+					<ChildItems>
+						<UsualGroup name="Settings_Additional" id="123">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Additional</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zusätzlich</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительные</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Settings_AdditionalExtendedTooltip" id="124"/>
+							<ChildItems>
+								<UsualGroup name="Settings_Additional_Column1" id="295">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Column 1</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Spalte 1</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Столбец 1</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Settings_Additional_Column1ExtendedTooltip" id="296"/>
+									<ChildItems>
+										<InputField name="RoomFolderFrom" id="74">
+											<DataPath>Object.RoomFolderFrom</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomFolderFromContextMenu" id="75"/>
+											<ExtendedTooltip name="RoomFolderFromExtendedTooltip" id="76"/>
+										</InputField>
+										<InputField name="RoomSection" id="68">
+											<DataPath>Object.RoomSection</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomSectionContextMenu" id="69"/>
+											<ExtendedTooltip name="RoomSectionExtendedTooltip" id="70"/>
+										</InputField>
+										<InputField name="RoomType" id="346">
+											<DataPath>Object.RoomType</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomTypeContextMenu" id="347"/>
+											<ExtendedTooltip name="RoomTypeExtendedTooltip" id="348"/>
+										</InputField>
+										<InputField name="Room" id="71">
+											<DataPath>Object.Room</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomContextMenu" id="72"/>
+											<ExtendedTooltip name="RoomExtendedTooltip" id="73"/>
+										</InputField>
+										<InputField name="RegistrationNumber" id="23">
+											<DataPath>Object.RegistrationNumber</DataPath>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="RegistrationNumberContextMenu" id="24"/>
+											<ExtendedTooltip name="RegistrationNumberExtendedTooltip" id="25"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Settings_Additional_Column2" id="297">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Column 2</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Spalte 2</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Столбец 2</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Settings_Additional_Column2ExtendedTooltip" id="298"/>
+									<ChildItems>
+										<InputField name="RoomFolderTo" id="77">
+											<DataPath>Object.RoomFolderTo</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>and stop before</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>und bis zur Gruppe</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>и до группы</v8:content>
+												</v8:item>
+											</Title>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomFolderToContextMenu" id="78"/>
+											<ExtendedTooltip name="RoomFolderToExtendedTooltip" id="79"/>
+										</InputField>
+										<InputField name="Customer" id="62">
+											<DataPath>Object.Customer</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="CustomerContextMenu" id="63"/>
+											<ExtendedTooltip name="CustomerExtendedTooltip" id="64"/>
+										</InputField>
+										<InputField name="RoomQuota" id="65">
+											<DataPath>Object.RoomQuota</DataPath>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="RoomQuotaContextMenu" id="66"/>
+											<ExtendedTooltip name="RoomQuotaExtendedTooltip" id="67"/>
+										</InputField>
+										<InputField name="PBXAccountCode" id="26">
+											<DataPath>Object.PBXAccountCode</DataPath>
+											<ContextMenu name="PBXAccountCodeContextMenu" id="27"/>
+											<ExtendedTooltip name="PBXAccountCodeExtendedTooltip" id="28"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Group_Page_Bitrix24" id="228">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Bitrix24</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bitrix24</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Битрикс24</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Bitrix2416x16</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Group_Page_Bitrix24ExtendedTooltip" id="229"/>
+					<ChildItems>
+						<InputField name="B24Login" id="230">
+							<DataPath>Object.B24Login</DataPath>
+							<ContextMenu name="B24LoginContextMenu" id="231"/>
+							<ExtendedTooltip name="B24LoginExtendedTooltip" id="232"/>
+						</InputField>
+						<InputField name="B24Password" id="233">
+							<DataPath>Object.B24Password</DataPath>
+							<ContextMenu name="B24PasswordContextMenu" id="234"/>
+							<ExtendedTooltip name="B24PasswordExtendedTooltip" id="235"/>
+						</InputField>
+						<InputField name="B24EmployeeID" id="236">
+							<DataPath>Object.B24EmployeeID</DataPath>
+							<ContextMenu name="B24EmployeeIDContextMenu" id="237"/>
+							<ExtendedTooltip name="B24EmployeeIDExtendedTooltip" id="238"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="Group_Page_NonReplicatingAttributes" id="239">
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Non replicating attributes</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nicht replizierbare Requisiten</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нереплицируемые реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.ExchangePlan</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Group_Page_NonReplicatingAttributesExtendedTooltip" id="240"/>
+					<ChildItems>
+						<Table name="NonReplicatingAttributes" id="241">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>NonReplicatingAttributes</DataPath>
+							<RowPictureDataPath>NonReplicatingAttributes.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="NonReplicatingAttributesContextMenu" id="242"/>
+							<AutoCommandBar name="NonReplicatingAttributesCommandBar" id="243"/>
+							<ExtendedTooltip name="NonReplicatingAttributesExtendedTooltip" id="244"/>
+							<SearchStringAddition name="NonReplicatingAttributesSearchString" id="245">
+								<AdditionSource>
+									<Item>NonReplicatingAttributes</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="NonReplicatingAttributesSearchStringContextMenu" id="246"/>
+								<ExtendedTooltip name="NonReplicatingAttributesSearchStringExtendedTooltip" id="247"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="NonReplicatingAttributesViewStatus" id="248">
+								<AdditionSource>
+									<Item>NonReplicatingAttributes</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="NonReplicatingAttributesViewStatusContextMenu" id="249"/>
+								<ExtendedTooltip name="NonReplicatingAttributesViewStatusExtendedTooltip" id="250"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="NonReplicatingAttributesSearchControl" id="251">
+								<AdditionSource>
+									<Item>NonReplicatingAttributes</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="NonReplicatingAttributesSearchControlContextMenu" id="252"/>
+								<ExtendedTooltip name="NonReplicatingAttributesSearchControlExtendedTooltip" id="253"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="NonReplicatingAttributesWorkstation" id="257">
+									<DataPath>NonReplicatingAttributes.Workstation</DataPath>
+									<ContextMenu name="NonReplicatingAttributesWorkstationContextMenu" id="258"/>
+									<ExtendedTooltip name="NonReplicatingAttributesWorkstationExtendedTooltip" id="259"/>
+								</LabelField>
+								<LabelField name="NonReplicatingAttributesPermissionGroup" id="260">
+									<DataPath>NonReplicatingAttributes.PermissionGroup</DataPath>
+									<ContextMenu name="NonReplicatingAttributesPermissionGroupContextMenu" id="261"/>
+									<ExtendedTooltip name="NonReplicatingAttributesPermissionGroupExtendedTooltip" id="262"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Remarks" id="12">
+			<DataPath>Object.Remarks</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="13"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="14"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Employees</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="NonReplicatingAttributes" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Non replicating attributes</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.EmployeeNonReplicatingAttributes</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Signature" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Signature</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ItemColor" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Artikelfarbe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет элемента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ItemColorIsSet" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color is set</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="NewEmployeeRef" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New employee ref</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>New employee ref</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>New employee ref</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Employees</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ClearLastVisitedList" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear last visited list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktionsliste löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить список действий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear last visited list</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Remove</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearLastVisitedList</Action>
+		</Command>
+		<Command name="ClearSignature" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>klar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Clear signature</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearSignature</Action>
+		</Command>
+		<Command name="UploadSignature" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Upload</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hochladen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Upload signature</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.LevelUp</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UploadSignature</Action>
+		</Command>
+		<Command name="ReservationOperationHistory" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reservation operations history</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Verlauf der Reservierungsänderung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История изменений в брони</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reservation operation history</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.IsActive</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ReservationOperationHistory</Action>
+		</Command>
+		<Command name="ResourceOperationHistory" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Resource reservation operations history</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Verlauf der Reservierungsänderung Ressourcen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История изменений в брони ресурсов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Resource operation history</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetInsertComment</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ResourceOperationHistory</Action>
+		</Command>
+		<Command name="AccommodationOperationsHistory" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accommodation operations history</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Änderungsverlauf der Unterbringungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История изменений в размещениях</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accommodation operations history</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CheckIn</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>AccommodationOperationsHistory</Action>
+		</Command>
+		<Command name="InfobaseUserSettings" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Infobase user settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Benutzereinstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Infobase user settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UserWithoutNecessaryProperties</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>InfobaseUserSettings</Action>
+		</Command>
+		<Command name="SetColor" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сolor...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ClearColor" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe entfernen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Klare Farbe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить цвет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.EmployeePBXCodes.StandardCommand.OpenList</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>4</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">false</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.EmployeeNonReplicatingAttributes.StandardCommand.OpenByValue.Employee</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">false</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.EmployeeWorkingTimeSchedule.StandardCommand.OpenByValue.Employee</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.InfoBaseUsers.StandardCommand.OpenByValue.Employee</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">false</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.UserActionsHistory.StandardCommand.OpenByValue.User</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

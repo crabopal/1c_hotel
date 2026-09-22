@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupColor" id="176">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Color</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Farbe</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Цвет</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupColorExtendedTooltip" id="177"/>
+				<ChildItems>
+					<Button name="FormSetColor" id="139">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.SetColor</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Color...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Farbe...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цвет...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="FormSetColorExtendedTooltip" id="140"/>
+					</Button>
+					<Button name="FormClearColor" id="141">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ClearColor</CommandName>
+						<ExtendedTooltip name="FormClearColorExtendedTooltip" id="142"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="GroupParameters" id="86">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group parameters</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group parameters</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="87"/>
+			<ChildItems>
+				<Page name="Parameters" id="88">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Attributes</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Attributen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Parameters</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>CommonPicture.ReportParameters</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ParametersExtendedTooltip" id="89"/>
+					<ChildItems>
+						<UsualGroup name="GroupHeader" id="82">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="83"/>
+							<ChildItems>
+								<InputField name="Description" id="4">
+									<DataPath>Object.Description</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="DescriptionContextMenu" id="5"/>
+									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+								</InputField>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+								<InputField name="SortCode" id="13">
+									<DataPath>Object.SortCode</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="SortCodeContextMenu" id="14"/>
+									<ExtendedTooltip name="SortCodeExtendedTooltip" id="15"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="DescriptionTranslations" id="10">
+							<DataPath>Object.DescriptionTranslations</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description translations</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Übersetzung der Bezeichnung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перев. наименования</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="DescriptionTranslationsContextMenu" id="11"/>
+							<ExtendedTooltip name="DescriptionTranslationsExtendedTooltip" id="12"/>
+							<Events>
+								<Event name="Opening">DescriptionTranslationsOpening</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="GroupHierarchy" id="194">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Hierarchy</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Hierarchie</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Иерархия</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupHierarchyExtendedTooltip" id="195"/>
+							<ChildItems>
+								<InputField name="Parent" id="7">
+									<DataPath>Object.Parent</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Parent folder</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Elterngruppe</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Родительская группа</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ParentContextMenu" id="8"/>
+									<ExtendedTooltip name="ParentExtendedTooltip" id="9"/>
+								</InputField>
+								<InputField name="Hotel" id="76">
+									<DataPath>Object.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<TextEdit>false</TextEdit>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="HotelContextMenu" id="77"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="78"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupAutoNotification" id="84">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Auto notification</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Automatische Benachrichtigung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Автоматическое уведомление</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group templete</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupAutoNotificationExtendedTooltip" id="85"/>
+							<ChildItems>
+								<InputField name="DeliveryType" id="73">
+									<DataPath>Object.DeliveryType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="DeliveryTypeContextMenu" id="74"/>
+									<ExtendedTooltip name="DeliveryTypeExtendedTooltip" id="75"/>
+									<Events>
+										<Event name="OnChange">DeliveryTypeOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupMessageOrPrintForm" id="178">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Message or print form</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Nachricht oder Druckformular</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сообщение или печатная форма</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupMessageOrPrintFormExtendedTooltip" id="179"/>
+							<ChildItems>
+								<InputField name="SMSTemplate" id="70">
+									<DataPath>Object.SMSTemplate</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Message template</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nachrichtenvorlage</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Шаблон сообщения</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="SMSTemplateContextMenu" id="71"/>
+									<ExtendedTooltip name="SMSTemplateExtendedTooltip" id="72"/>
+								</InputField>
+								<LabelDecoration name="Decoration2" id="189">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>druckformular:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>print form:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>печатная форма:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Decoration2ContextMenu" id="190"/>
+									<ExtendedTooltip name="Decoration2ExtendedTooltip" id="191"/>
+								</LabelDecoration>
+								<UsualGroup name="GroupPrintForms" id="192">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Print forms</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Druckformulare</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Печатные формы</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupPrintFormsExtendedTooltip" id="193"/>
+									<ChildItems>
+										<InputField name="PrintFormRu" id="180">
+											<DataPath>Object.PrintFormRu</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>(RU)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>(RU)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(RU)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="PrintFormRuContextMenu" id="181"/>
+											<ExtendedTooltip name="PrintFormRuExtendedTooltip" id="182"/>
+										</InputField>
+										<InputField name="PrintFormEn" id="183">
+											<DataPath>Object.PrintFormEn</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>(EN)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>(EN)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(EN)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="PrintFormEnContextMenu" id="184"/>
+											<ExtendedTooltip name="PrintFormEnExtendedTooltip" id="185"/>
+										</InputField>
+										<InputField name="PrintFormDe" id="186">
+											<DataPath>Object.PrintFormDe</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>(DE)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>(DE)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(DE)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="PrintFormDeContextMenu" id="187"/>
+											<ExtendedTooltip name="PrintFormDeExtendedTooltip" id="188"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupParametersVertical" id="92">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Parameters</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Parameter</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group items horizontal</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupParametersVerticalExtendedTooltip" id="93"/>
+							<ChildItems>
+								<InputField name="GuaranteeType" id="143">
+									<DataPath>Object.GuaranteeType</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="GuaranteeTypeContextMenu" id="144"/>
+									<ExtendedTooltip name="GuaranteeTypeExtendedTooltip" id="145"/>
+								</InputField>
+								<UsualGroup name="GroupColumns" id="134">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Columns</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Spalten</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Колонки</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupColumnsExtendedTooltip" id="135"/>
+									<ChildItems>
+										<UsualGroup name="GroupLeft" id="94">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Left</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Links</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Левая</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group left</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupLeftExtendedTooltip" id="95"/>
+											<ChildItems>
+												<CheckBoxField name="IsActive" id="16">
+													<DataPath>Object.IsActive</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsActiveContextMenu" id="17"/>
+													<ExtendedTooltip name="IsActiveExtendedTooltip" id="18"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsPreliminary" id="37">
+													<DataPath>Object.IsPreliminary</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Is tentative</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Ist tentative</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Предварительная</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsPreliminaryContextMenu" id="38"/>
+													<ExtendedTooltip name="IsPreliminaryExtendedTooltip" id="39"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsGuaranteed" id="22">
+													<DataPath>Object.IsGuaranteed</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsGuaranteedContextMenu" id="23"/>
+													<ExtendedTooltip name="IsGuaranteedExtendedTooltip" id="24"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsCheckIn" id="19">
+													<DataPath>Object.IsCheckIn</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Is for checked-in guests</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Wird für eingecheckte Gäste</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Для заехавших гостей</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsCheckInContextMenu" id="20"/>
+													<ExtendedTooltip name="IsCheckInExtendedTooltip" id="21"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsNoShow" id="31">
+													<DataPath>Object.IsNoShow</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsNoShowContextMenu" id="32"/>
+													<ExtendedTooltip name="IsNoShowExtendedTooltip" id="33"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="DoCharging" id="43">
+													<DataPath>Object.DoCharging</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoChargingContextMenu" id="44"/>
+													<ExtendedTooltip name="DoChargingExtendedTooltip" id="45"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<UsualGroup name="GroupDoChargingAttributes" id="106">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Do charging attributes</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Parameter für die Ladeausführung</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Параметры выполнения начислений</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupDoChargingAttributesExtendedTooltip" id="107"/>
+													<ChildItems>
+														<UsualGroup name="GropDoChargingAttributesRow1" id="198">
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>1</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>1</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>1</v8:content>
+																</v8:item>
+															</Title>
+															<Group>AlwaysHorizontal</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="GropDoChargingAttributesRow1ExtendedTooltip" id="199"/>
+															<ChildItems>
+																<LabelDecoration name="Decoration3" id="108">
+																	<Width>1</Width>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<ContextMenu name="Decoration3ContextMenu" id="109"/>
+																	<ExtendedTooltip name="Decoration3ExtendedTooltip" id="110"/>
+																</LabelDecoration>
+																<CheckBoxField name="DoChargingIfRoomIsFilled" id="46">
+																	<DataPath>Object.DoChargingIfRoomIsFilled</DataPath>
+																	<TitleLocation>Right</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="DoChargingIfRoomIsFilledContextMenu" id="47"/>
+																	<ExtendedTooltip name="DoChargingIfRoomIsFilledExtendedTooltip" id="48"/>
+																	<Events>
+																		<Event name="OnChange">RefreshDisplay</Event>
+																	</Events>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="GropDoChargingAttributesRow2" id="200">
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>2</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>2</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>2</v8:content>
+																</v8:item>
+															</Title>
+															<Group>AlwaysHorizontal</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="GropDoChargingAttributesRow2ExtendedTooltip" id="201"/>
+															<ChildItems>
+																<LabelDecoration name="Decoration4" id="202">
+																	<Width>1</Width>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<ContextMenu name="Decoration4ContextMenu" id="203"/>
+																	<ExtendedTooltip name="Decoration4ExtendedTooltip" id="204"/>
+																</LabelDecoration>
+																<CheckBoxField name="AlwaysChargeInAdvanceServicesOnly" id="205">
+																	<DataPath>Object.AlwaysChargeInAdvanceServicesOnly</DataPath>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="AlwaysChargeInAdvanceServicesOnlyContextMenu" id="206"/>
+																	<ExtendedTooltip name="AlwaysChargeInAdvanceServicesOnlyExtendedTooltip" id="207"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupMiddle" id="96">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Middle</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Middle</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Средняя</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group left</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupMiddleExtendedTooltip" id="97"/>
+											<ChildItems>
+												<CheckBoxField name="IsAnnulation" id="34">
+													<DataPath>Object.IsAnnulation</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsAnnulationContextMenu" id="35"/>
+													<ExtendedTooltip name="IsAnnulationExtendedTooltip" id="36"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsInWaitingList" id="28">
+													<DataPath>Object.IsInWaitingList</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsInWaitingListContextMenu" id="29"/>
+													<ExtendedTooltip name="IsInWaitingListExtendedTooltip" id="30"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsFullyPaid" id="25">
+													<DataPath>Object.IsFullyPaid</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsFullyPaidContextMenu" id="26"/>
+													<ExtendedTooltip name="IsFullyPaidExtendedTooltip" id="27"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="DoNotChargeForecastServices" id="64">
+													<DataPath>Object.DoNotChargeForecastServices</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoNotChargeForecastServicesContextMenu" id="65"/>
+													<ExtendedTooltip name="DoNotChargeForecastServicesExtendedTooltip" id="66"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="DoNoShowCharging" id="49">
+													<DataPath>Object.DoNoShowCharging</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoNoShowChargingContextMenu" id="50"/>
+													<ExtendedTooltip name="DoNoShowChargingExtendedTooltip" id="51"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="DoLateAnnulationCharging" id="52">
+													<DataPath>Object.DoLateAnnulationCharging</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoLateAnnulationChargingContextMenu" id="53"/>
+													<ExtendedTooltip name="DoLateAnnulationChargingExtendedTooltip" id="54"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupRight" id="196">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Right</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Recht</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Правая</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupRightExtendedTooltip" id="197"/>
+											<ChildItems>
+												<CheckBoxField name="ShowInClientsSearchForm" id="40">
+													<DataPath>Object.ShowInClientsSearchForm</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ShowInClientsSearchFormContextMenu" id="41"/>
+													<ExtendedTooltip name="ShowInClientsSearchFormExtendedTooltip" id="42"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="UseReservationTimeForCheckIn" id="61">
+													<DataPath>Object.UseReservationTimeForCheckIn</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="UseReservationTimeForCheckInContextMenu" id="62"/>
+													<ExtendedTooltip name="UseReservationTimeForCheckInExtendedTooltip" id="63"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="FixReservationConditions" id="58">
+													<DataPath>Object.FixReservationConditions</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="FixReservationConditionsContextMenu" id="59"/>
+													<ExtendedTooltip name="FixReservationConditionsExtendedTooltip" id="60"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="DoNotAllowEditOfMainReservationParameters" id="146">
+													<DataPath>Object.DoNotAllowEditOfMainReservationParameters</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoNotAllowEditOfMainReservationParametersContextMenu" id="147"/>
+													<ExtendedTooltip name="DoNotAllowEditOfMainReservationParametersExtendedTooltip" id="148"/>
+												</CheckBoxField>
+												<CheckBoxField name="DoNotCreateReservationsInBlock" id="173">
+													<DataPath>Object.DoNotCreateReservationsInBlock</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoNotCreateReservationsInBlockContextMenu" id="174"/>
+													<ExtendedTooltip name="DoNotCreateReservationsInBlockExtendedTooltip" id="175"/>
+												</CheckBoxField>
+												<CheckBoxField name="DoRoomStatusChange" id="55">
+													<DataPath>Object.DoRoomStatusChange</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DoRoomStatusChangeContextMenu" id="56"/>
+													<ExtendedTooltip name="DoRoomStatusChangeExtendedTooltip" id="57"/>
+													<Events>
+														<Event name="OnChange">RefreshDisplay</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="IsArrivalSchedule" id="149">
+													<DataPath>Object.IsArrivalSchedule</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="IsArrivalScheduleContextMenu" id="150"/>
+													<ExtendedTooltip name="IsArrivalScheduleExtendedTooltip" id="151"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Remarks" id="67">
+							<DataPath>Object.Remarks</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="RemarksContextMenu" id="68"/>
+							<ExtendedTooltip name="RemarksExtendedTooltip" id="69"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="TransitionsAllowedPage" id="152">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Transitions allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Transitions erlaubt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разрешенные переходы</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.BusinessProcess</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="TransitionsAllowedPageExtendedTooltip" id="153"/>
+					<ChildItems>
+						<Table name="TransitionsAllowed" id="154">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.TransitionsAllowed</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="TransitionsAllowedContextMenu" id="155"/>
+							<AutoCommandBar name="TransitionsAllowedCommandBar" id="156"/>
+							<ExtendedTooltip name="TransitionsAllowedExtendedTooltip" id="157"/>
+							<SearchStringAddition name="TransitionsAllowedSearchString" id="158">
+								<AdditionSource>
+									<Item>TransitionsAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="TransitionsAllowedSearchStringContextMenu" id="159"/>
+								<ExtendedTooltip name="TransitionsAllowedSearchStringExtendedTooltip" id="160"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="TransitionsAllowedViewStatus" id="161">
+								<AdditionSource>
+									<Item>TransitionsAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="TransitionsAllowedViewStatusContextMenu" id="162"/>
+								<ExtendedTooltip name="TransitionsAllowedViewStatusExtendedTooltip" id="163"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="TransitionsAllowedSearchControl" id="164">
+								<AdditionSource>
+									<Item>TransitionsAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="TransitionsAllowedSearchControlContextMenu" id="165"/>
+								<ExtendedTooltip name="TransitionsAllowedSearchControlExtendedTooltip" id="166"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="TransitionsAllowed1LineNumber" id="167">
+									<DataPath>Object.TransitionsAllowed.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="TransitionsAllowed1LineNumberContextMenu" id="168"/>
+									<ExtendedTooltip name="TransitionsAllowed1LineNumberExtendedTooltip" id="169"/>
+								</LabelField>
+								<InputField name="TransitionsAllowed1ReservationStatus" id="170">
+									<DataPath>Object.TransitionsAllowed.ReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="TransitionsAllowed1ReservationStatusContextMenu" id="171"/>
+									<ExtendedTooltip name="TransitionsAllowed1ReservationStatusExtendedTooltip" id="172"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageReservationConditions" id="90">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reservation conditions</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bedingungen der Reservierung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия бронирования</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Page reservation conditions</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>CommonPicture.Appointment</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageReservationConditionsExtendedTooltip" id="91"/>
+					<ChildItems>
+						<InputField name="ReservationConditions" id="79">
+							<DataPath>Object.ReservationConditions</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<MultiLine>true</MultiLine>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ReservationConditionsContextMenu" id="80"/>
+							<ExtendedTooltip name="ReservationConditionsExtendedTooltip" id="81"/>
+							<Events>
+								<Event name="Opening">ReservationConditionsOpening</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ReservationStatuses</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ItemColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Artikelfarbe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет элемента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ItemColorIsSet" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Item color is set</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ClearColor" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe entfernen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Klare Farbe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить цвет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SetColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Stellen Sie Farbe</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

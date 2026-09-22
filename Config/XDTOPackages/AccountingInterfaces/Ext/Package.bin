@@ -1,0 +1,476 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.1chotel.ru/interfaces/accounting/">
+	<objectType name="Services">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="ServicesItemRow" type="d3p1:ServicesItemRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ServicesItemRow">
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property name="ExternalCode" type="xs:string"/>
+		<property name="IsRoomRevenue" type="xs:boolean" nillable="true"/>
+		<property name="ServiceTypeDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ServiceTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="IsAgentService" type="xs:boolean"/>
+		<property name="HotelDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="HotelCode" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ServicesList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Services" type="d3p1:Services" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string"/>
+	</objectType>
+	<objectType name="CustomersList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Customers" type="d3p1:Customers" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Customers">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CustomersItemRow" type="d3p1:CustomersItemRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="CustomersItemRow">
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property name="ExternalCode" type="xs:string"/>
+		<property name="TIN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="EMail" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Phone" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="IsIndividual" type="xs:boolean" nillable="true"/>
+		<property name="Address" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CountryCode" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="CountryISOCode2" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CountryISOCode3" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="DateOfBirth" type="xs:date" lowerBound="0" nillable="true"/>
+		<property name="KPP" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="SourcesOfBusiness" type="d3p1:SourcesOfBusiness" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="CompanyList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:Company" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Company">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CompanyItemRow" type="d3p1:CompanyItemRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="CompanyItemRow">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="AccountingContract">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="SettlementList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Settlement" type="d3p1:Settlement" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="SettlementItemRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCustomer" type="d3p1:CustomersItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingContract" type="d3p1:AccountingContract" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="GuestGroup" type="d3p1:GuestGroup" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCurrency" type="d3p1:AccountingCurrency" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property name="Number" type="xs:string"/>
+		<property name="Date" type="xs:dateTime"/>
+		<property name="Sum" type="xs:decimal" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:CompanyItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Hotel" type="d3p1:HotelParameters" nillable="true"/>
+		<property name="Parent" type="xs:string"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentSection" type="d3p1:PaymentSectionsRow"/>
+	</objectType>
+	<objectType name="Settlement">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="SettlementItemRow" type="d3p1:SettlementItemRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="GuestGroup">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="CheckInDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="CheckOutDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AccountingCurrency">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="SettlementServicesList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="SettlementServicesTable" type="d3p1:SettlementServicesTable" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="SettlementServicesTable">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="SettlementServicesTableRow" type="d3p1:SettlementServicesTableRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="SettlementServicesTableRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCustomer" type="d3p1:CustomersItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingContract" type="d3p1:AccountingContract" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="GuestGroup" type="d3p1:GuestGroup" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCurrency" type="d3p1:AccountingCurrency" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Folio" type="d3p1:Folio" nillable="true"/>
+		<property name="RecorderNumber" type="xs:string"/>
+		<property name="Period" type="xs:dateTime"/>
+		<property name="Sum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:CompanyItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Services" type="d3p1:ServicesItemRow"/>
+		<property name="Quantity" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="19" fractionDigits="7"/>
+		</property>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Client" type="d3p1:Client" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Room" type="d3p1:Room" nillable="true"/>
+		<property name="Price" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VATRate" type="d3p1:VATRate" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property name="IsAgentService" type="xs:boolean"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentSection" type="d3p1:PaymentSectionsRow"/>
+		<property name="HotelProduct" type="xs:string" nillable="true"/>
+		<property name="AccountingDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="VATSum" lowerBound="0" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+	</objectType>
+	<objectType name="Client">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Room">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="RoomTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Folio">
+		<property name="Number" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="DateTimeFrom" type="xs:dateTime" nillable="true"/>
+		<property name="DateTimeTo" type="xs:dateTime" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="ParentDoc" type="d3p1:ParentDoc" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="GuestGroup" type="d3p1:GuestGroup" nillable="true"/>
+	</objectType>
+	<objectType name="VATRate">
+		<property name="TaxRate">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="5"/>
+		</property>
+		<property name="Description" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="ParentDoc">
+		<property name="HasOfficialLetter" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Guest" type="d3p1:Client" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="CashRegisterDayPayments">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CloseOfCashRegisterDayPaymentList" type="d3p1:CloseOfCashRegisterDayPaymentList" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="CloseOfCashRegisterDayPaymentList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CloseOfCashRegisterDayPaymentListRow" type="d3p1:CloseOfCashRegisterDayPaymentListRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="CloseOfCashRegisterDayPaymentListRow">
+		<property name="CCRDPeriodFrom" type="xs:dateTime" nillable="true"/>
+		<property name="CCRDPeriodTo" type="xs:dateTime" nillable="true"/>
+		<property name="AccountingDate" type="xs:dateTime" nillable="true"/>
+		<property name="CCRDGUID" type="xs:string" nillable="true"/>
+		<property name="CCRDExternalCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCustomer" type="d3p1:CustomersItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCurrency" type="d3p1:AccountingCurrency" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentMethod" type="d3p1:PaymentMethod" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:CompanyItemRow"/>
+		<property name="Sum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CashRegister" type="d3p1:CashRegister"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentTable" type="d3p1:PaymentTable" lowerBound="0" nillable="true"/>
+		<property name="CCRDNumber" type="xs:string" nillable="true"/>
+		<property name="Author" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="CashRegisterDay">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CashRegisterDayItem" type="d3p1:CashRegisterDayItem" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="CashRegisterDayItem">
+		<property name="Number" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CashRegister" type="d3p1:CashRegister"/>
+		<property name="DateFrom" type="xs:dateTime" nillable="true"/>
+		<property name="Date" type="xs:dateTime" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property name="Author" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="CashRegisterDayList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CashRegisterDay" type="d3p1:CashRegisterDay" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="CashRegister">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Hotel" type="d3p1:HotelParameters" nillable="true"/>
+		<property name="ManufactureNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RegistrationNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TerminalNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="PaymentList">
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentTable" type="d3p1:PaymentTable" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="PaymentTable">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentRow" type="d3p1:PaymentRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="PaymentRow">
+		<property name="RecorderNumber" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCustomer" type="d3p1:CustomersItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingContract" type="d3p1:AccountingContract" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="GuestGroup" type="d3p1:GuestGroup" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Folio" type="d3p1:Folio" lowerBound="0" nillable="true"/>
+		<property name="Period" type="xs:dateTime" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:CompanyItemRow" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Hotel" type="d3p1:HotelParameters" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCurrency" type="d3p1:AccountingCurrency" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="CashRegister" type="d3p1:CashRegister" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentMethod" type="d3p1:PaymentMethod" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentSection" type="d3p1:PaymentSectionsRow" lowerBound="0" nillable="true"/>
+		<property name="Sum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property name="VatSum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VATRate" type="d3p1:VATRate" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Client" type="d3p1:Client" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Service" type="d3p1:ServicesItemRow" lowerBound="0"/>
+		<property name="Quantity" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="19" fractionDigits="7"/>
+		</property>
+	</objectType>
+	<objectType name="PaymentMethod">
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="IsByCreditCard" type="xs:boolean"/>
+		<property name="ExternalCode" type="xs:string"/>
+		<property name="BookByCashRegister" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="IsByCash" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="IsForReturnOnly" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceList">
+		<property name="ErrorDescription" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="InvoiceTable" type="d3p1:InvoiceTable" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceTable">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="InvoiceTableRow" type="d3p1:InvoiceTableRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceTableRow">
+		<property name="Number" type="xs:string" nillable="true"/>
+		<property name="Period" type="xs:dateTime" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCustomer" type="d3p1:CustomersItemRow" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingContract" type="d3p1:AccountingContract" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Company" type="d3p1:CompanyItemRow" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AccountingCurrency" type="d3p1:AccountingCurrency" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="TableServices" type="d3p1:InvoiceTableServices" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Hotel" type="d3p1:HotelParameters" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="GuestGroup" type="d3p1:GuestGroup" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceTableServices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="InvoiceTableServicesRow" type="d3p1:InvoiceTableServicesRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceTableServicesRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Service" type="d3p1:ServicesItemRow"/>
+		<property name="Quantity" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="19" fractionDigits="7"/>
+		</property>
+		<property name="Price" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VATRate" type="d3p1:VATRate" nillable="true"/>
+		<property name="VatSum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property name="Sum" nillable="true" form="Element">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="17" fractionDigits="2"/>
+		</property>
+		<property name="Remarks" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Client" type="d3p1:Client" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Room" type="d3p1:Room" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Folio" type="d3p1:Folio" nillable="true"/>
+	</objectType>
+	<objectType name="Customer">
+		<property name="Description" type="xs:string"/>
+		<property name="FullDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Code" type="xs:string"/>
+		<property name="TIN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="KPP" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PostAddress" type="xs:string" nillable="true"/>
+		<property name="Phone" type="xs:string" nillable="true"/>
+		<property name="EMail" type="xs:string" nillable="true"/>
+		<property name="LegalAddress" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="BankAccountNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="BankAccountBIC" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="BankAccountBankName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="BankAccountBankCorrAccount" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Contract">
+		<property name="Description" type="xs:string" nillable="true"/>
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Date" type="xs:date" nillable="true"/>
+	</objectType>
+	<objectType name="PaymentDetailsRow">
+		<property name="InvoiceNumber" type="xs:string"/>
+		<property name="InvoiceDate" type="xs:dateTime"/>
+		<property name="ContractCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Sum" type="xs:decimal"/>
+		<property name="ExternalCode" type="xs:string"/>
+	</objectType>
+	<objectType name="PaymentDetails">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentDetailsRow" type="d3p1:PaymentDetailsRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="PaymentSectionsList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentSections" type="d3p1:PaymentSections" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string"/>
+	</objectType>
+	<objectType name="PaymentSections">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentSectionsRow" type="d3p1:PaymentSectionsRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="PaymentSectionsRow">
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property name="ExternalCode" type="xs:string"/>
+		<property name="IsPaymentSection" type="xs:boolean" lowerBound="0" nillable="true" default="True"/>
+	</objectType>
+	<objectType name="PaymentMethodsList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentMethods" type="d3p1:PaymentMethods" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string"/>
+	</objectType>
+	<objectType name="PaymentMethods">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="PaymentMethod" type="d3p1:PaymentMethod" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Hotel">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="HotelParameters" type="d3p1:HotelParameters" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="HotelParameters">
+		<property name="Code" type="xs:string" lowerBound="0" nillable="true" default=" "/>
+		<property name="LegacyName" type="xs:string" nillable="true" default=" "/>
+		<property name="ExternalCode" type="xs:string" nillable="true" default=" "/>
+	</objectType>
+	<objectType name="Income">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VAT" type="d3p1:IncomeVAT"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Services" type="d3p1:IncomeServices"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Payments" type="d3p1:IncomePayments"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Invoices" type="d3p1:IncomeInvoices"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="ProformaInvoices" type="d3p1:IncomeProformaInvoices"/>
+	</objectType>
+	<objectType name="IncomeVAT">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="IncomeVATRate" type="d3p1:IncomeVATRate" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IncomeServices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="IncomeService" type="d3p1:IncomeService" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IncomeVATRate">
+		<property name="AccountingDate" type="xs:date"/>
+		<property name="VATRateName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATTaxRate" type="xs:decimal"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="AccountCode" type="xs:string"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItems" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="IncomeService">
+		<property name="AccountingDate" type="xs:date"/>
+		<property name="ServiceName" type="xs:string"/>
+		<property name="VATRateName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATTaxRate" type="xs:decimal"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="VATAmount" type="xs:decimal"/>
+		<property name="DepartmentCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeDt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeCr" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItems" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsDt" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsCr" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="IncomePayments">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="IncomePayment" type="d3p1:IncomePayment" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IncomePayment">
+		<property name="AccountingDate" type="xs:date"/>
+		<property name="POSName" type="xs:string" nillable="true"/>
+		<property name="PaymentMethodName" type="xs:string" nillable="true"/>
+		<property name="VATRateName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATTaxRate" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="AmountWithoutVAT" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="VATAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Customer" type="d3p1:CustomersItemRow" lowerBound="0" nillable="true"/>
+		<property name="DiscountCard" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="IsPrepayment" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="IsPrepaymentClearing" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="AccountCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeDt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeCr" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItems" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsDt" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsCr" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="IncomeInvoices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="IncomeInvoice" type="d3p1:IncomeInvoice" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IncomeInvoice">
+		<property name="AccountingDate" type="xs:date"/>
+		<property name="InvoiceNumber" type="xs:string"/>
+		<property name="ReservationNumber" type="xs:string"/>
+		<property name="ReservationRefCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestDescription" type="xs:string"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="AmountDue" type="xs:decimal"/>
+		<property name="AccountCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeDt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeCr" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentDueDate" type="xs:date" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Customer" type="d3p1:CustomersItemRow" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Contract" type="d3p1:Contract" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VATRates" type="d3p1:IncomeVAT" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="ClearedProformaInvoices" type="d3p1:IncomeProformaInvoices"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItems" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsDt" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsCr" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property name="NumberOfAdults" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfTeenagers" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfChildren" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfInfants" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="CommissionAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="IncomeProformaInvoices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="IncomeProformaInvoice" type="d3p1:IncomeProformaInvoice" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IncomeProformaInvoice">
+		<property name="AccountingDate" type="xs:date"/>
+		<property name="InvoiceNumber" type="xs:string"/>
+		<property name="ReservationNumber" type="xs:string"/>
+		<property name="ReservationRefCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestDescription" type="xs:string"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="AccountCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeDt" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccountCodeCr" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentDueDate" type="xs:date" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Customer" type="d3p1:CustomersItemRow" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Contract" type="d3p1:Contract" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="Services" type="d3p1:IncomeServices"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="VATRates" type="d3p1:IncomeVAT" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItems" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsDt" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItemsCr" type="d3p1:AnalysisItems" lowerBound="0" nillable="true"/>
+		<property name="NumberOfAdults" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfTeenagers" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfChildren" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="NumberOfInfants" type="xs:integer" lowerBound="0" nillable="true"/>
+		<property name="CommissionAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AnalysisItem">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="AnalysisItems">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItem1" type="d3p1:AnalysisItem" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/accounting/" name="AnalysisItem2" type="d3p1:AnalysisItem" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="SourcesOfBusiness">
+		<property name="Code" type="xs:string" nillable="true"/>
+		<property name="Description" type="xs:string" nillable="true"/>
+	</objectType>
+</package>

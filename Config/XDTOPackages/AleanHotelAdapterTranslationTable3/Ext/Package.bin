@@ -1,0 +1,76 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3">
+	<valueType name="CIDType" base="xs:string" variety="Atomic" maxLength="24"/>
+	<valueType name="AgeType" base="xs:string" variety="Atomic"/>
+	<valueType name="PlaceKindType" base="xs:string" variety="Atomic">
+		<enumeration xsi:type="xs:string">BASE</enumeration>
+		<enumeration xsi:type="xs:string">EXT</enumeration>
+		<enumeration xsi:type="xs:string">NO_PLACE</enumeration>
+	</valueType>
+	<objectType name="GetTranslationTable">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TranslationTable" type="d3p1:TranslationTable"/>
+	</objectType>
+	<objectType name="TranslationTable">
+		<property name="InteractID" type="xs:string" form="Attribute"/>
+		<property name="ExternalID" type="xs:string" form="Attribute"/>
+		<property name="ExternalName" type="xs:string" nillable="true" form="Attribute"/>
+		<property name="Inactive" type="xs:boolean" lowerBound="0" nillable="true" form="Attribute"/>
+		<property name="IsDraft" type="xs:boolean" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomCategoryTranslationList" type="d3p1:RoomCategoryTranslationList" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="AbodePacketTranslationList" type="d3p1:AbodePacketTranslationList" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="ServiceTranslationList" type="d3p1:ServiceTranslationList" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TouristTypeTranslationList" type="d3p1:TouristTypeTranslationList" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomPlacingAvailabilityList" type="d3p1:RoomPlacingAvailabilityList" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="TranslationTableList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TranslationTable" type="d3p1:TranslationTable" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomCategoryTranslationList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomCategoryTranslationItem" type="d3p1:RoomCategoryTranslationItem" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="AbodePacketTranslationList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="AbodePacketTranslationItem" type="d3p1:AbodePacketTranslationItem" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="TouristTypeTranslationList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TouristTypeTranslationItem" type="d3p1:TouristTypeTranslationItem" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomCategoryTranslationItem">
+		<property name="ExternalID" type="xs:string" form="Attribute"/>
+		<property name="ExternalName" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomCategoryCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomTypeCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="AbodePacketTranslationItem">
+		<property name="ExternalID" type="xs:string" form="Attribute"/>
+		<property name="ExternalName" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="AbodePacketCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="TouristTypeTranslationItem">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="ExternalAge" type="d3p1:AgeType" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TouristTypeCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="PlaceKind" type="d3p1:PlaceKindType" form="Attribute"/>
+	</objectType>
+	<objectType name="UpdateTranslationTable">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TranslationTable" type="d3p1:TranslationTable"/>
+	</objectType>
+	<objectType name="ServiceTranslationItem">
+		<property name="ExternalID" type="xs:string" form="Attribute"/>
+		<property name="ExternalName" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="ServiceCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="ServiceTranslationList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="ServiceTranslationItem" type="d3p1:ServiceTranslationItem" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomPlacingAvailabilityList">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomPlacingAvailability" type="d3p1:RoomPlacingAvailability" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomPlacingAvailability">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomCategoryCID" type="d3p1:CIDType" form="Attribute"/>
+		<property name="Excluded" type="xs:boolean" default="False" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="RoomPlacing" type="d3p1:RoomPlacing" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomPlacing">
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="PlaceKind" type="d3p1:PlaceKindType" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tma-HotelAdapterTranslationTable.v3" name="TouristTypeCID" type="d3p1:CIDType" lowerBound="0" nillable="true" form="Attribute"/>
+		<property name="Quantity" form="Attribute"/>
+	</objectType>
+</package>

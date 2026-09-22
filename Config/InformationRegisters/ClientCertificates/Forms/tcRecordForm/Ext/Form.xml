@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormUpdateCertificateData" id="24">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.UpdateCertificateData</CommandName>
+				<ExtendedTooltip name="FormUpdateCertificateDataExtendedTooltip" id="25"/>
+			</Button>
+			<ButtonGroup name="FormGroupChange" id="36">
+				<ExtendedTooltip name="FormGroupChangeExtendedTooltip" id="37"/>
+				<ChildItems>
+					<Button name="FormChangeCardOwner" id="34">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ChangeCardOwner</CommandName>
+						<ExtendedTooltip name="FormChangeCardOwnerExtendedTooltip" id="35"/>
+					</Button>
+					<Button name="FormCancelChangeCardOwner" id="38">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.CancelChangeCardOwner</CommandName>
+						<ExtendedTooltip name="FormCancelChangeCardOwnerExtendedTooltip" id="39"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="ExternalEvent">ExternalEvent</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Status" id="1">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#FFFFFF</TextColor>
+			<Font ref="style:MobileImportantFont" height="18" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>DIGITALES ZERTIFIKAT</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DIGITAL CERTIFICATE</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ЦИФРОВОЙ СЕРТИФИКАТ</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<ContextMenu name="StatusContextMenu" id="2"/>
+			<ExtendedTooltip name="StatusExtendedTooltip" id="3"/>
+		</LabelDecoration>
+		<LabelDecoration name="OpenURL" id="31">
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open in browser</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Im Browser öffnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть в браузере</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+			<Hyperlink>true</Hyperlink>
+			<ContextMenu name="OpenURLContextMenu" id="32"/>
+			<ExtendedTooltip name="OpenURLExtendedTooltip" id="33"/>
+			<Events>
+				<Event name="Click">OpenURLClick</Event>
+			</Events>
+		</LabelDecoration>
+		<UsualGroup name="GroupMain" id="26">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupMainExtendedTooltip" id="27"/>
+			<ChildItems>
+				<LabelField name="CertificateNumber" id="4">
+					<DataPath>Record.CertificateNumber</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Certificate number</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zertifikatsnummer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер сертификата</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="CertificateNumberContextMenu" id="5"/>
+					<ExtendedTooltip name="CertificateNumberExtendedTooltip" id="6"/>
+				</LabelField>
+				<InputField name="Guest" id="28">
+					<DataPath>Record.Guest</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Card owner</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Karteninhaber</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец карты</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="GuestContextMenu" id="29"/>
+					<ExtendedTooltip name="GuestExtendedTooltip" id="30"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="ValidToDate" id="7">
+			<DataPath>Record.ValidToDate</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Validity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gültigkeit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок действия</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Top</TitleLocation>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="ValidToDateContextMenu" id="8"/>
+			<ExtendedTooltip name="ValidToDateExtendedTooltip" id="9"/>
+		</LabelField>
+		<UsualGroup name="GroupInfo" id="10">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupInfoExtendedTooltip" id="11"/>
+			<ChildItems>
+				<LabelField name="FullName" id="12">
+					<DataPath>Record.FullName</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Certificate owner</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Inhaber des Zertifikats</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец сертификата</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="FullNameContextMenu" id="13"/>
+					<ExtendedTooltip name="FullNameExtendedTooltip" id="14"/>
+				</LabelField>
+				<LabelField name="DateOfBirth" id="15">
+					<DataPath>Record.DateOfBirth</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="DateOfBirthContextMenu" id="16"/>
+					<ExtendedTooltip name="DateOfBirthExtendedTooltip" id="17"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="Remarks" id="18">
+			<DataPath>Record.Remarks</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleLocation>None</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<ContextMenu name="RemarksContextMenu" id="19"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="20"/>
+		</LabelField>
+		<PictureField name="QRCodePresentation" id="21">
+			<DataPath>QRCodePresentation</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+			<Width>18</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>7</Height>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<PictureSize>Stretch</PictureSize>
+			<Hyperlink>true</Hyperlink>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">WithoutBorder</v8ui:style>
+			</Border>
+			<ContextMenu name="QRCodePresentationContextMenu" id="22"/>
+			<ExtendedTooltip name="QRCodePresentationExtendedTooltip" id="23"/>
+			<Events>
+				<Event name="Click">QRCodePresentationClick</Event>
+			</Events>
+		</PictureField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ClientCertificates</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="QRCodePresentation" id="2">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="QRCode" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="IsNew" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelStatus" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelGuest" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsChangeCardOwner" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="UpdateCertificateData" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update certificate data</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zertifikatdetails aktualisieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить данные сертификата</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Reread</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UpdateCertificateData</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ChangeCardOwner" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change car owner</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Autobesitzer wechseln</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сменить владельца карты</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Integration</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ChangeCardOwner</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="CancelChangeCardOwner" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cancel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Abbrechen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Remove</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CancelChangeCardOwner</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

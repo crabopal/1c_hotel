@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormRestore" id="324">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Restore</CommandName>
+				<ExtendedTooltip name="FormRestoreExtendedTooltip" id="325"/>
+			</Button>
+			<Button name="FormClose" id="28">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="FormCloseExtendedTooltip" id="29"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Reservation" id="19">
+					<DataPath>List.Reservation</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ReservationContextMenu" id="20"/>
+					<ExtendedTooltip name="ReservationExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="Period" id="16">
+					<DataPath>List.Period</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Period</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Periode</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="PeriodContextMenu" id="17"/>
+					<ExtendedTooltip name="PeriodExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="User" id="25">
+					<DataPath>List.User</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="UserContextMenu" id="26"/>
+					<ExtendedTooltip name="UserExtendedTooltip" id="27"/>
+				</LabelField>
+				<LabelField name="Changes" id="22">
+					<DataPath>List.Changes</DataPath>
+					<AutoCellHeight>true</AutoCellHeight>
+					<Width>40</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>30</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ChangesContextMenu" id="23"/>
+					<ExtendedTooltip name="ChangesExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="ReservationStatus" id="264">
+					<DataPath>List.ReservationStatus</DataPath>
+					<ContextMenu name="ReservationStatusContextMenu" id="265"/>
+					<ExtendedTooltip name="ReservationStatusExtendedTooltip" id="266"/>
+				</LabelField>
+				<LabelField name="Guest" id="150">
+					<DataPath>List.Guest</DataPath>
+					<ContextMenu name="GuestContextMenu" id="151"/>
+					<ExtendedTooltip name="GuestExtendedTooltip" id="152"/>
+				</LabelField>
+				<LabelField name="CheckInDate" id="66">
+					<DataPath>List.CheckInDate</DataPath>
+					<ContextMenu name="CheckInDateContextMenu" id="67"/>
+					<ExtendedTooltip name="CheckInDateExtendedTooltip" id="68"/>
+				</LabelField>
+				<LabelField name="Duration" id="129">
+					<DataPath>List.Duration</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Dur.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dauer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прод.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DurationContextMenu" id="130"/>
+					<ExtendedTooltip name="DurationExtendedTooltip" id="131"/>
+				</LabelField>
+				<LabelField name="CheckOutDate" id="69">
+					<DataPath>List.CheckOutDate</DataPath>
+					<ContextMenu name="CheckOutDateContextMenu" id="70"/>
+					<ExtendedTooltip name="CheckOutDateExtendedTooltip" id="71"/>
+				</LabelField>
+				<LabelField name="RoomType" id="291">
+					<DataPath>List.RoomType</DataPath>
+					<ContextMenu name="RoomTypeContextMenu" id="292"/>
+					<ExtendedTooltip name="RoomTypeExtendedTooltip" id="293"/>
+				</LabelField>
+				<LabelField name="AccommodationType" id="33">
+					<DataPath>List.AccommodationType</DataPath>
+					<ContextMenu name="AccommodationTypeContextMenu" id="34"/>
+					<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="35"/>
+				</LabelField>
+				<LabelField name="Room" id="267">
+					<DataPath>List.Room</DataPath>
+					<ContextMenu name="RoomContextMenu" id="268"/>
+					<ExtendedTooltip name="RoomExtendedTooltip" id="269"/>
+				</LabelField>
+				<LabelField name="GuestGroup" id="162">
+					<DataPath>List.GuestGroup</DataPath>
+					<ContextMenu name="GuestGroupContextMenu" id="163"/>
+					<ExtendedTooltip name="GuestGroupExtendedTooltip" id="164"/>
+				</LabelField>
+				<LabelField name="RoomRate" id="282">
+					<DataPath>List.RoomRate</DataPath>
+					<ContextMenu name="RoomRateContextMenu" id="283"/>
+					<ExtendedTooltip name="RoomRateExtendedTooltip" id="284"/>
+				</LabelField>
+				<LabelField name="PricePresentation" id="243">
+					<DataPath>List.PricePresentation</DataPath>
+					<ContextMenu name="PricePresentationContextMenu" id="244"/>
+					<ExtendedTooltip name="PricePresentationExtendedTooltip" id="245"/>
+				</LabelField>
+				<LabelField name="PriceCalculationDate" id="237">
+					<DataPath>List.PriceCalculationDate</DataPath>
+					<ContextMenu name="PriceCalculationDateContextMenu" id="238"/>
+					<ExtendedTooltip name="PriceCalculationDateExtendedTooltip" id="239"/>
+				</LabelField>
+				<LabelField name="Customer" id="93">
+					<DataPath>List.Customer</DataPath>
+					<ContextMenu name="CustomerContextMenu" id="94"/>
+					<ExtendedTooltip name="CustomerExtendedTooltip" id="95"/>
+				</LabelField>
+				<LabelField name="AccommodationTemplate" id="30">
+					<DataPath>List.AccommodationTemplate</DataPath>
+					<ContextMenu name="AccommodationTemplateContextMenu" id="31"/>
+					<ExtendedTooltip name="AccommodationTemplateExtendedTooltip" id="32"/>
+				</LabelField>
+				<LabelField name="Discount" id="105">
+					<DataPath>List.Discount</DataPath>
+					<ContextMenu name="DiscountContextMenu" id="106"/>
+					<ExtendedTooltip name="DiscountExtendedTooltip" id="107"/>
+				</LabelField>
+				<LabelField name="DiscountCard" id="108">
+					<DataPath>List.DiscountCard</DataPath>
+					<ContextMenu name="DiscountCardContextMenu" id="109"/>
+					<ExtendedTooltip name="DiscountCardExtendedTooltip" id="110"/>
+				</LabelField>
+				<LabelField name="ClientType" id="72">
+					<DataPath>List.ClientType</DataPath>
+					<ContextMenu name="ClientTypeContextMenu" id="73"/>
+					<ExtendedTooltip name="ClientTypeExtendedTooltip" id="74"/>
+				</LabelField>
+				<LabelField name="PlannedPaymentMethod" id="234">
+					<DataPath>List.PlannedPaymentMethod</DataPath>
+					<ContextMenu name="PlannedPaymentMethodContextMenu" id="235"/>
+					<ExtendedTooltip name="PlannedPaymentMethodExtendedTooltip" id="236"/>
+				</LabelField>
+				<LabelField name="RoomQuota" id="279">
+					<DataPath>List.RoomQuota</DataPath>
+					<ContextMenu name="RoomQuotaContextMenu" id="280"/>
+					<ExtendedTooltip name="RoomQuotaExtendedTooltip" id="281"/>
+				</LabelField>
+				<LabelField name="Agent" id="36">
+					<DataPath>List.Agent</DataPath>
+					<ContextMenu name="AgentContextMenu" id="37"/>
+					<ExtendedTooltip name="AgentExtendedTooltip" id="38"/>
+				</LabelField>
+				<LabelField name="AgentCommission" id="39">
+					<DataPath>List.AgentCommission</DataPath>
+					<ContextMenu name="AgentCommissionContextMenu" id="40"/>
+					<ExtendedTooltip name="AgentCommissionExtendedTooltip" id="41"/>
+				</LabelField>
+				<LabelField name="AgentCommissionServiceGroup" id="42">
+					<DataPath>List.AgentCommissionServiceGroup</DataPath>
+					<ContextMenu name="AgentCommissionServiceGroupContextMenu" id="43"/>
+					<ExtendedTooltip name="AgentCommissionServiceGroupExtendedTooltip" id="44"/>
+				</LabelField>
+				<LabelField name="AgentCommissionType" id="45">
+					<DataPath>List.AgentCommissionType</DataPath>
+					<ContextMenu name="AgentCommissionTypeContextMenu" id="46"/>
+					<ExtendedTooltip name="AgentCommissionTypeExtendedTooltip" id="47"/>
+				</LabelField>
+				<LabelField name="AnnulationReason" id="48">
+					<DataPath>List.AnnulationReason</DataPath>
+					<ContextMenu name="AnnulationReasonContextMenu" id="49"/>
+					<ExtendedTooltip name="AnnulationReasonExtendedTooltip" id="50"/>
+				</LabelField>
+				<LabelField name="Author" id="51">
+					<DataPath>List.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="52"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="53"/>
+				</LabelField>
+				<LabelField name="AuthorOfAnnulation" id="54">
+					<DataPath>List.AuthorOfAnnulation</DataPath>
+					<ContextMenu name="AuthorOfAnnulationContextMenu" id="55"/>
+					<ExtendedTooltip name="AuthorOfAnnulationExtendedTooltip" id="56"/>
+				</LabelField>
+				<LabelField name="BoardPlace" id="57">
+					<DataPath>List.BoardPlace</DataPath>
+					<ContextMenu name="BoardPlaceContextMenu" id="58"/>
+					<ExtendedTooltip name="BoardPlaceExtendedTooltip" id="59"/>
+				</LabelField>
+				<LabelField name="Car" id="60">
+					<DataPath>List.Car</DataPath>
+					<ContextMenu name="CarContextMenu" id="61"/>
+					<ExtendedTooltip name="CarExtendedTooltip" id="62"/>
+				</LabelField>
+				<LabelField name="ClientTypeConfirmationText" id="75">
+					<DataPath>List.ClientTypeConfirmationText</DataPath>
+					<ContextMenu name="ClientTypeConfirmationTextContextMenu" id="76"/>
+					<ExtendedTooltip name="ClientTypeConfirmationTextExtendedTooltip" id="77"/>
+				</LabelField>
+				<LabelField name="Company" id="78">
+					<DataPath>List.Company</DataPath>
+					<ContextMenu name="CompanyContextMenu" id="79"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="80"/>
+				</LabelField>
+				<LabelField name="ConfirmationReply" id="81">
+					<DataPath>List.ConfirmationReply</DataPath>
+					<ContextMenu name="ConfirmationReplyContextMenu" id="82"/>
+					<ExtendedTooltip name="ConfirmationReplyExtendedTooltip" id="83"/>
+				</LabelField>
+				<LabelField name="ContactPerson" id="84">
+					<DataPath>List.ContactPerson</DataPath>
+					<ContextMenu name="ContactPersonContextMenu" id="85"/>
+					<ExtendedTooltip name="ContactPersonExtendedTooltip" id="86"/>
+				</LabelField>
+				<LabelField name="Contract" id="87">
+					<DataPath>List.Contract</DataPath>
+					<ContextMenu name="ContractContextMenu" id="88"/>
+					<ExtendedTooltip name="ContractExtendedTooltip" id="89"/>
+				</LabelField>
+				<LabelField name="CreditCard" id="90">
+					<DataPath>List.CreditCard</DataPath>
+					<ContextMenu name="CreditCardContextMenu" id="91"/>
+					<ExtendedTooltip name="CreditCardExtendedTooltip" id="92"/>
+				</LabelField>
+				<LabelField name="CustomerType" id="96">
+					<DataPath>List.CustomerType</DataPath>
+					<ContextMenu name="CustomerTypeContextMenu" id="97"/>
+					<ExtendedTooltip name="CustomerTypeExtendedTooltip" id="98"/>
+				</LabelField>
+				<LabelField name="Date" id="99">
+					<DataPath>List.Date</DataPath>
+					<ContextMenu name="DateContextMenu" id="100"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="101"/>
+				</LabelField>
+				<LabelField name="DateOfAnnulation" id="102">
+					<DataPath>List.DateOfAnnulation</DataPath>
+					<ContextMenu name="DateOfAnnulationContextMenu" id="103"/>
+					<ExtendedTooltip name="DateOfAnnulationExtendedTooltip" id="104"/>
+				</LabelField>
+				<LabelField name="DiscountConfirmationText" id="111">
+					<DataPath>List.DiscountConfirmationText</DataPath>
+					<ContextMenu name="DiscountConfirmationTextContextMenu" id="112"/>
+					<ExtendedTooltip name="DiscountConfirmationTextExtendedTooltip" id="113"/>
+				</LabelField>
+				<LabelField name="DiscountServiceGroup" id="114">
+					<DataPath>List.DiscountServiceGroup</DataPath>
+					<ContextMenu name="DiscountServiceGroupContextMenu" id="115"/>
+					<ExtendedTooltip name="DiscountServiceGroupExtendedTooltip" id="116"/>
+				</LabelField>
+				<LabelField name="DiscountSum" id="117">
+					<DataPath>List.DiscountSum</DataPath>
+					<ContextMenu name="DiscountSumContextMenu" id="118"/>
+					<ExtendedTooltip name="DiscountSumExtendedTooltip" id="119"/>
+				</LabelField>
+				<LabelField name="DiscountType" id="120">
+					<DataPath>List.DiscountType</DataPath>
+					<ContextMenu name="DiscountTypeContextMenu" id="121"/>
+					<ExtendedTooltip name="DiscountTypeExtendedTooltip" id="122"/>
+				</LabelField>
+				<CheckBoxField name="DoCharging" id="123">
+					<DataPath>List.DoCharging</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DoChargingContextMenu" id="124"/>
+					<ExtendedTooltip name="DoChargingExtendedTooltip" id="125"/>
+				</CheckBoxField>
+				<CheckBoxField name="DoNotPrintRate" id="126">
+					<DataPath>List.DoNotPrintRate</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DoNotPrintRateContextMenu" id="127"/>
+					<ExtendedTooltip name="DoNotPrintRateExtendedTooltip" id="128"/>
+				</CheckBoxField>
+				<LabelField name="EMail" id="132">
+					<DataPath>List.EMail</DataPath>
+					<ContextMenu name="EMailContextMenu" id="133"/>
+					<ExtendedTooltip name="EMailExtendedTooltip" id="134"/>
+				</LabelField>
+				<LabelField name="ExchangeRateDate" id="135">
+					<DataPath>List.ExchangeRateDate</DataPath>
+					<ContextMenu name="ExchangeRateDateContextMenu" id="136"/>
+					<ExtendedTooltip name="ExchangeRateDateExtendedTooltip" id="137"/>
+				</LabelField>
+				<LabelField name="ExternalCode" id="138">
+					<DataPath>List.ExternalCode</DataPath>
+					<ContextMenu name="ExternalCodeContextMenu" id="139"/>
+					<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="140"/>
+				</LabelField>
+				<LabelField name="Fax" id="141">
+					<DataPath>List.Fax</DataPath>
+					<ContextMenu name="FaxContextMenu" id="142"/>
+					<ExtendedTooltip name="FaxExtendedTooltip" id="143"/>
+				</LabelField>
+				<LabelField name="FeeTerms" id="144">
+					<DataPath>List.FeeTerms</DataPath>
+					<ContextMenu name="FeeTermsContextMenu" id="145"/>
+					<ExtendedTooltip name="FeeTermsExtendedTooltip" id="146"/>
+				</LabelField>
+				<LabelField name="GuaranteeType" id="147">
+					<DataPath>List.GuaranteeType</DataPath>
+					<ContextMenu name="GuaranteeTypeContextMenu" id="148"/>
+					<ExtendedTooltip name="GuaranteeTypeExtendedTooltip" id="149"/>
+				</LabelField>
+				<LabelField name="GuestAge" id="153">
+					<DataPath>List.GuestAge</DataPath>
+					<ContextMenu name="GuestAgeContextMenu" id="154"/>
+					<ExtendedTooltip name="GuestAgeExtendedTooltip" id="155"/>
+				</LabelField>
+				<LabelField name="GuestCitizenship" id="156">
+					<DataPath>List.GuestCitizenship</DataPath>
+					<ContextMenu name="GuestCitizenshipContextMenu" id="157"/>
+					<ExtendedTooltip name="GuestCitizenshipExtendedTooltip" id="158"/>
+				</LabelField>
+				<LabelField name="GuestFullName" id="159">
+					<DataPath>List.GuestFullName</DataPath>
+					<ContextMenu name="GuestFullNameContextMenu" id="160"/>
+					<ExtendedTooltip name="GuestFullNameExtendedTooltip" id="161"/>
+				</LabelField>
+				<LabelField name="Hotel" id="165">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="166"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="167"/>
+				</LabelField>
+				<LabelField name="HotelProduct" id="168">
+					<DataPath>List.HotelProduct</DataPath>
+					<ContextMenu name="HotelProductContextMenu" id="169"/>
+					<ExtendedTooltip name="HotelProductExtendedTooltip" id="170"/>
+				</LabelField>
+				<LabelField name="HousekeepingRemarks" id="171">
+					<DataPath>List.HousekeepingRemarks</DataPath>
+					<ContextMenu name="HousekeepingRemarksContextMenu" id="172"/>
+					<ExtendedTooltip name="HousekeepingRemarksExtendedTooltip" id="173"/>
+				</LabelField>
+				<CheckBoxField name="IgnoreGroupChargingRules" id="312">
+					<DataPath>List.IgnoreGroupChargingRules</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IgnoreGroupChargingRulesContextMenu" id="313"/>
+					<ExtendedTooltip name="IgnoreGroupChargingRulesExtendedTooltip" id="314"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsClosedForEdit" id="174">
+					<DataPath>List.IsClosedForEdit</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsClosedForEditContextMenu" id="175"/>
+					<ExtendedTooltip name="IsClosedForEditExtendedTooltip" id="176"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsMaster" id="177">
+					<DataPath>List.IsMaster</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsMasterContextMenu" id="178"/>
+					<ExtendedTooltip name="IsMasterExtendedTooltip" id="179"/>
+				</CheckBoxField>
+				<LabelField name="LegalRepresentative" id="180">
+					<DataPath>List.LegalRepresentative</DataPath>
+					<ContextMenu name="LegalRepresentativeContextMenu" id="181"/>
+					<ExtendedTooltip name="LegalRepresentativeExtendedTooltip" id="182"/>
+				</LabelField>
+				<LabelField name="MarketingCode" id="183">
+					<DataPath>List.MarketingCode</DataPath>
+					<ContextMenu name="MarketingCodeContextMenu" id="184"/>
+					<ExtendedTooltip name="MarketingCodeExtendedTooltip" id="185"/>
+				</LabelField>
+				<LabelField name="MarketingCodeConfirmationText" id="186">
+					<DataPath>List.MarketingCodeConfirmationText</DataPath>
+					<ContextMenu name="MarketingCodeConfirmationTextContextMenu" id="187"/>
+					<ExtendedTooltip name="MarketingCodeConfirmationTextExtendedTooltip" id="188"/>
+				</LabelField>
+				<CheckBoxField name="NoPost" id="189">
+					<DataPath>List.NoPost</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="NoPostContextMenu" id="190"/>
+					<ExtendedTooltip name="NoPostExtendedTooltip" id="191"/>
+				</CheckBoxField>
+				<LabelField name="Number" id="192">
+					<DataPath>List.Number</DataPath>
+					<ContextMenu name="NumberContextMenu" id="193"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="194"/>
+				</LabelField>
+				<LabelField name="NumberOfAdditionalBeds" id="195">
+					<DataPath>List.NumberOfAdditionalBeds</DataPath>
+					<ContextMenu name="NumberOfAdditionalBedsContextMenu" id="196"/>
+					<ExtendedTooltip name="NumberOfAdditionalBedsExtendedTooltip" id="197"/>
+				</LabelField>
+				<LabelField name="NumberOfAdults" id="198">
+					<DataPath>List.NumberOfAdults</DataPath>
+					<ContextMenu name="NumberOfAdultsContextMenu" id="199"/>
+					<ExtendedTooltip name="NumberOfAdultsExtendedTooltip" id="200"/>
+				</LabelField>
+				<LabelField name="NumberOfBeds" id="201">
+					<DataPath>List.NumberOfBeds</DataPath>
+					<ContextMenu name="NumberOfBedsContextMenu" id="202"/>
+					<ExtendedTooltip name="NumberOfBedsExtendedTooltip" id="203"/>
+				</LabelField>
+				<LabelField name="NumberOfBedsPerRoom" id="204">
+					<DataPath>List.NumberOfBedsPerRoom</DataPath>
+					<ContextMenu name="NumberOfBedsPerRoomContextMenu" id="205"/>
+					<ExtendedTooltip name="NumberOfBedsPerRoomExtendedTooltip" id="206"/>
+				</LabelField>
+				<LabelField name="NumberOfChildren" id="207">
+					<DataPath>List.NumberOfChildren</DataPath>
+					<ContextMenu name="NumberOfChildrenContextMenu" id="208"/>
+					<ExtendedTooltip name="NumberOfChildrenExtendedTooltip" id="209"/>
+				</LabelField>
+				<LabelField name="NumberOfInfants" id="210">
+					<DataPath>List.NumberOfInfants</DataPath>
+					<ContextMenu name="NumberOfInfantsContextMenu" id="211"/>
+					<ExtendedTooltip name="NumberOfInfantsExtendedTooltip" id="212"/>
+				</LabelField>
+				<LabelField name="NumberOfPersons" id="213">
+					<DataPath>List.NumberOfPersons</DataPath>
+					<ContextMenu name="NumberOfPersonsContextMenu" id="214"/>
+					<ExtendedTooltip name="NumberOfPersonsExtendedTooltip" id="215"/>
+				</LabelField>
+				<LabelField name="NumberOfPersonsPerRoom" id="216">
+					<DataPath>List.NumberOfPersonsPerRoom</DataPath>
+					<ContextMenu name="NumberOfPersonsPerRoomContextMenu" id="217"/>
+					<ExtendedTooltip name="NumberOfPersonsPerRoomExtendedTooltip" id="218"/>
+				</LabelField>
+				<LabelField name="NumberOfRooms" id="219">
+					<DataPath>List.NumberOfRooms</DataPath>
+					<ContextMenu name="NumberOfRoomsContextMenu" id="220"/>
+					<ExtendedTooltip name="NumberOfRoomsExtendedTooltip" id="221"/>
+				</LabelField>
+				<LabelField name="NumberOfTeenagers" id="222">
+					<DataPath>List.NumberOfTeenagers</DataPath>
+					<ContextMenu name="NumberOfTeenagersContextMenu" id="223"/>
+					<ExtendedTooltip name="NumberOfTeenagersExtendedTooltip" id="224"/>
+				</LabelField>
+				<LabelField name="ParentDoc" id="225">
+					<DataPath>List.ParentDoc</DataPath>
+					<ContextMenu name="ParentDocContextMenu" id="226"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="227"/>
+				</LabelField>
+				<LabelField name="Phone" id="231">
+					<DataPath>List.Phone</DataPath>
+					<ContextMenu name="PhoneContextMenu" id="232"/>
+					<ExtendedTooltip name="PhoneExtendedTooltip" id="233"/>
+				</LabelField>
+				<LabelField name="PriceChangeReason" id="240">
+					<DataPath>List.PriceChangeReason</DataPath>
+					<ContextMenu name="PriceChangeReasonContextMenu" id="241"/>
+					<ExtendedTooltip name="PriceChangeReasonExtendedTooltip" id="242"/>
+				</LabelField>
+				<LabelField name="Rating" id="246">
+					<DataPath>List.Rating</DataPath>
+					<ContextMenu name="RatingContextMenu" id="247"/>
+					<ExtendedTooltip name="RatingExtendedTooltip" id="248"/>
+				</LabelField>
+				<LabelField name="RelationType" id="249">
+					<DataPath>List.RelationType</DataPath>
+					<ContextMenu name="RelationTypeContextMenu" id="250"/>
+					<ExtendedTooltip name="RelationTypeExtendedTooltip" id="251"/>
+				</LabelField>
+				<LabelField name="Remarks" id="252">
+					<DataPath>List.Remarks</DataPath>
+					<ContextMenu name="RemarksContextMenu" id="253"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="254"/>
+				</LabelField>
+				<LabelField name="ReportingCurrency" id="255">
+					<DataPath>List.ReportingCurrency</DataPath>
+					<ContextMenu name="ReportingCurrencyContextMenu" id="256"/>
+					<ExtendedTooltip name="ReportingCurrencyExtendedTooltip" id="257"/>
+				</LabelField>
+				<LabelField name="ReportingCurrencyExchangeRate" id="258">
+					<DataPath>List.ReportingCurrencyExchangeRate</DataPath>
+					<ContextMenu name="ReportingCurrencyExchangeRateContextMenu" id="259"/>
+					<ExtendedTooltip name="ReportingCurrencyExchangeRateExtendedTooltip" id="260"/>
+				</LabelField>
+				<LabelField name="RoomPropertiesCodes" id="270">
+					<DataPath>List.RoomPropertiesCodes</DataPath>
+					<ContextMenu name="RoomPropertiesCodesContextMenu" id="271"/>
+					<ExtendedTooltip name="RoomPropertiesCodesExtendedTooltip" id="272"/>
+				</LabelField>
+				<LabelField name="RoomPropertiesDescriptions" id="273">
+					<DataPath>List.RoomPropertiesDescriptions</DataPath>
+					<ContextMenu name="RoomPropertiesDescriptionsContextMenu" id="274"/>
+					<ExtendedTooltip name="RoomPropertiesDescriptionsExtendedTooltip" id="275"/>
+				</LabelField>
+				<LabelField name="RoomQuantity" id="276">
+					<DataPath>List.RoomQuantity</DataPath>
+					<ContextMenu name="RoomQuantityContextMenu" id="277"/>
+					<ExtendedTooltip name="RoomQuantityExtendedTooltip" id="278"/>
+				</LabelField>
+				<LabelField name="RoomRateServiceGroup" id="285">
+					<DataPath>List.RoomRateServiceGroup</DataPath>
+					<ContextMenu name="RoomRateServiceGroupContextMenu" id="286"/>
+					<ExtendedTooltip name="RoomRateServiceGroupExtendedTooltip" id="287"/>
+				</LabelField>
+				<LabelField name="RoomRateType" id="288">
+					<DataPath>List.RoomRateType</DataPath>
+					<ContextMenu name="RoomRateTypeContextMenu" id="289"/>
+					<ExtendedTooltip name="RoomRateTypeExtendedTooltip" id="290"/>
+				</LabelField>
+				<LabelField name="RoomTypeBeforeUpgrade" id="374">
+					<DataPath>List.RoomTypeBeforeUpgrade</DataPath>
+					<ContextMenu name="RoomTypeBeforeUpgradeContextMenu" id="375"/>
+					<ExtendedTooltip name="RoomTypeBeforeUpgradeExtendedTooltip" id="376"/>
+				</LabelField>
+				<LabelField name="RoomTypeUpgrade" id="294">
+					<DataPath>List.RoomTypeUpgrade</DataPath>
+					<ContextMenu name="RoomTypeUpgradeContextMenu" id="295"/>
+					<ExtendedTooltip name="RoomTypeUpgradeExtendedTooltip" id="296"/>
+				</LabelField>
+				<LabelField name="ServicePackageBeforeUpgrade" id="377">
+					<DataPath>List.ServicePackageBeforeUpgrade</DataPath>
+					<ContextMenu name="ServicePackageBeforeUpgradeContextMenu" id="378"/>
+					<ExtendedTooltip name="ServicePackageBeforeUpgradeExtendedTooltip" id="379"/>
+				</LabelField>
+				<LabelField name="ServicePackage" id="297">
+					<DataPath>List.ServicePackage</DataPath>
+					<ContextMenu name="ServicePackageContextMenu" id="298"/>
+					<ExtendedTooltip name="ServicePackageExtendedTooltip" id="299"/>
+				</LabelField>
+				<LabelField name="WaitTillDate" id="321">
+					<DataPath>List.WaitTillDate</DataPath>
+					<ContextMenu name="WaitTillDateContextMenu" id="322"/>
+					<ExtendedTooltip name="WaitTillDateExtendedTooltip" id="323"/>
+				</LabelField>
+				<LabelField name="SortCode" id="300">
+					<DataPath>List.SortCode</DataPath>
+					<ContextMenu name="SortCodeContextMenu" id="301"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="302"/>
+				</LabelField>
+				<LabelField name="SourceOfBusiness" id="303">
+					<DataPath>List.SourceOfBusiness</DataPath>
+					<ContextMenu name="SourceOfBusinessContextMenu" id="304"/>
+					<ExtendedTooltip name="SourceOfBusinessExtendedTooltip" id="305"/>
+				</LabelField>
+				<LabelField name="TripPurpose" id="306">
+					<DataPath>List.TripPurpose</DataPath>
+					<ContextMenu name="TripPurposeContextMenu" id="307"/>
+					<ExtendedTooltip name="TripPurposeExtendedTooltip" id="308"/>
+				</LabelField>
+				<CheckBoxField name="TurnOffAutomaticDiscounts" id="309">
+					<DataPath>List.TurnOffAutomaticDiscounts</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TurnOffAutomaticDiscountsContextMenu" id="310"/>
+					<ExtendedTooltip name="TurnOffAutomaticDiscountsExtendedTooltip" id="311"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsForFolioSplit" id="315">
+					<DataPath>List.IsForFolioSplit</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsForFolioSplitContextMenu" id="316"/>
+					<ExtendedTooltip name="IsForFolioSplitExtendedTooltip" id="317"/>
+				</CheckBoxField>
+				<LabelField name="SharePercent" id="318">
+					<DataPath>List.SharePercent</DataPath>
+					<ContextMenu name="SharePercentContextMenu" id="319"/>
+					<ExtendedTooltip name="SharePercentExtendedTooltip" id="320"/>
+				</LabelField>
+				<CheckBoxField name="IsComplimentary" id="326">
+					<DataPath>List.IsComplimentary</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsComplimentaryContextMenu" id="327"/>
+					<ExtendedTooltip name="IsComplimentaryExtendedTooltip" id="328"/>
+				</CheckBoxField>
+				<LabelField name="BedsSetup" id="359">
+					<DataPath>List.BedsSetup</DataPath>
+					<ContextMenu name="BedsSetupContextMenu" id="360"/>
+					<ExtendedTooltip name="BedsSetupExtendedTooltip" id="361"/>
+				</LabelField>
+				<LabelField name="DiscountSumToDeductFromCommission" id="362">
+					<DataPath>List.DiscountSumToDeductFromCommission</DataPath>
+					<ContextMenu name="DiscountSumToDeductFromCommissionContextMenu" id="363"/>
+					<ExtendedTooltip name="DiscountSumToDeductFromCommissionExtendedTooltip" id="364"/>
+				</LabelField>
+				<LabelField name="DoChargingToDate" id="368">
+					<DataPath>List.DoChargingToDate</DataPath>
+					<ContextMenu name="DoChargingToDateContextMenu" id="369"/>
+					<ExtendedTooltip name="DoChargingToDateExtendedTooltip" id="370"/>
+				</LabelField>
+				<LabelField name="TouristicTaxAccountingDate" id="338">
+					<DataPath>List.TouristicTaxAccountingDate</DataPath>
+					<ContextMenu name="TouristicTaxAccountingDateContextMenu" id="339"/>
+					<ExtendedTooltip name="TouristicTaxAccountingDateExtendedTooltip" id="340"/>
+				</LabelField>
+				<LabelField name="TouristTaxRate" id="350">
+					<DataPath>List.TouristTaxRate</DataPath>
+					<ContextMenu name="TouristTaxRateContextMenu" id="351"/>
+					<ExtendedTooltip name="TouristTaxRateExtendedTooltip" id="352"/>
+				</LabelField>
+				<LabelField name="MinAmountPerDay" id="353">
+					<DataPath>List.MinAmountPerDay</DataPath>
+					<ContextMenu name="MinAmountPerDayContextMenu" id="354"/>
+					<ExtendedTooltip name="MinAmountPerDayExtendedTooltip" id="355"/>
+				</LabelField>
+				<LabelField name="DurationInDays" id="341">
+					<DataPath>List.DurationInDays</DataPath>
+					<ContextMenu name="DurationInDaysContextMenu" id="342"/>
+					<ExtendedTooltip name="DurationInDaysExtendedTooltip" id="343"/>
+				</LabelField>
+				<LabelField name="RateSumInBaseCurrency" id="344">
+					<DataPath>List.RateSumInBaseCurrency</DataPath>
+					<ContextMenu name="RateSumInBaseCurrencyContextMenu" id="345"/>
+					<ExtendedTooltip name="RateSumInBaseCurrencyExtendedTooltip" id="346"/>
+				</LabelField>
+				<LabelField name="TouristTaxSumInBaseCurrency" id="347">
+					<DataPath>List.TouristTaxSumInBaseCurrency</DataPath>
+					<ContextMenu name="TouristTaxSumInBaseCurrencyContextMenu" id="348"/>
+					<ExtendedTooltip name="TouristTaxSumInBaseCurrencyExtendedTooltip" id="349"/>
+				</LabelField>
+				<CheckBoxField name="TouristicTaxIsByMinAmount" id="356">
+					<DataPath>List.TouristicTaxIsByMinAmount</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TouristicTaxIsByMinAmountContextMenu" id="357"/>
+					<ExtendedTooltip name="TouristicTaxIsByMinAmountExtendedTooltip" id="358"/>
+				</CheckBoxField>
+				<LabelField name="TouristicTaxExemptionReason" id="332">
+					<DataPath>List.TouristicTaxExemptionReason</DataPath>
+					<ContextMenu name="TouristicTaxExemptionReasonContextMenu" id="333"/>
+					<ExtendedTooltip name="TouristicTaxExemptionReasonExtendedTooltip" id="334"/>
+				</LabelField>
+				<LabelField name="TouristicTaxExemptionReasonFillDate" id="335">
+					<DataPath>List.TouristicTaxExemptionReasonFillDate</DataPath>
+					<ContextMenu name="TouristicTaxExemptionReasonFillDateContextMenu" id="336"/>
+					<ExtendedTooltip name="TouristicTaxExemptionReasonFillDateExtendedTooltip" id="337"/>
+				</LabelField>
+				<LabelField name="TouristicTaxExemptionConfirmationData" id="329">
+					<DataPath>List.TouristicTaxExemptionConfirmationData</DataPath>
+					<ContextMenu name="TouristicTaxExemptionConfirmationDataContextMenu" id="330"/>
+					<ExtendedTooltip name="TouristicTaxExemptionConfirmationDataExtendedTooltip" id="331"/>
+				</LabelField>
+				<CheckBoxField name="DeletionMark" id="365">
+					<DataPath>List.DeletionMark</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="366"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="367"/>
+				</CheckBoxField>
+				<CheckBoxField name="Posted" id="371">
+					<DataPath>List.Posted</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PostedContextMenu" id="372"/>
+					<ExtendedTooltip name="PostedExtendedTooltip" id="373"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.ReservationChangeHistory</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="OneGuestMode" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>One guest mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>One guest mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим открытия персональной формы документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Restore" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Restore attributes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wiederherstellung Attributen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Back</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Restore</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="PeriodFrom">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="PeriodTo">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="OneGuestMode">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

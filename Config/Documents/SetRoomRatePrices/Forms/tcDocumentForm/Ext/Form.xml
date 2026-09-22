@@ -1,0 +1,4305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormPostAndClose" id="216">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write and close</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern und schließen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="217"/>
+			</Button>
+			<Button name="FormPost" id="220">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Post</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostExtendedTooltip" id="221"/>
+			</Button>
+			<Button name="FormWrite" id="218">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Save without posting</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern ohne posting</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить без проведения</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormWriteExtendedTooltip" id="219"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ChangeProtection" id="404">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Changes protection</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Änderungsschutz</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрет редактирования</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="ChangeProtectionExtendedTooltip" id="405"/>
+			<ChildItems>
+				<LabelDecoration name="TProtectionReason" id="406">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Prohibited to change the document because there are reservations with the price calculation date greater than the document date. You can copy the price specification and change it by the current date.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Es ist verboten, das Dokument zu ändern, da Reservierungen vorliegen, deren Preisberechnungsdatum größer als das Dokumentdatum ist. Sie können die Preisangabe kopieren und bis zum aktuellen Datum ändern.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нельзя изменить документ. т.к. есть бронирования с датой получения цен больше чем дата документа. Можете скопировать и изменить цены текущей датой.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="TProtectionReasonContextMenu" id="407"/>
+					<ExtendedTooltip name="TProtectionReasonExtendedTooltip" id="408"/>
+				</LabelDecoration>
+				<Button name="ButtonCopyDoc" id="409">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.CopyDocument</CommandName>
+					<ExtendedTooltip name="ButtonCopyDocExtendedTooltip" id="410"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHeader" id="397">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="398"/>
+			<ChildItems>
+				<InputField name="Number" id="124">
+					<DataPath>Object.Number</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Number</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nummer</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="NumberContextMenu" id="125"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="126"/>
+				</InputField>
+				<InputField name="Date" id="127">
+					<DataPath>Object.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="DateContextMenu" id="128"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="129"/>
+					<Events>
+						<Event name="OnChange">DateOnChange</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="IsInFuture" id="411">
+					<DataPath>Object.IsInFuture</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsInFutureContextMenu" id="412"/>
+					<ExtendedTooltip name="IsInFutureExtendedTooltip" id="413"/>
+				</CheckBoxField>
+				<InputField name="Author" id="133">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="AuthorContextMenu" id="134"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="135"/>
+				</InputField>
+				<LabelDecoration name="DecorationFiller" id="401">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="DecorationFillerContextMenu" id="402"/>
+					<ExtendedTooltip name="DecorationFillerExtendedTooltip" id="403"/>
+				</LabelDecoration>
+				<InputField name="Hotel" id="130">
+					<DataPath>Object.Hotel</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="HotelContextMenu" id="131"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="132"/>
+					<Events>
+						<Event name="OnChange">HotelOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupMainAttributes" id="136">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main attributes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hauptattribute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupMainAttributesExtendedTooltip" id="137"/>
+			<ChildItems>
+				<UsualGroup name="GroupRateAndFlag" id="399">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Rate and approval flag</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Tarif und Flagge für Änderungsverbot</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тариф и флаг запрета редактирования</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group rate and flag</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupRateAndFlagExtendedTooltip" id="400"/>
+					<ChildItems>
+						<InputField name="RoomRate" id="138">
+							<DataPath>Object.RoomRate</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<TitleLocation>Top</TitleLocation>
+							<CreateButton>false</CreateButton>
+							<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+							<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<Font bold="true" kind="AutoFont"/>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="RoomRateContextMenu" id="139"/>
+							<ExtendedTooltip name="RoomRateExtendedTooltip" id="140"/>
+							<Events>
+								<Event name="OnChange">RoomRateOnChange</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="RoomRatesApproved" id="154">
+							<DataPath>Object.RoomRatesApproved</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>If enabled, the document will be closed for editing for all users.
+Only the user with the right "125 - Have permission to approve room rate prices and customer (contract) allowed room rate lists" can remove the flag</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Wenn aktiviert, wird das Dokument für alle Benutzer zur Bearbeitung geschlossen.
+Nur der Benutzer mit dem Recht "125 - Es gibt Rechte,  Verordnungen und Tarifsätze für den Partner (des Vertrags) festzulegen" kann das Flag entfernen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если включить, то документ будет закрыт на редактирование для всех пользователей.
+Снять флаг может только пользователь с правом  "125 - Есть права утверждать приказы и наборы тарифов для контрагента (договора)"</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="RoomRatesApprovedContextMenu" id="155"/>
+							<ExtendedTooltip name="RoomRatesApprovedExtendedTooltip" id="156"/>
+							<Events>
+								<Event name="OnChange">RoomRatesApprovedOnChange</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="CalendarDayType" id="141">
+					<DataPath>Object.CalendarDayType</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Top</TitleLocation>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+					<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<Font bold="true" kind="AutoFont"/>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="CalendarDayTypeContextMenu" id="142"/>
+					<ExtendedTooltip name="CalendarDayTypeExtendedTooltip" id="143"/>
+					<Events>
+						<Event name="OnChange">CalendarDayTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="PriceTag" id="144">
+					<DataPath>Object.PriceTag</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="PriceTagContextMenu" id="145"/>
+					<ExtendedTooltip name="PriceTagExtendedTooltip" id="146"/>
+					<Events>
+						<Event name="OnChange">PriceTagOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFilter" id="149">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Filter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Filter</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group filter</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="GroupFilterExtendedTooltip" id="150"/>
+			<ChildItems>
+				<InputField name="AccommodationType" id="172">
+					<DataPath>AccommodationType</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;show all&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;Alle anzeigen&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;показать все&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="AccommodationTypeContextMenu" id="173"/>
+					<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="174"/>
+					<Events>
+						<Event name="OnChange">AccommodationTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="RoomClass" id="362">
+					<DataPath>RoomClass</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<InputHint>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;show all&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;Alle anzeigen&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;показать все&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="RoomClassContextMenu" id="363"/>
+					<ExtendedTooltip name="RoomClassExtendedTooltip" id="364"/>
+					<Events>
+						<Event name="OnChange">RoomClassOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="RoomType" id="178">
+					<DataPath>RoomType</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<InputHint>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;show all&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;Alle anzeigen&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;показать все&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="RoomTypeContextMenu" id="179"/>
+					<ExtendedTooltip name="RoomTypeExtendedTooltip" id="180"/>
+					<Events>
+						<Event name="OnChange">RoomTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="Service" id="181">
+					<DataPath>Service</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;show all&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>&lt;Alle anzeigen&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;показать все&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ServiceContextMenu" id="182"/>
+					<ExtendedTooltip name="ServiceExtendedTooltip" id="183"/>
+					<Events>
+						<Event name="OnChange">ServiceOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="ClientType" id="175">
+			<DataPath>ClientType</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<EqualColumnsWidth>true</EqualColumnsWidth>
+			<ContextMenu name="ClientTypeContextMenu" id="176"/>
+			<ExtendedTooltip name="ClientTypeExtendedTooltip" id="177"/>
+			<Events>
+				<Event name="OnChange">ClientTypeOnChange</Event>
+			</Events>
+		</RadioButtonField>
+		<Pages name="Pages" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="29"/>
+			<ChildItems>
+				<Page name="GroupPrices" id="30">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Prices</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Preise</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цены</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupPricesExtendedTooltip" id="31"/>
+					<ChildItems>
+						<UsualGroup name="GroupPrice" id="147">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цены приказа</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Room rate prices</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preise des Befehls</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group price</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPriceExtendedTooltip" id="148"/>
+							<ChildItems>
+								<Table name="Prices" id="32">
+									<Representation>List</Representation>
+									<RowInputMode>AfterCurrentRow</RowInputMode>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Object.Prices</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="PricesContextMenu" id="33">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<ButtonGroup name="PricesContextMenuGroup1" id="234">
+												<ExtendedTooltip name="PricesContextMenuGroup1ExtendedTooltip" id="235"/>
+												<ChildItems>
+													<Button name="PricesDelete1" id="232">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.Prices.StandardCommand.Delete</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.Delete</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Delete</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Löschen</v8:content>
+															</v8:item>
+														</Title>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="PricesDelete1ExtendedTooltip" id="233"/>
+													</Button>
+													<Button name="PricesCopyRow1" id="230">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.Prices.StandardCommand.Copy</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Copy row</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Скопировать строку</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Zeile kopieren</v8:content>
+															</v8:item>
+														</Title>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="PricesCopyRow1ExtendedTooltip" id="231"/>
+													</Button>
+													<Button name="PricesAdd1" id="228">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.Prices.StandardCommand.Add</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Add</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Hinzufügen</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="PricesAdd1ExtendedTooltip" id="229"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="PricesCommandBar" id="34">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<ButtonGroup name="CommandBar" id="214">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Command bar</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Command bar</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="CommandBarExtendedTooltip" id="215"/>
+												<ChildItems>
+													<ButtonGroup name="PricesGroup" id="208">
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Add</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Prices group</v8:content>
+															</v8:item>
+														</Title>
+														<ToolTip>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Prices group</v8:content>
+															</v8:item>
+														</ToolTip>
+														<Representation>Compact</Representation>
+														<ExtendedTooltip name="PricesGroupExtendedTooltip" id="209"/>
+														<ChildItems>
+															<Button name="PricesAdd" id="204">
+																<Type>CommandBarButton</Type>
+																<Representation>PictureAndText</Representation>
+																<CommandName>Form.Item.Prices.StandardCommand.Add</CommandName>
+																<Picture>
+																	<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+																	<xr:LoadTransparent>true</xr:LoadTransparent>
+																</Picture>
+																<Title>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Add</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Hinzufügen</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Добавить</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesAddExtendedTooltip" id="205"/>
+															</Button>
+															<Button name="PricesCopyRow" id="222">
+																<Type>CommandBarButton</Type>
+																<Representation>PictureAndText</Representation>
+																<CommandName>Form.Item.Prices.StandardCommand.Copy</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Copy row</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Zeile kopieren</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Скопировать</v8:content>
+																	</v8:item>
+																</Title>
+																<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																<ExtendedTooltip name="PricesCopyRowExtendedTooltip" id="223"/>
+															</Button>
+															<Button name="PricesDelete" id="206">
+																<Type>CommandBarButton</Type>
+																<Representation>Picture</Representation>
+																<CommandName>Form.Item.Prices.StandardCommand.Delete</CommandName>
+																<Picture>
+																	<xr:Ref>StdPicture.Delete</xr:Ref>
+																	<xr:LoadTransparent>true</xr:LoadTransparent>
+																</Picture>
+																<Title>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Delete</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Löschen</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Удалить</v8:content>
+																	</v8:item>
+																</Title>
+																<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																<ExtendedTooltip name="PricesDeleteExtendedTooltip" id="207"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+													<ButtonGroup name="PricesGroupMove" id="302">
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Move rows</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Zeilen verschieben</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Сдвиг строк</v8:content>
+															</v8:item>
+														</Title>
+														<Representation>Compact</Representation>
+														<ExtendedTooltip name="PricesGroupMoveExtendedTooltip" id="303"/>
+														<ChildItems>
+															<Button name="PricesMoveUp" id="298">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.Prices.StandardCommand.MoveUp</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Move up</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Nach oben</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Вверх</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesMoveUpExtendedTooltip" id="299"/>
+															</Button>
+															<Button name="PricesMoveDown" id="300">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.Prices.StandardCommand.MoveDown</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Move down</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Nach unten</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Вниз</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesMoveDownExtendedTooltip" id="301"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+													<Popup name="Fill" id="188">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Заполнить...</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Fill...</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Ausfüllen...</v8:content>
+															</v8:item>
+														</Title>
+														<ToolTip>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Fill</v8:content>
+															</v8:item>
+														</ToolTip>
+														<Picture>
+															<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="FillExtendedTooltip" id="189"/>
+														<ChildItems>
+															<Button name="PricesFillByDefault" id="184">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillByDefault</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Заполнить по умолчанию</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Fill by default rows</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Ausfüllen nach Standard-Einstellung</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesFillByDefaultExtendedTooltip" id="185"/>
+															</Button>
+															<Button name="PricesFillCopy" id="190">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillCopy</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Ausfüllen nach Kundentyp</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesFillCopyExtendedTooltip" id="191"/>
+															</Button>
+															<Button name="PricesFillByTemplateService" id="192">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillByTemplateService</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Dienstleistung hinzufügen, indem die Zeilen einer anderen Dienstleistung als Vorlage verwenden werden</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesFillByTemplateServiceExtendedTooltip" id="193"/>
+															</Button>
+															<Button name="PricesFillByTemplateRoomClass" id="365">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillByTemplateRoomClass</CommandName>
+																<ExtendedTooltip name="PricesFillByTemplateRoomClassExtendedTooltip" id="366"/>
+															</Button>
+															<Button name="PricesFillByTemplateRoomType" id="194">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillByTemplateRoomType</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Zimmertyp hinzufügen, indem die Zeilen eines anderen Zimmertyps als Vorlage verwendet werden</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesFillByTemplateRoomTypeExtendedTooltip" id="195"/>
+															</Button>
+															<Button name="PricesFillByTemplateAccommodationType" id="196">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.FillByTemplateAccommodationType</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Den Unterbringungstyp mit Hilfe von Zeilen anderer Unterbringungsart als Vorlage hinzufügen</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesFillByTemplateAccommodationTypeExtendedTooltip" id="197"/>
+															</Button>
+														</ChildItems>
+													</Popup>
+													<Button name="PricesChangePrice" id="186">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Command.ChangePrice</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.InputFieldCalculator</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="PricesChangePriceExtendedTooltip" id="187"/>
+													</Button>
+													<ButtonGroup name="PricesGroupCopyPaste" id="202">
+														<ToolTip>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Prices group copy paste</v8:content>
+															</v8:item>
+														</ToolTip>
+														<Representation>Compact</Representation>
+														<ExtendedTooltip name="PricesGroupCopyPasteExtendedTooltip" id="203"/>
+														<ChildItems>
+															<Button name="PricesCopy" id="198">
+																<Type>CommandBarButton</Type>
+																<Representation>PictureAndText</Representation>
+																<CommandName>Form.Command.Copy</CommandName>
+																<ExtendedTooltip name="PricesCopyExtendedTooltip" id="199"/>
+															</Button>
+															<Button name="PricesPaste" id="200">
+																<Type>CommandBarButton</Type>
+																<Representation>PictureAndText</Representation>
+																<Enabled>false</Enabled>
+																<CommandName>Form.Command.Paste</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Einsetzen</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="PricesPasteExtendedTooltip" id="201"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+													<Button name="PricesSortListAsc" id="304">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Prices.StandardCommand.SortListAsc</CommandName>
+														<ExtendedTooltip name="PricesSortListAscExtendedTooltip" id="305"/>
+													</Button>
+													<Button name="PricesSortListDesc" id="306">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Prices.StandardCommand.SortListDesc</CommandName>
+														<ExtendedTooltip name="PricesSortListDescExtendedTooltip" id="307"/>
+													</Button>
+													<Button name="PricesFind" id="310">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Prices.StandardCommand.Find</CommandName>
+														<ExtendedTooltip name="PricesFindExtendedTooltip" id="311"/>
+													</Button>
+													<Button name="PricesCancelSearch" id="312">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Prices.StandardCommand.CancelSearch</CommandName>
+														<ExtendedTooltip name="PricesCancelSearchExtendedTooltip" id="313"/>
+													</Button>
+													<Button name="PricesOutputList" id="308">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Prices.StandardCommand.OutputList</CommandName>
+														<ExtendedTooltip name="PricesOutputListExtendedTooltip" id="309"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="PricesExtendedTooltip" id="35"/>
+									<SearchStringAddition name="PricesSearchString" id="36">
+										<AdditionSource>
+											<Item>Prices</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="PricesSearchStringContextMenu" id="37"/>
+										<ExtendedTooltip name="PricesSearchStringExtendedTooltip" id="38"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="PricesViewStatus" id="39">
+										<AdditionSource>
+											<Item>Prices</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="PricesViewStatusContextMenu" id="40"/>
+										<ExtendedTooltip name="PricesViewStatusExtendedTooltip" id="41"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="PricesSearchControl" id="42">
+										<AdditionSource>
+											<Item>Prices</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="PricesSearchControlContextMenu" id="43"/>
+										<ExtendedTooltip name="PricesSearchControlExtendedTooltip" id="44"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnEditEnd">PricesOnEditEnd</Event>
+										<Event name="OnStartEdit">PricesOnStartEdit</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="PricesLineNumber" id="45">
+											<DataPath>Object.Prices.LineNumber</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="PricesLineNumberContextMenu" id="46"/>
+											<ExtendedTooltip name="PricesLineNumberExtendedTooltip" id="47"/>
+										</LabelField>
+										<InputField name="PricesClientType" id="48">
+											<DataPath>Object.Prices.ClientType</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="PricesClientTypeContextMenu" id="49"/>
+											<ExtendedTooltip name="PricesClientTypeExtendedTooltip" id="50"/>
+										</InputField>
+										<InputField name="PricesService" id="57">
+											<DataPath>Object.Prices.Service</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="PricesServiceContextMenu" id="58"/>
+											<ExtendedTooltip name="PricesServiceExtendedTooltip" id="59"/>
+											<Events>
+												<Event name="OnChange">PricesServiceOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="PricesRoomClass" id="353">
+											<DataPath>Object.Prices.RoomClass</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>&lt;for any if empty&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt;для любого если пусто&gt;</v8:content>
+												</v8:item>
+											</InputHint>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="PricesRoomClassContextMenu" id="354"/>
+											<ExtendedTooltip name="PricesRoomClassExtendedTooltip" id="355"/>
+											<Events>
+												<Event name="OnChange">PricesRoomClassOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="PricesRoomType" id="51">
+											<DataPath>Object.Prices.RoomType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>&lt;for any if empty&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt;для любого если пусто&gt;</v8:content>
+												</v8:item>
+											</InputHint>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="PricesRoomTypeContextMenu" id="52"/>
+											<ExtendedTooltip name="PricesRoomTypeExtendedTooltip" id="53"/>
+											<Events>
+												<Event name="OnChange">PricesRoomTypeOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="PricesAccommodationType" id="54">
+											<DataPath>Object.Prices.AccommodationType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<InputHint>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>&lt;for any if empty&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt;для любого если пусто&gt;</v8:content>
+												</v8:item>
+											</InputHint>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="PricesAccommodationTypeContextMenu" id="55"/>
+											<ExtendedTooltip name="PricesAccommodationTypeExtendedTooltip" id="56"/>
+										</InputField>
+										<InputField name="PricesPrice" id="60">
+											<DataPath>Object.Prices.Price</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>10</Width>
+											<ContextMenu name="PricesPriceContextMenu" id="61"/>
+											<ExtendedTooltip name="PricesPriceExtendedTooltip" id="62"/>
+										</InputField>
+										<InputField name="PricesCurrency" id="63">
+											<DataPath>Object.Prices.Currency</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>6</Width>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceParameters>
+												<app:item name="Filter.DeletionMark">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<ContextMenu name="PricesCurrencyContextMenu" id="64"/>
+											<ExtendedTooltip name="PricesCurrencyExtendedTooltip" id="65"/>
+										</InputField>
+										<InputField name="PricesVATRate" id="69">
+											<DataPath>Object.Prices.VATRate</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="PricesVATRateContextMenu" id="70"/>
+											<ExtendedTooltip name="PricesVATRateExtendedTooltip" id="71"/>
+										</InputField>
+										<CheckBoxField name="PricesIsRoomRevenue" id="75">
+											<DataPath>Object.Prices.IsRoomRevenue</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="PricesIsRoomRevenueContextMenu" id="76"/>
+											<ExtendedTooltip name="PricesIsRoomRevenueExtendedTooltip" id="77"/>
+										</CheckBoxField>
+										<CheckBoxField name="PricesIsInPrice" id="78">
+											<DataPath>Object.Prices.IsInPrice</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="PricesIsInPriceContextMenu" id="79"/>
+											<ExtendedTooltip name="PricesIsInPriceExtendedTooltip" id="80"/>
+										</CheckBoxField>
+										<CheckBoxField name="PricesIsPricePerPerson" id="81">
+											<DataPath>Object.Prices.IsPricePerPerson</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="PricesIsPricePerPersonContextMenu" id="82"/>
+											<ExtendedTooltip name="PricesIsPricePerPersonExtendedTooltip" id="83"/>
+										</CheckBoxField>
+										<InputField name="PricesQuantityCalculationRule" id="72">
+											<DataPath>Object.Prices.QuantityCalculationRule</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="PricesQuantityCalculationRuleContextMenu" id="73"/>
+											<ExtendedTooltip name="PricesQuantityCalculationRuleExtendedTooltip" id="74"/>
+										</InputField>
+										<InputField name="PricesMinimumQuantity" id="66">
+											<DataPath>Object.Prices.MinimumQuantity</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>10</Width>
+											<ContextMenu name="PricesMinimumQuantityContextMenu" id="67"/>
+											<ExtendedTooltip name="PricesMinimumQuantityExtendedTooltip" id="68"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="GroupFormulas" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Acc. type formulas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Unterkunftstyp Formeln</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формулы для видов размещения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupFormulasExtendedTooltip" id="85"/>
+					<ChildItems>
+						<Table name="Formulas" id="86">
+							<Representation>List</Representation>
+							<RowInputMode>AfterCurrentRow</RowInputMode>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.Formulas</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="FormulasContextMenu" id="87"/>
+							<AutoCommandBar name="FormulasCommandBar" id="88">
+								<ChildItems>
+									<ButtonGroup name="FormulasActionsGroup" id="335">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Actions</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Aktionen</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Действия</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasActionsGroupExtendedTooltip" id="336"/>
+										<ChildItems>
+											<Button name="FormulasAdd" id="325">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.Formulas.StandardCommand.Add</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Add</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Hinzufügen</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormulasAddExtendedTooltip" id="326"/>
+											</Button>
+											<Button name="FormulasCopyRow" id="327">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.Formulas.StandardCommand.Copy</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Copy row</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Zeile kopieren</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Скопировать</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="FormulasCopyRowExtendedTooltip" id="328"/>
+											</Button>
+											<Button name="FormulasDelete" id="329">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>Form.Item.Formulas.StandardCommand.Delete</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Delete</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Löschen</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Удалить</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="FormulasDeleteExtendedTooltip" id="330"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="FormulasMoveRowsGroup" id="337">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Move rows</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Zeilen verschieben</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Перемещение строк</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasMoveRowsGroupExtendedTooltip" id="338"/>
+										<ChildItems>
+											<Button name="FormulasMoveUp" id="331">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Formulas.StandardCommand.MoveUp</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Move up</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Nach oben</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вверх</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormulasMoveUpExtendedTooltip" id="332"/>
+											</Button>
+											<Button name="FormulasMoveDown" id="333">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Formulas.StandardCommand.MoveDown</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Move down</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Nach unten</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вниз</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormulasMoveDownExtendedTooltip" id="334"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Popup name="FormulasForGroupFill" id="377">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Fill...</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Ausfüllen...</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить...</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Füllen Sie Formeln</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнение формул</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="FormulasForGroupFillExtendedTooltip" id="378"/>
+										<ChildItems>
+											<Button name="FormulasFillCopyForFormulas" id="379">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillCopyForFormulas</CommandName>
+												<ExtendedTooltip name="FormulasFillCopyForFormulasExtendedTooltip" id="380"/>
+											</Button>
+											<Button name="FormulasFillByTemplateRoomTypeForFormulas" id="381">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplateRoomTypeForFormulas</CommandName>
+												<ExtendedTooltip name="FormulasFillByTemplateRoomTypeForFormulasExtendedTooltip" id="382"/>
+											</Button>
+											<Button name="FormulasFillByTemplateRoomClassForFormulas" id="383">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplateRoomClassForFormulas</CommandName>
+												<ExtendedTooltip name="FormulasFillByTemplateRoomClassForFormulasExtendedTooltip" id="384"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<ButtonGroup name="FormulasGroupCopyPaste" id="385">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasGroupCopyPasteExtendedTooltip" id="386"/>
+										<ChildItems>
+											<Button name="FormulasCopy" id="387">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.CopyFormulas</CommandName>
+												<ExtendedTooltip name="FormulasCopyExtendedTooltip" id="388"/>
+											</Button>
+											<Button name="FormulasPaste" id="389">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.PasteFormulas</CommandName>
+												<ExtendedTooltip name="FormulasPasteExtendedTooltip" id="390"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="FormulasExtendedTooltip" id="89"/>
+							<SearchStringAddition name="FormulasSearchString" id="90">
+								<AdditionSource>
+									<Item>Formulas</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasSearchStringContextMenu" id="91"/>
+								<ExtendedTooltip name="FormulasSearchStringExtendedTooltip" id="92"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="FormulasViewStatus" id="93">
+								<AdditionSource>
+									<Item>Formulas</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasViewStatusContextMenu" id="94"/>
+								<ExtendedTooltip name="FormulasViewStatusExtendedTooltip" id="95"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="FormulasSearchControl" id="96">
+								<AdditionSource>
+									<Item>Formulas</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasSearchControlContextMenu" id="97"/>
+								<ExtendedTooltip name="FormulasSearchControlExtendedTooltip" id="98"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">FormulasOnEditEnd</Event>
+								<Event name="OnStartEdit">FormulasOnStartEdit</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="FormulasLineNumber" id="99">
+									<DataPath>Object.Formulas.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasLineNumberContextMenu" id="100"/>
+									<ExtendedTooltip name="FormulasLineNumberExtendedTooltip" id="101"/>
+								</LabelField>
+								<InputField name="FormulasClientType" id="369">
+									<DataPath>Object.Formulas.ClientType</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FormulasClientTypeContextMenu" id="370"/>
+									<ExtendedTooltip name="FormulasClientTypeExtendedTooltip" id="371"/>
+								</InputField>
+								<InputField name="FormulasService" id="102">
+									<DataPath>Object.Formulas.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любой если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasServiceContextMenu" id="103"/>
+									<ExtendedTooltip name="FormulasServiceExtendedTooltip" id="104"/>
+								</InputField>
+								<InputField name="FormulasRoomClass" id="356">
+									<DataPath>Object.Formulas.RoomClass</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empy&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasRoomClassContextMenu" id="357"/>
+									<ExtendedTooltip name="FormulasRoomClassExtendedTooltip" id="358"/>
+									<Events>
+										<Event name="OnChange">FormulasRoomClassOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="FormulasRoomType" id="289">
+									<DataPath>Object.Formulas.RoomType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empy&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasRoomTypeContextMenu" id="290"/>
+									<ExtendedTooltip name="FormulasRoomTypeExtendedTooltip" id="291"/>
+									<Events>
+										<Event name="OnChange">FormulasRoomTypeOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="FormulasAccommodationType" id="105">
+									<DataPath>Object.Formulas.AccommodationType</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Acc. type</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид разм.</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasAccommodationTypeContextMenu" id="106"/>
+									<ExtendedTooltip name="FormulasAccommodationTypeExtendedTooltip" id="107"/>
+								</InputField>
+								<InputField name="FormulasChar1" id="160">
+									<DataPath>Object.Formulas.Char1</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>= (</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>= (</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>= (</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>2</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="FormulasChar1ContextMenu" id="161"/>
+									<ExtendedTooltip name="FormulasChar1ExtendedTooltip" id="162"/>
+								</InputField>
+								<InputField name="FormulasMasterAccType" id="108">
+									<DataPath>Object.Formulas.MasterAccType</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Take price from acc. type</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preis bei der Positionierungsart entnehmen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Взять цену у вида размещ.</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasMasterAccTypeContextMenu" id="109"/>
+									<ExtendedTooltip name="FormulasMasterAccTypeExtendedTooltip" id="110"/>
+								</InputField>
+								<InputField name="FormulasChar2" id="163">
+									<DataPath>Object.Formulas.Char2</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>1</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="FormulasChar2ContextMenu" id="164"/>
+									<ExtendedTooltip name="FormulasChar2ExtendedTooltip" id="165"/>
+								</InputField>
+								<InputField name="FormulasBracketsConstant" id="114">
+									<DataPath>Object.Formulas.BracketsConstant</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Add amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Summe hinzufügen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Добавить сумму</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="FormulasBracketsConstantContextMenu" id="115"/>
+									<ExtendedTooltip name="FormulasBracketsConstantExtendedTooltip" id="116"/>
+								</InputField>
+								<InputField name="FormulasChar3" id="166">
+									<DataPath>Object.Formulas.Char3</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>) x</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>) x</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>) x</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>2</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="FormulasChar3ContextMenu" id="167"/>
+									<ExtendedTooltip name="FormulasChar3ExtendedTooltip" id="168"/>
+								</InputField>
+								<InputField name="FormulasMultiplier" id="111">
+									<DataPath>Object.Formulas.Multiplier</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Multiply by</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Multiplizieren mit</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Умножить на</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="FormulasMultiplierContextMenu" id="112"/>
+									<ExtendedTooltip name="FormulasMultiplierExtendedTooltip" id="113"/>
+								</InputField>
+								<InputField name="FormulasChar4" id="169">
+									<DataPath>Object.Formulas.Char4</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>1</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="FormulasChar4ContextMenu" id="170"/>
+									<ExtendedTooltip name="FormulasChar4ExtendedTooltip" id="171"/>
+								</InputField>
+								<InputField name="FormulasConstant" id="117">
+									<DataPath>Object.Formulas.Constant</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Add amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Summe hinzufügen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Добавить сумму</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="FormulasConstantContextMenu" id="118"/>
+									<ExtendedTooltip name="FormulasConstantExtendedTooltip" id="119"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="GroupFormulasForDayTypesAndPriceTags" id="238">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Day type/pricetag formulas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Tagestyp/Preiseigenschaft Formeln</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формулы для типов дней/призн. цены</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupFormulasForDayTypesAndPriceTagsExtendedTooltip" id="239"/>
+					<ChildItems>
+						<RadioButtonField name="DayTypeAndPriceTagFormulasView" id="286">
+							<DataPath>DayTypeAndPriceTagFormulasView</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ColumnsCount>2</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Discounts</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Rabatte</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Скидки</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Formulas</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Formeln</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Формулы</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="DayTypeAndPriceTagFormulasViewContextMenu" id="287"/>
+							<ExtendedTooltip name="DayTypeAndPriceTagFormulasViewExtendedTooltip" id="288"/>
+							<Events>
+								<Event name="OnChange">DayTypeAndPriceTagFormulasViewOnChange</Event>
+							</Events>
+						</RadioButtonField>
+						<Table name="FormulasForDayTypesAndPricetags" id="240">
+							<Representation>List</Representation>
+							<RowInputMode>AfterCurrentRow</RowInputMode>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.FormulasForDayTypesAndPricetags</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="FormulasForDayTypesAndPricetagsContextMenu" id="241"/>
+							<AutoCommandBar name="FormulasForDayTypesAndPricetagsCommandBar" id="242">
+								<ChildItems>
+									<ButtonGroup name="FormulasForDayTypesAndPricetagsActionsGroup" id="339">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Actions</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Aktionen</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Действия</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasForDayTypesAndPricetagsActionsGroupExtendedTooltip" id="340"/>
+										<ChildItems>
+											<Button name="FormulasForDayTypesAndPricetagsAdd" id="343">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.FormulasForDayTypesAndPricetags.StandardCommand.Add</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Add</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Hinzufügen</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsAddExtendedTooltip" id="344"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsCopyRows" id="345">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.FormulasForDayTypesAndPricetags.StandardCommand.Copy</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Copy row</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Zeile kopieren</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Скопировать</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsCopyRowsExtendedTooltip" id="346"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsDelete" id="347">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>Form.Item.FormulasForDayTypesAndPricetags.StandardCommand.Delete</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Delete</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Löschen</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Удалить</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsDeleteExtendedTooltip" id="348"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="FormulasForDayTypesAndPricetagsMoveRowsGroup" id="341">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Move rows</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Zeilen verschieben</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Перемещение строк</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasForDayTypesAndPricetagsMoveRowsGroupExtendedTooltip" id="342"/>
+										<ChildItems>
+											<Button name="FormulasForDayTypesAndPricetagsMoveUp" id="349">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.FormulasForDayTypesAndPricetags.StandardCommand.MoveUp</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Move up</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Nach oben</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вверх</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsMoveUpExtendedTooltip" id="350"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsMoveDown" id="351">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.FormulasForDayTypesAndPricetags.StandardCommand.MoveDown</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Move down</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Nach unten</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вниз</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsMoveDownExtendedTooltip" id="352"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Popup name="FormulasForDayTypesAndPricetagsGroupFill" id="317">
+										<Title>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Fill...</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Ausfüllen...</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить...</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Füllen Sie Formeln für Tagestypen, Preisschilder oder Zimmertyp</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить по типу дня - шаблону, по признаку цены - шаблону или по типу номера - шаблону</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="FormulasForDayTypesAndPricetagsGroupFillExtendedTooltip" id="318"/>
+										<ChildItems>
+											<Button name="FormulasForDayTypesAndPricetagsFillCopyForFormulas" id="375">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillCopyForDayTypeFormulas</CommandName>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsFillCopyForFormulasExtendedTooltip" id="376"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsFillByTemplateDayType" id="319">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplateDayTypeForDayTypeFormulas</CommandName>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsFillByTemplateDayTypeExtendedTooltip" id="320"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsFillByTemplateRoomClassForFormulas" id="367">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplateRoomClassForDayTypeFormulas</CommandName>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsFillByTemplateRoomClassForFormulasExtendedTooltip" id="368"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsFillByTemplateRoomTypeForFormulas" id="323">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplateRoomTypeForDayTypeFormulas</CommandName>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsFillByTemplateRoomTypeForFormulasExtendedTooltip" id="324"/>
+											</Button>
+											<Button name="FormulasForDayTypesAndPricetagsFillByTemplatePriceTag" id="321">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.FillByTemplatePriceTagForDayTypeFormulas</CommandName>
+												<ExtendedTooltip name="FormulasForDayTypesAndPricetagsFillByTemplatePriceTagExtendedTooltip" id="322"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<ButtonGroup name="FormulasForDayTypesAndPricetagsGroupCopyPaste" id="391">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="FormulasForDayTypesAndPricetagsGroupCopyPasteExtendedTooltip" id="392"/>
+										<ChildItems>
+											<Button name="PTFormulasCopy" id="395">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.CopyPTFormulas</CommandName>
+												<ExtendedTooltip name="PTFormulasCopyExtendedTooltip" id="396"/>
+											</Button>
+											<Button name="PTFormulasPaste" id="393">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.PastePTFormulas</CommandName>
+												<ExtendedTooltip name="PTFormulasPasteExtendedTooltip" id="394"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="FormulasForDayTypesAndPricetagsExtendedTooltip" id="243"/>
+							<SearchStringAddition name="FormulasForDayTypesAndPricetagsSearchString" id="244">
+								<AdditionSource>
+									<Item>FormulasForDayTypesAndPricetags</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasForDayTypesAndPricetagsSearchStringContextMenu" id="245"/>
+								<ExtendedTooltip name="FormulasForDayTypesAndPricetagsSearchStringExtendedTooltip" id="246"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="FormulasForDayTypesAndPricetagsViewStatus" id="247">
+								<AdditionSource>
+									<Item>FormulasForDayTypesAndPricetags</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasForDayTypesAndPricetagsViewStatusContextMenu" id="248"/>
+								<ExtendedTooltip name="FormulasForDayTypesAndPricetagsViewStatusExtendedTooltip" id="249"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="FormulasForDayTypesAndPricetagsSearchControl" id="250">
+								<AdditionSource>
+									<Item>FormulasForDayTypesAndPricetags</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="FormulasForDayTypesAndPricetagsSearchControlContextMenu" id="251"/>
+								<ExtendedTooltip name="FormulasForDayTypesAndPricetagsSearchControlExtendedTooltip" id="252"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">FormulasForDayTypesAndPricetagsOnEditEnd</Event>
+								<Event name="OnStartEdit">FormulasForDayTypesAndPricetagsOnStartEdit</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="FormulasForDayTypesAndPricetagsLineNumber" id="253">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsLineNumberContextMenu" id="254"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsLineNumberExtendedTooltip" id="255"/>
+								</LabelField>
+								<InputField name="FormulasForDayTypesAndPricetagsClientType" id="372">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.ClientType</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsClientTypeContextMenu" id="373"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsClientTypeExtendedTooltip" id="374"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsService" id="314">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любой если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsServiceContextMenu" id="315"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsServiceExtendedTooltip" id="316"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsCalendarDayType" id="256">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.CalendarDayType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsCalendarDayTypeContextMenu" id="257"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsCalendarDayTypeExtendedTooltip" id="258"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsPriceTag" id="259">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.PriceTag</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsPriceTagContextMenu" id="260"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsPriceTagExtendedTooltip" id="261"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsAccommodationType" id="295">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.AccommodationType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsAccommodationTypeContextMenu" id="296"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsAccommodationTypeExtendedTooltip" id="297"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsChar1" id="274">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Char1</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>5</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsChar1ContextMenu" id="275"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsChar1ExtendedTooltip" id="276"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsRoomClass" id="359">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.RoomClass</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Room class - or -</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zimmerklasse - oder -</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Класс номера - или -</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsRoomClassContextMenu" id="360"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsRoomClassExtendedTooltip" id="361"/>
+									<Events>
+										<Event name="OnChange">FormulasForDayTypesAndPricetagsRoomClassOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsRoomType" id="262">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.RoomType</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Room type price</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zimmertyp preis</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Цена типа номера</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>&lt;for any if empty&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>&lt;für jeden wenn leer&gt;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;для любого если пусто&gt;</v8:content>
+										</v8:item>
+									</InputHint>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsRoomTypeContextMenu" id="263"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsRoomTypeExtendedTooltip" id="264"/>
+									<Events>
+										<Event name="OnChange">FormulasForDayTypesAndPricetagsRoomTypeOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsChar2" id="277">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Char2</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>+</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsChar2ContextMenu" id="278"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsChar2ExtendedTooltip" id="279"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsBracketsConstant" id="268">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.BracketsConstant</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Add amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Summe hinzufügen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Добавить сумму</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsBracketsConstantContextMenu" id="269"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsBracketsConstantExtendedTooltip" id="270"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsChar3" id="280">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Char3</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>2</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsChar3ContextMenu" id="281"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsChar3ExtendedTooltip" id="282"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsMultiplier" id="265">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Multiplier</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Multiply by</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Multiplizieren mit</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Умножить на</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsMultiplierContextMenu" id="266"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsMultiplierExtendedTooltip" id="267"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsChar4" id="283">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Char4</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsChar4ContextMenu" id="284"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsChar4ExtendedTooltip" id="285"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsConstant" id="271">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Constant</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Add amount</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Summe hinzufügen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Добавить сумму</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsConstantContextMenu" id="272"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsConstantExtendedTooltip" id="273"/>
+								</InputField>
+								<InputField name="FormulasForDayTypesAndPricetagsDiscount" id="292">
+									<DataPath>Object.FormulasForDayTypesAndPricetags.Discount</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Rabatt %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скидка %</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FormulasForDayTypesAndPricetagsDiscountContextMenu" id="293"/>
+									<ExtendedTooltip name="FormulasForDayTypesAndPricetagsDiscountExtendedTooltip" id="294"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="GroupFooter" id="236">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Footer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Footer</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupFooterExtendedTooltip" id="237"/>
+			<ChildItems>
+				<InputField name="Remarks" id="151">
+					<DataPath>Object.Remarks</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="RemarksContextMenu" id="152"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="153"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.SetRoomRatePrices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Object.Formulas">
+					<Column name="Char1" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Char1</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char2" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Char1</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char3" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Char1</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char4" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Char1</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="RoomTypeParent" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Room type parent</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Object.FormulasForDayTypesAndPricetags">
+					<Column name="Char1" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Price = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Preis = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цена = (</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char2" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char3" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Char4" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="RoomTypeParent" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Room type parent</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Object.Prices">
+					<Column name="RoomTypeParent" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Room type parent</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="AccommodationType" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accommodation type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Unterkunftstyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид размещения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.AccommodationTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ClientType" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kundetyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ClientTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="RoomType" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmertyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип номера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Service" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dienstleistung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Services</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ValueCopied" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ColumnCopied" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Column copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="DayTypeAndPriceTagFormulasView" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>View</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aussicht</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="RoomClass" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room class</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmerklasse</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Класс номера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomTypeClasses</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ColumnCopiedFormulas" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Column copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ValueCopiedFormulas" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ValueCopiedPTFormulas" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ColumnCopiedPTFormulas" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Column copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="OldDate" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Old date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Altes Datum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="WasModified" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document was modified</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dokument wurde geändert</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ был изменен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>PricesRoomClass</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Prices.RoomClass</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypeClasses.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>PricesRoomType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Prices.RoomType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>PricesAccommodationType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Prices.AccommodationType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.AccommodationTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasRoomClass</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.RoomClass</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypeClasses.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasRoomType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.RoomType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasService</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.Service</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.Services.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любой&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsCalendarDayType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.CalendarDayType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.CalendarDayTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsRoomClass</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.RoomClass</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypeClasses.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsRoomType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.RoomType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.RoomTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsPriceTag</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.PriceTag</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.PriceTags.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsAccommodationType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.AccommodationType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.AccommodationTypes.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любого&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsService</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.Service</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.Services.EmptyRef</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;for any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;für jeden&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;для любой&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasChar1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content> = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content> = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content> = (</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasChar2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasChar3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasChar4</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsChar1</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Price = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Preis = (</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цена = (</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsChar2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsChar3</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>) x</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasForDayTypesAndPricetagsChar4</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.FormulasForDayTypesAndPricetags.LineNumber</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>+</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="FillByDefault" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill by default action</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Standardmäßig füllen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Fill by default</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionStandardSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CommandFillByDefaultAction</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ChangePrice" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить цену</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change price</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Preis ändern</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ChangePrice</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillCopy" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill as in other client type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen Sie nach Kundentyp aus</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по типу клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillCopy</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateService" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new service using other service rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Dienst hinzu, indem Sie Zeichenfolgen eines anderen Dienstes als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить услугу используя строки другой услуги как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateService</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomType" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room type using other room type rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmertyp hinzu, indem Sie Zeichenfolgen eines anderen Zimmertyps als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип номера используя строки другого типа номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomType</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateAccommodationType" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new accommodation type using other accommodation type rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Layouttyp hinzu, indem Sie Zeichenfolgen eines anderen Layouttyps als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить вид размещения используя строки другого вида размещения как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateAccommodationType</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Copy" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Copy</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Copy</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Paste" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Paste</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Paste</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateDayTypeForDayTypeFormulas" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new day type using other day type rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Tagestyp hinzu, indem Sie Zeichenfolgen eines anderen Tagestyps als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип дня используя строки другого типа дня как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateDayTypeForDayTypeFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplatePriceTagForDayTypeFormulas" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new price tag using other price tag rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Preisschild hinzu, indem Sie Zeichenfolgen eines anderen Preisschilds als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить признак цены используя строки другого признака цены как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplatePriceTagForDayTypeFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomTypeForDayTypeFormulas" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room type using other room type rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmertyp hinzu, indem Sie Zeichenfolgen eines anderen Zimmertyps als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип номера используя строки другого типа номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomTypeForDayTypeFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomClass" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room class using other room class rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmerklass hinzu, indem Sie Zeichenfolgen eines anderen Zimmerklass als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить класс номера используя строки другого класса номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomClass</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomClassForDayTypeFormulas" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room class using other room class rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmerklass hinzu, indem Sie Zeichenfolgen eines anderen Zimmerklass als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить класс номера используя строки другого класс номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomClassForDayTypeFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillCopyForDayTypeFormulas" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill as in other client type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen Sie nach Kundentyp aus</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по типу клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillCopyForDayTypeFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomClassForFormulas" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room class using other room class rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmerklass hinzu, indem Sie Zeichenfolgen eines anderen Zimmerklass als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить класс номера используя строки другого класс номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill by template room class for formulas</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomClassForFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillByTemplateRoomTypeForFormulas" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill with new room type using other room type rows as template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fügen Sie einen Zimmertyp hinzu, indem Sie Zeichenfolgen eines anderen Zimmertyps als Vorlage verwenden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип номера используя строки другого типа номера как шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill by template room type for formulas</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillByTemplateRoomTypeForFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FillCopyForFormulas" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill as in other client type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen Sie nach Kundentyp aus</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по типу клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillCopyForFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CopyFormulas" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy formula value</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Formelwert kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать значение формулы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Copy</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="PasteFormulas" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paste formula value</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Formelwert einfügen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить значение формулы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Paste</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>PasteFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="PastePTFormulas" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Paste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Paste formula value</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Formelwert einfügen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить значение формулы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Paste</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>PastePTFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CopyPTFormulas" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy formula value</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Formelwert kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать значение формулы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Copy</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyPTFormulas</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CopyDocument" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy document</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CloneObject</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyDocument</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.RoomRates.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRatePrices.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.SetRoomRatePricesChangeHistory.StandardCommand.OpenByValue.SetRoomRatePrices</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

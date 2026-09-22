@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupSelectedGroup" id="179">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest group item link</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gastgruppenlink</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка на карточку группы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#FDF1A5</BackColor>
+			<ExtendedTooltip name="GroupSelectedGroupExtendedTooltip" id="180"/>
+			<ChildItems>
+				<LabelField name="CurGuestGroupRef" id="181">
+					<DataPath>SelGuestGroup.Ref</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group selected</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gruppe ausgewählt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбранная группа</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Hiperlink>true</Hiperlink>
+					<Font bold="true" kind="AutoFont"/>
+					<ContextMenu name="CurGuestGroupRefContextMenu" id="182"/>
+					<ExtendedTooltip name="CurGuestGroupRefExtendedTooltip" id="183"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="CurGuestGroupDescription" id="184">
+			<DataPath>SelGuestGroup.Description</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="CurGuestGroupDescriptionContextMenu" id="185"/>
+			<ExtendedTooltip name="CurGuestGroupDescriptionExtendedTooltip" id="186"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupID" id="187">
+			<DataPath>SelGuestGroup.ID</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Ref.#</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ref.#</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ref.#</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<ContextMenu name="CurGuestGroupIDContextMenu" id="188"/>
+			<ExtendedTooltip name="CurGuestGroupIDExtendedTooltip" id="189"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupCreateDate" id="190">
+			<DataPath>SelGuestGroup.CreateDate</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Created</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Erstellt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создана</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Format>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+			</Format>
+			<ContextMenu name="CurGuestGroupCreateDateContextMenu" id="191"/>
+			<ExtendedTooltip name="CurGuestGroupCreateDateExtendedTooltip" id="192"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupCheckDate" id="193">
+			<DataPath>SelGuestGroup.CheckDate</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pay due date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fälligkeitsdatum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплата до</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Format>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DF=dd.MM.yyyy</v8:content>
+				</v8:item>
+			</Format>
+			<ContextMenu name="CurGuestGroupCheckDateContextMenu" id="194"/>
+			<ExtendedTooltip name="CurGuestGroupCheckDateExtendedTooltip" id="195"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupReservationManager" id="196">
+			<DataPath>SelGuestGroup.ReservationManager</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Manager</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Manager</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="CurGuestGroupReservationManagerContextMenu" id="197"/>
+			<ExtendedTooltip name="CurGuestGroupReservationManagerExtendedTooltip" id="198"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupCustomer" id="199">
+			<DataPath>SelGuestGroup.Customer</DataPath>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="CurGuestGroupCustomerContextMenu" id="200"/>
+			<ExtendedTooltip name="CurGuestGroupCustomerExtendedTooltip" id="201"/>
+		</LabelField>
+		<LabelField name="CurGuestGroupContract" id="202">
+			<DataPath>SelGuestGroup.Contract</DataPath>
+			<Visible>false</Visible>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<TitleLocation>Top</TitleLocation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="CurGuestGroupContractContextMenu" id="203"/>
+			<ExtendedTooltip name="CurGuestGroupContractExtendedTooltip" id="204"/>
+		</LabelField>
+		<UsualGroup name="GroupTotals" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group totals</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppensummen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги по группе</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupTotalsExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="GroupReservedTotals" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reserved values</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Reservierte Werte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Забронировано</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:BackgroundColorImportant</BackColor>
+					<ExtendedTooltip name="GroupReservedTotalsExtendedTooltip" id="4"/>
+					<ChildItems>
+						<LabelField name="TotalRoomReservedByGroup" id="5">
+							<DataPath>TotalRoomReservedByGroup</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Reserved rooms</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Reservierte Zimmer</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Бронь номеров</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalRoomReservedByGroupContextMenu" id="6"/>
+							<ExtendedTooltip name="TotalRoomReservedByGroupExtendedTooltip" id="7"/>
+						</LabelField>
+						<LabelField name="TotalGuestsReservedByGroup" id="8">
+							<DataPath>TotalGuestsReservedByGroup</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>guests</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gäste</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>гостей</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalGuestsReservedByGroupContextMenu" id="9"/>
+							<ExtendedTooltip name="TotalGuestsReservedByGroupExtendedTooltip" id="10"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupInhouseTotals" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group values</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gruppenwerte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значения</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:BackgroundColorImportant</BackColor>
+					<ExtendedTooltip name="GroupInhouseTotalsExtendedTooltip" id="12"/>
+					<ChildItems>
+						<LabelField name="TotalRoomCheckInByGroup" id="13">
+							<DataPath>TotalRoomCheckInByGroup</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Rooms in-house</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zimmer im Haus</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Занято номеров</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalRoomCheckInByGroupContextMenu" id="14"/>
+							<ExtendedTooltip name="TotalRoomCheckInByGroupExtendedTooltip" id="15"/>
+						</LabelField>
+						<LabelField name="TotalGuestsCheckInByGroup" id="16">
+							<DataPath>TotalGuestsCheckInByGroup</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>guests</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gäste</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>гости</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalGuestsCheckInByGroupContextMenu" id="17"/>
+							<ExtendedTooltip name="TotalGuestsCheckInByGroupExtendedTooltip" id="18"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupBalance" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group balance</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gruppensaldo</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Баланс по группе</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:BackgroundColorAttention</BackColor>
+					<ExtendedTooltip name="GroupBalanceExtendedTooltip" id="20"/>
+					<ChildItems>
+						<LabelField name="TotalGroupSales" id="21">
+							<DataPath>TotalGroupSales</DataPath>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalGroupSalesContextMenu" id="22"/>
+							<ExtendedTooltip name="TotalGroupSalesExtendedTooltip" id="23"/>
+						</LabelField>
+						<LabelField name="TotalGroupPayments" id="24">
+							<DataPath>TotalGroupPayments</DataPath>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalGroupPaymentsContextMenu" id="25"/>
+							<ExtendedTooltip name="TotalGroupPaymentsExtendedTooltip" id="26"/>
+						</LabelField>
+						<LabelField name="TotalGroupBalance" id="27">
+							<DataPath>TotalGroupBalance</DataPath>
+							<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<TitleLocation>Left</TitleLocation>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="TotalGroupBalanceContextMenu" id="28"/>
+							<ExtendedTooltip name="TotalGroupBalanceExtendedTooltip" id="29"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="GroupProformaInvoices" id="30">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<SkipOnInput>true</SkipOnInput>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<SelectionMode>SingleRow</SelectionMode>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>GroupProformaInvoices</DataPath>
+			<RowPictureDataPath>GroupProformaInvoices.DefaultPicture</RowPictureDataPath>
+			<BackColor>style:FormBackColor</BackColor>
+			<BorderColor>style:FormBackColor</BorderColor>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Proforma invoices</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Pro-forma Rechnungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>web:DarkSlateGray</TitleTextColor>
+			<CommandSet>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Post</ExcludedCommand>
+				<ExcludedCommand>UndoPosting</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>PullFromTop</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RefreshRequest>PullFromTop</RefreshRequest>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="GroupProformaInvoicesContextMenu" id="31">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<AutoCommandBar name="GroupProformaInvoicesCommandBar" id="32"/>
+			<ExtendedTooltip name="GroupProformaInvoicesExtendedTooltip" id="33"/>
+			<SearchStringAddition name="GroupProformaInvoicesSearchString" id="34">
+				<AdditionSource>
+					<Item>GroupProformaInvoices</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="GroupProformaInvoicesSearchStringContextMenu" id="35"/>
+				<ExtendedTooltip name="GroupProformaInvoicesSearchStringExtendedTooltip" id="36"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="GroupProformaInvoicesViewStatus" id="37">
+				<AdditionSource>
+					<Item>GroupProformaInvoices</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="GroupProformaInvoicesViewStatusContextMenu" id="38"/>
+				<ExtendedTooltip name="GroupProformaInvoicesViewStatusExtendedTooltip" id="39"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="GroupProformaInvoicesSearchControl" id="40">
+				<AdditionSource>
+					<Item>GroupProformaInvoices</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="GroupProformaInvoicesSearchControlContextMenu" id="41"/>
+				<ExtendedTooltip name="GroupProformaInvoicesSearchControlExtendedTooltip" id="42"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="GroupProformaInvoicesInvoice" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление счета на оплату</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Proforma-Rechnungsdarstellung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Proforma invoice representation</v8:content>
+						</v8:item>
+					</Title>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedTooltip name="GroupProformaInvoicesInvoiceExtendedTooltip" id="44"/>
+					<ChildItems>
+						<ColumnGroup name="ProformaInvoiceRepresentation" id="45">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Proforma invoice number and date</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Proforma Rechnungsnummer und Datum</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер и дата счета на оплату</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>InCell</Group>
+							<ExtendedTooltip name="ProformaInvoiceRepresentationExtendedTooltip" id="46"/>
+							<ChildItems>
+								<PictureField name="GroupProformaInvoicesInvoicePayedStateIcon" id="149">
+									<DataPath>GroupProformaInvoices.InvoicePayedStateIcon</DataPath>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.PayedStatus</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="GroupProformaInvoicesInvoicePayedStateIconContextMenu" id="150"/>
+									<ExtendedTooltip name="GroupProformaInvoicesInvoicePayedStateIconExtendedTooltip" id="151"/>
+								</PictureField>
+								<LabelField name="GroupProformaInvoicesNumber" id="152">
+									<DataPath>GroupProformaInvoices.Number</DataPath>
+									<Width>8</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="GroupProformaInvoicesNumberContextMenu" id="153"/>
+									<ExtendedTooltip name="GroupProformaInvoicesNumberExtendedTooltip" id="154"/>
+								</LabelField>
+								<LabelField name="GroupProformaInvoicesDate" id="122">
+									<DataPath>GroupProformaInvoices.Date</DataPath>
+									<Width>6</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="GroupProformaInvoicesDateContextMenu" id="123"/>
+									<ExtendedTooltip name="GroupProformaInvoicesDateExtendedTooltip" id="124"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="ProformaInvoiceAmounts" id="56">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Amounts</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Beträge</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Суммы</v8:content>
+								</v8:item>
+							</Title>
+							<Width>20</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="ProformaInvoiceAmountsExtendedTooltip" id="57"/>
+							<ChildItems>
+								<LabelField name="GroupProformaInvoicesSum" id="176">
+									<DataPath>GroupProformaInvoices.Sum</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="GroupProformaInvoicesSumContextMenu" id="177"/>
+									<ExtendedTooltip name="GroupProformaInvoicesSumExtendedTooltip" id="178"/>
+								</LabelField>
+								<LabelField name="GroupProformaInvoicesPaidSum" id="155">
+									<DataPath>GroupProformaInvoices.PaidSum</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="GroupProformaInvoicesPaidSumContextMenu" id="156"/>
+									<ExtendedTooltip name="GroupProformaInvoicesPaidSumExtendedTooltip" id="157"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="GroupProformaInvoicesRef" id="170">
+					<DataPath>GroupProformaInvoices.Ref</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesRefContextMenu" id="171"/>
+					<ExtendedTooltip name="GroupProformaInvoicesRefExtendedTooltip" id="172"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesAccountingCustomer" id="98">
+					<DataPath>GroupProformaInvoices.AccountingCustomer</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesAccountingCustomerContextMenu" id="99"/>
+					<ExtendedTooltip name="GroupProformaInvoicesAccountingCustomerExtendedTooltip" id="100"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesAccountingContract" id="89">
+					<DataPath>GroupProformaInvoices.AccountingContract</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesAccountingContractContextMenu" id="90"/>
+					<ExtendedTooltip name="GroupProformaInvoicesAccountingContractExtendedTooltip" id="91"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesAccountingCurrency" id="92">
+					<DataPath>GroupProformaInvoices.AccountingCurrency</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesAccountingCurrencyContextMenu" id="93"/>
+					<ExtendedTooltip name="GroupProformaInvoicesAccountingCurrencyExtendedTooltip" id="94"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesRemarks" id="173">
+					<DataPath>GroupProformaInvoices.Remarks</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesRemarksContextMenu" id="174"/>
+					<ExtendedTooltip name="GroupProformaInvoicesRemarksExtendedTooltip" id="175"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesCompany" id="116">
+					<DataPath>GroupProformaInvoices.Company</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesCompanyContextMenu" id="117"/>
+					<ExtendedTooltip name="GroupProformaInvoicesCompanyExtendedTooltip" id="118"/>
+				</LabelField>
+				<LabelField name="GroupProformaInvoicesAuthor" id="101">
+					<DataPath>GroupProformaInvoices.Author</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="GroupProformaInvoicesAuthorContextMenu" id="102"/>
+					<ExtendedTooltip name="GroupProformaInvoicesAuthorExtendedTooltip" id="103"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="GroupProformaInvoices" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group proforma invoices</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>GroupProformaInvoices.AccountingContract</Field>
+				<Field>GroupProformaInvoices.AccountingCurrency</Field>
+				<Field>GroupProformaInvoices.AccountingCustomer</Field>
+				<Field>GroupProformaInvoices.Author</Field>
+				<Field>GroupProformaInvoices.Company</Field>
+				<Field>GroupProformaInvoices.Date</Field>
+				<Field>GroupProformaInvoices.PaidSum</Field>
+				<Field>GroupProformaInvoices.Ref</Field>
+				<Field>GroupProformaInvoices.Remarks</Field>
+				<Field>GroupProformaInvoices.Sum</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>SELECT
+	DocumentProformaInvoice.Ref AS Ref,
+	DocumentProformaInvoice.DeletionMark AS DeletionMark,
+	DocumentProformaInvoice.Number AS Number,
+	DocumentProformaInvoice.Date AS Date,
+	DocumentProformaInvoice.Posted AS Posted,
+	DocumentProformaInvoice.ParentDoc AS ParentDoc,
+	DocumentProformaInvoice.Hotel AS Hotel,
+	DocumentProformaInvoice.Company AS Company,
+	DocumentProformaInvoice.BankAccount AS BankAccount,
+	DocumentProformaInvoice.AccountingCustomer AS AccountingCustomer,
+	DocumentProformaInvoice.AccountingContract AS AccountingContract,
+	DocumentProformaInvoice.GuestGroup AS GuestGroup,
+	DocumentProformaInvoice.ContactPerson AS ContactPerson,
+	DocumentProformaInvoice.Phone AS Phone,
+	DocumentProformaInvoice.Fax AS Fax,
+	DocumentProformaInvoice.EMail AS EMail,
+	DocumentProformaInvoice.Sum AS Sum,
+	DocumentProformaInvoice.VATSum AS VATSum,
+	DocumentProformaInvoice.ExchangeRateDate AS ExchangeRateDate,
+	DocumentProformaInvoice.AccountingCurrency AS AccountingCurrency,
+	DocumentProformaInvoice.AccountingCurrencyExchangeRate AS AccountingCurrencyExchangeRate,
+	DocumentProformaInvoice.Remarks AS Remarks,
+	DocumentProformaInvoice.PrintWithCompanyStamp AS PrintWithCompanyStamp,
+	DocumentProformaInvoice.ExternalCode AS ExternalCode,
+	DocumentProformaInvoice.ExtraInvoice AS ExtraInvoice,
+	DocumentProformaInvoice.CheckDate AS CheckDate,
+	DocumentProformaInvoice.Author AS Author,
+	DocumentProformaInvoice.ChangeDate AS ChangeDate,
+	DocumentProformaInvoice.ChangeAuthor AS ChangeAuthor,
+	DocumentProformaInvoice.PointInTime AS PointInTime,
+	ISNULL(InvoiceAccounts.SumExpense, 0) AS PaidSum,
+	CASE
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) &lt;= 0
+				AND DocumentProformaInvoice.Hotel.AccountingDate &gt; DocumentProformaInvoice.CheckDate
+				AND DocumentProformaInvoice.CheckDate &gt; DATETIME(1, 1, 1)
+			THEN 6
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) &lt;= 0
+			THEN 1
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) &gt;= DocumentProformaInvoice.Sum
+			THEN 5
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) &lt; DocumentProformaInvoice.Sum / 2
+			THEN 2
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) = DocumentProformaInvoice.Sum / 2
+			THEN 3
+		WHEN ISNULL(InvoiceAccounts.SumExpense, 0) &gt; DocumentProformaInvoice.Sum / 2
+			THEN 4
+		ELSE 0
+	END AS InvoicePayedStateIcon
+FROM
+	Document.ProformaInvoice AS DocumentProformaInvoice
+		LEFT JOIN (SELECT
+			InvoiceAccountsTurnovers.Invoice AS Invoice,
+			InvoiceAccountsTurnovers.SumExpense AS SumExpense
+		FROM
+			AccumulationRegister.InvoiceAccounts.Turnovers(, , PERIOD, GuestGroup = &amp;qGuestGroup) AS InvoiceAccountsTurnovers) AS InvoiceAccounts
+		ON (InvoiceAccounts.Invoice = DocumentProformaInvoice.Ref)
+WHERE
+	DocumentProformaInvoice.Posted
+	AND DocumentProformaInvoice.GuestGroup = &amp;qGuestGroup
+	AND DocumentProformaInvoice.GuestGroup &lt;&gt; VALUE(Catalog.GuestGroups.EmptyRef)</QueryText>
+				<MainTable>Document.ProformaInvoice</MainTable>
+				<ListSettings>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Date</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Number</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="TotalRoomReservedByGroup" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total room reserved by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего номеров по группе</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Total room by group</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalGuestsReservedByGroup" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total guests by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Total guests by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего гостей по группе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalRoomCheckInByGroup" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total room check in by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заехало номеров</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Total room check in by group</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalGuestsCheckInByGroup" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total guests check-in by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Total guests check-in by group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заехало человек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalGroupSales" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Amount</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Summe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalGroupPayments" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bezahlt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплачено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalGroupBalance" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Balance</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bilanz</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Баланс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TGroupResources" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group resources</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenressourcen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ресурсы группы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelGuestGroup" id="10">
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

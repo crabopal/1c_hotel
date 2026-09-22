@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="CheckConnect" id="89">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CheckConnection</CommandName>
+				<ExtendedTooltip name="CheckConnectExtendedTooltip" id="90"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnReadAtServer">OnReadAtServer</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupDescription" id="127">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group description</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group description</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа описание</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupDescriptionExtendedTooltip" id="128"/>
+			<ChildItems>
+				<InputField name="Description" id="4">
+					<DataPath>Object.Description</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DescriptionContextMenu" id="5"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="BotType" id="141">
+					<DataPath>Object.BotType</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="BotTypeContextMenu" id="142"/>
+					<ExtendedTooltip name="BotTypeExtendedTooltip" id="143"/>
+					<Events>
+						<Event name="OnChange">BotTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="IsActive" id="16">
+					<DataPath>Object.IsActive</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Switcher</CheckBoxType>
+					<ContextMenu name="IsActiveContextMenu" id="17"/>
+					<ExtendedTooltip name="IsActiveExtendedTooltip" id="18"/>
+				</CheckBoxField>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<Visible>false</Visible>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="DecorationSplitter2" id="129">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Connection settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Was gefunden</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter2ContextMenu" id="130"/>
+			<ExtendedTooltip name="DecorationSplitter2ExtendedTooltip" id="131"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupTelegramSettings" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Connection settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки подключения
+</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<ExtendedTooltip name="GroupTelegramSettingsExtendedTooltip" id="47"/>
+			<ChildItems>
+				<InputField name="Token" id="7">
+					<DataPath>Object.Token</DataPath>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="TokenContextMenu" id="8"/>
+					<ExtendedTooltip name="TokenExtendedTooltip" id="9">
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;font Arial&gt;&lt;fontsize 10&gt;Sie müssen einen Bot in der Telegram-Anwendung erstellen, weitere Details finden Sie im &lt;/&gt;&lt;/&gt;&lt;link https://support.1chotel.ru/knowledge_base/item/333780?sid=13584&gt;&lt;font Arial&gt;&lt;fontsize 10&gt;Tutorial&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;font Arial&gt;&lt;fontsize 10&gt;You need to create a bot in the Telegram application, more details in the &lt;/&gt;&lt;/&gt;&lt;link https://support.1chotel.ru/knowledge_base/item/333780?sid=13584&gt;&lt;font Arial&gt;&lt;fontsize 10&gt;tutorial&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;font Arial&gt;&lt;fontsize 10&gt;Необходимо создать бота в приложении Telegram, подробнее в &lt;/&gt;&lt;/&gt;&lt;link https://support.1chotel.ru/knowledge_base/item/333780?sid=13584&gt;&lt;font Arial&gt;&lt;fontsize 10&gt;уроке&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<UsualGroup name="GroupServer" id="152">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group server</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group server</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupServerExtendedTooltip" id="153"/>
+					<ChildItems>
+						<InputField name="Server" id="10">
+							<DataPath>Object.Server</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ServerContextMenu" id="11"/>
+							<ExtendedTooltip name="ServerExtendedTooltip" id="12"/>
+						</InputField>
+						<CheckBoxField name="UseSsl" id="149">
+							<DataPath>Object.UseSsl</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="UseSslContextMenu" id="150"/>
+							<ExtendedTooltip name="UseSslExtendedTooltip" id="151"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="MasterPassword" id="22">
+					<DataPath>Object.MasterPassword</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The command that needs to be executed when the bot is first launched is usually "Start"</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Der Befehl, der ausgeführt werden muss, wenn der Bot zum ersten Mal gestartet wird, normalerweise „Start“.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команда, которую нужно выполнить при первом запуске бота, обычно это "Start"</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<InputHint>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Start</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Start</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Например, Start</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="MasterPasswordContextMenu" id="23"/>
+					<ExtendedTooltip name="MasterPasswordExtendedTooltip" id="24">
+						<AutoMaxWidth>false</AutoMaxWidth>
+					</ExtendedTooltip>
+				</InputField>
+				<UsualGroup name="Group5" id="125">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group5ExtendedTooltip" id="126"/>
+					<ChildItems>
+						<InputField name="session_lifetime" id="112">
+							<DataPath>Object.session_lifetime</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<SpinButton>true</SpinButton>
+							<ContextMenu name="session_lifetimeContextMenu" id="113"/>
+							<ExtendedTooltip name="session_lifetimeExtendedTooltip" id="114"/>
+						</InputField>
+						<InputField name="offset" id="13">
+							<DataPath>Object.offset</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="offsetContextMenu" id="14"/>
+							<ExtendedTooltip name="offsetExtendedTooltip" id="15"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Proxy" id="97">
+					<DataPath>Object.Proxy</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ProxyContextMenu" id="98"/>
+					<ExtendedTooltip name="ProxyExtendedTooltip" id="99"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupWebhookSettings" id="100">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Webhook settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки webhook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<TitleDataPath>Object.WebhookKey</TitleDataPath>
+			<ExtendedTooltip name="GroupWebhookSettingsExtendedTooltip" id="101">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<HorizontalStretch>true</HorizontalStretch>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Если webhook не настроен, то нужно запустить фоновое задание Chat-bot</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Wenn der Webhook nicht konfiguriert ist, müssen Sie den Chatbot-Hintergrundjob ausführen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>If the webhook is not configured, then you need to run the Chat-bot background job</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<ChildItems>
+				<UsualGroup name="Group3" id="115">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group3ExtendedTooltip" id="116"/>
+					<ChildItems>
+						<UsualGroup name="Group2" id="108">
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group2ExtendedTooltip" id="109"/>
+							<ChildItems>
+								<UsualGroup name="Group4" id="147">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group4ExtendedTooltip" id="148"/>
+									<ChildItems>
+										<InputField name="WebhookKey" id="19">
+											<DataPath>Object.WebhookKey</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Link to http service</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ссылка на http сервис</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Link zum http-Dienst</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="WebhookKeyContextMenu" id="20"/>
+											<ExtendedTooltip name="WebhookKeyExtendedTooltip" id="21"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="GetWebhookInfo" id="104">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.GetWebhookInfo</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.InformationSmall</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="GetWebhookInfoExtendedTooltip" id="105"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="DecorationCheckLink" id="117">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Überprüfen Sie die Webhook-Veröffentlichung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>check the webhook publication</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>проверить публикацию вебхука</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="DecorationCheckLinkContextMenu" id="118"/>
+							<ExtendedTooltip name="DecorationCheckLinkExtendedTooltip" id="119"/>
+							<Events>
+								<Event name="Click">DecorationCheckLinkClick</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Group1" id="106">
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group1ExtendedTooltip" id="107"/>
+					<ChildItems>
+						<Button name="SetWebhook" id="102">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.SetWebhook</CommandName>
+							<ExtendedTooltip name="SetWebhookExtendedTooltip" id="103"/>
+						</Button>
+						<Button name="DeleteWebhook" id="110">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.DeleteWebhook</CommandName>
+							<ExtendedTooltip name="DeleteWebhookExtendedTooltip" id="111"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupBotSettings" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bot settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки бота
+</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupBotSettingsExtendedTooltip" id="49"/>
+			<ChildItems>
+				<LabelDecoration name="DecorationSplitter3" id="132">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#009646</TextColor>
+					<Font bold="true" kind="AutoFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры бота</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Bot parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bot-Parameter</v8:content>
+						</v8:item>
+					</Title>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="DecorationSplitter3ContextMenu" id="133"/>
+					<ExtendedTooltip name="DecorationSplitter3ExtendedTooltip" id="134"/>
+				</LabelDecoration>
+				<CheckBoxField name="ShowGuestsLastName" id="120">
+					<DataPath>Object.ShowGuestsLastName</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ShowGuestsLastNameContextMenu" id="121"/>
+					<ExtendedTooltip name="ShowGuestsLastNameExtendedTooltip" id="122"/>
+				</CheckBoxField>
+				<UsualGroup name="GroupConsumption" id="50">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Consumption settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки расхода</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupConsumptionExtendedTooltip" id="51"/>
+					<ChildItems>
+						<UsualGroup name="GroupConsumptionItems" id="123">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group Consumption</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Group Consumption</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа расход</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupConsumptionItemsExtendedTooltip" id="124"/>
+							<ChildItems>
+								<CheckBoxField name="Consumption" id="28">
+									<DataPath>Object.UseConsumption</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ConsumptionContextMenu" id="29"/>
+									<ExtendedTooltip name="ConsumptionExtendedTooltip" id="30"/>
+								</CheckBoxField>
+								<CheckBoxField name="UseConsumptionHierarchy" id="91">
+									<DataPath>Object.UseConsumptionHierarchy</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="UseConsumptionHierarchyContextMenu" id="92"/>
+									<ExtendedTooltip name="UseConsumptionHierarchyExtendedTooltip" id="93"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="VirtualOperations" id="94">
+							<DataPath>Object.VirtualOperations</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="VirtualOperationsContextMenu" id="95"/>
+							<ExtendedTooltip name="VirtualOperationsExtendedTooltip" id="96"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="DecorationSplitter4" id="135">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#009646</TextColor>
+					<Font bold="true" kind="AutoFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Connection settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Was gefunden</v8:content>
+						</v8:item>
+					</Title>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="DecorationSplitter4ContextMenu" id="136"/>
+					<ExtendedTooltip name="DecorationSplitter4ExtendedTooltip" id="137"/>
+				</LabelDecoration>
+				<UsualGroup name="GroupMiniBar" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Mini-bar settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки мини-бара</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupMiniBarExtendedTooltip" id="41"/>
+					<ChildItems>
+						<UsualGroup name="GroupMiniBarOnOff" id="42">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group mini bar on off</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupMiniBarOnOffExtendedTooltip" id="43"/>
+							<ChildItems>
+								<CheckBoxField name="MiniBar" id="31">
+									<DataPath>Object.UseMiniBar</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="MiniBarContextMenu" id="32"/>
+									<ExtendedTooltip name="MiniBarExtendedTooltip" id="33"/>
+									<Events>
+										<Event name="OnChange">MiniBarOnChange</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupMiniBarSettings" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group mini bar settings</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupMiniBarSettingsExtendedTooltip" id="45"/>
+							<ChildItems>
+								<InputField name="MiniBarRootElement" id="34">
+									<DataPath>Object.MiniBarRootElement</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="MiniBarRootElementContextMenu" id="35"/>
+									<ExtendedTooltip name="MiniBarRootElementExtendedTooltip" id="36"/>
+								</InputField>
+								<InputField name="MiniBarMaxValue" id="37">
+									<DataPath>Object.MiniBarMaxValue</DataPath>
+									<TitleLocation>Left</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<SpinButton>true</SpinButton>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<MinValue xsi:type="xs:decimal">1</MinValue>
+									<ContextMenu name="MiniBarMaxValueContextMenu" id="38"/>
+									<ExtendedTooltip name="MiniBarMaxValueExtendedTooltip" id="39"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="DecorationSplitter5" id="138">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#009646</TextColor>
+					<Font bold="true" kind="AutoFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Connection settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Was gefunden</v8:content>
+						</v8:item>
+					</Title>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="DecorationSplitter5ContextMenu" id="139"/>
+					<ExtendedTooltip name="DecorationSplitter5ExtendedTooltip" id="140"/>
+				</LabelDecoration>
+				<UsualGroup name="GroupAutoOperationControl" id="54">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Auto operation settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки автоматического распределения задач</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Behavior>Usual</Behavior>
+					<ExtendedTooltip name="GroupAutoOperationControlExtendedTooltip" id="55"/>
+					<ChildItems>
+						<CheckBoxField name="AutoOperationControl" id="56">
+							<DataPath>Object.UseAutoOperationControl</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="AutoOperationControlContextMenu" id="57"/>
+							<ExtendedTooltip name="AutoOperationControlExtendedTooltip" id="58"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupEngineerDepartments" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Engineer departments</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Технический отдел</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ingenieur-Abteilungen</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupEngineerDepartmentsExtendedTooltip" id="60"/>
+					<ChildItems>
+						<InputField name="EngineerDepartment" id="83">
+							<DataPath>Object.EngineerDepartment</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="EngineerDepartmentContextMenu" id="84"/>
+							<ExtendedTooltip name="EngineerDepartmentExtendedTooltip" id="85"/>
+						</InputField>
+						<Table name="EngineerDepartments" id="61">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.EngineerDepartments</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="EngineerDepartmentsContextMenu" id="62"/>
+							<AutoCommandBar name="EngineerDepartmentsCommandBar" id="63"/>
+							<ExtendedTooltip name="EngineerDepartmentsExtendedTooltip" id="64"/>
+							<SearchStringAddition name="EngineerDepartmentsSearchString" id="65">
+								<AdditionSource>
+									<Item>EngineerDepartments</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="EngineerDepartmentsSearchStringContextMenu" id="66"/>
+								<ExtendedTooltip name="EngineerDepartmentsSearchStringExtendedTooltip" id="67"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="EngineerDepartmentsViewStatus" id="68">
+								<AdditionSource>
+									<Item>EngineerDepartments</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="EngineerDepartmentsViewStatusContextMenu" id="69"/>
+								<ExtendedTooltip name="EngineerDepartmentsViewStatusExtendedTooltip" id="70"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="EngineerDepartmentsSearchControl" id="71">
+								<AdditionSource>
+									<Item>EngineerDepartments</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="EngineerDepartmentsSearchControlContextMenu" id="72"/>
+								<ExtendedTooltip name="EngineerDepartmentsSearchControlExtendedTooltip" id="73"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">EngineerDepartmentsOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="EngineerDepartmentsid" id="86">
+									<DataPath>Object.EngineerDepartments.ID</DataPath>
+									<SkipOnInput>true</SkipOnInput>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="EngineerDepartmentsidContextMenu" id="87"/>
+									<ExtendedTooltip name="EngineerDepartmentsidExtendedTooltip" id="88"/>
+								</InputField>
+								<InputField name="EngineerDepartmentsDepartments" id="77">
+									<DataPath>Object.EngineerDepartments.Departments</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="EngineerDepartmentsDepartmentsContextMenu" id="78"/>
+									<ExtendedTooltip name="EngineerDepartmentsDepartmentsExtendedTooltip" id="79"/>
+								</InputField>
+								<InputField name="EngineerDepartmentsTaskType" id="80">
+									<DataPath>Object.EngineerDepartments.TaskType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="EngineerDepartmentsTaskTypeContextMenu" id="81"/>
+									<ExtendedTooltip name="EngineerDepartmentsTaskTypeExtendedTooltip" id="82"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ChatBots</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CheckConnection" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check connection</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение
+</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Verbindung prüfen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check connection</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CheckConnection</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="GetWebhookInfo" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Get webhook info</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить информацию </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Get webhook info</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>GetWebhookInfo</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SetWebhook" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set webhook</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Set webhook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set webhook</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetWebhook</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="DeleteWebhook" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Delete webhook</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Delete webhook</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>DeleteWebhook</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

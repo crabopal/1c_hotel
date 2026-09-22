@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Group>HorizontalIfPossible</Group>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormDoFillVauchers" id="35">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.DoFillVauchers</CommandName>
+				<ExtendedTooltip name="FormDoFillVauchersExtendedTooltip" id="36"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupParameters" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select vaucher type and range of numbers to assign. Checkmark all necessary documents. Press "Fill vauchers" button</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wählen Sie den Gutscheintyp und den zuzuweisenden Nummernkreis aus. Markieren Sie alle erforderlichen Dokumente. Klicken Sie auf die Schaltfläche "Gutscheine füllen"</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выберите тип путевки и диапазон номеров для назначения. Отметьте все необходимые документы. Нажмите кнопку «Заполнить путевки».</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="13"/>
+			<ChildItems>
+				<InputField name="VaucherType" id="1">
+					<DataPath>VaucherType</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="VaucherTypeContextMenu" id="2"/>
+					<ExtendedTooltip name="VaucherTypeExtendedTooltip" id="3"/>
+					<Events>
+						<Event name="OnChange">VaucherTypeOnChange</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="GroupNumbers" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Numbers</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nummern</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номера бланков</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupNumbersExtendedTooltip" id="11"/>
+					<ChildItems>
+						<InputField name="NumberFrom" id="4">
+							<DataPath>NumberFrom</DataPath>
+							<ContextMenu name="NumberFromContextMenu" id="5"/>
+							<ExtendedTooltip name="NumberFromExtendedTooltip" id="6"/>
+							<Events>
+								<Event name="OnChange">NumberFromOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="NumberOfSelectedVauchers" id="43">
+							<DataPath>NumberOfSelectedVauchers</DataPath>
+							<SpinButton>true</SpinButton>
+							<ContextMenu name="NumberOfSelectedVauchersContextMenu" id="44"/>
+							<ExtendedTooltip name="NumberOfSelectedVauchersExtendedTooltip" id="45"/>
+							<Events>
+								<Event name="OnChange">NumberOfSelectedVauchersOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="NumberTo" id="7">
+							<DataPath>NumberTo</DataPath>
+							<ContextMenu name="NumberToContextMenu" id="8"/>
+							<ExtendedTooltip name="NumberToExtendedTooltip" id="9"/>
+							<Events>
+								<Event name="OnChange">NumberToOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelField name="TMessage" id="37">
+					<DataPath>TMessage</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Overline</v8ui:style>
+					</Border>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<ContextMenu name="TMessageContextMenu" id="38"/>
+					<ExtendedTooltip name="TMessageExtendedTooltip" id="39"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupDocumentsList" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Documents list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dokumentenliste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список документов</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupDocumentsListExtendedTooltip" id="15"/>
+			<ChildItems>
+				<Table name="DocumentsList" id="16">
+					<Representation>List</Representation>
+					<CommandBarLocation>Top</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<DataPath>DocumentsList</DataPath>
+					<RowPictureDataPath>DocumentsList.Picture</RowPictureDataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>Pickup</ExcludedCommand>
+						<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+						<ExcludedCommand>SearchHistory</ExcludedCommand>
+						<ExcludedCommand>SelectAll</ExcludedCommand>
+						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+						<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+					</CommandSet>
+					<ContextMenu name="DocumentsListContextMenu" id="17"/>
+					<AutoCommandBar name="DocumentsListCommandBar" id="18">
+						<ChildItems>
+							<ButtonGroup name="DocumentsListGroupCheck" id="50">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Checkmarks</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Häkchen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отметки</v8:content>
+									</v8:item>
+								</Title>
+								<Representation>Compact</Representation>
+								<ExtendedTooltip name="DocumentsListGroupCheckExtendedTooltip" id="51"/>
+								<ChildItems>
+									<Button name="DocumentsListCheckAll" id="48">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.DocumentsList.StandardCommand.CheckAll</CommandName>
+										<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+										<ExtendedTooltip name="DocumentsListCheckAllExtendedTooltip" id="49"/>
+									</Button>
+									<Button name="DocumentsListUncheckAll" id="46">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.DocumentsList.StandardCommand.UncheckAll</CommandName>
+										<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+										<ExtendedTooltip name="DocumentsListUncheckAllExtendedTooltip" id="47"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Popup name="FormGroupPrinting" id="52">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Print</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Печать</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Drucken</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="FormGroupPrintingExtendedTooltip" id="53"/>
+								<ChildItems>
+									<ButtonGroup name="FormGroupPrintingDefault" id="54">
+										<ExtendedTooltip name="FormGroupPrintingDefaultExtendedTooltip" id="55"/>
+									</ButtonGroup>
+									<ButtonGroup name="FormGroupPrintingNotDefault" id="56">
+										<ExtendedTooltip name="FormGroupPrintingNotDefaultExtendedTooltip" id="57"/>
+										<ChildItems>
+											<ButtonGroup name="FormGroupPrintingNotDefaultMain" id="58">
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Form group printing not default main</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormGroupPrintingNotDefaultMainExtendedTooltip" id="59"/>
+											</ButtonGroup>
+											<ButtonGroup name="FormGroupPrintingNotDefaultExtra" id="60">
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Form group printing not default main</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="FormGroupPrintingNotDefaultExtraExtendedTooltip" id="61"/>
+											</ButtonGroup>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</Popup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="DocumentsListExtendedTooltip" id="19"/>
+					<SearchStringAddition name="DocumentsListSearchString" id="20">
+						<AdditionSource>
+							<Item>DocumentsList</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="DocumentsListSearchStringContextMenu" id="21"/>
+						<ExtendedTooltip name="DocumentsListSearchStringExtendedTooltip" id="22"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="DocumentsListViewStatus" id="23">
+						<AdditionSource>
+							<Item>DocumentsList</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="DocumentsListViewStatusContextMenu" id="24"/>
+						<ExtendedTooltip name="DocumentsListViewStatusExtendedTooltip" id="25"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="DocumentsListSearchControl" id="26">
+						<AdditionSource>
+							<Item>DocumentsList</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="DocumentsListSearchControlContextMenu" id="27"/>
+						<ExtendedTooltip name="DocumentsListSearchControlExtendedTooltip" id="28"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">DocumentsListSelection</Event>
+						<Event name="OnChange">DocumentsListOnChange</Event>
+					</Events>
+					<ChildItems>
+						<CheckBoxField name="DocumentsListCheck" id="32">
+							<DataPath>DocumentsList.Check</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DocumentsListCheckContextMenu" id="33"/>
+							<ExtendedTooltip name="DocumentsListCheckExtendedTooltip" id="34"/>
+						</CheckBoxField>
+						<InputField name="DocumentsListValue" id="29">
+							<DataPath>DocumentsList.Value</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<CellHyperlink>true</CellHyperlink>
+							<ContextMenu name="DocumentsListValueContextMenu" id="30"/>
+							<ExtendedTooltip name="DocumentsListValueExtendedTooltip" id="31"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<LabelField name="NumberOfSelectedDocs" id="40">
+					<DataPath>NumberOfSelectedDocs</DataPath>
+					<ContextMenu name="NumberOfSelectedDocsContextMenu" id="41"/>
+					<ExtendedTooltip name="NumberOfSelectedDocsExtendedTooltip" id="42"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="VaucherType" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Vaucher type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gutscheintyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип путевки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.HotelProducts</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="NumberFrom" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Vaucher start number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gutschein Startnummer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начальный номер бланка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="NumberTo" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Vaucher end number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gutschein Endnummer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конечный номер бланка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="DocumentsList" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Documents list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dokumentenliste</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="TMessage" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Message</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nachricht</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сообщение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="NumberOfSelectedDocs" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Number of selected documents</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl der ausgewählten Dokumente</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во выбранных документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="NumberOfSelectedVauchers" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Q-ty</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="i" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>I</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>I</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>I</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="j" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>J</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>J</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>J</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="GuestGroup" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gästegruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа гостей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PrintForms" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>PrintForms</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="PrintForm" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Print form</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ObjectPrintingForms</v8:Type>
+					</Type>
+				</Column>
+				<Column name="IsDefault" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is default</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="DoFillVauchers" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill vauchers</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gutscheine füllen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить путевки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>DoFillVauchers</Action>
+		</Command>
+	</Commands>
+</Form>

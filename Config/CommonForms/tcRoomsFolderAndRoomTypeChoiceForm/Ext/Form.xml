@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Choose rooms folder or room type to speed up form opening</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Wählen Sie Zimmer Ordner oder Zimmertyp bitte zu beschleunigen form öffnung</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Для ускорения открытия формы укажите папку номеров или тип номера</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormContinueProcessing" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ContinueProcessing</CommandName>
+				<ExtendedTooltip name="FormContinueProcessingExtendedTooltip" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="SelHotel" id="15">
+			<DataPath>SelHotel</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<OpenButton>false</OpenButton>
+			<ContextMenu name="SelHotelContextMenu" id="16"/>
+			<ExtendedTooltip name="SelHotelExtendedTooltip" id="17"/>
+		</InputField>
+		<InputField name="SelRoom" id="3">
+			<DataPath>SelRoom</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+			<ChoiceForm>Catalog.Rooms.Form.tcGroupChoiceForm</ChoiceForm>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">SelHotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="SelRoomContextMenu" id="4"/>
+			<ExtendedTooltip name="SelRoomExtendedTooltip" id="5"/>
+		</InputField>
+		<InputField name="SelRoomClass" id="9">
+			<DataPath>SelRoomClass</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">SelHotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="SelRoomClassContextMenu" id="10"/>
+			<ExtendedTooltip name="SelRoomClassExtendedTooltip" id="11"/>
+		</InputField>
+		<InputField name="SelRoomType" id="6">
+			<DataPath>SelRoomType</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+			<ChoiceForm>Catalog.RoomTypes.Form.tcGroupChoiceForm</ChoiceForm>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">SelHotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="SelRoomTypeContextMenu" id="7"/>
+			<ExtendedTooltip name="SelRoomTypeExtendedTooltip" id="8"/>
+		</InputField>
+		<InputField name="SelRoomTypes" id="12">
+			<DataPath>SelRoomTypes</DataPath>
+			<ClearButton>true</ClearButton>
+			<InputHint>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select room types to show</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzuzeigenden Zimmertypen auswählen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметьте типы номеров для показа</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="SelRoomTypesContextMenu" id="13"/>
+			<ExtendedTooltip name="SelRoomTypesExtendedTooltip" id="14"/>
+			<Events>
+				<Event name="StartChoice">SelRoomTypesStartChoice</Event>
+				<Event name="Clearing">SelRoomTypesClearing</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupRow" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Row</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Reihe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupRowExtendedTooltip" id="22"/>
+			<ChildItems>
+				<InputField name="SelPeriodFrom" id="18">
+					<DataPath>SelPeriodFrom</DataPath>
+					<ContextMenu name="SelPeriodFromContextMenu" id="19"/>
+					<ExtendedTooltip name="SelPeriodFromExtendedTooltip" id="20"/>
+				</InputField>
+				<CheckBoxField name="SelShowBookingsWithoutRooms" id="23">
+					<DataPath>SelShowBookingsWithoutRooms</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SelShowBookingsWithoutRoomsContextMenu" id="24"/>
+					<ExtendedTooltip name="SelShowBookingsWithoutRoomsExtendedTooltip" id="25"/>
+				</CheckBoxField>
+				<CheckBoxField name="SelShowPreliminary" id="26">
+					<DataPath>SelShowPreliminary</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>CheckBox</CheckBoxType>
+					<ContextMenu name="SelShowPreliminaryContextMenu" id="27"/>
+					<ExtendedTooltip name="SelShowPreliminaryExtendedTooltip" id="28"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="SelRoomsPerPage" id="29">
+			<DataPath>SelRoomsPerPage</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="SelRoomsPerPageContextMenu" id="30"/>
+			<ExtendedTooltip name="SelRoomsPerPageExtendedTooltip" id="31"/>
+			<Events>
+				<Event name="OnChange">SelRoomsPerPageOnChange</Event>
+			</Events>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="SelRoom" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Rooms folder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer-Ordner</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Папка номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Rooms</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoomType" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room types folder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ordner Zimmertypen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Папка типов номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHotel" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoomClass" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room class</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmerklasse</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Класс номера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomTypeClasses</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoomTypes" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room types</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmertypen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="SelPeriodFrom" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date from</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ab Datum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С даты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelShowBookingsWithoutRooms" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Allocate to rooms</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nach Zimmern zuordnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распр. по номерам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelShowPreliminary" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show tentative</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Tentative anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показ. предв.</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoomsPerPage" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Rooms per page</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer pro Seite</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номеров на страницу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ContinueProcessing" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Continue</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Weiter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Continue opening form</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Weiter öffnen Formular</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить открытие формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ContinueProcessing</Action>
+		</Command>
+	</Commands>
+</Form>

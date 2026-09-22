@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupCodes" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCodesExtendedTooltip" id="41"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="SortCode" id="34">
+					<DataPath>Object.SortCode</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="SortCodeContextMenu" id="35"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="36"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="4">
+			<DataPath>Object.Description</DataPath>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TitleLocation>Left</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<Font bold="true" kind="AutoFont"/>
+			<ContextMenu name="DescriptionContextMenu" id="5"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+		</InputField>
+		<UsualGroup name="GroupHeader" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopfziele</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Главное</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="80"/>
+			<ChildItems>
+				<CheckBoxField name="IsForeigner" id="37">
+					<DataPath>Object.IsForeigner</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Use for</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verwenden für</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать для</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>BF=Citizens; BT=Foreigners</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>BF=Bürger; BT=Ausländer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>BF=Граждан; BT=Иностранцев</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="IsForeignerContextMenu" id="38"/>
+					<ExtendedTooltip name="IsForeignerExtendedTooltip" id="39"/>
+				</CheckBoxField>
+				<CheckBoxField name="RecognitionIsAvailable" id="31">
+					<DataPath>Object.RecognitionIsAvailable</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="RecognitionIsAvailableContextMenu" id="32"/>
+					<ExtendedTooltip name="RecognitionIsAvailableExtendedTooltip" id="33"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Decoration1" id="73">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration1ContextMenu" id="74"/>
+			<ExtendedTooltip name="Decoration1ExtendedTooltip" id="75"/>
+		</LabelDecoration>
+		<InputField name="IdentityDocumentType" id="10">
+			<DataPath>Object.IdentityDocumentType</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>2</TitleHeight>
+			<EditMode>EnterOnInput</EditMode>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<CreateButton>false</CreateButton>
+			<QuickChoice>false</QuickChoice>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="IdentityDocumentTypeContextMenu" id="11"/>
+			<ExtendedTooltip name="IdentityDocumentTypeExtendedTooltip" id="12"/>
+			<Events>
+				<Event name="OnChange">IdentityDocumentTypeOnChange</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupHoriz" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group horiz</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="GroupHorizExtendedTooltip" id="43"/>
+			<ChildItems>
+				<CheckBoxField name="IsVisa" id="22">
+					<DataPath>Object.IsVisa</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsVisaContextMenu" id="23"/>
+					<ExtendedTooltip name="IsVisaExtendedTooltip" id="24"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsMigrationCard" id="25">
+					<DataPath>Object.IsMigrationCard</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsMigrationCardContextMenu" id="26"/>
+					<ExtendedTooltip name="IsMigrationCardExtendedTooltip" id="27"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsFanID" id="28">
+					<DataPath>Object.IsFanID</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsFanIDContextMenu" id="29"/>
+					<ExtendedTooltip name="IsFanIDExtendedTooltip" id="30"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Decoration3" id="76">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration3ContextMenu" id="77"/>
+			<ExtendedTooltip name="Decoration3ExtendedTooltip" id="78"/>
+		</LabelDecoration>
+		<InputField name="ScanConfigurationName" id="7">
+			<DataPath>Object.ScanConfigurationName</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Scan config. name (Cognitive, PassportReader)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Scankonfiguration (Cognitive, PassportReader)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конфиг. сканирования (Cognitive, PassportReader)</v8:content>
+				</v8:item>
+			</Title>
+			<TitleHeight>2</TitleHeight>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>3</Width>
+			<DropListButton>true</DropListButton>
+			<ChoiceButton>false</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<CreateButton>false</CreateButton>
+			<ListChoiceMode>true</ListChoiceMode>
+			<QuickChoice>true</QuickChoice>
+			<TextEdit>false</TextEdit>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="ScanConfigurationNameContextMenu" id="8"/>
+			<ExtendedTooltip name="ScanConfigurationNameExtendedTooltip" id="9"/>
+			<Events>
+				<Event name="StartChoice">ScanConfigurationNameStartChoice</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupParameters" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="82"/>
+			<ChildItems>
+				<InputField name="PaperSize" id="13">
+					<DataPath>Object.PaperSize</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="PaperSizeContextMenu" id="14"/>
+					<ExtendedTooltip name="PaperSizeExtendedTooltip" id="15">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>(leave empty to use default value)</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>(lassen Sie es leer, um den Wert stillschweigend zu benutzen)</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>(оставьте пустым чтобы использовать значение по умолчанию)</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ColorDepth" id="19">
+					<DataPath>Object.ColorDepth</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>10</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ColorDepthContextMenu" id="20"/>
+					<ExtendedTooltip name="ColorDepthExtendedTooltip" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Rotation" id="16">
+			<DataPath>Object.Rotation</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>10</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RotationContextMenu" id="17"/>
+			<ExtendedTooltip name="RotationExtendedTooltip" id="18">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<LabelDecoration name="Decoration4" id="83">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration4ContextMenu" id="84"/>
+			<ExtendedTooltip name="Decoration4ExtendedTooltip" id="85"/>
+		</LabelDecoration>
+		<InputField name="LanguageID" id="51">
+			<DataPath>Object.LanguageID</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Regula language ID</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Regula Sprach ID</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ID языка в Regula</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="LanguageIDContextMenu" id="52"/>
+			<ExtendedTooltip name="LanguageIDExtendedTooltip" id="53"/>
+		</InputField>
+		<Table name="ExternalNames" id="54">
+			<TitleLocation>Auto</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Object.ExternalNames</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Regula external name settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Regula externe Namenseinstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки Regula</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ExternalNamesContextMenu" id="55"/>
+			<AutoCommandBar name="ExternalNamesCommandBar" id="56">
+				<ChildItems>
+					<Button name="Edit" id="86">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Edit</CommandName>
+						<ExtendedTooltip name="EditExtendedTooltip" id="87"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ExternalNamesExtendedTooltip" id="57"/>
+			<SearchStringAddition name="ExternalNamesSearchString" id="58">
+				<AdditionSource>
+					<Item>ExternalNames</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ExternalNamesSearchStringContextMenu" id="59"/>
+				<ExtendedTooltip name="ExternalNamesSearchStringExtendedTooltip" id="60"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ExternalNamesViewStatus" id="61">
+				<AdditionSource>
+					<Item>ExternalNames</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ExternalNamesViewStatusContextMenu" id="62"/>
+				<ExtendedTooltip name="ExternalNamesViewStatusExtendedTooltip" id="63"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ExternalNamesSearchControl" id="64">
+				<AdditionSource>
+					<Item>ExternalNames</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ExternalNamesSearchControlContextMenu" id="65"/>
+				<ExtendedTooltip name="ExternalNamesSearchControlExtendedTooltip" id="66"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ExternalNamesLineNumber" id="67">
+					<DataPath>Object.ExternalNames.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ExternalNamesLineNumberContextMenu" id="68"/>
+					<ExtendedTooltip name="ExternalNamesLineNumberExtendedTooltip" id="69"/>
+				</LabelField>
+				<InputField name="ExternalNamesExternalName" id="70">
+					<DataPath>Object.ExternalNames.ExternalName</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ExternalNamesExternalNameContextMenu" id="71"/>
+					<ExtendedTooltip name="ExternalNamesExternalNameExtendedTooltip" id="72"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ScanConfigurations</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ImageScannerDriver" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Image scanner driver</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ImageScannerDrivers</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Edit" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Edit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bearbeiten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Edit</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

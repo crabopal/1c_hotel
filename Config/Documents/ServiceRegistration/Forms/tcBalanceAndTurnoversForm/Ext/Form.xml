@@ -1,0 +1,1423 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionRefresh" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Refresh</CommandName>
+				<ExtendedTooltip name="FormActionRefreshExtendedTooltip" id="2"/>
+			</Button>
+			<ButtonGroup name="FormGroupViewDetails" id="131">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Display mode</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Anzeigemodus</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Режим отображения</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupViewDetailsExtendedTooltip" id="132"/>
+				<ChildItems>
+					<Button name="FormActionShowDetailedList" id="3">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ShowDetailedList</CommandName>
+						<ExtendedTooltip name="FormActionShowDetailedListExtendedTooltip" id="4"/>
+					</Button>
+					<Button name="FormActionShowListByDates" id="5">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ShowListByDates</CommandName>
+						<ExtendedTooltip name="FormActionShowListByDatesExtendedTooltip" id="6"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="FormActionOpenDocuments" id="7">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.OpenDocuments</CommandName>
+				<ExtendedTooltip name="FormActionOpenDocumentsExtendedTooltip" id="8"/>
+			</Button>
+			<Button name="ButtonServiceRegistration" id="67">
+				<Type>CommandBarButton</Type>
+				<Height>3</Height>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ButtonServiceRegistration</CommandName>
+				<ExtendedTooltip name="ButtonServiceRegistrationExtendedTooltip" id="68"/>
+			</Button>
+			<Button name="ButtonChargeAndPay" id="69">
+				<Type>CommandBarButton</Type>
+				<Height>3</Height>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ButtonChargeAndPay</CommandName>
+				<ExtendedTooltip name="ButtonChargeAndPayExtendedTooltip" id="70"/>
+			</Button>
+			<Button name="ButtonRunReport" id="71">
+				<Type>CommandBarButton</Type>
+				<Height>3</Height>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ButtonRunReport</CommandName>
+				<ExtendedTooltip name="ButtonRunReportExtendedTooltip" id="72"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="ExternalEvent">ExternalEvent</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupSearchMode" id="136">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Search</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Suche</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupSearchModeExtendedTooltip" id="137"/>
+			<ChildItems>
+				<UsualGroup name="GroupSearch" id="94">
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupSearchExtendedTooltip" id="95"/>
+					<ChildItems>
+						<UsualGroup name="Group1" id="96">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group1ExtendedTooltip" id="97"/>
+							<ChildItems>
+								<InputField name="SelService" id="100">
+									<DataPath>SelService</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelServiceContextMenu" id="101"/>
+									<ExtendedTooltip name="SelServiceExtendedTooltip" id="102"/>
+									<Events>
+										<Event name="OnChange">SelServiceOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelServiceGroup" id="103">
+									<DataPath>SelServiceGroup</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelServiceGroupContextMenu" id="104"/>
+									<ExtendedTooltip name="SelServiceGroupExtendedTooltip" id="105"/>
+									<Events>
+										<Event name="OnChange">SelServiceGroupOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group2" id="98">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group2ExtendedTooltip" id="99"/>
+							<ChildItems>
+								<InputField name="SelFolioNumber" id="109">
+									<DataPath>SelFolioNumber</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Folio number</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nummer Folio</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер фолио</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="SelFolioNumberContextMenu" id="110"/>
+									<ExtendedTooltip name="SelFolioNumberExtendedTooltip" id="111"/>
+									<Events>
+										<Event name="OnChange">SelFolioNumberOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelGuestGroup" id="106">
+									<DataPath>SelGuestGroup</DataPath>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelGuestGroupContextMenu" id="107"/>
+									<ExtendedTooltip name="SelGuestGroupExtendedTooltip" id="108"/>
+									<Events>
+										<Event name="OnChange">SelGuestGroupOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group3" id="118">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group3ExtendedTooltip" id="119"/>
+							<ChildItems>
+								<InputField name="SelResource" id="115">
+									<DataPath>SelResource</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Resource</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Ressource</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ресурс</v8:content>
+										</v8:item>
+									</Title>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelResourceContextMenu" id="116"/>
+									<ExtendedTooltip name="SelResourceExtendedTooltip" id="117"/>
+									<Events>
+										<Event name="OnChange">SelResourceOnChange</Event>
+									</Events>
+								</InputField>
+								<LabelField name="SelGuestGroupDescription" id="128">
+									<DataPath>SelGuestGroup.Description</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="SelGuestGroupDescriptionContextMenu" id="129"/>
+									<ExtendedTooltip name="SelGuestGroupDescriptionExtendedTooltip" id="130"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group4" id="120">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group4ExtendedTooltip" id="121"/>
+							<ChildItems>
+								<InputField name="SelClientStr" id="122">
+									<DataPath>SelClientStr</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Client</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Client</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Клиент</v8:content>
+										</v8:item>
+									</Title>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelClientStrContextMenu" id="123"/>
+									<ExtendedTooltip name="SelClientStrExtendedTooltip" id="124"/>
+									<Events>
+										<Event name="OnChange">SelClientStrOnChange</Event>
+										<Event name="StartChoice">SelClientStrStartChoice</Event>
+										<Event name="Opening">SelClientStrOpening</Event>
+										<Event name="ChoiceProcessing">SelClientStrChoiceProcessing</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelRoom" id="125">
+									<DataPath>SelRoom</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Room</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zimmer</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelRoomContextMenu" id="126"/>
+									<ExtendedTooltip name="SelRoomExtendedTooltip" id="127"/>
+									<Events>
+										<Event name="OnChange">SelRoomOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Group" id="138">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupExtendedTooltip" id="139"/>
+					<ChildItems>
+						<UsualGroup name="GroupParameters" id="86">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Parameters</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Parameter</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>PopUp</Behavior>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupParametersExtendedTooltip" id="87"/>
+							<ChildItems>
+								<InputField name="SelPeriod" id="88">
+									<DataPath>SelPeriod</DataPath>
+									<ContextMenu name="SelPeriodContextMenu" id="89"/>
+									<ExtendedTooltip name="SelPeriodExtendedTooltip" id="90"/>
+									<Events>
+										<Event name="OnChange">SelPeriodOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelHotel" id="91">
+									<DataPath>SelHotel</DataPath>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="SelHotelContextMenu" id="92"/>
+									<ExtendedTooltip name="SelHotelExtendedTooltip" id="93"/>
+									<Events>
+										<Event name="OnChange">SelHotelOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelBoardPlace" id="140">
+									<DataPath>SelBoardPlace</DataPath>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameters>
+										<app:item name="Filter.IsBoardPlace">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="SelBoardPlaceContextMenu" id="141"/>
+									<ExtendedTooltip name="SelBoardPlaceExtendedTooltip" id="142"/>
+									<Events>
+										<Event name="OnChange">SelBoardPlaceOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="ButtonResetSearchFilter" id="82">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.ButtonResetSearchFilter</CommandName>
+							<ExtendedTooltip name="ButtonResetSearchFilterExtendedTooltip" id="83"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupMain" id="61">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupMainExtendedTooltip" id="62"/>
+			<ChildItems>
+				<UsualGroup name="GroupList" id="80">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupListExtendedTooltip" id="81"/>
+					<ChildItems>
+						<Table name="BalanceAndTurnoversList" id="9">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>RegistrationBalanceAndTurnovers</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="BalanceAndTurnoversListContextMenu" id="10"/>
+							<AutoCommandBar name="BalanceAndTurnoversListCommandBar" id="11">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="BalanceAndTurnoversListExtendedTooltip" id="12"/>
+							<SearchStringAddition name="BalanceAndTurnoversListSearchString" id="13">
+								<AdditionSource>
+									<Item>BalanceAndTurnoversList</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="BalanceAndTurnoversListSearchStringContextMenu" id="14"/>
+								<ExtendedTooltip name="BalanceAndTurnoversListSearchStringExtendedTooltip" id="15"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="BalanceAndTurnoversListViewStatus" id="16">
+								<AdditionSource>
+									<Item>BalanceAndTurnoversList</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="BalanceAndTurnoversListViewStatusContextMenu" id="17"/>
+								<ExtendedTooltip name="BalanceAndTurnoversListViewStatusExtendedTooltip" id="18"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="BalanceAndTurnoversListSearchControl" id="19">
+								<AdditionSource>
+									<Item>BalanceAndTurnoversList</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="BalanceAndTurnoversListSearchControlContextMenu" id="20"/>
+								<ExtendedTooltip name="BalanceAndTurnoversListSearchControlExtendedTooltip" id="21"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="RegistrationBalanceAndTurnoversAccountingDate" id="22">
+									<DataPath>RegistrationBalanceAndTurnovers.AccountingDate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="RegistrationBalanceAndTurnoversAccountingDateContextMenu" id="23"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversAccountingDateExtendedTooltip" id="24"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversClient" id="25">
+									<DataPath>RegistrationBalanceAndTurnovers.Client</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversClientContextMenu" id="26"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversClientExtendedTooltip" id="27"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversRoom" id="28">
+									<DataPath>RegistrationBalanceAndTurnovers.Room</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>7</Width>
+									<ContextMenu name="RegistrationBalanceAndTurnoversRoomContextMenu" id="29"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversRoomExtendedTooltip" id="30"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversCheckInDate" id="40">
+									<DataPath>RegistrationBalanceAndTurnovers.CheckInDate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="RegistrationBalanceAndTurnoversCheckInDateContextMenu" id="41"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversCheckInDateExtendedTooltip" id="42"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversCheckOutDate" id="43">
+									<DataPath>RegistrationBalanceAndTurnovers.CheckOutDate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>1</Width>
+									<ContextMenu name="RegistrationBalanceAndTurnoversCheckOutDateContextMenu" id="44"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversCheckOutDateExtendedTooltip" id="45"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversService" id="31">
+									<DataPath>RegistrationBalanceAndTurnovers.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversServiceContextMenu" id="32"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversServiceExtendedTooltip" id="33"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversSumBalance" id="34">
+									<DataPath>RegistrationBalanceAndTurnovers.SumBalance</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversSumBalanceContextMenu" id="35"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversSumBalanceExtendedTooltip" id="36"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversQuantityBalance" id="37">
+									<DataPath>RegistrationBalanceAndTurnovers.QuantityBalance</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversQuantityBalanceContextMenu" id="38"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversQuantityBalanceExtendedTooltip" id="39"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversAmountCharged" id="46">
+									<DataPath>RegistrationBalanceAndTurnovers.SumReceipt</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversAmountChargedContextMenu" id="47"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversAmountChargedExtendedTooltip" id="48"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversQuantityCharged" id="49">
+									<DataPath>RegistrationBalanceAndTurnovers.QuantityReceipt</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversQuantityChargedContextMenu" id="50"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversQuantityChargedExtendedTooltip" id="51"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversAmountRegistered" id="52">
+									<DataPath>RegistrationBalanceAndTurnovers.AmountExpense</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversAmountRegisteredContextMenu" id="53"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversAmountRegisteredExtendedTooltip" id="54"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversQuantityRegistered" id="55">
+									<DataPath>RegistrationBalanceAndTurnovers.QuantityExpense</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversQuantityRegisteredContextMenu" id="56"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversQuantityRegisteredExtendedTooltip" id="57"/>
+								</InputField>
+								<InputField name="RegistrationBalanceAndTurnoversFolioCurrency" id="58">
+									<DataPath>RegistrationBalanceAndTurnovers.FolioCurrency</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RegistrationBalanceAndTurnoversFolioCurrencyContextMenu" id="59"/>
+									<ExtendedTooltip name="RegistrationBalanceAndTurnoversFolioCurrencyExtendedTooltip" id="60"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="DocumentList" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document list</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.ServiceRegistration</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="RegistrationBalanceAndTurnovers" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Registration balance and turnovers</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="AccountingDate" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Accounting date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Kontrolldatum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетная дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Client" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Client</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Kunde</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Room" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zimmer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Rooms</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Service" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</Type>
+				</Column>
+				<Column name="SumBalance" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Rest der Summe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rest der Summe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток суммы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="QuantityBalance" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q-ty available</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Restbestand in Anzahl</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток кол-ва</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>19</v8:Digits>
+							<v8:FractionDigits>7</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="CheckInDate" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Check-in date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Anreisedatum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата заезда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="CheckOutDate" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Check out date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Abreisedatum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата выезда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="SumReceipt" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Amount charged</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Angerechnet in Höhe von</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начислено на сумму</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="QuantityReceipt" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q-ty charged</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Die Menge wurde angerechnet</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начислено кол-во</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>19</v8:Digits>
+							<v8:FractionDigits>7</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="AmountExpense" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Amount registered</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Summe faktisch geleistet</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Факт. оказано на сумму</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>17</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="QuantityExpense" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q-ty registered</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Menge faktisch geleistete</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Факт. оказано кол-во</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>19</v8:Digits>
+							<v8:FractionDigits>7</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="FolioCurrency" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Currency</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Währung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Currencies</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="SelClient" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelClientStr" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel client str</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelFolioNumber" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel folio number</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelGuestGroup" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gästegruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа гостей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHotel" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelPeriod" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Periode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelResource" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel resource</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Resources</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoom" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel room</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Rooms</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelService" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dienstleistung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Services</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>SelService</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelServiceGroup" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Service group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>angebotene Dienstleistungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набор услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ServiceGroups</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>SelServiceGroup</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelShowClientsList" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel show clients list</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="SelShowListByDates" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel show list by dates</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="TSearchResult" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>T search result</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Clients" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clients</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Client" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Client</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Kunde</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Service" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Room" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zimmer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Rooms</v8:Type>
+					</Type>
+				</Column>
+				<Column name="GuestGroup" id="4">
+					<Type>
+						<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Resource" id="5">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Resources</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Folio" id="6">
+					<Type>
+						<v8:Type>cfg:DocumentRef.Folio</v8:Type>
+					</Type>
+				</Column>
+				<Column name="FolioCurrency" id="7">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Currencies</v8:Type>
+					</Type>
+				</Column>
+				<Column name="AvailableSum" id="8">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>1</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="AvailableQuantity" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Available quantity</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="SelBoardPlace" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Board place</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Essenort</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Место питания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Resources</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Refresh" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktualisieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Reread</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionRefresh</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ShowDetailedList" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show detailed list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Liste nach Kunden anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать список по клиентам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show detailed list</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Clients</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionShowDetailedList</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ShowListByDates" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show list by dates</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Liste nach Daten anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать список по датам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show list by dates</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.PeriodDay</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionShowListByDates</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="OpenDocuments" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open documents list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierungsheft der Dokument öffnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть журнал документов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open documents</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Document</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenDocuments</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ButtonServiceRegistration" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Services registration</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierung der Leistung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистрация услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.CheckMark</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ButtonServiceRegistrationClick</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ButtonChargeAndPay" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Charge and pay</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anrechnen und bezahlen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислить и оплатить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Coins</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ButtonChargeAndPay</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ButtonRunReport" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print report</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bericht drucken</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печатать отчет</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Report</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ButtonRunReport</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ButtonResetSearchFilter" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reset filter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zurücksetzen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ButtonResetSearchFilter</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Folio</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Лицевой счет</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Personenkonto</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormChangeHistory" id="136">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.ChangeHistory</CommandName>
+				<ExtendedTooltip name="FormChangeHistoryExtendedTooltip" id="137"/>
+			</Button>
+			<Button name="WriteAndClose" id="14">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="WriteAndCloseExtendedTooltip" id="15"/>
+			</Button>
+			<Button name="FormOpenFolioTransactions" id="158">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.OpenFolioTransactions</CommandName>
+				<ExtendedTooltip name="FormOpenFolioTransactionsExtendedTooltip" id="159"/>
+			</Button>
+			<ButtonGroup name="FormGroupFolioState" id="187">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Folio state management</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Folio State Management</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Управление состоянием фолио</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormGroupFolioStateExtendedTooltip" id="188"/>
+				<ChildItems>
+					<Button name="FormCloseFolio" id="189">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.CloseFolio</CommandName>
+						<ExtendedTooltip name="FormCloseFolioExtendedTooltip" id="190"/>
+					</Button>
+					<Button name="FormOpenFolio" id="191">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.OpenFolio</CommandName>
+						<ExtendedTooltip name="FormOpenFolioExtendedTooltip" id="192"/>
+					</Button>
+					<Button name="FormArchiveFolio" id="193">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ArchiveFolio</CommandName>
+						<ExtendedTooltip name="FormArchiveFolioExtendedTooltip" id="194"/>
+					</Button>
+					<Button name="FormUnarchiveFolio" id="195">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.UnarchiveFolio</CommandName>
+						<ExtendedTooltip name="FormUnarchiveFolioExtendedTooltip" id="196"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="BillingInstructionTemplateWarning" id="212">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Предупреждение о шаблоне правил начисления</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Vorlage für Abrechnungsanweisungen Warnung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Billing instruction template warning</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="BillingInstructionTemplateWarningExtendedTooltip" id="213"/>
+			<ChildItems>
+				<PictureDecoration name="WarningDecoration" id="217">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значок предупреждения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Warnzeichen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Warning sign</v8:content>
+						</v8:item>
+					</Title>
+					<PictureSize>Proportionally</PictureSize>
+					<Picture>
+						<xr:Ref>CommonPicture.AttentionMedium</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="WarningDecorationContextMenu" id="218"/>
+					<ExtendedTooltip name="WarningDecorationExtendedTooltip" id="219"/>
+				</PictureDecoration>
+				<LabelDecoration name="Warning" id="214">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это фолио является шаблоном строки правил начисления. Запрещается начислять услуги и проводить платежи по таким лицевым счетам</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dieses Folio ist ein Muster für eine Billinginstructionzeile. Es ist verboten, Dienstleistungen oder Zahlungen auf solchen persönlichen Konten zu tätigen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>This is billing instruction template folio. It is forbidden to charge services and do payments in it</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="WarningContextMenu" id="215"/>
+					<ExtendedTooltip name="WarningExtendedTooltip" id="216"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Head" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Head</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Head</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="HeadExtendedTooltip" id="11"/>
+			<ChildItems>
+				<InputField name="Number" id="1">
+					<DataPath>Object.Number</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio N</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio Nr</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фолио №</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="NumberContextMenu" id="2"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="CreditLimit" id="108">
+					<DataPath>Object.CreditLimit</DataPath>
+					<ContextMenu name="CreditLimitContextMenu" id="109"/>
+					<ExtendedTooltip name="CreditLimitExtendedTooltip" id="110"/>
+				</InputField>
+				<InputField name="FolioCurrency" id="128">
+					<DataPath>Object.FolioCurrency</DataPath>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceParameters>
+						<app:item name="Filter.DeletionMark">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="FolioCurrencyContextMenu" id="129"/>
+					<ExtendedTooltip name="FolioCurrencyExtendedTooltip" id="130"/>
+				</InputField>
+				<InputField name="PaymentMethod" id="74">
+					<DataPath>Object.PaymentMethod</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceButtonPicture>
+						<xr:Ref>CommonPicture.Coins</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ChoiceButtonPicture>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="PaymentMethodContextMenu" id="75"/>
+					<ExtendedTooltip name="PaymentMethodExtendedTooltip" id="76"/>
+				</InputField>
+				<CheckBoxField name="IsMaster" id="23">
+					<DataPath>Object.IsMaster</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsMasterContextMenu" id="24"/>
+					<ExtendedTooltip name="IsMasterExtendedTooltip" id="25"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Remarks" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Remarks</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примечания</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Remarks</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="67"/>
+			<ChildItems>
+				<InputField name="Description" id="71">
+					<DataPath>Object.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DescriptionContextMenu" id="72"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="73"/>
+				</InputField>
+				<InputField name="RemarksFolio" id="68">
+					<DataPath>Object.Remarks</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="RemarksFolioContextMenu" id="69"/>
+					<ExtendedTooltip name="RemarksFolioExtendedTooltip" id="70"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Owner" id="134">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Owner</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Inhaber</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="OwnerExtendedTooltip" id="135"/>
+			<ChildItems>
+				<UsualGroup name="ClientParameters" id="149">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Client parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Client-Einstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры клиента</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ClientParametersExtendedTooltip" id="150"/>
+					<ChildItems>
+						<InputField name="Client" id="49">
+							<DataPath>Object.Client</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceButtonPicture>
+								<xr:Ref>CommonPicture.Clients</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ChoiceButtonPicture>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ClientContextMenu" id="50"/>
+							<ExtendedTooltip name="ClientExtendedTooltip" id="51"/>
+						</InputField>
+						<CheckBoxField name="IsComplimentary" id="143">
+							<DataPath>Object.IsComplimentary</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsComplimentaryContextMenu" id="144"/>
+							<ExtendedTooltip name="IsComplimentaryExtendedTooltip" id="145"/>
+							<Events>
+								<Event name="OnChange">IsComplimentaryOnChange</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="RoomAndPeriod" id="153">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room and period</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zimmer und Periode</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер и период</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="RoomAndPeriodExtendedTooltip" id="154"/>
+					<ChildItems>
+						<InputField name="Room" id="55">
+							<DataPath>Object.Room</DataPath>
+							<Width>16</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceButtonPicture>
+								<xr:Ref>CommonPicture.Rooms</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ChoiceButtonPicture>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="RoomContextMenu" id="56"/>
+							<ExtendedTooltip name="RoomExtendedTooltip" id="57"/>
+						</InputField>
+						<UsualGroup name="DataTimeFolio" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Data time folio</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата время с\по</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Data time folio</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="DataTimeFolioExtendedTooltip" id="59"/>
+							<ChildItems>
+								<InputField name="DateTimeFrom" id="60">
+									<DataPath>Object.DateTimeFrom</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Period from</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Periode von</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период с</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="DateTimeFromContextMenu" id="61"/>
+									<ExtendedTooltip name="DateTimeFromExtendedTooltip" id="62"/>
+								</InputField>
+								<InputField name="DateTimeTo" id="63">
+									<DataPath>Object.DateTimeTo</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>to</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>zu</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>по</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="DateTimeToContextMenu" id="64"/>
+									<ExtendedTooltip name="DateTimeToExtendedTooltip" id="65"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupAccounting" id="138">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accounting payer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Rechnungszahler</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плательщик</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group accounting</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupAccountingExtendedTooltip" id="139"/>
+			<ChildItems>
+				<UsualGroup name="GroupLeftPanel" id="206">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group left panel</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group left panel</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupLeftPanelExtendedTooltip" id="207"/>
+					<ChildItems>
+						<InputField name="Company" id="7">
+							<DataPath>Object.Company</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="CompanyContextMenu" id="8"/>
+							<ExtendedTooltip name="CompanyExtendedTooltip" id="9"/>
+						</InputField>
+						<InputField name="Customer" id="52">
+							<DataPath>Object.Customer</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="CustomerContextMenu" id="53"/>
+							<ExtendedTooltip name="CustomerExtendedTooltip" id="54"/>
+							<Events>
+								<Event name="OnChange">CustomerOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="Contract" id="80">
+							<DataPath>Object.Contract</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Customer</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ContractContextMenu" id="81"/>
+							<ExtendedTooltip name="ContractExtendedTooltip" id="82"/>
+							<Events>
+								<Event name="OnChange">ContractOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="Agent" id="83">
+							<DataPath>Object.Agent</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="AgentContextMenu" id="84"/>
+							<ExtendedTooltip name="AgentExtendedTooltip" id="85"/>
+						</InputField>
+						<UsualGroup name="GroupGuestGroup" id="210">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group guest group</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupGuestGroupExtendedTooltip" id="211"/>
+							<ChildItems>
+								<InputField name="GuestGroup" id="95">
+									<DataPath>Object.GuestGroup</DataPath>
+									<DropListButton>false</DropListButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<CreateButton>false</CreateButton>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="GuestGroupContextMenu" id="96"/>
+									<ExtendedTooltip name="GuestGroupExtendedTooltip" id="97"/>
+								</InputField>
+								<LabelField name="GuestGroupDescription" id="100">
+									<DataPath>Object.GuestGroup.Description</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="GuestGroupDescriptionContextMenu" id="101"/>
+									<ExtendedTooltip name="GuestGroupDescriptionExtendedTooltip" id="102"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="IsHouseUse" id="146">
+							<DataPath>Object.IsHouseUse</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsHouseUseContextMenu" id="147"/>
+							<ExtendedTooltip name="IsHouseUseExtendedTooltip" id="148"/>
+							<Events>
+								<Event name="OnChange">IsHouseUseOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="IsForDirectPostings" id="140">
+							<DataPath>Object.IsForDirectPostings</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsForDirectPostingsContextMenu" id="141"/>
+							<ExtendedTooltip name="IsForDirectPostingsExtendedTooltip" id="142"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsForExternalPOS" id="163">
+							<DataPath>Object.IsForExternalPOS</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Is for external POS</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Ist für externe POS</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для внешних POS</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsForExternalPOSContextMenu" id="164"/>
+							<ExtendedTooltip name="IsForExternalPOSExtendedTooltip" id="165"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupRightPanel" id="208">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group right panel</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group right panel</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupRightPanelExtendedTooltip" id="209"/>
+					<ChildItems>
+						<InputField name="HotelProduct" id="77">
+							<DataPath>Object.HotelProduct</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Voucher</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gutschein</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Путевка</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="HotelProductContextMenu" id="78"/>
+							<ExtendedTooltip name="HotelProductExtendedTooltip" id="79"/>
+						</InputField>
+						<InputField name="FolioDiscountType" id="89">
+							<DataPath>Object.FolioDiscountType</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="FolioDiscountTypeContextMenu" id="90"/>
+							<ExtendedTooltip name="FolioDiscountTypeExtendedTooltip" id="91"/>
+						</InputField>
+						<InputField name="FolioDiscountCard" id="92">
+							<DataPath>Object.FolioDiscountCard</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="FolioDiscountCardContextMenu" id="93"/>
+							<ExtendedTooltip name="FolioDiscountCardExtendedTooltip" id="94"/>
+						</InputField>
+						<InputField name="FinancialAccount" id="155">
+							<DataPath>Object.FinancialAccount</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="FinancialAccountContextMenu" id="156"/>
+							<ExtendedTooltip name="FinancialAccountExtendedTooltip" id="157"/>
+						</InputField>
+						<InputField name="AccountCodeBO" id="184">
+							<DataPath>Object.AccountCodeBO</DataPath>
+							<Width>6</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="AccountCodeBOContextMenu" id="185"/>
+							<ExtendedTooltip name="AccountCodeBOExtendedTooltip" id="186"/>
+						</InputField>
+						<CheckBoxField name="DoNotUpdateCompany" id="105">
+							<DataPath>Object.DoNotUpdateCompany</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotUpdateCompanyContextMenu" id="106"/>
+							<ExtendedTooltip name="DoNotUpdateCompanyExtendedTooltip" id="107"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotUpdateCustomer" id="223">
+							<DataPath>Object.DoNotUpdateCustomer</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotUpdateCustomerContextMenu" id="224"/>
+							<ExtendedTooltip name="DoNotUpdateCustomerExtendedTooltip" id="225"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotFillAgent" id="220">
+							<DataPath>Object.DoNotFillAgent</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotFillAgentContextMenu" id="221"/>
+							<ExtendedTooltip name="DoNotFillAgentExtendedTooltip" id="222"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupParentDoc" id="200">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dokument</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Document</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group parent doc</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupParentDocExtendedTooltip" id="201"/>
+			<ChildItems>
+				<LabelField name="ParentDoc1" id="131">
+					<DataPath>Object.ParentDoc</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ParentDoc1ContextMenu" id="132"/>
+					<ExtendedTooltip name="ParentDoc1ExtendedTooltip" id="133"/>
+				</LabelField>
+				<Button name="ClearParentDoc" id="202">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ClearParentDoc</CommandName>
+					<ExtendedTooltip name="ClearParentDocExtendedTooltip" id="203"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupPanels" id="166">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Panels</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Panel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панели</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupPanelsExtendedTooltip" id="167"/>
+			<ChildItems>
+				<UsualGroup name="FolioDebtDecision" id="168">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio debt decision</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio Schulden-Entscheidung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Решение по долгу на лицевом счете</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="FolioDebtDecisionExtendedTooltip" id="169"/>
+					<ChildItems>
+						<InputField name="DebtDecision" id="170">
+							<DataPath>Object.DebtDecision</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Debt decision</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Schulden-Entscheidung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Решение по долгу</v8:content>
+								</v8:item>
+							</Title>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="DebtDecisionContextMenu" id="171"/>
+							<ExtendedTooltip name="DebtDecisionExtendedTooltip" id="172"/>
+							<Events>
+								<Event name="OnChange">DebtDecisionOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="DebtDecisionRemarks" id="173">
+							<DataPath>Object.DebtDecisionRemarks</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Decision remarks</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Hinweise zur Entscheidung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Примечания по решению</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="DebtDecisionRemarksContextMenu" id="174"/>
+							<ExtendedTooltip name="DebtDecisionRemarksExtendedTooltip" id="175"/>
+						</InputField>
+						<UsualGroup name="GroupAuthorAndDate" id="176">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Decision author and date</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Entscheidung Autor und Datum</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Автор решения и дата его принятия</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupAuthorAndDateExtendedTooltip" id="177"/>
+							<ChildItems>
+								<LabelField name="DebtDecisionDate" id="178">
+									<DataPath>Object.DebtDecisionDate</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Date of decision</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zeitpunkt der Entscheidung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата решения</v8:content>
+										</v8:item>
+									</Title>
+									<Format>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="DebtDecisionDateContextMenu" id="179"/>
+									<ExtendedTooltip name="DebtDecisionDateExtendedTooltip" id="180"/>
+								</LabelField>
+								<LabelField name="DebtDecisionAuthor" id="181">
+									<DataPath>Object.DebtDecisionAuthor</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Decision author</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Entscheidung Autor</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Автор решения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DebtDecisionAuthorContextMenu" id="182"/>
+									<ExtendedTooltip name="DebtDecisionAuthorExtendedTooltip" id="183"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupParameters" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parameter</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>PopUp</Behavior>
+					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="GroupParametersExtendedTooltip" id="44"/>
+					<ChildItems>
+						<UsualGroup name="LeftPanel" id="45">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Left panel</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Левая панель</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Left panel</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="LeftPanelExtendedTooltip" id="46"/>
+							<ChildItems>
+								<UsualGroup name="GroupDateAndAuthor" id="126">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Date and author</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата и автор</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Datum und Autor</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDateAndAuthorExtendedTooltip" id="127"/>
+									<ChildItems>
+										<InputField name="Number1" id="160">
+											<DataPath>Object.Number</DataPath>
+											<ContextMenu name="Number1ContextMenu" id="161"/>
+											<ExtendedTooltip name="Number1ExtendedTooltip" id="162"/>
+										</InputField>
+										<InputField name="Date" id="4">
+											<DataPath>Object.Date</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Created</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Erstellt</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Создан</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="DateContextMenu" id="5"/>
+											<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="Hotel" id="40">
+									<DataPath>Object.Hotel</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="HotelContextMenu" id="41"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="42"/>
+								</InputField>
+								<InputField name="ParentDoc" id="111">
+									<DataPath>Object.ParentDoc</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="ParentDocContextMenu" id="112"/>
+									<ExtendedTooltip name="ParentDocExtendedTooltip" id="113"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="RightPanel" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Right panel</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правая панель</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Right panel</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="RightPanelExtendedTooltip" id="48"/>
+							<ChildItems>
+								<InputField name="Author" id="18">
+									<DataPath>Object.Author</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<DropListButton>false</DropListButton>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="AuthorContextMenu" id="19"/>
+									<ExtendedTooltip name="AuthorExtendedTooltip" id="20"/>
+								</InputField>
+								<InputField name="PaymentSection" id="86">
+									<DataPath>Object.PaymentSection</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="PaymentSectionContextMenu" id="87"/>
+									<ExtendedTooltip name="PaymentSectionExtendedTooltip" id="88"/>
+								</InputField>
+								<InputField name="LineNumber" id="121">
+									<DataPath>Object.LineNumber</DataPath>
+									<ContextMenu name="LineNumberContextMenu" id="122"/>
+									<ExtendedTooltip name="LineNumberExtendedTooltip" id="123"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFooter" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Footer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fußzeile</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group footer</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#D6FBD3</BackColor>
+			<ExtendedTooltip name="GroupFooterExtendedTooltip" id="30"/>
+			<ChildItems>
+				<CheckBoxField name="IsClosed" id="26">
+					<DataPath>Object.IsClosed</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleTextColor>web:Red</TitleTextColor>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsClosedContextMenu" id="27"/>
+					<ExtendedTooltip name="IsClosedExtendedTooltip" id="28"/>
+				</CheckBoxField>
+				<LabelField name="IsClosedAuthor" id="31">
+					<DataPath>Object.IsClosedAuthor</DataPath>
+					<Enabled>false</Enabled>
+					<ContextMenu name="IsClosedAuthorContextMenu" id="32"/>
+					<ExtendedTooltip name="IsClosedAuthorExtendedTooltip" id="33"/>
+				</LabelField>
+				<LabelField name="IsClosedDate" id="34">
+					<DataPath>Object.IsClosedDate</DataPath>
+					<Enabled>false</Enabled>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="IsClosedDateContextMenu" id="35"/>
+					<ExtendedTooltip name="IsClosedDateExtendedTooltip" id="36"/>
+				</LabelField>
+				<CheckBoxField name="IsArchived" id="197">
+					<DataPath>Object.IsArchived</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsArchivedContextMenu" id="198"/>
+					<ExtendedTooltip name="IsArchivedExtendedTooltip" id="199"/>
+				</CheckBoxField>
+				<CheckBoxField name="DeletionMark" id="37">
+					<DataPath>Object.DeletionMark</DataPath>
+					<Enabled>false</Enabled>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="38"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="39"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.Folio</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="OpenFolioTransactions" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open folio transactions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zeigen Folio-transaktionen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать транзакции</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldCalculator</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenFolioTransactions</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="CloseFolio" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Close folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Folio schließen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть лиц. счет</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Stop</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CloseFolio</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="OpenFolio" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Folio öffnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть лиц. счет</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.CheckMark</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenFolio</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ArchiveFolio" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Archive folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Archiv Folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В архив</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.History</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ArchiveFolio</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="UnarchiveFolio" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unarchive folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Unarchives Folio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вернуть из архива</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Back</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UnarchiveFolio</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ClearParentDoc" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear reserv. link</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Klar reservieren.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить привязку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unlink from reservation</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Verbindung zur Reservierung aufheben</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить привязку к брони</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Remove</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearParentDoc</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

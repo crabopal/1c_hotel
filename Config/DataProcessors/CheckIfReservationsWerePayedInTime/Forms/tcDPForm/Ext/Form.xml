@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionsExecute" id="53">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionsExecute</CommandName>
+				<ExtendedTooltip name="FormActionsExecuteExtendedTooltip" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration" id="82">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wenn Sie auf die "Ausführen" klicken, wird das Programm den Eingang der Zahlung für die Buchung überprüfen. Bei einer verspäteten Buchung sendet das Programm Benachrichtigungen und kann den Status ändern. Die Zahlung der Reservierung gilt als überfällig wenn am Check-Datum, das auf der gästegruppenkarte angegeben ist, keine Zahlung für die Gruppe eingegangen ist. Bei der Buchung, für die die Zahlung eingegangen ist, kann das Programm den Status ändern.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By clicking on the "Execute" button, the program will check payments for reservations. For reservations with overdue payment, the program will send notifications and can change the status. Reservation is considered overdue if on the control date, which is indicated in the guest group form, the group has not received payment for any amount. For reservations with payments, the program can change the status to the one specified in the procedure parameters.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По нажатию на кнопку "Выполнить" программа проверит поступление оплаты по брони. По брони с просроченной оплатой программа отправит уведомления и может изменить статус. Оплата брони считается просроченной если на контрольную дату, которая указывается в карточке группы гостей, по группе не поступила оплата на любую сумму. По брони, по которой поступила оплата, программа может изменить статус на тот, который указан в настройках обработки.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DecorationContextMenu" id="83"/>
+			<ExtendedTooltip name="DecorationExtendedTooltip" id="84"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupParameters" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="50"/>
+			<ChildItems>
+				<UsualGroup name="GroupActions" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>#FCEB9F</BackColor>
+					<ExtendedTooltip name="GroupActionsExtendedTooltip" id="62"/>
+					<ChildItems>
+						<Button name="SaveSettings" id="51">
+							<Type>UsualButton</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Command.SaveSettings</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="SaveSettingsExtendedTooltip" id="52"/>
+						</Button>
+						<UsualGroup name="GroupBackgroundJob" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group background job</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group background job</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupBackgroundJobExtendedTooltip" id="58"/>
+							<ChildItems>
+								<Button name="BackgroundJob" id="59">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.BackgroundJob</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.ScheduledJob</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="BackgroundJobExtendedTooltip" id="60"/>
+								</Button>
+								<PictureDecoration name="DecorationBackgroundJob" id="63">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Decoration background job</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Not configured</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nicht konfiguriert</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не настроено</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<Picture>
+										<xr:Ref>CommonPicture.Remove</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="DecorationBackgroundJobContextMenu" id="64"/>
+									<ExtendedTooltip name="DecorationBackgroundJobExtendedTooltip" id="65"/>
+								</PictureDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Decoration1" id="66">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="Decoration1ContextMenu" id="67"/>
+							<ExtendedTooltip name="Decoration1ExtendedTooltip" id="68"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Hotel" id="1">
+					<DataPath>Object.Hotel</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="2"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="ReplyMessageType" id="13">
+					<DataPath>Object.ReplyMessageType</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ReplyMessageTypeContextMenu" id="14"/>
+					<ExtendedTooltip name="ReplyMessageTypeExtendedTooltip" id="15"/>
+				</InputField>
+				<CheckBoxField name="ProcessReservationsFromIndividualsOnly" id="88">
+					<DataPath>Object.ProcessReservationsFromIndividualsOnly</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ProcessReservationsFromIndividualsOnlyContextMenu" id="89"/>
+					<ExtendedTooltip name="ProcessReservationsFromIndividualsOnlyExtendedTooltip" id="90"/>
+				</CheckBoxField>
+				<LabelDecoration name="Decoration3" id="69">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="Decoration3ContextMenu" id="70"/>
+					<ExtendedTooltip name="Decoration3ExtendedTooltip" id="71"/>
+				</LabelDecoration>
+				<Pages name="GroupProcessingSettings" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Processing settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verarbeitungseinstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры обработки</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+					<ExtendedTooltip name="GroupProcessingSettingsExtendedTooltip" id="95"/>
+					<ChildItems>
+						<Page name="GroupGuaranteed" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Payed reservations</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Bezahlten Reservierungen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплаченные брони</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="GroupGuaranteedExtendedTooltip" id="56"/>
+							<ChildItems>
+								<InputField name="GuaranteedReservationStatus" id="4">
+									<DataPath>Object.GuaranteedReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="GuaranteedReservationStatusContextMenu" id="5"/>
+									<ExtendedTooltip name="GuaranteedReservationStatusExtendedTooltip" id="6"/>
+								</InputField>
+								<InputField name="GuaranteedMessageTemplate" id="91">
+									<DataPath>Object.GuaranteedMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="GuaranteedMessageTemplateContextMenu" id="92"/>
+									<ExtendedTooltip name="GuaranteedMessageTemplateExtendedTooltip" id="93"/>
+								</InputField>
+								<LabelDecoration name="Decoration5" id="77">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration5ContextMenu" id="78"/>
+									<ExtendedTooltip name="Decoration5ExtendedTooltip" id="79"/>
+								</LabelDecoration>
+								<InputField name="FullyPaidReservationStatus" id="7">
+									<DataPath>Object.FullyPaidReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FullyPaidReservationStatusContextMenu" id="8"/>
+									<ExtendedTooltip name="FullyPaidReservationStatusExtendedTooltip" id="9"/>
+								</InputField>
+								<InputField name="FullyPaidMessageTemplate" id="99">
+									<DataPath>Object.FullyPaidMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="FullyPaidMessageTemplateContextMenu" id="100"/>
+									<ExtendedTooltip name="FullyPaidMessageTemplateExtendedTooltip" id="101"/>
+								</InputField>
+								<LabelDecoration name="Decoration6" id="96">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration6ContextMenu" id="97"/>
+									<ExtendedTooltip name="Decoration6ExtendedTooltip" id="98"/>
+								</LabelDecoration>
+								<InputField name="GuaranteeType" id="10">
+									<DataPath>Object.GuaranteeType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="GuaranteeTypeContextMenu" id="11"/>
+									<ExtendedTooltip name="GuaranteeTypeExtendedTooltip" id="12"/>
+								</InputField>
+								<LabelDecoration name="Decoration4" id="72">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration4ContextMenu" id="73"/>
+									<ExtendedTooltip name="Decoration4ExtendedTooltip" id="74"/>
+								</LabelDecoration>
+								<InputField name="ReservationConfirmationPrintFormRu" id="40">
+									<DataPath>Object.ReservationConfirmationPrintFormRu</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ReservationConfirmationPrintFormRuContextMenu" id="41"/>
+									<ExtendedTooltip name="ReservationConfirmationPrintFormRuExtendedTooltip" id="42"/>
+								</InputField>
+								<InputField name="ReservationConfirmationPrintFormEn" id="43">
+									<DataPath>Object.ReservationConfirmationPrintFormEn</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ReservationConfirmationPrintFormEnContextMenu" id="44"/>
+									<ExtendedTooltip name="ReservationConfirmationPrintFormEnExtendedTooltip" id="45"/>
+								</InputField>
+								<InputField name="ReservationConfirmationPrintFormDe" id="46">
+									<DataPath>Object.ReservationConfirmationPrintFormDe</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>false</QuickChoice>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ReservationConfirmationPrintFormDeContextMenu" id="47"/>
+									<ExtendedTooltip name="ReservationConfirmationPrintFormDeExtendedTooltip" id="48"/>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="GroupPaymentDateExpired" id="75">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Payment date expired</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zahlungsdatum abgelaufen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Просроченная дата оплаты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group payment date expired</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="GroupPaymentDateExpiredExtendedTooltip" id="76"/>
+							<ChildItems>
+								<InputField name="DepartmentToSendNotificationsTo" id="34">
+									<DataPath>Object.DepartmentToSendNotificationsTo</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="DepartmentToSendNotificationsToContextMenu" id="35"/>
+									<ExtendedTooltip name="DepartmentToSendNotificationsToExtendedTooltip" id="36"/>
+								</InputField>
+								<LabelDecoration name="Decoration7" id="102">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration7ContextMenu" id="103"/>
+									<ExtendedTooltip name="Decoration7ExtendedTooltip" id="104"/>
+								</LabelDecoration>
+								<InputField name="PaymentDateExpiredReservationStatus" id="16">
+									<DataPath>Object.PaymentDateExpiredReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="PaymentDateExpiredReservationStatusContextMenu" id="17"/>
+									<ExtendedTooltip name="PaymentDateExpiredReservationStatusExtendedTooltip" id="18"/>
+								</InputField>
+								<InputField name="PaymentDateExpiredMessageTemplate" id="108">
+									<DataPath>Object.PaymentDateExpiredMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="PaymentDateExpiredMessageTemplateContextMenu" id="109"/>
+									<ExtendedTooltip name="PaymentDateExpiredMessageTemplateExtendedTooltip" id="110"/>
+								</InputField>
+								<LabelDecoration name="Decoration8" id="105">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration8ContextMenu" id="106"/>
+									<ExtendedTooltip name="Decoration8ExtendedTooltip" id="107"/>
+								</LabelDecoration>
+								<InputField name="ReservationAnnulationStatus" id="85">
+									<DataPath>Object.ReservationAnnulationStatus</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="ReservationAnnulationStatusContextMenu" id="86"/>
+									<ExtendedTooltip name="ReservationAnnulationStatusExtendedTooltip" id="87"/>
+								</InputField>
+								<InputField name="ReservationAnnulationMessageTemplate" id="111">
+									<DataPath>Object.ReservationAnnulationMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ReservationAnnulationMessageTemplateContextMenu" id="112"/>
+									<ExtendedTooltip name="ReservationAnnulationMessageTemplateExtendedTooltip" id="113"/>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="GroupNewOnlineReservation" id="80">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>On-line reservations</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Online-Reservierungen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>On-line бронирования</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group new online reservation</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="GroupNewOnlineReservationExtendedTooltip" id="81"/>
+							<ChildItems>
+								<InputField name="NewOnlineReservationStatus" id="19">
+									<DataPath>Object.NewOnlineReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="NewOnlineReservationStatusContextMenu" id="20"/>
+									<ExtendedTooltip name="NewOnlineReservationStatusExtendedTooltip" id="21"/>
+								</InputField>
+								<LabelDecoration name="Decoration9" id="114">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration9ContextMenu" id="115"/>
+									<ExtendedTooltip name="Decoration9ExtendedTooltip" id="116"/>
+								</LabelDecoration>
+								<InputField name="GuaranteedOnlineReservationStatus" id="22">
+									<DataPath>Object.GuaranteedOnlineReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="GuaranteedOnlineReservationStatusContextMenu" id="23"/>
+									<ExtendedTooltip name="GuaranteedOnlineReservationStatusExtendedTooltip" id="24"/>
+								</InputField>
+								<InputField name="GuaranteedMessageTemplate1" id="123">
+									<DataPath>Object.GuaranteedMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="GuaranteedMessageTemplate1ContextMenu" id="124"/>
+									<ExtendedTooltip name="GuaranteedMessageTemplate1ExtendedTooltip" id="125"/>
+								</InputField>
+								<LabelDecoration name="Decoration10" id="117">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration10ContextMenu" id="118"/>
+									<ExtendedTooltip name="Decoration10ExtendedTooltip" id="119"/>
+								</LabelDecoration>
+								<InputField name="FullyPaidOnlineReservationStatus" id="25">
+									<DataPath>Object.FullyPaidOnlineReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="FullyPaidOnlineReservationStatusContextMenu" id="26"/>
+									<ExtendedTooltip name="FullyPaidOnlineReservationStatusExtendedTooltip" id="27"/>
+								</InputField>
+								<InputField name="FullyPaidMessageTemplate1" id="126">
+									<DataPath>Object.FullyPaidMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="FullyPaidMessageTemplate1ContextMenu" id="127"/>
+									<ExtendedTooltip name="FullyPaidMessageTemplate1ExtendedTooltip" id="128"/>
+								</InputField>
+								<LabelDecoration name="Decoration11" id="120">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration11ContextMenu" id="121"/>
+									<ExtendedTooltip name="Decoration11ExtendedTooltip" id="122"/>
+								</LabelDecoration>
+								<InputField name="PaymentTimeExpiredReservationStatus" id="28">
+									<DataPath>Object.PaymentTimeExpiredReservationStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>true</DropListButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ChoiceParameters>
+										<app:item name="Filter.DeletionMark">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">false</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="PaymentTimeExpiredReservationStatusContextMenu" id="29"/>
+									<ExtendedTooltip name="PaymentTimeExpiredReservationStatusExtendedTooltip" id="30"/>
+								</InputField>
+								<InputField name="PaymentTimeExpiredMessageTemplate" id="129">
+									<DataPath>Object.PaymentTimeExpiredMessageTemplate</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="PaymentTimeExpiredMessageTemplateContextMenu" id="130"/>
+									<ExtendedTooltip name="PaymentTimeExpiredMessageTemplateExtendedTooltip" id="131"/>
+								</InputField>
+								<LabelDecoration name="Decoration12" id="160">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="Decoration12ContextMenu" id="161"/>
+									<ExtendedTooltip name="Decoration12ExtendedTooltip" id="162"/>
+								</LabelDecoration>
+								<InputField name="TimeToWaitOnlineReservationPayment" id="31">
+									<DataPath>Object.TimeToWaitOnlineReservationPayment</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="TimeToWaitOnlineReservationPaymentContextMenu" id="32"/>
+									<ExtendedTooltip name="TimeToWaitOnlineReservationPaymentExtendedTooltip" id="33"/>
+									<Events>
+										<Event name="OnChange">TimeToWaitOnlineReservationPaymentOnChange</Event>
+									</Events>
+								</InputField>
+								<Table name="TimesToWaitOnlineReservationPayment" id="132">
+									<TitleLocation>Top</TitleLocation>
+									<HeaderHeight>2</HeaderHeight>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>Object.TimesToWaitOnlineReservationPayment</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>- or - </v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>- oder -</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>- или -</v8:content>
+										</v8:item>
+									</Title>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="TimesToWaitOnlineReservationPaymentContextMenu" id="133"/>
+									<AutoCommandBar name="TimesToWaitOnlineReservationPaymentCommandBar" id="134"/>
+									<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentExtendedTooltip" id="135"/>
+									<SearchStringAddition name="TimesToWaitOnlineReservationPaymentSearchString" id="136">
+										<AdditionSource>
+											<Item>TimesToWaitOnlineReservationPayment</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="TimesToWaitOnlineReservationPaymentSearchStringContextMenu" id="137"/>
+										<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentSearchStringExtendedTooltip" id="138"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="TimesToWaitOnlineReservationPaymentViewStatus" id="139">
+										<AdditionSource>
+											<Item>TimesToWaitOnlineReservationPayment</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="TimesToWaitOnlineReservationPaymentViewStatusContextMenu" id="140"/>
+										<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentViewStatusExtendedTooltip" id="141"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="TimesToWaitOnlineReservationPaymentSearchControl" id="142">
+										<AdditionSource>
+											<Item>TimesToWaitOnlineReservationPayment</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="TimesToWaitOnlineReservationPaymentSearchControlContextMenu" id="143"/>
+										<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentSearchControlExtendedTooltip" id="144"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnEditEnd">TimesToWaitOnlineReservationPaymentOnEditEnd</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="TimesToWaitOnlineReservationPaymentLineNumber" id="145">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.LineNumber</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentLineNumberContextMenu" id="146"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentLineNumberExtendedTooltip" id="147"/>
+										</LabelField>
+										<InputField name="TimesToWaitOnlineReservationPaymentCheckInDateTo" id="151">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.CheckInDateFrom</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentCheckInDateToContextMenu" id="152"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentCheckInDateToExtendedTooltip" id="153"/>
+										</InputField>
+										<InputField name="TimesToWaitOnlineReservationPaymentCheckInDateFrom" id="148">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.CheckInDateTo</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentCheckInDateFromContextMenu" id="149"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentCheckInDateFromExtendedTooltip" id="150"/>
+										</InputField>
+										<InputField name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservation" id="154">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.NumberOfDaysBeforeCheckInSinceReservationFrom</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservationContextMenu" id="155"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservationExtendedTooltip" id="156"/>
+										</InputField>
+										<InputField name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservationTo" id="163">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.NumberOfDaysBeforeCheckInSinceReservationTo</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservationToContextMenu" id="164"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentNumberOfDaysBeforeCheckInSinceReservationToExtendedTooltip" id="165"/>
+										</InputField>
+										<InputField name="TimesToWaitOnlineReservationPaymentTimeToWaitOnlineReservationPayment" id="157">
+											<DataPath>Object.TimesToWaitOnlineReservationPayment.TimeToWaitOnlineReservationPayment</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="TimesToWaitOnlineReservationPaymentTimeToWaitOnlineReservationPaymentContextMenu" id="158"/>
+											<ExtendedTooltip name="TimesToWaitOnlineReservationPaymentTimeToWaitOnlineReservationPaymentExtendedTooltip" id="159"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CheckIfReservationsWerePayedInTime</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionsExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check if reservations were paid in time</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Eingang der Zahlung nach Buchung überprüfen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить поступление оплаты по брони</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionsExecute</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="SaveSettings" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save the settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellungen speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SaveSettings</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="BackgroundJob" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Background job</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hintergrundjob</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фоновое задание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Background job</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>BackgroundJob</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

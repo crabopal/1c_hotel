@@ -1,0 +1,67 @@
+﻿const imgWidth = 450;
+const imgHeight = 600;
+var CColumns;
+var root;
+
+function addJSClientDataScans(сlientDataScans) {
+	let scanConfigurationItem, scanConfigurationItemInfo;
+	
+	let scanConfigurationParent = document.getElementById('scanConfigurationParent');
+	if (!scanConfigurationParent)
+	{				
+		scanConfigurationParent = root.appendChild(document.createElement("ul"));
+		scanConfigurationParent.setAttribute('id', 'scanConfigurationParent');
+		scanConfigurationParent.setAttribute('class', 'scanConfigurationParent');
+		scanConfigurationParent.setAttribute('style', 'grid-Template-Columns: repeat(' + CColumns + ', 1fr)')
+	}
+	
+	JSON.parse(сlientDataScans).forEach(elements => {	
+		
+		scanConfigurationItemInfo = document.createElement("a");
+		scanConfigurationItemInfo.setAttribute('id', 'scanConfigurationItemInfo_' + elements.UUID);
+		scanConfigurationItemInfo.setAttribute('href', elements.UUID);
+		scanConfigurationItemInfo.setAttribute('style', 'width: ' + (imgWidth - 8) + 'px; height: ' + (imgHeight-8) + 'px;');
+		
+		scanConfigurationName = document.createElement("div");
+		scanConfigurationName.append(elements.name);
+		scanConfigurationItemInfo.append(scanConfigurationName);
+		
+		scanConfigurationImg = document.createElement("img");
+		scanConfigurationImg.setAttribute('src', elements.img);
+		scanConfigurationImg.setAttribute('style', 'max-width: ' + (imgWidth - 8)  + 'px; max-height: ' + ((imgHeight-8)/100)*59 + 'px;');
+		scanConfigurationItemInfo.append(scanConfigurationImg);
+		
+		scanConfigurationDetailedInfo = document.createElement("div");
+		scanConfigurationDetailedInfo.setAttribute('class', 'scanInfo');
+		scanConfigurationItemInfo.append(scanConfigurationDetailedInfo);
+		
+		scanConfigurationHotel = document.createElement("div");
+		scanConfigurationHotel.append(elements.date + ' ' + elements.author + ' (' + elements.hotel + ')');
+		scanConfigurationDetailedInfo.append(scanConfigurationHotel);
+		
+		scanConfigurationItem = document.createElement("li");
+		scanConfigurationItem.setAttribute('id', 'scanConfigurationColumn_' + elements.UUID);
+		scanConfigurationItem.setAttribute('class', 'scanConfigurationColumn');			
+		scanConfigurationItem.setAttribute('style', 'width: ' + imgWidth + 'px; height: ' + imgHeight + 'px;');
+		scanConfigurationItem.append(scanConfigurationItemInfo);
+					
+		scanConfigurationParent.append(scanConfigurationItem);
+	});
+}
+
+function Refresh() {
+	let NColumns = parseInt(document.documentElement.clientWidth / (imgWidth + 24));
+	if (CColumns !== NColumns)
+	{
+		CColumns = NColumns;
+		let scanConfigurationParent = document.getElementById('scanConfigurationParent');
+		if (scanConfigurationParent)
+		{
+			scanConfigurationParent.setAttribute('style', 'grid-Template-Columns: repeat(' + CColumns + ', 1fr)');
+		}
+	}
+}
+
+window.addEventListener("resize", function() {       
+	Refresh();
+});

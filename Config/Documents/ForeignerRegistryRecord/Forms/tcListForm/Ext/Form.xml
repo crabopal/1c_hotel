@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="200">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="201"/>
+			<ChildItems>
+				<InputField name="SelHotel" id="202">
+					<DataPath>SelHotel</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+					<TextEdit>false</TextEdit>
+					<ChoiceParameters>
+						<app:item name="ChangeSessionParameter">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+						<app:item name="DoNotCloseAllWindows">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">true</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="SelHotelContextMenu" id="203"/>
+					<ExtendedTooltip name="SelHotelExtendedTooltip" id="204"/>
+					<Events>
+						<Event name="OnChange">SelHotelOnChange</Event>
+						<Event name="Clearing">SelHotelClearing</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="List" id="1">
+			<DefaultItem>true</DefaultItem>
+			<RowSelectionMode>Row</RowSelectionMode>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="2"/>
+			<AutoCommandBar name="ListCommandBar" id="3">
+				<ChildItems>
+					<Button name="ListSetDeletionMark" id="195">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.List.StandardCommand.SetDeletionMark</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ListSetDeletionMarkExtendedTooltip" id="196"/>
+					</Button>
+					<Button name="ListSetDateInterval" id="191">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.List.StandardCommand.SetDateInterval</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ListSetDateIntervalExtendedTooltip" id="192"/>
+					</Button>
+					<Button name="ListRefresh" id="193">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.List.StandardCommand.Refresh</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ListRefreshExtendedTooltip" id="194"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="4"/>
+			<SearchStringAddition name="ListSearchString" id="5">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="6"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="8">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="9"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="11">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="12"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Date" id="14">
+					<DataPath>List.Date</DataPath>
+					<Width>9</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF=dd.MM.yyyy</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF=dd.MM.yyyy</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="DateContextMenu" id="15"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="16"/>
+				</LabelField>
+				<LabelField name="Number" id="17">
+					<DataPath>List.Number</DataPath>
+					<ContextMenu name="NumberContextMenu" id="18"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="19"/>
+				</LabelField>
+				<LabelField name="Room" id="26">
+					<DataPath>List.Room</DataPath>
+					<ContextMenu name="RoomContextMenu" id="27"/>
+					<ExtendedTooltip name="RoomExtendedTooltip" id="28"/>
+				</LabelField>
+				<LabelField name="Guest" id="29">
+					<DataPath>List.Guest</DataPath>
+					<CellHyperlink>true</CellHyperlink>
+					<Width>35</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="GuestContextMenu" id="30"/>
+					<ExtendedTooltip name="GuestExtendedTooltip" id="31"/>
+				</LabelField>
+				<LabelField name="CheckInDate" id="35">
+					<DataPath>List.CheckInDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Check-In</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заезд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Check-In</v8:content>
+						</v8:item>
+					</Title>
+					<Width>9</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="CheckInDateContextMenu" id="36"/>
+					<ExtendedTooltip name="CheckInDateExtendedTooltip" id="37"/>
+				</LabelField>
+				<LabelField name="CheckOutDate" id="38">
+					<DataPath>List.CheckOutDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Check-Out</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выезд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Check-Out</v8:content>
+						</v8:item>
+					</Title>
+					<Width>9</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="CheckOutDateContextMenu" id="39"/>
+					<ExtendedTooltip name="CheckOutDateExtendedTooltip" id="40"/>
+				</LabelField>
+				<LabelField name="Sex" id="53">
+					<DataPath>List.Sex</DataPath>
+					<ContextMenu name="SexContextMenu" id="54"/>
+					<ExtendedTooltip name="SexExtendedTooltip" id="55"/>
+				</LabelField>
+				<LabelField name="Citizenship" id="56">
+					<DataPath>List.Citizenship</DataPath>
+					<ContextMenu name="CitizenshipContextMenu" id="57"/>
+					<ExtendedTooltip name="CitizenshipExtendedTooltip" id="58"/>
+				</LabelField>
+				<CheckBoxField name="GuestHasNotificationAlready" id="32">
+					<DataPath>List.GuestHasNotificationAlready</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Already notice</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть увед.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Schon bemerkt</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="GuestHasNotificationAlreadyContextMenu" id="33"/>
+					<ExtendedTooltip name="GuestHasNotificationAlreadyExtendedTooltip" id="34"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsCheckedOut" id="41">
+					<DataPath>List.IsCheckedOut</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is Check-Out</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выехал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Is Check-Out</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsCheckedOutContextMenu" id="42"/>
+					<ExtendedTooltip name="IsCheckedOutExtendedTooltip" id="43"/>
+				</CheckBoxField>
+				<LabelField name="Hotel" id="20">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="21"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="22"/>
+				</LabelField>
+				<LabelField name="ParentDoc" id="23">
+					<DataPath>List.ParentDoc</DataPath>
+					<ContextMenu name="ParentDocContextMenu" id="24"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="25"/>
+				</LabelField>
+				<LabelField name="LastName" id="44">
+					<DataPath>List.LastName</DataPath>
+					<ContextMenu name="LastNameContextMenu" id="45"/>
+					<ExtendedTooltip name="LastNameExtendedTooltip" id="46"/>
+				</LabelField>
+				<LabelField name="FirstName" id="47">
+					<DataPath>List.FirstName</DataPath>
+					<ContextMenu name="FirstNameContextMenu" id="48"/>
+					<ExtendedTooltip name="FirstNameExtendedTooltip" id="49"/>
+				</LabelField>
+				<LabelField name="SecondName" id="50">
+					<DataPath>List.SecondName</DataPath>
+					<ContextMenu name="SecondNameContextMenu" id="51"/>
+					<ExtendedTooltip name="SecondNameExtendedTooltip" id="52"/>
+				</LabelField>
+				<LabelField name="DateOfBirth" id="59">
+					<DataPath>List.DateOfBirth</DataPath>
+					<ContextMenu name="DateOfBirthContextMenu" id="60"/>
+					<ExtendedTooltip name="DateOfBirthExtendedTooltip" id="61"/>
+				</LabelField>
+				<LabelField name="PlaceOfBirth" id="62">
+					<DataPath>List.PlaceOfBirth</DataPath>
+					<ContextMenu name="PlaceOfBirthContextMenu" id="63"/>
+					<ExtendedTooltip name="PlaceOfBirthExtendedTooltip" id="64"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentType" id="65">
+					<DataPath>List.IdentityDocumentType</DataPath>
+					<ContextMenu name="IdentityDocumentTypeContextMenu" id="66"/>
+					<ExtendedTooltip name="IdentityDocumentTypeExtendedTooltip" id="67"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentSeries" id="68">
+					<DataPath>List.IdentityDocumentSeries</DataPath>
+					<ContextMenu name="IdentityDocumentSeriesContextMenu" id="69"/>
+					<ExtendedTooltip name="IdentityDocumentSeriesExtendedTooltip" id="70"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentNumber" id="71">
+					<DataPath>List.IdentityDocumentNumber</DataPath>
+					<ContextMenu name="IdentityDocumentNumberContextMenu" id="72"/>
+					<ExtendedTooltip name="IdentityDocumentNumberExtendedTooltip" id="73"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentIssueDate" id="74">
+					<DataPath>List.IdentityDocumentIssueDate</DataPath>
+					<ContextMenu name="IdentityDocumentIssueDateContextMenu" id="75"/>
+					<ExtendedTooltip name="IdentityDocumentIssueDateExtendedTooltip" id="76"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentValidToDate" id="77">
+					<DataPath>List.IdentityDocumentValidToDate</DataPath>
+					<ContextMenu name="IdentityDocumentValidToDateContextMenu" id="78"/>
+					<ExtendedTooltip name="IdentityDocumentValidToDateExtendedTooltip" id="79"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentUnitCode" id="80">
+					<DataPath>List.IdentityDocumentUnitCode</DataPath>
+					<ContextMenu name="IdentityDocumentUnitCodeContextMenu" id="81"/>
+					<ExtendedTooltip name="IdentityDocumentUnitCodeExtendedTooltip" id="82"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentIssuedBy" id="83">
+					<DataPath>List.IdentityDocumentIssuedBy</DataPath>
+					<ContextMenu name="IdentityDocumentIssuedByContextMenu" id="84"/>
+					<ExtendedTooltip name="IdentityDocumentIssuedByExtendedTooltip" id="85"/>
+				</LabelField>
+				<LabelField name="TripPurpose" id="86">
+					<DataPath>List.TripPurpose</DataPath>
+					<ContextMenu name="TripPurposeContextMenu" id="87"/>
+					<ExtendedTooltip name="TripPurposeExtendedTooltip" id="88"/>
+				</LabelField>
+				<LabelField name="Profession" id="89">
+					<DataPath>List.Profession</DataPath>
+					<ContextMenu name="ProfessionContextMenu" id="90"/>
+					<ExtendedTooltip name="ProfessionExtendedTooltip" id="91"/>
+				</LabelField>
+				<LabelField name="Standing" id="92">
+					<DataPath>List.Standing</DataPath>
+					<ContextMenu name="StandingContextMenu" id="93"/>
+					<ExtendedTooltip name="StandingExtendedTooltip" id="94"/>
+				</LabelField>
+				<LabelField name="ArrivedFrom" id="95">
+					<DataPath>List.ArrivedFrom</DataPath>
+					<ContextMenu name="ArrivedFromContextMenu" id="96"/>
+					<ExtendedTooltip name="ArrivedFromExtendedTooltip" id="97"/>
+				</LabelField>
+				<CheckBoxField name="IsFromAbroad" id="98">
+					<DataPath>List.IsFromAbroad</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsFromAbroadContextMenu" id="99"/>
+					<ExtendedTooltip name="IsFromAbroadExtendedTooltip" id="100"/>
+				</CheckBoxField>
+				<LabelField name="MigrationCardNumber" id="101">
+					<DataPath>List.MigrationCardNumber</DataPath>
+					<ContextMenu name="MigrationCardNumberContextMenu" id="102"/>
+					<ExtendedTooltip name="MigrationCardNumberExtendedTooltip" id="103"/>
+				</LabelField>
+				<LabelField name="MigrationCardDateFrom" id="104">
+					<DataPath>List.MigrationCardDateFrom</DataPath>
+					<ContextMenu name="MigrationCardDateFromContextMenu" id="105"/>
+					<ExtendedTooltip name="MigrationCardDateFromExtendedTooltip" id="106"/>
+				</LabelField>
+				<LabelField name="MigrationCardDateTo" id="107">
+					<DataPath>List.MigrationCardDateTo</DataPath>
+					<ContextMenu name="MigrationCardDateToContextMenu" id="108"/>
+					<ExtendedTooltip name="MigrationCardDateToExtendedTooltip" id="109"/>
+				</LabelField>
+				<LabelField name="ReceivingParty" id="110">
+					<DataPath>List.ReceivingParty</DataPath>
+					<ContextMenu name="ReceivingPartyContextMenu" id="111"/>
+					<ExtendedTooltip name="ReceivingPartyExtendedTooltip" id="112"/>
+				</LabelField>
+				<LabelField name="ResidencePermitDocument" id="179">
+					<DataPath>List.ResidencePermitDocument</DataPath>
+					<ContextMenu name="ResidencePermitDocumentContextMenu" id="180"/>
+					<ExtendedTooltip name="ResidencePermitDocumentExtendedTooltip" id="181"/>
+				</LabelField>
+				<CheckBoxField name="ForEducationPurposes" id="197">
+					<DataPath>List.ForEducationPurposes</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ForEducationPurposesContextMenu" id="198"/>
+					<ExtendedTooltip name="ForEducationPurposesExtendedTooltip" id="199"/>
+				</CheckBoxField>
+				<LabelField name="VisaNumber" id="113">
+					<DataPath>List.VisaNumber</DataPath>
+					<ContextMenu name="VisaNumberContextMenu" id="114"/>
+					<ExtendedTooltip name="VisaNumberExtendedTooltip" id="115"/>
+				</LabelField>
+				<LabelField name="VisaType" id="116">
+					<DataPath>List.VisaType</DataPath>
+					<ContextMenu name="VisaTypeContextMenu" id="117"/>
+					<ExtendedTooltip name="VisaTypeExtendedTooltip" id="118"/>
+				</LabelField>
+				<LabelField name="VisaMultiplicity" id="119">
+					<DataPath>List.VisaMultiplicity</DataPath>
+					<ContextMenu name="VisaMultiplicityContextMenu" id="120"/>
+					<ExtendedTooltip name="VisaMultiplicityExtendedTooltip" id="121"/>
+				</LabelField>
+				<LabelField name="VisaEntryGoal" id="122">
+					<DataPath>List.VisaEntryGoal</DataPath>
+					<ContextMenu name="VisaEntryGoalContextMenu" id="123"/>
+					<ExtendedTooltip name="VisaEntryGoalExtendedTooltip" id="124"/>
+				</LabelField>
+				<LabelField name="VisaIdentifier" id="125">
+					<DataPath>List.VisaIdentifier</DataPath>
+					<ContextMenu name="VisaIdentifierContextMenu" id="126"/>
+					<ExtendedTooltip name="VisaIdentifierExtendedTooltip" id="127"/>
+				</LabelField>
+				<LabelField name="VisaIssuedDate" id="128">
+					<DataPath>List.VisaIssuedDate</DataPath>
+					<ContextMenu name="VisaIssuedDateContextMenu" id="129"/>
+					<ExtendedTooltip name="VisaIssuedDateExtendedTooltip" id="130"/>
+				</LabelField>
+				<LabelField name="VisaFromDate" id="131">
+					<DataPath>List.VisaFromDate</DataPath>
+					<ContextMenu name="VisaFromDateContextMenu" id="132"/>
+					<ExtendedTooltip name="VisaFromDateExtendedTooltip" id="133"/>
+				</LabelField>
+				<LabelField name="VisaIssuedBy" id="134">
+					<DataPath>List.VisaIssuedBy</DataPath>
+					<ContextMenu name="VisaIssuedByContextMenu" id="135"/>
+					<ExtendedTooltip name="VisaIssuedByExtendedTooltip" id="136"/>
+				</LabelField>
+				<LabelField name="VisaToDate" id="137">
+					<DataPath>List.VisaToDate</DataPath>
+					<ContextMenu name="VisaToDateContextMenu" id="138"/>
+					<ExtendedTooltip name="VisaToDateExtendedTooltip" id="139"/>
+				</LabelField>
+				<LabelField name="VisaDays" id="140">
+					<DataPath>List.VisaDays</DataPath>
+					<ContextMenu name="VisaDaysContextMenu" id="141"/>
+					<ExtendedTooltip name="VisaDaysExtendedTooltip" id="142"/>
+				</LabelField>
+				<LabelField name="BorderCrossingDate" id="143">
+					<DataPath>List.BorderCrossingDate</DataPath>
+					<ContextMenu name="BorderCrossingDateContextMenu" id="144"/>
+					<ExtendedTooltip name="BorderCrossingDateExtendedTooltip" id="145"/>
+				</LabelField>
+				<LabelField name="CheckPointNumber" id="146">
+					<DataPath>List.CheckPointNumber</DataPath>
+					<ContextMenu name="CheckPointNumberContextMenu" id="147"/>
+					<ExtendedTooltip name="CheckPointNumberExtendedTooltip" id="148"/>
+				</LabelField>
+				<LabelField name="Route" id="149">
+					<DataPath>List.Route</DataPath>
+					<ContextMenu name="RouteContextMenu" id="150"/>
+					<ExtendedTooltip name="RouteExtendedTooltip" id="151"/>
+				</LabelField>
+				<LabelField name="PreviousPlaceOfStay" id="152">
+					<DataPath>List.PreviousPlaceOfStay</DataPath>
+					<ContextMenu name="PreviousPlaceOfStayContextMenu" id="153"/>
+					<ExtendedTooltip name="PreviousPlaceOfStayExtendedTooltip" id="154"/>
+				</LabelField>
+				<LabelField name="PreviousPlaceOfStayRegistrationDate" id="155">
+					<DataPath>List.PreviousPlaceOfStayRegistrationDate</DataPath>
+					<ContextMenu name="PreviousPlaceOfStayRegistrationDateContextMenu" id="156"/>
+					<ExtendedTooltip name="PreviousPlaceOfStayRegistrationDateExtendedTooltip" id="157"/>
+				</LabelField>
+				<CheckBoxField name="IsFirstArrival" id="158">
+					<DataPath>List.IsFirstArrival</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsFirstArrivalContextMenu" id="159"/>
+					<ExtendedTooltip name="IsFirstArrivalExtendedTooltip" id="160"/>
+				</CheckBoxField>
+				<LabelField name="Remarks" id="161">
+					<DataPath>List.Remarks</DataPath>
+					<ContextMenu name="RemarksContextMenu" id="162"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="163"/>
+				</LabelField>
+				<LabelField name="Author" id="164">
+					<DataPath>List.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="165"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="166"/>
+				</LabelField>
+				<LabelField name="IdentityDocumentPresentation" id="167">
+					<DataPath>List.IdentityDocumentPresentation</DataPath>
+					<ContextMenu name="IdentityDocumentPresentationContextMenu" id="168"/>
+					<ExtendedTooltip name="IdentityDocumentPresentationExtendedTooltip" id="169"/>
+				</LabelField>
+				<LabelField name="MigrationCardPresentation" id="170">
+					<DataPath>List.MigrationCardPresentation</DataPath>
+					<ContextMenu name="MigrationCardPresentationContextMenu" id="171"/>
+					<ExtendedTooltip name="MigrationCardPresentationExtendedTooltip" id="172"/>
+				</LabelField>
+				<LabelField name="VisaPresentation" id="173">
+					<DataPath>List.VisaPresentation</DataPath>
+					<ContextMenu name="VisaPresentationContextMenu" id="174"/>
+					<ExtendedTooltip name="VisaPresentationExtendedTooltip" id="175"/>
+				</LabelField>
+				<LabelField name="ExternalCode" id="176">
+					<DataPath>List.ExternalCode</DataPath>
+					<ContextMenu name="ExternalCodeContextMenu" id="177"/>
+					<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="178"/>
+				</LabelField>
+				<LabelField name="StateProgramMember" id="182">
+					<DataPath>List.StateProgramMember</DataPath>
+					<ContextMenu name="StateProgramMemberContextMenu" id="183"/>
+					<ExtendedTooltip name="StateProgramMemberExtendedTooltip" id="184"/>
+				</LabelField>
+				<LabelField name="LegalRepresentatives" id="185">
+					<DataPath>List.LegalRepresentatives</DataPath>
+					<ContextMenu name="LegalRepresentativesContextMenu" id="186"/>
+					<ExtendedTooltip name="LegalRepresentativesExtendedTooltip" id="187"/>
+				</LabelField>
+				<LabelField name="LegalRepresentative" id="188">
+					<DataPath>List.LegalRepresentative</DataPath>
+					<ContextMenu name="LegalRepresentativeContextMenu" id="189"/>
+					<ExtendedTooltip name="LegalRepresentativeExtendedTooltip" id="190"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>List.DeletionMark</Field>
+				<Field>List.Posted</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.ForeignerRegistryRecord</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Guest</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Font</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="SelHotel" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="true" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.Posted</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" kind="AutoFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>

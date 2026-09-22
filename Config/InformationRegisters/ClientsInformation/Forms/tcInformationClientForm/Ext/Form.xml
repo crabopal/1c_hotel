@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Client" id="45">
+			<DataPath>Client</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<TextColor>web:Green</TextColor>
+			<Font ref="style:ReportTableHeaderFont" kind="StyleItem"/>
+			<ContextMenu name="ClientContextMenu" id="46"/>
+			<ExtendedTooltip name="ClientExtendedTooltip" id="47"/>
+		</LabelField>
+		<UsualGroup name="ClientInformationGroup" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация по клиенту</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client information</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kundeninformation</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Client information group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ClientInformationGroupExtendedTooltip" id="2"/>
+			<ChildItems>
+				<Table name="ClientInformationTree" id="3">
+					<Representation>Tree</Representation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<SelectionMode>SingleRow</SelectionMode>
+					<HorizontalLines>false</HorizontalLines>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ClientInformationTree</DataPath>
+					<RowPictureDataPath>ClientInformationTree.DefaultPicture</RowPictureDataPath>
+					<CommandSet>
+						<ExcludedCommand>Change</ExcludedCommand>
+					</CommandSet>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="ClientInformationTreeContextMenu" id="4"/>
+					<AutoCommandBar name="ClientInformationTreeCommandBar" id="5">
+						<ChildItems>
+							<Button name="ClientInformationTreeRefresh" id="43">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.ClientInformationTree.StandardCommand.Refresh</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ClientInformationTreeRefreshExtendedTooltip" id="44"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ClientInformationTreeExtendedTooltip" id="6"/>
+					<SearchStringAddition name="ClientInformationTreeSearchString" id="7">
+						<AdditionSource>
+							<Item>ClientInformationTree</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ClientInformationTreeSearchStringContextMenu" id="8"/>
+						<ExtendedTooltip name="ClientInformationTreeSearchStringExtendedTooltip" id="9"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ClientInformationTreeViewStatus" id="10">
+						<AdditionSource>
+							<Item>ClientInformationTree</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ClientInformationTreeViewStatusContextMenu" id="11"/>
+						<ExtendedTooltip name="ClientInformationTreeViewStatusExtendedTooltip" id="12"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ClientInformationTreeSearchControl" id="13">
+						<AdditionSource>
+							<Item>ClientInformationTree</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ClientInformationTreeSearchControlContextMenu" id="14"/>
+						<ExtendedTooltip name="ClientInformationTreeSearchControlExtendedTooltip" id="15"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ClientInformationTreeSelection</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ClientInformationTreeDefaultPicture" id="40">
+							<DataPath>ClientInformationTree.DefaultPicture</DataPath>
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Picture</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Bild</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ClientInformationTreeDefaultPictureContextMenu" id="41"/>
+							<ExtendedTooltip name="ClientInformationTreeDefaultPictureExtendedTooltip" id="42"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeRef" id="31">
+							<DataPath>ClientInformationTree.Ref</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Information type</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип информации</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Informationstyp</v8:content>
+								</v8:item>
+							</Title>
+							<CellHyperlink>true</CellHyperlink>
+							<ContextMenu name="ClientInformationTreeRefContextMenu" id="32"/>
+							<ExtendedTooltip name="ClientInformationTreeRefExtendedTooltip" id="33"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeRemarks" id="34">
+							<DataPath>ClientInformationTree.Remarks</DataPath>
+							<ContextMenu name="ClientInformationTreeRemarksContextMenu" id="35"/>
+							<ExtendedTooltip name="ClientInformationTreeRemarksExtendedTooltip" id="36"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreePeriod" id="28">
+							<DataPath>ClientInformationTree.Period</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ClientInformationTreePeriodContextMenu" id="29"/>
+							<ExtendedTooltip name="ClientInformationTreePeriodExtendedTooltip" id="30"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeRemarksAuthor" id="37">
+							<DataPath>ClientInformationTree.RemarksAuthor</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ClientInformationTreeRemarksAuthorContextMenu" id="38"/>
+							<ExtendedTooltip name="ClientInformationTreeRemarksAuthorExtendedTooltip" id="39"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeActionTaken" id="22">
+							<DataPath>ClientInformationTree.ActionTaken</DataPath>
+							<ContextMenu name="ClientInformationTreeActionTakenContextMenu" id="23"/>
+							<ExtendedTooltip name="ClientInformationTreeActionTakenExtendedTooltip" id="24"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeActionDate" id="19">
+							<DataPath>ClientInformationTree.ActionDate</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ClientInformationTreeActionDateContextMenu" id="20"/>
+							<ExtendedTooltip name="ClientInformationTreeActionDateExtendedTooltip" id="21"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeActionAuthor" id="16">
+							<DataPath>ClientInformationTree.ActionAuthor</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ClientInformationTreeActionAuthorContextMenu" id="17"/>
+							<ExtendedTooltip name="ClientInformationTreeActionAuthorExtendedTooltip" id="18"/>
+						</LabelField>
+						<LabelField name="ClientInformationTreeHotel" id="25">
+							<DataPath>ClientInformationTree.Hotel</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ClientInformationTreeHotelContextMenu" id="26"/>
+							<ExtendedTooltip name="ClientInformationTreeHotelExtendedTooltip" id="27"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ClientInformationTree" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево информации по клиенту</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client information tree</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kundeinformationsstruktur</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ClientInformationTree.ActionAuthor</Field>
+				<Field>ClientInformationTree.ActionDate</Field>
+				<Field>ClientInformationTree.ActionTaken</Field>
+				<Field>ClientInformationTree.Hotel</Field>
+				<Field>ClientInformationTree.Period</Field>
+				<Field>ClientInformationTree.Ref</Field>
+				<Field>ClientInformationTree.Remarks</Field>
+				<Field>ClientInformationTree.RemarksAuthor</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>SELECT
+	ClientInformationTypes.Ref AS Ref,
+	ClientsInformation.Remarks,
+	ClientsInformation.RemarksAuthor,
+	ClientsInformation.Period,
+	ClientsInformation.ActionTaken,
+	ClientsInformation.ActionAuthor,
+	ClientsInformation.ActionDate,
+	ClientsInformation.Hotel
+FROM
+	Catalog.ClientInformationTypes AS ClientInformationTypes
+		LEFT JOIN InformationRegister.ClientsInformation.SliceLast(, ) AS ClientsInformation
+		ON ClientInformationTypes.Ref = ClientsInformation.InformationType
+			AND (NOT ClientInformationTypes.DeletionMark)
+			AND (NOT ClientInformationTypes.IsFolder)
+			AND (ClientsInformation.Client = &amp;qClient)
+</QueryText>
+				<MainTable>Catalog.ClientInformationTypes</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">InformationType.DeletionMark</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Ref.Description</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Client" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

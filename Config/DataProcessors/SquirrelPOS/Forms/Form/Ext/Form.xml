@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormSave" id="15">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Save</CommandName>
+				<ExtendedTooltip name="FormSaveExtendedTooltip" id="16"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="SettingsPages" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="SettingsPagesExtendedTooltip" id="2"/>
+			<ChildItems>
+				<Page name="SettingsPages_Main" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>1. Main settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>1. Haupteinstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>1. Основные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="SettingsPages_MainExtendedTooltip" id="4"/>
+					<ChildItems>
+						<InputField name="InteractionParameters" id="5">
+							<DataPath>Object.InteractionParameters</DataPath>
+							<ContextMenu name="InteractionParametersContextMenu" id="6"/>
+							<ExtendedTooltip name="InteractionParametersExtendedTooltip" id="7"/>
+						</InputField>
+						<InputField name="Currency" id="110">
+							<DataPath>Currency</DataPath>
+							<ContextMenu name="CurrencyContextMenu" id="111"/>
+							<ExtendedTooltip name="CurrencyExtendedTooltip" id="112"/>
+						</InputField>
+						<UsualGroup name="Main_Token" id="13">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Main token</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Main_TokenExtendedTooltip" id="14"/>
+							<ChildItems>
+								<InputField name="Token" id="8">
+									<DataPath>AccessToken</DataPath>
+									<ContextMenu name="TokenContextMenu" id="9"/>
+									<ExtendedTooltip name="TokenExtendedTooltip" id="10"/>
+								</InputField>
+								<Button name="GenerateToken" id="11">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.GenerateToken</CommandName>
+									<ExtendedTooltip name="GenerateTokenExtendedTooltip" id="12"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="SettingsPages_Services" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>2. Services</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>2. Dienstleistungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>2. Услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="SettingsPages_ServicesExtendedTooltip" id="18"/>
+					<ChildItems>
+						<Table name="Services" id="19">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Services</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ServicesContextMenu" id="20"/>
+							<AutoCommandBar name="ServicesCommandBar" id="21"/>
+							<ExtendedTooltip name="ServicesExtendedTooltip" id="22"/>
+							<SearchStringAddition name="ServicesSearchString" id="23">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesSearchStringContextMenu" id="24"/>
+								<ExtendedTooltip name="ServicesSearchStringExtendedTooltip" id="25"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ServicesViewStatus" id="26">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesViewStatusContextMenu" id="27"/>
+								<ExtendedTooltip name="ServicesViewStatusExtendedTooltip" id="28"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ServicesSearchControl" id="29">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesSearchControlContextMenu" id="30"/>
+								<ExtendedTooltip name="ServicesSearchControlExtendedTooltip" id="31"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ServicesID" id="32">
+									<DataPath>Services.ID</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<BackColor>#C8C8C8</BackColor>
+									<ContextMenu name="ServicesIDContextMenu" id="33"/>
+									<ExtendedTooltip name="ServicesIDExtendedTooltip" id="34"/>
+								</InputField>
+								<InputField name="ServicesService" id="35">
+									<DataPath>Services.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicesServiceContextMenu" id="36"/>
+									<ExtendedTooltip name="ServicesServiceExtendedTooltip" id="37"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="SettingsPages_Departments" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>3. Departments</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>3. Abteilungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>3. Отделы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="SettingsPages_DepartmentsExtendedTooltip" id="39"/>
+					<ChildItems>
+						<Table name="Departments" id="40">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Departments</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="DepartmentsContextMenu" id="41"/>
+							<AutoCommandBar name="DepartmentsCommandBar" id="42"/>
+							<ExtendedTooltip name="DepartmentsExtendedTooltip" id="43"/>
+							<SearchStringAddition name="DepartmentsSearchString" id="44">
+								<AdditionSource>
+									<Item>Departments</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DepartmentsSearchStringContextMenu" id="45"/>
+								<ExtendedTooltip name="DepartmentsSearchStringExtendedTooltip" id="46"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="DepartmentsViewStatus" id="47">
+								<AdditionSource>
+									<Item>Departments</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DepartmentsViewStatusContextMenu" id="48"/>
+								<ExtendedTooltip name="DepartmentsViewStatusExtendedTooltip" id="49"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="DepartmentsSearchControl" id="50">
+								<AdditionSource>
+									<Item>Departments</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="DepartmentsSearchControlContextMenu" id="51"/>
+								<ExtendedTooltip name="DepartmentsSearchControlExtendedTooltip" id="52"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="DepartmentsID" id="53">
+									<DataPath>Departments.ID</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DepartmentsIDContextMenu" id="54"/>
+									<ExtendedTooltip name="DepartmentsIDExtendedTooltip" id="55"/>
+								</InputField>
+								<InputField name="DepartmentsTimezoneID" id="104">
+									<DataPath>Departments.TimezoneID</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DepartmentsTimezoneIDContextMenu" id="105"/>
+									<ExtendedTooltip name="DepartmentsTimezoneIDExtendedTooltip" id="106"/>
+								</InputField>
+								<InputField name="DepartmentsService" id="56">
+									<DataPath>Departments.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DepartmentsServiceContextMenu" id="57"/>
+									<ExtendedTooltip name="DepartmentsServiceExtendedTooltip" id="58"/>
+								</InputField>
+								<InputField name="DepartmentsCashRegister" id="59">
+									<DataPath>Departments.CashRegister</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DepartmentsCashRegisterContextMenu" id="60"/>
+									<ExtendedTooltip name="DepartmentsCashRegisterExtendedTooltip" id="61"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="SettingsPages_PaymentMethods" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>4. Payment methods</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>4. Zahlungsmethoden</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>4. Способы оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="SettingsPages_PaymentMethodsExtendedTooltip" id="63"/>
+					<ChildItems>
+						<Table name="PaymentMethods" id="64">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>PaymentMethods</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="PaymentMethodsContextMenu" id="65"/>
+							<AutoCommandBar name="PaymentMethodsCommandBar" id="66"/>
+							<ExtendedTooltip name="PaymentMethodsExtendedTooltip" id="67"/>
+							<SearchStringAddition name="PaymentMethodsSearchString" id="68">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsSearchStringContextMenu" id="69"/>
+								<ExtendedTooltip name="PaymentMethodsSearchStringExtendedTooltip" id="70"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="PaymentMethodsViewStatus" id="71">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsViewStatusContextMenu" id="72"/>
+								<ExtendedTooltip name="PaymentMethodsViewStatusExtendedTooltip" id="73"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="PaymentMethodsSearchControl" id="74">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsSearchControlContextMenu" id="75"/>
+								<ExtendedTooltip name="PaymentMethodsSearchControlExtendedTooltip" id="76"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="PaymentMethodsID" id="77">
+									<DataPath>PaymentMethods.ID</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsIDContextMenu" id="78"/>
+									<ExtendedTooltip name="PaymentMethodsIDExtendedTooltip" id="79"/>
+								</InputField>
+								<InputField name="PaymentMethodsPaymentMethod" id="80">
+									<DataPath>PaymentMethods.PaymentMethod</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsPaymentMethodContextMenu" id="81"/>
+									<ExtendedTooltip name="PaymentMethodsPaymentMethodExtendedTooltip" id="82"/>
+								</InputField>
+								<InputField name="PaymentMethodsFolio" id="107">
+									<DataPath>PaymentMethods.Folio</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsFolioContextMenu" id="108"/>
+									<ExtendedTooltip name="PaymentMethodsFolioExtendedTooltip" id="109"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.SquirrelPOS</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="AccessToken" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Access token</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zugangstoken</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Токен доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Services" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Services</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ID" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Service" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Departments" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Departments</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ID" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Service" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</Type>
+				</Column>
+				<Column name="CashRegister" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cash register</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Registrierkassen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ККМ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CashRegisters</v8:Type>
+					</Type>
+				</Column>
+				<Column name="TimezoneID" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Timezone ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Timezone ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Timezone ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="PaymentMethods" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payment methods</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zahlungsmethoden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способы оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ID" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="PaymentMethod" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payment method</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zahlungsmethode</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.PaymentMethods</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Folio" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фолио</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Folio</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Currency" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Currency</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Währung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Currencies</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="GenerateToken" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generate token</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать токен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generate token</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Reread</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>GenerateToken</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="Save" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Save</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

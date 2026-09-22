@@ -1,0 +1,162 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.1chotel.ru/interfaces/housekeeping/">
+	<valueType name="Code" base="xs:string" maxLength="5"/>
+	<valueType name="Description" base="xs:string" maxLength="170"/>
+	<valueType name="ErrorDescription" base="xs:string" maxLength="4096"/>
+	<valueType name="ExtSystemCode" base="xs:string" maxLength="36"/>
+	<valueType name="HotelCode" base="xs:string" maxLength="36"/>
+	<valueType name="LanguageCode" base="xs:string" maxLength="2"/>
+	<valueType name="Link" base="xs:string"/>
+	<valueType name="Period" base="xs:dateTime"/>
+	<valueType name="Picture" base="xs:string"/>
+	<valueType name="Quantity" base="xs:decimal" totalDigits="8" fractionDigits="0"/>
+	<valueType name="Remarks" base="xs:string" maxLength="4096"/>
+	<valueType name="Room" base="xs:string"/>
+	<valueType name="RoomSection" base="xs:string"/>
+	<valueType name="RoomStatusCode" base="xs:string" maxLength="36"/>
+	<valueType name="RoomTypeCode" base="xs:string" maxLength="36"/>
+	<valueType name="EmployeeName" base="xs:string"/>
+	<valueType name="EmployeeCode" base="xs:integer"/>
+	<valueType name="SortCode" base="xs:integer"/>
+	<valueType name="PeriodPresentation" base="xs:string"/>
+	<valueType name="TimePresentation" base="xs:string"/>
+	<valueType name="TaskNumber" base="xs:string"/>
+	<valueType name="TaskType" base="xs:string"/>
+	<objectType name="GetRoomsWithStatuses">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="GetRoomsWithStatusesRow" type="d3p1:GetRoomsWithStatusesRow" lowerBound="0" upperBound="999999" nillable="true"/>
+	</objectType>
+	<objectType name="GetRoomsWithStatusesRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeCode" type="d3p1:RoomTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusCode" type="d3p1:RoomStatusCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomSectionCode" type="d3p1:RoomSection" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomSectionDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomParent" type="d3p1:Room" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeEmployee" type="d3p1:EmployeeName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeTime" type="d3p1:Period" lowerBound="0" nillable="true"/>
+		<property name="RoomStatusIcon"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeTimePresentation" type="d3p1:PeriodPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="CheckInTime" type="d3p1:TimePresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="ActiveTasks" type="d3p1:ActiveTasks" lowerBound="0" upperBound="1" nillable="true"/>
+		<property name="NumberOfGuests" type="xs:integer" lowerBound="0" upperBound="1" nillable="true"/>
+		<property name="ExpectedNumberOfGuests" type="xs:integer" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="GuestList" type="d3p1:GuestList" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="GetRoomStatuses">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="GetRoomStatusesRow" type="d3p1:GetRoomStatusesRow" lowerBound="0" upperBound="9999" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="EmployeeName" type="d3p1:EmployeeName" lowerBound="0" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="GetRoomStatusesRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusCode" type="d3p1:RoomStatusCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusIcon" type="d3p1:Picture" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusSortCode" type="d3p1:SortCode"/>
+	</objectType>
+	<objectType name="ChangeRoomStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusCode" type="d3p1:RoomStatusCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusIcon" type="d3p1:Picture" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeEmployee" type="d3p1:EmployeeName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeTime" type="d3p1:Period" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusSortCode" type="d3p1:SortCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="StatusLastChangeTimePresentation" type="d3p1:PeriodPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeCode" type="d3p1:RoomTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ActionProcessing">
+		<property name="ResponseType" type="xs:string" lowerBound="1" upperBound="1"/>
+		<property name="ResponseData" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+		<property name="ResponseAddData" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="ActionProcessingRow" type="d3p1:ActionProcessingRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ActionProcessingRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Hotel" type="d3p1:HotelCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeCode" type="d3p1:RoomTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusCode" type="d3p1:RoomStatusCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property name="RoomStatusType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomBlockTypeCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomBlockTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property name="IsCheckInWaiting" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="OperationCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="OperationDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property name="OperationStartTime" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="OperationEndTime" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="NumberOfGuests" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="GuestList" type="d3p1:GuestList" lowerBound="0" nillable="true"/>
+		<property name="MiniBarIsOpen" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="ActiveTasks" type="d3p1:ActiveTasks" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="GuestList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="GuestListRow" type="d3p1:GuestListRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="GuestListRow">
+		<property name="LastName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="FirstName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="SecondName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientTypeDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Sex" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AgeRange" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="DateOfBirth" type="xs:date" lowerBound="0" nillable="true"/>
+		<property name="CheckInDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="CheckOutDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="IsExpected" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="HousekeepingRemarks" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ChangeMiniBarStatus">
+		<property name="ErrorDescription" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="RoomInfo">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeCode" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusCode" type="d3p1:RoomStatusCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomStatusDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Floor" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomSectionCode" type="d3p1:RoomSection" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomSectionDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property name="HasRoomBlock" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="StopSale" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="RoomInfoShell">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="RoomInfo" type="d3p1:RoomInfo" lowerBound="0" nillable="true"/>
+		<property name="ErrorDescription" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="EmployeeInfoShell">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="EmployeeInfo" type="d3p1:EmployeeInfo" lowerBound="0"/>
+		<property name="ErrorDescription" type="xs:string" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="EmployeeInfo">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="EmployeeCode" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="EmployeeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="PBXAccountCode" type="d3p1:EmployeeCode" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AddNewTask">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskNumber" type="d3p1:TaskNumber" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskType" type="d3p1:TaskType" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="MessageText" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Task">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskNumber" type="d3p1:TaskNumber"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskDate" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskType" type="d3p1:TaskType" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="TaskTypeDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="MessageText" type="d3p1:Remarks" nillable="true"/>
+	</objectType>
+	<objectType name="ActiveTasks">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/housekeeping/" name="Task" type="d3p1:Task" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Error">
+		<property name="Code" type="xs:integer"/>
+		<property name="Description" type="xs:string"/>
+	</objectType>
+</package>

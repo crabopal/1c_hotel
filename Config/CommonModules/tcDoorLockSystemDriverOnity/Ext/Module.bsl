@@ -1,0 +1,1379 @@
+﻿
+#Region Public
+
+// -----------------------------------------------------------------------------
+// Description: Returns positive decimal number representing binary string
+// Parameters: Binary number presentation as string
+// Return value: Decimal number
+// -----------------------------------------------------------------------------
+Function Bin2Dec(pBin) Export
+	vDec = 0;
+	vLen = StrLen(pBin);
+	For i = 1 To vLen Do
+		vDec = vDec + Number(Mid(pBin, i, 1)) * Pow(2, (vLen - i));
+	EndDo;
+	Return vDec;
+EndFunction // cmBin2Dec
+
+// -----------------------------------------------------------------------------
+// Description: Returns binary string representing binary XOR with two binary numbers
+// Parameters: First binary number presentation, Second binary number presentation
+// Return value: XOR result binary presentation as string
+// -----------------------------------------------------------------------------
+Function XOR(Val pBin1, Val pBin2) Export
+	vXOR = "";
+	// Check that parameters length is the same
+	vMaxLen = Max(StrLen(pBin1), StrLen(pBin2));
+	pBin1 = Format(Number(pBin1), "ND=" + vMaxLen + "; NFD=0; NZ=; NLZ=; NG=");
+	pBin2 = Format(Number(pBin2), "ND=" + vMaxLen + "; NFD=0; NZ=; NLZ=; NG=");
+	// Do XOR
+	For i = 1 To vMaxLen Do
+		vChar1 = Mid(pBin1, i, 1);
+		vChar2 = Mid(pBin2, i, 1);
+		If vChar1 = vChar2 Then
+			vXOR = vXOR + "0";
+		Else
+			vXOR = vXOR + "1";
+		EndIf;			
+	EndDo;
+	Return vXOR;
+EndFunction // cmXOR
+
+// -----------------------------------------------------------------------------
+Function pmNewKey(pDevice, pParameters, rErrorMessage = "") Export
+	pParameters.IdentificationCard = PredefinedValue("Catalog.IdentificationCards.EmptyRef");
+	
+	SEP = Char(1110);
+	RC_NO_CONNECTION = -1;
+	RC_ROOM_WITHOUT_DOOR_LOCK = 114;
+	
+	// Connect
+	vDLSys = pmConnect(pDevice);
+	If vDLSys = Undefined Then
+		Return RC_NO_CONNECTION; 
+	EndIf;
+	
+	// Build command data string
+	vRoom = pParameters.Room;
+	vRoomCode = TrimR(vRoom);
+	If ValueIsFilled(vRoom) Then
+		vRoomLockCode = tcOnServer.cmGetAttributeByRef(pParameters.Room,"LockCode");
+		If pDevice.UseRoomLockCodes Then
+			If Not IsBlankString(vRoomLockCode) Then
+				vRoomCode = TrimR(vRoomLockCode);
+			Else
+				vRoomCode = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	If IsBlankString(vRoomCode) And ValueIsFilled(pDevice.DefaultRoom) Then
+		vRoom = pDevice.DefaultRoom;
+		pParameters.Room = vRoom;
+		vRoomLockCode = tcOnServer.cmGetAttributeByRef(vRoom,"LockCode");
+		If pDevice.UseRoomLockCodes Then
+			If Not IsBlankString(vRoomLockCode) Then
+				vRoomCode = TrimR(vRoomLockCode);
+			Else
+				vRoomCode = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	If IsBlankString(vRoomCode) Then
+		Return RC_ROOM_WITHOUT_DOOR_LOCK;
+	EndIf;
+	vDta = SEP + vRoomCode;
+	// Additional rooms are not supported.
+	vDta = vDta + SEP; // Room 2
+	vDta = vDta + SEP; // Room 3
+	vDta = vDta + SEP; // Room 4
+	// Authorizations
+	vDoorLockSystemAuthorization = pParameters.DoorLockSystemAuthorization;
+	If Not ValueIsFilled(vDoorLockSystemAuthorization) And
+	   ValueIsFilled(vRoom) Then
+		vDoorLockSystemAuthorization = tcOnServer.cmGetAttributeByRef(vRoom,"DoorLockSystemAuthorization");
+	EndIf;
+	If ValueIsFilled(vDoorLockSystemAuthorization) Then
+		vDoorLockSystemAuthorization = tcOnServer.cmGetAtributeAsArray(vDoorLockSystemAuthorization);
+	EndIf;	
+	If ValueIsFilled(vDoorLockSystemAuthorization) And 
+	   Not IsBlankString(vDoorLockSystemAuthorization.AssignedAuthorizations) Then
+		If ValueIsFilled(pDevice) And 
+		   Not IsBlankString(pDevice.AssignedAuthorizations) And 
+		   vDoorLockSystemAuthorization.MergeWithDefault Then
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.AssignedAuthorizations) + TrimAll(pDevice.AssignedAuthorizations);
+		Else
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.AssignedAuthorizations);
+		EndIf;
+	Else
+		vDta = vDta + SEP + TrimAll(pDevice.AssignedAuthorizations);
+	EndIf;
+	If ValueIsFilled(vDoorLockSystemAuthorization) And 
+	   Not IsBlankString(vDoorLockSystemAuthorization.DeniedAuthorizations) Then
+		If ValueIsFilled(pDevice) And 
+		   Not IsBlankString(pDevice.DeniedAuthorizations) And 
+		   vDoorLockSystemAuthorization.MergeWithDefault Then
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.DeniedAuthorizations) + TrimAll(pDevice.DeniedAuthorizations);
+		Else
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.DeniedAuthorizations);
+		EndIf;
+	Else
+		vDta = vDta + SEP + TrimAll(pDevice.DeniedAuthorizations);
+	EndIf;
+	// Check in and check out dates
+	vCheckInDate = pParameters.CheckInDate;
+	If pDevice.SubtractMinutes <> 0 Then
+		vCheckInDate = vCheckInDate - pDevice.SubtractMinutes*60;
+	EndIf;
+	If pDevice.DoorLockSystemType = PredefinedValue("Enum.DoorLockSystems.SaltoHotel") Then
+		vDta = vDta + SEP + Format(vCheckInDate,"DF=HHddMMyy");
+	Else
+		vDta = vDta + SEP;
+	EndIf;
+	vCheckOutDate = pParameters.CheckOutDate;
+	If pDevice.AddMinutes <> 0 Then
+		vCheckOutDate = vCheckOutDate + pDevice.AddMinutes*60;
+	EndIf;
+	vDta = vDta + SEP + Format(vCheckOutDate,"DF=HHddMMyy");
+	// Operators data
+	vOperatorName = "";
+	vEmployeePreferences = tcOnServer.cmGetCurrentUserAttribute("EmployeePreferences");
+	If ValueIsFilled(vEmployeePreferences) And Not IsBlankString(tcOnServer.cmGetAttributeByRef(vEmployeePreferences,"DoorLockSystemLogin")) Then
+		vOperatorName = Left(Transliterate(TrimAll(tcOnServer.cmGetAttributeByRef(vEmployeePreferences, "DoorLockSystemLogin")),True, pDevice.DoGuestNamesTransliteration),20); 
+	Else
+		vOperatorName = Left(Transliterate(TrimAll(tcOnServer.cmGetCurrentUserAttribute()), True, pDevice.DoGuestNamesTransliteration), 20);
+	EndIf;
+	vDta = vDta + SEP + vOperatorName;
+	
+	// Add tack 1 and track 2 data if necessary
+	vErrorCode = AddTrack1And2(vDLSys, vDta, False,pDevice,pParameters);
+	If vErrorCode <> 0 Then // RC_OK = 0
+		Return vErrorCode;
+	Else
+		// Ask interface to return key card unique ID
+		If pDevice.ReturnCardUID Then
+			vDta = vDta + SEP + SEP + "1";
+		EndIf;
+		
+		// Get encoder number
+		vEncoderNumber = TrimAll(pDevice.EncoderNumber);
+		
+		// Call API
+		vErrorCode = MakeNewKey(vDLSys, vEncoderNumber, vDta, pDevice, pParameters);
+		If vErrorCode <> 0 Then // RC_OK = 0
+			AddError(NStr("en='Error issuing key card: ';ru='Ошибка выдачи карты: ';de='Fehler bei der Kartenausstellung: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+		Else
+			tcOnServer.cmWriteLogEventAtServer(NStr("en='DoorLockSystem.KeyIssued';ru='СистемаЭлектронныхЗамков.ВыданКлюч';de='DoorLockSystem.KeyIssued'"),"Information",,,NStr("en='Key card issued: ';ru='Выдан ключ-карта: ';de='Kartenschlüssel wurde ausgehändigt: '") + TrimAll(vRoom) + ", " + Format(pParameters.CheckInDate, "DF='dd.MM.yyyy HH:mm'") + " - " + Format(pParameters.CheckOutDate, "DF='dd.MM.yyyy HH:mm'"));
+			If pDevice.DoorLockSystemType = PredefinedValue("Enum.DoorLockSystems.SaltoHotel")Then
+				tcDoorLocksAtServer.WriteKeyCardSecuritySystemEvent("NEW", ?(ValueIsFilled(pParameters.IdentificationCard), TrimAll(tcOnServer.cmGetAttributeByRef(pParameters.IdentificationCard,"CardUID")), ""), vRoom, "", vCheckInDate, vCheckOutDate, pParameters.ParentDoc, pParameters.Guest, pParameters.NumberOfKeys);
+			Else
+				tcDoorLocksAtServer.WriteKeyCardSecuritySystemEvent("NEW", ?(ValueIsFilled(pParameters.IdentificationCard), TrimAll(tcOnServer.cmGetAttributeByRef(pParameters.IdentificationCard,"CardUID")), ""), vRoom, "", CurrentDate(), vCheckOutDate, pParameters.ParentDoc, pParameters.Guest, pParameters.NumberOfKeys);
+			EndIf;
+		EndIf;
+		
+		pmDisconnect(vDLSys,pDevice);
+		Return vErrorCode;
+	EndIf;
+EndFunction // pmNewKey
+
+// -----------------------------------------------------------------------------
+Function pmAddKey(pDevice, pParameters, rErrorMessage = "") Export
+	pParameters.IdentificationCard = PredefinedValue("Catalog.IdentificationCards.EmptyRef");
+	
+	SEP = Char(1110);
+	RC_NO_CONNECTION = -1;
+	RC_ROOM_WITHOUT_DOOR_LOCK = 114;
+	RC_OK = 0;
+	
+	// Connect
+	vDLSys = pmConnect(pDevice);
+	If vDLSys = Undefined Then
+		Return RC_NO_CONNECTION;
+	EndIf;
+	
+	// Build command data string
+	vRoomCode = TrimR(pParameters.Room);
+	vRoom = pParameters.Room;
+	If ValueIsFilled(pParameters.Room) Then
+		vRoomLockCode = tcOnServer.cmGetAttributeByRef(pParameters.Room,"LockCode");
+		If pDevice.UseRoomLockCodes Then
+			If Not IsBlankString(vRoomLockCode) Then
+				vRoomCode = TrimR(vRoomLockCode);
+			Else
+				vRoomCode = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	If IsBlankString(vRoomCode) And ValueIsFilled(pDevice.DefaultRoom) Then
+		vRoom = pDevice.DefaultRoom;
+		pParameters.Room = vRoom;
+		vRoomLockCode = tcOnServer.cmGetAttributeByRef(vRoom,"LockCode");
+		If pDevice.UseRoomLockCodes Then
+			If Not IsBlankString(vRoomLockCode) Then
+				vRoomCode = TrimR(vRoomLockCode);
+			Else
+				vRoomCode = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	If IsBlankString(vRoomCode) Then
+		Return RC_ROOM_WITHOUT_DOOR_LOCK;
+	EndIf;
+	
+	vDta = SEP + vRoomCode;
+	// Additional rooms are not supported.
+	vDta = vDta + SEP; // Room 2
+	vDta = vDta + SEP; // Room 3
+	vDta = vDta + SEP; // Room 4
+	// Authorizations
+	vDoorLockSystemAuthorization = pParameters.DoorLockSystemAuthorization;
+	If Not ValueIsFilled(vDoorLockSystemAuthorization) And
+	   ValueIsFilled(vRoom) Then
+		vDoorLockSystemAuthorization = tcOnServer.cmGetAttributeByRef(vRoom,"DoorLockSystemAuthorization");
+	EndIf;
+	If ValueIsFilled(vDoorLockSystemAuthorization) Then
+		vDoorLockSystemAuthorization = tcOnServer.cmGetAtributeAsArray(vDoorLockSystemAuthorization);
+	EndIf;	
+	If ValueIsFilled(vDoorLockSystemAuthorization) And 
+	   Not IsBlankString(vDoorLockSystemAuthorization.AssignedAuthorizations) Then
+		If ValueIsFilled(pDevice) And 
+		   Not IsBlankString(pDevice.AssignedAuthorizations) And 
+		   vDoorLockSystemAuthorization.MergeWithDefault Then
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.AssignedAuthorizations) + TrimAll(pDevice.AssignedAuthorizations);
+		Else
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.AssignedAuthorizations);
+		EndIf;
+	Else
+		vDta = vDta + SEP + TrimAll(pDevice.AssignedAuthorizations);
+	EndIf;
+	If ValueIsFilled(vDoorLockSystemAuthorization) And 
+	   Not IsBlankString(vDoorLockSystemAuthorization.DeniedAuthorizations) Then
+		If ValueIsFilled(pDevice) And 
+		   Not IsBlankString(pDevice.DeniedAuthorizations) And 
+		   vDoorLockSystemAuthorization.MergeWithDefault Then
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.DeniedAuthorizations) + TrimAll(pDevice.DeniedAuthorizations);
+		Else
+			vDta = vDta + SEP + TrimAll(vDoorLockSystemAuthorization.DeniedAuthorizations);
+		EndIf;
+	Else
+		vDta = vDta + SEP + TrimAll(pDevice.DeniedAuthorizations);
+	EndIf;
+	// Check in and check out dates
+	vCheckInDate = pParameters.CheckInDate;
+	If pDevice.SubtractMinutes <> 0 Then
+		vCheckInDate = vCheckInDate - pDevice.SubtractMinutes*60;
+	EndIf;
+	If pDevice.DoorLockSystemType = PredefinedValue("Enum.DoorLockSystems.SaltoHotel") Then
+		vDta = vDta + SEP + Format(vCheckInDate,"DF=HHddMMyy");
+	Else
+		vDta = vDta + SEP;
+	EndIf;
+	vCheckOutDate = pParameters.CheckOutDate;
+	If pDevice.AddMinutes <> 0 Then
+		vCheckOutDate = vCheckOutDate + pDevice.AddMinutes*60;
+	EndIf;
+	vDta = vDta + SEP + Format(vCheckOutDate,"DF=HHddMMyy");
+	// Operators data
+	vOperatorName = "";
+	vEmployeePreferences = tcOnServer.cmGetCurrentUserAttribute("EmployeePreferences");
+	If ValueIsFilled(vEmployeePreferences) And Not IsBlankString(tcOnServer.cmGetAttributeByRef(vEmployeePreferences,"DoorLockSystemLogin")) Then
+		vOperatorName = Left(Transliterate(TrimAll(tcOnServer.cmGetAttributeByRef(vEmployeePreferences, "DoorLockSystemLogin")),True, pDevice.DoGuestNamesTransliteration),20); 
+	Else
+		vOperatorName = Left(Transliterate(TrimAll(tcOnServer.cmGetCurrentUserAttribute()), True, pDevice.DoGuestNamesTransliteration), 20);
+	EndIf;
+	vDta = vDta + SEP + vOperatorName;
+	
+	// Add tack 1 and track 2 data if necessary
+	vErrorCode = AddTrack1And2(vDLSys, vDta, False, pDevice, pParameters);
+	If vErrorCode <> RC_OK Then
+		Return vErrorCode;
+	Else
+		// Ask interface to return key card unique ID
+		If pDevice.ReturnCardUID Then
+			vDta = vDta + SEP + SEP + "1";
+		EndIf;
+		
+		// Get encoder number
+		vEncoderNumber = TrimAll(pDevice.EncoderNumber);
+		
+		// Call API
+		vErrorCode = AddKey(vDLSys, vEncoderNumber, vDta, pDevice, pParameters);
+		If vErrorCode <> RC_OK Then
+			AddError(NStr("en='Error issuing key card: ';ru='Ошибка выдачи карты: ';de='Fehler bei der Kartenausstellung: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+		Else
+			tcOnServer.cmWriteLogEventAtServer(NStr("en='DoorLockSystem.AdditionalKeyIssued';ru='СистемаЭлектронныхЗамков.ВыданДополнительныйКлюч';de='DoorLockSystem.AdditionalKeyIssued'"),"Information",,,NStr("en='Key card issued: ';ru='Выдан ключ-карта: ';de='Kartenschlüssel wurde ausgehändigt: '") + TrimAll(pParameters.Room) + ", " + Format(pParameters.CheckInDate, "DF='dd.MM.yyyy HH:mm'") + " - " + Format(pParameters.CheckOutDate, "DF='dd.MM.yyyy HH:mm'"));
+			If pDevice.DoorLockSystemType = PredefinedValue("Enum.DoorLockSystems.SaltoHotel")Then
+				tcDoorLocksAtServer.WriteKeyCardSecuritySystemEvent("ADD", ?(ValueIsFilled(pParameters.IdentificationCard), TrimAll(tcOnServer.cmGetAttributeByRef(pParameters.IdentificationCard,"CardUID")), ""), vRoom, "", vCheckInDate, vCheckOutDate, pParameters.ParentDoc, pParameters.Guest, pParameters.NumberOfKeys);
+			Else
+				tcDoorLocksAtServer.WriteKeyCardSecuritySystemEvent("ADD", ?(ValueIsFilled(pParameters.IdentificationCard), TrimAll(tcOnServer.cmGetAttributeByRef(pParameters.IdentificationCard,"CardUID")), ""), vRoom, "", CurrentDate(), vCheckOutDate, pParameters.ParentDoc, pParameters.Guest, pParameters.NumberOfKeys);
+			EndIf;
+		EndIf;
+		
+		pmDisconnect(vDLSys, pDevice);
+		Return vErrorCode;
+	EndIf;
+EndFunction // pmAddKey
+
+// -----------------------------------------------------------------------------
+Function pmVerify(pCardData, pDevice, pParameters) Export
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+
+	// Connect
+	vDLSys = pmConnect(pDevice);
+	If vDLSys = Undefined Then
+		Return RC_NO_CONNECTION;
+	EndIf;
+	
+	// Build parameters
+	vEncoderNumber = TrimAll(pDevice.EncoderNumber);
+	
+	// Call API
+	vCardDesc = "";
+	vErrorCode = Verify(vDLSys, vEncoderNumber, vCardDesc, pDevice);
+	If vErrorCode <> RC_OK Then
+		AddError(NStr("en='Error reading key card: ';ru='Ошибка чтения карты: ';de='Fehler beim Lesen der Karte: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+	Else
+		// Parse returned data
+		pCardData = pmParseCardDescription(vCardDesc, pDevice.Hotel);
+		
+		// Read track 2 data
+		If pCardData.ReplyType <> "Message" And ValueIsFilled(pDevice) And pDevice.WriteTrack2 Then
+			vTrack2 = "";
+			vErrorCode = ReadTrack2(vDLSys, vEncoderNumber, vTrack2, pDevice, pDevice.SystemName);
+			If vErrorCode <> RC_OK Then
+				AddError(NStr("en='Error reading key card: ';ru='Ошибка чтения карты: ';de='Fehler beim Lesen der Karte: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+			Else
+				pCardData.CardID = GetCardIdentifier(vTrack2);
+				vIDCardRef = tcOnServer.cmGetCatalogItemRefByAttribute("IdentificationCards", "Identifier", false, pCardData.CardID);
+				If ValueIsFilled(vIDCardRef) Then
+					vClient = tcOnServer.cmGetAttributeByRef(vIDCardRef, "Client");
+					If ValueIsFilled(vClient) Then
+						pCardData.CardFullName = tcOnServer.cmGetAttributeByRef(vClient, "FullName");
+					EndIf;
+				EndIf;
+			EndIf;
+		EndIf;
+	EndIf;
+	
+	// Disconnect
+	pmDisconnect(vDLSys, pDevice);
+	
+	Return vErrorCode;
+EndFunction // pmVerify
+
+// -----------------------------------------------------------------------------
+Function pmGetErrorDescription(pRC, pSystemName) Export
+	vSystemName = pSystemName;
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+	RC_UNKNOWN = 100;
+	RC_NO_FOLIO = 101;
+	RC_NO_ID_CARD = 102;
+	RC_NO_REPLY = 103;
+	RC_WRONG_REPLY = 104;
+	RC_SYNTAX_ERROR = 105;
+	RC_NO_COMMUNICATION = 106;
+	RC_OVERFLOW = 107;
+	RC_MAGNETIC_TRACK_ERROR = 108;
+	RC_MAGNETIC_FORMAT_ERROR = 109;
+	RC_MAGNETIC_LEVEL_ERROR = 110;
+	RC_DEVICE_TIME_OUT = 111;
+	RC_NO_GUEST_PREVIOUSLY_CHECKED_IN = 112;
+	RC_WRONG_ROOM = 113;
+	RC_ROOM_WITHOUT_DOOR_LOCK = 114;
+	RC_CARD_MEMORY_OVERFLOW = 115;
+
+	If pRC = RC_NO_CONNECTION Then
+		Return(NStr("ru = 'Не удалось установить соединение с системой " + vSystemName + "!'; 
+		            |de = 'Failed to connect to the door locks system " + vSystemName + "!'; 
+		            |en = 'Failed to connect to the door locks system " + vSystemName + "!'"));
+	ElsIf pRC = RC_UNKNOWN Then
+		Return(NStr("en = 'Unknown error! See error log for details.'; ru = 'Неизвестная ошибка! Дополнительная информация сохранена в системном логе.'; de = 'Unbekannter Fehler! Zusätzliche Information ist im Systemlog gespeichert.'"));
+	ElsIf pRC = RC_DEVICE_TIME_OUT Then
+		Return(NStr("en = 'The reader/writer has been waiting too long for a card!'; ru = 'Закончилось время ожидания карты энкодером!'; de = 'Die Wartezeit für die Karte am Encoder ist abgelaufen!'"));
+	ElsIf pRC = RC_NO_GUEST_PREVIOUSLY_CHECKED_IN Then
+		Return(NStr("en = 'No checked in guests in the room! Make new key card instead.'; ru = 'В номере нет размещенных гостей! Выдайте гостю новую карту.'; de = 'In diesem Zimmer sind keine Gäste untergebracht! Geben Sie dem Gast eine neue Karte heraus.'"));
+	ElsIf pRC = RC_WRONG_ROOM Then
+		Return(NStr("en = 'Room is wrong!'; ru = 'Номер комнаты указан неверно!'; de = 'Die Zimmernummer ist falsch!'"));
+	ElsIf pRC = RC_NO_REPLY Then
+		Return(NStr("ru = 'Система " + vSystemName + " не отвечает!'; 
+		            |de = 'System " + vSystemName + "  antwortet nicht!'; 
+		            |en = '" + vSystemName + " system is not responding!'"));
+	ElsIf pRC = RC_WRONG_REPLY Then
+		Return(NStr("ru = 'От системы " + vSystemName + " получен ответ в неизвестном формате!'; 
+		            |de = '" + vSystemName + " system replied with unknown format!'; 
+		            |en = '" + vSystemName + " system replied with unknown format!'"));
+	ElsIf pRC = RC_ROOM_WITHOUT_DOOR_LOCK Then
+		Return(NStr("en='Room has no key card door lock!';ru='В номере нет электронного замка!';de='Im Zimmer ist kein elektronisches Schloss vorhanden!'"));
+	ElsIf pRC = RC_NO_FOLIO Then
+		Return(NStr("en='Failed to register client identification card! Cause: Folio is not set.';ru='Ошибка регистрации карты идентификации клиента! Причина: не указано фолио.';de='Fehler bei der Erfassung der Kundenidentifikationskarte! Ursache: Folio nicht angegeben.'"));
+	ElsIf pRC = RC_NO_ID_CARD Then
+		Return(NStr("en='Failed to register client identification card!';ru='Ошибка регистрации карты идентификации клиента!';de='Fehler bei der Erfassung der Kundenidentifikationskarte!'"));
+	ElsIf pRC = RC_SYNTAX_ERROR Then
+		Return(NStr("en='The message is not correct (unknown command, nonsense parameters, prohibited characters, ...)!';ru='Неверный формат команды (возможно встретились запрещенные символы)!';de='Falsches Befehlformat (möglicherweise kommen verbotene Symbole vor)!'"));
+	ElsIf pRC = RC_NO_COMMUNICATION Then
+		Return(NStr("ru = 'Энкодер не отвечает (возможно выключен или не подключен)!'; 
+		            |de = 'The encoder does not answer (failure in the communications or switched off)!'; 
+		            |en = 'The encoder does not answer (failure in the communications or switched off)!'"));
+	ElsIf pRC = RC_OVERFLOW Then
+		Return(NStr("en='The encoder has not already accomplished the previous task!';ru='Энкодер не закончил выполнение предыдущего задания!';de='Encoder hat die vorhergehende Aufgabe nicht beendet!'"));
+	ElsIf pRC = RC_MAGNETIC_TRACK_ERROR Then
+		Return(NStr("en='Card inserted wrongly or without magnetic stripe!';ru='Не правильно вставлена карта или карта без магнитной полосы!';de='Die Karte wurde falsch eingesetzt oder hat kein Magnetstreifen!'"));
+	ElsIf pRC = RC_MAGNETIC_FORMAT_ERROR Then
+		Return(NStr("en='You have removed card from the encoder before operation has finished or card/magnetic strip is damaged!';ru='Возможно сняли карту с энкодера не дожидаясь окончания операции или карта/магнитная полоса повреждена!';de='Möglicherweise haben Sie die Karte von Encoder vor dem Ende der Operation genommen oder die Karte/der Magnetstreifen ist beschädigt!'"));
+	ElsIf pRC = RC_MAGNETIC_LEVEL_ERROR Then
+		Return(NStr("en='The card has been encoded with a too low magnetic level due to dust in the reader magnetic head or low quality card!';ru='Низкий уровень намагничивания (возможно грязный энкодер или карта плохого качества)!';de='Niedriges Magnetisierungsniveau (möglicherweise ist der Encoder verschmutzt oder die Qualität der Karte ist schlecht)!'"));
+	ElsIf pRC = RC_CARD_MEMORY_OVERFLOW Then
+		Return(NStr("en='Card memory overflow!';ru='Переполнение памяти карты!';de='Der Kartenspeicher ist voll!'"));
+	EndIf;		
+EndFunction // pmGetErrorDescription
+
+#EndRegion
+
+#Region Internal
+
+// -----------------------------------------------------------------------------
+Function Transliterate(Val pStr, pAlways = False,pDoGuestNamesTransliteration)
+	If pAlways = Undefined Then
+		pAlways = False;
+	EndIf;
+	vStr = Upper(pStr);
+	If pDoGuestNamesTransliteration Or pAlways Then
+		vStr = StrReplace(vStr, "А", "A");
+		vStr = StrReplace(vStr, "Б", "B");
+		vStr = StrReplace(vStr, "В", "V");
+		vStr = StrReplace(vStr, "Г", "G");
+		vStr = StrReplace(vStr, "Д", "D");
+		vStr = StrReplace(vStr, "Е", "E");
+		vStr = StrReplace(vStr, "Ё", "E");
+		vStr = StrReplace(vStr, "Ж", "GH");
+		vStr = StrReplace(vStr, "З", "Z");
+		vStr = StrReplace(vStr, "И", "I");
+		vStr = StrReplace(vStr, "Й", "Y");
+		vStr = StrReplace(vStr, "К", "K");
+		vStr = StrReplace(vStr, "Л", "L");
+		vStr = StrReplace(vStr, "М", "M");
+		vStr = StrReplace(vStr, "Н", "N");
+		vStr = StrReplace(vStr, "О", "O");
+		vStr = StrReplace(vStr, "П", "P");
+		vStr = StrReplace(vStr, "Р", "R");
+		vStr = StrReplace(vStr, "С", "S");
+		vStr = StrReplace(vStr, "Т", "T");
+		vStr = StrReplace(vStr, "У", "U");
+		vStr = StrReplace(vStr, "Ф", "F");
+		vStr = StrReplace(vStr, "Х", "H");
+		vStr = StrReplace(vStr, "Ц", "C");
+		vStr = StrReplace(vStr, "Ч", "CH");
+		vStr = StrReplace(vStr, "Ш", "SH");
+		vStr = StrReplace(vStr, "Щ", "SCH");
+		vStr = StrReplace(vStr, "Ь", "");
+		vStr = StrReplace(vStr, "Ы", "YI");
+		vStr = StrReplace(vStr, "Ъ", "");
+		vStr = StrReplace(vStr, "Э", "E");
+		vStr = StrReplace(vStr, "Ю", "YU");
+		vStr = StrReplace(vStr, "Я", "YA");
+	EndIf;
+	Return vStr;
+EndFunction // Transliterate
+
+// -----------------------------------------------------------------------------
+Function ConvertUUIDToDecimal(Val pCardUID, pBytesToConvert) 
+	vCardUID = pCardUID; 
+	If pBytesToConvert = PredefinedValue("Enum.BytesToConvert.Byte5") Then
+		While StrLen(vCardUID) < 4 Do
+			vCardUID = vCardUID + "0"	
+		EndDo;
+		vHex = Left(vCardUID, 4);
+		vBinaryDataBuffer = GetBinaryDataBufferFromHexString(vHex);
+		vCardUID = Format(vBinaryDataBuffer.ReadInt16(0, ByteOrder.LittleEndian), "NFD=0; NZ=0; NG=");
+	ElsIf pBytesToConvert = PredefinedValue("Enum.BytesToConvert.Byte8") Then
+		While StrLen(vCardUID) < 6 Do
+			vCardUID = vCardUID + "0"	
+		EndDo;	
+		vHex = Left(vCardUID, 6) + "00";
+		vBinaryDataBuffer = GetBinaryDataBufferFromHexString(vHex);
+		vCardUID = Format(vBinaryDataBuffer.ReadInt16(2, ByteOrder.LittleEndian), "NFD=0; NZ=0; NG=") + Format(vBinaryDataBuffer.ReadInt16(0, ByteOrder.LittleEndian), "NFD=0; NZ=0; NG=");
+	Else
+		vCardUID = Format(HexToDec(vCardUID, 16), "NFD=0; NZ=0; NG=");	
+	EndIf;
+	Return vCardUID;
+EndFunction // ConvertUUIDToDecimal
+
+// -----------------------------------------------------------------------------
+Function HexToDec(Val pValue, pBasis)
+	vResult = 0;
+	vLength = StrLen(pValue);
+	For vChar = 1 To StrLen(pValue) Do
+		vMultiplier = 1;
+		For vCount = 1 To vLength - vChar Do 
+			vMultiplier = vMultiplier * pBasis;
+		EndDo;
+		vResult = vResult + (Find("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", Mid(pValue, vChar, 1))-1) * vMultiplier;
+	EndDo;
+	Return Round(vResult);
+EndFunction //  HexToDec
+
+// -----------------------------------------------------------------------------
+Procedure AddError(pErrorText)
+	tcOnServer.cmWriteLogEventAtServer(NStr("en='DoorLockSystem.Error';ru='СистемаЭлектронныхЗамков.Ошибка';de='DoorLockSystem.Error'"),"Warning",,,pErrorText);
+EndProcedure // AddError
+
+// -----------------------------------------------------------------------------
+Function pmConnect(pDevice)
+	If Not ValueIsFilled(pDevice.Ref) Then
+		Return Undefined;
+	EndIf;
+
+	// Fill system name
+	vSystemName = pDevice.SystemName;
+		
+	vDLSys = Undefined;
+	#IF NOT MobileClient THEN
+		Try
+			// Build ActiveX object to work with
+			If ValueIsFilled(pDevice.ConnectionType) And
+			   pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232")Then
+				vDLSys = New COMObject("SPort.SPortAx.1");
+				// Set connection parameters
+				vDLSys.InitString(GetCOMPortConnectionString(pDevice));
+				// Open COM port
+				vIsOpen = vDLSys.Open(TrimAll(pDevice.Port));
+				If Not vIsOpen Then
+					AddError(NStr("en = 'Failed to open port: '; ru = 'Не удалось открыть порт: '; de = 'Der Port konnte nicht geöffnet werden: '") + TrimAll(pDevice.Port));
+					Return Undefined;
+				EndIf;
+				// Set block mode
+				vDLSys.BlockMode = True;
+				// Setup timeouts
+				vDLSys.TimeoutReadInterval = 1000;
+				vDLSys.TimeoutReadTotalConstant = 3000;
+				vDLSys.TimeoutReadTotalMultiplier = 100;
+				vDLSys.TimeoutWriteTotalConstant = 3000;
+				vDLSys.TimeoutWriteTotalMultiplier = 100;
+				// Send/receive acknowledgement
+				If Not RS232Acknowledgement(vDLSys) Then
+					AddError(NStr("ru = 'Не удалось получить подтверждение установки связи с системой " + vSystemName + "!'; 
+					              |de = 'Acknowledgement with system " + vSystemName + " failed!'; 
+					              |en = 'Acknowledgement with system " + vSystemName + " failed!'"));
+					vDLSys.Close();
+					Return Undefined;
+				EndIf;
+			Else
+				Try
+			    vDLSys = New COMObject("SocketTools.SocketWrench.10");
+					// Load license
+					vErrorCode = vDLSys.Initialize(tcDoorLocksAtServer.GetCSWSOCK10LicenseKey());
+				Except
+					vDLSys = New COMObject("SocketTools.SocketWrench.6");
+					// Load license
+					vErrorCode = vDLSys.Initialize(tcDoorLocksAtServer.GetCSWSOCK6LicenseKey());
+				EndTry;
+				If vErrorCode <> 0 Then
+					AddError(NStr("en = 'SocketTools.SocketWrench component initialization error: '; ru = 'Ошибка инициализации компоненты SocketTools.SocketWrench! Код ошибки: '; de = 'Fehler bei der Initialisierung der Komponente SocketTools.SocketWrench! Fehlercode: '") + vErrorCode);
+					Return Undefined;
+				EndIf;     
+				vDLSys.Blocking = True;
+				vDLSys.Timeout = 60; // 60 seconds blocking read timeout by default
+				vErrorCode = vDLSys.Connect(TrimAll(pDevice.ServerName), Number(TrimAll(pDevice.Port)));
+				If vErrorCode <> 0 Then
+					AddError(NStr("ru = 'Не найден сервер системы электронных замков " + vSystemName + ": '; 
+					              |de = '" + vSystemName + " system server was not found: '; 
+					              |en = '" + vSystemName + " system server was not found: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+					Return Undefined;
+				EndIf;     
+			EndIf;
+		Except
+			AddError(NStr("ru = 'Ошибка подключения системы электронных замков " + vSystemName + ": '; 
+			              |de = '" + vSystemName + " door lock system connection error: '; 
+			              |en = '" + vSystemName + " door lock system connection error: '") + ErrorDescription());
+			Return Undefined;
+		EndTry;
+	#ENDIF
+	Return vDLSys;
+EndFunction // pmConnect
+
+// -----------------------------------------------------------------------------
+Procedure pmDisconnect(pDLSys,pDevice)
+	vSystemName = pDevice.SystemName;
+	Try
+		If ValueIsFilled(pDevice.ConnectionType) And
+		   pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232") Then
+			pDLSys.Close();
+		Else
+			vErrorCode = pDLSys.Disconnect();
+			If vErrorCode <> 0 Then
+				AddError(NStr("ru = 'Ошибка отключения от сервера эл. замков " + vSystemName + ": '; 
+				              |de = '" + vSystemName + " server disconnect error: '; 
+				              |en = '" + vSystemName + " server disconnect error: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+				Return;
+			EndIf;  
+		EndIf;
+	Except
+		AddError(NStr("ru = 'Ошибка отключения от системы эл. замков " + vSystemName + ": '; 
+		              |de = '" + vSystemName + " system disconnect error: '; 
+		              |en = '" + vSystemName + " system disconnect error: '") + ErrorDescription());
+	EndTry;
+	pDLSys = Undefined;
+EndProcedure // pmDisconnect
+
+// -----------------------------------------------------------------------------
+Function GetCOMPortConnectionString(pDevice)
+	vStr = ""; // "9600,N,8,1,P" by default
+	// Baudrate
+	If pDevice.BaudRate > 0 Then
+		vStr = vStr + Format(pDevice.BaudRate, "ND=6; NFD=0; NZ=; NG=");
+	Else
+		vStr = vStr + "9600";
+	EndIf;
+	// Parity
+	If ValueIsFilled(pDevice.Parity) Then
+		If pDevice.Parity = PredefinedValue("Enum.ParityTypes.Even") Then
+			vStr = vStr + ",E";
+		ElsIf pDevice.Parity = PredefinedValue("Enum.ParityTypes.Odd") Then
+			vStr = vStr + ",O";
+		ElsIf pDevice.Parity = PredefinedValue("Enum.ParityTypes.None") Then
+			vStr = vStr + ",N";
+		ElsIf pDevice.Parity = PredefinedValue("Enum.ParityTypes.Mark") Then
+			vStr = vStr + ",M";
+		ElsIf pDevice.Parity = PredefinedValue("Enum.ParityTypes.Space") Then
+			vStr = vStr + ",S";
+		EndIf;
+	Else
+		vStr = vStr + ",N";
+	EndIf;
+	// Data length
+	If ValueIsFilled(pDevice.DataBits) Then
+		If pDevice.DataBits = PredefinedValue("Enum.DataBits.Bits8") Then
+			vStr = vStr + ",8";
+		ElsIf pDevice.DataBits = PredefinedValue("Enum.DataBits.Bits7") Then
+			vStr = vStr + ",7";
+		EndIf;
+	Else
+		vStr = vStr + ",8";
+	EndIf;
+	// Stop bits
+	If ValueIsFilled(pDevice.StopBits) Then
+		If pDevice.StopBits = PredefinedValue("Enum.StopBits.Bits1") Then
+			vStr = vStr + ",1";
+		ElsIf pDevice.StopBits = PredefinedValue("Enum.StopBits.Bits2") Then
+			vStr = vStr + ",2";
+		EndIf;
+	Else
+		vStr = vStr + ",1";
+	EndIf;
+	// Hardware flow control always
+	vStr = vStr + ",P";
+	Return vStr;		
+EndFunction // GetCOMPortConnectionString
+
+// -----------------------------------------------------------------------------
+Function RS232Acknowledgement(pDLSys)
+	ENQ = Char(5);
+	ACK = Char(6);
+	NAK = Char(21);
+
+	// Send ENQ and wait for ACK
+	vBytesSent = pDLSys.WriteStr(ENQ);
+	If vBytesSent = 1 Then
+		pDLSys.TimeoutReadTotalConstant = 3000;
+		vReply = pDLSys.ReadStr();
+		If vReply = ACK Then
+			Return True;
+		ElsIf vReply = NAK Then
+			AddError(NStr("en = 'NAK received on acknowledgement!'; ru = 'При подтверждении связи получен NAK!'; de = 'Bei der Bestätigung der Verbindung NAK erhalten!'"));
+		Else
+			AddError(NStr("en = 'Wrong reply received on acknowledgement: '; ru = 'При подтверждении связи получен символ: '; de = 'Bei der Bestätigung der Verbindung Symbol erhalten: '") + vReply);
+		EndIf;
+	Else
+		AddError(NStr("en = 'Wrong number of bytes sent on acknowledgement: '; ru = 'При подтверждении связи отправлено байт: '; de = 'Bei der Bestätigung der Verbindung Byte versendet: '") + vBytesSent);
+	EndIf;
+	Return False;
+EndFunction // RS232Acknowledgement
+
+// -----------------------------------------------------------------------------
+Function GetErrorCode(pRC)
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+	RC_UNKNOWN = 100;
+	RC_NO_FOLIO = 101;
+	RC_NO_ID_CARD = 102;
+	RC_NO_REPLY = 103;
+	RC_WRONG_REPLY = 104;
+	RC_SYNTAX_ERROR = 105;
+	RC_NO_COMMUNICATION = 106;
+	RC_OVERFLOW = 107;
+	RC_MAGNETIC_TRACK_ERROR = 108;
+	RC_MAGNETIC_FORMAT_ERROR = 109;
+	RC_MAGNETIC_LEVEL_ERROR = 110;
+	RC_DEVICE_TIME_OUT = 111;
+	RC_NO_GUEST_PREVIOUSLY_CHECKED_IN = 112;
+	RC_WRONG_ROOM = 113;
+	RC_ROOM_WITHOUT_DOOR_LOCK = 114;
+	RC_CARD_MEMORY_OVERFLOW = 115;
+	
+	vErrorCode = RC_UNKNOWN;
+	If pRC = "ES" Then
+		vErrorCode = RC_SYNTAX_ERROR;
+	ElsIf pRC = "NC" Then
+		vErrorCode = RC_NO_COMMUNICATION;
+	ElsIf pRC = "NF" Then
+		vErrorCode = RC_CARD_MEMORY_OVERFLOW;
+	ElsIf pRC = "OV" Then
+		vErrorCode = RC_OVERFLOW;
+	ElsIf pRC = "EP" Then
+		vErrorCode = RC_MAGNETIC_TRACK_ERROR;
+	ElsIf pRC = "EF" Then
+		vErrorCode = RC_MAGNETIC_FORMAT_ERROR;
+	ElsIf pRC = "EN" Then
+		vErrorCode = RC_MAGNETIC_LEVEL_ERROR;
+	ElsIf pRC = "TD" Then
+		vErrorCode = RC_WRONG_ROOM;
+	ElsIf pRC = "ED" Then
+		vErrorCode = RC_DEVICE_TIME_OUT;
+	ElsIf pRC = "EA" Then
+		vErrorCode = RC_NO_GUEST_PREVIOUSLY_CHECKED_IN;
+	ElsIf pRC = "OS" Then
+		vErrorCode = RC_ROOM_WITHOUT_DOOR_LOCK;
+	EndIf;
+	Return vErrorCode;
+EndFunction // GetErrorCode
+
+// -----------------------------------------------------------------------------
+// Description: Always returns char(13) so far...
+// Parameters: Character string to process
+// Return value: Char(13)
+// -----------------------------------------------------------------------------
+Function CharLRC(pStr, pRet13 = True) 
+	If pRet13 Then
+		Return Char(13);
+	Else
+		vSeed = "00000000";
+		For i = 1 To StrLen(pStr) Do
+			vChar = Dec2Bin(CharCode(Mid(pStr, i, 1)));
+			vSeed = XOR(vSeed, vChar);
+		EndDo;
+		Return Char(Bin2Dec(vSeed));
+	EndIf;
+EndFunction // cmCharLRC
+
+// -----------------------------------------------------------------------------
+// Description: Checks longitudinal redundancy check sum for the input 
+//              character string. Last one char of string is assumed to be 
+//              input check sum to be compared with new calculated one.
+// Parameters: Character string to process
+// Return value: True if check sum is right, false if not
+// -----------------------------------------------------------------------------
+Function CheckCharLRC(pStr, pRet13 = True) 
+	vInpCharLRC = Right(pStr, 1);
+	vStr = Left(pStr, StrLen(pStr) - 1);
+	vNewCharLRC = CharLRC(vStr, pRet13);
+	If vNewCharLRC = Char(13) Or vNewCharLRC = vInpCharLRC Then
+		Return True;
+	Else
+		Return False;
+	EndIf;
+EndFunction // cmCheckCharLRC
+
+// -----------------------------------------------------------------------------
+// Description: Returns binary string representing positive decimal number
+// Parameters: Decimal number
+// Return value: Binary number presentation as string
+// -----------------------------------------------------------------------------
+Function Dec2Bin(pDec) 
+	vBin = "";
+	vDiv = pDec;
+	While vDiv > 0 Do
+		vIntDiv = Int(vDiv/2);
+		vBinChar = "0";
+		If vDiv <> vIntDiv*2 Then
+			vBinChar = "1";
+		EndIf;
+		vBin = vBinChar + vBin;
+		vDiv = vIntDiv;
+	EndDo;
+	Return vBin;
+EndFunction // cmDec2Bin
+
+// -----------------------------------------------------------------------------
+Function AddTrack1And2(pDLSys, pDta, pAdd = False,pDevice,pParameters)
+	SEP = Char(1110);
+	RC_NO_FOLIO = 101;
+	RC_NO_ID_CARD = 102;
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+
+	If pDevice.WriteTrack1 Or pDevice.WriteTrack2 Then
+		// Add/get client identification card
+		If ValueIsFilled(pParameters.Folio) Then
+			vIDCardRef = tcOnServer.GetClientIdentificationCard("", Undefined, pParameters.ParentDoc, pParameters.Folio, pParameters.Guest, pParameters.Room, pParameters.CheckInDate, pParameters.CheckOutDate, pAdd);
+			vIDCardArr = tcOnServer.cmGetAtributeAsArray(vIDCardRef);
+			If ValueIsFilled(vIDCardRef) Then
+				pParameters.IdentificationCard = vIDCardRef;
+				// Track 1 data: CardIdentifier^FolioNumber^Room^ClientFullName^CheckInDate^CheckOutDate
+				If pDevice.WriteTrack1 Then
+					vTrack1 = TrimAll(vIDCardArr.Identifier) + "^" +
+					          ?(ValueIsFilled(vIDCardArr.Folio), Transliterate(TrimAll(tcOnServer.cmGetAttributeByRef(vIDCardArr.Folio,"Number")), True,pDevice.DoGuestNamesTransliteration), "") + "^" + 
+					          ?(ValueIsFilled(vIDCardArr.Room), Transliterate(TrimAll(tcOnServer.cmGetAttributeByRef(vIDCardArr.Room,"Description")), True, pDevice.DoGuestNamesTransliteration), "") + "^" + 
+					          ?(ValueIsFilled(vIDCardArr.Client), Transliterate(TrimAll(tcOnServer.cmGetAttributeByRef(vIDCardArr.Client,"FullName")), True, pDevice.DoGuestNamesTransliteration), "") + "^" + 
+					          Format(vIDCardArr.DateTimeFrom, "DF='yyMMdd'") + "^" + 
+					          Format(vIDCardArr.DateTimeTo, "DF='yyMMdd'");
+					pDta = pDta + SEP + Left(vTrack1, ?(pDevice.Track1Length > 0, pDevice.Track1Length, 62));
+				Else
+					pDta = pDta + SEP;
+				EndIf;
+				// Track 2 data: CardIdentifier
+				If pDevice.WriteTrack2 Then
+					vTrack2 = TrimAll(vIDCardArr.Identifier);
+					pDta = pDta + SEP + Left(vTrack2, 14);
+				Else
+					pDta = pDta + SEP;
+				EndIf;
+			Else
+				vErrorCode = RC_NO_ID_CARD;
+				AddError(NStr("en='Error issuing key card: ';ru='Ошибка выдачи карты: ';de='Fehler bei der Kartenausstellung: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+				pmDisconnect(pDLSys, pDevice);
+				Return vErrorCode;
+			EndIf;
+		Else
+			vErrorCode = RC_NO_FOLIO;
+			AddError(NStr("en='Error issuing key card: ';ru='Ошибка выдачи карты: ';de='Fehler bei der Kartenausstellung: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pDevice.SystemName));
+			pmDisconnect(pDLSys, pDevice);
+			Return vErrorCode;
+		EndIf;
+	Else
+		pDta = pDta + SEP + SEP;
+	EndIf;
+	Return RC_OK;
+EndFunction // AddTrack1And2	
+
+// -----------------------------------------------------------------------------
+Function TCPAcknowledgement(pDLSys)
+	ENQ = Char(5);
+	ACK = Char(6);
+	NAK = Char(21);
+	// Send ENQ and wait for ACK
+	vBytesSent = pDLSys.Write(ENQ, 1);
+	If vBytesSent <> -1 Then
+		pDLSys.Timeout = 3;
+		vReply = "";
+		If pDLSys.Read(vReply, 1) <> -1 Then
+			If vReply = ACK Then
+				Return True;
+			ElsIf vReply = NAK Then
+				AddError(NStr("en = 'NAK received on acknowledgement!'; ru = 'При подтверждении связи получен NAK!'; de = 'Bei der Bestätigung der Verbindung NAK erhalten!'"));
+			Else
+				AddError(NStr("en = 'Wrong reply received on acknowledgement: '; ru = 'При подтверждении связи получен символ: '; de = 'Bei der Bestätigung der Verbindung Symbol erhalten: '") + vReply);
+			EndIf;
+		Else
+			AddError(NStr("en = 'Acknowledgement error: '; ru = 'Ошибка подтверждения связи: '; de = 'Fehler bei der Verbindungsbestätigung: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+		EndIf;
+	Else
+		AddError(NStr("en = 'Acknowledgement error: '; ru = 'Ошибка подтверждения связи: '; de = 'Fehler bei der Verbindungsbestätigung: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+	EndIf;
+	Return False;
+EndFunction // TCPAcknowledgement
+
+// -----------------------------------------------------------------------------
+Function CallRS232Command(pDLSys, pReadTimeout = 60000, pEncoderNumber, pCommandCode, pDta, pWithRetention = "", pReply, pSystemName)
+	pReply = "";
+	SEP = Char(1110); // It will be converted from Char(1110) in UTF-8 to Char(179) in CP-437 (Win-1251, etc...)
+	ENQ = Char(5);
+	ACK = Char(6);
+	NAK = Char(21);
+	STX = Char(2);
+	ETX = Char(3);
+	DLE = Char(16);
+	RC_NO_REPLY = 103;
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+	RC_UNKNOWN = 100;
+	RC_SYNTAX_ERROR = 105;
+	RC_WRONG_REPLY = 104;
+	
+	vErrorCode = RC_OK;
+	// Format encoder number and source address
+	vEncoderNumber = TrimAll(pEncoderNumber);
+	// Build command string for the RS232 interface
+	vCmd = SEP + pCommandCode; // Command code
+	vCmd = vCmd + SEP + vEncoderNumber; // Destination address
+	If pCommandCode <> "CO" And pCommandCode <> "CP" Then
+		If pWithRetention <> "NO_CARD_EJECTION" Then
+			vCmd = vCmd + SEP + "E"; // With ejection of the card
+		Else
+			vCmd = vCmd + SEP + "R"; // With retention of the card
+		EndIf;
+	EndIf;
+	vCmd = vCmd + pDta; // Command data
+	vCmd = vCmd + SEP + ETX;
+	vCmd = STX + vCmd + CharLRC(vCmd);
+	// Send acknowledgement
+	If Not RS232Acknowledgement(pDLSys) Then
+		Return RC_NO_REPLY;
+	EndIf;
+	// Send command and get acknowledgement
+	pDLSys.TimeoutReadTotalConstant = 3000;
+	For i = 1 To 3 Do
+		vBytesSent = pDLSys.WriteStr(vCmd);
+		If vBytesSent > 0 Then
+			vReply = pDLSys.ReadStr();
+			If vReply = ACK Then
+				Break;
+			Else
+				If vReply <> NAK Then
+					Return RC_NO_REPLY;
+				EndIf;
+				pDLSys.PurgeQueue();
+			EndIf;
+		Else
+			Return RC_NO_CONNECTION;
+		EndIf;
+	EndDo;
+	pDLSys.PurgeQueue();
+	If vReply = NAK Then
+		Return RC_SYNTAX_ERROR;
+	EndIf;
+	// Read command reply message
+	vReadOK = False;
+	pDLSys.TimeoutReadTotalConstant = pReadTimeout;
+	For i = 1 To 3 Do
+		pReply = pDLSys.ReadStr();
+		If Not IsBlankString(pReply) Then
+			// Check LRC
+			pReply = StrReplace(pReply, STX, "");
+			If CheckCharLRC(pReply) Then
+				vBytesSent = pDLSys.WriteStr(ACK);
+				vReadOK = True;
+				Break;
+			Else
+				vBytesSent = pDLSys.WriteStr(NAK);
+				pDLSys.TimeoutReadTotalConstant = 3000;
+			EndIf;
+		Else
+			Return RC_NO_REPLY;
+		EndIf;
+	EndDo;
+	If Not vReadOK Then
+		vErrorCode = RC_WRONG_REPLY;
+	Else
+		// Retreive return code
+		vRC = Mid(pReply, 2, 2);
+		If vRC <> Left(pCommandCode, 2) Then
+			vErrorCode = GetErrorCode(vRC);
+			AddError(NStr("ru = 'Ошибка системы эл. замков " + pSystemName + ": '; 
+			              |de = '" + pSystemName + " system error: '; 
+			              |en = '" + pSystemName + " system error: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pSystemName));
+		Else
+			// Retreive reply data
+			vPrefixLen = StrLen(SEP + pCommandCode + SEP + vEncoderNumber);
+			If StrLen(pReply) > vPrefixLen Then
+				pReply = Mid(pReply, vPrefixLen+1, StrLen(pReply) - vPrefixLen);
+			Else
+				pReply = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	Return vErrorCode;
+EndFunction // CallRS232Command
+
+// -----------------------------------------------------------------------------
+Function CallTCPCommand(pDLSys, pReadTimeout = 60, pEncoderNumber, pCommandCode, pDta, pWithRetention = "", pReply, pSystemName)
+	SEP = Char(1110); // It will be converted from Char(1110) in UTF-8 to Char(179) in CP-437 (Win-1251, etc...)
+	ENQ = Char(5);
+	ACK = Char(6);
+	NAK = Char(21);
+	STX = Char(2);
+	ETX = Char(3);
+	DLE = Char(16);
+	RC_NO_REPLY = 103;
+	RC_NO_CONNECTION = -1;
+	RC_OK = 0;
+	RC_UNKNOWN = 100;
+	RC_SYNTAX_ERROR = 105;
+	RC_WRONG_REPLY = 104;
+	
+	vErrorCode = RC_OK;
+
+	pReply = "";
+	// Format encoder number and source address
+	vEncoderNumber = TrimAll(pEncoderNumber);
+	// Build command string for the TCP interface
+	vCmd = SEP + pCommandCode; // Command code
+	vCmd = vCmd + SEP + vEncoderNumber; // Destination address
+	If pCommandCode <> "CO" And pCommandCode <> "CP" Then
+		If pWithRetention <> "NO_CARD_EJECTION" Then
+			vCmd = vCmd + SEP + "E"; // With ejection of the card
+		Else
+			vCmd = vCmd + SEP + "R"; // With retention of the card
+		EndIf;
+	EndIf;
+	vCmd = vCmd + pDta; // Command data
+	vCmd = vCmd + SEP + ETX;
+	vCmd = STX + vCmd + CharLRC(vCmd);
+	// Send acknowledgement
+	If Not TCPAcknowledgement(pDLSys) Then
+		Return RC_NO_REPLY;
+	EndIf;
+	// Send command and get acknowledgement
+	pDLSys.Timeout = 3;
+	For i = 1 To 3 Do
+		If pDLSys.Write(vCmd, StrLen(vCmd)) <> -1 Then
+			vReply = "";
+			If pDLSys.Read(vReply, 1) <> -1 Then
+				If vReply = ACK Then
+					Break;
+				Else
+					If vReply <> NAK Then
+						Return RC_NO_REPLY;
+					EndIf;
+				EndIf;
+			Else
+				AddError(NStr("en='Read command confirmation error: ';ru='Ошибка получения подтверждения команды: ';de='Fehler bei der Einholung der Befehlbestätigung: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+				Return RC_NO_CONNECTION;
+			EndIf;
+		Else
+			AddError(NStr("en='Write command error: ';ru='Ошибка отправки команды: ';de='Fehler beim Versenden des Befehls: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+			Return RC_NO_CONNECTION;
+		EndIf;
+	EndDo;
+	// Read command reply message
+	vReadOK = False;
+	pDLSys.Timeout = pReadTimeout;
+	For i = 1 To 3 Do
+		pReply = "";
+		If pDLSys.Read(pReply, 1024) <> -1 Then
+			If Not IsBlankString(pReply) Then
+				// Check LRC
+				pReply = StrReplace(pReply, STX, "");
+				If CheckCharLRC(pReply) Then
+					If pDLSys.Write(ACK, 1) <> -1 Then
+						vReadOK = True;
+						Break;
+					Else
+						AddError(NStr("en='Write command reply confirmation error: ';ru='Ошибка отправки подтверждения чтения ответа: ';de='Fehler beim Versenden der Lesebestätigung der Antwort: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+						Return RC_NO_CONNECTION;
+					EndIf;
+				Else
+					pDLSys.Write(NAK, 1);
+					pDLSys.Timeout = 3;
+				EndIf;
+			Else
+				Return RC_NO_REPLY;
+			EndIf;
+		Else
+			AddError(NStr("en='Read command reply error: ';ru='Ошибка чтения ответа на команду: ';de='Fehler beim Lesen der Antwort auf den Befehl: '") + pDLSys.LastError + " - " + pDLSys.LastErrorString);
+			Return RC_NO_CONNECTION;
+		EndIf;
+	EndDo;
+	If Not vReadOK Then
+		vErrorCode = RC_WRONG_REPLY;
+	Else
+		// Retreive return code
+		vRC = Mid(pReply, 2, 2);
+		If vRC <> Left(pCommandCode, 2) Then
+			vErrorCode = GetErrorCode(vRC);
+			AddError(NStr("ru = 'Ошибка системы эл. замков " + pSystemName + ": '; 
+			              |de = '" + pSystemName + " system error: '; 
+			              |en = '" + pSystemName + " system error: '") + vErrorCode + " - " + pmGetErrorDescription(vErrorCode, pSystemName));
+		Else
+			// Retreive reply data
+			vPrefixLen = StrLen(SEP + pCommandCode + SEP + vEncoderNumber);
+			If StrLen(pReply) > vPrefixLen Then
+				pReply = Mid(pReply, vPrefixLen+1, StrLen(pReply) - vPrefixLen);
+			Else
+				pReply = "";
+			EndIf;
+		EndIf;
+	EndIf;
+	Return vErrorCode;
+EndFunction // CallTCPCommand
+
+// -----------------------------------------------------------------------------
+Function MakeNewKey(pDLSys, pEncoderNumber, pDta, pDevice, pParameters)
+	// Define command code
+	vCommandCode = "CN";
+	vNumberOfKeys = pParameters.NumberOfKeys;
+	If vNumberOfKeys > 1 Then
+		vCommandCode = vCommandCode + Format(vNumberOfKeys, "ND=1; NFD=0; NG=");
+	EndIf;	
+	// Choose transport
+	If ValueIsFilled(pDevice.ConnectionType) And
+	   pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232") Then
+		// Using RS232 interface
+		vReply = "";
+		vErrorCode = CallRS232Command(pDLSys, 60000, pEncoderNumber, vCommandCode, pDta, "", vReply, pDevice.SystemName);
+	Else
+		// Using TCP/IP interface
+		vReply = "";
+		vErrorCode = CallTCPCommand(pDLSys, 60, pEncoderNumber, vCommandCode, pDta, "", vReply, pDevice.SystemName);
+	EndIf;
+	// Save card UID
+	If Not IsBlankString(vReply) And pDevice.ReturnCardUID Then
+		vReplyLen = StrLen(vReply);
+		If vReplyLen > 3 Then
+			vCardUID = Mid(vReply, 2, (vReplyLen - 4));
+			If pDevice.ConvertUUIDToDecimal Then
+				vCardUID = ConvertUUIDToDecimal(vCardUID, pDevice.BytesToConvert); 		
+			EndIf;
+			If ValueIsFilled(pParameters.IdentificationCard) Then
+				tcOnServer.cmWriteAttributeCatalogByRef(pParameters.IdentificationCard, New Structure("CardUID", vCardUID));
+			Else
+				pParameters.IdentificationCard = tcOnServer.GetClientIdentificationCard(vCardUID, tcOnServer.GetClientIdentificationCardById(vCardUID), pParameters.ParentDoc, pParameters.Folio, pParameters.Guest, pParameters.Room, pParameters.CheckInDate, pParameters.CheckOutDate, True, vCardUID);
+			EndIf;
+		EndIf;
+	EndIf;
+	Return vErrorCode;
+EndFunction // MakeNewKey
+
+// -----------------------------------------------------------------------------
+Function AddKey(pDLSys, pEncoderNumber, pDta, pDevice, pParameters)
+	// Define command code
+	vCommandCode = "CC";
+	vNumberOfKeys = pParameters.NumberOfKeys;
+	If vNumberOfKeys > 1 Then
+		vCommandCode = vCommandCode + Format(vNumberOfKeys, "ND=1; NFD=0; NG=");
+	EndIf;	
+	// Choose transport
+	If ValueIsFilled(pDevice.ConnectionType) And
+	    pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232") Then
+		// Using RS232 interface
+		vReply = "";
+		vErrorCode = CallRS232Command(pDLSys, 60000, pEncoderNumber, vCommandCode, pDta, "", vReply, pDevice.SystemName);
+	Else
+		// Using TCP/IP interface
+		vReply = "";
+		vErrorCode = CallTCPCommand(pDLSys, 60, pEncoderNumber, vCommandCode, pDta, "", vReply, pDevice.SystemName);
+	EndIf;
+	// Save card UID
+	If Not IsBlankString(vReply) And pDevice.ReturnCardUID Then
+		vReplyLen = StrLen(vReply);
+		If vReplyLen > 3 Then
+			vCardUID = Mid(vReply, 2, (vReplyLen - 4));
+			If pDevice.ConvertUUIDToDecimal Then
+				vCardUID = ConvertUUIDToDecimal(vCardUID, pDevice.BytesToConvert); 		
+			EndIf;
+			If ValueIsFilled(pParameters.IdentificationCard) Then
+				tcOnServer.cmWriteAttributeCatalogByRef(pParameters.IdentificationCard, New Structure("CardUID", vCardUID));
+			Else
+				pParameters.IdentificationCard = tcOnServer.GetClientIdentificationCard(vCardUID, tcOnServer.GetClientIdentificationCardById(vCardUID), pParameters.ParentDoc, pParameters.Folio, pParameters.Guest, pParameters.Room, pParameters.CheckInDate, pParameters.CheckOutDate, True, vCardUID);
+			EndIf;
+		EndIf;
+	EndIf;
+	Return vErrorCode;
+EndFunction // AddKey
+
+// -----------------------------------------------------------------------------
+Function Verify(pDLSys, pEncoderNumber, pCardDesc, pDevice)
+	RC_OK = 0;
+
+	vErrorCode = RC_OK;
+	pCardDesc = "";
+	vReply = "";
+	// Retention or ejection of the card
+	vRetention = "";
+	If ValueIsFilled(pDevice) And 
+	  (pDevice.WriteTrack2 Or pDevice.WriteTrack1) Then
+		vRetention = "NO_CARD_EJECTION";
+	EndIf;
+	// Define command
+	vCommandCode = "LT";
+	If ValueIsFilled(pDevice.ConnectionType) And
+	   pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232") Then
+		// Send command using RS232 interface
+		vErrorCode = CallRS232Command(pDLSys, 60000, pEncoderNumber, vCommandCode, "", vRetention, vReply, pDevice.SystemName);
+	Else
+		// Send command using TCP interface
+		vErrorCode = CallTCPCommand(pDLSys, 60, pEncoderNumber, vCommandCode, "", vRetention, vReply, pDevice.SystemName);
+	EndIf;
+	// Retrieve card data
+	If vErrorCode = RC_OK Then
+		pCardDesc = vReply;
+	EndIf;
+	Return vErrorCode;
+EndFunction // Verify
+
+// -----------------------------------------------------------------------------
+Function pmParseCardDescription(Val pCardDesc, pHotel)
+	vCardData = New Structure();
+	vCardData.Insert("ReplyType", "");
+	vCardData.Insert("ReplyDescription", "");
+	vCardData.Insert("CardRoom", "");
+	vCardData.Insert("CardRoom2", "");
+	vCardData.Insert("CardRoom3", "");
+	vCardData.Insert("CardRoom4", "");
+	vCardData.Insert("IsCardValidCode", "");
+	vCardData.Insert("IsCardValidDescription", "");
+	vCardData.Insert("CardCopyNumber", "");
+	vCardData.Insert("AssignedAuthorizations", "");
+	vCardData.Insert("CardCheckInDate", '00010101');
+	vCardData.Insert("CardCheckOutDate", '00010101');
+	vCardData.Insert("CardOperator", "");
+	vCardData.Insert("CardAuthorizations", "");
+	vCardData.Insert("CardID", "");
+	vCardData.Insert("CardFullName", "");
+	
+	// Get reply type
+	vReplyType = Mid(pCardDesc, 2, 2);
+	If vReplyType = "LD" Then
+		vCardData.ReplyType = "Message";
+		vCardData.ReplyDescription = NStr("en='Unidentified card!';ru='Карта не опознана!';de='Die Karte wurde nicht erkannt!'");
+	ElsIf vReplyType = "LC" Then
+		vCardData.ReplyType = "Message";
+		vCardData.ReplyDescription = NStr("en='Guest card NOT valid!';ru='Карта не действует!';de='Die Karte funktioniert nicht!'");
+	ElsIf vReplyType = "LM" Then
+		vCardData.ReplyType = "Message";
+		vCardData.ReplyDescription = NStr("en='Master card or special card!';ru='Мастер-карта или другая специальная карта!';de='Leitkarte und eine andere Spezialkarte!'");
+	ElsIf vReplyType = "LR" Then
+		vCardData.ReplyType = "Message";
+		vCardData.ReplyDescription = NStr("en='Spare card for guests!';ru='Запасная гостевая карта!';de='Ersatzkarte des Gastes!'");
+	ElsIf vReplyType = "LS" Then
+		vCardData.ReplyType = "Message";
+		vCardData.ReplyDescription = NStr("en='Diagnostic card!';ru='Диагностическая карта!';de='Diagnosekarte!'");
+	Else
+		// Read card data
+		pCardDesc = Right(pCardDesc, StrLen(pCardDesc) - 1);
+		// Card parameters
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardRoom = vWord;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardRoom2 = vWord;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardRoom3 = vWord;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardRoom4 = vWord;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.IsCardValidCode = vWord;
+		If vWord = "CI" Then
+			vCardData.IsCardValidDescription = NStr("en='Card is valid!';ru='Действующая карта!';de='Gültige Karte!'");
+		ElsIf vWord = "CO" Then
+			vCardData.IsCardValidDescription = NStr("en='Card has been canceled by check out or other card!';ru='Гость выехал или карта отменена другой картой!';de='Der Gast ist abgereist oder die Karte wurde durch eine andere ersetzt!'");
+		EndIf;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardCopyNumber = vWord;
+		If vWord > "0" Then
+			vCardData.IsCardValidDescription = vCardData.IsCardValidDescription + Chars.LF + 
+			                                   NStr("en='Copy N';ru='Копия №';de='Kopie Nr.'") + 
+			                                   vWord;
+		EndIf;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.AssignedAuthorizations = vWord;
+		// Try to retrieve card authorizations
+		vAuthRef = tcOnServer.qmFindAuthorizations(pHotel, vCardData.AssignedAuthorizations);
+		If ValueIsFilled(vAuthRef) Then
+			vCardData.CardAuthorizations = TrimAll(vAuthRef.Code) + " - " + TrimAll(vAuthRef.Description);
+		EndIf;
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardCheckInDate = GetDate(vWord);
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardCheckOutDate = GetDate(vWord);
+		vWord = GetNextWord(pCardDesc);
+		vCardData.CardOperator = vWord;
+	EndIf;
+	Return vCardData;
+EndFunction // pmParseCardDescription
+
+// -----------------------------------------------------------------------------
+Function GetNextWord(pStr, pDelimeter="")
+	SEP = Char(1110);
+	If pDelimeter = "" Then
+		pDelimeter = SEP;
+	EndIf;
+	vWord = "";
+	vPos = Find(pStr, pDelimeter);
+	If vPos > 0 Then
+		vWord = Left(pStr, vPos-1);
+		pStr = TrimL(Right(pStr, StrLen(pStr) - vPos));
+	Else
+		vWord = TrimL(pStr);
+		pStr = "";
+	EndIf;
+	Return vWord;
+EndFunction // GetNextWord
+
+// -----------------------------------------------------------------------------
+// Description: Builds client identification card identifier from the data being read from the card
+// Parameters: Data being read from the card
+// Return value: String, card identifier
+// -----------------------------------------------------------------------------
+Function GetCardIdentifier(pCardData) 
+	vCardID = pCardData;
+	If StrLen(pCardData) > 3 Then
+		// Remove prefix and suffix chars
+		If Right(pCardData, 3) = "+++" Then
+			vCardID = Mid(TrimAll(pCardData), 2);
+			vCardID = Left(vCardID, StrLen(vCardID) - 3);
+		ElsIf Right(pCardData, 2) = "?," Then
+			vCardID = Mid(TrimAll(pCardData), 2);
+			vCardID = Left(vCardID, StrLen(vCardID) - 2);
+		ElsIf CharCode(Left(pCardData, 1)) = 1110 And CharCode(Mid(pCardData, 2, 1)) = 59 And CharCode(Mid(pCardData, 15, 1)) = 58 Then
+			vCardID = Mid(pCardData, 3, 12);
+		ElsIf CharCode(Left(pCardData, 1)) = 1110 And CharCode(Mid(pCardData, 14, 1)) = 191 Then
+			vCardID = Mid(pCardData, 2, 12);
+		ElsIf CharCode(Left(pCardData, 1)) = 186 And CharCode(Mid(pCardData, 14, 1)) = 191 Then
+			vCardID = Mid(pCardData, 2, 12);
+		ElsIf Left(pCardData, 1) = ";" And Mid(pCardData, 14, 1) = "?" Then
+			vCardID = Mid(pCardData, 2, 12);
+		ElsIf Upper(Right(pCardData, 7)) = "NO CARD" And StrLen(TrimAll(pCardData)) > 7 Then
+			vCardID = TrimAll(Left(TrimAll(pCardData), StrLen(TrimAll(pCardData)) - 7));
+		EndIf;
+	Else
+		vCardID = "";
+	EndIf;
+	Return vCardID;
+EndFunction // cmGetCardIdentifier	
+
+// -----------------------------------------------------------------------------
+Function ReadTrack2(pDLSys, pEncoderNumber, pTrack2, pDevice, pSystemName)
+	RC_OK = 0;
+
+	vErrorCode = RC_OK;
+	pTrack2 = "";
+	vReply = "";
+	// Retention or ejection of the card
+	vRetention = "";
+	// Define command
+	vCommandCode = "L2";
+	If ValueIsFilled(pDevice.ConnectionType) And
+	   pDevice.ConnectionType = PredefinedValue("Enum.ConnectionTypes.RS232") Then
+		// Send command using RS232 interface
+		vErrorCode = CallRS232Command(pDLSys, 60000, pEncoderNumber, vCommandCode, "", vRetention, vReply, pSystemName);
+	Else
+		// Send command using TCP interface
+		vErrorCode = CallTCPCommand(pDLSys, 60, pEncoderNumber, vCommandCode, "", vRetention, vReply, pSystemName);
+	EndIf;
+	// Retrieve card data
+	If vErrorCode = RC_OK Then
+		pTrack2 = vReply;
+	EndIf;
+	Return vErrorCode;
+EndFunction // ReadTrack2
+
+// -----------------------------------------------------------------------------
+Function GetDate(pDateStr)
+	Try
+		If Not IsBlankString(pDateStr) Then
+			If StrLen(pDateStr) > 8 Then
+				vHour = Left(pDateStr, 2);
+				vMinute = Mid(pDateStr, 3, 2);
+				vDay = Mid(pDateStr, 5, 2);
+				vMonth = Mid(pDateStr, 7, 2);
+				vYear = "20" + Mid(pDateStr, 9, 2);
+			Else
+				vHour = Left(pDateStr, 2);
+				vMinute = "0";
+				vDay = Mid(pDateStr, 3, 2);
+				vMonth = Mid(pDateStr, 5, 2);
+				vYear = "20" + Mid(pDateStr, 7, 2);
+			EndIf;
+			Return Date(Number(vYear), Number(vMonth), Number(vDay), Number(vHour), Number(vMinute), 0);
+		Else
+			Return '00010101';
+		EndIf;
+	Except
+		Return '00010101';
+	EndTry;
+EndFunction // GetDate
+
+
+
+#EndRegion
+

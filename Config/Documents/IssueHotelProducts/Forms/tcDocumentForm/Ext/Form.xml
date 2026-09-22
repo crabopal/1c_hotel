@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormPostAndClose" id="125">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Save and close</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern und schließen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="126"/>
+			</Button>
+			<Button name="FormWrite" id="127">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Einschreiben</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormWriteExtendedTooltip" id="128"/>
+			</Button>
+			<Button name="FormIssueHotelProductsFillInvoice" id="162">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.IssueHotelProductsFillInvoice</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.Stamp</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="FormIssueHotelProductsFillInvoiceExtendedTooltip" id="163"/>
+			</Button>
+			<Popup name="Printing" id="156">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Printing</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Drucken</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="PrintingExtendedTooltip" id="157"/>
+				<ChildItems>
+					<Button name="PrintHotelProductsLog" id="160">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.PrintHotelProductsLog</CommandName>
+						<ExtendedTooltip name="PrintHotelProductsLogExtendedTooltip" id="161"/>
+					</Button>
+					<Button name="PrintBillOfShipment" id="158">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.PrintBillOfShipment</CommandName>
+						<ExtendedTooltip name="PrintBillOfShipmentExtendedTooltip" id="159"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="VoucherShipmentType" id="170">
+			<DataPath>Object.VoucherShipmentType</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Registration of vouchers</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierung von Gutscheinen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бланки путевок</v8:content>
+				</v8:item>
+			</Title>
+			<InputHint>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select the type of operation</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wählen Sie einen Operationstyp aus</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выберите тип операции</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="VoucherShipmentTypeContextMenu" id="171"/>
+			<ExtendedTooltip name="VoucherShipmentTypeExtendedTooltip" id="172"/>
+			<Events>
+				<Event name="OnChange">VoucherShipmentTypeOnChange</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupIssueToCounterpartyData" id="173">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Shipment to counterparty data</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Versand an Gegenparteidaten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные отгрузки на сторону</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupIssueToCounterpartyDataExtendedTooltip" id="174"/>
+			<ChildItems>
+				<UsualGroup name="GroupIssuer" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Issuer data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Emittentendaten</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные эмитента</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group issuer</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupIssuerExtendedTooltip" id="138"/>
+					<ChildItems>
+						<InputField name="Company" id="10">
+							<DataPath>Object.Company</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="CompanyContextMenu" id="11"/>
+							<ExtendedTooltip name="CompanyExtendedTooltip" id="12"/>
+						</InputField>
+						<InputField name="RoomQuota" id="19">
+							<DataPath>Object.RoomQuota</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Allotment</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Allotment</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Квота</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="RoomQuotaContextMenu" id="20"/>
+							<ExtendedTooltip name="RoomQuotaExtendedTooltip" id="21"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupPayer" id="135">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zahler</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плательщик</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupPayerExtendedTooltip" id="136"/>
+					<ChildItems>
+						<InputField name="Customer" id="13">
+							<DataPath>Object.Customer</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="CustomerContextMenu" id="14"/>
+							<ExtendedTooltip name="CustomerExtendedTooltip" id="15"/>
+						</InputField>
+						<InputField name="Contract" id="16">
+							<DataPath>Object.Contract</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Customer</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ContractContextMenu" id="17"/>
+							<ExtendedTooltip name="ContractExtendedTooltip" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupShipmentParameters" id="143">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Shipment parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Versandparameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры отгрузки</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupShipmentParametersExtendedTooltip" id="144"/>
+					<ChildItems>
+						<InputField name="BillOfShipment" id="22">
+							<DataPath>Object.BillOfShipment</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="BillOfShipmentContextMenu" id="23"/>
+							<ExtendedTooltip name="BillOfShipmentExtendedTooltip" id="24"/>
+						</InputField>
+						<UsualGroup name="GroupFlags" id="145">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group flags</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="GroupFlagsExtendedTooltip" id="146"/>
+							<ChildItems>
+								<CheckBoxField name="FixPlannedPeriod" id="31">
+									<DataPath>Object.FixPlannedPeriod</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FixPlannedPeriodContextMenu" id="32"/>
+									<ExtendedTooltip name="FixPlannedPeriodExtendedTooltip" id="33"/>
+								</CheckBoxField>
+								<CheckBoxField name="FixProductPeriod" id="28">
+									<DataPath>Object.FixProductPeriod</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FixProductPeriodContextMenu" id="29"/>
+									<ExtendedTooltip name="FixProductPeriodExtendedTooltip" id="30"/>
+									<Events>
+										<Event name="OnChange">FixProductPeriodOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="FixProductCost" id="151">
+									<DataPath>Object.FixProductCost</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FixProductCostContextMenu" id="152"/>
+									<ExtendedTooltip name="FixProductCostExtendedTooltip" id="153"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="HotelProducts" id="52">
+			<Representation>List</Representation>
+			<HeaderHeight>2</HeaderHeight>
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.HotelProducts</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="HotelProductsContextMenu" id="53">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="HotelProductsContextMenuDelete" id="191">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.HotelProducts.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="HotelProductsContextMenuDeleteExtendedTooltip" id="192"/>
+					</Button>
+					<ButtonGroup name="HotelProductsContextMenuMove" id="213">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Move</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Bewegen</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переместить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="HotelProductsContextMenuMoveExtendedTooltip" id="214"/>
+						<ChildItems>
+							<Button name="HotelProductsContextMenuMoveUp" id="193">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="HotelProductsContextMenuMoveUpExtendedTooltip" id="194"/>
+							</Button>
+							<Button name="HotelProductsContextMenuMoveDown" id="195">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="HotelProductsContextMenuMoveDownExtendedTooltip" id="196"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="HotelProductsContextMenuSort" id="215">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Sort</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Sortieren</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сортировка</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="HotelProductsContextMenuSortExtendedTooltip" id="216"/>
+						<ChildItems>
+							<Button name="HotelProductsContextMenuSortListAsc" id="197">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.SortListAsc</CommandName>
+								<ExtendedTooltip name="HotelProductsContextMenuSortListAscExtendedTooltip" id="198"/>
+							</Button>
+							<Button name="HotelProductsContextMenuSortListDesc" id="199">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.SortListDesc</CommandName>
+								<ExtendedTooltip name="HotelProductsContextMenuSortListDescExtendedTooltip" id="200"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="HotelProductsCommandBar" id="54">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="HotelProductsActionLoadHotelProductsLog" id="147">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.ActionLoadHotelProductsLog</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.DocumentJournal</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="HotelProductsActionLoadHotelProductsLogExtendedTooltip" id="148"/>
+					</Button>
+					<ButtonGroup name="HotelProductsRowOperations" id="211">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Row operations</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Zeilenoperationen</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Операции со строками</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="HotelProductsRowOperationsExtendedTooltip" id="212"/>
+						<ChildItems>
+							<Button name="HotelProductsAdd" id="119">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.Add</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Insert</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Hinzufügen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsAddExtendedTooltip" id="120"/>
+							</Button>
+							<Button name="HotelProductsCopy" id="121">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.Copy</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Copy</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Kopieren</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Скопировать</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsCopyExtendedTooltip" id="122"/>
+							</Button>
+							<Button name="HotelProductsDelete" id="123">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.Delete</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Delete</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Löschen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Удалить</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsDeleteExtendedTooltip" id="124"/>
+							</Button>
+							<Button name="HotelProductsChange" id="164">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.Change</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsChangeExtendedTooltip" id="165"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="HotelProductsMove" id="209">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Move</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Bewegen</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переместить</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="HotelProductsMoveExtendedTooltip" id="210"/>
+						<ChildItems>
+							<Button name="HotelProductsMoveDown" id="168">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.MoveDown</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsMoveDownExtendedTooltip" id="169"/>
+							</Button>
+							<Button name="HotelProductsMoveUp" id="166">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.MoveUp</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsMoveUpExtendedTooltip" id="167"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="HotelProductsSort" id="207">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Sorting</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Sortierung</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сортировка</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="HotelProductsSortExtendedTooltip" id="208"/>
+						<ChildItems>
+							<Button name="HotelProductsSortListAsc" id="201">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.SortListAsc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsSortListAscExtendedTooltip" id="202"/>
+							</Button>
+							<Button name="HotelProductsSortListDesc" id="203">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.HotelProducts.StandardCommand.SortListDesc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="HotelProductsSortListDescExtendedTooltip" id="204"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="HotelProductsOutputList" id="205">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.HotelProducts.StandardCommand.OutputList</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="HotelProductsOutputListExtendedTooltip" id="206"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="HotelProductsExtendedTooltip" id="55"/>
+			<SearchStringAddition name="HotelProductsSearchString" id="56">
+				<AdditionSource>
+					<Item>HotelProducts</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="HotelProductsSearchStringContextMenu" id="57"/>
+				<ExtendedTooltip name="HotelProductsSearchStringExtendedTooltip" id="58"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="HotelProductsViewStatus" id="59">
+				<AdditionSource>
+					<Item>HotelProducts</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="HotelProductsViewStatusContextMenu" id="60"/>
+				<ExtendedTooltip name="HotelProductsViewStatusExtendedTooltip" id="61"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="HotelProductsSearchControl" id="62">
+				<AdditionSource>
+					<Item>HotelProducts</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="HotelProductsSearchControlContextMenu" id="63"/>
+				<ExtendedTooltip name="HotelProductsSearchControlExtendedTooltip" id="64"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnEditEnd">HotelProductsOnEditEnd</Event>
+				<Event name="AfterDeleteRow">HotelProductsAfterDeleteRow</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="HotelProductsLineNumber" id="65">
+					<DataPath>Object.HotelProducts.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsLineNumberContextMenu" id="66"/>
+					<ExtendedTooltip name="HotelProductsLineNumberExtendedTooltip" id="67"/>
+				</LabelField>
+				<InputField name="HotelProductsHotelProductParent" id="74">
+					<DataPath>Object.HotelProducts.HotelProductParent</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Voucher type</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gutschein-Typ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип путевки</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsHotelProductParentContextMenu" id="75"/>
+					<ExtendedTooltip name="HotelProductsHotelProductParentExtendedTooltip" id="76"/>
+					<Events>
+						<Event name="OnChange">HotelProductsHotelProductParentOnChange</Event>
+						<Event name="StartChoice">HotelProductsHotelProductParentStartChoice</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsHotelProduct" id="113">
+					<DataPath>Object.HotelProducts.HotelProduct</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Voucher</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gutschein</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путевка</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsHotelProductContextMenu" id="114"/>
+					<ExtendedTooltip name="HotelProductsHotelProductExtendedTooltip" id="115"/>
+				</InputField>
+				<InputField name="HotelProductsClient" id="116">
+					<DataPath>Object.HotelProducts.Client</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsClientContextMenu" id="117"/>
+					<ExtendedTooltip name="HotelProductsClientExtendedTooltip" id="118"/>
+				</InputField>
+				<InputField name="HotelProductsGuestGroup" id="71">
+					<DataPath>Object.HotelProducts.GuestGroup</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="HotelProductsGuestGroupContextMenu" id="72"/>
+					<ExtendedTooltip name="HotelProductsGuestGroupExtendedTooltip" id="73"/>
+				</InputField>
+				<InputField name="HotelProductsParentDoc" id="68">
+					<DataPath>Object.HotelProducts.ParentDoc</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reservation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Reservierung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бронь</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelProductsParentDocContextMenu" id="69"/>
+					<ExtendedTooltip name="HotelProductsParentDocExtendedTooltip" id="70"/>
+				</InputField>
+				<InputField name="HotelProductsService" id="80">
+					<DataPath>Object.HotelProducts.Service</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelProductsServiceContextMenu" id="81"/>
+					<ExtendedTooltip name="HotelProductsServiceExtendedTooltip" id="82"/>
+				</InputField>
+				<InputField name="HotelProductsProductStartCode" id="83">
+					<DataPath>Object.HotelProducts.ProductStartCode</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Voucher start number</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gutschein Startnummer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начальный номер бланка</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsProductStartCodeContextMenu" id="84"/>
+					<ExtendedTooltip name="HotelProductsProductStartCodeExtendedTooltip" id="85"/>
+					<Events>
+						<Event name="OnChange">HotelProductsProductStartCodeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsQuantity" id="86">
+					<DataPath>Object.HotelProducts.Quantity</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>TotalQuantity</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="HotelProductsQuantityContextMenu" id="87"/>
+					<ExtendedTooltip name="HotelProductsQuantityExtendedTooltip" id="88"/>
+					<Events>
+						<Event name="OnChange">HotelProductsQuantityOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsProductEndCode" id="89">
+					<DataPath>Object.HotelProducts.ProductEndCode</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Voucher ending number</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gutschein-Endnummer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конечный номер бланка</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsProductEndCodeContextMenu" id="90"/>
+					<ExtendedTooltip name="HotelProductsProductEndCodeExtendedTooltip" id="91"/>
+					<Events>
+						<Event name="OnChange">HotelProductsProductEndCodeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsCheckInDate" id="92">
+					<DataPath>Object.HotelProducts.CheckInDate</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="HotelProductsCheckInDateContextMenu" id="93"/>
+					<ExtendedTooltip name="HotelProductsCheckInDateExtendedTooltip" id="94"/>
+					<Events>
+						<Event name="OnChange">HotelProductsCheckInDateOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsDuration" id="95">
+					<DataPath>Object.HotelProducts.Duration</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Duration</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dauer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прод.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsDurationContextMenu" id="96"/>
+					<ExtendedTooltip name="HotelProductsDurationExtendedTooltip" id="97"/>
+					<Events>
+						<Event name="OnChange">HotelProductsDurationOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsCheckOutDate" id="98">
+					<DataPath>Object.HotelProducts.CheckOutDate</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="HotelProductsCheckOutDateContextMenu" id="99"/>
+					<ExtendedTooltip name="HotelProductsCheckOutDateExtendedTooltip" id="100"/>
+					<Events>
+						<Event name="OnChange">HotelProductsCheckOutDateOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsPrice" id="104">
+					<DataPath>Object.HotelProducts.Price</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Price</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Preis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цена</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsPriceContextMenu" id="105"/>
+					<ExtendedTooltip name="HotelProductsPriceExtendedTooltip" id="106"/>
+					<Events>
+						<Event name="OnChange">HotelProductsPriceOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsSum" id="107">
+					<DataPath>Object.HotelProducts.Sum</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Summe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>TotalSum</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="HotelProductsSumContextMenu" id="108"/>
+					<ExtendedTooltip name="HotelProductsSumExtendedTooltip" id="109"/>
+					<Events>
+						<Event name="OnChange">HotelProductsSumOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="HotelProductsVATSum" id="110">
+					<DataPath>Object.HotelProducts.VATSum</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>VAT amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Mw.St. Summe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма НДС</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="HotelProductsVATSumContextMenu" id="111"/>
+					<ExtendedTooltip name="HotelProductsVATSumExtendedTooltip" id="112"/>
+				</InputField>
+				<InputField name="HotelProductsSocialGroup" id="77">
+					<DataPath>Object.HotelProducts.SocialGroup</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>true</CreateButton>
+					<QuickChoice>true</QuickChoice>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="HotelProductsSocialGroupContextMenu" id="78"/>
+					<ExtendedTooltip name="HotelProductsSocialGroupExtendedTooltip" id="79"/>
+				</InputField>
+				<InputField name="HotelProductsRoomType" id="101">
+					<DataPath>Object.HotelProducts.RoomType</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="HotelProductsRoomTypeContextMenu" id="102"/>
+					<ExtendedTooltip name="HotelProductsRoomTypeExtendedTooltip" id="103"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Remarks" id="46">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="47"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="48"/>
+		</InputField>
+		<UsualGroup name="GroupParameters" id="129">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="130"/>
+			<ChildItems>
+				<UsualGroup name="GroupHeader" id="131">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Header</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Header</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="132"/>
+					<ChildItems>
+						<InputField name="Number" id="1">
+							<DataPath>Object.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="NumberContextMenu" id="2"/>
+							<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+						</InputField>
+						<InputField name="Date" id="4">
+							<DataPath>Object.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="DateContextMenu" id="5"/>
+							<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+							<Events>
+								<Event name="OnChange">DateOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="Author" id="49">
+							<DataPath>Object.Author</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="AuthorContextMenu" id="50"/>
+							<ExtendedTooltip name="AuthorExtendedTooltip" id="51"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupRow1" id="175">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row 1</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ziele 1</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group row1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupRow1ExtendedTooltip" id="176"/>
+					<ChildItems>
+						<InputField name="Hotel1" id="185">
+							<DataPath>Object.Hotel</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="Hotel1ContextMenu" id="186"/>
+							<ExtendedTooltip name="Hotel1ExtendedTooltip" id="187"/>
+						</InputField>
+						<InputField name="Company1" id="188">
+							<DataPath>Object.Company</DataPath>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="Company1ContextMenu" id="189"/>
+							<ExtendedTooltip name="Company1ExtendedTooltip" id="190"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupRow2" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row 2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ziele 2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group row2</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupRow2ExtendedTooltip" id="142"/>
+					<ChildItems>
+						<InputField name="Currency" id="40">
+							<DataPath>Object.Currency</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="CurrencyContextMenu" id="41"/>
+							<ExtendedTooltip name="CurrencyExtendedTooltip" id="42"/>
+							<Events>
+								<Event name="OnChange">CurrencyOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="ExchangeRateDate" id="37">
+							<DataPath>Object.ExchangeRateDate</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ExchangeRateDateContextMenu" id="38"/>
+							<ExtendedTooltip name="ExchangeRateDateExtendedTooltip" id="39"/>
+							<Events>
+								<Event name="OnChange">ExchangeRateDateOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="CurrencyExchangeRate" id="43">
+							<DataPath>Object.CurrencyExchangeRate</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="CurrencyExchangeRateContextMenu" id="44"/>
+							<ExtendedTooltip name="CurrencyExchangeRateExtendedTooltip" id="45"/>
+							<Events>
+								<Event name="OnChange">CurrencyExchangeRateOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupRow3" id="133">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row 3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ziele 3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 3</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group row3</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="GroupRow3ExtendedTooltip" id="134"/>
+					<ChildItems>
+						<InputField name="VATRate" id="25">
+							<DataPath>Object.VATRate</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="VATRateContextMenu" id="26"/>
+							<ExtendedTooltip name="VATRateExtendedTooltip" id="27"/>
+							<Events>
+								<Event name="OnChange">VATRateOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.IssueHotelProducts</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="SavCurrency" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sav currency</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Currencies</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SavCurrencyExchangeRate" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sav currency exchange rate</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>19</v8:Digits>
+					<v8:FractionDigits>7</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="OldDate" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Old date</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalSum" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total sum</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>17</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalQuantity" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total quantity</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionLoadHotelProductsLog" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load vouchers filled in the hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Im Hotel ausgefüllte Gutscheine laden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить реестр путевок выписанных в гостинице</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ActionLoadHotelProductsLog</Action>
+		</Command>
+		<Command name="PrintBillOfShipment" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print bill of voucher shipment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gutscheinversandschein drucken</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распечатать накладную на отгрузку путевок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print bill of shipment</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrintBillOfShipment</Action>
+		</Command>
+		<Command name="PrintHotelProductsLog" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print log of vouchers filled in the hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Protokoll der im Hotel ausgefüllten Gutscheine ausdrucken</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распечатать реестр заполненных бланков путевок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print hotel products log</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrintHotelProductsLog</Action>
+		</Command>
+		<Command name="IssueHotelProductsFillInvoice" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New proforma invoice</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Neue Proforma-Rechnung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый счет на оплату</v8:content>
+				</v8:item>
+			</Title>
+			<Action>IssueHotelProductsFillInvoice</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>AccumulationRegister.HotelProductLog.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.IssuedHotelProducts.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

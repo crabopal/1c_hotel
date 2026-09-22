@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Hotel xmlns:htl="http://1chotel.ru">
+	<htl:DataProcessors>
+		<htl:DataProcessorObject htl:processing="LoadCurrencyRates" htl:isFolder="Нет" htl:predefined="Да" htl:code="100" htl:description="EN = 'Load currency rates for tomorrow scheduled job'; RU = 'Регламентная процедура загрузки курсов валют на завтра'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="If ValueIsFilled(PARM) Then
+    DPO.Hotel = PARM;
+EndIf;
+DPO.PeriodFrom = BegOfDay(CurrentDate()) + 3600*24;
+DPO.PeriodTo = EndOfDay(DPO.PeriodFrom);" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="100">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6149e05a-a601-4a65-8d85-0cf598c9e2d6</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>100</Code>
+				<Description>EN = 'Load currency rates for tomorrow scheduled job'; RU = 'Регламентная процедура загрузки курсов валют на завтра'</Description>
+				<PredefinedDataName>LoadCurrencyRatesForTomorrow</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">LoadCurrencyRates</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters>If ValueIsFilled(PARM) Then
+    DPO.Hotel = PARM;
+EndIf;
+DPO.PeriodFrom = BegOfDay(CurrentDate()) + 3600*24;
+DPO.PeriodTo = EndOfDay(DPO.PeriodFrom);</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>100</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="DisableNoShowReservations" htl:isFolder="Нет" htl:predefined="Да" htl:code="200" htl:description="EN = 'Disable no show reservations'; RU = 'Снять просроченную бронь'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;
+DPO.NoShowDate = CurrentDate() - 3600*DPO.PeriodToKeepReservations;" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="200">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>9ad091e5-2c3c-47c0-b2ca-7640a740b701</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>200</Code>
+				<Description>EN = 'Disable no show reservations'; RU = 'Снять просроченную бронь'</Description>
+				<PredefinedDataName>DisableNoShowReservations</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">DisableNoShowReservations</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters>If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;
+DPO.NoShowDate = CurrentDate() - 3600*DPO.PeriodToKeepReservations;</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>200</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="CheckIfReservationsWerePayedInTime" htl:isFolder="Нет" htl:predefined="Да" htl:code="205" htl:description="EN = 'Check if reservations were paid in time'; RU = 'Проверить поступление оплаты по брони'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="205">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>ed0fc32a-f746-403b-9d3e-7c45bcd5392c</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>205</Code>
+				<Description>EN = 'Check if reservations were paid in time'; RU = 'Проверить поступление оплаты по брони'</Description>
+				<PredefinedDataName>CheckIfReservationsWerePayedInTime</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">CheckIfReservationsWerePayedInTime</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters>If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>205</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ReleaseExpiredRoomAllotments" htl:isFolder="Нет" htl:predefined="Да" htl:code="210" htl:description="EN = 'Release expired room allotments'; RU = 'Снять просроченные остатки по квотам номеров'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="210">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>9a84f9fd-75db-491d-8cf5-d862c030928d</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>210</Code>
+				<Description>EN = 'Release expired room allotments'; RU = 'Снять просроченные остатки по квотам номеров'</Description>
+				<PredefinedDataName>ReleaseExpiredRoomAllotments</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ReleaseExpiredRoomAllotments</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters>If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;
+</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>210</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ProcessFinishedResourceReservations" htl:isFolder="Нет" htl:predefined="Да" htl:code="250" htl:description="EN = 'Process finished resource reservations'; RU = 'Обработать завершенную бронь ресурсов'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;
+DPO.ProcessingDateTime = CurrentDate() - 3600*DPO.PeriodToWait;" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="250">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>3430bdd4-de8e-4862-bd1a-1a8ac213f722</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>250</Code>
+				<Description>EN = 'Process finished resource reservations'; RU = 'Обработать завершенную бронь ресурсов'</Description>
+				<PredefinedDataName>ProcessFinishedResourceReservations</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ProcessFinishedResourceReservations</Processing>
+				<StaticParameters>AQGEAQAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezQsDQp7DQp7IlMiLCJIb3RlbCJ9LA0KeyIjIiw5ZWZmMjM0MC03Y2NmLTRmMzMtYWEwYS04YzIyZjU5NGNkMTUsMzg6YTE0MTAwMGU5YmRkZjFjNDExZGQ0MWMwYjVlYzExODR9DQp9LA0Kew0KeyJTIiwiUGVyaW9kVG9XYWl0In0sDQp7Ik4iLDF9DQp9LA0Kew0KeyJTIiwiUHJvY2Vzc2luZ0RhdGVUaW1lIn0sDQp7IkQiLDIwMDkwNTA0MTUzNDEyfQ0KfSwNCnsNCnsiUyIsIkZpbmlzaGVkUmVzb3VyY2VSZXNlcnZhdGlvblN0YXR1cyJ9LA0KeyIjIixmNjkwOTAzYS1jN2M2LTRiNjItYjVlMC02MmQ2MGViOWQyOWQsNTg3NTo4MjM2MDAyMjY4ZTQ5ZTg2MTFkZTM4YTVlNWU0YzQ3NX0NCn0NCn0NCn0=</StaticParameters>
+				<DynamicParameters>If ValueIsFilled(PARM) Then
+	DPO.Hotel = PARM;
+EndIf;
+DPO.ProcessingDateTime = CurrentDate() - 3600*DPO.PeriodToWait;</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>250</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ManageHasRoomBlocks" htl:isFolder="Нет" htl:predefined="Да" htl:code="260" htl:description="EN = 'Manage &quot;Has room blocks&quot; flag for the rooms'; RU = 'Управление флагом &quot;Есть блокировки&quot; у номеров в Номерном фонде'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="260">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>05623051-854c-47a7-a330-08bee4c06b5c</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>260</Code>
+				<Description>EN = 'Manage "Has room blocks" flag for the rooms'; RU = 'Управление флагом "Есть блокировки" у номеров в Номерном фонде'</Description>
+				<PredefinedDataName>ManageHasRoomBlocks</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ManageHasRoomBlocks</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>260</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportRoomInventoryBalances" htl:isFolder="Нет" htl:predefined="Да" htl:code="270" htl:description="EN = 'Export room inventory balances'; RU = 'Выгрузка остатков свободных номеров'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="270">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>f7147642-5919-47b2-9a81-172a068e8280</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>270</Code>
+				<Description>EN = 'Export room inventory balances'; RU = 'Выгрузка остатков свободных номеров'</Description>
+				<PredefinedDataName>ExportRoomInventoryBalances</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportRoomInventoryBalances</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>270</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="LoadEMailReservations" htl:isFolder="Нет" htl:predefined="Да" htl:code="280" htl:description="EN = 'Load reservations from E-mail messages'; RU = 'Загрузка резервирований по данным E-Mail сообщений с сайта гостиницы'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="280">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>4303f9e9-ca37-46bd-a8a8-7d64d0624573</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>280</Code>
+				<Description>EN = 'Load reservations from E-mail messages'; RU = 'Загрузка резервирований по данным E-Mail сообщений с сайта гостиницы'</Description>
+				<PredefinedDataName>LoadEMailReservations</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">LoadEMailReservations</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>280</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportForeignersDataToUFMSRu" htl:isFolder="Нет" htl:predefined="Да" htl:code="300" htl:description="EN = 'Export foreigners data to UFMS (Russia)'; RU = 'Выгрузка данных иностранных гостей в УФМС РФ'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="300">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>ca79f9ed-c238-4abd-99a4-fd06267167de</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>300</Code>
+				<Description>EN = 'Export foreigners data to UFMS (Russia)'; RU = 'Выгрузка данных иностранных гостей в УФМС РФ'</Description>
+				<PredefinedDataName>ExportForeignersDataToUFMSRu</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportForeignersDataToUFMSRu</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>300</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportForeignersDataToPVSOVD" htl:isFolder="Нет" htl:predefined="Да" htl:code="305" htl:description="EN = 'Export foreigners data to AIS PVS OVD (Russia)'; RU = 'Выгрузка данных иностранных гостей в АИС ПВС ОВД РФ'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="305">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>ac411d63-1400-4da6-a41b-8bc9290e99d9</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>305</Code>
+				<Description>EN = 'Export foreigners data to AIS PVS OVD (Russia)'; RU = 'Выгрузка данных иностранных гостей в АИС ПВС ОВД РФ'</Description>
+				<PredefinedDataName>ExportForeignersDataToPVSOVD</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportForeignersDataToPVSOVD</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>305</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="LoadPhoneCallsFromWintariff32" htl:isFolder="Нет" htl:predefined="Да" htl:code="400" htl:description="EN = 'Load phone calls'; RU = 'Загрузка телефонных разговоров'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="400">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>9b9ef2b4-33b6-4410-84c9-d4068b099676</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>400</Code>
+				<Description>EN = 'Load phone calls'; RU = 'Загрузка телефонных разговоров'</Description>
+				<PredefinedDataName>LoadPhoneCalls</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">LoadPhoneCallsFromWintariff32</Processing>
+				<StaticParameters>AQE4AwAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezExLA0Kew0KeyJTIiwiSG90ZWwifSwNCnsiIyIsOWVmZjIzNDAtN2NjZi00ZjMzLWFhMGEtOGMyMmY1OTRjZDE1LDM4OmExNDEwMDBlOWJkZGYxYzQxMWRkNDFjMGI1ZWMxMTg0fQ0KfSwNCnsNCnsiUyIsIkRhdGFFeGNoYW5nZUZpbGUifSwNCnsiUyIsImM6XFByb2dyYW0gRmlsZXNcV2luVGFyaWZmMzJcQ2FsbHNcQ2FsbHMuZGJmIn0NCn0sDQp7DQp7IlMiLCJOZXdQaG9uZU51bWJlcnNGb2xkZXIifSwNCnsiIyIsZWE3YjNlNTItNTYyMi00N2M3LWI4MmEtNjM5YmUxOWFiYWI4LDUxOjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwfQ0KfSwNCnsNCnsiUyIsIkxvYWRDYWxsc0Zyb21Sb29tc09ubHkifSwNCnsiQiIsMH0NCn0sDQp7DQp7IlMiLCJEYXRhRXhjaGFuZ2VGaWxlQ3VycmVuY3kifSwNCnsiIyIsMzk4OWRkMGEtNGQzNS00NmZkLWJhNDMtYmYxYjY3N2I3ODlmLDIzOmEwNmYwMDBlOWJkZGYxYzQxMWRjZjNmZDU4NDBjNTUzfQ0KfSwNCnsNCnsiUyIsIk11bHRpcGx5RmFjdG9yIn0sDQp7Ik4iLDF9DQp9LA0Kew0KeyJTIiwiSG90ZWxDaXR5UGhvbmVDb2RlIn0sDQp7IlMiLCI0OTUifQ0KfSwNCnsNCnsiUyIsIkRvT3BlcmF0aW9uc1JlZ2lzdHJhdGlvbiJ9LA0KeyJCIiwwfQ0KfSwNCnsNCnsiUyIsIkxhc3RDYWxsVGltZSJ9LA0KeyJEIiwwMDAxMDEwMTAwMDAwMH0NCn0sDQp7DQp7IlMiLCJMYXN0Q2FsbFBob25lTnVtYmVyIn0sDQp7IlMiLCIifQ0KfSwNCnsNCnsiUyIsIkxhc3RDYWxsUmVjb3JkTnVtYmVyIn0sDQp7Ik4iLDB9DQp9DQp9DQp9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>400</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="CheckLoadOfPhoneCalls" htl:isFolder="Нет" htl:predefined="Да" htl:code="410" htl:description="EN = 'Check load of phone calls'; RU = 'Проверка загрузки телефонных разговоров'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="410">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>c54c5ec5-dbf7-4dae-bc10-8d2567dee32b</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>410</Code>
+				<Description>EN = 'Check load of phone calls'; RU = 'Проверка загрузки телефонных разговоров'</Description>
+				<PredefinedDataName>CheckLoadOfPhoneCalls</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">CheckLoadOfPhoneCalls</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>410</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="DoNightAuditPrecheck" htl:isFolder="Нет" htl:predefined="Да" htl:code="510" htl:description="EN = 'Do night audit precheck'; RU = 'Подготовка к ночному аудиту'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="510">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>bb508f56-4a66-448c-b701-2248ecb81c16</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>510</Code>
+				<Description>EN = 'Do night audit precheck'; RU = 'Подготовка к ночному аудиту'</Description>
+				<PredefinedDataName>DoNightAuditPrecheck</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">DoNightAuditPrecheck</Processing>
+				<StaticParameters>AQG/AgAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezExLA0Kew0KeyJTIiwiSG90ZWwifSwNCnsiIyIsOWVmZjIzNDAtN2NjZi00ZjMzLWFhMGEtOGMyMmY1OTRjZDE1LDM4OmExNDEwMDBlOWJkZGYxYzQxMWRkNDFjMGI1ZWMxMTg0fQ0KfSwNCnsNCnsiUyIsIkFjY291bnRpbmdEYXRlIn0sDQp7IkQiLDIwMTQwODE4MDAwMDAwfQ0KfSwNCnsNCnsiUyIsIkVNYWlsIn0sDQp7IlMiLCIifQ0KfSwNCnsNCnsiUyIsIkNvbXBhcmVDaGVja0luQW5kUmVzZXJ2YXRpb25Sb29tUmF0ZXMifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJDaGVja0FjY29tbW9kYXRpb25PcGVyYXRpb25UaW1lcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIkNoZWNrQWNjb21tb2RhdGlvblRlbXBsYXRlcyJ9LA0KeyJCIiwwfQ0KfSwNCnsNCnsiUyIsIkNoZWNrUm9vbVJldmVudWVTZXJ2aWNlcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIkNoZWNrR3Vlc3RzV2l0aEV4cGVjdGVkQ2hlY2tPdXQifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJDaGVja05vU2hvd1Jlc2VydmF0aW9ucyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIkNoZWNrRm9yZWlnbmVyUmVnaXN0cnlSZWNvcmRzIn0sDQp7IkIiLDF9DQp9LA0Kew0KeyJTIiwiQ2hlY2tDbGllbnRJZGVudGlmaWNhdGlvbkRvY3VtZW50U2NhbnMifSwNCnsiQiIsMH0NCn0NCn0NCn0=</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>510</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="SendGuestGroupNotifications" htl:isFolder="Нет" htl:predefined="Да" htl:code="810" htl:description="EN='Send guest group notifications'; RU='Отправить уведомления по группам гостей'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="810">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>d257ac51-e6aa-430e-b623-2efdd4a81501</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>810</Code>
+				<Description>EN='Send guest group notifications'; RU='Отправить уведомления по группам гостей'</Description>
+				<PredefinedDataName>SendGuestGroupNotifications</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">SendGuestGroupNotifications</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>810</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="CheckReservationWaitingList" htl:isFolder="Нет" htl:predefined="Да" htl:code="820" htl:description="EN='Check reservation waiting list'; RU='Проверить лист ожидания брони'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="820">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>b98a4e5f-fb0b-4d4b-b4e0-3b3d5c0ce3b6</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>820</Code>
+				<Description>EN='Check reservation waiting list'; RU='Проверить лист ожидания брони'</Description>
+				<PredefinedDataName>CheckReservationWaitingList</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">CheckReservationWaitingList</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>820</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="Refresh objects numbering" htl:isFolder="Нет" htl:predefined="Нет" htl:code="910" htl:description="en='Refresh objects numbering'; ru='Обновить нумерацию объектов'" htl:isExternal="Да" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="910">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>c5af2b41-3e1d-11e0-9c7f-002268e49e86</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>910</Code>
+				<Description>en='Refresh objects numbering'; ru='Обновить нумерацию объектов'</Description>
+				<IsExternal>true</IsExternal>
+				<Processing xsi:type="CatalogRef.ExternalDataProcessors">c5af2b40-3e1d-11e0-9c7f-002268e49e86</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>910</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups>
+					<Row>
+						<PermissionGroup>aefa1718-f41e-11dc-a06f-000e9bddf1c4</PermissionGroup>
+					</Row>
+					<Row>
+						<PermissionGroup>aefa1717-f41e-11dc-a06f-000e9bddf1c4</PermissionGroup>
+					</Row>
+					<Row>
+						<PermissionGroup>b004a1e5-0460-11e0-a1d9-002268e49e86</PermissionGroup>
+					</Row>
+					<Row>
+						<PermissionGroup>aefa1719-f41e-11dc-a06f-000e9bddf1c4</PermissionGroup>
+					</Row>
+					<Row>
+						<PermissionGroup>b004a1e6-0460-11e0-a1d9-002268e49e86</PermissionGroup>
+					</Row>
+				</PermissionGroups>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="DoExchangePlanNodeDataExchange" htl:isFolder="Нет" htl:predefined="Да" htl:code="980" htl:description="EN = 'Do exchange plan node data exchange'; RU = 'Выполнить обмен данными с узлом плана обмена'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="980">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>ebb18efe-f505-48e1-8fd5-c895f2ef77a3</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>980</Code>
+				<Description>EN = 'Do exchange plan node data exchange'; RU = 'Выполнить обмен данными с узлом плана обмена'</Description>
+				<PredefinedDataName>DoExchangePlanNodeDataExchange</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">DoExchangePlanNodeDataExchange</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>980</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ClearDatabase" htl:isFolder="Нет" htl:predefined="Да" htl:code="990" htl:description="EN = 'Clear database'; RU = 'Очистить базу данных'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="DPO.Period = AddMonth(CurrentSessionDate(), -3);" htl:key="ClearDatabase" htl:remarks="" htl:isSystem="Да" htl:sortCode="990">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>bf3bbeac-c818-4598-9615-3c67fafe5d2d</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>990</Code>
+				<Description>EN = 'Clear database'; RU = 'Очистить базу данных'</Description>
+				<PredefinedDataName>ClearDatabase</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ClearDatabase</Processing>
+				<StaticParameters>AQG5BAAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezIwLA0Kew0KeyJTIiwiQ2xlYXJQcm9jZXNzZWRPbmx5In0sDQp7IkIiLDF9DQp9LA0Kew0KeyJTIiwiRXh0ZXJuYWxJbnRlcmFjdGlvbiJ9LA0KeyIjIiw5MGMyNjRmZi1hNWMyLTQ4MzEtOWFjNS05OTU3ZTFkNzdlZTIsODQ1NTowMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMH0NCn0sDQp7DQp7IlMiLCJIb3RlbCJ9LA0KeyIjIiw5ZWZmMjM0MC03Y2NmLTRmMzMtYWEwYS04YzIyZjU5NGNkMTUsMzg6YTE0MTAwMGU5YmRkZjFjNDExZGQ0MWMwYjVlYzExODR9DQp9LA0Kew0KeyJTIiwiTWFya0NsaWVudHNXaXRob3V0UmVmZXJlbmNlc0RlbGV0ZWQifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJQZXJpb2QifSwNCnsiRCIsMjAyNTA1MDkwMDAwMDB9DQp9LA0Kew0KeyJTIiwiUHVyZ2VBUERFWFRpbWVNZWFzdXJlbWVudHMifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJQdXJnZUNoYW5nZUhpc3RvcnlSZWNvcmRzIn0sDQp7IkIiLDF9DQp9LA0Kew0KeyJTIiwiUHVyZ2VDaGFyZ2VzTWFya2VkRm9yRGVsZXRpb24ifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJQdXJnZUNsaWVudERhdGFTY2FucyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlB1cmdlQ2xpZW50SWRlbnRpZmljYXRpb25EYXRhIn0sDQp7IkIiLDB9DQp9LA0Kew0KeyJTIiwiUHVyZ2VFeGNoYW5nZVBsYW5EYXRhIn0sDQp7IkIiLDB9DQp9LA0Kew0KeyJTIiwiUHVyZ2VFeHRlcm5hbFN5c3RlbUludGVncmF0aW9uTG9ncyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlB1cmdlRm9saW9zTWFya2VkRm9yRGVsZXRpb24ifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJQdXJnZU1lc3NhZ2VzIn0sDQp7IkIiLDF9DQp9LA0Kew0KeyJTIiwiUHVyZ2VPbmxpbmVSZXF1ZXN0U3RhdGlzdGljcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlB1cmdlUGxhdGZvcm1DaGFuZ2VIaXN0b3J5UmVjb3JkcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlB1cmdlUm9vbVJhdGVEYWlseVByaWNlcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlB1cmdlU01TTWVzc2FnZXMifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJQdXJnZVVzZXJBY3Rpb25zSGlzdG9yeSJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsIlNhdmVDbGllbnREYXRhU2NhbnMyRGlzYyJ9LA0KeyJCIiwwfQ0KfQ0KfQ0KfQ==</StaticParameters>
+				<DynamicParameters>DPO.Period = AddMonth(CurrentSessionDate(), -3);</DynamicParameters>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>ClearDatabase</Key>
+				<SortCode>990</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="EndOfDay" htl:isFolder="Нет" htl:predefined="Да" htl:code="1 001" htl:description="EN='End of day'; RU='Закрытие дня'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>9b150067-2a9a-11e9-8450-605718e44a8e</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1001</Code>
+				<Description>EN='End of day'; RU='Закрытие дня'</Description>
+				<PredefinedDataName>EndOfDay</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">EndOfDay</Processing>
+				<StaticParameters>AQFdBQAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezE3LA0Kew0KeyJTIiwiY2hlY2tCYWxhbmNlcyJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsImFsc29DaGVja0N1c3RvbWVyQmFsYW5jZXMifSwNCnsiQiIsMH0NCn0sDQp7DQp7IlMiLCJCYWxhbmNlc1JlcG9ydCJ9LA0KeyIjIiwxYjYzYjU5My1jMzNjLTRhM2MtOTY0My0zODI2NjZlNzQ1NGYsNTc6OTM0MDRlYzE5Nzc4MjJlMTExZWVjMDNkM2U2MjkzODZ9DQp9LA0Kew0KeyJTIiwiY2hlY2tSZXNlcnZhdGlvbnMifSwNCnsiQiIsMX0NCn0sDQp7DQp7IlMiLCJjaGVja1Jlc2VydmF0aW9uc0lzTWFuZGF0b3J5In0sDQp7IkIiLDB9DQp9LA0Kew0KeyJTIiwiUmVzZXJ2YXRpb25zUmVwb3J0In0sDQp7IiMiLDFiNjNiNTkzLWMzM2MtNGEzYy05NjQzLTM4MjY2NmU3NDU0Ziw1Nzo4ZGY1NGVjMTk3NzgyMmUxMTFlZWMxMTgxY2E3NmJhMn0NCn0sDQp7DQp7IlMiLCJjaGVja0FjY29tbW9kYXRpb25zIn0sDQp7IkIiLDF9DQp9LA0Kew0KeyJTIiwiY2hlY2tBY2NvbW1vZGF0aW9uc0lzTWFuZGF0b3J5In0sDQp7IkIiLDB9DQp9LA0Kew0KeyJTIiwiQWNjb21tb2RhdGlvbnNSZXBvcnQifSwNCnsiIyIsMWI2M2I1OTMtYzMzYy00YTNjLTk2NDMtMzgyNjY2ZTc0NTRmLDU3OjliOGJiMGViNWQ5NTI2OGI0NWM0YWM0ZmIwNTlkMGRifQ0KfSwNCnsNCnsiUyIsImNoZWNrWlJlcG9ydCJ9LA0KeyJCIiwxfQ0KfSwNCnsNCnsiUyIsInByaW50QmVmb3JlUmVwb3J0cyJ9LA0KeyIjIiwxYjYzYjU5My1jMzNjLTRhM2MtOTY0My0zODI2NjZlNzQ1NGYsNTc6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDB9DQp9LA0Kew0KeyJTIiwicHJpbnRBZnRlclJlcG9ydHMifSwNCnsiIyIsMWI2M2I1OTMtYzMzYy00YTNjLTk2NDMtMzgyNjY2ZTc0NTRmLDU3OjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwfQ0KfSwNCnsNCnsiUyIsIkV4ZWN1dGVkQmVmb3JlRGF0YVByb2Nlc3NpbmcifSwNCnsiIyIsYzJmNmY2YTctOGFhNy00NGViLThmYTItZGE0NDUyY2ZkODk5LDI2OjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwfQ0KfSwNCnsNCnsiUyIsIkV4ZWN1dGVkQWZ0ZXJEYXRhUHJvY2Vzc2luZyJ9LA0KeyIjIixjMmY2ZjZhNy04YWE3LTQ0ZWItOGZhMi1kYTQ0NTJjZmQ4OTksMjY6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDB9DQp9LA0Kew0KeyJTIiwiQ29uZmlybUJlZm9yZUVuZE9mRGF5QXV0b21hdGlvbnMifSwNCnsiQiIsMH0NCn0sDQp7DQp7IlMiLCJDb25maXJtQWZ0ZXJFbmRPZkRheUF1dG9tYXRpb25zIn0sDQp7IkIiLDB9DQp9LA0Kew0KeyJTIiwiUHJpbnRlck5hbWUifSwNCnsiUyIsIiJ9DQp9DQp9DQp9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="Feedback" htl:isFolder="Нет" htl:predefined="Да" htl:code="1 100" htl:description="EN='Feedback'; RU='Обратная связь'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>9b150068-2a9a-11e9-8450-605718e44a8e</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1100</Code>
+				<Description>EN='Feedback'; RU='Обратная связь'</Description>
+				<PredefinedDataName>Feedback</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">Feedback</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="TLConnectWizard" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 101" htl:description="TLConnect" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="TLConnect" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>3f640680-4c62-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1101</Code>
+				<Description>TLConnect</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">TLConnectWizard</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>TLConnect</Key>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="OTAGatewayWizard" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 102" htl:description="OTAGateway:CM синхронизация изменений и загрузка брони (&lt;Название вашей гостиницы&gt;)" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="OTAGateway_ChangesSync_BNV" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>3f640682-4c62-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1102</Code>
+				<Description>OTAGateway:CM синхронизация изменений и загрузка брони (&lt;Название вашей гостиницы&gt;)</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">OTAGatewayWizard</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>OTAGateway_ChangesSync_BNV</Key>
+				<SortCode>0</SortCode>
+				<Hotel>b5ec1184-41c0-11dd-a141-000e9bddf1c4</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="FillRoomRateDailyPrices" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 103" htl:description="Заполнение кэша цен" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b872-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1103</Code>
+				<Description>Заполнение кэша цен</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">FillRoomRateDailyPrices</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportGuestsToUFMSKonturApp" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 104" htl:description="Выгрузка в Контур ФМС" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b873-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1104</Code>
+				<Description>Выгрузка в Контур ФМС</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportGuestsToUFMSKonturApp</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportGuestsToUFMSSkalaApp" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 105" htl:description="Выгрузка в Скала ФМС" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b874-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1105</Code>
+				<Description>Выгрузка в Скала ФМС</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportGuestsToUFMSSkalaApp</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ExportGuestsToUFMSTerritoryApp" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 106" htl:description="Выгрузка в Московскую безопасность" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b875-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1106</Code>
+				<Description>Выгрузка в Московскую безопасность</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ExportGuestsToUFMSTerritoryApp</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ManageOccupiedRoomStatuses" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 107" htl:description="Управение статусами занятых номеров" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="ManageOccupiedRoomStatuses" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b876-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1107</Code>
+				<Description>Управение статусами занятых номеров</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ManageOccupiedRoomStatuses</Processing>
+				<StaticParameters>AQFGAgAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezUsDQp7DQp7IlMiLCJIb3RlbCJ9LA0KeyIjIiw5ZWZmMjM0MC03Y2NmLTRmMzMtYWEwYS04YzIyZjU5NGNkMTUsMzg6YTE0MTAwMGU5YmRkZjFjNDExZGQ0MWMwYjVlYzExODR9DQp9LA0Kew0KeyJTIiwiT2NjdXBpZWREaXJ0eVJvb21TdGF0dXMifSwNCnsiIyIsNjJiMzVlNWEtZDc5MS00N2Q2LTk3NDctZjNkZTY4M2ViYmM1LDY3OmExZDkwMDIyNjhlNDllODYxMWUwMDQ2MGIwMDRhMWUwfQ0KfSwNCnsNCnsiUyIsIk9jY3VwaWVkRHVlT3V0Um9vbVN0YXR1cyJ9LA0KeyIjIiw2MmIzNWU1YS1kNzkxLTQ3ZDYtOTc0Ny1mM2RlNjgzZWJiYzUsNjc6ODRjYzI4MTZhZDNiOGZhNzExZWI0YzYyM2Y2NDA2NjV9DQp9LA0Kew0KeyJTIiwiUm9vbVN0YXR1c0FmdGVyRWFybHlDaGVja0luIn0sDQp7IiMiLDYyYjM1ZTVhLWQ3OTEtNDdkNi05NzQ3LWYzZGU2ODNlYmJjNSw2Nzo4NGNjMjgxNmFkM2I4ZmE3MTFlYjRjNmY2ZDIwYjg3N30NCn0sDQp7DQp7IlMiLCJFYXJseUNoZWNrSW5UaW1lIn0sDQp7IkQiLDAwMDEwMTAxMDYwMDAwfQ0KfQ0KfQ0KfQ==</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>ManageOccupiedRoomStatuses</Key>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="ManageReservedRoomStatuses" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 108" htl:description="Управление статусами забронированных номеров" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="ManageReservedRoomStatuses" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>6d20b878-4c6f-11eb-84cc-2816ad3b8fa7</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1108</Code>
+				<Description>Управление статусами забронированных номеров</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">ManageReservedRoomStatuses</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>ManageReservedRoomStatuses</Key>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="TLConnectWizard" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 109" htl:description="Travelline:CM синхронизация изменений и загрузка брони (&lt;Название вашей гостиницы&gt;)" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="TravellineCM_ChangesSync_TRL" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>a008f650-7559-11eb-837c-fc4482df512d</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1109</Code>
+				<Description>Travelline:CM синхронизация изменений и загрузка брони (&lt;Название вашей гостиницы&gt;)</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">TLConnectWizard</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>TravellineCM_ChangesSync_TRL</Key>
+				<SortCode>0</SortCode>
+				<Hotel>b5ec1184-41c0-11dd-a141-000e9bddf1c4</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="" htl:isFolder="Нет" htl:predefined="Да" htl:code="1 201" htl:description="EN='Bitrix24 extra setting'; RU='Дополнительные настройки Битрикс24'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>f04e30eb-bfa1-11ee-83f6-7c8ae16091c9</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1201</Code>
+				<Description>EN='Bitrix24 extra setting'; RU='Дополнительные настройки Битрикс24'</Description>
+				<PredefinedDataName>Bitrix24ExtraSetting</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xsi:nil="true"/>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="OTAGatewayWizard" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 202" htl:description="OTAGateway:CM полная синхронизация (&lt;Название вашей гостиницы&gt;)" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="OTAGateway_FullSync_BNV" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>3e629383-c03d-11ee-9340-4ec1977822e1</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1202</Code>
+				<Description>OTAGateway:CM полная синхронизация (&lt;Название вашей гостиницы&gt;)</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">OTAGatewayWizard</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>OTAGateway_FullSync_BNV</Key>
+				<SortCode>0</SortCode>
+				<Hotel>b5ec1184-41c0-11dd-a141-000e9bddf1c4</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="" htl:isFolder="Нет" htl:predefined="Да" htl:code="1 202" htl:description="EN='Active users'; RU='Активные пользователи'" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="" htl:remarks="" htl:isSystem="Нет" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>8853b900-b739-11f0-890f-d00d1211f440</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1999</Code>
+				<Description>EN='Active users'; RU='Активные пользователи'</Description>
+				<PredefinedDataName>ActiveUsers</PredefinedDataName>
+				<IsExternal>false</IsExternal>
+				<Processing xsi:nil="true"/>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key/>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>false</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="TLConnectWizard" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 203" htl:description="Travelline:CM полная синхронизация (&lt;Название вашей гостиницы&gt;)" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="TravellineCM_FullSync_TRL" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>3e629384-c03d-11ee-9340-4ec1977822e1</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1203</Code>
+				<Description>Travelline:CM полная синхронизация (&lt;Название вашей гостиницы&gt;)</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">TLConnectWizard</Processing>
+				<StaticParameters>AQEIAAAAAAAAAO+7v3siVSJ9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>TravellineCM_FullSync_TRL</Key>
+				<SortCode>0</SortCode>
+				<Hotel>b5ec1184-41c0-11dd-a141-000e9bddf1c4</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+		<htl:DataProcessorObject htl:processing="AutoCloseCashRegisterDay" htl:isFolder="Нет" htl:predefined="Нет" htl:code="1 204" htl:description="Автоматическое закрытие кассовой смены Guestlink" htl:isExternal="Нет" htl:staticParameters="ValueStorage" htl:dynamicParameters="" htl:key="707e8c71-59e3-4d94-918d-4c48f0702bef" htl:remarks="" htl:isSystem="Да" htl:sortCode="0">
+			<CatalogObject.DataProcessors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogObject.DataProcessors">
+				<Ref>688bdd08-74ed-11f0-aa1d-7085c2bed594</Ref>
+				<IsFolder>false</IsFolder>
+				<DeletionMark>false</DeletionMark>
+				<Parent>00000000-0000-0000-0000-000000000000</Parent>
+				<Code>1204</Code>
+				<Description>Автоматическое закрытие кассовой смены Guestlink</Description>
+				<IsExternal>false</IsExternal>
+				<Processing xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">AutoCloseCashRegisterDay</Processing>
+				<StaticParameters>AQFGAQAAAAAAAO+7v3siIyIsNDIzODAxOWQtN2U0OS00ZmM5LTkxZGItYjZiOTUxZDVjZjhlLA0KezMsDQp7DQp7IlMiLCJDYXNoUmVnaXN0ZXIifSwNCnsiIyIsZWE1ZDU1ZjEtYjAzNS00YTEyLTlhY2QtOTVhYmE4MjE2OWZlLDExOmFhMWQ3MDg1YzJiZWQ1OTQxMWYwNzRlZDY4OGJkZDA3fQ0KfSwNCnsNCnsiUyIsIkVycm9yTm90aWZpY2F0aW9uRGVwYXJ0bWVudCJ9LA0KeyIjIixhMjFkZWFlOS05NWFmLTQ2NTItYjZjYS03ZDU5YmFkNDgzYjcsMjg6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDB9DQp9LA0Kew0KeyJTIiwiU2VuZEJ5U01TIn0sDQp7IkIiLDB9DQp9DQp9DQp9</StaticParameters>
+				<DynamicParameters/>
+				<PermissionGroup>00000000-0000-0000-0000-000000000000</PermissionGroup>
+				<Key>707e8c71-59e3-4d94-918d-4c48f0702bef</Key>
+				<SortCode>0</SortCode>
+				<Hotel>00000000-0000-0000-0000-000000000000</Hotel>
+				<Remarks/>
+				<IsSystem>true</IsSystem>
+				<DoNotFillHotelFromSessionParameters>false</DoNotFillHotelFromSessionParameters>
+				<PermissionGroups/>
+			</CatalogObject.DataProcessors>
+		</htl:DataProcessorObject>
+	</htl:DataProcessors>
+</Hotel>

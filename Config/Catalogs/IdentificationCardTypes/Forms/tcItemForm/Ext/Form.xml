@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupColor" id="75">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Color</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Farbe</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Цвет</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form group color</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupColorExtendedTooltip" id="76"/>
+				<ChildItems>
+					<Button name="SetColor" id="50">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.SetColor</CommandName>
+						<ExtendedTooltip name="SetColorExtendedTooltip" id="51"/>
+					</Button>
+					<Button name="ClearColor" id="52">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ClearColor</CommandName>
+						<ExtendedTooltip name="ClearColorExtendedTooltip" id="53"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Header" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="HeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="LeftColumn" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="LeftColumnExtendedTooltip" id="4"/>
+					<ChildItems>
+						<InputField name="Description" id="8">
+							<DataPath>Object.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="DescriptionContextMenu" id="9"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="10"/>
+						</InputField>
+						<InputField name="Parent" id="11">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParentContextMenu" id="12"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="13"/>
+						</InputField>
+						<UsualGroup name="GroupTypeColor" id="48">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Type color</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Typ Farbe</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цвет типа</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupTypeColorExtendedTooltip" id="49"/>
+							<ChildItems>
+								<InputField name="ColorName" id="17">
+									<DataPath>Object.ColorName</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ColorNameContextMenu" id="18"/>
+									<ExtendedTooltip name="ColorNameExtendedTooltip" id="19"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="DoNotUseChargingRules" id="20">
+							<DataPath>Object.DoNotUseChargingRules</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotUseChargingRulesContextMenu" id="21"/>
+							<ExtendedTooltip name="DoNotUseChargingRulesExtendedTooltip" id="22"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoServiceRegistrationWithoutChargesControl" id="34">
+							<DataPath>Object.DoServiceRegistrationWithoutChargesControl</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoServiceRegistrationWithoutChargesControlContextMenu" id="35"/>
+							<ExtendedTooltip name="DoServiceRegistrationWithoutChargesControlExtendedTooltip" id="36"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsIndividual" id="23">
+							<DataPath>Object.IsIndividual</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsIndividualContextMenu" id="24"/>
+							<ExtendedTooltip name="IsIndividualExtendedTooltip" id="25"/>
+						</CheckBoxField>
+						<CheckBoxField name="AskGuestVehicle" id="60">
+							<DataPath>Object.AskGuestVehicle</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="AskGuestVehicleContextMenu" id="61"/>
+							<ExtendedTooltip name="AskGuestVehicleExtendedTooltip" id="62"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotClearCardInISD" id="63">
+							<DataPath>Object.DoNotClearCardInISD</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>If the flag is set, then when checking out the guest, the card is blocked by the planned check-out date, otherwise by the current date and time</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Ist das Flag gesetzt, wird beim Auschecken des Gastes die Karte zum geplanten Auscheckdatum gesperrt, ansonsten zum aktuellen Datum und Uhrzeit</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если флаг установлен, то при выселении гостя карта блокируется планируемой датой выезда, иначе текущей датой и временем</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotClearCardInISDContextMenu" id="64"/>
+							<ExtendedTooltip name="DoNotClearCardInISDExtendedTooltip" id="65"/>
+						</CheckBoxField>
+						<InputField name="NumberOfAdditionalCards" id="66">
+							<DataPath>Object.NumberOfAdditionalCards</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>After the main cards have been issued, this value determines the number of additional cards that can be issued for each guest</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Nach Ausgabe der Hauptkarten bestimmt dieser Wert die Anzahl der Zusatzkarten, die für jeden Gast ausgegeben werden können</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>После выдачи основных карт, данное значение определяет количество дополнительных карт, которые можно выдать на каждого гостя</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="NumberOfAdditionalCardsContextMenu" id="67"/>
+							<ExtendedTooltip name="NumberOfAdditionalCardsExtendedTooltip" id="68"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="RightColumn" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="RightColumnExtendedTooltip" id="27"/>
+					<ChildItems>
+						<UsualGroup name="GroupCodes" id="46">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Codes</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Codes</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Коды</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCodesExtendedTooltip" id="47"/>
+							<ChildItems>
+								<InputField name="Code" id="5">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="6"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="7"/>
+								</InputField>
+								<InputField name="SortCode" id="14">
+									<DataPath>Object.SortCode</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="SortCodeContextMenu" id="15"/>
+									<ExtendedTooltip name="SortCodeExtendedTooltip" id="16"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Hotel" id="43">
+							<DataPath>Object.Hotel</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="HotelContextMenu" id="44"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="45"/>
+						</InputField>
+						<InputField name="ExternalSystemsAllowed" id="28">
+							<DataPath>Object.ExternalSystemsAllowed</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ExternalSystemsAllowedContextMenu" id="29"/>
+							<ExtendedTooltip name="ExternalSystemsAllowedExtendedTooltip" id="30"/>
+						</InputField>
+						<InputField name="AdditionalServicesFolioCondition" id="31">
+							<DataPath>Object.AdditionalServicesFolioCondition</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="AdditionalServicesFolioConditionContextMenu" id="32"/>
+							<ExtendedTooltip name="AdditionalServicesFolioConditionExtendedTooltip" id="33"/>
+						</InputField>
+						<InputField name="ServiceGroup" id="37">
+							<DataPath>Object.ServiceGroup</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ServiceGroupContextMenu" id="38"/>
+							<ExtendedTooltip name="ServiceGroupExtendedTooltip" id="39"/>
+						</InputField>
+						<InputField name="BeginTime" id="69">
+							<DataPath>Object.BeginTime</DataPath>
+							<ContextMenu name="BeginTimeContextMenu" id="70"/>
+							<ExtendedTooltip name="BeginTimeExtendedTooltip" id="71"/>
+						</InputField>
+						<InputField name="SubtractMinutes" id="54">
+							<DataPath>Object.SubtractMinutes</DataPath>
+							<ContextMenu name="SubtractMinutesContextMenu" id="55"/>
+							<ExtendedTooltip name="SubtractMinutesExtendedTooltip" id="56"/>
+						</InputField>
+						<InputField name="ExpirationTime" id="57">
+							<DataPath>Object.ExpirationTime</DataPath>
+							<ContextMenu name="ExpirationTimeContextMenu" id="58"/>
+							<ExtendedTooltip name="ExpirationTimeExtendedTooltip" id="59"/>
+						</InputField>
+						<InputField name="AddMinutes" id="72">
+							<DataPath>Object.AddMinutes</DataPath>
+							<ContextMenu name="AddMinutesContextMenu" id="73"/>
+							<ExtendedTooltip name="AddMinutesExtendedTooltip" id="74"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Remarks" id="40">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="RemarksContextMenu" id="41"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="42"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.IdentificationCardTypes</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="SetColor" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Color...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set group color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenfarbe einstellen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить цвет группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ClearColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe entfernen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear group color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenfarbe löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить цвет группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearColor</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.RoomRateCardTypeBindings.StandardCommand.OpenList</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">false</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

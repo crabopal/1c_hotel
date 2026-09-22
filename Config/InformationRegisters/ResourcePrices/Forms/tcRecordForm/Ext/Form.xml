@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Header" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Price conditions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Preisbedingungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия цены</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="HeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="LeftColumn" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Linke Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="LeftColumnExtendedTooltip" id="4"/>
+					<ChildItems>
+						<InputField name="Period" id="5">
+							<DataPath>Record.Period</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="PeriodContextMenu" id="6"/>
+							<ExtendedTooltip name="PeriodExtendedTooltip" id="7"/>
+						</InputField>
+						<InputField name="Hotel" id="8">
+							<DataPath>Record.Hotel</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="HotelContextMenu" id="9"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="10"/>
+						</InputField>
+						<InputField name="ResourceType" id="14">
+							<DataPath>Record.ResourceType</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ResourceTypeContextMenu" id="15"/>
+							<ExtendedTooltip name="ResourceTypeExtendedTooltip" id="16"/>
+						</InputField>
+						<InputField name="Resource" id="17">
+							<DataPath>Record.Resource</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ClearButton>true</ClearButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Record.ResourceType</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ResourceContextMenu" id="18"/>
+							<ExtendedTooltip name="ResourceExtendedTooltip" id="19"/>
+							<Events>
+								<Event name="OnChange">ResourceOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="RightColumn" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="RightColumnExtendedTooltip" id="33"/>
+					<ChildItems>
+						<InputField name="ResourceRate" id="74">
+							<DataPath>Record.ResourceTariff</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<InputHint>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>&lt;Default tariff&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>&lt;Standardtarif&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;Тариф по умолчанию&gt;</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ResourceRateContextMenu" id="75"/>
+							<ExtendedTooltip name="ResourceRateExtendedTooltip" id="76"/>
+						</InputField>
+						<InputField name="ClientType" id="11">
+							<DataPath>Record.ClientType</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+							<ContextMenu name="ClientTypeContextMenu" id="12"/>
+							<ExtendedTooltip name="ClientTypeExtendedTooltip" id="13"/>
+						</InputField>
+						<InputField name="CalendarDayType" id="20">
+							<DataPath>Record.CalendarDayType</DataPath>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<InputHint>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>&lt;Day type from the resource calendar&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>&lt;Day type from the resource calendar&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;Тип дня из календаря ресурса&gt;</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="CalendarDayTypeContextMenu" id="21"/>
+							<ExtendedTooltip name="CalendarDayTypeExtendedTooltip" id="22"/>
+						</InputField>
+						<UsualGroup name="GroupPriceDetails" id="60">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Price details</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preis-details</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Детали цены</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPriceDetailsExtendedTooltip" id="61"/>
+							<ChildItems>
+								<InputField name="PriceTime" id="23">
+									<DataPath>Record.PriceTime</DataPath>
+									<Width>5</Width>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="PriceTimeContextMenu" id="24"/>
+									<ExtendedTooltip name="PriceTimeExtendedTooltip" id="25"/>
+								</InputField>
+								<InputField name="PriceQuantity" id="26">
+									<DataPath>Record.PriceQuantity</DataPath>
+									<Width>10</Width>
+									<ChoiceButton>false</ChoiceButton>
+									<SpinButton>true</SpinButton>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>NFD=3</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>NFD=3</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>NFD=3</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="PriceQuantityContextMenu" id="27"/>
+									<ExtendedTooltip name="PriceQuantityExtendedTooltip" id="28"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupQuantityDetails" id="64">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity to return</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Menge zurückgeben</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во к установке</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupQuantityDetailsExtendedTooltip" id="65"/>
+			<ChildItems>
+				<InputField name="FreeOfChargeQuantity" id="46">
+					<DataPath>Record.FreeOfChargeQuantity</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Return 0 if calculated quantity is less or equal to the free of charge quantity</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rückgabe 0, wenn die berechnete Menge kleiner oder gleich der freien Menge ist</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вернуть 0 если рассчитанное кол-во меньше или равно "бесплатному" кол-ву</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<SpinButton>true</SpinButton>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="FreeOfChargeQuantityContextMenu" id="47"/>
+					<ExtendedTooltip name="FreeOfChargeQuantityExtendedTooltip" id="48"/>
+				</InputField>
+				<InputField name="MinimumQuantity" id="43">
+					<DataPath>Record.MinimumQuantity</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Return minimum quantity if calculated quantity is greater then free of charge quantity and less than minimum quantity</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Mindestmenge zurück, wenn die berechnete Menge größer als die freie Menge und kleiner als die Mindestmenge ist</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вернуть минимальное кол-во, если рассчитанное кол-во больше "бесплатного" и меньше чем минимальное</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<SpinButton>true</SpinButton>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="MinimumQuantityContextMenu" id="44"/>
+					<ExtendedTooltip name="MinimumQuantityExtendedTooltip" id="45"/>
+				</InputField>
+				<InputField name="MaximumQuantity" id="68">
+					<DataPath>Record.MaximumQuantity</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Return maximum quantity if calculated quantity is greater than maximum quantity</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Maximale Menge zurückgeben, wenn die berechnete Menge größer als die maximale Menge ist</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вернуть максимальное количество если рассчитанное количество больше чем максимальное</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<SpinButton>true</SpinButton>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=3</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="MaximumQuantityContextMenu" id="69"/>
+					<ExtendedTooltip name="MaximumQuantityExtendedTooltip" id="70"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupPriceData" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Price to return</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Preis zurückgeben</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена к установке</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupPriceDataExtendedTooltip" id="67"/>
+			<ChildItems>
+				<UsualGroup name="GroupPrice" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Price</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Preis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цена</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupPriceExtendedTooltip" id="59"/>
+					<ChildItems>
+						<InputField name="Service" id="29">
+							<DataPath>Record.Service</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="ServiceContextMenu" id="30"/>
+							<ExtendedTooltip name="ServiceExtendedTooltip" id="31"/>
+							<Events>
+								<Event name="OnChange">ServiceOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="Price" id="34">
+							<DataPath>Record.Price</DataPath>
+							<ContextMenu name="PriceContextMenu" id="35"/>
+							<ExtendedTooltip name="PriceExtendedTooltip" id="36"/>
+						</InputField>
+						<InputField name="Currency" id="37">
+							<DataPath>Record.Currency</DataPath>
+							<Width>6</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="CurrencyContextMenu" id="38"/>
+							<ExtendedTooltip name="CurrencyExtendedTooltip" id="39"/>
+						</InputField>
+						<UsualGroup name="GroupPriceType" id="77">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Price type</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preistyp</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип цены</v8:content>
+								</v8:item>
+							</Title>
+							<Width>10</Width>
+							<Group>Vertical</Group>
+							<VerticalSpacing>None</VerticalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPriceTypeExtendedTooltip" id="78"/>
+							<ChildItems>
+								<CheckBoxField name="IsPricePerHour" id="79">
+									<DataPath>Record.IsPricePerHour</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Per hour</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Pro Stunde</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>За час</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsPricePerHourContextMenu" id="80"/>
+									<ExtendedTooltip name="IsPricePerHourExtendedTooltip" id="81"/>
+									<Events>
+										<Event name="OnChange">IsPricePerHourOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="IsPricePerMinute" id="55">
+									<DataPath>Record.IsPricePerMinute</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Per minute</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Pro Minute</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>За минуту</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsPricePerMinuteContextMenu" id="56"/>
+									<ExtendedTooltip name="IsPricePerMinuteExtendedTooltip" id="57"/>
+									<Events>
+										<Event name="OnChange">IsPricePerMinuteOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="IsPricePerDay" id="71">
+									<DataPath>Record.IsPricePerDay</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Per day</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Pro Tag</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>За день</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsPricePerDayContextMenu" id="72"/>
+									<ExtendedTooltip name="IsPricePerDayExtendedTooltip" id="73"/>
+									<Events>
+										<Event name="OnChange">IsPricePerDayOnChange</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="VATRate" id="40">
+							<DataPath>Record.VATRate</DataPath>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="VATRateContextMenu" id="41"/>
+							<ExtendedTooltip name="VATRateExtendedTooltip" id="42"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupFlags" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Flags</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Flagge</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флаги</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupFlagsExtendedTooltip" id="63"/>
+					<ChildItems>
+						<CheckBoxField name="IsResourceRevenue" id="49">
+							<DataPath>Record.IsResourceRevenue</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsResourceRevenueContextMenu" id="50"/>
+							<ExtendedTooltip name="IsResourceRevenueExtendedTooltip" id="51"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsPricePerPerson" id="52">
+							<DataPath>Record.IsPricePerPerson</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsPricePerPersonContextMenu" id="53"/>
+							<ExtendedTooltip name="IsPricePerPersonExtendedTooltip" id="54"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ResourcePrices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

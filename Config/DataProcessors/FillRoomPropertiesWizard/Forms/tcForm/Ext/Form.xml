@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormFormExecute" id="44">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.FormExecute</CommandName>
+				<ExtendedTooltip name="FormFormExecuteExtendedTooltip" id="45"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Hotel" id="1">
+			<DataPath>Object.Hotel</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="HotelContextMenu" id="2"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="3"/>
+			<Events>
+				<Event name="Clearing">HotelClearing</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Group_Row_1" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group row 1</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group_Row_1ExtendedTooltip" id="47"/>
+			<ChildItems>
+				<Table name="Rooms" id="4">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Object.Rooms</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="RoomsContextMenu" id="5"/>
+					<AutoCommandBar name="RoomsCommandBar" id="6">
+						<ChildItems>
+							<Button name="RoomsChooseRoomsAction" id="42">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Command.ChooseRoomsAction</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.Enum</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="RoomsChooseRoomsActionExtendedTooltip" id="43"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="RoomsExtendedTooltip" id="7"/>
+					<SearchStringAddition name="RoomsSearchString" id="8">
+						<AdditionSource>
+							<Item>Rooms</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomsSearchStringContextMenu" id="9"/>
+						<ExtendedTooltip name="RoomsSearchStringExtendedTooltip" id="10"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="RoomsViewStatus" id="11">
+						<AdditionSource>
+							<Item>Rooms</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomsViewStatusContextMenu" id="12"/>
+						<ExtendedTooltip name="RoomsViewStatusExtendedTooltip" id="13"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="RoomsSearchControl" id="14">
+						<AdditionSource>
+							<Item>Rooms</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomsSearchControlContextMenu" id="15"/>
+						<ExtendedTooltip name="RoomsSearchControlExtendedTooltip" id="16"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="ChoiceProcessing">RoomsChoiceProcessing</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="RoomsLineNumber" id="17">
+							<DataPath>Object.Rooms.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="RoomsLineNumberContextMenu" id="18"/>
+							<ExtendedTooltip name="RoomsLineNumberExtendedTooltip" id="19"/>
+						</LabelField>
+						<InputField name="RoomsRoom" id="20">
+							<DataPath>Object.Rooms.Room</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="RoomsRoomContextMenu" id="21"/>
+							<ExtendedTooltip name="RoomsRoomExtendedTooltip" id="22"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="RoomProperties" id="23">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Object.RoomProperties</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="RoomPropertiesContextMenu" id="24"/>
+					<AutoCommandBar name="RoomPropertiesCommandBar" id="25"/>
+					<ExtendedTooltip name="RoomPropertiesExtendedTooltip" id="26"/>
+					<SearchStringAddition name="RoomPropertiesSearchString" id="27">
+						<AdditionSource>
+							<Item>RoomProperties</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomPropertiesSearchStringContextMenu" id="28"/>
+						<ExtendedTooltip name="RoomPropertiesSearchStringExtendedTooltip" id="29"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="RoomPropertiesViewStatus" id="30">
+						<AdditionSource>
+							<Item>RoomProperties</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomPropertiesViewStatusContextMenu" id="31"/>
+						<ExtendedTooltip name="RoomPropertiesViewStatusExtendedTooltip" id="32"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="RoomPropertiesSearchControl" id="33">
+						<AdditionSource>
+							<Item>RoomProperties</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="RoomPropertiesSearchControlContextMenu" id="34"/>
+						<ExtendedTooltip name="RoomPropertiesSearchControlExtendedTooltip" id="35"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="RoomPropertiesLineNumber" id="36">
+							<DataPath>Object.RoomProperties.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="RoomPropertiesLineNumberContextMenu" id="37"/>
+							<ExtendedTooltip name="RoomPropertiesLineNumberExtendedTooltip" id="38"/>
+						</LabelField>
+						<InputField name="RoomPropertiesRoomProperty" id="39">
+							<DataPath>Object.RoomProperties.RoomProperty</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CreateButton>false</CreateButton>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ContextMenu name="RoomPropertiesRoomPropertyContextMenu" id="40"/>
+							<ExtendedTooltip name="RoomPropertiesRoomPropertyExtendedTooltip" id="41"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.FillRoomPropertiesWizard</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ChooseRoomsAction" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Choose multiple rooms</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать номера</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer auswählen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Choose rooms action</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ChooseRoomsAction</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="FormExecute" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form execute</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>FormExecute</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

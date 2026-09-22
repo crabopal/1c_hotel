@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="54"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Parent" id="7">
+					<DataPath>Object.Parent</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ParentContextMenu" id="8"/>
+					<ExtendedTooltip name="ParentExtendedTooltip" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="4">
+			<DataPath>Object.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="DescriptionContextMenu" id="5"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="ImageScannerDriver" id="10">
+			<DataPath>Object.ImageScannerDriver</DataPath>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ImageScannerDriverContextMenu" id="11"/>
+			<ExtendedTooltip name="ImageScannerDriverExtendedTooltip" id="12"/>
+			<Events>
+				<Event name="OnChange">ImageScannerDriverOnChange</Event>
+			</Events>
+		</InputField>
+		<InputField name="InteractionParameters" id="68">
+			<DataPath>Object.InteractionParameters</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="InteractionParametersContextMenu" id="69"/>
+			<ExtendedTooltip name="InteractionParametersExtendedTooltip" id="70"/>
+		</InputField>
+		<InputField name="ScanComponentInstallationPath" id="16">
+			<DataPath>Object.ScanComponentInstallationPath</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ScanComponentInstallationPathContextMenu" id="17"/>
+			<ExtendedTooltip name="ScanComponentInstallationPathExtendedTooltip" id="18"/>
+			<Events>
+				<Event name="StartChoice">ScanComponentInstallationPathStartChoice</Event>
+			</Events>
+		</InputField>
+		<InputField name="ScanContextFile" id="19">
+			<DataPath>Object.ScanContextFile</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ScanContextFileContextMenu" id="20"/>
+			<ExtendedTooltip name="ScanContextFileExtendedTooltip" id="21"/>
+		</InputField>
+		<InputField name="TwainDeviceName" id="13">
+			<DataPath>Object.TwainDeviceName</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>TWAIN device name</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Name des TWAIN-Scanners</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя TWAIN сканера</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<CreateButton>false</CreateButton>
+			<ChooseType>false</ChooseType>
+			<ContextMenu name="TwainDeviceNameContextMenu" id="14"/>
+			<ExtendedTooltip name="TwainDeviceNameExtendedTooltip" id="15"/>
+			<Events>
+				<Event name="StartChoice">TwainDeviceNameStartChoice</Event>
+			</Events>
+		</InputField>
+		<InputField name="PaperSize" id="22">
+			<DataPath>Object.PaperSize</DataPath>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="PaperSizeContextMenu" id="23"/>
+			<ExtendedTooltip name="PaperSizeExtendedTooltip" id="24">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(оставьте пустым чтобы использовать значение по умолчанию)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>(leave empty to use default value)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>(lassen Sie es leer, um den Wert stillschweigend zu benutzen)</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<InputField name="ColorDepth" id="28">
+			<DataPath>Object.ColorDepth</DataPath>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ColorDepthContextMenu" id="29"/>
+			<ExtendedTooltip name="ColorDepthExtendedTooltip" id="30">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(24 битный цвет по умолчанию)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>(24 bits color is used by default)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>(24 bits color is used by default)</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<UsualGroup name="GroupRow_1" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group row 1</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupRow_1ExtendedTooltip" id="60"/>
+			<ChildItems>
+				<InputField name="Rotation" id="25">
+					<DataPath>Object.Rotation</DataPath>
+					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="RotationContextMenu" id="26"/>
+					<ExtendedTooltip name="RotationExtendedTooltip" id="27">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<LabelDecoration name="Decoration1" id="61">
+					<Visible>false</Visible>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>(90, -90, 180, -180, 270, 0, ...)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Decoration1ContextMenu" id="62"/>
+					<ExtendedTooltip name="Decoration1ExtendedTooltip" id="63"/>
+				</LabelDecoration>
+				<CheckBoxField name="AutoRecognition" id="31">
+					<DataPath>Object.AutoRecognition</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="AutoRecognitionContextMenu" id="32"/>
+					<ExtendedTooltip name="AutoRecognitionExtendedTooltip" id="33"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ScanConfigurations" id="34">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.ScanConfigurations</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ScanConfigurationsContextMenu" id="35"/>
+			<AutoCommandBar name="ScanConfigurationsCommandBar" id="36">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ScanConfigurationsAdd" id="55">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.ScanConfigurations.StandardCommand.Add</CommandName>
+						<Picture>
+							<xr:Ref>CommonPicture.Add</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ScanConfigurationsAddExtendedTooltip" id="56"/>
+					</Button>
+					<Button name="ScanConfigurationsDelete" id="57">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.ScanConfigurations.StandardCommand.Delete</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ScanConfigurationsDeleteExtendedTooltip" id="58"/>
+					</Button>
+					<Popup name="SetScanConfigurationsGroup" id="71">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Set scan configurations</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Legen Sie Scankonfigurationen fest</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Установить конфигурации сканирования</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="SetScanConfigurationsGroupExtendedTooltip" id="72"/>
+						<ChildItems>
+							<Button name="SetScanConfigurationsForRussia" id="66">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.SetScanConfigurationsForRussia</CommandName>
+								<ExtendedTooltip name="SetScanConfigurationsForRussiaExtendedTooltip" id="67"/>
+							</Button>
+							<Button name="SetScanConfigurationsForEU" id="64">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.SetScanConfigurationsForEU</CommandName>
+								<ExtendedTooltip name="SetScanConfigurationsForEUExtendedTooltip" id="65"/>
+							</Button>
+							<Button name="SetScanConfigurationsForCyprus" id="73">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.SetScanConfigurationsForCyprus</CommandName>
+								<ExtendedTooltip name="SetScanConfigurationsForCyprusExtendedTooltip" id="74"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ScanConfigurationsExtendedTooltip" id="37"/>
+			<SearchStringAddition name="ScanConfigurationsSearchString" id="38">
+				<AdditionSource>
+					<Item>ScanConfigurations</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ScanConfigurationsSearchStringContextMenu" id="39"/>
+				<ExtendedTooltip name="ScanConfigurationsSearchStringExtendedTooltip" id="40"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ScanConfigurationsViewStatus" id="41">
+				<AdditionSource>
+					<Item>ScanConfigurations</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ScanConfigurationsViewStatusContextMenu" id="42"/>
+				<ExtendedTooltip name="ScanConfigurationsViewStatusExtendedTooltip" id="43"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ScanConfigurationsSearchControl" id="44">
+				<AdditionSource>
+					<Item>ScanConfigurations</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ScanConfigurationsSearchControlContextMenu" id="45"/>
+				<ExtendedTooltip name="ScanConfigurationsSearchControlExtendedTooltip" id="46"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ScanConfigurationsLineNumber" id="47">
+					<DataPath>Object.ScanConfigurations.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ScanConfigurationsLineNumberContextMenu" id="48"/>
+					<ExtendedTooltip name="ScanConfigurationsLineNumberExtendedTooltip" id="49"/>
+				</LabelField>
+				<InputField name="ScanConfigurationsScanConfiguration" id="50">
+					<DataPath>Object.ScanConfigurations.ScanConfiguration</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ScanConfigurationsScanConfigurationContextMenu" id="51"/>
+					<ExtendedTooltip name="ScanConfigurationsScanConfigurationExtendedTooltip" id="52"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ImageScannerConnectionParameters</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="SetScanConfigurationsForRussia" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Russia</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Russland</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Россия</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetScanConfigurations</Action>
+		</Command>
+		<Command name="SetScanConfigurationsForEU" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>European Union</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>European Union</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>European Union</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetScanConfigurations</Action>
+		</Command>
+		<Command name="SetScanConfigurationsForCyprus" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cyprus</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zypern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кипр</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetScanConfigurations</Action>
+		</Command>
+	</Commands>
+</Form>

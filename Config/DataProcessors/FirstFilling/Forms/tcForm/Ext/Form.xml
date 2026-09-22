@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Initial filling of the database wizard</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Erstbefüllung des Datenbank-Assistenten</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Мастер первоначального заполнения базы</v8:content>
+		</v8:item>
+	</Title>
+	<Width>55</Width>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="BeforeClose">BeforeClose</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupLanguage" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group language</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group language</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupLanguageExtendedTooltip" id="7"/>
+			<ChildItems>
+				<LabelDecoration name="DecorationLanguage" id="49">
+					<Font ref="style:NormalTextFont" height="12" kind="StyleItem" scale="100"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выберите язык по умолчанию:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wählen Sie die Standardsprache:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Select the default language:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DecorationLanguageContextMenu" id="50"/>
+					<ExtendedTooltip name="DecorationLanguageExtendedTooltip" id="51"/>
+				</LabelDecoration>
+				<InputField name="Language" id="1">
+					<DataPath>Object.Language</DataPath>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="LanguageContextMenu" id="2"/>
+					<ExtendedTooltip name="LanguageExtendedTooltip" id="3"/>
+					<Events>
+						<Event name="OnChange">LanguageOnChange</Event>
+					</Events>
+				</InputField>
+				<Button name="ConfirmLanguage" id="69">
+					<Type>UsualButton</Type>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.ConfirmLanguage</CommandName>
+					<ExtendedTooltip name="ConfirmLanguageExtendedTooltip" id="70"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupCompany" id="8">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group company</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group company</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCompanyExtendedTooltip" id="9"/>
+			<ChildItems>
+				<LabelDecoration name="DecorationCompany" id="46">
+					<Font ref="style:NormalTextFont" height="12" kind="StyleItem" scale="100"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введите параметры фирмы:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Unternehmensinterne Parameter:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Enter company parameters:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DecorationCompanyContextMenu" id="47"/>
+					<ExtendedTooltip name="DecorationCompanyExtendedTooltip" id="48"/>
+				</LabelDecoration>
+				<InputField name="CompanyDescription" id="19">
+					<DataPath>Object.CompanyDescription</DataPath>
+					<ContextMenu name="CompanyDescriptionContextMenu" id="20"/>
+					<ExtendedTooltip name="CompanyDescriptionExtendedTooltip" id="21"/>
+				</InputField>
+				<InputField name="CompanyLegacyDescription" id="13">
+					<DataPath>Object.CompanyLegacyDescription</DataPath>
+					<ContextMenu name="CompanyLegacyDescriptionContextMenu" id="14"/>
+					<ExtendedTooltip name="CompanyLegacyDescriptionExtendedTooltip" id="15"/>
+				</InputField>
+				<InputField name="TaxationSystem" id="71">
+					<DataPath>TaxationSystemString</DataPath>
+					<DropListButton>true</DropListButton>
+					<ContextMenu name="TaxationSystemContextMenu" id="72"/>
+					<ExtendedTooltip name="TaxationSystemExtendedTooltip" id="73"/>
+					<Events>
+						<Event name="OnChange">TaxationSystemOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="VATRate" id="10">
+					<DataPath>Object.VATRate</DataPath>
+					<OpenButton>false</OpenButton>
+					<Font bold="true" kind="AutoFont"/>
+					<ContextMenu name="VATRateContextMenu" id="11"/>
+					<ExtendedTooltip name="VATRateExtendedTooltip" id="12"/>
+				</InputField>
+				<UsualGroup name="GroupNavigationCompany" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group navigation</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group navigation</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupNavigationCompanyExtendedTooltip" id="68"/>
+					<ChildItems>
+						<Button name="PrevCompany" id="65">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.PrevCompany</CommandName>
+							<ExtendedTooltip name="PrevCompanyExtendedTooltip" id="66"/>
+						</Button>
+						<Button name="ConfirmCompany" id="56">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.ConfirmCompany</CommandName>
+							<ExtendedTooltip name="ConfirmCompanyExtendedTooltip" id="57"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHotel" id="24">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group hotel</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group company</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="25"/>
+			<ChildItems>
+				<LabelDecoration name="DecorationHotel" id="26">
+					<Font ref="style:NormalTextFont" height="12" kind="StyleItem" scale="100"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введите параметры отеля:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotelparameter eingeben:</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Enter hotel parameters:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DecorationHotelContextMenu" id="27"/>
+					<ExtendedTooltip name="DecorationHotelExtendedTooltip" id="28"/>
+				</LabelDecoration>
+				<InputField name="HotelDescription" id="29">
+					<DataPath>Object.HotelDescription</DataPath>
+					<ContextMenu name="HotelDescriptionContextMenu" id="30"/>
+					<ExtendedTooltip name="HotelDescriptionExtendedTooltip" id="31"/>
+				</InputField>
+				<InputField name="HotelLegacyDescription" id="32">
+					<DataPath>Object.HotelLegacyDescription</DataPath>
+					<ContextMenu name="HotelLegacyDescriptionContextMenu" id="33"/>
+					<ExtendedTooltip name="HotelLegacyDescriptionExtendedTooltip" id="34"/>
+				</InputField>
+				<InputField name="Currency" id="35">
+					<DataPath>Object.Currency</DataPath>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="CurrencyContextMenu" id="36"/>
+					<ExtendedTooltip name="CurrencyExtendedTooltip" id="37"/>
+				</InputField>
+				<InputField name="Citizenship" id="38">
+					<DataPath>Object.Citizenship</DataPath>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="CitizenshipContextMenu" id="39"/>
+					<ExtendedTooltip name="CitizenshipExtendedTooltip" id="40"/>
+				</InputField>
+				<InputField name="DocumentPrefix" id="41">
+					<DataPath>Object.Prefix</DataPath>
+					<ContextMenu name="DocumentPrefixContextMenu" id="42"/>
+					<ExtendedTooltip name="DocumentPrefixExtendedTooltip" id="43"/>
+				</InputField>
+				<UsualGroup name="GroupNavigationHotel" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group navigation hotel</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group navigation hotel</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupNavigationHotelExtendedTooltip" id="53"/>
+					<ChildItems>
+						<Button name="PrevHotel" id="54">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CommandName>Form.Command.PrevHotel</CommandName>
+							<ExtendedTooltip name="PrevHotelExtendedTooltip" id="55"/>
+						</Button>
+						<Button name="ConfirmHotel" id="44">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.ConfirmHotel</CommandName>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="ConfirmHotelExtendedTooltip" id="45">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Nach dem Befüllen der Datenbank wird ein Neustart durchgeführt!</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>After filling the database, a restart will be performed!</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>После заполнения базы будет выполнен перезапуск!</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupProgress" id="63">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group progress</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group progress</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupProgressExtendedTooltip" id="64"/>
+			<ChildItems>
+				<ProgressBarField name="BackgroundOperationProgress" id="60">
+					<DataPath>BackgroundOperationProgress</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The initial filling of the database is being performed...</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Die Erstbefüllung der Datenbank wird durchgeführt...</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполняется первоначальное заполнение базы...</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<ContextMenu name="BackgroundOperationProgressContextMenu" id="61"/>
+					<ExtendedTooltip name="BackgroundOperationProgressExtendedTooltip" id="62"/>
+				</ProgressBarField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.FirstFilling</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="CurrentBackgroundJobUUID" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current background job UUID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="BackgroundOperationProgress" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Background operation progress</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ListOfMessages" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>List of messages</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="CloseApplication" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Close application</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="TaxationSystemString" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Taxation system</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Steuersystem</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Система налогообложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="LanguageIsChanged" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Language is changed</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ConfirmLanguage" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Next</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nächsten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Confirm</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Confirm language</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ConfirmLanguage</Action>
+		</Command>
+		<Command name="ConfirmCompany" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Next</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nächsten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Confirm</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Confirm language</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ConfirmCompany</Action>
+		</Command>
+		<Command name="ConfirmHotel" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Start filling</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Mit dem Befüllen beginnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начать заполнение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Confirm</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Confirm language</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ConfirmHotel</Action>
+		</Command>
+		<Command name="PrevHotel" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Prev</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Vorherige</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Prev hotel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrevHotel</Action>
+		</Command>
+		<Command name="PrevCompany" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Prev</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Vorherige</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Prev hotel</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrevCompany</Action>
+		</Command>
+	</Commands>
+</Form>

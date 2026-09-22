@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Header" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="HeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="HeaderLeftColumn" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Header left column</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="HeaderLeftColumnExtendedTooltip" id="4"/>
+					<ChildItems>
+						<LabelField name="Description" id="5">
+							<DataPath>Object.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="DescriptionContextMenu" id="6"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="7"/>
+						</LabelField>
+						<LabelField name="Hotel" id="8">
+							<DataPath>Object.Hotel</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="HotelContextMenu" id="9"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="10"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="HeaderRightColumn" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Header right column</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="HeaderRightColumnExtendedTooltip" id="32"/>
+					<ChildItems>
+						<LabelField name="Code" id="33">
+							<DataPath>Object.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Font bold="true" kind="AutoFont"/>
+							<ContextMenu name="CodeContextMenu" id="34"/>
+							<ExtendedTooltip name="CodeExtendedTooltip" id="35"/>
+						</LabelField>
+						<LabelField name="Parent" id="36">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParentContextMenu" id="37"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="38"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="AllPages" id="95">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="AllPagesExtendedTooltip" id="96"/>
+			<ChildItems>
+				<Page name="PageSettings" id="97">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Einstellung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PageSettingsExtendedTooltip" id="98"/>
+					<ChildItems>
+						<InputField name="InteractionID" id="11">
+							<DataPath>Object.InteractionID</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>External system code</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Externer Systemcode</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код внешней системы</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="InteractionIDContextMenu" id="12"/>
+							<ExtendedTooltip name="InteractionIDExtendedTooltip" id="13"/>
+						</InputField>
+						<InputField name="RoomNumberLenght" id="89">
+							<DataPath>Object.RoomNumberLenght</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="RoomNumberLenghtContextMenu" id="90"/>
+							<ExtendedTooltip name="RoomNumberLenghtExtendedTooltip" id="91"/>
+						</InputField>
+						<InputField name="CardNumberLength" id="92">
+							<DataPath>Object.CardNumberLength</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="CardNumberLengthContextMenu" id="93"/>
+							<ExtendedTooltip name="CardNumberLengthExtendedTooltip" id="94"/>
+						</InputField>
+						<CheckBoxField name="DoNotCheckFolioCreditLimitAtWritePOSOrders" id="198">
+							<DataPath>Object.DoNotCheckFolioCreditLimitAtWritePOSOrders</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotCheckFolioCreditLimitAtWritePOSOrdersContextMenu" id="199"/>
+							<ExtendedTooltip name="DoNotCheckFolioCreditLimitAtWritePOSOrdersExtendedTooltip" id="200"/>
+						</CheckBoxField>
+						<InputField name="MaxLogLenght" id="171">
+							<DataPath>Object.MaxLogLenght</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<ContextMenu name="MaxLogLenghtContextMenu" id="172"/>
+							<ExtendedTooltip name="MaxLogLenghtExtendedTooltip" id="173"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="PageHotels" id="99">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotels</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotels</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиницы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PageHotelsExtendedTooltip" id="100"/>
+					<ChildItems>
+						<Table name="Hotels" id="101">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Hotels</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="HotelsContextMenu" id="102"/>
+							<AutoCommandBar name="HotelsCommandBar" id="103"/>
+							<ExtendedTooltip name="HotelsExtendedTooltip" id="104"/>
+							<SearchStringAddition name="HotelsSearchString" id="105">
+								<AdditionSource>
+									<Item>Hotels</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelsSearchStringContextMenu" id="106"/>
+								<ExtendedTooltip name="HotelsSearchStringExtendedTooltip" id="107"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="HotelsViewStatus" id="108">
+								<AdditionSource>
+									<Item>Hotels</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelsViewStatusContextMenu" id="109"/>
+								<ExtendedTooltip name="HotelsViewStatusExtendedTooltip" id="110"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="HotelsSearchControl" id="111">
+								<AdditionSource>
+									<Item>Hotels</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelsSearchControlContextMenu" id="112"/>
+								<ExtendedTooltip name="HotelsSearchControlExtendedTooltip" id="113"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="Hotelsid" id="114">
+									<DataPath>Hotels.id</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="HotelsidContextMenu" id="115"/>
+									<ExtendedTooltip name="HotelsidExtendedTooltip" id="116"/>
+								</InputField>
+								<InputField name="HotelsHotel" id="117">
+									<DataPath>Hotels.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="HotelsHotelContextMenu" id="118"/>
+									<ExtendedTooltip name="HotelsHotelExtendedTooltip" id="119"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PagePaymentMethods" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payment methods</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zahlungsart</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способы оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PagePaymentMethodsExtendedTooltip" id="121"/>
+					<ChildItems>
+						<Table name="PaymentMethods" id="122">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>PaymentMethods</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="PaymentMethodsContextMenu" id="123"/>
+							<AutoCommandBar name="PaymentMethodsCommandBar" id="124"/>
+							<ExtendedTooltip name="PaymentMethodsExtendedTooltip" id="125"/>
+							<SearchStringAddition name="PaymentMethodsSearchString" id="126">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsSearchStringContextMenu" id="127"/>
+								<ExtendedTooltip name="PaymentMethodsSearchStringExtendedTooltip" id="128"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="PaymentMethodsViewStatus" id="129">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsViewStatusContextMenu" id="130"/>
+								<ExtendedTooltip name="PaymentMethodsViewStatusExtendedTooltip" id="131"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="PaymentMethodsSearchControl" id="132">
+								<AdditionSource>
+									<Item>PaymentMethods</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="PaymentMethodsSearchControlContextMenu" id="133"/>
+								<ExtendedTooltip name="PaymentMethodsSearchControlExtendedTooltip" id="134"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="PaymentMethodsHotel" id="165">
+									<DataPath>PaymentMethods.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsHotelContextMenu" id="166"/>
+									<ExtendedTooltip name="PaymentMethodsHotelExtendedTooltip" id="167"/>
+								</InputField>
+								<InputField name="PaymentMethodsid" id="135">
+									<DataPath>PaymentMethods.id</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsidContextMenu" id="136"/>
+									<ExtendedTooltip name="PaymentMethodsidExtendedTooltip" id="137"/>
+								</InputField>
+								<InputField name="PaymentMethodsPaymentMethod" id="138">
+									<DataPath>PaymentMethods.PaymentMethod</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodsPaymentMethodContextMenu" id="139"/>
+									<ExtendedTooltip name="PaymentMethodsPaymentMethodExtendedTooltip" id="140"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageCashRegisters" id="174">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cash registers</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Registrierkassen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ККМ</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Page cash registers</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="PageCashRegistersExtendedTooltip" id="175"/>
+					<ChildItems>
+						<Table name="CashRegisters" id="176">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>CashRegisters</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="CashRegistersContextMenu" id="177"/>
+							<AutoCommandBar name="CashRegistersCommandBar" id="178"/>
+							<ExtendedTooltip name="CashRegistersExtendedTooltip" id="179"/>
+							<SearchStringAddition name="CashRegistersSearchString" id="180">
+								<AdditionSource>
+									<Item>CashRegisters</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="CashRegistersSearchStringContextMenu" id="181"/>
+								<ExtendedTooltip name="CashRegistersSearchStringExtendedTooltip" id="182"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="CashRegistersViewStatus" id="183">
+								<AdditionSource>
+									<Item>CashRegisters</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="CashRegistersViewStatusContextMenu" id="184"/>
+								<ExtendedTooltip name="CashRegistersViewStatusExtendedTooltip" id="185"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="CashRegistersSearchControl" id="186">
+								<AdditionSource>
+									<Item>CashRegisters</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="CashRegistersSearchControlContextMenu" id="187"/>
+								<ExtendedTooltip name="CashRegistersSearchControlExtendedTooltip" id="188"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="CashRegistersHotel" id="195">
+									<DataPath>CashRegisters.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CashRegistersHotelContextMenu" id="196"/>
+									<ExtendedTooltip name="CashRegistersHotelExtendedTooltip" id="197"/>
+								</InputField>
+								<InputField name="CashRegistersid" id="189">
+									<DataPath>CashRegisters.id</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>cashservername R-Keeper</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>cashservername R-Keeper</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>cashservername R-Keeper</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>26</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>26</MaxWidth>
+									<ContextMenu name="CashRegistersidContextMenu" id="190"/>
+									<ExtendedTooltip name="CashRegistersidExtendedTooltip" id="191"/>
+								</InputField>
+								<InputField name="CashRegistersCashRegister" id="192">
+									<DataPath>CashRegisters.CashRegister</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CashRegistersCashRegisterContextMenu" id="193"/>
+									<ExtendedTooltip name="CashRegistersCashRegisterExtendedTooltip" id="194"/>
+								</InputField>
+								<InputField name="CashRegistersCustomer" id="201">
+									<DataPath>CashRegisters.Customer</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="CashRegistersCustomerContextMenu" id="202"/>
+									<ExtendedTooltip name="CashRegistersCustomerExtendedTooltip" id="203"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageServices" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Services</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PageServicesExtendedTooltip" id="142"/>
+					<ChildItems>
+						<Table name="Services" id="143">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Services</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ServicesContextMenu" id="144"/>
+							<AutoCommandBar name="ServicesCommandBar" id="145"/>
+							<ExtendedTooltip name="ServicesExtendedTooltip" id="146"/>
+							<SearchStringAddition name="ServicesSearchString" id="147">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesSearchStringContextMenu" id="148"/>
+								<ExtendedTooltip name="ServicesSearchStringExtendedTooltip" id="149"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ServicesViewStatus" id="150">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesViewStatusContextMenu" id="151"/>
+								<ExtendedTooltip name="ServicesViewStatusExtendedTooltip" id="152"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ServicesSearchControl" id="153">
+								<AdditionSource>
+									<Item>Services</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicesSearchControlContextMenu" id="154"/>
+								<ExtendedTooltip name="ServicesSearchControlExtendedTooltip" id="155"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ServicesHotel" id="168">
+									<DataPath>Services.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicesHotelContextMenu" id="169"/>
+									<ExtendedTooltip name="ServicesHotelExtendedTooltip" id="170"/>
+								</InputField>
+								<InputField name="ServicesCashServerName" id="156">
+									<DataPath>Services.CashServerName</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicesCashServerNameContextMenu" id="157"/>
+									<ExtendedTooltip name="ServicesCashServerNameExtendedTooltip" id="158"/>
+								</InputField>
+								<InputField name="ServicesService" id="159">
+									<DataPath>Services.Service</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicesServiceContextMenu" id="160"/>
+									<ExtendedTooltip name="ServicesServiceExtendedTooltip" id="161"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="GroupDebug" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Debug settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Debug-Einstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры отладки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupDebugExtendedTooltip" id="55"/>
+			<ChildItems>
+				<CheckBoxField name="IsActive" id="48">
+					<DataPath>Object.IsActive</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsActiveContextMenu" id="49"/>
+					<ExtendedTooltip name="IsActiveExtendedTooltip" id="50"/>
+				</CheckBoxField>
+				<CheckBoxField name="DebugMode" id="56">
+					<DataPath>Object.DebugMode</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DebugModeContextMenu" id="57"/>
+					<ExtendedTooltip name="DebugModeExtendedTooltip" id="58"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Footer" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Footer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fußzeile</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="FooterExtendedTooltip" id="63"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ExternalSystemInteractions</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="PaymentMethods" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payment methods</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="id" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Interface Id</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Interface Id</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>id интерфейса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="PaymentMethod" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payment method</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zahlungsart</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.PaymentMethods</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Hotel" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Hotels" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotels</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="id" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Interface Id</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Interface Id</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>id интерфейса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Hotel" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Services" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Services</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="CashServerName" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cash server name</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Cash server name</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование cash server</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>40</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Service" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Hotel" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="DefaultService" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Default service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Standard-Service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга по-умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="CashRegisters" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cash registers</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierkassen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ККМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="id" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>40</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CashRegister" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cash register</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Registrierkass</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ККМ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CashRegisters</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Hotel" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Customer" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio Customer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio Customer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент в фолио</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Customers</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,1103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandSet>
+		<ExcludedCommand>Write</ExcludedCommand>
+	</CommandSet>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormPostAndClose" id="82">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write and close</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern und schließen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="83"/>
+			</Button>
+			<Button name="FormPost" id="84">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Post</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Write</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormPostExtendedTooltip" id="85"/>
+			</Button>
+			<Popup name="FormGroupPrinting" id="103">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Print</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Drucken</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormGroupPrintingExtendedTooltip" id="104"/>
+				<ChildItems>
+					<ButtonGroup name="FormGroupPrintingDefault" id="105">
+						<ExtendedTooltip name="FormGroupPrintingDefaultExtendedTooltip" id="106"/>
+					</ButtonGroup>
+					<ButtonGroup name="FormGroupPrintingNotDefault" id="107">
+						<ExtendedTooltip name="FormGroupPrintingNotDefaultExtendedTooltip" id="108"/>
+						<ChildItems>
+							<ButtonGroup name="FormGroupPrintingNotDefaultMain" id="109">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Form group printing not default main</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="FormGroupPrintingNotDefaultMainExtendedTooltip" id="110"/>
+							</ButtonGroup>
+							<ButtonGroup name="FormGroupPrintingNotDefaultExtra" id="111">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Form group printing not default main</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="FormGroupPrintingNotDefaultExtraExtendedTooltip" id="112"/>
+							</ButtonGroup>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupNumberDateAndAuthor" id="74">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Number, date and author</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nummer, Datum und Autor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер, дата и автор</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupNumberDateAndAuthorExtendedTooltip" id="75"/>
+			<ChildItems>
+				<InputField name="Number" id="1">
+					<DataPath>Object.Number</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="NumberContextMenu" id="2"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Date" id="4">
+					<DataPath>Object.Date</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="DateContextMenu" id="5"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="CorrectionNumber" id="142">
+					<DataPath>Object.CorrectionNumber</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="CorrectionNumberContextMenu" id="143"/>
+					<ExtendedTooltip name="CorrectionNumberExtendedTooltip" id="144"/>
+				</InputField>
+				<CheckBoxField name="IsSubmitted" id="139">
+					<DataPath>Object.IsSubmitted</DataPath>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsSubmittedContextMenu" id="140"/>
+					<ExtendedTooltip name="IsSubmittedExtendedTooltip" id="141"/>
+					<Events>
+						<Event name="OnChange">IsSubmittedOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Author" id="31">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<OpenButton>false</OpenButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="AuthorContextMenu" id="32"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="33"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHotelAndCompany" id="76">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel and company</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel und Kompanie</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница и фирма</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHotelAndCompanyExtendedTooltip" id="77"/>
+			<ChildItems>
+				<InputField name="Hotel" id="10">
+					<DataPath>Object.Hotel</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="HotelContextMenu" id="11"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="12"/>
+				</InputField>
+				<InputField name="Company" id="13">
+					<DataPath>Object.Company</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="CompanyContextMenu" id="14"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="15"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupPeriod" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Periode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="79"/>
+			<ChildItems>
+				<InputField name="DateFrom" id="16">
+					<DataPath>Object.DateFrom</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Period from</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Periode von</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период с</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="DateFromContextMenu" id="17"/>
+					<ExtendedTooltip name="DateFromExtendedTooltip" id="18"/>
+				</InputField>
+				<InputField name="DateTo" id="19">
+					<DataPath>Object.DateTo</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>to</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>bis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="DateToContextMenu" id="20"/>
+					<ExtendedTooltip name="DateToExtendedTooltip" id="21"/>
+				</InputField>
+				<InputField name="RoomParent" id="148">
+					<DataPath>Object.RoomParent</DataPath>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="RoomParentContextMenu" id="149"/>
+					<ExtendedTooltip name="RoomParentExtendedTooltip" id="150"/>
+				</InputField>
+				<InputField name="RoomTypeParent" id="151">
+					<DataPath>Object.RoomTypeParent</DataPath>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="RoomTypeParentContextMenu" id="152"/>
+					<ExtendedTooltip name="RoomTypeParentExtendedTooltip" id="153"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Reservations" id="34">
+			<Representation>List</Representation>
+			<HeaderHeight>2</HeaderHeight>
+			<Footer>true</Footer>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Object.Reservations</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ReservationsContextMenu" id="35"/>
+			<AutoCommandBar name="ReservationsCommandBar" id="36">
+				<ChildItems>
+					<Button name="FillReservations" id="86">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.FillReservations</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FillReservationsExtendedTooltip" id="87"/>
+					</Button>
+					<ButtonGroup name="ReservationsGroupEditActions" id="101">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Edit list actions</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Listenaktionen bearbeiten</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Действия по редактированию списка</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Reservations group edit actions</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ReservationsGroupEditActionsExtendedTooltip" id="102"/>
+						<ChildItems>
+							<Button name="ReservationsAdd" id="99">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.Reservations.StandardCommand.Add</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Add</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Hinzufügen</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ReservationsAddExtendedTooltip" id="100"/>
+							</Button>
+							<Button name="ReservationsDelete" id="88">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.Reservations.StandardCommand.Delete</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ReservationsDeleteExtendedTooltip" id="89"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ReservationsGroupSort" id="135">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Sort</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Sortieren</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сортировка</v8:content>
+							</v8:item>
+						</Title>
+						<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ReservationsGroupSortExtendedTooltip" id="136"/>
+						<ChildItems>
+							<Button name="ReservationsSortListAsc" id="131">
+								<Type>CommandBarButton</Type>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<CommandName>Form.Item.Reservations.StandardCommand.SortListAsc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ReservationsSortListAscExtendedTooltip" id="132"/>
+							</Button>
+							<Button name="ReservationsSortListDesc" id="133">
+								<Type>CommandBarButton</Type>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<CommandName>Form.Item.Reservations.StandardCommand.SortListDesc</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ReservationsSortListDescExtendedTooltip" id="134"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ReservationsGroupFind" id="129">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Find</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Finden</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Поиск</v8:content>
+							</v8:item>
+						</Title>
+						<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ReservationsGroupFindExtendedTooltip" id="130"/>
+						<ChildItems>
+							<Button name="ReservationsFind" id="122">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<CommandName>Form.Item.Reservations.StandardCommand.Find</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ReservationsFindExtendedTooltip" id="123"/>
+							</Button>
+							<Button name="ReservationsCancelSearch" id="124">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<CommandName>Form.Item.Reservations.StandardCommand.CancelSearch</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ReservationsCancelSearchExtendedTooltip" id="125"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="ReservationsRecalculateTouristTax" id="137">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.RecalculateTouristTax</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ReservationsRecalculateTouristTaxExtendedTooltip" id="138"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ReservationsExtendedTooltip" id="37"/>
+			<SearchStringAddition name="ReservationsSearchString" id="38">
+				<AdditionSource>
+					<Item>Reservations</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ReservationsSearchStringContextMenu" id="39"/>
+				<ExtendedTooltip name="ReservationsSearchStringExtendedTooltip" id="40"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ReservationsViewStatus" id="41">
+				<AdditionSource>
+					<Item>Reservations</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ReservationsViewStatusContextMenu" id="42"/>
+				<ExtendedTooltip name="ReservationsViewStatusExtendedTooltip" id="43"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ReservationsSearchControl" id="44">
+				<AdditionSource>
+					<Item>Reservations</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ReservationsSearchControlContextMenu" id="45"/>
+				<ExtendedTooltip name="ReservationsSearchControlExtendedTooltip" id="46"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">ReservationsOnChange</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ReservationsLineNumber" id="47">
+					<DataPath>Object.Reservations.LineNumber</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ReservationsLineNumberContextMenu" id="48"/>
+					<ExtendedTooltip name="ReservationsLineNumberExtendedTooltip" id="49"/>
+				</LabelField>
+				<InputField name="ReservationsGuestGroup" id="113">
+					<DataPath>Object.Reservations.GuestGroup</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ReservationsGuestGroupContextMenu" id="114"/>
+					<ExtendedTooltip name="ReservationsGuestGroupExtendedTooltip" id="115"/>
+				</InputField>
+				<InputField name="ReservationsTouristicTaxDate" id="119">
+					<DataPath>Object.Reservations.TouristicTaxDate</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTouristicTaxDateContextMenu" id="120"/>
+					<ExtendedTooltip name="ReservationsTouristicTaxDateExtendedTooltip" id="121"/>
+				</InputField>
+				<InputField name="ReservationsReservation" id="50">
+					<DataPath>Object.Reservations.Reservation</DataPath>
+					<Width>40</Width>
+					<ClearButton>false</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsReservationContextMenu" id="51"/>
+					<ExtendedTooltip name="ReservationsReservationExtendedTooltip" id="52"/>
+					<Events>
+						<Event name="OnChange">ReservationsReservationOnChange</Event>
+						<Event name="Opening">ReservationsReservationOpening</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsCheckInDate" id="90">
+					<DataPath>Object.Reservations.CheckInDate</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ReservationsCheckInDateContextMenu" id="91"/>
+					<ExtendedTooltip name="ReservationsCheckInDateExtendedTooltip" id="92"/>
+				</InputField>
+				<InputField name="ReservationsDurationInDays" id="96">
+					<DataPath>Object.Reservations.DurationInDays</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Days</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Tagen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дней</v8:content>
+						</v8:item>
+					</Title>
+					<Width>5</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsDurationInDaysContextMenu" id="97"/>
+					<ExtendedTooltip name="ReservationsDurationInDaysExtendedTooltip" id="98"/>
+				</InputField>
+				<InputField name="ReservationsCheckOutDate" id="93">
+					<DataPath>Object.Reservations.CheckOutDate</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ReservationsCheckOutDateContextMenu" id="94"/>
+					<ExtendedTooltip name="ReservationsCheckOutDateExtendedTooltip" id="95"/>
+				</InputField>
+				<InputField name="ReservationsRateAmount" id="53">
+					<DataPath>Object.Reservations.RateAmount</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterDataPath>Object.Reservations.TotalRateAmount</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsRateAmountContextMenu" id="54"/>
+					<ExtendedTooltip name="ReservationsRateAmountExtendedTooltip" id="55"/>
+					<Events>
+						<Event name="OnChange">ReservationsRateAmountOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsTaxBaseAmount" id="145">
+					<DataPath>Object.Reservations.TaxBaseAmount</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tax base</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Steuerbasis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговая база</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterDataPath>Object.Reservations.TotalTaxBaseAmount</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTaxBaseAmountContextMenu" id="146"/>
+					<ExtendedTooltip name="ReservationsTaxBaseAmountExtendedTooltip" id="147"/>
+					<Events>
+						<Event name="OnChange">ReservationsTaxBaseAmountOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsTouristicTaxExemptionReason" id="62">
+					<DataPath>Object.Reservations.TouristicTaxExemptionReason</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Exemption reason</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Befreiungsgrund</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причина освобождения</v8:content>
+						</v8:item>
+					</Title>
+					<Width>15</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTouristicTaxExemptionReasonContextMenu" id="63"/>
+					<ExtendedTooltip name="ReservationsTouristicTaxExemptionReasonExtendedTooltip" id="64"/>
+				</InputField>
+				<InputField name="ReservationsTaxAmount" id="65">
+					<DataPath>Object.Reservations.TaxAmount</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTaxAmountContextMenu" id="66"/>
+					<ExtendedTooltip name="ReservationsTaxAmountExtendedTooltip" id="67"/>
+					<Events>
+						<Event name="OnChange">ReservationsTaxAmountOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsPaidTaxAmount" id="68">
+					<DataPath>Object.Reservations.PaidTaxAmount</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Paid tax</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bezahlte Steuern</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уплаченный налог</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterDataPath>Object.Reservations.TotalPaidTaxAmount</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsPaidTaxAmountContextMenu" id="69"/>
+					<ExtendedTooltip name="ReservationsPaidTaxAmountExtendedTooltip" id="70"/>
+					<Events>
+						<Event name="OnChange">ReservationsPaidTaxAmountOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsTaxAmountToBePaid" id="71">
+					<DataPath>Object.Reservations.TaxAmountToBePaid</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tax to be paid</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zu zahlende Steuer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налог к уплате</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterDataPath>Object.Reservations.TotalTaxAmountToBePaid</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>12</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTaxAmountToBePaidContextMenu" id="72"/>
+					<ExtendedTooltip name="ReservationsTaxAmountToBePaidExtendedTooltip" id="73"/>
+				</InputField>
+				<InputField name="ReservationsTouristTaxRate" id="56">
+					<DataPath>Object.Reservations.TouristTaxRate</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tax rate %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Steuersatz %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка %</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsTouristTaxRateContextMenu" id="57"/>
+					<ExtendedTooltip name="ReservationsTouristTaxRateExtendedTooltip" id="58"/>
+					<Events>
+						<Event name="OnChange">ReservationsTouristTaxRateOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReservationsMinAmountPerDay" id="59">
+					<DataPath>Object.Reservations.MinAmountPerDay</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Min. amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Mindestbetrag</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мин. сумма</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>8</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ReservationsMinAmountPerDayContextMenu" id="60"/>
+					<ExtendedTooltip name="ReservationsMinAmountPerDayExtendedTooltip" id="61"/>
+					<Events>
+						<Event name="OnChange">ReservationsMinAmountPerDayOnChange</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ReservationsTouristicTaxIsByMinAmount" id="116">
+					<DataPath>Object.Reservations.TouristicTaxIsByMinAmount</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tax is based on the min. amount per day</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Basierend auf der Mindestmenge pro Tag</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налог рассчитан по мин. сумме за день</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ReservationsTouristicTaxIsByMinAmountContextMenu" id="117"/>
+					<ExtendedTooltip name="ReservationsTouristicTaxIsByMinAmountExtendedTooltip" id="118"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="GroupFooter" id="80">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Totals</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupFooterExtendedTooltip" id="81"/>
+			<ChildItems>
+				<InputField name="ExternalCode" id="25">
+					<DataPath>Object.ExternalCode</DataPath>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ExternalCodeContextMenu" id="26"/>
+					<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="27"/>
+				</InputField>
+				<CheckBoxField name="DeletionMark" id="7">
+					<DataPath>Object.DeletionMark</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Right</TitleLocation>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="8"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="9"/>
+				</CheckBoxField>
+				<LabelField name="Currency" id="28">
+					<DataPath>Object.Currency</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="CurrencyContextMenu" id="29"/>
+					<ExtendedTooltip name="CurrencyExtendedTooltip" id="30"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.TouristTaxDeclarationRU</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Object.Reservations"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="PrintForms" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>PrintForms</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="PrintForm" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Print form</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ObjectPrintingForms</v8:Type>
+					</Type>
+				</Column>
+				<Column name="IsDefault" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is default</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="IsNew" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is new</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ist neuw</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="RateAmountIsIncludingTax" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Rate amount is including tax</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Reservations</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Reservations.TouristicTaxExemptionReason</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="FillReservations" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill reservations</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Reservierungen ausfüllen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить список брони</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Document</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>FillReservations</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="RecalculateTouristTax" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Recalculate tax</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать налог</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Recalculate tourist tax for all reservations in the decalaration period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Steuer für alle Buchungen im aktuellen Erklärungszeitraum neu berechnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать налог у всех бронирований в периоде текущей декларации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.History</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>RecalculateTouristTax</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>AccumulationRegister.TouristTaxToBePaid.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.RightsToRunMobileClient">false</xr:Value>
+					<xr:Value name="Role.RightsToRunThinClient">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemLoyalty">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

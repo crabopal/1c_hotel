@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormSetDateInterval" id="79">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Item.List.StandardCommand.SetDateInterval</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Period</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Periode</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период</v8:content>
+					</v8:item>
+				</Title>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="FormSetDateIntervalExtendedTooltip" id="80"/>
+			</Button>
+			<Button name="FormRefresh" id="81">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Item.List.StandardCommand.Refresh</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Refresh</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Aktualisieren</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обновить</v8:content>
+					</v8:item>
+				</Title>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="FormRefreshExtendedTooltip" id="82"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Date" id="16">
+					<DataPath>List.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="DateContextMenu" id="17"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="Number" id="19">
+					<DataPath>List.Number</DataPath>
+					<ContextMenu name="NumberContextMenu" id="20"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="Service" id="22">
+					<DataPath>List.Service</DataPath>
+					<ContextMenu name="ServiceContextMenu" id="23"/>
+					<ExtendedTooltip name="ServiceExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="Price" id="25">
+					<DataPath>List.Price</DataPath>
+					<ContextMenu name="PriceContextMenu" id="26"/>
+					<ExtendedTooltip name="PriceExtendedTooltip" id="27"/>
+				</LabelField>
+				<LabelField name="Unit" id="28">
+					<DataPath>List.Unit</DataPath>
+					<ContextMenu name="UnitContextMenu" id="29"/>
+					<ExtendedTooltip name="UnitExtendedTooltip" id="30"/>
+				</LabelField>
+				<LabelField name="Quantity" id="31">
+					<DataPath>List.Quantity</DataPath>
+					<ContextMenu name="QuantityContextMenu" id="32"/>
+					<ExtendedTooltip name="QuantityExtendedTooltip" id="33"/>
+				</LabelField>
+				<LabelField name="Sum" id="34">
+					<DataPath>List.Sum</DataPath>
+					<ContextMenu name="SumContextMenu" id="35"/>
+					<ExtendedTooltip name="SumExtendedTooltip" id="36"/>
+				</LabelField>
+				<LabelField name="VATRate" id="37">
+					<DataPath>List.VATRate</DataPath>
+					<ContextMenu name="VATRateContextMenu" id="38"/>
+					<ExtendedTooltip name="VATRateExtendedTooltip" id="39"/>
+				</LabelField>
+				<LabelField name="VATSum" id="40">
+					<DataPath>List.VATSum</DataPath>
+					<ContextMenu name="VATSumContextMenu" id="41"/>
+					<ExtendedTooltip name="VATSumExtendedTooltip" id="42"/>
+				</LabelField>
+				<LabelField name="DiscountSum" id="43">
+					<DataPath>List.DiscountSum</DataPath>
+					<ContextMenu name="DiscountSumContextMenu" id="44"/>
+					<ExtendedTooltip name="DiscountSumExtendedTooltip" id="45"/>
+				</LabelField>
+				<LabelField name="CommissionSum" id="46">
+					<DataPath>List.CommissionSum</DataPath>
+					<ContextMenu name="CommissionSumContextMenu" id="47"/>
+					<ExtendedTooltip name="CommissionSumExtendedTooltip" id="48"/>
+				</LabelField>
+				<CheckBoxField name="IsRoomRevenue" id="49">
+					<DataPath>List.IsRoomRevenue</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsRoomRevenueContextMenu" id="50"/>
+					<ExtendedTooltip name="IsRoomRevenueExtendedTooltip" id="51"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsInPrice" id="52">
+					<DataPath>List.IsInPrice</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsInPriceContextMenu" id="53"/>
+					<ExtendedTooltip name="IsInPriceExtendedTooltip" id="54"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsResourceRevenue" id="55">
+					<DataPath>List.IsResourceRevenue</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsResourceRevenueContextMenu" id="56"/>
+					<ExtendedTooltip name="IsResourceRevenueExtendedTooltip" id="57"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsAdditional" id="58">
+					<DataPath>List.IsAdditional</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsAdditionalContextMenu" id="59"/>
+					<ExtendedTooltip name="IsAdditionalExtendedTooltip" id="60"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsManual" id="61">
+					<DataPath>List.IsManual</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsManualContextMenu" id="62"/>
+					<ExtendedTooltip name="IsManualExtendedTooltip" id="63"/>
+				</CheckBoxField>
+				<LabelField name="Remarks" id="64">
+					<DataPath>List.Remarks</DataPath>
+					<ContextMenu name="RemarksContextMenu" id="65"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="66"/>
+				</LabelField>
+				<LabelField name="ParentDoc" id="73">
+					<DataPath>List.ParentDoc</DataPath>
+					<ContextMenu name="ParentDocContextMenu" id="74"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="75"/>
+				</LabelField>
+				<LabelField name="ParentChargeFolio" id="70">
+					<DataPath>List.ParentCharge.Folio</DataPath>
+					<ContextMenu name="ParentChargeFolioContextMenu" id="71"/>
+					<ExtendedTooltip name="ParentChargeFolioExtendedTooltip" id="72"/>
+				</LabelField>
+				<LabelField name="Hotel" id="76">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="77"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="78"/>
+				</LabelField>
+				<LabelField name="Author" id="67">
+					<DataPath>List.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="68"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="69"/>
+				</LabelField>
+				<CheckBoxField name="Posted" id="83">
+					<DataPath>List.Posted</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Posted</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Posted</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проведен</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PostedContextMenu" id="84"/>
+					<ExtendedTooltip name="PostedExtendedTooltip" id="85"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>List.DeletionMark</Field>
+				<Field>List.Posted</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.Storno</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="true" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.Posted</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>

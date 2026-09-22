@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionsExecute" id="53">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionsExecute</CommandName>
+				<ExtendedTooltip name="FormActionsExecuteExtendedTooltip" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration" id="160">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Durch klicken auf die "Ausführen "wird der Datenaustausch mit dem "1C: Hotel BI" system gestartet.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By clicking the "Execute" button, data exchange is started with the “1C: Hotel BI” system.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По нажатию на кнопку "Выполнить" запускается обмен данными с системой «1С:Отель BI»</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DecorationContextMenu" id="161"/>
+			<ExtendedTooltip name="DecorationExtendedTooltip" id="162"/>
+		</LabelDecoration>
+		<InputField name="LastSyncDate" id="138">
+			<DataPath>Object.LastSyncDate</DataPath>
+			<ChoiceButton>false</ChoiceButton>
+			<ContextMenu name="LastSyncDateContextMenu" id="139"/>
+			<ExtendedTooltip name="LastSyncDateExtendedTooltip" id="140"/>
+		</InputField>
+		<CheckBoxField name="FullSync" id="141">
+			<DataPath>Object.FullSync</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="FullSyncContextMenu" id="142"/>
+			<ExtendedTooltip name="FullSyncExtendedTooltip" id="143"/>
+			<Events>
+				<Event name="OnChange">FullSyncOnChange</Event>
+			</Events>
+		</CheckBoxField>
+		<CheckBoxField name="SyncDeals" id="171">
+			<DataPath>Object.SyncDeals</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="SyncDealsContextMenu" id="172"/>
+			<ExtendedTooltip name="SyncDealsExtendedTooltip" id="173"/>
+		</CheckBoxField>
+		<CheckBoxField name="DoNotSyncDiscountCards" id="135">
+			<DataPath>Object.DoNotSyncDiscountCards</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="DoNotSyncDiscountCardsContextMenu" id="136"/>
+			<ExtendedTooltip name="DoNotSyncDiscountCardsExtendedTooltip" id="137"/>
+		</CheckBoxField>
+		<UsualGroup name="Group1" id="150">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>1</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>1</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>1</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group1ExtendedTooltip" id="151"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration2" id="154">
+					<Width>1</Width>
+					<ContextMenu name="Decoration2ContextMenu" id="155"/>
+					<ExtendedTooltip name="Decoration2ExtendedTooltip" id="156"/>
+				</LabelDecoration>
+				<InputField name="FullSyncStartDate" id="144">
+					<DataPath>Object.FullSyncStartDate</DataPath>
+					<ContextMenu name="FullSyncStartDateContextMenu" id="145"/>
+					<ExtendedTooltip name="FullSyncStartDateExtendedTooltip" id="146"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group3" id="166">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group3ExtendedTooltip" id="167"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration6" id="168">
+					<Width>1</Width>
+					<ContextMenu name="Decoration6ContextMenu" id="169"/>
+					<ExtendedTooltip name="Decoration6ExtendedTooltip" id="170"/>
+				</LabelDecoration>
+				<CheckBoxField name="SyncDealsOnly" id="163">
+					<DataPath>Object.SyncDealsOnly</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SyncDealsOnlyContextMenu" id="164"/>
+					<ExtendedTooltip name="SyncDealsOnlyExtendedTooltip" id="165"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group2" id="152">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group2ExtendedTooltip" id="153"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration3" id="157">
+					<Width>1</Width>
+					<ContextMenu name="Decoration3ContextMenu" id="158"/>
+					<ExtendedTooltip name="Decoration3ExtendedTooltip" id="159"/>
+				</LabelDecoration>
+				<CheckBoxField name="SyncSalesOnly" id="147">
+					<DataPath>Object.SyncSalesOnly</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SyncSalesOnlyContextMenu" id="148"/>
+					<ExtendedTooltip name="SyncSalesOnlyExtendedTooltip" id="149"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="OnlyExport" id="182">
+			<DataPath>Object.OnlyExport</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="OnlyExportContextMenu" id="183"/>
+			<ExtendedTooltip name="OnlyExportExtendedTooltip" id="184"/>
+		</CheckBoxField>
+		<UsualGroup name="GroupParameters" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="50"/>
+			<ChildItems>
+				<UsualGroup name="GroupActions" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group actions</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>#FCEB9F</BackColor>
+					<ExtendedTooltip name="GroupActionsExtendedTooltip" id="62"/>
+					<ChildItems>
+						<Button name="SaveSettings" id="51">
+							<Type>UsualButton</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Command.SaveSettings</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="SaveSettingsExtendedTooltip" id="52"/>
+						</Button>
+						<UsualGroup name="GroupBackgroundJob" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group background job</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group background job</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupBackgroundJobExtendedTooltip" id="58"/>
+							<ChildItems>
+								<Button name="BackgroundJob" id="59">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.BackgroundJob</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.ScheduledJob</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="BackgroundJobExtendedTooltip" id="60"/>
+								</Button>
+								<PictureDecoration name="DecorationBackgroundJob" id="63">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Decoration background job</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Not configured</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nicht konfiguriert</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не настроено</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<Picture>
+										<xr:Ref>CommonPicture.Remove</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="DecorationBackgroundJobContextMenu" id="64"/>
+									<ExtendedTooltip name="DecorationBackgroundJobExtendedTooltip" id="65"/>
+								</PictureDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="Decoration1" id="66">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="Decoration1ContextMenu" id="67"/>
+							<ExtendedTooltip name="Decoration1ExtendedTooltip" id="68"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Hotel" id="1">
+					<DataPath>Object.Hotel</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="2"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="3"/>
+				</InputField>
+				<LabelDecoration name="Decoration4" id="78">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="Decoration4ContextMenu" id="79"/>
+					<ExtendedTooltip name="Decoration4ExtendedTooltip" id="80"/>
+				</LabelDecoration>
+				<UsualGroup name="Group4" id="180">
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group4ExtendedTooltip" id="181"/>
+					<ChildItems>
+						<CheckBoxField name="UseExternalURL" id="177">
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="UseExternalURLContextMenu" id="178"/>
+							<ExtendedTooltip name="UseExternalURLExtendedTooltip" id="179"/>
+							<Events>
+								<Event name="OnChange">UseExternalURLOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="HotelWebservicesAddress" id="174">
+							<DataPath>Object.HotelWebservicesAddress</DataPath>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="HotelWebservicesAddressContextMenu" id="175"/>
+							<ExtendedTooltip name="HotelWebservicesAddressExtendedTooltip" id="176"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="HotelBIWebservicesAddress" id="81">
+					<DataPath>Object.HotelBIWebservicesAddress</DataPath>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="HotelBIWebservicesAddressContextMenu" id="82"/>
+					<ExtendedTooltip name="HotelBIWebservicesAddressExtendedTooltip" id="83"/>
+				</InputField>
+				<InputField name="User" id="129">
+					<DataPath>Object.User</DataPath>
+					<ContextMenu name="UserContextMenu" id="130"/>
+					<ExtendedTooltip name="UserExtendedTooltip" id="131"/>
+				</InputField>
+				<InputField name="Password" id="132">
+					<DataPath>Object.Password</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="PasswordContextMenu" id="133"/>
+					<ExtendedTooltip name="PasswordExtendedTooltip" id="134"/>
+				</InputField>
+				<LabelDecoration name="Decoration5" id="126">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+					</Border>
+					<ContextMenu name="Decoration5ContextMenu" id="127"/>
+					<ExtendedTooltip name="Decoration5ExtendedTooltip" id="128"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.HotelBISynchronization</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionsExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionsExecute</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="SaveSettings" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save the settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellungen speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SaveSettings</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="BackgroundJob" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Background job</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hintergrundjob</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фоновое задание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Background job</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>BackgroundJob</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

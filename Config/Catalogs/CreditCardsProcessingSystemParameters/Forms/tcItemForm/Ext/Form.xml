@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormCheckConnection" id="38">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CheckConnection</CommandName>
+				<ExtendedTooltip name="FormCheckConnectionExtendedTooltip" id="39"/>
+			</Button>
+			<Button name="FormInstall" id="98">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Install</CommandName>
+				<ExtendedTooltip name="FormInstallExtendedTooltip" id="99"/>
+			</Button>
+			<Button name="FormOpenHardwareSettings" id="115">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.OpenHardwareSettings</CommandName>
+				<ExtendedTooltip name="FormOpenHardwareSettingsExtendedTooltip" id="116"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="ExternalEvent">ExternalEvent</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="FillCheckProcessingAtServer">FillCheckProcessingAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="35"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Parent" id="7">
+					<DataPath>Object.Parent</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ParentContextMenu" id="8"/>
+					<ExtendedTooltip name="ParentExtendedTooltip" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="4">
+			<DataPath>Object.Description</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="DescriptionContextMenu" id="5"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="CreditCardsProcessingSystemType" id="10">
+			<DataPath>Object.CreditCardsProcessingSystemType</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Font bold="true" kind="AutoFont"/>
+			<ContextMenu name="CreditCardsProcessingSystemTypeContextMenu" id="11"/>
+			<ExtendedTooltip name="CreditCardsProcessingSystemTypeExtendedTooltip" id="12"/>
+			<Events>
+				<Event name="OnChange">SetVisible</Event>
+			</Events>
+		</InputField>
+		<InputField name="HardwareDriver" id="112">
+			<DataPath>Object.HardwareDriver</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>true</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ChoiceParameters>
+				<app:item name="Filter.ConnectedHardwareType">
+					<app:value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ConnectedHardwareTypes.EnumValue.POSTerminal</Value>
+					</app:value>
+				</app:item>
+			</ChoiceParameters>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="HardwareDriverContextMenu" id="113"/>
+			<ExtendedTooltip name="HardwareDriverExtendedTooltip" id="114"/>
+		</InputField>
+		<InputField name="Company" id="100">
+			<DataPath>Object.Company</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="CompanyContextMenu" id="101"/>
+			<ExtendedTooltip name="CompanyExtendedTooltip" id="102"/>
+		</InputField>
+		<InputField name="MerchantID" id="109">
+			<DataPath>Object.MerchantID</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="MerchantIDContextMenu" id="110"/>
+			<ExtendedTooltip name="MerchantIDExtendedTooltip" id="111"/>
+		</InputField>
+		<InputField name="SlipCharLineLength" id="13">
+			<DataPath>Object.SlipCharLineLength</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>22</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="SlipCharLineLengthContextMenu" id="14"/>
+			<ExtendedTooltip name="SlipCharLineLengthExtendedTooltip" id="15">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>(24, 32, 36, 40, 48)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>(24, 32, 36, 40, 48)</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>(24, 32, 36, 40, 48)</v8:content>
+					</v8:item>
+				</Title>
+				<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			</ExtendedTooltip>
+		</InputField>
+		<InputField name="TerminalNumber" id="16">
+			<DataPath>Object.TerminalNumber</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>22</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="TerminalNumberContextMenu" id="17"/>
+			<ExtendedTooltip name="TerminalNumberExtendedTooltip" id="18"/>
+		</InputField>
+		<InputField name="CurrentDeviceNumber" id="19">
+			<DataPath>Object.CurrentDeviceNumber</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>22</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="CurrentDeviceNumberContextMenu" id="20"/>
+			<ExtendedTooltip name="CurrentDeviceNumberExtendedTooltip" id="21"/>
+		</InputField>
+		<InputField name="Timeout" id="103">
+			<DataPath>Object.Timeout</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Timeout between operations in milliseconds</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zeitüberschreitung zwischen Vorgängen in Millisekunden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тайм-аут между операциями в миллисекундах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="TimeoutContextMenu" id="104"/>
+			<ExtendedTooltip name="TimeoutExtendedTooltip" id="105"/>
+		</InputField>
+		<Table name="PaymentMethods" id="79">
+			<Height>5</Height>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Object.PaymentMethods</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="PaymentMethodsContextMenu" id="80"/>
+			<AutoCommandBar name="PaymentMethodsCommandBar" id="81"/>
+			<ExtendedTooltip name="PaymentMethodsExtendedTooltip" id="82"/>
+			<SearchStringAddition name="PaymentMethodsSearchString" id="83">
+				<AdditionSource>
+					<Item>PaymentMethods</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PaymentMethodsSearchStringContextMenu" id="84"/>
+				<ExtendedTooltip name="PaymentMethodsSearchStringExtendedTooltip" id="85"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="PaymentMethodsViewStatus" id="86">
+				<AdditionSource>
+					<Item>PaymentMethods</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PaymentMethodsViewStatusContextMenu" id="87"/>
+				<ExtendedTooltip name="PaymentMethodsViewStatusExtendedTooltip" id="88"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="PaymentMethodsSearchControl" id="89">
+				<AdditionSource>
+					<Item>PaymentMethods</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="PaymentMethodsSearchControlContextMenu" id="90"/>
+				<ExtendedTooltip name="PaymentMethodsSearchControlExtendedTooltip" id="91"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="PaymentMethodsLineNumber" id="92">
+					<DataPath>Object.PaymentMethods.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PaymentMethodsLineNumberContextMenu" id="93"/>
+					<ExtendedTooltip name="PaymentMethodsLineNumberExtendedTooltip" id="94"/>
+				</LabelField>
+				<InputField name="PaymentMethodsPaymentMethod" id="95">
+					<DataPath>Object.PaymentMethods.PaymentMethod</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PaymentMethodsPaymentMethodContextMenu" id="96"/>
+					<ExtendedTooltip name="PaymentMethodsPaymentMethodExtendedTooltip" id="97"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="GroupCommandCode" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Commands</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Befehle</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupCommandCodeExtendedTooltip" id="41"/>
+			<ChildItems>
+				<UsualGroup name="GroupCommandCodeLeft" id="42">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupCommandCodeLeftExtendedTooltip" id="43"/>
+					<ChildItems>
+						<InputField name="PaymentCommandCode" id="46">
+							<DataPath>Object.PaymentCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 1</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 1</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="PaymentCommandCodeContextMenu" id="47"/>
+							<ExtendedTooltip name="PaymentCommandCodeExtendedTooltip" id="48"/>
+						</InputField>
+						<InputField name="PreauthorisationCommandCode" id="52">
+							<DataPath>Object.PreauthorisationCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 5</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 5</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 5</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="PreauthorisationCommandCodeContextMenu" id="53"/>
+							<ExtendedTooltip name="PreauthorisationCommandCodeExtendedTooltip" id="54"/>
+						</InputField>
+						<InputField name="TotalsReconciliationCommandCode" id="61">
+							<DataPath>Object.TotalsReconciliationCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 10</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 10</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 10</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="TotalsReconciliationCommandCodeContextMenu" id="62"/>
+							<ExtendedTooltip name="TotalsReconciliationCommandCodeExtendedTooltip" id="63"/>
+						</InputField>
+						<InputField name="ShortXReportCommandCode" id="64">
+							<DataPath>Object.ShortXReportCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 8</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 8</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 8</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ShortXReportCommandCodeContextMenu" id="65"/>
+							<ExtendedTooltip name="ShortXReportCommandCodeExtendedTooltip" id="66"/>
+						</InputField>
+						<InputField name="AdminMenuCommandCode" id="70">
+							<DataPath>Object.AdminMenuCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 99</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 99</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 99</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="AdminMenuCommandCodeContextMenu" id="71"/>
+							<ExtendedTooltip name="AdminMenuCommandCodeExtendedTooltip" id="72"/>
+						</InputField>
+						<InputField name="ConnectionCheckCommandCode" id="76">
+							<DataPath>Object.ConnectionCheckCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 95</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 95</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 95</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ConnectionCheckCommandCodeContextMenu" id="77"/>
+							<ExtendedTooltip name="ConnectionCheckCommandCodeExtendedTooltip" id="78"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupCommandCodeRight" id="44">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupCommandCodeRightExtendedTooltip" id="45"/>
+					<ChildItems>
+						<InputField name="ReturnCommandCode" id="49">
+							<DataPath>Object.ReturnCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 3</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 3</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 3</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ReturnCommandCodeContextMenu" id="50"/>
+							<ExtendedTooltip name="ReturnCommandCodeExtendedTooltip" id="51"/>
+						</InputField>
+						<InputField name="ComputationCommandCode" id="58">
+							<DataPath>Object.ComputationCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 6</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 6</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 6</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ComputationCommandCodeContextMenu" id="59"/>
+							<ExtendedTooltip name="ComputationCommandCodeExtendedTooltip" id="60"/>
+						</InputField>
+						<InputField name="CancelCommandCode" id="55">
+							<DataPath>Object.CancelCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 4</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 4</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 4</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="CancelCommandCodeContextMenu" id="56"/>
+							<ExtendedTooltip name="CancelCommandCodeExtendedTooltip" id="57"/>
+						</InputField>
+						<InputField name="FullXReportCommandCode" id="67">
+							<DataPath>Object.FullXReportCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 7</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 7</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 7</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="FullXReportCommandCodeContextMenu" id="68"/>
+							<ExtendedTooltip name="FullXReportCommandCodeExtendedTooltip" id="69"/>
+						</InputField>
+						<InputField name="CashierMenuCommandCode" id="73">
+							<DataPath>Object.CashierMenuCommandCode</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default value: 98</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standardwert: 98</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значение по умолчанию: 98</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="CashierMenuCommandCodeContextMenu" id="74"/>
+							<ExtendedTooltip name="CashierMenuCommandCodeExtendedTooltip" id="75"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group1" id="36">
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group1ExtendedTooltip" id="37"/>
+			<ChildItems>
+				<CheckBoxField name="SaveCreditCardsData" id="22">
+					<DataPath>Object.SaveCreditCardsData</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SaveCreditCardsDataContextMenu" id="23"/>
+					<ExtendedTooltip name="SaveCreditCardsDataExtendedTooltip" id="24"/>
+				</CheckBoxField>
+				<CheckBoxField name="PrintSlipUsingTerminalPrinter" id="25">
+					<DataPath>Object.PrintSlipUsingTerminalPrinter</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PrintSlipUsingTerminalPrinterContextMenu" id="26"/>
+					<ExtendedTooltip name="PrintSlipUsingTerminalPrinterExtendedTooltip" id="27"/>
+					<Events>
+						<Event name="OnChange">PrintSlipUsingTerminalPrinterOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="PrintSlipInCheque" id="28">
+					<DataPath>Object.PrintSlipInCheque</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PrintSlipInChequeContextMenu" id="29"/>
+					<ExtendedTooltip name="PrintSlipInChequeExtendedTooltip" id="30"/>
+				</CheckBoxField>
+				<CheckBoxField name="MultiTrackReader" id="31">
+					<DataPath>Object.MultiTrackReader</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="MultiTrackReaderContextMenu" id="32"/>
+					<ExtendedTooltip name="MultiTrackReaderExtendedTooltip" id="33"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CreditCardsProcessingSystemParameters</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CheckConnection" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check connection</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anschluss überprüfen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.SettingsStorage</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CheckConnection</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Install" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Install the library</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Install the library</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить библиотеку</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Settings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Install</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="OpenHardwareSettings" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Einstellungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.SettingsStorage</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenHardwareSettings</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

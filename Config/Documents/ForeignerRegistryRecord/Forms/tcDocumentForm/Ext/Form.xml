@@ -1,0 +1,2098 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandSet>
+		<ExcludedCommand>Post</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
+	</CommandSet>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupSaveActions" id="415">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Save actions</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Speichern Aktionen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Действия по сохранению документа</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormGroupSaveActionsExtendedTooltip" id="416"/>
+				<ChildItems>
+					<Button name="FormPostAndClose" id="411">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Write and close</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Speichern und schließen</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Записать и закрыть</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="FormPostAndCloseExtendedTooltip" id="412"/>
+					</Button>
+					<Button name="FormPost" id="413">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Post</CommandName>
+						<ExtendedTooltip name="FormPostExtendedTooltip" id="414"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="FormPeriodOfStayExtension" id="393">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.PeriodOfStayExtension</CommandName>
+				<ExtendedTooltip name="FormPeriodOfStayExtensionExtendedTooltip" id="394"/>
+			</Button>
+			<Button name="FormExportGuestDataToUFMSRu" id="406">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ExportGuestDataToUFMSRu</CommandName>
+				<ExtendedTooltip name="FormExportGuestDataToUFMSRuExtendedTooltip" id="407"/>
+			</Button>
+			<Popup name="GroupPrint" id="368">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Print</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Drucken</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Drucken</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="GroupPrintExtendedTooltip" id="369"/>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="DocInfo" id="178">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка документа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopf des Dokuments</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="DocInfoExtendedTooltip" id="179"/>
+			<ChildItems>
+				<InputField name="Number" id="180">
+					<DataPath>Object.Number</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document N          </v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ №</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dokument No.    </v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="NumberContextMenu" id="181"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="182"/>
+				</InputField>
+				<InputField name="Date" id="183">
+					<DataPath>Object.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="DateContextMenu" id="184"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="185"/>
+				</InputField>
+				<InputField name="Author" id="186">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Author</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Autor</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="AuthorContextMenu" id="187"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="188"/>
+				</InputField>
+				<InputField name="Hotel" id="7">
+					<DataPath>Object.Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="8"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupGuestInfo" id="389">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest information</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gäste Information</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные гостя</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupGuestInfoExtendedTooltip" id="390"/>
+			<ChildItems>
+				<LabelField name="Guest" id="16">
+					<DataPath>Object.Guest</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Hiperlink>true</Hiperlink>
+					<Font bold="true" kind="AutoFont"/>
+					<ContextMenu name="GuestContextMenu" id="17"/>
+					<ExtendedTooltip name="GuestExtendedTooltip" id="18"/>
+				</LabelField>
+				<InputField name="Sex" id="40">
+					<DataPath>Object.Sex</DataPath>
+					<HorizontalAlign>Left</HorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="SexContextMenu" id="41"/>
+					<ExtendedTooltip name="SexExtendedTooltip" id="42"/>
+				</InputField>
+				<InputField name="DateOfBirth" id="46">
+					<DataPath>Object.DateOfBirth</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateOfBirthContextMenu" id="47"/>
+					<ExtendedTooltip name="DateOfBirthExtendedTooltip" id="48"/>
+				</InputField>
+				<InputField name="Citizenship" id="43">
+					<DataPath>Object.Citizenship</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="CitizenshipContextMenu" id="44"/>
+					<ExtendedTooltip name="CitizenshipExtendedTooltip" id="45"/>
+				</InputField>
+				<CheckBoxField name="GuestHasNotificationAlready" id="19">
+					<DataPath>Object.GuestHasNotificationAlready</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="GuestHasNotificationAlreadyContextMenu" id="20"/>
+					<ExtendedTooltip name="GuestHasNotificationAlreadyExtendedTooltip" id="21"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="GroupPages" id="189">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group pages</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group pages</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group pages</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="GroupPagesExtendedTooltip" id="190"/>
+			<ChildItems>
+				<Page name="MainPage" id="191">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные данные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Main data</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Main page</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Picture>
+						<xr:Ref>StdPicture.DocumentJournal</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="MainPageExtendedTooltip" id="192"/>
+					<ChildItems>
+						<UsualGroup name="GroupNameInRussian" id="387">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Guest name in Russian</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Name des Gastes auf Russisch</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя гостя на русском языке</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GroupNameInRussianExtendedTooltip" id="388"/>
+							<ChildItems>
+								<InputField name="LastName" id="31">
+									<DataPath>Object.LastName</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<TitleLocation>Top</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="LastNameContextMenu" id="32"/>
+									<ExtendedTooltip name="LastNameExtendedTooltip" id="33"/>
+								</InputField>
+								<InputField name="FirstName" id="34">
+									<DataPath>Object.FirstName</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="FirstNameContextMenu" id="35"/>
+									<ExtendedTooltip name="FirstNameExtendedTooltip" id="36"/>
+								</InputField>
+								<InputField name="SecondName" id="37">
+									<DataPath>Object.SecondName</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="SecondNameContextMenu" id="38"/>
+									<ExtendedTooltip name="SecondNameExtendedTooltip" id="39"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupIdentityDocument" id="201">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Identity document</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ удостоверяющий личность</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Group identity document</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GroupIdentityDocumentExtendedTooltip" id="202"/>
+							<ChildItems>
+								<UsualGroup name="GroupSeriesNumberIdntDocument" id="207">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group series number idnt document</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Серия\Номер док. удост. личность</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group series number idnt document</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupSeriesNumberIdntDocumentExtendedTooltip" id="208"/>
+									<ChildItems>
+										<InputField name="IdentityDocumentType" id="52">
+											<DataPath>Object.IdentityDocumentType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="IdentityDocumentTypeContextMenu" id="53"/>
+											<ExtendedTooltip name="IdentityDocumentTypeExtendedTooltip" id="54"/>
+										</InputField>
+										<InputField name="IdentityDocumentSeries" id="55">
+											<DataPath>Object.IdentityDocumentSeries</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Series</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Серия</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Serie</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="IdentityDocumentSeriesContextMenu" id="56"/>
+											<ExtendedTooltip name="IdentityDocumentSeriesExtendedTooltip" id="57"/>
+										</InputField>
+										<InputField name="IdentityDocumentNumber" id="58">
+											<DataPath>Object.IdentityDocumentNumber</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Number</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номер</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Nummer</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="IdentityDocumentNumberContextMenu" id="59"/>
+											<ExtendedTooltip name="IdentityDocumentNumberExtendedTooltip" id="60"/>
+										</InputField>
+										<InputField name="IdentityDocumentIssueDate" id="61">
+											<DataPath>Object.IdentityDocumentIssueDate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Issue date</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата выдачи</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Ausstellungsdatum</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="IdentityDocumentIssueDateContextMenu" id="62"/>
+											<ExtendedTooltip name="IdentityDocumentIssueDateExtendedTooltip" id="63"/>
+										</InputField>
+										<InputField name="IdentityDocumentValidToDate" id="64">
+											<DataPath>Object.IdentityDocumentValidToDate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Valid to date</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Действителен до</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Gültig bis</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="IdentityDocumentValidToDateContextMenu" id="65"/>
+											<ExtendedTooltip name="IdentityDocumentValidToDateExtendedTooltip" id="66"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupParamemetrsIdentityDocument" id="209">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group paramemetrs identity document</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Параметры документа удост. личность</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group paramemetrs identity document</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupParamemetrsIdentityDocumentExtendedTooltip" id="210"/>
+									<ChildItems>
+										<InputField name="IdentityDocumentUnitCode" id="67">
+											<DataPath>Object.IdentityDocumentUnitCode</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Issued by</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кем выдан</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Issued by</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="IdentityDocumentUnitCodeContextMenu" id="68"/>
+											<ExtendedTooltip name="IdentityDocumentUnitCodeExtendedTooltip" id="69"/>
+										</InputField>
+										<InputField name="IdentityDocumentIssuedBy" id="70">
+											<DataPath>Object.IdentityDocumentIssuedBy</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="IdentityDocumentIssuedByContextMenu" id="71"/>
+											<ExtendedTooltip name="IdentityDocumentIssuedByExtendedTooltip" id="72"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupFanID" id="379">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Fan ID group</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа данных Fan ID</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Fan ID group</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group fan ID</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupFanIDExtendedTooltip" id="380"/>
+									<ChildItems>
+										<InputField name="FanID" id="381">
+											<DataPath>FanID</DataPath>
+											<Width>14</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="FanIDContextMenu" id="382"/>
+											<ExtendedTooltip name="FanIDExtendedTooltip" id="383"/>
+											<Events>
+												<Event name="OnChange">FanIDOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="FanIDNumber" id="384">
+											<DataPath>FanIDNumber</DataPath>
+											<Width>14</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="FanIDNumberContextMenu" id="385"/>
+											<ExtendedTooltip name="FanIDNumberExtendedTooltip" id="386"/>
+											<Events>
+												<Event name="OnChange">FanIDNumberOnChange</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GropAddresses" id="211">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Addresses</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Adressen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адреса</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GropAddressesExtendedTooltip" id="212"/>
+							<ChildItems>
+								<InputField name="PlaceOfBirth" id="49">
+									<DataPath>Object.PlaceOfBirth</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="PlaceOfBirthContextMenu" id="50"/>
+									<ExtendedTooltip name="PlaceOfBirthExtendedTooltip" id="51"/>
+									<Events>
+										<Event name="AutoComplete">AddressAutoComplete</Event>
+										<Event name="Opening">PlaceOfBirthOpening</Event>
+										<Event name="TextEditEnd">AddressTextEditEnd</Event>
+										<Event name="ChoiceProcessing">AddressChoiceProcessing</Event>
+									</Events>
+								</InputField>
+								<InputField name="PreviousPlaceOfStay" id="362">
+									<DataPath>Object.PreviousPlaceOfStay</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Previous place of stay in Russia</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес предыдущего места пребывания в РФ</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Adresse des früheren Wohnorts in der Russischen Föderation</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="PreviousPlaceOfStayContextMenu" id="363"/>
+									<ExtendedTooltip name="PreviousPlaceOfStayExtendedTooltip" id="364"/>
+									<Events>
+										<Event name="AutoComplete">AddressAutoComplete</Event>
+										<Event name="Opening">PreviousPlaceOfStayOpening</Event>
+										<Event name="TextEditEnd">AddressTextEditEnd</Event>
+										<Event name="ChoiceProcessing">AddressChoiceProcessing</Event>
+									</Events>
+								</InputField>
+								<InputField name="PreviousPlaceOfStayRegistrationDate" id="365">
+									<DataPath>Object.PreviousPlaceOfStayRegistrationDate</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Previous place of stay registration date</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата регистрации по адресу предыдущего места пребывания</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Tag der Eintragung im früheren Wohnorts</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="PreviousPlaceOfStayRegistrationDateContextMenu" id="366"/>
+									<ExtendedTooltip name="PreviousPlaceOfStayRegistrationDateExtendedTooltip" id="367"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupParamAcc" id="195">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Parameters of arrival</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры заезда</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Parameter der Ankunft</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group param acc</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GroupParamAccExtendedTooltip" id="196"/>
+							<ChildItems>
+								<UsualGroup name="GroupPeriod" id="197">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Period of stay group</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zeitraum der Aufenthalts</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период пребывания</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group ceck INOut</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="198"/>
+									<ChildItems>
+										<LabelField name="Room" id="13">
+											<DataPath>Object.Room</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="RoomContextMenu" id="14"/>
+											<ExtendedTooltip name="RoomExtendedTooltip" id="15"/>
+										</LabelField>
+										<InputField name="CheckInDate" id="22">
+											<DataPath>Object.CheckInDate</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="CheckInDateContextMenu" id="23"/>
+											<ExtendedTooltip name="CheckInDateExtendedTooltip" id="24"/>
+										</InputField>
+										<InputField name="CheckOutDate" id="25">
+											<DataPath>Object.CheckOutDate</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="CheckOutDateContextMenu" id="26"/>
+											<ExtendedTooltip name="CheckOutDateExtendedTooltip" id="27"/>
+										</InputField>
+										<CheckBoxField name="IsCheckedOut" id="28">
+											<DataPath>Object.IsCheckedOut</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="IsCheckedOutContextMenu" id="29"/>
+											<ExtendedTooltip name="IsCheckedOutExtendedTooltip" id="30"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupAcc" id="199">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group acc</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа размещение</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group acc</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupAccExtendedTooltip" id="200"/>
+									<ChildItems>
+										<LabelField name="ParentDoc" id="10">
+											<DataPath>Object.ParentDoc</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Accomodation</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Размещение</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Belegung</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>50</Width>
+											<Hiperlink>true</Hiperlink>
+											<ContextMenu name="ParentDocContextMenu" id="11"/>
+											<ExtendedTooltip name="ParentDocExtendedTooltip" id="12"/>
+										</LabelField>
+										<InputField name="ExternalCode" id="163">
+											<DataPath>Object.ExternalCode</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ExternalCodeContextMenu" id="164"/>
+											<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="165"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="MigrationCardVisaPage" id="213">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Migration card and visa data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные миграционной карты и визы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Daten der Migrationskarte</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Migration card visa page</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Picture>
+						<xr:Ref>StdPicture.GeographicalSchema</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="MigrationCardVisaPageExtendedTooltip" id="214"/>
+					<ChildItems>
+						<UsualGroup name="GroupMigrationCardData" id="215">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group migration card data</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные миграционной карты</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Daten der Migrationskarte</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group migration card data</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GroupMigrationCardDataExtendedTooltip" id="216"/>
+							<ChildItems>
+								<UsualGroup name="GroupArrivedFrom" id="238">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group arrived from</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Откуда прибыл</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group arrived from</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupArrivedFromExtendedTooltip" id="239"/>
+									<ChildItems>
+										<InputField name="ArrivedFrom" id="217">
+											<DataPath>Object.ArrivedFrom</DataPath>
+											<ContextMenu name="ArrivedFromContextMenu" id="218"/>
+											<ExtendedTooltip name="ArrivedFromExtendedTooltip" id="219"/>
+										</InputField>
+										<CheckBoxField name="IsFromAbroad" id="220">
+											<DataPath>Object.IsFromAbroad</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="IsFromAbroadContextMenu" id="221"/>
+											<ExtendedTooltip name="IsFromAbroadExtendedTooltip" id="222"/>
+										</CheckBoxField>
+										<CheckBoxField name="IsFirstArrival" id="240">
+											<DataPath>Object.IsFirstArrival</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="IsFirstArrivalContextMenu" id="241"/>
+											<ExtendedTooltip name="IsFirstArrivalExtendedTooltip" id="242"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupBorderCrossing" id="243">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group border crossing</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Пересечение границы</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group border crossing</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupBorderCrossingExtendedTooltip" id="244"/>
+									<ChildItems>
+										<InputField name="BorderCrossingDate" id="245">
+											<DataPath>Object.BorderCrossingDate</DataPath>
+											<ContextMenu name="BorderCrossingDateContextMenu" id="246"/>
+											<ExtendedTooltip name="BorderCrossingDateExtendedTooltip" id="247"/>
+										</InputField>
+										<InputField name="CheckPointNumber" id="248">
+											<DataPath>Object.CheckPointNumber</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Check point</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>КПП</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>KPP-Name</v8:content>
+												</v8:item>
+											</Title>
+											<DropListButton>true</DropListButton>
+											<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<ContextMenu name="CheckPointNumberContextMenu" id="249"/>
+											<ExtendedTooltip name="CheckPointNumberExtendedTooltip" id="250"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupMigrationCardDate" id="251">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group migration card date</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Даты миг. карты</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group migration card date</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group migration card date</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupMigrationCardDateExtendedTooltip" id="252"/>
+									<ChildItems>
+										<InputField name="MigrationCardNumber" id="223">
+											<DataPath>Object.MigrationCardNumber</DataPath>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="MigrationCardNumberContextMenu" id="224"/>
+											<ExtendedTooltip name="MigrationCardNumberExtendedTooltip" id="225"/>
+										</InputField>
+										<InputField name="MigrationCardDateFrom" id="226">
+											<DataPath>Object.MigrationCardDateFrom</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Duration of stay from</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Срок пребывания с</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Aufenthaltszeitraum ab</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="MigrationCardDateFromContextMenu" id="227"/>
+											<ExtendedTooltip name="MigrationCardDateFromExtendedTooltip" id="228"/>
+										</InputField>
+										<InputField name="MigrationCardDateTo" id="229">
+											<DataPath>Object.MigrationCardDateTo</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>to</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>zu</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>по</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="MigrationCardDateToContextMenu" id="230"/>
+											<ExtendedTooltip name="MigrationCardDateToExtendedTooltip" id="231"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupTripPurpose" id="253">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group trip purpose</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа цель поездки\участник</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group trip purpose</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group trip purpose</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupTripPurposeExtendedTooltip" id="254"/>
+									<ChildItems>
+										<InputField name="TripPurpose" id="235">
+											<DataPath>Object.TripPurpose</DataPath>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="TripPurposeContextMenu" id="236"/>
+											<ExtendedTooltip name="TripPurposeExtendedTooltip" id="237"/>
+										</InputField>
+										<InputField name="StateProgramMember" id="255">
+											<DataPath>Object.StateProgramMember</DataPath>
+											<ContextMenu name="StateProgramMemberContextMenu" id="256"/>
+											<ExtendedTooltip name="StateProgramMemberExtendedTooltip" id="257"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupReceivingParty" id="258">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group receiving party</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Принимающая организация</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group receiving party</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group receiving party</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupReceivingPartyExtendedTooltip" id="259"/>
+									<ChildItems>
+										<InputField name="ReceivingParty" id="232">
+											<DataPath>Object.ReceivingParty</DataPath>
+											<ContextMenu name="ReceivingPartyContextMenu" id="233"/>
+											<ExtendedTooltip name="ReceivingPartyExtendedTooltip" id="234"/>
+										</InputField>
+										<InputField name="Route" id="268">
+											<DataPath>Object.Route</DataPath>
+											<ContextMenu name="RouteContextMenu" id="269"/>
+											<ExtendedTooltip name="RouteExtendedTooltip" id="270"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupRoute" id="263">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group route</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Маршрут</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group route</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group route</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupRouteExtendedTooltip" id="264"/>
+									<ChildItems>
+										<InputField name="Profession" id="260">
+											<DataPath>Object.Profession</DataPath>
+											<ContextMenu name="ProfessionContextMenu" id="261"/>
+											<ExtendedTooltip name="ProfessionExtendedTooltip" id="262"/>
+										</InputField>
+										<InputField name="Standing" id="265">
+											<DataPath>Object.Standing</DataPath>
+											<ContextMenu name="StandingContextMenu" id="266"/>
+											<ExtendedTooltip name="StandingExtendedTooltip" id="267"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupVisa" id="271">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Residence permit document</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Aufenthaltserlaubnis Dokument</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ, подтверждающий право на пребывание в стране</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group visa</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="GroupVisaExtendedTooltip" id="272"/>
+							<ChildItems>
+								<RadioButtonField name="ResidencePermitDocument" id="273">
+									<DataPath>Object.ResidencePermitDocument</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>Tumbler</RadioButtonType>
+									<ColumnsCount>5</ColumnsCount>
+									<EqualColumnsWidth>true</EqualColumnsWidth>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Without a visum</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Без визы</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Ohne Visum</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ConfirmingDocuments.EnumValue.WithoutVisa</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Visa</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Виза</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Visum</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ConfirmingDocuments.EnumValue.Visa</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Electronic visa</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Elektronisches Visum</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Электронная виза</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ConfirmingDocuments.EnumValue.ElectronicVisa</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Permanent residence permit</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вид на жительство</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Wohnsitz</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ConfirmingDocuments.EnumValue.PermResidencePermit</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Temporary residence permit</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Eine befristete Aufenthaltsgenehmigung</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Разрешение на временное проживание</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ConfirmingDocuments.EnumValue.TempResidencePermit</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ResidencePermitDocumentContextMenu" id="274"/>
+									<ExtendedTooltip name="ResidencePermitDocumentExtendedTooltip" id="275"/>
+									<Events>
+										<Event name="OnChange">ResidencePermitDocumentOnChange</Event>
+									</Events>
+								</RadioButtonField>
+								<Pages name="GroupPermitDocumentPages" id="276">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group permit document pages</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа Страницы Документов подтв. право преб.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Group permit document pages</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="GroupPermitDocumentPagesExtendedTooltip" id="277"/>
+									<ChildItems>
+										<Page name="GroupVisaPage" id="278">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Visa</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Виза</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Visum</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="GroupVisaPageExtendedTooltip" id="279"/>
+											<ChildItems>
+												<UsualGroup name="GroupNumber" id="305">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group number</v8:content>
+														</v8:item>
+													</Title>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupNumberExtendedTooltip" id="306"/>
+													<ChildItems>
+														<InputField name="VisaNumber" id="296">
+															<DataPath>Object.VisaNumber</DataPath>
+															<ContextMenu name="VisaNumberContextMenu" id="297"/>
+															<ExtendedTooltip name="VisaNumberExtendedTooltip" id="298"/>
+														</InputField>
+														<InputField name="VisaType" id="299">
+															<DataPath>Object.VisaType</DataPath>
+															<OpenButton>false</OpenButton>
+															<CreateButton>false</CreateButton>
+															<ContextMenu name="VisaTypeContextMenu" id="300"/>
+															<ExtendedTooltip name="VisaTypeExtendedTooltip" id="301"/>
+															<Events>
+																<Event name="OnChange">VisaTypeOnChange</Event>
+															</Events>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="GroupMultiplicity" id="399">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Multiplicity</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Multiplizität</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кратность</v8:content>
+														</v8:item>
+													</Title>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupMultiplicityExtendedTooltip" id="400"/>
+													<ChildItems>
+														<InputField name="VisaMultiplicity" id="302">
+															<DataPath>Object.VisaMultiplicity</DataPath>
+															<ContextMenu name="VisaMultiplicityContextMenu" id="303"/>
+															<ExtendedTooltip name="VisaMultiplicityExtendedTooltip" id="304"/>
+														</InputField>
+														<InputField name="VisaEntryGoal" id="315">
+															<DataPath>Object.VisaEntryGoal</DataPath>
+															<OpenButton>false</OpenButton>
+															<CreateButton>false</CreateButton>
+															<ListChoiceMode>true</ListChoiceMode>
+															<ContextMenu name="VisaEntryGoalContextMenu" id="316"/>
+															<ExtendedTooltip name="VisaEntryGoalExtendedTooltip" id="317"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="GroupVisaIssuedBy" id="310">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group visa issued by</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа Место выдачи визы</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Group Ort der Ausstellung</v8:content>
+														</v8:item>
+													</Title>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupVisaIssuedByExtendedTooltip" id="311"/>
+													<ChildItems>
+														<InputField name="VisaIdentifier" id="312">
+															<DataPath>Object.VisaIdentifier</DataPath>
+															<ContextMenu name="VisaIdentifierContextMenu" id="313"/>
+															<ExtendedTooltip name="VisaIdentifierExtendedTooltip" id="314"/>
+														</InputField>
+														<InputField name="VisaIssuedBy" id="307">
+															<DataPath>Object.VisaIssuedBy</DataPath>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="VisaIssuedByContextMenu" id="308"/>
+															<ExtendedTooltip name="VisaIssuedByExtendedTooltip" id="309"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="GroupVisaPeriod" id="318">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group visa period</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа Период визы</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Group visa period</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Horizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupVisaPeriodExtendedTooltip" id="319"/>
+													<ChildItems>
+														<InputField name="VisaIssuedDate" id="320">
+															<DataPath>Object.VisaIssuedDate</DataPath>
+															<ContextMenu name="VisaIssuedDateContextMenu" id="321"/>
+															<ExtendedTooltip name="VisaIssuedDateExtendedTooltip" id="322"/>
+															<Events>
+																<Event name="OnChange">VisaIssuedDateOnChange</Event>
+															</Events>
+														</InputField>
+														<InputField name="VisaDays" id="329">
+															<DataPath>Object.VisaDays</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Visa valid days</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Виза действует дней</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Das Visum gilt in Tagen</v8:content>
+																</v8:item>
+															</Title>
+															<SpinButton>true</SpinButton>
+															<ContextMenu name="VisaDaysContextMenu" id="330"/>
+															<ExtendedTooltip name="VisaDaysExtendedTooltip" id="331"/>
+															<Events>
+																<Event name="OnChange">VisaDaysOnChange</Event>
+															</Events>
+														</InputField>
+														<InputField name="VisaFromDate" id="323">
+															<DataPath>Object.VisaFromDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Visa valid from date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Виза действует с</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Das Visum ist gültig ab</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="VisaFromDateContextMenu" id="324"/>
+															<ExtendedTooltip name="VisaFromDateExtendedTooltip" id="325"/>
+															<Events>
+																<Event name="OnChange">VisaFromDateOnChange</Event>
+															</Events>
+														</InputField>
+														<InputField name="VisaToDate" id="326">
+															<DataPath>Object.VisaToDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>to</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>zu</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>по</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="VisaToDateContextMenu" id="327"/>
+															<ExtendedTooltip name="VisaToDateExtendedTooltip" id="328"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</Page>
+										<Page name="GroupPermResidencePermitPage" id="280">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Group perm residence permit page</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Вид на жительство</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Group perm residence permit page</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="GroupPermResidencePermitPageExtendedTooltip" id="281"/>
+											<ChildItems>
+												<InputField name="SeriesPermResPermit" id="332">
+													<DataPath>Object.VisaNumber</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Series and number of the residence permit form</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Серия и номер бланка ВНЖ</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Serie und Nummer des Aufenthaltstitelsform</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="SeriesPermResPermitContextMenu" id="333"/>
+													<ExtendedTooltip name="SeriesPermResPermitExtendedTooltip" id="334"/>
+												</InputField>
+												<InputField name="PermResPermitIssuedBy" id="335">
+													<DataPath>Object.VisaIssuedBy</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Residence permit is issued by</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кем выдан ВНЖ</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Aufenthaltstitel ausgestellt</v8:content>
+														</v8:item>
+													</Title>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="PermResPermitIssuedByContextMenu" id="336"/>
+													<ExtendedTooltip name="PermResPermitIssuedByExtendedTooltip" id="337"/>
+												</InputField>
+												<UsualGroup name="GroupPermResPerm" id="338">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group perm res perm period</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа Период ВНЖ</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Group perm res perm period</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Group</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Horizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupPermResPermExtendedTooltip" id="339"/>
+													<ChildItems>
+														<InputField name="ResPermDateFrom" id="343">
+															<DataPath>Object.VisaFromDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Residence permit issue date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата выдачи ВНЖ</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Datum der Erteilung</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ResPermDateFromContextMenu" id="344"/>
+															<ExtendedTooltip name="ResPermDateFromExtendedTooltip" id="345"/>
+														</InputField>
+														<InputField name="ResPermDateTo" id="346">
+															<DataPath>Object.VisaToDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Residence permit valid to</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Срок действия ВНЖ</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Die Gültigkeitsdauer</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ResPermDateToContextMenu" id="347"/>
+															<ExtendedTooltip name="ResPermDateToExtendedTooltip" id="348"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="GroupPermResPermDecisionData" id="397">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Perm. residence permit decision data</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Einstellungen für Aufenthaltserlaubnis</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Данные ВНЖ</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Group perm res perm decision data</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupPermResPermDecisionDataExtendedTooltip" id="398"/>
+													<ChildItems>
+														<InputField name="DecisionNumber" id="349">
+															<DataPath>Object.VisaIdentifier</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Decision number</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Номер решения</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Entscheidung Nummer</v8:content>
+																</v8:item>
+															</Title>
+															<Width>20</Width>
+															<ContextMenu name="DecisionNumberContextMenu" id="350"/>
+															<ExtendedTooltip name="DecisionNumberExtendedTooltip" id="351"/>
+														</InputField>
+														<InputField name="DecisionDate" id="340">
+															<DataPath>Object.VisaIssuedDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Decision date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата решения</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Datum der Entscheidung</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="DecisionDateContextMenu" id="341"/>
+															<ExtendedTooltip name="DecisionDateExtendedTooltip" id="342"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</Page>
+										<Page name="GroupTemporaryResidencePage" id="282">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Temporary residence permit</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Разрешение на временное проживание</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Eine befristete Aufenthaltsgenehmigung</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="GroupTemporaryResidencePageExtendedTooltip" id="283"/>
+											<ChildItems>
+												<CheckBoxField name="ForEducationPurposes" id="408">
+													<DataPath>Object.ForEducationPurposes</DataPath>
+													<CheckBoxType>Switcher</CheckBoxType>
+													<ContextMenu name="ForEducationPurposesContextMenu" id="409"/>
+													<ExtendedTooltip name="ForEducationPurposesExtendedTooltip" id="410"/>
+												</CheckBoxField>
+												<InputField name="TenpResPermIssuedBy" id="287">
+													<DataPath>Object.VisaIssuedBy</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Issued by</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кем выдано РВП</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Ausgestellt von</v8:content>
+														</v8:item>
+													</Title>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="TenpResPermIssuedByContextMenu" id="288"/>
+													<ExtendedTooltip name="TenpResPermIssuedByExtendedTooltip" id="289"/>
+												</InputField>
+												<InputField name="TenpResPermToDate" id="284">
+													<DataPath>Object.VisaToDate</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Valid to</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Срок действия РВП</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Gültigkeit</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="TenpResPermToDateContextMenu" id="285"/>
+													<ExtendedTooltip name="TenpResPermToDateExtendedTooltip" id="286"/>
+												</InputField>
+												<UsualGroup name="GroupTempResPermDecisionData" id="395">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Temp. residence permit decision data</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Einstellungen für vorübergehende Aufenthaltserlaubnis</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Данные РВП</v8:content>
+														</v8:item>
+													</Title>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="GroupTempResPermDecisionDataExtendedTooltip" id="396"/>
+													<ChildItems>
+														<InputField name="TenpResPermIdentifier" id="293">
+															<DataPath>Object.VisaIdentifier</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Decision number</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Номер решения</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Entscheidung Nummer</v8:content>
+																</v8:item>
+															</Title>
+															<Width>20</Width>
+															<ContextMenu name="TenpResPermIdentifierContextMenu" id="294"/>
+															<ExtendedTooltip name="TenpResPermIdentifierExtendedTooltip" id="295"/>
+														</InputField>
+														<InputField name="TenpResPermIssuedDate" id="290">
+															<DataPath>Object.VisaIssuedDate</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Decision date</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата решения</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Entscheidung Datum</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="TenpResPermIssuedDateContextMenu" id="291"/>
+															<ExtendedTooltip name="TenpResPermIssuedDateExtendedTooltip" id="292"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="LegalRepresentativePage" id="352">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Legal representative data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о законном представителе</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Informationen zu den gesetzlichen Vertreter</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<Picture>
+						<xr:Ref>StdPicture.ActiveUsers</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="LegalRepresentativePageExtendedTooltip" id="353"/>
+					<ChildItems>
+						<UsualGroup name="Group1" id="404">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group1ExtendedTooltip" id="405"/>
+							<ChildItems>
+								<InputField name="LegalRepresentative" id="354">
+									<DataPath>Object.LegalRepresentative</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<ContextMenu name="LegalRepresentativeContextMenu" id="355"/>
+									<ExtendedTooltip name="LegalRepresentativeExtendedTooltip" id="356"/>
+								</InputField>
+								<InputField name="RelationType" id="401">
+									<DataPath>Object.RelationType</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<ContextMenu name="RelationTypeContextMenu" id="402"/>
+									<ExtendedTooltip name="RelationTypeExtendedTooltip" id="403"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupLegalRepresentativeNameInRussian" id="391">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Legal representative name in Russian</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Name des gesetzlichen Vertreters in russischer Sprache</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ФИО законного представителя на русском языке</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupLegalRepresentativeNameInRussianExtendedTooltip" id="392"/>
+							<ChildItems>
+								<InputField name="LegalRepresentativeLastName" id="370">
+									<DataPath>Object.LegalRepresentativeLastName</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="LegalRepresentativeLastNameContextMenu" id="371"/>
+									<ExtendedTooltip name="LegalRepresentativeLastNameExtendedTooltip" id="372"/>
+								</InputField>
+								<InputField name="LegalRepresentativeFirstName" id="373">
+									<DataPath>Object.LegalRepresentativeFirstName</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="LegalRepresentativeFirstNameContextMenu" id="374"/>
+									<ExtendedTooltip name="LegalRepresentativeFirstNameExtendedTooltip" id="375"/>
+								</InputField>
+								<InputField name="LegalRepresentativeSecondName" id="376">
+									<DataPath>Object.LegalRepresentativeSecondName</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="LegalRepresentativeSecondNameContextMenu" id="377"/>
+									<ExtendedTooltip name="LegalRepresentativeSecondNameExtendedTooltip" id="378"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ForeignerRegistryRecord</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="SelValueListButton" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel value list button</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="FanID" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fan ID</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Fan ID</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fan ID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="FanIDNumber" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fan ID number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ бланка</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fan ID Nummer</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="PeriodOfStayExtension" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Period of stay extension</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gasterweiterung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продление гостя</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.CheckIn</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>PeriodOfStayExtension</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ExportGuestDataToUFMSRu" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Export room guests data to UFMS (RU)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer Gastdaten nach UFMS (RU) exportieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить данные гостей номера в УФМС (RU)</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>Alt+F12</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.GotoExternalURL</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ExportGuestDataToUFMSRu</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Post" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Write</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Post</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

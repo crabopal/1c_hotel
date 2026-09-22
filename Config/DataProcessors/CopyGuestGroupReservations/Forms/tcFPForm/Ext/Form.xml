@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionsExecute" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionsExecute</CommandName>
+				<ExtendedTooltip name="FormActionsExecuteExtendedTooltip" id="2"/>
+			</Button>
+			<Button name="FormHelp" id="27">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="FormHelpExtendedTooltip" id="28"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration" id="24">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By clicking on the "Execute" button, the program will copy reservations of the specified group to the new group. If the new group is not specified, the group will be created automatically. All bookings with the specified arrival date will be copied. If the group has reservations for different check-in dates, processing must be repeated for those dates. When copying, the program will create reservations in a new group with a new (different) date of arrival. All other parameters of the booking will not be changed.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wenn Sie auf "Ausführen" klicken, kopiert das Programm die Buchungen der angegebenen Gruppe in die neue Gruppe. Wenn Sie keine neue Gruppennummer angeben, wird die Gruppe automatisch erstellt. Alle Buchungen mit dem angegebenen Anreisedatum werden kopiert. Wenn die Gruppe Reservierungen für verschiedene Anreisedatum hat, muss die Bearbeitung für andere Dtatum wiederholt werden. Beim kopieren erstellt das Programm Reservierungen in einer neuen Gruppe mit einem neuen (anderen) Anreisedatum. Alle anderen Einstellungen bleiben unverändert.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По нажатию на кнопку "Выполнить" программа скопирует брони указанной группы гостей в новую группу. Если номер новой группы не указан, то группа будет создана автоматически. Будут скопированы все брони с указанной датой заезда. Если в группе есть брони на разные даты заезда, то для других дат выполнение обработки нужно повторить. При копировании программа создаст брони в новой группе с новой (другой) датой заезда. Все остальные параметры брони не изменяются.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DecorationContextMenu" id="25"/>
+			<ExtendedTooltip name="DecorationExtendedTooltip" id="26"/>
+		</LabelDecoration>
+		<InputField name="Hotel" id="3">
+			<DataPath>Object.Hotel</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<OpenButton>false</OpenButton>
+			<ContextMenu name="HotelContextMenu" id="4"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="5"/>
+			<Events>
+				<Event name="Clearing">HotelClearing</Event>
+			</Events>
+		</InputField>
+		<LabelDecoration name="Decoration1" id="18">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration1ContextMenu" id="19"/>
+			<ExtendedTooltip name="Decoration1ExtendedTooltip" id="20"/>
+		</LabelDecoration>
+		<InputField name="GuestGroupFrom" id="6">
+			<DataPath>Object.GuestGroupFrom</DataPath>
+			<Width>20</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<OpenButton>true</OpenButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<InputHint>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group to copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zu kopierende Gruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа для копирования</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="GuestGroupFromContextMenu" id="7"/>
+			<ExtendedTooltip name="GuestGroupFromExtendedTooltip" id="8"/>
+		</InputField>
+		<InputField name="CheckInDateFrom" id="9">
+			<DataPath>Object.CheckInDateFrom</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reservations with arrival on the specified date will be copied. If this date is empty then all group reservations will be copied</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Die Buchung mit dem Check-in am angegebenen Datum wird kopiert. Wenn dieses Datum leer ist, werden alle Gruppenreservierungen kopiert</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Будут скопированы брони с заездом в указанную дату. Если эта дата пустая, то копируются все брони из группы.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<AutoMarkIncomplete>false</AutoMarkIncomplete>
+			<ContextMenu name="CheckInDateFromContextMenu" id="10"/>
+			<ExtendedTooltip name="CheckInDateFromExtendedTooltip" id="11"/>
+		</InputField>
+		<LabelDecoration name="Decoration2" id="21">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="Decoration2ContextMenu" id="22"/>
+			<ExtendedTooltip name="Decoration2ExtendedTooltip" id="23"/>
+		</LabelDecoration>
+		<InputField name="GuestGroupTo" id="12">
+			<DataPath>Object.GuestGroupTo</DataPath>
+			<Width>20</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<OpenButton>true</OpenButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<InputHint>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New will be created if empty</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Neu wird erstellt, wenn leer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создаст новую если пусто</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="GuestGroupToContextMenu" id="13"/>
+			<ExtendedTooltip name="GuestGroupToExtendedTooltip" id="14"/>
+		</InputField>
+		<InputField name="CheckInDateTo" id="15">
+			<DataPath>Object.CheckInDateTo</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Choose new check-in date for the new group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wählen Sie neues check-in-Datum für die neue Gruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выберите новую дату заезда для новой группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="CheckInDateToContextMenu" id="16"/>
+			<ExtendedTooltip name="CheckInDateToExtendedTooltip" id="17"/>
+		</InputField>
+		<UsualGroup name="GroupParameters" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group parameters</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="30"/>
+			<ChildItems>
+				<CheckBoxField name="CopyReservations" id="31">
+					<DataPath>Object.CopyReservations</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CopyReservationsContextMenu" id="32"/>
+					<ExtendedTooltip name="CopyReservationsExtendedTooltip" id="33"/>
+				</CheckBoxField>
+				<CheckBoxField name="CopyResourceReservations" id="34">
+					<DataPath>Object.CopyResourceReservations</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CopyResourceReservationsContextMenu" id="35"/>
+					<ExtendedTooltip name="CopyResourceReservationsExtendedTooltip" id="36"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CopyGuestGroupReservations</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionsExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy group reservations</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenreservierungen kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить копирование группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionsExecute</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="GuestGroupFrom">
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="CheckInDateFrom">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

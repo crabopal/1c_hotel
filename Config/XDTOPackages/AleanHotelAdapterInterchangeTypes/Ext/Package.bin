@@ -1,0 +1,62 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol">
+	<valueType name="ReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">RESERVED</enumeration>
+		<enumeration xsi:type="xs:string">RESERVED_NEED_CONFIRMATION</enumeration>
+		<enumeration xsi:type="xs:string">ORDERED_BY_REQUEST</enumeration>
+		<enumeration xsi:type="xs:string">INSUFFICIENT_RESOURCES</enumeration>
+		<enumeration xsi:type="xs:string">FAILED</enumeration>
+	</valueType>
+	<valueType name="TtmcReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">rrReserved</enumeration>
+		<enumeration xsi:type="xs:string">rrReservedNeedConfirmation</enumeration>
+		<enumeration xsi:type="xs:string">rrOrderedByRequest</enumeration>
+		<enumeration xsi:type="xs:string">rrInvalidTouristAge</enumeration>
+		<enumeration xsi:type="xs:string">rrInsufficientResources</enumeration>
+		<enumeration xsi:type="xs:string">rrFailed</enumeration>
+	</valueType>
+	<valueType name="ModifyReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">MODIFIED</enumeration>
+		<enumeration xsi:type="xs:string">ABSENT</enumeration>
+		<enumeration xsi:type="xs:string">AVOIDED</enumeration>
+		<enumeration xsi:type="xs:string">FAILED</enumeration>
+	</valueType>
+	<valueType name="TtmcModifyReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">mrrModified</enumeration>
+		<enumeration xsi:type="xs:string">mrrAbsent</enumeration>
+		<enumeration xsi:type="xs:string">mrrAvoided</enumeration>
+		<enumeration xsi:type="xs:string">mrrFailed</enumeration>
+	</valueType>
+	<valueType name="CancelReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">CANCELED</enumeration>
+		<enumeration xsi:type="xs:string">ABSENT</enumeration>
+		<enumeration xsi:type="xs:string">AVOIDED</enumeration>
+		<enumeration xsi:type="xs:string">FAILED</enumeration>
+	</valueType>
+	<valueType name="TtmcCancelReservationResult" base="xs:string">
+		<enumeration xsi:type="xs:string">crrCanceled</enumeration>
+		<enumeration xsi:type="xs:string">crrAbsent</enumeration>
+		<enumeration xsi:type="xs:string">crrAvoided</enumeration>
+		<enumeration xsi:type="xs:string">crrFailed</enumeration>
+	</valueType>
+	<valueType name="OrderNumber" base="xs:string"/>
+	<valueType name="TtmcVerifyPromoActionResult" base="xs:string">
+		<enumeration xsi:type="xs:string">vprNotMember</enumeration>
+		<enumeration xsi:type="xs:string">vprVerificationCodeSent</enumeration>
+		<enumeration xsi:type="xs:string">vprVerified</enumeration>
+	</valueType>
+	<objectType name="ReservationProtocol">
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="ReservationResult" type="d3p1:ReservationProtocolResult" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ReservationProtocolResult">
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="OrderNumber" type="d3p1:OrderNumber" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="SupplierOrderNumber" type="d3p1:OrderNumber" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="SupplierInvoiceNumber" type="d3p1:OrderNumber" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="ReservationResult" type="d3p1:ReservationResult" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="ModifyReservationResult" type="d3p1:ModifyReservationResult" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="CancelReservationResult" type="d3p1:CancelReservationResult" lowerBound="0" form="Attribute"/>
+		<property name="ExceptionMessage" type="xs:string" lowerBound="0" form="Attribute"/>
+	</objectType>
+	<objectType name="SynchronizeReservationsResult">
+		<property xmlns:d3p1="urn:schemas-som-ru:tws-HotelAdapterReservationProtocol" name="ReservationProtocol" type="d3p1:ReservationProtocol" nillable="true"/>
+	</objectType>
+</package>

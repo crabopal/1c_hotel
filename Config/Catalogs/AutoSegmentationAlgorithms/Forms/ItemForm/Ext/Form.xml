@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopf</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="58"/>
+			<ChildItems>
+				<InputField name="Description" id="4">
+					<DataPath>Object.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DescriptionContextMenu" id="5"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupQuery" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group query</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group query</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupQueryExtendedTooltip" id="38"/>
+			<ChildItems>
+				<UsualGroup name="GroupQueryRow" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group query row</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupQueryRowExtendedTooltip" id="56"/>
+					<ChildItems>
+						<Button name="QueryWizard" id="53">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.QueryWizard</CommandName>
+							<ExtendedTooltip name="QueryWizardExtendedTooltip" id="54"/>
+						</Button>
+						<TextDocumentField name="ExternalQueryText" id="7">
+							<DataPath>Object.ExternalQueryText</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>1000</Width>
+							<ContextMenu name="ExternalQueryTextContextMenu" id="8">
+								<ChildItems>
+									<Button name="ExternalQueryTextContextMenuQueryWizard" id="51">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.QueryWizard</CommandName>
+										<ExtendedTooltip name="ExternalQueryTextContextMenuQueryWizardExtendedTooltip" id="52"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<ExtendedTooltip name="ExternalQueryTextExtendedTooltip" id="9"/>
+						</TextDocumentField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="Parameters" id="10">
+					<Representation>List</Representation>
+					<Width>40</Width>
+					<MaxWidth>7</MaxWidth>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Object.Parameters</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ParametersContextMenu" id="11"/>
+					<AutoCommandBar name="ParametersCommandBar" id="12">
+						<ChildItems>
+							<Button name="ParametersFillInTheOptions" id="49">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.FillInTheOptions</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ParametersFillInTheOptionsExtendedTooltip" id="50"/>
+							</Button>
+							<Button name="ParametersAdd" id="43">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.Parameters.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ParametersAddExtendedTooltip" id="44"/>
+							</Button>
+							<Button name="ParametersDelete" id="41">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.Parameters.StandardCommand.Delete</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ParametersDeleteExtendedTooltip" id="42"/>
+							</Button>
+							<Button name="ParametersMoveDown" id="47">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Parameters.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="ParametersMoveDownExtendedTooltip" id="48"/>
+							</Button>
+							<Button name="ParametersMoveUp" id="45">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Parameters.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="ParametersMoveUpExtendedTooltip" id="46"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ParametersExtendedTooltip" id="13"/>
+					<SearchStringAddition name="ParametersSearchString" id="14">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersSearchStringContextMenu" id="15"/>
+						<ExtendedTooltip name="ParametersSearchStringExtendedTooltip" id="16"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ParametersViewStatus" id="17">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersViewStatusContextMenu" id="18"/>
+						<ExtendedTooltip name="ParametersViewStatusExtendedTooltip" id="19"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ParametersSearchControl" id="20">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersSearchControlContextMenu" id="21"/>
+						<ExtendedTooltip name="ParametersSearchControlExtendedTooltip" id="22"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ParametersLineNumber" id="23">
+							<DataPath>Object.Parameters.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParametersLineNumberContextMenu" id="24"/>
+							<ExtendedTooltip name="ParametersLineNumberExtendedTooltip" id="25"/>
+						</LabelField>
+						<InputField name="ParametersParameter" id="26">
+							<DataPath>Object.Parameters.Parameter</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<ContextMenu name="ParametersParameterContextMenu" id="27"/>
+							<ExtendedTooltip name="ParametersParameterExtendedTooltip" id="28"/>
+						</InputField>
+						<InputField name="ParametersValue" id="29">
+							<DataPath>Object.Parameters.Value</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<ContextMenu name="ParametersValueContextMenu" id="30"/>
+							<ExtendedTooltip name="ParametersValueExtendedTooltip" id="31"/>
+						</InputField>
+						<InputField name="ParametersDescription" id="32">
+							<DataPath>Object.Parameters.Description</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>20</Width>
+							<ContextMenu name="ParametersDescriptionContextMenu" id="33"/>
+							<ExtendedTooltip name="ParametersDescriptionExtendedTooltip" id="34"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.AutoSegmentationAlgorithms</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="FillInTheOptions" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить параметры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill in parameters list</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen Sie die Parameter aus</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить список параметров запроса по тексту запроса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill in query parameters list by query text</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Füllen Sie die Abfrageparameterliste nach Abfragetext aus</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>FillInTheOptions</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="QueryWizard" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Query wizard</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Abfrageassistent</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конструктор запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>QueryWizard</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

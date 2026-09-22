@@ -1,0 +1,1240 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.1chotel.ru/interfaces/reservation/">
+	<valueType name="ExtSystemCode" base="xs:string"/>
+	<valueType name="ExtReservationCode" base="xs:string"/>
+	<valueType name="ExtGroupCode" base="xs:string"/>
+	<valueType name="ExtGroupDescription" base="xs:string"/>
+	<valueType name="ExtInvoiceCode" base="xs:string"/>
+	<valueType name="CustomerName" base="xs:string"/>
+	<valueType name="ContractName" base="xs:string"/>
+	<valueType name="ReservationStatusCode" base="xs:string"/>
+	<valueType name="Period" base="xs:dateTime"/>
+	<valueType name="HotelCode" base="xs:string"/>
+	<valueType name="RoomTypeCode" base="xs:string"/>
+	<valueType name="AccommodationTypeCode" base="xs:string"/>
+	<valueType name="ClientTypeCode" base="xs:string"/>
+	<valueType name="RoomQuotaCode" base="xs:string"/>
+	<valueType name="RoomRateCode" base="xs:string"/>
+	<valueType name="ContactPerson" base="xs:string"/>
+	<valueType name="Quantity" base="xs:decimal" totalDigits="19" fractionDigits="7"/>
+	<valueType name="ExtClientCode" base="xs:string"/>
+	<valueType name="ClientName" base="xs:string"/>
+	<valueType name="ClientSexCode" base="xs:string" maxLength="1"/>
+	<valueType name="ClientCitizenshipCode" base="xs:string"/>
+	<valueType name="Phone" base="xs:string" maxLength="200"/>
+	<valueType name="Fax" base="xs:string" maxLength="200"/>
+	<valueType name="EMail" base="xs:string" maxLength="200"/>
+	<valueType name="Remarks" base="xs:string" maxLength="4096"/>
+	<valueType name="Organisation" base="xs:string" maxLength="4096"/>
+	<valueType name="PaymentMethodCode" base="xs:string"/>
+	<valueType name="DoPosting" base="xs:boolean"/>
+	<valueType name="ClientBirthDate" base="xs:dateTime"/>
+	<valueType name="ErrorDescription" base="xs:string" maxLength="4096"/>
+	<valueType name="ConfirmationReply" base="xs:string" maxLength="4096"/>
+	<valueType name="IsPosted" base="xs:boolean"/>
+	<valueType name="ClientCode" base="xs:string" maxLength="12"/>
+	<valueType name="CalendarDayTypeCode" base="xs:string"/>
+	<valueType name="Sum" base="xs:decimal" totalDigits="17" fractionDigits="2"/>
+	<valueType name="CurrencyCode" base="xs:string" maxLength="32"/>
+	<valueType name="Code" base="xs:string" maxLength="5"/>
+	<valueType name="Description" base="xs:string"/>
+	<valueType name="SumPresentation" base="xs:string" maxLength="25"/>
+	<valueType name="GuestGroupCode" base="xs:string" maxLength="12"/>
+	<valueType name="Picture" base="xs:string"/>
+	<valueType name="Link" base="xs:string"/>
+	<valueType name="LanguageCode" base="xs:string" maxLength="2"/>
+	<valueType name="Duration" base="xs:int"/>
+	<valueType name="PaymentSectionCode" base="xs:int" totalDigits="3" fractionDigits="0"/>
+	<valueType name="DocumentNumber" base="xs:string" maxLength="12"/>
+	<valueType name="ReferenceNumber" base="xs:string" maxLength="50"/>
+	<valueType name="AuthorizationCode" base="xs:string" maxLength="50"/>
+	<valueType name="HotelProductCode" base="xs:string" maxLength="20"/>
+	<valueType name="HotelProductDescription" base="xs:string"/>
+	<valueType name="TimeZone" base="xs:int"/>
+	<valueType name="Passport" base="xs:string" maxLength="50"/>
+	<valueType name="CurrencyRate" base="xs:decimal" totalDigits="19" fractionDigits="7"/>
+	<valueType name="HotelName" base="xs:string"/>
+	<valueType name="Login" base="xs:string"/>
+	<valueType name="ClientAge" base="xs:int"/>
+	<valueType name="PromoCode" base="xs:string"/>
+	<valueType name="TIN" base="xs:string"/>
+	<valueType name="Room" base="xs:string"/>
+	<valueType name="ServiceCode" base="xs:string"/>
+	<valueType name="ServiceTypeCode" base="xs:string"/>
+	<valueType name="Unit" base="xs:string"/>
+	<valueType name="GuestQuantity" base="xs:int" totalDigits="2" fractionDigits="0"/>
+	<valueType name="DiscountType" base="xs:string"/>
+	<valueType name="CustomerTIN" base="xs:string" maxLength="14"/>
+	<valueType name="CustomerKPP" base="xs:string" maxLength="9"/>
+	<valueType name="GuaranteeTypeCode" base="xs:string"/>
+	<valueType name="RoomRate" base="xs:string"/>
+	<valueType name="DiscountPercent" base="xs:decimal" totalDigits="6" fractionDigits="3"/>
+	<valueType name="AccommodationTemplateCode" base="xs:string"/>
+	<objectType name="AccommodationTypePrices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypePriceRow" type="d3p1:AccommodationTypePriceRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="AccommodationTypePriceRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationType" type="d3p1:AccommodationTypeCode" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeCode" type="d3p1:AccommodationTypeCode" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PriceCurrency" type="d3p1:CurrencyCode" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PriceCurrencyCode" type="d3p1:CurrencyCode" lowerBound="0" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="RoomInventoryBalance">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomInventoryBalanceRow" type="d3p1:RoomInventoryBalanceRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomInventoryBalanceRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Period" type="d3p1:Period" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsVacant" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsVacant" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsChargedInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsChargedInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsReserved" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsReserved" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InHouseRooms" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InHouseBeds" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsRemains" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsRemains" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SinglePrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SinglePriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SinglePriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SinglePriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoublePrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoublePriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoublePriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoublePriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TriplePrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TriplePriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TriplePriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TriplePriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="QuadruppelPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="QuadruppelPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="QuadruppelPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="QuadruppelPriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AdditionalBedPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AdditionalBedPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AdditionalBedPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AdditionalBedPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BabyPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BabyPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BabyPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BabyPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChildPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChildPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChildPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChildPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TeenPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TeenPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TeenPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TeenPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraBabyPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraBabyPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraBabyPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraBabyPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraChildPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraChildPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraChildPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraChildPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraTeenPrice" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraTeenPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraTeenPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraTeenPriceAccommodationTypeCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypePrices" type="d3p1:AccommodationTypePrices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds5Price" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds5PriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds5PriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds5PriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds6Price" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds6PriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds6PriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds6PriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds7Price" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds7PriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds7PriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds7PriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds8Price" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds8PriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds8PriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Beds8PriceAccommodationTemplateCode" type="d3p1:Code" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MinPrice" type="d3p1:Sum" lowerBound="1" nillable="true" default="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MinPriceCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MinPriceCurrencyCode" type="d3p1:Code" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesWithPricesRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationType" type="d3p1:AccommodationTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CalendarDayType" type="d3p1:CalendarDayTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalRooms" type="d3p1:Quantity"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalBeds" type="d3p1:Quantity"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsAvailable" type="d3p1:Quantity"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsAvailable" type="d3p1:Quantity"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeCode" type="d3p1:AccommodationTypeCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CalendarDayTypeCode" type="d3p1:CalendarDayTypeCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CalendarDayTypeDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricePresentation" type="d3p1:SumPresentation" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypePictureLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeInfoLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypePictureLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeInfoLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfPersonsPerRoom" type="d3p1:Quantity"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesWithPricesRows">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesWithPricesRow" type="d3p1:AvailableRoomTypesWithPricesRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesWithPrices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditions" type="d3p1:Remarks" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsShort" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsOnline" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentMethodCodesAllowedOnline" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesWithPricesRows" type="d3p1:AvailableRoomTypesWithPricesRows"/>
+	</objectType>
+	<objectType name="ExternalClientStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientCode" type="d3p1:ClientCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+	</objectType>
+	<objectType name="WriteExternalGroupReservation">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Login" type="d3p1:Login" lowerBound="0" nillable="true" form="Attribute"/>
+		<property name="TransferBooked" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="TransferTime" type="xs:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="TransferPlace" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="TransferRemarks" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChargeExtraServices" type="d3p1:ChargeExtraServices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CreditCardData" type="d3p1:CreditCard" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RequestAttributes" type="d3p1:RequestAttributes" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="WriteExternalGroupReservationRow" type="d3p1:WriteExternalGroupReservationRow" lowerBound="1" upperBound="-1"/>
+	</objectType>
+	<objectType name="WriteExternalGroupReservationRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationCode" type="d3p1:ExtReservationCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GroupCode" type="d3p1:ExtGroupCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GroupDescription" type="d3p1:ExtGroupDescription" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GroupCustomer" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GroupClient" type="d3p1:WriteExternalClient" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationStatus" type="d3p1:ReservationStatusCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodFrom" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodTo" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationType" type="d3p1:AccommodationTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientType" type="d3p1:ClientTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomQuota" type="d3p1:RoomQuotaCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRateCode" nillable="true"/>
+		<property name="MealBoardTerm" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Customer" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Contract" type="d3p1:ContractName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Agent" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ContactPerson" type="d3p1:ContactPerson" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfRooms" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfPersons" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Client" type="d3p1:WriteExternalClient" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationRemarks" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Car" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PlannedPaymentMethod" type="d3p1:PaymentMethodCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExternalSystemCode" type="d3p1:ExtSystemCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoPosting" type="d3p1:DoPosting" lowerBound="1" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PromoCode" type="d3p1:PromoCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountType" type="d3p1:DiscountType" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountConfirmationText" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuaranteeType" type="d3p1:GuaranteeTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChargeExtraServices" type="d3p1:ChargeExtraServices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricesPerDate" type="d3p1:PricesPerDate" lowerBound="0" nillable="true"/>
+		<property name="Author" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="MarketingCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="SourceOfBusiness" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerData" type="d3p1:CustomerData" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRatePlan" type="d3p1:RoomRatePlan" lowerBound="0" nillable="true"/>
+		<property name="GuestAge" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="IsUpgrade" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTemplate" type="d3p1:AccommodationTemplateCode" lowerBound="0" nillable="true"/>
+		<property name="NewReservationCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomClass" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NewGroupCode" type="d3p1:ExtGroupCode" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="WriteExternalClient">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientCode" type="d3p1:ExtClientCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientLastName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientFirstName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientSecondName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientSex" type="d3p1:ClientSexCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientCitizenship" type="d3p1:ClientCitizenshipCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientBirthDate" type="d3p1:ClientBirthDate" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientPhone" type="d3p1:Phone" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientFax" type="d3p1:Fax" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientEMail" type="d3p1:EMail" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientRemarks" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property name="ClientSendSMS" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentSeries" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentIssuedBy" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentValidToDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="ClientIdentityDocumentIssueDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="Address" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ClientAddressRegistrationDate" type="xs:date" lowerBound="0" nillable="true"/>
+		<property name="PlaceOfBirth" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ExternalReservationStatusRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="IsPosted" type="d3p1:IsPosted" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationNumber" type="d3p1:DocumentNumber" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationStatus" type="d3p1:ReservationStatusCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationStatusCode" type="d3p1:ReservationStatusCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationStatusDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ConfirmationReply" type="d3p1:ConfirmationReply" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestCode" type="d3p1:ClientCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFullName" type="d3p1:ClientName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestBirthDate" type="d3p1:ClientBirthDate" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestPassport" type="d3p1:Passport" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestPhone" type="d3p1:Phone" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFax" type="d3p1:Fax" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestEMail" type="d3p1:EMail" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomQuantity" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfPersons" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDescription" type="d3p1:Description" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationType" type="d3p1:AccommodationTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeCode" type="d3p1:AccommodationTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypeDescription" type="d3p1:Description" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckInDate" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Duration" type="d3p1:Duration" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckOutDate" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BaseCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyRate" type="d3p1:CurrencyRate" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Sum" type="d3p1:Sum" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SumPresentation" type="d3p1:SumPresentation" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySum" type="d3p1:Sum" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySumPresentation" type="d3p1:SumPresentation" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraServices" type="d3p1:ExtraServices" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestLastName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFirstName" type="d3p1:ClientName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestSecondName" type="d3p1:ClientName" nillable="true"/>
+		<property name="GuestIdentityDocumentType" type="xs:string" nillable="true"/>
+		<property name="GuestIdentityDocumentSeries" type="xs:string" nillable="true"/>
+		<property name="GuestIdentityDocumentNumber" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestSex" type="d3p1:ClientSexCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestCitizenship" type="d3p1:ClientCitizenshipCode" nillable="true"/>
+		<property name="GuestSendSMS" type="xs:boolean" nillable="true"/>
+		<property name="GuestIdentityDocumentIssuedBy" type="xs:string" nillable="true"/>
+		<property name="GuestIdentityDocumentUnitCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentValidToDate" type="xs:dateTime" nillable="true"/>
+		<property name="GuestIdentityDocumentIssueDate" type="xs:dateTime" nillable="true"/>
+		<property name="GuestAddress" type="xs:string" nillable="true"/>
+		<property name="AddressRegistrationDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="PaymentMethodCodesAllowedOnline" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtReservationCode" type="d3p1:ExtReservationCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomQuotaCode" type="d3p1:RoomQuotaCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true"/>
+		<property name="URL" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricesPerDate" type="d3p1:PricesPerDate" lowerBound="0"/>
+		<property name="UUID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraCharges" type="d3p1:ChargeExtraServices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="UpgradeAvailable" type="d3p1:UpgradeAvailable" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BoardPlace" type="d3p1:BoardPlace" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentList" type="d3p1:PaymentList" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="SumBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySumBeforeDiscount" type="d3p1:Sum" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Adults" type="d3p1:GuestQuantity" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestAge" type="d3p1:GuestQuantity" nillable="true" form="Element"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Children" type="d3p1:GuestQuantity" nillable="true" form="Element"/>
+		<property name="PaymentURL" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ExternalGroupReservationStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Customer" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerLegacyName" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property name="CustomerLegacyAddress" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerTIN" type="d3p1:CustomerTIN" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerKPP" type="d3p1:CustomerKPP" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerEMail" type="d3p1:EMail" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerPhone" type="d3p1:Phone" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Contract" type="d3p1:ContractName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Agent" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestCode" type="d3p1:ClientCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFullName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestBirthDate" type="d3p1:ClientBirthDate" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestPassport" type="d3p1:Passport" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestPhone" type="d3p1:Phone" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFax" type="d3p1:Fax" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestEMail" type="d3p1:EMail" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BaseCurrency" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyRate" type="d3p1:CurrencyRate" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSumPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BalanceAmount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BalanceAmountPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySumPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelName" type="d3p1:HotelName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExternalReservationStatusRow" type="d3p1:ExternalReservationStatusRow" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestLastName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFirstName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestSecondName" type="d3p1:ClientName" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentSeries" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestSex" type="d3p1:ClientSexCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestCitizenship" type="d3p1:ClientCitizenshipCode" lowerBound="0" nillable="true"/>
+		<property name="GuestSendSMS" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentIssuedBy" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentValidToDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="GuestIdentityDocumentIssueDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="GuestAddress" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="UUID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ReservationConditions" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ReservationConditionsShort" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ReservationConditionsOnline" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentMethodCodesAllowedOnline" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property name="CheckDate" type="xs:date" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtGuestGroupCode" type="d3p1:ExtGroupCode" lowerBound="0" nillable="true"/>
+		<property name="CancelFeeDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CancelFeeAmount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BankAccount" type="d3p1:BankAccount" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Company" type="d3p1:Company" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraCharges" type="d3p1:ChargeExtraServices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DateFrom" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DateTo" type="d3p1:Period" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BonusesLimit" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Invoice" type="d3p1:Invoice" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSumBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BalanceAmountBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySumBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CancelFeeAmountBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+		<property name="PaymentURL" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="UpgradeAvailable">
+		<property name="UpgradeAmount" type="xs:decimal" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="UpgradeRoomTypeCode" type="d3p1:RoomTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="UpgradeRoomTypeDescription" type="d3p1:Description" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="UpgradeRoomRateCode" type="d3p1:RoomRateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="UpgradeAccommodationTypesList" type="d3p1:AccommodationTypesList"/>
+		<property name="UpgradeAmountWithoutDiscount" type="xs:decimal" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Hotels">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelParameters" type="d3p1:HotelParameters" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ExternalReservationStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExternalReservationStatusRow" type="d3p1:ExternalReservationStatusRow" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="HotelParameters">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelPrintName" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditions" type="d3p1:Remarks" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsShort" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsOnline" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentMethodCodesAllowedOnline" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelPostAddress" type="d3p1:Remarks" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HowToDriveToTheHotel" type="d3p1:Remarks" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationDivisionContacts" type="d3p1:Remarks" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelPhones" type="d3p1:Phone" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelFax" type="d3p1:Fax" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelEMail" type="d3p1:EMail" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelLogoLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ServerTimeZone" type="d3p1:TimeZone"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MaxAdults" type="d3p1:Quantity" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MaxKids" type="d3p1:Quantity" lowerBound="0" nillable="false"/>
+		<property name="CheckInTime" type="xs:time" nillable="true"/>
+		<property name="CheckOutTime" type="xs:time" nillable="true"/>
+	</objectType>
+	<objectType name="GuestGroupPaymentStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentNumber" type="d3p1:DocumentNumber" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSumPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Balance" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BalancePresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property name="UUID" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="VacantCheckInPeriods">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="VacantCheckInPeriodsRow" type="d3p1:VacantCheckInPeriodsRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="VacantCheckInPeriodsRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Allotment" type="d3p1:RoomQuotaCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AllotmentDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckInDate" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Duration" type="d3p1:Duration"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckOutDate" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsVacant" type="d3p1:Quantity" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsVacant" type="d3p1:Quantity" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsRemains" type="d3p1:Quantity" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsRemains" type="d3p1:Quantity" nillable="true"/>
+	</objectType>
+	<objectType name="Adults">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Quantity" type="d3p1:GuestQuantity" form="Attribute"/>
+	</objectType>
+	<objectType name="Kids">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Quantity" type="d3p1:GuestQuantity" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Age" type="d3p1:ClientAge" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="GuestsQuantity">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Adults" type="d3p1:Adults" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Kids" type="d3p1:Kids" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RequestAttributes" type="d3p1:RequestAttributes" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="WriteExternalCustomer">
+		<property name="IsIndividual" type="xs:boolean" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerName" type="d3p1:CustomerName"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerTIN" type="d3p1:TIN" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerKPP" type="d3p1:CustomerKPP" lowerBound="0" nillable="true"/>
+		<property name="CustomerAddress" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerPhone" type="d3p1:Phone" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerFax" type="d3p1:Fax" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerEMail" type="d3p1:EMail" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerRemarks" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property name="CustomerDateOfBirth" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="AccommodationType">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Code" type="d3p1:AccommodationTypeCode" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Description" type="d3p1:Description" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Age" type="d3p1:ClientAge" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Amount" type="d3p1:Sum" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountPresentation" type="d3p1:SumPresentation" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" nillable="true" form="Attribute"/>
+		<property name="ClientAgeFrom" type="xs:integer" lowerBound="0" nillable="true" form="Attribute"/>
+		<property name="ClientAgeTo" type="xs:integer" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AccommodationTypes">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsAvailable" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsAvailable" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySum" type="d3p1:Sum" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Amount" type="d3p1:Sum" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypePictureLink" type="d3p1:Link" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeInfoLink" type="d3p1:Link" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property name="LimitedRoomsText" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsShort" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsOnline" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentMethodCodesAllowedOnline" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTemplate" type="d3p1:AccommodationTemplate" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypesList" type="d3p1:AccommodationTypesList" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="LastReservationDate" type="d3p1:Period" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Rooms" type="d3p1:Rooms" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomClass" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomClassCode" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesRows">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesRow" type="d3p1:AvailableRoomTypesRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="AvailableRoomTypes">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditions" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsShort" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsOnline" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentMethodCodesAllowedOnline" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesRows" type="d3p1:AvailableRoomTypesRows" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesByCheckInPeriodsRows" type="d3p1:AvailableRoomTypesByCheckInPeriodsRows" lowerBound="0" nillable="true" fixed="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypes" type="d3p1:AccommodationTypes" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AuthorizedClient" type="d3p1:WriteExternalClient" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="GroupsList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroupDetails" type="d3p1:GuestGroupDetails" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="GuestGroupDetails">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Customer" type="d3p1:CustomerName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Contract" type="d3p1:ContractName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Agent" type="d3p1:CustomerName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Status" type="d3p1:ReservationStatusCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="StatusCode" type="d3p1:ReservationStatusCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="StatusDescription" type="d3p1:Description"/>
+		<property name="PaymentPercent" type="xs:int"/>
+		<property name="CheckInDate" type="xs:dateTime"/>
+		<property name="Duration" type="xs:int"/>
+		<property name="CheckOutDate" type="xs:dateTime"/>
+		<property name="NumberOfPersons" type="xs:int"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestFullName" type="d3p1:ClientName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Phone" type="d3p1:Phone" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Email" type="d3p1:EMail" nillable="true"/>
+		<property name="Amount" type="xs:decimal"/>
+		<property name="Balance" type="xs:decimal"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Remarks" type="d3p1:Remarks"/>
+		<property name="Hotel" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0"/>
+		<property name="CreateDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="UUID" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="RoomType">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Code" type="d3p1:RoomTypeCode" nillable="false" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Description" type="d3p1:Description" lowerBound="0" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypesList" type="d3p1:AccommodationTypesList" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="AccommodationTypesList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationType" type="d3p1:AccommodationType" lowerBound="0" upperBound="-1" form="Element"/>
+	</objectType>
+	<objectType name="ExtraServices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraServiceRow" type="d3p1:ExtraServiceRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ExtraServiceRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ServiceCode" type="d3p1:ServiceCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ServiceDescription" type="d3p1:Description" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricePresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Unit" type="d3p1:Unit" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Remarks" type="d3p1:Remarks" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PriceBeforeDiscount" type="d3p1:Sum" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0"/>
+		<property name="Group" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ChargeExtraServices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChargeExtraServiceRow" type="d3p1:ChargeExtraServiceRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ChargeExtraServiceRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Service" type="d3p1:ServiceCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Quantity" type="d3p1:Quantity"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Remarks" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ChargeDate" type="d3p1:Period" nillable="true"/>
+		<property name="OrderType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Department" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="OrderDate" type="d3p1:Period" lowerBound="0" nillable="true"/>
+		<property name="Destination" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TransferRemarks" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TransferType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TransferChildseats" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="PassengersNumber" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="CarType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PickupFrom" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Sum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountPercent" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+		<property name="OrderID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="OrderItems" type="d3p1:OrderItems" lowerBound="0" upperBound="1" nillable="true"/>
+	</objectType>
+	<objectType name="CreditCard">
+		<property name="CardNumber" type="xs:string"/>
+		<property name="CardHolder" type="xs:string" nillable="true"/>
+		<property name="CardValidTillDate" type="xs:date" nillable="true"/>
+		<property name="CardSecurityCode" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="ExpressCheckInUUID">
+		<property name="Error" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Clients">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientRow" type="d3p1:WriteExternalClient" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IdentityDocumentsList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="IdentityDocument" type="d3p1:IdentityDocument" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="IdentityDocument">
+		<property name="IdentityDocumentTypeCode" type="xs:string"/>
+		<property name="IdentityDocumentTypeNameRU" type="xs:string"/>
+		<property name="IdentityDocumentTypeNameEN" type="xs:string"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesByCheckInPeriodsRows">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AvailableRoomTypesByCheckInPeriodsRow" type="d3p1:AvailableRoomTypesByCheckInPeriodsRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="AvailableRoomTypesByCheckInPeriodsRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Allotment" type="d3p1:RoomQuotaCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AllotmentDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckInDate" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Duration" type="d3p1:Duration"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CheckOutDate" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsRemains" type="d3p1:Quantity" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsRemains" type="d3p1:Quantity" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypePictureLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeInfoLink" type="d3p1:Link" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountPresentation" type="d3p1:SumPresentation" nillable="true"/>
+		<property name="LimitedRoomsText" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FirstDaySum" type="d3p1:Sum"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Amount" type="d3p1:Sum"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsShort" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationConditionsOnline" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentMethodCodesAllowedOnline" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTypesList" type="d3p1:AccommodationTypesList" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="LastReservationDate" type="d3p1:Period" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AmountBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Discount" type="d3p1:DiscountPercent" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ContractInfo">
+		<property name="ContractCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerDescription" type="d3p1:CustomerName" nillable="true"/>
+		<property name="LegacyAddress" type="xs:string" nillable="true"/>
+		<property name="PostAddress" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Phone" type="d3p1:Phone" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="EMail" type="d3p1:EMail" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TIN" type="d3p1:TIN" nillable="true"/>
+		<property name="KPP" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ContactPerson" type="d3p1:ContactPerson" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+	</objectType>
+	<objectType name="ExternalPaymentData">
+		<property name="CardNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="LoyaltyCardID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="OrderNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CardHolder" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Date" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceCode" type="d3p1:ExtInvoiceCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExternalPaymentCode" type="d3p1:ExtInvoiceCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="MerchantID" type="d3p1:ExtInvoiceCode" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="SendInvoiceResponse">
+		<property name="Base64" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="GuestGroupPreauthorisationStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PreauthorisationNumber" type="d3p1:DocumentNumber" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TotalSumPresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Balance" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BalancePresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+		<property name="UUID" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="PricesPerDate">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricePerDateRow" type="d3p1:PricePerDateRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="PricePerDateRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Date" type="d3p1:Period"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PriceBeforeDiscount" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ClientExtraData">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="IdentityDocumentPages" type="d3p1:Pictures" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="EMailAdditional" type="d3p1:EMail" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Organisation" type="d3p1:Organisation" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountCard" type="d3p1:DiscountCard" lowerBound="0" nillable="true"/>
+		<property name="ClientAddressRegistrationDate" type="xs:date" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Pictures">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Picture" type="d3p1:Base64Picture" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Base64Picture">
+		<property name="PictureType" type="xs:string"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PictureData" type="d3p1:Picture"/>
+	</objectType>
+	<objectType name="ExtraCheckInData">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="KeyCards" type="d3p1:KeyCards" lowerBound="0"/>
+	</objectType>
+	<objectType name="KeyCards">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="KeyCard" type="d3p1:KeyCard" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="KeyCard">
+		<property name="KeyCardId" type="xs:string"/>
+	</objectType>
+	<objectType name="RequestAttributes">
+		<property name="SessionID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="UserID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="utm_source" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="utm_medium" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="utm_campaign" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="utm_content" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="GetAvailableRoomTypesExtraData">
+		<property name="Employee" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Customer" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Contract" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="IsCustomer" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="ProfileCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationCode" type="d3p1:ExtReservationCode" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="CustomerData">
+		<property name="Phone" type="xs:string" lowerBound="0"/>
+		<property name="Email" type="xs:string" lowerBound="0"/>
+		<property name="TIN" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="IndividualCustomer" type="d3p1:WriteExternalClient" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="BankAccount">
+		<property name="AccountCurrencyCode" type="xs:string" lowerBound="0"/>
+		<property name="AccountNumber" type="xs:string" lowerBound="0"/>
+		<property name="BankName" type="xs:string" lowerBound="0"/>
+		<property name="BankCity" type="xs:string" lowerBound="0"/>
+		<property name="BankCorrAccountNumber" type="xs:string" lowerBound="0"/>
+		<property name="BankBIC" type="xs:string" lowerBound="0"/>
+		<property name="BankSWIFTCode" type="xs:string" lowerBound="0"/>
+		<property name="BankTINCode" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankName" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankCity" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankCorrAccountNumber" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankBIC" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankSWIFTCode" type="xs:string" lowerBound="0"/>
+		<property name="CorrBankTINCode" type="xs:string" lowerBound="0"/>
+		<property name="IsDirectPayments" type="xs:boolean" lowerBound="0"/>
+		<property name="Beneficiary" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="Company">
+		<property name="LegacyName" type="xs:string" lowerBound="0"/>
+		<property name="LegacyAddress" type="xs:string" lowerBound="0"/>
+		<property name="Phones" type="xs:string" lowerBound="0"/>
+		<property name="EMail" type="xs:string" lowerBound="0"/>
+		<property name="TIN" type="xs:string" lowerBound="0"/>
+		<property name="KPP" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="Reservations">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationRow" type="d3p1:ReservationRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ReservationRow">
+		<property name="URL" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestGroup" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Room" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Number" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Status" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="StatusCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestFullName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Phone" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Email" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CheckInDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="CheckOutDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="Duration" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="NumberOfPersons" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="RoomType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccommodationType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccommodationTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomRate" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomRateCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ServicePackage" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ServicePackageCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomQuota" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomQuotaCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Customer" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Contract" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Agent" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AgentCommission" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="GroupSales" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="Currency" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CurrencyCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="PaymentCurrency" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentCurrencyCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="UUID" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AvailableRoomsWithDailyPrices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDailyAvailabilityAndPricesRow" type="d3p1:RoomTypeDailyAvailabilityAndPrices" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="RoomTypeDailyAvailabilityAndPrices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeCode" type="d3p1:RoomTypeCode" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDescription" type="d3p1:Description" lowerBound="0" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Period" type="d3p1:Period" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsVacant" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsVacant" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsChargedInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsChargedInQuota" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsReserved" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsReserved" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InHouseRooms" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InHouseBeds" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsRemains" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="BedsRemains" type="d3p1:Quantity" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomTypeDailyPrices" type="d3p1:RoomTypeDailyPrices" nillable="true"/>
+	</objectType>
+	<objectType name="RoomRateDailyPriceRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRate" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDescription" type="d3p1:Description" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Currency" type="d3p1:CurrencyCode" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyCode" type="d3p1:CurrencyCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CurrencyDescription" type="d3p1:Description" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Price" type="d3p1:Sum" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PricePresentation" type="d3p1:SumPresentation" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="RoomTypeDailyPrices">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateDailyPriceRow" type="d3p1:RoomRateDailyPriceRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="RoomRates">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRate" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="GetAvailableRoomsWithDailyPricesExtraData">
+		<property name="AccTemplateCode" type="xs:string" lowerBound="0"/>
+		<property name="ForSiteminder" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationCode" type="d3p1:ExtReservationCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Duration" type="d3p1:Duration" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="RoomRatePlan">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRatePlanRows" type="d3p1:RoomRatePlanRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="RoomRatePlanRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRateCode" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Period" type="d3p1:Period"/>
+	</objectType>
+	<objectType name="Rooms">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Room" type="d3p1:RoomsRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="RoomsRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Room" type="d3p1:Room" lowerBound="0" upperBound="-1" nillable="true" form="Text"/>
+		<property name="SortCode" form="Attribute"/>
+		<property name="RoomsAvailable" form="Attribute"/>
+		<property name="BedsAvailable" form="Attribute"/>
+		<property name="NumberOfPersonsPerRoom" form="Attribute"/>
+	</objectType>
+	<objectType name="VerifyCode">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property name="CodeIsSent" type="xs:boolean"/>
+	</objectType>
+	<objectType name="VerifyClient">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property name="IsCustomer" type="xs:boolean" lowerBound="0"/>
+		<property name="ProfileCode" type="xs:string" lowerBound="0"/>
+		<property name="CustomerName" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="IndividualCustomer" type="d3p1:WriteExternalClient" lowerBound="0"/>
+		<property name="RoomDiscount" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ServicesDiscount" type="d3p1:ServicesDiscount" lowerBound="0"/>
+		<property name="ClientType" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ServicesDiscount">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ServiceDiscountRow" type="d3p1:ServiceDiscountRow" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ServiceDiscountRow">
+		<property name="ServiceGroup" type="xs:string"/>
+		<property name="Discount" type="xs:decimal" lowerBound="1"/>
+	</objectType>
+	<objectType name="Orders">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Order" type="d3p1:Order" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="Order">
+		<property name="id" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Type" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Department" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PickupFrom" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Destination" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CarType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="OrderTime" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="PassengersNumber" type="xs:int" lowerBound="0" nillable="true"/>
+		<property name="ChildSeatsNumber" type="xs:int" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Items" type="d3p1:OrderItems" lowerBound="0" upperBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Sum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="OrderItems">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="OrderItem" type="d3p1:OrderItem" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="OrderItem">
+		<property name="Item" type="xs:string"/>
+		<property name="ItemId" type="xs:string"/>
+		<property name="Quantity" type="xs:integer"/>
+		<property name="Price" type="xs:decimal" nillable="true"/>
+		<property name="Sum" type="xs:decimal" nillable="true"/>
+	</objectType>
+	<objectType name="ReservationsList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ReservationsListRow" type="d3p1:ReservationsListRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ReservationsListRow">
+		<property name="GuestGroup" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Room" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Number" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Status" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="StatusCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="GuestFullName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CheckInDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="CheckOutDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Adults" type="d3p1:GuestQuantity" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Kids" type="d3p1:GuestQuantity" nillable="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Kids2" type="d3p1:GuestQuantity" nillable="true" form="Attribute"/>
+		<property name="RoomType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccommodationType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AccommodationTypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomRate" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomRateCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ServicePackage" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ServicePackageCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomQuota" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RoomQuotaCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Agent" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AgentCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AgentCommission" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="Amount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="AmountAddServices" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="Currency" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CurrencyCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerName" type="d3p1:CustomerName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerCode" type="d3p1:CustomerName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Contract" type="d3p1:CustomerName"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ContractCode" type="d3p1:CustomerName"/>
+		<property name="ExternalCode" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Transactions" type="d3p1:Transactions"/>
+		<property name="CustomAttributes" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Transactions">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TransactionsRow" type="d3p1:TransactionsRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="TransactionsRow">
+		<property name="TransactionNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="TransactionDate" type="d3p1:Period"/>
+		<property name="TransactionCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TransactionDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PayerName" type="d3p1:CustomerName" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PayerCode" type="d3p1:CustomerName" nillable="true"/>
+		<property name="Quantity" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="19" fractionDigits="7"/>
+		</property>
+		<property name="Price" type="xs:decimal" nillable="true"/>
+		<property name="Amount" type="xs:decimal" nillable="true"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ExtraCheckOutData">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="KeyCards" type="d3p1:KeyCards" lowerBound="0"/>
+	</objectType>
+	<objectType name="BoardPlace">
+		<property name="Code" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="Description" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DoorLockAuth" type="d3p1:DoorLockAuth" lowerBound="0" nillable="true" form="Element"/>
+	</objectType>
+	<objectType name="DoorLockAuth">
+		<property name="Code" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="Description" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="KeyCardType" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="UserGroup" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="AssignedAuthorizations" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property name="DeniedAuthorizations" type="xs:string" lowerBound="0" nillable="true" default=""/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Room" type="d3p1:Room" lowerBound="0" nillable="true" default=""/>
+	</objectType>
+	<objectType name="NewGroupStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupCode" lowerBound="0"/>
+		<property name="URL" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="WriteNewGroup">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="HotelCode" type="d3p1:HotelCode" lowerBound="0" nillable="true"/>
+		<property name="id" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GroupDescription" type="d3p1:ExtGroupDescription" lowerBound="0" nillable="true"/>
+		<property name="Type" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="TypeCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CheckInDate" type="xs:dateTime"/>
+		<property name="CheckOutDate" type="xs:dateTime"/>
+		<property name="Remarks" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="UserID" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="GroupListStatusFilter">
+		<property name="IsActive" type="xs:boolean" lowerBound="1"/>
+		<property name="IsCheckedIn" type="xs:boolean" lowerBound="1"/>
+		<property name="IsCancelled" type="xs:boolean" lowerBound="1"/>
+	</objectType>
+	<objectType name="PaymentRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentNumber" type="d3p1:DocumentNumber" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FolioNumber" type="d3p1:DocumentNumber" lowerBound="0" nillable="true"/>
+		<property name="PaymentDate" type="xs:dateTime" lowerBound="0" nillable="true"/>
+		<property name="MerchantID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="RRN" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="ExternalCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="AuthCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="PaymentMethodCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CurrencyCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Sum" type="d3p1:Sum"/>
+	</objectType>
+	<objectType name="PaymentList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PaymentRow" type="d3p1:PaymentRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="Invoice">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceNumber" type="d3p1:DocumentNumber" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceSum" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceBalance" type="d3p1:Sum" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="FolioNumber" type="d3p1:DocumentNumber" lowerBound="0" nillable="true"/>
+		<property name="InvoiceDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceItems" type="d3p1:InvoiceItem" lowerBound="0" upperBound="-1" nillable="true"/>
+		<property name="Currency" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CurrencyCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="VatRates" type="d3p1:VatRateRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="InvoiceItem">
+		<property name="InvoiceItemPrice" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="InvoiceItemQuantity" type="xs:integer" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="InvoiceItemSum" type="d3p1:Sum" lowerBound="0"/>
+		<property name="InvoiceItemUnit" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="InvoiceItemName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="InvoiceItemDescription" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATRate" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATRateName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="NETAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="DiscountCard">
+		<property name="DiscountType" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="CardID" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="DocumentPrintingForm">
+		<property name="DocumentType" type="xs:string" lowerBound="1" nillable="false"/>
+		<property name="UUID" type="xs:string" lowerBound="1" nillable="false"/>
+		<property name="PrintingFormID" type="xs:string" lowerBound="1" nillable="false"/>
+		<property name="Language" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="DocumentPDF">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property name="PDF" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="VatRateRow">
+		<property name="VATRate" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATRateName" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="VATAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="NETAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="GrossAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="AccommodationTemplate">
+		<property name="Code" type="xs:string" form="Element"/>
+		<property name="Description" type="xs:string"/>
+		<property name="UUID" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Offer">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Hotel" type="d3p1:HotelCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Client" type="d3p1:WriteExternalClient" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ContactPerson" type="d3p1:ContactPerson" lowerBound="0" nillable="true"/>
+		<property name="ReadyForReservation" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property name="ReservationStatus" type="xs:boolean" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodFrom" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodTo" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ClientType" type="d3p1:ClientTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomQuota" type="d3p1:RoomQuotaCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Customer" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="CustomerData" type="d3p1:CustomerData" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Contract" type="d3p1:ContractName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Agent" type="d3p1:CustomerName" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfRooms" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfPersons" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfAdults" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfChildren" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Remarks" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestMessage" type="d3p1:Remarks" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PromoCode" type="d3p1:PromoCode" lowerBound="0" nillable="true"/>
+		<property name="Author" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="MarketingCode" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="SourceOfBusiness" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="OfferID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="LeadID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="DealID" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExpirationDate" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PriceCalculationDate" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Rooms" type="d3p1:OfferRows" lowerBound="1" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property name="GuestURL" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="OfferRows">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="OfferRow" type="d3p1:OfferRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="OfferRow">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomClass" type="d3p1:RoomTypeCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomType" type="d3p1:RoomTypeCode" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodFrom" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="PeriodTo" type="d3p1:Period" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomRate" type="d3p1:RoomRateCode" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfRooms" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfPersons" type="d3p1:Quantity" nillable="false"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="AccommodationTemplate" type="d3p1:AccommodationTemplateCode" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfAdults" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfChildren" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfTeenagers" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="NumberOfInfants" type="d3p1:Quantity" lowerBound="0" nillable="true"/>
+		<property name="Amount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property name="CurrentAmount" type="xs:decimal" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ExtraServices" type="d3p1:ChargeExtraServices" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="RoomsAvailable" type="d3p1:Quantity" nillable="true"/>
+	</objectType>
+	<objectType name="OfferStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property name="OfferUUID" type="xs:string" lowerBound="0"/>
+		<property name="GuestURL" type="xs:string" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="WriteOfferStatus">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="GuestGroup" type="d3p1:GuestGroupDetails" lowerBound="0"/>
+	</objectType>
+	<objectType name="DiscountCardList">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="DiscountCardRaw" type="d3p1:DiscountCardRaw" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="DiscountCardRaw">
+		<property name="DiscountCardNum" type="xs:string"/>
+		<property name="DiscountPercent" type="xs:decimal"/>
+		<property name="DiscountType" type="xs:string"/>
+		<property name="IsDefaultCard" type="xs:boolean"/>
+		<property name="ValidFrom" type="xs:dateTime" nillable="false"/>
+		<property name="ValidTo" type="xs:dateTime" nillable="false"/>
+		<property name="IsBlocked" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="DiscountCardsPercentReturn">
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property name="DiscountPercent" type="xs:decimal" nillable="true"/>
+		<property name="DiscountType" type="xs:string" nillable="true"/>
+	</objectType>
+	<objectType name="Services">
+		<property name="Status" type="xs:string" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Service" type="d3p1:ServiceRow" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ServiceRow">
+		<property name="Code" type="xs:string" lowerBound="0"/>
+		<property name="Description" type="xs:string"/>
+		<property name="Price" type="xs:decimal" lowerBound="0"/>
+		<property name="Group" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="VerifyPayment">
+		<property name="PaymentNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="FolioNumber" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="ErrorDescription" type="d3p1:ErrorDescription" nillable="true"/>
+		<property xmlns:d3p1="http://www.1chotel.ru/interfaces/reservation/" name="Sum" type="d3p1:Sum"/>
+	</objectType>
+</package>

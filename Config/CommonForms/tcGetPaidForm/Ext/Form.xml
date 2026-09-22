@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Width>60</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupConnected" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest message</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gästebotschaft</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сообщение гостю</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group connected</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupConnectedExtendedTooltip" id="74"/>
+			<ChildItems>
+				<UsualGroup name="GroupMain" id="16">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupMainExtendedTooltip" id="17"/>
+					<ChildItems>
+						<UsualGroup name="GroupPaymentLink" id="6">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group payment link</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPaymentLinkExtendedTooltip" id="7"/>
+							<ChildItems>
+								<InputField name="SelPaymentLink" id="11">
+									<DataPath>SelPaymentLink</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="SelPaymentLinkContextMenu" id="12"/>
+									<ExtendedTooltip name="SelPaymentLinkExtendedTooltip" id="13"/>
+								</InputField>
+								<Button name="CopyToBuffer" id="4">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.CopyToBuffer</CommandName>
+									<ExtendedTooltip name="CopyToBufferExtendedTooltip" id="5"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupLinkCommands" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Shorten URL</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Verkürzen URL</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сократить URL</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupLinkCommandsExtendedTooltip" id="54"/>
+						</UsualGroup>
+						<UsualGroup name="GroupCommands" id="18">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCommandsExtendedTooltip" id="19"/>
+							<ChildItems>
+								<Button name="Refresh" id="51">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<Width>4</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>1</MaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<CommandName>Form.Command.ActionRefresh</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.Refresh</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="RefreshExtendedTooltip" id="52"/>
+								</Button>
+								<Button name="SendSMS" id="20">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.SendSMS</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.SendMessage16x16</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="SendSMSExtendedTooltip" id="21"/>
+								</Button>
+								<Button name="SendMail" id="22">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.SendMail</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.MailOutcoming</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="SendMailExtendedTooltip" id="23"/>
+								</Button>
+								<Button name="CreateGroupInvoice" id="49">
+									<Type>Hyperlink</Type>
+									<Visible>false</Visible>
+									<Enabled>false</Enabled>
+									<CommandName>Form.Command.CreateGroupInvoice</CommandName>
+									<ExtendedTooltip name="CreateGroupInvoiceExtendedTooltip" id="50"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="InformationTable" id="24">
+					<Representation>List</Representation>
+					<CommandBarLocation>None</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<HeightInTableRows>4</HeightInTableRows>
+					<HeightControlVariant>UseContentHeight</HeightControlVariant>
+					<AutoMaxRowsCount>false</AutoMaxRowsCount>
+					<MaxRowsCount>4</MaxRowsCount>
+					<SelectionMode>SingleRow</SelectionMode>
+					<RowSelectionMode>Row</RowSelectionMode>
+					<VerticalLines>false</VerticalLines>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>InformationTable</DataPath>
+					<RowPictureDataPath>InformationTable.Icon</RowPictureDataPath>
+					<RowsPicture>
+						<xr:Ref>CommonPicture.GetPaidStatuses</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</RowsPicture>
+					<BackColor>style:FormBackColor</BackColor>
+					<BorderColor>style:FormBackColor</BorderColor>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="InformationTableContextMenu" id="25"/>
+					<AutoCommandBar name="InformationTableCommandBar" id="26">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="InformationTableExtendedTooltip" id="27"/>
+					<SearchStringAddition name="InformationTableSearchString" id="28">
+						<AdditionSource>
+							<Item>InformationTable</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="InformationTableSearchStringContextMenu" id="29"/>
+						<ExtendedTooltip name="InformationTableSearchStringExtendedTooltip" id="30"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="InformationTableViewStatus" id="31">
+						<AdditionSource>
+							<Item>InformationTable</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="InformationTableViewStatusContextMenu" id="32"/>
+						<ExtendedTooltip name="InformationTableViewStatusExtendedTooltip" id="33"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="InformationTableSearchControl" id="34">
+						<AdditionSource>
+							<Item>InformationTable</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="InformationTableSearchControlContextMenu" id="35"/>
+						<ExtendedTooltip name="InformationTableSearchControlExtendedTooltip" id="36"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">InformationTableSelection</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="InformationTableDatePresentation" id="55">
+							<DataPath>InformationTable.DatePresentation</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>8</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>8</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="InformationTableDatePresentationContextMenu" id="56"/>
+							<ExtendedTooltip name="InformationTableDatePresentationExtendedTooltip" id="57"/>
+						</InputField>
+						<InputField name="InformationTableType" id="37">
+							<DataPath>InformationTable.Type</DataPath>
+							<Visible>false</Visible>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<ContextMenu name="InformationTableTypeContextMenu" id="38"/>
+							<ExtendedTooltip name="InformationTableTypeExtendedTooltip" id="39"/>
+						</InputField>
+						<InputField name="InformationTableDescription" id="46">
+							<DataPath>InformationTable.Description</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Height>2</Height>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>false</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="InformationTableDescriptionContextMenu" id="47"/>
+							<ExtendedTooltip name="InformationTableDescriptionExtendedTooltip" id="48"/>
+						</InputField>
+						<InputField name="InformationTableIcon" id="58">
+							<DataPath>InformationTable.Icon</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="InformationTableIconContextMenu" id="59"/>
+							<ExtendedTooltip name="InformationTableIconExtendedTooltip" id="60"/>
+						</InputField>
+						<InputField name="InformationTableStatus" id="43">
+							<DataPath>InformationTable.Status</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>8</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>8</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="InformationTableStatusContextMenu" id="44"/>
+							<ExtendedTooltip name="InformationTableStatusExtendedTooltip" id="45"/>
+						</InputField>
+						<InputField name="InformationTableDate" id="40">
+							<DataPath>InformationTable.Date</DataPath>
+							<Visible>false</Visible>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>12</Width>
+							<ContextMenu name="InformationTableDateContextMenu" id="41"/>
+							<ExtendedTooltip name="InformationTableDateExtendedTooltip" id="42"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupNotConnected" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Not connected</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Not connected</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервис не подключен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group not connected</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupNotConnectedExtendedTooltip" id="62"/>
+			<ChildItems>
+				<PictureDecoration name="DecorationLogo" id="63">
+					<Width>7</Width>
+					<Height>3</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>guestlink.ru</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>guestlink.ru</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>guestlink.ru</v8:content>
+						</v8:item>
+					</Title>
+					<PictureSize>Proportionally</PictureSize>
+					<Picture>
+						<xr:Ref>CommonPicture.Guestlink</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="DecorationLogoContextMenu" id="64"/>
+					<ExtendedTooltip name="DecorationLogoExtendedTooltip" id="65"/>
+				</PictureDecoration>
+				<UsualGroup name="GroupHowToConnect" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>How to connect</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>How to connect</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Как подключиться</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group how to connect</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupHowToConnectExtendedTooltip" id="72"/>
+					<ChildItems>
+						<LabelDecoration name="DecorationNotConnected" id="75">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Сервис приема платежей не настроен!&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Der Zahlungsempfangsservice ist nicht eingerichtet!&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>&lt;fontsize 12&gt;&lt;b&gt;The payment service is not connected yet.&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="DecorationNotConnectedContextMenu" id="76"/>
+							<ExtendedTooltip name="DecorationNotConnectedExtendedTooltip" id="77"/>
+						</LabelDecoration>
+						<LabelDecoration name="DecorationConnectInvitation" id="66">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;b&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Connect the hotel to the instant payment service.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;link https://pay.guestlink.ru/&gt;&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;https://pay.guestlink.ru/&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Create payment link and sent it to the guest.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;The payment will be credited to the guest's folio  immediately after payment.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;b&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Verbinden Sie das Hotel mit dem Sofortzahlungsservice.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;link https://pay.guestlink.ru/&gt;&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;https://pay.guestlink.ru/&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Zahlungslink erstellen und an den Gast senden.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Die Zahlung wird dem Konto des Gastes sofort nach Zahlungseingang gutgeschrieben.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;b&gt;Подключите сервис получения оплаты.&lt;/&gt;
+&lt;link https://pay.guestlink.ru/&gt;https://pay.guestlink.ru/&lt;/&gt;
+
+Формируете ссылку и отправляете гостю.
+Платеж зачислиться на лицевой счет гостя автоматически, сразу после оплаты.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="DecorationConnectInvitationContextMenu" id="67"/>
+							<ExtendedTooltip name="DecorationConnectInvitationExtendedTooltip" id="68"/>
+						</LabelDecoration>
+						<Button name="CommandConnect" id="69">
+							<Type>UsualButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.CommandConnect</CommandName>
+							<ExtendedTooltip name="CommandConnectExtendedTooltip" id="70"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="SelDocument" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel document</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.Accommodation</v8:Type>
+				<v8:Type>cfg:DocumentRef.Reservation</v8:Type>
+				<v8:Type>cfg:DocumentRef.ProformaInvoice</v8:Type>
+				<v8:Type>cfg:DocumentRef.Folio</v8:Type>
+				<v8:Type>cfg:DocumentRef.ResourceReservation</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelPaymentLink" id="2">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelExternalSystemInteraction" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ExternalSystemInteractions</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelLanguage" id="4">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Languages</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="InformationTable" id="5">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Type" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Typ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Date" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Status" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Status</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Status</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Description" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Description</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Beschreibung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ProformaInvoice</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Icon" id="5">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="DatePresentation" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>15</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="SelIsHotel365" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelGuestGroup" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gästegruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа гостей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CopyToBuffer" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>CopyToBuffer</Action>
+		</Command>
+		<Command name="SendSMS" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Send SMS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>SMS senden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить СМС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Send SMS</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>SMS senden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить СМС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SendSMS</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="SendMail" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Send E-Mail</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>E-Mail senden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить E-Mail</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Send E-Mail</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>E-Mail senden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить E-Mail</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SendMail</Action>
+		</Command>
+		<Command name="CreateGroupInvoice" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New proforma invoice</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый счет на оплату</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Neue Proforma-Rechnung</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Create new group proforma invoice</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать новый счет на оплату по группе</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Neue Proforma-Rechnung nach Gruppe</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CreateGroupInvoice</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ActionRefresh" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktualisierung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Action refresh</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ActionRefresh</Action>
+		</Command>
+		<Command name="CommandConnect" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Сonnect</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Сonnect</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оставить заявку на подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command connect</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CommandConnect</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="SelDocument">
+			<Type>
+				<v8:Type>cfg:DocumentRef.Accommodation</v8:Type>
+				<v8:Type>cfg:DocumentRef.Reservation</v8:Type>
+				<v8:Type>cfg:DocumentRef.ProformaInvoice</v8:Type>
+				<v8:Type>cfg:DocumentRef.Folio</v8:Type>
+				<v8:Type>cfg:DocumentRef.ResourceReservation</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

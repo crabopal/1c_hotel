@@ -1,0 +1,1474 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="ExternalEvent">ExternalEvent</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="160">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="161"/>
+			<ChildItems>
+				<InputField name="SelHotel" id="162">
+					<DataPath>SelHotel</DataPath>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+					<TextEdit>false</TextEdit>
+					<ChoiceParameters>
+						<app:item name="ChangeSessionParameter">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">false</Value>
+							</app:value>
+						</app:item>
+						<app:item name="DoNotCloseAllWindows">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">true</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="SelHotelContextMenu" id="163"/>
+					<ExtendedTooltip name="SelHotelExtendedTooltip" id="164"/>
+					<Events>
+						<Event name="OnChange">SelHotelOnChange</Event>
+						<Event name="Clearing">SelHotelClearing</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFilter" id="117">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Search</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Suche</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupFilterExtendedTooltip" id="118"/>
+			<ChildItems>
+				<UsualGroup name="GroupFilterLeft" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Linke Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group filter left</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupFilterLeftExtendedTooltip" id="138"/>
+					<ChildItems>
+						<InputField name="SelGuestGroup" id="125">
+							<DataPath>SelGuestGroup</DataPath>
+							<ClearButton>true</ClearButton>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">SelHotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="SelGuestGroupContextMenu" id="126"/>
+							<ExtendedTooltip name="SelGuestGroupExtendedTooltip" id="127"/>
+							<Events>
+								<Event name="OnChange">SelGuestGroupOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="SelRoom" id="128">
+							<DataPath>SelRoom</DataPath>
+							<ClearButton>true</ClearButton>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">SelHotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="SelRoomContextMenu" id="129"/>
+							<ExtendedTooltip name="SelRoomExtendedTooltip" id="130"/>
+							<Events>
+								<Event name="OnChange">SelRoomOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="SelFolioNumber" id="146">
+							<DataPath>SelFolioNumber</DataPath>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="SelFolioNumberContextMenu" id="147"/>
+							<ExtendedTooltip name="SelFolioNumberExtendedTooltip" id="148"/>
+							<Events>
+								<Event name="OnChange">SelFolioNumberOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupFilterMiddle" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Middle column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Mittlere Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Средняя колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupFilterMiddleExtendedTooltip" id="142"/>
+					<ChildItems>
+						<InputField name="SelClient" id="119">
+							<DataPath>SelClient</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="SelClientContextMenu" id="120"/>
+							<ExtendedTooltip name="SelClientExtendedTooltip" id="121"/>
+							<Events>
+								<Event name="OnChange">SelClientOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="SelCustomer" id="122">
+							<DataPath>SelCustomer</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="SelCustomerContextMenu" id="123"/>
+							<ExtendedTooltip name="SelCustomerExtendedTooltip" id="124"/>
+							<Events>
+								<Event name="OnChange">SelCustomerOnChange</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="GroupFilterPeriod" id="155">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Period</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Periode</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupFilterPeriodExtendedTooltip" id="156"/>
+							<ChildItems>
+								<InputField name="SelCheckInDate" id="131">
+									<DataPath>SelCheckInDate</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="SelCheckInDateContextMenu" id="132"/>
+									<ExtendedTooltip name="SelCheckInDateExtendedTooltip" id="133"/>
+									<Events>
+										<Event name="OnChange">SelCheckInDateOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="SelCheckOutDate" id="134">
+									<DataPath>SelCheckOutDate</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="SelCheckOutDateContextMenu" id="135"/>
+									<ExtendedTooltip name="SelCheckOutDateExtendedTooltip" id="136"/>
+									<Events>
+										<Event name="OnChange">SelCheckOutDateOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupFilterRight" id="139">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Right column</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rechte Spalte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupFilterRightExtendedTooltip" id="140"/>
+					<ChildItems>
+						<InputField name="SelDiscountType" id="157">
+							<DataPath>SelDiscountType</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="SelDiscountTypeContextMenu" id="158"/>
+							<ExtendedTooltip name="SelDiscountTypeExtendedTooltip" id="159"/>
+							<Events>
+								<Event name="OnChange">SelDiscountTypeOnChange</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="SelOnlyOpenFolios" id="143">
+							<DataPath>SelOnlyOpenFolios</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="SelOnlyOpenFoliosContextMenu" id="144"/>
+							<ExtendedTooltip name="SelOnlyOpenFoliosExtendedTooltip" id="145"/>
+							<Events>
+								<Event name="OnChange">SelOnlyOpenFoliosOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="SelNonZeroBalance" id="149">
+							<DataPath>SelNonZeroBalance</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="SelNonZeroBalanceContextMenu" id="150"/>
+							<ExtendedTooltip name="SelNonZeroBalanceExtendedTooltip" id="151"/>
+							<Events>
+								<Event name="OnChange">SelNonZeroBalanceOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="SelOnlyFAFolios" id="152">
+							<DataPath>SelOnlyFAFolios</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="SelOnlyFAFoliosContextMenu" id="153"/>
+							<ExtendedTooltip name="SelOnlyFAFoliosExtendedTooltip" id="154"/>
+							<Events>
+								<Event name="OnChange">SelOnlyFAFoliosOnChange</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialListView>End</InitialListView>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="CreateFolio" id="165">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.CreateFolio</CommandName>
+						<ExtendedTooltip name="CreateFolioExtendedTooltip" id="166"/>
+					</Button>
+					<Button name="FormCopy" id="75">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Copy</CommandName>
+						<ExtendedTooltip name="FormCopyExtendedTooltip" id="76"/>
+					</Button>
+					<Button name="FormChange" id="77">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Change</CommandName>
+						<ExtendedTooltip name="FormChangeExtendedTooltip" id="78"/>
+					</Button>
+					<Button name="FormRefresh" id="79">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.StandardCommand.Refresh</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="FormRefreshExtendedTooltip" id="80"/>
+					</Button>
+					<Button name="FormSetDateInterval" id="89">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.StandardCommand.SetDateInterval</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormSetDateIntervalExtendedTooltip" id="90"/>
+					</Button>
+					<Button name="ListOpenFolioTransactions" id="104">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.OpenFolioTransactions</CommandName>
+						<ExtendedTooltip name="ListOpenFolioTransactionsExtendedTooltip" id="105"/>
+					</Button>
+					<SearchStringAddition name="AdditionSearch" id="101">
+						<AdditionSource>
+							<Item>List</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Addition search</v8:content>
+							</v8:item>
+						</Title>
+						<ContextMenu name="AdditionSearchContextMenu" id="102"/>
+						<ExtendedTooltip name="AdditionSearchExtendedTooltip" id="103"/>
+					</SearchStringAddition>
+					<Button name="FormFind" id="95">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.StandardCommand.Find</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormFindExtendedTooltip" id="96"/>
+					</Button>
+					<Button name="FormCancelSearch" id="97">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.StandardCommand.CancelSearch</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormCancelSearchExtendedTooltip" id="98"/>
+					</Button>
+					<Button name="FormFindByCurrentValue" id="99">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.FindByCurrentValue</CommandName>
+						<ExtendedTooltip name="FormFindByCurrentValueExtendedTooltip" id="100"/>
+					</Button>
+					<Button name="FormChangeHistory" id="81">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.ChangeHistory</CommandName>
+						<ExtendedTooltip name="FormChangeHistoryExtendedTooltip" id="82"/>
+					</Button>
+					<Button name="FormShowMultipleSelection" id="87">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.ShowMultipleSelection</CommandName>
+						<ExtendedTooltip name="FormShowMultipleSelectionExtendedTooltip" id="88"/>
+					</Button>
+					<Button name="FormOutputList" id="93">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.OutputList</CommandName>
+						<ExtendedTooltip name="FormOutputListExtendedTooltip" id="94"/>
+					</Button>
+					<Button name="FormListSettings" id="91">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.ListSettings</CommandName>
+						<ExtendedTooltip name="FormListSettingsExtendedTooltip" id="92"/>
+					</Button>
+					<Button name="ListCustomizeForm" id="112">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+						<ExtendedTooltip name="ListCustomizeFormExtendedTooltip" id="113"/>
+					</Button>
+					<Button name="FormHelp" id="85">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Help</CommandName>
+						<ExtendedTooltip name="FormHelpExtendedTooltip" id="86"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="IsClosed" id="31">
+					<DataPath>List.IsClosed</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsClosedContextMenu" id="32"/>
+					<ExtendedTooltip name="IsClosedExtendedTooltip" id="33"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsArchived" id="114">
+					<DataPath>List.IsArchived</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsArchivedContextMenu" id="115"/>
+					<ExtendedTooltip name="IsArchivedExtendedTooltip" id="116"/>
+				</CheckBoxField>
+				<LabelField name="Date" id="16">
+					<DataPath>List.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>12</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="DateContextMenu" id="17"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="Number" id="19">
+					<DataPath>List.Number</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="NumberContextMenu" id="20"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="Description" id="22">
+					<DataPath>List.Description</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="DescriptionContextMenu" id="23"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="Customer" id="37">
+					<DataPath>List.Customer</DataPath>
+					<Width>23</Width>
+					<ContextMenu name="CustomerContextMenu" id="38"/>
+					<ExtendedTooltip name="CustomerExtendedTooltip" id="39"/>
+				</LabelField>
+				<LabelField name="Room" id="49">
+					<DataPath>List.Room</DataPath>
+					<Width>6</Width>
+					<ContextMenu name="RoomContextMenu" id="50"/>
+					<ExtendedTooltip name="RoomExtendedTooltip" id="51"/>
+				</LabelField>
+				<LabelField name="Client" id="43">
+					<DataPath>List.Client</DataPath>
+					<Width>23</Width>
+					<ContextMenu name="ClientContextMenu" id="44"/>
+					<ExtendedTooltip name="ClientExtendedTooltip" id="45"/>
+				</LabelField>
+				<LabelField name="GuestGroup" id="46">
+					<DataPath>List.GuestGroup</DataPath>
+					<Width>14</Width>
+					<ContextMenu name="GuestGroupContextMenu" id="47"/>
+					<ExtendedTooltip name="GuestGroupExtendedTooltip" id="48"/>
+				</LabelField>
+				<LabelField name="Contract" id="40">
+					<DataPath>List.Contract</DataPath>
+					<Visible>false</Visible>
+					<Width>10</Width>
+					<ContextMenu name="ContractContextMenu" id="41"/>
+					<ExtendedTooltip name="ContractExtendedTooltip" id="42"/>
+				</LabelField>
+				<LabelField name="DateTimeFrom" id="52">
+					<DataPath>List.DateTimeFrom</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>From</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Von</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С</v8:content>
+						</v8:item>
+					</Title>
+					<Width>12</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="DateTimeFromContextMenu" id="53"/>
+					<ExtendedTooltip name="DateTimeFromExtendedTooltip" id="54"/>
+				</LabelField>
+				<LabelField name="DateTimeTo" id="55">
+					<DataPath>List.DateTimeTo</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>To</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По</v8:content>
+						</v8:item>
+					</Title>
+					<Width>12</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="DateTimeToContextMenu" id="56"/>
+					<ExtendedTooltip name="DateTimeToExtendedTooltip" id="57"/>
+				</LabelField>
+				<LabelField name="SumBalance" id="109">
+					<DataPath>List.SumBalance</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Balance</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bilanz</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Долг</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</Format>
+					<Font bold="true" kind="AutoFont"/>
+					<ContextMenu name="SumBalanceContextMenu" id="110"/>
+					<ExtendedTooltip name="SumBalanceExtendedTooltip" id="111"/>
+				</LabelField>
+				<LabelField name="PaymentMethod" id="58">
+					<DataPath>List.PaymentMethod.Code</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Pay</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zahl.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Опл.</v8:content>
+						</v8:item>
+					</Title>
+					<Width>5</Width>
+					<ContextMenu name="PaymentMethodContextMenu" id="59"/>
+					<ExtendedTooltip name="PaymentMethodExtendedTooltip" id="60"/>
+				</LabelField>
+				<LabelField name="Remarks" id="61">
+					<DataPath>List.Remarks</DataPath>
+					<AutoCellHeight>true</AutoCellHeight>
+					<Height>2</Height>
+					<ContextMenu name="RemarksContextMenu" id="62"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="63"/>
+				</LabelField>
+				<CheckBoxField name="IsComplimentary" id="64">
+					<DataPath>List.IsComplimentary</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsComplimentaryContextMenu" id="65"/>
+					<ExtendedTooltip name="IsComplimentaryExtendedTooltip" id="66"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsHouseUse" id="67">
+					<DataPath>List.IsHouseUse</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsHouseUseContextMenu" id="68"/>
+					<ExtendedTooltip name="IsHouseUseExtendedTooltip" id="69"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsForDirectPostings" id="70">
+					<DataPath>List.IsForDirectPostings</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsForDirectPostingsContextMenu" id="71"/>
+					<ExtendedTooltip name="IsForDirectPostingsExtendedTooltip" id="72"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsForExternalPOS" id="106">
+					<DataPath>List.IsForExternalPOS</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is for external POS</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ist für externe POS</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для внешних POS</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsForExternalPOSContextMenu" id="107"/>
+					<ExtendedTooltip name="IsForExternalPOSExtendedTooltip" id="108"/>
+				</CheckBoxField>
+				<LabelField name="ParentDoc" id="34">
+					<DataPath>List.ParentDoc</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ParentDocContextMenu" id="35"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="36"/>
+				</LabelField>
+				<LabelField name="Company" id="28">
+					<DataPath>List.Company</DataPath>
+					<ContextMenu name="CompanyContextMenu" id="29"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="30"/>
+				</LabelField>
+				<LabelField name="Hotel" id="25">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="26"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="27"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>List.DeletionMark</Field>
+				<Field>List.IsClosed</Field>
+				<Field>List.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>SELECT
+	DocumentFolio.Ref AS Ref,
+	DocumentFolio.DeletionMark AS DeletionMark,
+	DocumentFolio.Number AS Number,
+	DocumentFolio.Date AS Date,
+	DocumentFolio.Posted AS Posted,
+	DocumentFolio.Description AS Description,
+	DocumentFolio.Hotel AS Hotel,
+	DocumentFolio.Company AS Company,
+	DocumentFolio.IsClosed AS IsClosed,
+	DocumentFolio.IsClosedAuthor AS IsClosedAuthor,
+	DocumentFolio.IsClosedDate AS IsClosedDate,
+	DocumentFolio.FolioCurrency AS FolioCurrency,
+	DocumentFolio.ParentDoc AS ParentDoc,
+	DocumentFolio.Agent AS Agent,
+	DocumentFolio.Customer AS Customer,
+	DocumentFolio.Contract AS Contract,
+	DocumentFolio.Client AS Client,
+	DocumentFolio.GuestGroup AS GuestGroup,
+	DocumentFolio.FinancialAccount AS FinancialAccount,
+	DocumentFolio.Room AS Room,
+	DocumentFolio.DateTimeFrom AS DateTimeFrom,
+	DocumentFolio.DateTimeTo AS DateTimeTo,
+	DocumentFolio.PaymentSection AS PaymentSection,
+	DocumentFolio.PaymentMethod AS PaymentMethod,
+	DocumentFolio.CreditLimit AS CreditLimit,
+	DocumentFolio.Remarks AS Remarks,
+	DocumentFolio.IsMaster AS IsMaster,
+	DocumentFolio.DoNotUpdateCompany AS DoNotUpdateCompany,
+	DocumentFolio.DoNotUpdateCustomer AS DoNotUpdateCustomer,
+	DocumentFolio.DoNotFillAgent AS DoNotFillAgent,
+	DocumentFolio.HotelProduct AS HotelProduct,
+	DocumentFolio.DebtDecision AS DebtDecision,
+	DocumentFolio.DebtDecisionAuthor AS DebtDecisionAuthor,
+	DocumentFolio.DebtDecisionDate AS DebtDecisionDate,
+	DocumentFolio.DebtDecisionRemarks AS DebtDecisionRemarks,
+	DocumentFolio.FolioDiscountCard AS FolioDiscountCard,
+	DocumentFolio.FolioDiscountType AS FolioDiscountType,
+	DocumentFolio.LineNumber AS LineNumber,
+	DocumentFolio.IsComplimentary AS IsComplimentary,
+	DocumentFolio.IsHouseUse AS IsHouseUse,
+	DocumentFolio.IsForDirectPostings AS IsForDirectPostings,
+	DocumentFolio.IsForExternalPOS AS IsForExternalPOS,
+	DocumentFolio.Author AS Author,
+	DocumentFolio.PointInTime AS PointInTime,
+	ISNULL(FolioBalances.SumBalance, 0) AS SumBalance,
+	DocumentFolio.IsArchived AS IsArchived
+FROM
+	Document.Folio AS DocumentFolio
+		LEFT JOIN (SELECT
+			FolioBalances.Folio AS Folio,
+			FolioBalances.SumBalance AS SumBalance
+		FROM
+			AccumulationRegister.Accounts.Balance(, ) AS FolioBalances) AS FolioBalances
+		ON (FolioBalances.Folio = DocumentFolio.Ref)
+WHERE
+	CASE
+			WHEN &amp;qHotel &lt;&gt; VALUE(Catalog.Hotels.EmptyRef)
+				THEN DocumentFolio.Hotel IN HIERARCHY (&amp;qHotel)
+						AND DocumentFolio.Hotel &lt;&gt; VALUE(Catalog.Hotels.EmptyRef)
+			ELSE TRUE
+		END</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>AccountCodeBO</dcssch:dataPath>
+					<dcssch:field>AccountCodeBO</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ref</dcssch:dataPath>
+					<dcssch:field>Ref</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Number</dcssch:dataPath>
+					<dcssch:field>Number</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Posted</dcssch:dataPath>
+					<dcssch:field>Posted</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Client</dcssch:dataPath>
+					<dcssch:field>Client</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DeletionMark</dcssch:dataPath>
+					<dcssch:field>DeletionMark</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsClosed</dcssch:dataPath>
+					<dcssch:field>IsClosed</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Date</dcssch:dataPath>
+					<dcssch:field>Date</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Hotel</dcssch:dataPath>
+					<dcssch:field>Hotel</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PointInTime</dcssch:dataPath>
+					<dcssch:field>PointInTime</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Description</dcssch:dataPath>
+					<dcssch:field>Description</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ChequeServicePrice</dcssch:dataPath>
+					<dcssch:field>ChequeServicePrice</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Company</dcssch:dataPath>
+					<dcssch:field>Company</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DebtDecision</dcssch:dataPath>
+					<dcssch:field>DebtDecision</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsClosedAuthor</dcssch:dataPath>
+					<dcssch:field>IsClosedAuthor</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FolioDiscountType</dcssch:dataPath>
+					<dcssch:field>FolioDiscountType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ParentDoc</dcssch:dataPath>
+					<dcssch:field>ParentDoc</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsClosedDate</dcssch:dataPath>
+					<dcssch:field>IsClosedDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FolioCurrency</dcssch:dataPath>
+					<dcssch:field>FolioCurrency</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Agent</dcssch:dataPath>
+					<dcssch:field>Agent</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Customer</dcssch:dataPath>
+					<dcssch:field>Customer</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Contract</dcssch:dataPath>
+					<dcssch:field>Contract</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>GuestGroup</dcssch:dataPath>
+					<dcssch:field>GuestGroup</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FinancialAccount</dcssch:dataPath>
+					<dcssch:field>FinancialAccount</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DateTimeFrom</dcssch:dataPath>
+					<dcssch:field>DateTimeFrom</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Room</dcssch:dataPath>
+					<dcssch:field>Room</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DateTimeTo</dcssch:dataPath>
+					<dcssch:field>DateTimeTo</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PaymentSection</dcssch:dataPath>
+					<dcssch:field>PaymentSection</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>PaymentMethod</dcssch:dataPath>
+					<dcssch:field>PaymentMethod</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>CreditLimit</dcssch:dataPath>
+					<dcssch:field>CreditLimit</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Remarks</dcssch:dataPath>
+					<dcssch:field>Remarks</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsMaster</dcssch:dataPath>
+					<dcssch:field>IsMaster</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoNotUpdateCompany</dcssch:dataPath>
+					<dcssch:field>DoNotUpdateCompany</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>HotelProduct</dcssch:dataPath>
+					<dcssch:field>HotelProduct</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsForExternalPOS</dcssch:dataPath>
+					<dcssch:field>IsForExternalPOS</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DebtDecisionAuthor</dcssch:dataPath>
+					<dcssch:field>DebtDecisionAuthor</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DebtDecisionDate</dcssch:dataPath>
+					<dcssch:field>DebtDecisionDate</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DebtDecisionRemarks</dcssch:dataPath>
+					<dcssch:field>DebtDecisionRemarks</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>FolioDiscountCard</dcssch:dataPath>
+					<dcssch:field>FolioDiscountCard</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>LineNumber</dcssch:dataPath>
+					<dcssch:field>LineNumber</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsComplimentary</dcssch:dataPath>
+					<dcssch:field>IsComplimentary</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsHouseUse</dcssch:dataPath>
+					<dcssch:field>IsHouseUse</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsForDirectPostings</dcssch:dataPath>
+					<dcssch:field>IsForDirectPostings</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Author</dcssch:dataPath>
+					<dcssch:field>Author</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>SumBalance</dcssch:dataPath>
+					<dcssch:field>SumBalance</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>IsArchived</dcssch:dataPath>
+					<dcssch:field>IsArchived</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Folio</dcssch:dataPath>
+					<dcssch:field>Folio</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ChequeService</dcssch:dataPath>
+					<dcssch:field>ChequeService</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoNotFillAgent</dcssch:dataPath>
+					<dcssch:field>DoNotFillAgent</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>DoNotUpdateCustomer</dcssch:dataPath>
+					<dcssch:field>DoNotUpdateCustomer</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Item</dcssch:dataPath>
+					<dcssch:field>Item</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MarkingCode</dcssch:dataPath>
+					<dcssch:field>MarkingCode</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Period</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Period</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qHotel</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Q hotel</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>Document.Folio</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DeletionMark</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Number</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="SelClient" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Klient</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelCustomer" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Customer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Firma</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Customers</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelGuestGroup" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Guest group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа гостей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppe Gäste</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.GuestGroups</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelRoom" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер комнаты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Rooms</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelCheckInDate" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check in date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anreisedatum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата заезда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelCheckOutDate" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check-out date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Abreisedatum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выезда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelOnlyOpenFolios" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open folios only</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nur persönliche Konten eröffnen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только открытые лицевые счета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelNonZeroBalance" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Non zero balance folios only</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nur Folios ungleich Nullsaldo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только лицевые счета с ненулевым балансом</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelFolioNumber" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Folio number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Folio-Nummer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер фолио</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelOnlyFAFolios" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Permanent folios only</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nur permanente persönliche Konten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только постоянные лицевые счета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelDiscountType" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Discount type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Rabatttyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип скидки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.DiscountTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHotel" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="true" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.IsClosed</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.IsArchived</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>SumBalance</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.SumBalance</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="OpenFolioTransactions" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open folio transactions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zeigen Folio-transaktionen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать транзакции</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldCalculator</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenFolioTransactions</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="CreateFolio" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Create</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Schaffen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Create folio</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CreateFolio</Action>
+		</Command>
+	</Commands>
+</Form>

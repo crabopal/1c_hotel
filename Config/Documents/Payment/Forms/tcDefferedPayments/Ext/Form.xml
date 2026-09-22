@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Deferred payments</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Zahlungsaufschub</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Отложенные чеки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="93">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="94"/>
+			<ChildItems>
+				<InputField name="SelHotel" id="95">
+					<DataPath>Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="SelHotelContextMenu" id="96"/>
+					<ExtendedTooltip name="SelHotelExtendedTooltip" id="97"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHeader" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="56"/>
+			<ChildItems>
+				<InputField name="CashRegisters" id="52">
+					<DataPath>CashRegister</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cash register</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Registrierkassen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Касса</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+					<DropListButton>true</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="CashRegistersContextMenu" id="53"/>
+					<ExtendedTooltip name="CashRegistersExtendedTooltip" id="54"/>
+					<Events>
+						<Event name="OnChange">CashRegistersOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="UserPaymentMethod" id="60">
+					<DataPath>PaymentMethod</DataPath>
+					<DropListButton>true</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="UserPaymentMethodContextMenu" id="61"/>
+					<ExtendedTooltip name="UserPaymentMethodExtendedTooltip" id="62"/>
+					<Events>
+						<Event name="OnChange">UserPaymentMethodOnChange</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="CurrentShift" id="57">
+					<DataPath>CurrentShift</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Accountant">false</xr:Value>
+						<xr:Value name="Role.Administrator">true</xr:Value>
+						<xr:Value name="Role.Agent">false</xr:Value>
+						<xr:Value name="Role.BackgroundMode">false</xr:Value>
+						<xr:Value name="Role.General">false</xr:Value>
+						<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+						<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+						<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+						<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+						<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+						<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+						<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+						<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+						<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+						<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+						<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+						<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+						<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+						<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+						<xr:Value name="Role.SubsystemResources">false</xr:Value>
+						<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+						<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+					</UserVisible>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>If the flag is set, then it shows only pending checks in the current shift, otherwise all checks on the cash register</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wenn das Flag gesetzt ist, werden in der aktuellen Schicht nur ausstehende Schecks angezeigt, ansonsten alle Schecks an der Kasse</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если флаг установлен, то показывает только отложенные чеки в текущей смене, иначе все чеки по кассе</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>CheckBox</CheckBoxType>
+					<ContextMenu name="CurrentShiftContextMenu" id="58"/>
+					<ExtendedTooltip name="CurrentShiftExtendedTooltip" id="59"/>
+					<Events>
+						<Event name="OnChange">CurrentShiftOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<SearchStringAddition name="AdditionSearchString" id="46">
+					<AdditionSource>
+						<Item>List</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Addition search string</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="AdditionSearchStringContextMenu" id="47"/>
+					<ExtendedTooltip name="AdditionSearchStringExtendedTooltip" id="48"/>
+				</SearchStringAddition>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Date" id="16">
+					<DataPath>List.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Width>10</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DateContextMenu" id="17"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="Number" id="19">
+					<DataPath>List.Number</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Number</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nummer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Width>11</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="NumberContextMenu" id="20"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="AccountingDate" id="84">
+					<DataPath>List.AccountingDate</DataPath>
+					<ContextMenu name="AccountingDateContextMenu" id="85"/>
+					<ExtendedTooltip name="AccountingDateExtendedTooltip" id="86"/>
+				</LabelField>
+				<LabelField name="Payer" id="22">
+					<DataPath>List.Payer</DataPath>
+					<ContextMenu name="PayerContextMenu" id="23"/>
+					<ExtendedTooltip name="PayerExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="AccountingCustomer" id="25">
+					<DataPath>List.AccountingCustomer</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ACC Customer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Buchhaltungskunde</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент БУ</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="AccountingCustomerContextMenu" id="26"/>
+					<ExtendedTooltip name="AccountingCustomerExtendedTooltip" id="27"/>
+				</LabelField>
+				<LabelField name="GuestGroup" id="28">
+					<DataPath>List.GuestGroup</DataPath>
+					<ContextMenu name="GuestGroupContextMenu" id="29"/>
+					<ExtendedTooltip name="GuestGroupExtendedTooltip" id="30"/>
+				</LabelField>
+				<LabelField name="CashRegister" id="49">
+					<DataPath>List.CashRegister</DataPath>
+					<ContextMenu name="CashRegisterContextMenu" id="50"/>
+					<ExtendedTooltip name="CashRegisterExtendedTooltip" id="51"/>
+				</LabelField>
+				<LabelField name="PaymentMethod" id="31">
+					<DataPath>List.PaymentMethod</DataPath>
+					<ContextMenu name="PaymentMethodContextMenu" id="32"/>
+					<ExtendedTooltip name="PaymentMethodExtendedTooltip" id="33"/>
+				</LabelField>
+				<LabelField name="Sum" id="34">
+					<DataPath>List.Sum</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Summe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="SumContextMenu" id="35"/>
+					<ExtendedTooltip name="SumExtendedTooltip" id="36"/>
+				</LabelField>
+				<LabelField name="PaymentCurrency" id="37">
+					<DataPath>List.PaymentCurrency</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Curr.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Währung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вал.</v8:content>
+						</v8:item>
+					</Title>
+					<Width>5</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="PaymentCurrencyContextMenu" id="38"/>
+					<ExtendedTooltip name="PaymentCurrencyExtendedTooltip" id="39"/>
+				</LabelField>
+				<LabelField name="PaymentSection" id="75">
+					<DataPath>List.PaymentSection</DataPath>
+					<ContextMenu name="PaymentSectionContextMenu" id="76"/>
+					<ExtendedTooltip name="PaymentSectionExtendedTooltip" id="77"/>
+				</LabelField>
+				<LabelField name="Remarks" id="40">
+					<DataPath>List.Remarks</DataPath>
+					<ContextMenu name="RemarksContextMenu" id="41"/>
+					<ExtendedTooltip name="RemarksExtendedTooltip" id="42"/>
+				</LabelField>
+				<LabelField name="TerminalNumber" id="87">
+					<DataPath>List.TerminalNumber</DataPath>
+					<ContextMenu name="TerminalNumberContextMenu" id="88"/>
+					<ExtendedTooltip name="TerminalNumberExtendedTooltip" id="89"/>
+				</LabelField>
+				<LabelField name="CreditCard" id="81">
+					<DataPath>List.CreditCard</DataPath>
+					<ContextMenu name="CreditCardContextMenu" id="82"/>
+					<ExtendedTooltip name="CreditCardExtendedTooltip" id="83"/>
+				</LabelField>
+				<LabelField name="ParentDoc" id="72">
+					<DataPath>List.ParentDoc</DataPath>
+					<ContextMenu name="ParentDocContextMenu" id="73"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="74"/>
+				</LabelField>
+				<LabelField name="Folio" id="66">
+					<DataPath>List.Folio</DataPath>
+					<ContextMenu name="FolioContextMenu" id="67"/>
+					<ExtendedTooltip name="FolioExtendedTooltip" id="68"/>
+				</LabelField>
+				<LabelField name="Invoice" id="69">
+					<DataPath>List.Invoice</DataPath>
+					<ContextMenu name="InvoiceContextMenu" id="70"/>
+					<ExtendedTooltip name="InvoiceExtendedTooltip" id="71"/>
+				</LabelField>
+				<LabelField name="ExternalCode" id="90">
+					<DataPath>List.ExternalCode</DataPath>
+					<ContextMenu name="ExternalCodeContextMenu" id="91"/>
+					<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="92"/>
+				</LabelField>
+				<LabelField name="Company" id="78">
+					<DataPath>List.Company</DataPath>
+					<ContextMenu name="CompanyContextMenu" id="79"/>
+					<ExtendedTooltip name="CompanyExtendedTooltip" id="80"/>
+				</LabelField>
+				<LabelField name="Hotel" id="63">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="64"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="65"/>
+				</LabelField>
+				<LabelField name="Author" id="43">
+					<DataPath>List.Author</DataPath>
+					<ContextMenu name="AuthorContextMenu" id="44"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="45"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>List.DeletionMark</Field>
+				<Field>List.Posted</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>SELECT
+	DocumentPayment.Ref AS Ref,
+	DocumentPayment.DeletionMark AS DeletionMark,
+	DocumentPayment.Number AS Number,
+	DocumentPayment.Date AS Date,
+	DocumentPayment.Posted AS Posted,
+	DocumentPayment.AccountingDate AS AccountingDate,
+	DocumentPayment.ParentDoc AS ParentDoc,
+	DocumentPayment.Folio AS Folio,
+	DocumentPayment.Hotel AS Hotel,
+	DocumentPayment.Company AS Company,
+	DocumentPayment.Payer AS Payer,
+	DocumentPayment.AccountingCustomer AS AccountingCustomer,
+	DocumentPayment.AccountingContract AS AccountingContract,
+	DocumentPayment.GuestGroup AS GuestGroup,
+	DocumentPayment.PaymentSection AS PaymentSection,
+	DocumentPayment.PaymentMethod AS PaymentMethod,
+	DocumentPayment.Sum AS Sum,
+	DocumentPayment.VATRate AS VATRate,
+	DocumentPayment.VATSum AS VATSum,
+	DocumentPayment.SumInFolioCurrency AS SumInFolioCurrency,
+	DocumentPayment.VATSumInFolioCurrency AS VATSumInFolioCurrency,
+	DocumentPayment.ExchangeRateDate AS ExchangeRateDate,
+	DocumentPayment.PaymentCurrency AS PaymentCurrency,
+	DocumentPayment.PaymentCurrencyExchangeRate AS PaymentCurrencyExchangeRate,
+	DocumentPayment.FolioCurrency AS FolioCurrency,
+	DocumentPayment.FolioCurrencyExchangeRate AS FolioCurrencyExchangeRate,
+	DocumentPayment.CashRegister AS CashRegister,
+	DocumentPayment.CreditCard AS CreditCard,
+	DocumentPayment.ReferenceNumber AS ReferenceNumber,
+	DocumentPayment.AuthorizationCode AS AuthorizationCode,
+	DocumentPayment.TerminalNumber AS TerminalNumber,
+	DocumentPayment.Remarks AS Remarks,
+	DocumentPayment.SlipText AS SlipText,
+	DocumentPayment.AnnulationSlipText AS AnnulationSlipText,
+	DocumentPayment.TypeOfAnnulation AS TypeOfAnnulation,
+	DocumentPayment.AuthorOfAnnulation AS AuthorOfAnnulation,
+	DocumentPayment.DateOfAnnulation AS DateOfAnnulation,
+	DocumentPayment.Invoice AS Invoice,
+	DocumentPayment.Preauthorisation AS Preauthorisation,
+	DocumentPayment.CardType AS CardType,
+	DocumentPayment.ExternalCode AS ExternalCode,
+	DocumentPayment.GiftCertificate AS GiftCertificate,
+	DocumentPayment.Author AS Author,
+	DocumentPayment.CardOperationDate AS CardOperationDate,
+	DocumentPayment.OrderNumber AS OrderNumber,
+	DocumentPayment.PaymentSections.(
+		Ref AS Ref,
+		LineNumber AS LineNumber,
+		PaymentSection AS PaymentSection,
+		ChequeService AS ChequeService,
+		ChequeServicePrice AS ChequeServicePrice,
+		ChequeServiceQuantity AS ChequeServiceQuantity,
+		Sum AS Sum,
+		VATRate AS VATRate,
+		VATSum AS VATSum,
+		SumInFolioCurrency AS SumInFolioCurrency,
+		VATSumInFolioCurrency AS VATSumInFolioCurrency
+	) AS PaymentSections,
+	DocumentPayment.PointInTime AS PointInTime
+FROM
+	Document.Payment AS DocumentPayment
+WHERE
+	CASE
+			WHEN &amp;qPaymentMethod = VALUE(Catalog.PaymentMethods.EmptyRef)
+				THEN TRUE
+			ELSE DocumentPayment.PaymentMethod = &amp;qPaymentMethod
+		END
+	AND CASE
+			WHEN &amp;qCashRegister = VALUE(Catalog.CashRegisters.EmptyRef)
+				THEN TRUE
+			ELSE DocumentPayment.CashRegister = &amp;qCashRegister
+		END
+	AND CASE
+			WHEN &amp;qCurrentShift
+				THEN DocumentPayment.Date &gt;= &amp;qDateFrom
+						AND DocumentPayment.Date &lt;= &amp;qDateTo
+						AND DocumentPayment.Posted = FALSE
+						AND DocumentPayment.DeletionMark = FALSE
+			ELSE TRUE
+		END
+	AND DocumentPayment.Hotel IN HIERARCHY(&amp;qHotel)</QueryText>
+				<MainTable>Document.Payment</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Date</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="CashRegister" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cash register</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierkassen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CashRegisters</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Hotel" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Company" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Company</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Companies</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="CurrentShift" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current shift</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktuelle Schicht</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая смена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PaymentMethod" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Payment method</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zahlungsmethode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.PaymentMethods</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="true" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>List</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.DeletionMark</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">List.Posted</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>

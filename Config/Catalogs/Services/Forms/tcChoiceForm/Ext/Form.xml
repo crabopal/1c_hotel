@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Services choice</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Zusammenstellung der Dienstleistungen</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подбор услуг</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>CreateFolder</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>MoveItem</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+	</CommandSet>
+	<ShowTitle>false</ShowTitle>
+	<GroupList>TreeServices</GroupList>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="72">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="73"/>
+			<ChildItems>
+				<InputField name="Hotel" id="74">
+					<DataPath>Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="HotelContextMenu" id="75"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="76"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="TreeAndList" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Дерево и список</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="TreeAndListExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="GroupTreeView" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folders</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folders</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор группы</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupTreeViewExtendedTooltip" id="52"/>
+					<ChildItems>
+						<Table name="TreeServices" id="56">
+							<Representation>Tree</Representation>
+							<Header>false</Header>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<InitialTreeView>ExpandTopLevel</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>TreeServices</DataPath>
+							<RowPictureDataPath>TreeServices.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="TreeServicesContextMenu" id="57"/>
+							<AutoCommandBar name="TreeServicesCommandBar" id="58">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="TreeServicesExtendedTooltip" id="59"/>
+							<SearchStringAddition name="TreeServicesSearchString" id="60">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>TreeServices</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="TreeServicesSearchStringContextMenu" id="61"/>
+								<ExtendedTooltip name="TreeServicesSearchStringExtendedTooltip" id="62"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="TreeServicesViewStatus" id="63">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>TreeServices</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="TreeServicesViewStatusContextMenu" id="64"/>
+								<ExtendedTooltip name="TreeServicesViewStatusExtendedTooltip" id="65"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="TreeServicesSearchControl" id="66">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>TreeServices</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="TreeServicesSearchControlContextMenu" id="67"/>
+								<ExtendedTooltip name="TreeServicesSearchControlExtendedTooltip" id="68"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">TreeSelection</Event>
+								<Event name="BeforeRowChange">TreeBeforeRowChange</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="TreeServicesDescription" id="69">
+									<DataPath>TreeServices.Description</DataPath>
+									<CellHyperlink>true</CellHyperlink>
+									<ContextMenu name="TreeServicesDescriptionContextMenu" id="70"/>
+									<ExtendedTooltip name="TreeServicesDescriptionExtendedTooltip" id="71"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<InputField name="ClientType" id="42">
+							<DataPath>ClientType</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Get prices for the selected client type</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preise für den ausgewählten Clienttyp verwenden</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показывать цены для типа клиента</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ClientTypeContextMenu" id="43"/>
+							<ExtendedTooltip name="ClientTypeExtendedTooltip" id="44"/>
+							<Events>
+								<Event name="OnChange">ClientTypeOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="List" id="23">
+					<Representation>List</Representation>
+					<CommandBarLocation>None</CommandBarLocation>
+					<DefaultItem>true</DefaultItem>
+					<ChangeRowSet>false</ChangeRowSet>
+					<Width>71</Width>
+					<ChoiceMode>true</ChoiceMode>
+					<SelectionMode>SingleRow</SelectionMode>
+					<HeaderHeight>2</HeaderHeight>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>List</DataPath>
+					<RowPictureDataPath>~List.DefaultPicture</RowPictureDataPath>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>true</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>false</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="ListContextMenu" id="24"/>
+					<AutoCommandBar name="ListCommandBar" id="25">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ListExtendedTooltip" id="26"/>
+					<SearchStringAddition name="ListSearchString" id="27">
+						<AdditionSource>
+							<Item>List</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ListSearchStringContextMenu" id="28"/>
+						<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="29"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ListViewStatus" id="30">
+						<AdditionSource>
+							<Item>List</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ListViewStatusContextMenu" id="31"/>
+						<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="32"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ListSearchControl" id="33">
+						<AdditionSource>
+							<Item>List</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ListSearchControlContextMenu" id="34"/>
+						<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="35"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="ValueChoice">ListValueChoice</Event>
+						<Event name="Selection">ListSelection</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="Code" id="39">
+							<DataPath>List.Code</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Code</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Code</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код</v8:content>
+								</v8:item>
+							</Title>
+							<Width>1</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="CodeContextMenu" id="40"/>
+							<ExtendedTooltip name="CodeExtendedTooltip" id="41"/>
+						</LabelField>
+						<LabelField name="Description" id="36">
+							<DataPath>List.Description</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Beschreibung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование</v8:content>
+								</v8:item>
+							</Title>
+							<Width>35</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="DescriptionContextMenu" id="37"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="38"/>
+						</LabelField>
+						<ColumnGroup name="GroupPrice" id="77">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Price</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preis</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цена</v8:content>
+								</v8:item>
+							</Title>
+							<Group>InCell</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="GroupPriceExtendedTooltip" id="78"/>
+							<ChildItems>
+								<LabelField name="Price" id="45">
+									<DataPath>List.Price</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Price</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preis</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Цена</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>12</Width>
+									<Format>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>NFD=2</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>NFD=2</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>NFD=2</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="PriceContextMenu" id="46"/>
+									<ExtendedTooltip name="PriceExtendedTooltip" id="47"/>
+								</LabelField>
+								<LabelField name="CurrencyCurrencySymbol" id="79">
+									<DataPath>List.Currency.CurrencySymbol</DataPath>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<ContextMenu name="CurrencyCurrencySymbolContextMenu" id="80"/>
+									<ExtendedTooltip name="CurrencyCurrencySymbolExtendedTooltip" id="81"/>
+								</LabelField>
+								<LabelField name="Currency" id="53">
+									<DataPath>List.Currency</DataPath>
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Cur.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>War.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вал.</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>4</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="CurrencyContextMenu" id="54"/>
+									<ExtendedTooltip name="CurrencyExtendedTooltip" id="55"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="Quantity" id="48">
+							<DataPath>List.Quantity</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Available q-ty</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Verfügbare Menge</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Остаток кол-ва</v8:content>
+								</v8:item>
+							</Title>
+							<Width>11</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="QuantityContextMenu" id="49"/>
+							<ExtendedTooltip name="QuantityExtendedTooltip" id="50"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="TreeSettingsComposerUserSettings" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="TreeSettingsComposerUserSettingsExtendedTooltip" id="4"/>
+		</UsualGroup>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="22"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>List.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>SELECT
+	Services.Ref AS Service,
+	Services.Code AS Code,
+	Services.Description AS Description,
+	Services.SortCode AS SortCode,
+	Services.AvailableQuantity AS AvailableQuantity,
+	Services.Hotel AS Hotel
+INTO ServicesToBeShown
+FROM
+	Catalog.Services AS Services
+WHERE
+	Services.DeletionMark = FALSE
+	AND Services.IsFolder = FALSE
+	AND (Services.Hotel = &amp;qHotel
+			OR Services.Hotel = VALUE(Catalog.Hotels.EmptyRef))
+	AND Services.Ref IN HIERARCHY(&amp;qParent)
+	AND (NOT &amp;qUseServicesList OR &amp;qUseServicesList AND Services.Ref IN (&amp;qServicesList))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	ServicesWithPrice.Service AS Service,
+	ServicesWithPrice.Code AS Code,
+	ServicesWithPrice.SortCode AS SortCode,
+	ServicesWithPrice.Description AS Description,
+	ServicesWithPrice.AvailableQuantity AS AvailableQuantity,
+	CASE
+		WHEN NOT ServicesPricesByClientTypeByHotel.ClientType IS NULL
+			THEN ServicesPricesByClientTypeByHotel.ClientType
+		WHEN NOT ServicesPricesByClientTypeByEmptyHotel.ClientType IS NULL
+			THEN ServicesPricesByClientTypeByEmptyHotel.ClientType
+		WHEN NOT ServicesPricesByEmptyClientTypeByHotel.ClientType IS NULL
+			THEN ServicesPricesByEmptyClientTypeByHotel.ClientType
+		WHEN NOT ServicesPricesByEmptyClientTypeByEmptyHotel.ClientType IS NULL
+			THEN ServicesPricesByEmptyClientTypeByEmptyHotel.ClientType
+		ELSE VALUE(Catalog.ClientTypes.EmptyRef)
+	END AS ClientType,
+	CASE
+		WHEN NOT ServicesPricesByClientTypeByHotel.Hotel IS NULL
+			THEN ServicesPricesByClientTypeByHotel.Hotel
+		WHEN NOT ServicesPricesByClientTypeByEmptyHotel.Hotel IS NULL
+			THEN ServicesWithPrice.Hotel
+		WHEN NOT ServicesPricesByEmptyClientTypeByHotel.Hotel IS NULL
+			THEN ServicesPricesByEmptyClientTypeByHotel.Hotel
+		WHEN NOT ServicesPricesByEmptyClientTypeByEmptyHotel.Hotel IS NULL
+			THEN ServicesWithPrice.Hotel
+		ELSE ServicesWithPrice.Hotel
+	END AS Hotel,
+	CASE
+		WHEN NOT ServicesPricesByClientTypeByHotel.Currency IS NULL
+			THEN ServicesPricesByClientTypeByHotel.Currency
+		WHEN NOT ServicesPricesByClientTypeByEmptyHotel.Currency IS NULL
+			THEN ServicesPricesByClientTypeByEmptyHotel.Currency
+		WHEN NOT ServicesPricesByEmptyClientTypeByHotel.Currency IS NULL
+			THEN ServicesPricesByEmptyClientTypeByHotel.Currency
+		WHEN NOT ServicesPricesByEmptyClientTypeByEmptyHotel.Currency IS NULL
+			THEN ServicesPricesByEmptyClientTypeByEmptyHotel.Currency
+		ELSE VALUE(Catalog.Currencies.EmptyRef)
+	END AS Currency,
+	CASE
+		WHEN NOT ServicesPricesByClientTypeByHotel.Price IS NULL
+			THEN ServicesPricesByClientTypeByHotel.Price
+		WHEN NOT ServicesPricesByClientTypeByEmptyHotel.Price IS NULL
+			THEN ServicesPricesByClientTypeByEmptyHotel.Price
+		WHEN NOT ServicesPricesByEmptyClientTypeByHotel.Price IS NULL
+			THEN ServicesPricesByEmptyClientTypeByHotel.Price
+		WHEN NOT ServicesPricesByEmptyClientTypeByEmptyHotel.Price IS NULL
+			THEN ServicesPricesByEmptyClientTypeByEmptyHotel.Price
+		ELSE 0
+	END AS Price
+INTO ServicesWithPrice
+FROM
+	ServicesToBeShown AS ServicesWithPrice
+		LEFT JOIN InformationRegister.ServicePrices.SliceLast(
+				&amp;qAccountingDate,
+				&amp;qClientTypeIsFilled
+					AND Hotel = &amp;qHotel
+					AND ClientType = &amp;qClientType) AS ServicesPricesByClientTypeByHotel
+		ON ServicesWithPrice.Service = ServicesPricesByClientTypeByHotel.Service
+		LEFT JOIN InformationRegister.ServicePrices.SliceLast(
+				&amp;qAccountingDate,
+				&amp;qClientTypeIsFilled
+					AND Hotel = VALUE(Catalog.Hotels.EmptyRef)
+					AND ClientType = &amp;qClientType) AS ServicesPricesByClientTypeByEmptyHotel
+		ON ServicesWithPrice.Service = ServicesPricesByClientTypeByEmptyHotel.Service
+		LEFT JOIN InformationRegister.ServicePrices.SliceLast(
+				&amp;qAccountingDate,
+				Hotel = &amp;qHotel
+					AND ClientType = VALUE(Catalog.ClientTypes.EmptyRef)) AS ServicesPricesByEmptyClientTypeByHotel
+		ON ServicesWithPrice.Service = ServicesPricesByEmptyClientTypeByHotel.Service
+		LEFT JOIN InformationRegister.ServicePrices.SliceLast(
+				&amp;qAccountingDate,
+				Hotel = VALUE(Catalog.Hotels.EmptyRef)
+					AND ClientType = VALUE(Catalog.ClientTypes.EmptyRef)) AS ServicesPricesByEmptyClientTypeByEmptyHotel
+		ON ServicesWithPrice.Service = ServicesPricesByEmptyClientTypeByEmptyHotel.Service
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	SalesMovements.Service AS Service,
+	SUM(SalesMovements.Quantity) AS Quantity
+INTO UsedServices
+FROM
+	AccumulationRegister.Sales AS SalesMovements
+		INNER JOIN ServicesToBeShown AS ServicesToBeShown
+		ON SalesMovements.Service = ServicesToBeShown.Service
+WHERE
+	SalesMovements.AccountingDate = &amp;qBegOfAccountingDate
+	AND SalesMovements.Service.AvailableQuantity &gt; 0
+	AND SalesMovements.Hotel = &amp;qHotel
+	AND &amp;qHotelIsFilled
+
+GROUP BY
+	SalesMovements.Service
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	SalesForecastMovements.Service AS Service,
+	SUM(SalesForecastMovements.Quantity) AS Quantity
+INTO UsedForecastServices
+FROM
+	AccumulationRegister.SalesForecast AS SalesForecastMovements
+		INNER JOIN ServicesToBeShown AS ServicesToBeShown
+		ON SalesForecastMovements.Service = ServicesToBeShown.Service
+WHERE
+	&amp;qUseForecast
+	AND SalesForecastMovements.AccountingDate = &amp;qBegOfAccountingDate
+	AND SalesForecastMovements.Service.AvailableQuantity &gt; 0
+	AND SalesForecastMovements.Hotel = &amp;qHotel
+	AND &amp;qHotelIsFilled
+
+GROUP BY
+	SalesForecastMovements.Service
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	ServicesUsage.Service AS Service,
+	SUM(ServicesUsage.Quantity) AS Quantity
+INTO ServicesUsage
+FROM
+	(SELECT
+		UsedServices.Service AS Service,
+		UsedServices.Quantity AS Quantity
+	FROM
+		UsedServices AS UsedServices
+	
+	UNION ALL
+	
+	SELECT
+		UsedForecastServices.Service,
+		UsedForecastServices.Quantity
+	FROM
+		UsedForecastServices AS UsedForecastServices) AS ServicesUsage
+
+GROUP BY
+	ServicesUsage.Service
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	ServicesWithPrice.Service AS Ref,
+	ServicesWithPrice.Code AS Code,
+	ServicesWithPrice.Description AS Description,
+	ServicesWithPrice.SortCode AS SortCode,
+	ServicesWithPrice.Price AS Price,
+	ServicesWithPrice.Currency AS Currency,
+	ServicesWithPrice.AvailableQuantity - ISNULL(ServicesUsage.Quantity, 0) AS Quantity
+FROM
+	ServicesWithPrice AS ServicesWithPrice
+		LEFT JOIN ServicesUsage AS ServicesUsage
+		ON ServicesWithPrice.Service = ServicesUsage.Service</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Description</dcssch:dataPath>
+					<dcssch:field>Description</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Hotel</dcssch:dataPath>
+					<dcssch:field>Hotel</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ref</dcssch:dataPath>
+					<dcssch:field>Ref</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Ref</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ClientType</dcssch:dataPath>
+					<dcssch:field>ClientType</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Service</dcssch:dataPath>
+					<dcssch:field>Service</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Currency</dcssch:dataPath>
+					<dcssch:field>Currency</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Currency</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Price</dcssch:dataPath>
+					<dcssch:field>Price</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Price</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Code</dcssch:dataPath>
+					<dcssch:field>Code</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>SortCode</dcssch:dataPath>
+					<dcssch:field>SortCode</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Quantity</dcssch:dataPath>
+					<dcssch:field>Quantity</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Quantity</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Parameter>
+					<dcssch:name>Period</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Period</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qAccountingDate</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q accounting date</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qBegOfAccountingDate</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q beg of accounting date</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qClientType</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q client type</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.ClientTypes</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qClientTypeIsFilled</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q client type is filled</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qHotel</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q hotel</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qHotelIsFilled</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q hotel is filled</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qParent</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q parent</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qUseForecast</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q use forecast</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qServicesList</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q services list</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Services</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>qUseServicesList</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Q use services list</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:dataParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>qParent</dcscor:parameter>
+						</dcscor:item>
+					</dcsset:dataParameters>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>SortCode</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Code</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Description</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ClientType" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Client type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип клиента</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kundentyp</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ClientTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Hotel" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="AccountingDate" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accounting date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная дата</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Buchungsdatum</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TreeServices" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree services</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Tree services</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево групп</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>TreeServices.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.Services</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">IsFolder</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Parent" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parent</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parent</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Parent</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Services</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="UseForecast" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use forecast</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Use forecast</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Use forecast</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

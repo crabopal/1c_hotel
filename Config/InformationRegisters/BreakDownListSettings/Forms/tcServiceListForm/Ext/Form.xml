@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormCopyWithNewDate" id="86">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CopyWithNewDate</CommandName>
+				<ExtendedTooltip name="FormCopyWithNewDateExtendedTooltip" id="87"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<RadioButtonField name="SelDate" id="83">
+			<DataPath>SelDate</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ContextMenu name="SelDateContextMenu" id="84"/>
+			<ExtendedTooltip name="SelDateExtendedTooltip" id="85"/>
+			<Events>
+				<Event name="OnChange">SelDateOnChange</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ListSettingsComposerUserSettings" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ListSettingsComposerUserSettingsExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<Table name="List" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>List</DataPath>
+			<RowPictureDataPath>List.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ListSettingsComposerUserSettings</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ListContextMenu" id="4"/>
+			<AutoCommandBar name="ListCommandBar" id="5"/>
+			<ExtendedTooltip name="ListExtendedTooltip" id="6"/>
+			<SearchStringAddition name="ListSearchString" id="7">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchStringContextMenu" id="8"/>
+				<ExtendedTooltip name="ListSearchStringExtendedTooltip" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ListViewStatus" id="10">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ListViewStatusContextMenu" id="11"/>
+				<ExtendedTooltip name="ListViewStatusExtendedTooltip" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ListSearchControl" id="13">
+				<AdditionSource>
+					<Item>List</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ListSearchControlContextMenu" id="14"/>
+				<ExtendedTooltip name="ListSearchControlExtendedTooltip" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Period" id="16">
+					<DataPath>List.Period</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="PeriodContextMenu" id="17"/>
+					<ExtendedTooltip name="PeriodExtendedTooltip" id="18"/>
+				</LabelField>
+				<LabelField name="Service" id="19">
+					<DataPath>List.Service</DataPath>
+					<ContextMenu name="ServiceContextMenu" id="20"/>
+					<ExtendedTooltip name="ServiceExtendedTooltip" id="21"/>
+				</LabelField>
+				<LabelField name="Hotel" id="22">
+					<DataPath>List.Hotel</DataPath>
+					<ContextMenu name="HotelContextMenu" id="23"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="24"/>
+				</LabelField>
+				<LabelField name="RoomRateType" id="25">
+					<DataPath>List.RoomRateType</DataPath>
+					<ContextMenu name="RoomRateTypeContextMenu" id="26"/>
+					<ExtendedTooltip name="RoomRateTypeExtendedTooltip" id="27"/>
+				</LabelField>
+				<LabelField name="RoomType" id="31">
+					<DataPath>List.RoomType</DataPath>
+					<ContextMenu name="RoomTypeContextMenu" id="32"/>
+					<ExtendedTooltip name="RoomTypeExtendedTooltip" id="33"/>
+				</LabelField>
+				<LabelField name="AccommodationType" id="34">
+					<DataPath>List.AccommodationType</DataPath>
+					<ContextMenu name="AccommodationTypeContextMenu" id="35"/>
+					<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="36"/>
+				</LabelField>
+				<LabelField name="RoomRate" id="28">
+					<DataPath>List.RoomRate</DataPath>
+					<ContextMenu name="RoomRateContextMenu" id="29"/>
+					<ExtendedTooltip name="RoomRateExtendedTooltip" id="30"/>
+				</LabelField>
+				<LabelField name="RuleNumber" id="37">
+					<DataPath>List.RuleNumber</DataPath>
+					<ContextMenu name="RuleNumberContextMenu" id="38"/>
+					<ExtendedTooltip name="RuleNumberExtendedTooltip" id="39"/>
+				</LabelField>
+				<LabelField name="Item" id="40">
+					<DataPath>List.Item</DataPath>
+					<ContextMenu name="ItemContextMenu" id="41"/>
+					<ExtendedTooltip name="ItemExtendedTooltip" id="42"/>
+				</LabelField>
+				<LabelField name="BreakdownListFormula" id="43">
+					<DataPath>List.BreakdownListFormula</DataPath>
+					<ContextMenu name="BreakdownListFormulaContextMenu" id="44"/>
+					<ExtendedTooltip name="BreakdownListFormulaExtendedTooltip" id="45"/>
+				</LabelField>
+				<LabelField name="ServiceDateShift" id="67">
+					<DataPath>List.ServiceDateShift</DataPath>
+					<ContextMenu name="ServiceDateShiftContextMenu" id="68"/>
+					<ExtendedTooltip name="ServiceDateShiftExtendedTooltip" id="69"/>
+				</LabelField>
+				<ColumnGroup name="GroupPrice" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Fixed price</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Festpreis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фиксированная цена</v8:content>
+						</v8:item>
+					</Title>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="GroupPriceExtendedTooltip" id="80"/>
+					<ChildItems>
+						<LabelField name="Price" id="52">
+							<DataPath>List.Price</DataPath>
+							<ContextMenu name="PriceContextMenu" id="53"/>
+							<ExtendedTooltip name="PriceExtendedTooltip" id="54"/>
+						</LabelField>
+						<LabelField name="Currency" id="55">
+							<DataPath>List.Currency</DataPath>
+							<ContextMenu name="CurrencyContextMenu" id="56"/>
+							<ExtendedTooltip name="CurrencyExtendedTooltip" id="57"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="PriceCalculationFormula" id="58">
+					<DataPath>List.PriceCalculationFormula</DataPath>
+					<ContextMenu name="PriceCalculationFormulaContextMenu" id="59"/>
+					<ExtendedTooltip name="PriceCalculationFormulaExtendedTooltip" id="60"/>
+				</LabelField>
+				<LabelField name="Quantity" id="61">
+					<DataPath>List.Quantity</DataPath>
+					<ContextMenu name="QuantityContextMenu" id="62"/>
+					<ExtendedTooltip name="QuantityExtendedTooltip" id="63"/>
+				</LabelField>
+				<LabelField name="QuantityCalculationFormula" id="64">
+					<DataPath>List.QuantityCalculationFormula</DataPath>
+					<ContextMenu name="QuantityCalculationFormulaContextMenu" id="65"/>
+					<ExtendedTooltip name="QuantityCalculationFormulaExtendedTooltip" id="66"/>
+				</LabelField>
+				<LabelField name="QuantityCalculationRule" id="70">
+					<DataPath>List.QuantityCalculationRule</DataPath>
+					<ContextMenu name="QuantityCalculationRuleContextMenu" id="71"/>
+					<ExtendedTooltip name="QuantityCalculationRuleExtendedTooltip" id="72"/>
+				</LabelField>
+				<CheckBoxField name="IsTax" id="46">
+					<DataPath>List.IsTax</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsTaxContextMenu" id="47"/>
+					<ExtendedTooltip name="IsTaxExtendedTooltip" id="48"/>
+				</CheckBoxField>
+				<LabelField name="VATRate" id="49">
+					<DataPath>List.VATRate</DataPath>
+					<ContextMenu name="VATRateContextMenu" id="50"/>
+					<ExtendedTooltip name="VATRateExtendedTooltip" id="51"/>
+				</LabelField>
+				<CheckBoxField name="IsInRoomRevenue" id="73">
+					<DataPath>List.IsInRoomRevenue</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsInRoomRevenueContextMenu" id="74"/>
+					<ExtendedTooltip name="IsInRoomRevenueExtendedTooltip" id="75"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsNotInForecast" id="76">
+					<DataPath>List.IsNotInForecast</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsNotInForecastContextMenu" id="77"/>
+					<ExtendedTooltip name="IsNotInForecastExtendedTooltip" id="78"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="List" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.BreakDownListSettings</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="SelDate" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date selected</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gewähltes Datum</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранная дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelService" id="2">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Services</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHotel" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sel hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CopyWithNewDate" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy all settings to the new date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Alle Einstellungen auf das neue Datum kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать все настройки в новую дату</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CloneObject</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyWithNewDate</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

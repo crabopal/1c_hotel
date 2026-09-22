@@ -1,0 +1,1514 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Restaurant control list</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Restaurant-Kontrollliste</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Список гостей на питание</v8:content>
+		</v8:item>
+	</Title>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="177">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="178"/>
+			<ChildItems>
+				<InputField name="Hotel" id="1">
+					<DataPath>Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="2"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHeader" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="5"/>
+			<ChildItems>
+				<InputField name="MealType" id="11">
+					<DataPath>MealType</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>None</TitleLocation>
+					<Width>10</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="MealTypeContextMenu" id="12"/>
+					<ExtendedTooltip name="MealTypeExtendedTooltip" id="13"/>
+				</InputField>
+				<LabelField name="AccountingDate" id="6">
+					<DataPath>AccountingDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Datum</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="AccountingDateContextMenu" id="7"/>
+					<ExtendedTooltip name="AccountingDateExtendedTooltip" id="8"/>
+					<Events>
+						<Event name="OnChange">AccountingDateOnChange</Event>
+					</Events>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="OccupiedRooms" id="14">
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<SelectionMode>SingleRow</SelectionMode>
+			<RowSelectionMode>Row</RowSelectionMode>
+			<Footer>true</Footer>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>OccupiedRooms</DataPath>
+			<RowPictureDataPath>~OccupiedRooms.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+				<ExcludedCommand>ListSettings</ExcludedCommand>
+				<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>SearchHistory</ExcludedCommand>
+			</CommandSet>
+			<RefreshRequest>PullFromTop</RefreshRequest>
+			<CurrentRowUse>SelectionPresentationAndChoice</CurrentRowUse>
+			<BehaviorOnHorizontalCompression>HideItemsByImportance</BehaviorOnHorizontalCompression>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="OccupiedRoomsContextMenu" id="15">
+				<ChildItems>
+					<Button name="OccupiedRoomsContextMenuUndoRegistration" id="128">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.UndoRegistration</CommandName>
+						<ExtendedTooltip name="OccupiedRoomsContextMenuUndoRegistrationExtendedTooltip" id="129"/>
+					</Button>
+					<Button name="OccupiedRoomsContextMenuDoRegistration" id="159">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.DoRegistration</CommandName>
+						<ExtendedTooltip name="OccupiedRoomsContextMenuDoRegistrationExtendedTooltip" id="160"/>
+					</Button>
+					<Button name="OccupiedRoomsContextMenuDoRoomRegistration" id="175">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.DoRoomRegistration</CommandName>
+						<ExtendedTooltip name="OccupiedRoomsContextMenuDoRoomRegistrationExtendedTooltip" id="176"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="OccupiedRoomsCommandBar" id="16">
+				<ChildItems>
+					<Button name="OccupiedRoomsRefresh" id="124">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.OccupiedRooms.StandardCommand.Refresh</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Refresh</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Aktualisieren</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обновить</v8:content>
+							</v8:item>
+						</Title>
+						<RepresentationInContextMenu>None</RepresentationInContextMenu>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="OccupiedRoomsRefreshExtendedTooltip" id="125"/>
+					</Button>
+					<ButtonGroup name="OccupiedRoomsOperations" id="122">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Operations</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>Operations</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Операции</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="OccupiedRoomsOperationsExtendedTooltip" id="123"/>
+						<ChildItems>
+							<Button name="OccupiedRoomsDoRoomRegistration" id="173">
+								<Type>CommandBarButton</Type>
+								<DefaultButton>true</DefaultButton>
+								<CommandName>Form.Command.DoRoomRegistration</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="OccupiedRoomsDoRoomRegistrationExtendedTooltip" id="174"/>
+							</Button>
+							<Button name="OccupiedRoomsDoRegistration" id="120">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.DoRegistration</CommandName>
+								<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="OccupiedRoomsDoRegistrationExtendedTooltip" id="121"/>
+							</Button>
+							<Button name="OccupiedRoomsUndoRegistration" id="126">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.UndoRegistration</CommandName>
+								<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
+								<ExtendedTooltip name="OccupiedRoomsUndoRegistrationExtendedTooltip" id="127"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="OccupiedRoomsExtendedTooltip" id="17"/>
+			<SearchStringAddition name="OccupiedRoomsSearchString" id="18">
+				<AdditionSource>
+					<Item>OccupiedRooms</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="OccupiedRoomsSearchStringContextMenu" id="19"/>
+				<ExtendedTooltip name="OccupiedRoomsSearchStringExtendedTooltip" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="OccupiedRoomsViewStatus" id="21">
+				<AdditionSource>
+					<Item>OccupiedRooms</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="OccupiedRoomsViewStatusContextMenu" id="22"/>
+				<ExtendedTooltip name="OccupiedRoomsViewStatusExtendedTooltip" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="OccupiedRoomsSearchControl" id="24">
+				<AdditionSource>
+					<Item>OccupiedRooms</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="OccupiedRoomsSearchControlContextMenu" id="25"/>
+				<ExtendedTooltip name="OccupiedRoomsSearchControlExtendedTooltip" id="26"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">OccupiedRoomsSelection</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="GroupRoom" id="130" DisplayImportance="VeryHigh">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zimmer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupRoomExtendedTooltip" id="131"/>
+					<ChildItems>
+						<LabelField name="Room" id="69">
+							<DataPath>OccupiedRooms.Room</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Room</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Zimmer</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер</v8:content>
+								</v8:item>
+							</Title>
+							<FooterDataPath>TotalRoomsStr</FooterDataPath>
+							<Width>1</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="RoomContextMenu" id="70"/>
+							<ExtendedTooltip name="RoomExtendedTooltip" id="71"/>
+						</LabelField>
+						<LabelField name="Service" id="117">
+							<DataPath>OccupiedRooms.Service</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Terms</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Essen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Питание</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInFooter>false</ShowInFooter>
+							<Width>1</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<TextColor>style:BorderColor</TextColor>
+							<ContextMenu name="ServiceContextMenu" id="118"/>
+							<ExtendedTooltip name="ServiceExtendedTooltip" id="119"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="GroupName" id="132" DisplayImportance="VeryHigh">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ФИО</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupNameExtendedTooltip" id="133"/>
+					<ChildItems>
+						<LabelField name="ClientFullName" id="33">
+							<DataPath>OccupiedRooms.Client.FullName</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Name</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Name</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ФИО</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInFooter>false</ShowInFooter>
+							<Width>24</Width>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ClientFullNameContextMenu" id="34"/>
+							<ExtendedTooltip name="ClientFullNameExtendedTooltip" id="35"/>
+						</LabelField>
+						<LabelField name="AccommodationTemplate" id="103">
+							<DataPath>OccupiedRooms.AccommodationTemplate</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Persons</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Personen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Чел.</v8:content>
+								</v8:item>
+							</Title>
+							<FooterDataPath>TotalPersonsStr</FooterDataPath>
+							<Width>24</Width>
+							<HorizontalStretch>true</HorizontalStretch>
+							<TextColor>style:BorderColor</TextColor>
+							<ContextMenu name="AccommodationTemplateContextMenu" id="104"/>
+							<ExtendedTooltip name="AccommodationTemplateExtendedTooltip" id="105"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="GroupCustomer" id="169" DisplayImportance="Usual">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Customer</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Firma</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupCustomerExtendedTooltip" id="170"/>
+					<ChildItems>
+						<LabelField name="Customer" id="153">
+							<DataPath>OccupiedRooms.Customer</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Customer</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Firma</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контрагент</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInFooter>false</ShowInFooter>
+							<Width>10</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="CustomerContextMenu" id="154"/>
+							<ExtendedTooltip name="CustomerExtendedTooltip" id="155"/>
+						</LabelField>
+						<ColumnGroup name="GroupNumberOfPersons" id="137">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Number of persons</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Anzahl personen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кол-во человек</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="GroupNumberOfPersonsExtendedTooltip" id="138"/>
+							<ChildItems>
+								<LabelField name="NumberOfAdults" id="139">
+									<DataPath>OccupiedRooms.NumberOfAdults</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>A</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>E</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>В</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterDataPath>TotalAdults</FooterDataPath>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="NumberOfAdultsContextMenu" id="140"/>
+									<ExtendedTooltip name="NumberOfAdultsExtendedTooltip" id="141"/>
+								</LabelField>
+								<LabelField name="NumberOfTeenagers" id="148">
+									<DataPath>OccupiedRooms.NumberOfTeenagers</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>T</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>T</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>П</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterDataPath>TotalTeenagers</FooterDataPath>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="NumberOfTeenagersContextMenu" id="149"/>
+									<ExtendedTooltip name="NumberOfTeenagersExtendedTooltip" id="150"/>
+								</LabelField>
+								<LabelField name="NumberOfChildren" id="142">
+									<DataPath>OccupiedRooms.NumberOfChildren</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>C</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>K</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Д</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterDataPath>TotalChildren</FooterDataPath>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="NumberOfChildrenContextMenu" id="143"/>
+									<ExtendedTooltip name="NumberOfChildrenExtendedTooltip" id="144"/>
+								</LabelField>
+								<LabelField name="NumberOfInfants" id="145">
+									<DataPath>OccupiedRooms.NumberOfInfants</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>I</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>I</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>М</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<FooterDataPath>TotalInfants</FooterDataPath>
+									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="NumberOfInfantsContextMenu" id="146"/>
+									<ExtendedTooltip name="NumberOfInfantsExtendedTooltip" id="147"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="GroupExtraData1" id="151" DisplayImportance="Low">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Extra data 1</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zusätzliche Daten 1</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прочие данные 1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group extra data1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupExtraData1ExtendedTooltip" id="152"/>
+					<ChildItems>
+						<LabelField name="ClientType" id="156">
+							<DataPath>OccupiedRooms.ClientType</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Client type</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Kundetyp</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип клиента</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInFooter>false</ShowInFooter>
+							<Width>10</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ClientTypeContextMenu" id="157"/>
+							<ExtendedTooltip name="ClientTypeExtendedTooltip" id="158"/>
+						</LabelField>
+						<ColumnGroup name="GroupPeriodOfStay" id="171">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Period of stay</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Periode</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период прож.</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="GroupPeriodOfStayExtendedTooltip" id="172"/>
+							<ChildItems>
+								<LabelField name="CheckInDate" id="163">
+									<DataPath>OccupiedRooms.CheckInDate</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check-in</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Anreise</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заезд</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>5</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Format>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+									</Format>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="CheckInDateContextMenu" id="164"/>
+									<ExtendedTooltip name="CheckInDateExtendedTooltip" id="165"/>
+								</LabelField>
+								<LabelField name="CheckOutDate" id="166">
+									<DataPath>OccupiedRooms.CheckOutDate</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check-out</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Abreise</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выезд</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>5</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Format>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF=dd.MM</v8:content>
+										</v8:item>
+									</Format>
+									<TextColor>style:BorderColor</TextColor>
+									<ContextMenu name="CheckOutDateContextMenu" id="167"/>
+									<ExtendedTooltip name="CheckOutDateExtendedTooltip" id="168"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="GroupExtraData2" id="161" DisplayImportance="VeryLow">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Extra data 2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Zusätzliche Daten 2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прочие данные 2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group extra data2</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupExtraData2ExtendedTooltip" id="162"/>
+				</ColumnGroup>
+				<LabelField name="NumberOfBreakfasts" id="108" DisplayImportance="VeryHigh">
+					<DataPath>OccupiedRooms.NumberOfBreakfasts</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>B</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>F</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>З</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<FooterDataPath>TotalBreakfasts</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+					<Width>3</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="NumberOfBreakfastsContextMenu" id="109"/>
+					<ExtendedTooltip name="NumberOfBreakfastsExtendedTooltip" id="110"/>
+				</LabelField>
+				<LabelField name="NumberOfLunches" id="111" DisplayImportance="VeryHigh">
+					<DataPath>OccupiedRooms.NumberOfLunches</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>L</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>M</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>О</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<FooterDataPath>TotalLunches</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+					<Width>3</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="NumberOfLunchesContextMenu" id="112"/>
+					<ExtendedTooltip name="NumberOfLunchesExtendedTooltip" id="113"/>
+				</LabelField>
+				<LabelField name="NumberOfDinners" id="114" DisplayImportance="VeryHigh">
+					<DataPath>OccupiedRooms.NumberOfDinners</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>A</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>У</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<FooterDataPath>TotalDinners</FooterDataPath>
+					<FooterFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+					<Width>3</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="NumberOfDinnersContextMenu" id="115"/>
+					<ExtendedTooltip name="NumberOfDinnersExtendedTooltip" id="116"/>
+				</LabelField>
+				<LabelField name="StatusIcon" id="134" DisplayImportance="Usual">
+					<DataPath>OccupiedRooms.StatusIcon</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<ShowInFooter>false</ShowInFooter>
+					<Width>2</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="StatusIconContextMenu" id="135"/>
+					<ExtendedTooltip name="StatusIconExtendedTooltip" id="136"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="AccountingDate" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Accounting date</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="MealType" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Meal type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Mahlzeittyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип питания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.MealTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ServiceGroup" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Service group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Dienstgruppe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набор услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ServiceGroups</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OccupiedRooms" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Occupied rooms</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>OccupiedRooms.AccommodationTemplate</Field>
+				<Field>OccupiedRooms.AccountingDate</Field>
+				<Field>OccupiedRooms.CheckInDate</Field>
+				<Field>OccupiedRooms.CheckOutDate</Field>
+				<Field>OccupiedRooms.Client</Field>
+				<Field>OccupiedRooms.ClientType</Field>
+				<Field>OccupiedRooms.Customer</Field>
+				<Field>OccupiedRooms.DiscountType</Field>
+				<Field>OccupiedRooms.GuestGroup</Field>
+				<Field>OccupiedRooms.Hotel</Field>
+				<Field>OccupiedRooms.NumberOfAdults</Field>
+				<Field>OccupiedRooms.NumberOfBreakfasts</Field>
+				<Field>OccupiedRooms.NumberOfChildren</Field>
+				<Field>OccupiedRooms.NumberOfDinners</Field>
+				<Field>OccupiedRooms.NumberOfInfants</Field>
+				<Field>OccupiedRooms.NumberOfLunches</Field>
+				<Field>OccupiedRooms.NumberOfPersons</Field>
+				<Field>OccupiedRooms.NumberOfTeenagers</Field>
+				<Field>OccupiedRooms.ParentDoc</Field>
+				<Field>OccupiedRooms.Resource</Field>
+				<Field>OccupiedRooms.Room</Field>
+				<Field>OccupiedRooms.RoomType</Field>
+				<Field>OccupiedRooms.Service</Field>
+				<Field>OccupiedRooms.StatusIcon</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>SELECT
+	Rooms.Hotel AS Hotel,
+	Rooms.AccountingDate AS AccountingDate,
+	Rooms.Client AS Client,
+	Rooms.Service AS Service,
+	Rooms.ParentDoc.Customer AS Customer,
+	Rooms.ParentDoc.Room AS Room,
+	Rooms.ParentDoc.RoomType AS RoomType,
+	Rooms.ParentDoc.Resource AS Resource,
+	Rooms.ParentDoc.ClientType AS ClientType,
+	Rooms.ParentDoc.DiscountType AS DiscountType,
+	Rooms.ParentDoc.AccommodationType AS AccommodationType,
+	Rooms.ParentDoc.GuestGroup AS GuestGroup,
+	Rooms.ParentDoc.AccommodationTemplate AS AccommodationTemplate,
+	Rooms.ParentDoc.CheckInDate AS CheckInDate,
+	Rooms.ParentDoc.CheckOutDate AS CheckOutDate,
+	Rooms.ParentDoc AS ParentDoc,
+	ISNULL(Rooms.ParentDoc.NumberOfPersons, 0) AS NumberOfPersons,
+	ISNULL(Rooms.ParentDoc.NumberOfAdults, 0) AS NumberOfAdults,
+	ISNULL(Rooms.ParentDoc.NumberOfTeenagers, 0) AS NumberOfTeenagers,
+	ISNULL(Rooms.ParentDoc.NumberOfChildren, 0) AS NumberOfChildren,
+	ISNULL(Rooms.ParentDoc.NumberOfInfants, 0) AS NumberOfInfants,
+	Rooms.StatusIcon AS StatusIcon,
+	ServiceRegistrations.NumberOfBreakfasts AS NumberOfBreakfasts,
+	ServiceRegistrations.NumberOfLunches AS NumberOfLunches,
+	ServiceRegistrations.NumberOfDinners AS NumberOfDinners
+FROM
+	(SELECT
+		Services.Hotel AS Hotel,
+		Services.AccountingDate AS AccountingDate,
+		Services.Client AS Client,
+		Services.ParentDoc AS ParentDoc,
+		Services.Service AS Service,
+		Services.StatusIcon AS StatusIcon
+	FROM
+		(SELECT
+			SalesMovements.Hotel AS Hotel,
+			CASE
+				WHEN SalesMovements.ServicePackage.RoomRevenueService = SalesMovements.Service
+						AND SalesMovements.ServicePackage.IsMealBoardTerm
+						AND SalesMovements.ServicePackage.IsBB
+					THEN DATEADD(SalesMovements.ServiceDate, DAY, 1)
+				ELSE SalesMovements.ServiceDate
+			END AS AccountingDate,
+			SalesMovements.Client AS Client,
+			SalesMovements.ParentDoc AS ParentDoc,
+			CASE
+				WHEN SalesMovements.ParentDoc REFS Document.Accommodation
+						AND ISNULL(SalesMovements.ParentDoc.AccommodationStatus.IsInHouse, FALSE)
+					THEN ""
+				WHEN SalesMovements.ParentDoc REFS Document.Accommodation
+						AND NOT ISNULL(SalesMovements.ParentDoc.AccommodationStatus.IsInHouse, FALSE)
+					THEN "↗"
+				ELSE ""
+			END AS StatusIcon,
+			CASE
+				WHEN ISNULL(SalesMovements.ParentDoc.ServicePackage.IsMealBoardTerm, FALSE)
+					THEN SalesMovements.ParentDoc.ServicePackage
+				ELSE SalesMovements.Service
+			END AS Service
+		FROM
+			AccumulationRegister.Sales AS SalesMovements
+		WHERE
+			CASE
+				WHEN SalesMovements.ServicePackage.RoomRevenueService = SalesMovements.Service
+						AND SalesMovements.ServicePackage.IsMealBoardTerm
+						AND SalesMovements.ServicePackage.IsBB
+					THEN DATEADD(SalesMovements.ServiceDate, DAY, 1)
+				ELSE SalesMovements.ServiceDate
+			END = &amp;qAccountingDate
+			AND SalesMovements.Hotel = &amp;qHotel
+			AND (&amp;qUseMealServices
+						AND SalesMovements.Service IN (&amp;qMealServices)
+					OR NOT &amp;qUseMealServices
+						AND SalesMovements.GuestDays &lt;&gt; 0)
+		
+		UNION ALL
+		
+		SELECT
+			SalesForecastMovements.Hotel,
+			CASE
+				WHEN SalesForecastMovements.ServicePackage.RoomRevenueService = SalesForecastMovements.Service
+						AND SalesForecastMovements.ServicePackage.IsMealBoardTerm
+						AND SalesForecastMovements.ServicePackage.IsBB
+					THEN DATEADD(SalesForecastMovements.ServiceDate, DAY, 1)
+				ELSE SalesForecastMovements.ServiceDate
+			END,
+			SalesForecastMovements.Client,
+			SalesForecastMovements.ParentDoc,
+			CASE
+				WHEN SalesForecastMovements.ParentDoc REFS Document.Accommodation
+						AND ISNULL(SalesForecastMovements.ParentDoc.AccommodationStatus.IsInHouse, FALSE)
+					THEN ""
+				WHEN SalesForecastMovements.ParentDoc REFS Document.Accommodation
+						AND NOT ISNULL(SalesForecastMovements.ParentDoc.AccommodationStatus.IsInHouse, FALSE)
+					THEN "↗"
+				WHEN SalesForecastMovements.ParentDoc REFS Document.Reservation
+					THEN "↘"
+				ELSE ""
+			END,
+			CASE
+				WHEN ISNULL(SalesForecastMovements.ParentDoc.ServicePackage.IsMealBoardTerm, FALSE)
+					THEN SalesForecastMovements.ParentDoc.ServicePackage
+				ELSE SalesForecastMovements.Service
+			END
+		FROM
+			AccumulationRegister.SalesForecast AS SalesForecastMovements
+		WHERE
+			CASE
+				WHEN SalesForecastMovements.ServicePackage.RoomRevenueService = SalesForecastMovements.Service
+						AND SalesForecastMovements.ServicePackage.IsMealBoardTerm
+						AND SalesForecastMovements.ServicePackage.IsBB
+					THEN DATEADD(SalesForecastMovements.ServiceDate, DAY, 1)
+				ELSE SalesForecastMovements.ServiceDate
+			END = &amp;qAccountingDate
+			AND SalesForecastMovements.Hotel = &amp;qHotel
+			AND (&amp;qUseMealServices
+						AND SalesForecastMovements.Service IN (&amp;qMealServices)
+					OR NOT &amp;qUseMealServices
+						AND SalesForecastMovements.GuestDays &lt;&gt; 0)
+			AND &amp;qUseForecast) AS Services
+	
+	GROUP BY
+		Services.Hotel,
+		Services.AccountingDate,
+		Services.Client,
+		Services.ParentDoc,
+		Services.Service,
+		Services.StatusIcon) AS Rooms
+		LEFT JOIN (SELECT
+			Registrations.Hotel AS Hotel,
+			Registrations.AccountingDate AS AccountingDate,
+			Registrations.Client AS Client,
+			Registrations.ParentDoc AS ParentDoc,
+			SUM(CASE
+					WHEN Registrations.MealType = VALUE(Enum.MealTypes.Breakfast)
+						THEN Registrations.Quantity
+					ELSE 0
+				END) AS NumberOfBreakfasts,
+			SUM(CASE
+					WHEN Registrations.MealType = VALUE(Enum.MealTypes.Lunch)
+						THEN Registrations.Quantity
+					ELSE 0
+				END) AS NumberOfLunches,
+			SUM(CASE
+					WHEN Registrations.MealType = VALUE(Enum.MealTypes.Dinner)
+						THEN Registrations.Quantity
+					ELSE 0
+				END) AS NumberOfDinners
+		FROM
+			Document.ServiceRegistration AS Registrations
+		WHERE
+			Registrations.Posted
+			AND Registrations.AccountingDate = &amp;qAccountingDate
+			AND Registrations.Hotel = &amp;qHotel
+		
+		GROUP BY
+			Registrations.Hotel,
+			Registrations.AccountingDate,
+			Registrations.Client,
+			Registrations.ParentDoc) AS ServiceRegistrations
+		ON (ServiceRegistrations.Hotel = Rooms.Hotel)
+			AND (ServiceRegistrations.AccountingDate = Rooms.AccountingDate)
+			AND (ServiceRegistrations.Client = Rooms.Client)
+			AND (ServiceRegistrations.ParentDoc = Rooms.ParentDoc)</QueryText>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Room.SortCode</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>CheckInDate</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>AccommodationType.SortCode</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Hotel" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalBreakfasts" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total breakfasts</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Frühstück</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего завтраков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalLunches" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total lunches</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Mittagessen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего обедов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalDinners" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total dinners</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Abendessen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего ужинов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalAdults" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total adults</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Erwachsene</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего взрослых</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalTeenagers" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total teenagers</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Teenager</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего подростков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalChildren" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total children</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Kinder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего детей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalInfants" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total infants</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Insgesamt Säuglinge</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего младенцев</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalPersons" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total persons</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Personen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего человек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalKids" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total kids</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Kids</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего детей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalRooms" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total rooms</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Zimmer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalPersonsStr" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total persons</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Personen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего человек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TotalRoomsStr" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total rooms</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gesamt Zimmer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="DoRegistration" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Register</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Adult</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>DoRegistration</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="UndoRegistration" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Undo registration</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierung Abbrechen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить регистрацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Undo registration</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Undo</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UndoRegistration</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="DoRoomRegistration" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Register room</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer Registrieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарег. весь номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Do room registration</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Clients</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>DoRoomRegistration</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

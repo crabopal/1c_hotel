@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="RoomRate" id="1">
+			<DataPath>Record.RoomRate</DataPath>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="RoomRateContextMenu" id="2"/>
+			<ExtendedTooltip name="RoomRateExtendedTooltip" id="3"/>
+		</InputField>
+		<InputField name="Hotel" id="4">
+			<DataPath>Record.Hotel</DataPath>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="HotelContextMenu" id="5"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="AccommodationTemplate" id="7">
+			<DataPath>Record.AccommodationTemplate</DataPath>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="AccommodationTemplateContextMenu" id="8"/>
+			<ExtendedTooltip name="AccommodationTemplateExtendedTooltip" id="9"/>
+		</InputField>
+		<InputField name="RoomType" id="10">
+			<DataPath>Record.RoomType</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Owner</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Record.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<InputHint>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>&lt;any if empty&gt;</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>&lt;beliebig, wenn leer&gt;</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;любой, если пусто&gt;</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="RoomTypeContextMenu" id="11"/>
+			<ExtendedTooltip name="RoomTypeExtendedTooltip" id="12"/>
+		</InputField>
+		<LabelDecoration name="Splitter" id="19">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="SplitterContextMenu" id="20"/>
+			<ExtendedTooltip name="SplitterExtendedTooltip" id="21"/>
+		</LabelDecoration>
+		<InputField name="AccommodationType" id="13">
+			<DataPath>Record.AccommodationType</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="AccommodationTypeContextMenu" id="14"/>
+			<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="15"/>
+			<Events>
+				<Event name="StartChoice">AccommodationTypeStartChoice</Event>
+			</Events>
+		</InputField>
+		<InputField name="TemplateLineNumber" id="22">
+			<DataPath>Record.TemplateLineNumber</DataPath>
+			<SpinButton>true</SpinButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="TemplateLineNumberContextMenu" id="23"/>
+			<ExtendedTooltip name="TemplateLineNumberExtendedTooltip" id="24"/>
+		</InputField>
+		<InputField name="ToAccommodationType" id="16">
+			<DataPath>Record.ToAccommodationType</DataPath>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ToAccommodationTypeContextMenu" id="17"/>
+			<ExtendedTooltip name="ToAccommodationTypeExtendedTooltip" id="18"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.RoomRateOverrides</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

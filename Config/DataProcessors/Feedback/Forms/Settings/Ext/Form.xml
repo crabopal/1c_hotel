@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormSave" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Save</CommandName>
+				<ExtendedTooltip name="FormSaveExtendedTooltip" id="24"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Password" id="25">
+			<DataPath>Object.Password</DataPath>
+			<PasswordMode>true</PasswordMode>
+			<ContextMenu name="PasswordContextMenu" id="26"/>
+			<ExtendedTooltip name="PasswordExtendedTooltip" id="27"/>
+		</InputField>
+		<Table name="UsersSurveys" id="1">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.UsersSurveys</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Укажите пользователя и опрос, который будет автоматически запускаться при запуске данной обработки указанным пользователем.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Укажите пользователя и опрос, который будет автоматически запускаться при запуске данной обработки указанным пользователем.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Укажите пользователя и опрос, который будет автоматически запускаться при запуске данной обработки указанным пользователем.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="UsersSurveysContextMenu" id="2"/>
+			<AutoCommandBar name="UsersSurveysCommandBar" id="3"/>
+			<ExtendedTooltip name="UsersSurveysExtendedTooltip" id="4"/>
+			<SearchStringAddition name="UsersSurveysSearchString" id="5">
+				<AdditionSource>
+					<Item>UsersSurveys</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="UsersSurveysSearchStringContextMenu" id="6"/>
+				<ExtendedTooltip name="UsersSurveysSearchStringExtendedTooltip" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="UsersSurveysViewStatus" id="8">
+				<AdditionSource>
+					<Item>UsersSurveys</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="UsersSurveysViewStatusContextMenu" id="9"/>
+				<ExtendedTooltip name="UsersSurveysViewStatusExtendedTooltip" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="UsersSurveysSearchControl" id="11">
+				<AdditionSource>
+					<Item>UsersSurveys</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="UsersSurveysSearchControlContextMenu" id="12"/>
+				<ExtendedTooltip name="UsersSurveysSearchControlExtendedTooltip" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="UsersSurveysLineNumber" id="14">
+					<DataPath>Object.UsersSurveys.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="UsersSurveysLineNumberContextMenu" id="15"/>
+					<ExtendedTooltip name="UsersSurveysLineNumberExtendedTooltip" id="16"/>
+				</LabelField>
+				<InputField name="UsersSurveysUser" id="17">
+					<DataPath>Object.UsersSurveys.User</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="UsersSurveysUserContextMenu" id="18"/>
+					<ExtendedTooltip name="UsersSurveysUserExtendedTooltip" id="19"/>
+				</InputField>
+				<InputField name="UsersSurveysSurvey" id="20">
+					<DataPath>Object.UsersSurveys.Survey</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="UsersSurveysSurveyContextMenu" id="21"/>
+					<ExtendedTooltip name="UsersSurveysSurveyExtendedTooltip" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Feedback</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Save" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Sparen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Save</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>CreateInitialImage</ExcludedCommand>
+		<ExcludedCommand>ReadChanges</ExcludedCommand>
+		<ExcludedCommand>WriteChanges</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="OnlineSyncIsActive" id="37">
+			<DataPath>Object.OnlineSyncIsActive</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is active</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gilt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Действует</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="OnlineSyncIsActiveContextMenu" id="38"/>
+			<ExtendedTooltip name="OnlineSyncIsActiveExtendedTooltip" id="39"/>
+			<Events>
+				<Event name="OnChange">OnlineSyncIsActiveOnChange</Event>
+			</Events>
+		</CheckBoxField>
+		<Pages name="GroupSettingsPages" id="91">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="GroupSettingsPagesExtendedTooltip" id="92"/>
+			<ChildItems>
+				<Page name="GroupBasicSettings" id="93">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Basic settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Grundeinstellungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupBasicSettingsExtendedTooltip" id="94"/>
+					<ChildItems>
+						<UsualGroup name="GroupCode" id="52">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCodeExtendedTooltip" id="53"/>
+							<ChildItems>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+								<CheckBoxField name="IsMaster" id="7">
+									<DataPath>Object.IsMaster</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsMasterContextMenu" id="8"/>
+									<ExtendedTooltip name="IsMasterExtendedTooltip" id="9"/>
+								</CheckBoxField>
+								<CheckBoxField name="DeleteMessageAfterConfirmation" id="122">
+									<DataPath>Object.DeleteMessageAfterConfirmation</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DeleteMessageAfterConfirmationContextMenu" id="123"/>
+									<ExtendedTooltip name="DeleteMessageAfterConfirmationExtendedTooltip" id="124"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Description" id="4">
+							<DataPath>Object.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="DescriptionContextMenu" id="5"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+						</InputField>
+						<UsualGroup name="GroupNo" id="60">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupNoExtendedTooltip" id="61"/>
+							<ChildItems>
+								<InputField name="SentNo" id="54">
+									<DataPath>Object.SentNo</DataPath>
+									<ContextMenu name="SentNoContextMenu" id="55"/>
+									<ExtendedTooltip name="SentNoExtendedTooltip" id="56"/>
+								</InputField>
+								<InputField name="ReceivedNo" id="57">
+									<DataPath>Object.ReceivedNo</DataPath>
+									<ContextMenu name="ReceivedNoContextMenu" id="58"/>
+									<ExtendedTooltip name="ReceivedNoExtendedTooltip" id="59"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupFilter" id="97">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupFilterExtendedTooltip" id="98"/>
+							<ChildItems>
+								<InputField name="Hotel" id="10">
+									<DataPath>Object.Hotel</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Filter by hotel</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Filter nach Hotel</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Фильтр по гостинице</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="HotelContextMenu" id="11"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="12"/>
+								</InputField>
+								<InputField name="ObjectsInMessage" id="74">
+									<DataPath>Object.ObjectsInMessage</DataPath>
+									<ContextMenu name="ObjectsInMessageContextMenu" id="75"/>
+									<ExtendedTooltip name="ObjectsInMessageExtendedTooltip" id="76"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="DataExchangePassword" id="40">
+							<DataPath>Object.DataExchangePassword</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="DataExchangePasswordContextMenu" id="41"/>
+							<ExtendedTooltip name="DataExchangePasswordExtendedTooltip" id="42"/>
+						</InputField>
+						<UsualGroup name="GroupGuestGroups" id="64">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupGuestGroupsExtendedTooltip" id="65"/>
+							<ChildItems>
+								<InputField name="GuestGroupsCodesFrom" id="43">
+									<DataPath>Object.GuestGroupsCodesFrom</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="GuestGroupsCodesFromContextMenu" id="44"/>
+									<ExtendedTooltip name="GuestGroupsCodesFromExtendedTooltip" id="45"/>
+								</InputField>
+								<InputField name="GuestGroupsCodesTo" id="46">
+									<DataPath>Object.GuestGroupsCodesTo</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="GuestGroupsCodesToContextMenu" id="47"/>
+									<ExtendedTooltip name="GuestGroupsCodesToExtendedTooltip" id="48"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="GroupSendSettings" id="95">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Send settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Einstellungen senden</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки отправки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GroupSendSettingsExtendedTooltip" id="96"/>
+					<ChildItems>
+						<InputField name="ExchangePlanDeliveryType" id="77">
+							<DataPath>Object.ExchangePlanDeliveryType</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ExchangePlanDeliveryTypeContextMenu" id="78"/>
+							<ExtendedTooltip name="ExchangePlanDeliveryTypeExtendedTooltip" id="79"/>
+							<Events>
+								<Event name="OnChange">ExchangePlanDeliveryTypeOnChange</Event>
+							</Events>
+						</InputField>
+						<Pages name="GroupSendSettingsPages" id="83">
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="GroupSendSettingsPagesExtendedTooltip" id="84"/>
+							<ChildItems>
+								<Page name="GroupLocal" id="85">
+									<ExtendedTooltip name="GroupLocalExtendedTooltip" id="86"/>
+									<ChildItems>
+										<InputField name="Path" id="80">
+											<DataPath>Object.Path</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="PathContextMenu" id="81"/>
+											<ExtendedTooltip name="PathExtendedTooltip" id="82"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="GroupFTP" id="87">
+									<ExtendedTooltip name="GroupFTPExtendedTooltip" id="88"/>
+									<ChildItems>
+										<UsualGroup name="GroupFTPMain" id="99">
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupFTPMainExtendedTooltip" id="100"/>
+											<ChildItems>
+												<InputField name="DataExchangeFTPHost" id="16">
+													<DataPath>Object.DataExchangeFTPHost</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="DataExchangeFTPHostContextMenu" id="17"/>
+													<ExtendedTooltip name="DataExchangeFTPHostExtendedTooltip" id="18"/>
+												</InputField>
+												<InputField name="DataExchangeFTPPort" id="19">
+													<DataPath>Object.DataExchangeFTPPort</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Port</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Port</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Порт</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="DataExchangeFTPPortContextMenu" id="20"/>
+													<ExtendedTooltip name="DataExchangeFTPPortExtendedTooltip" id="21"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="DataExchangeFTPPath" id="22">
+											<DataPath>Object.DataExchangeFTPPath</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>FTP host path</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>FTP-host-Pfad</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Папка FTP сервера</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="DataExchangeFTPPathContextMenu" id="23"/>
+											<ExtendedTooltip name="DataExchangeFTPPathExtendedTooltip" id="24"/>
+										</InputField>
+										<InputField name="DataExchangeFTPUser" id="25">
+											<DataPath>Object.DataExchangeFTPUser</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>FTP server login name</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>FTP Server Login Namen</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя пользователя FTP сервера</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="DataExchangeFTPUserContextMenu" id="26"/>
+											<ExtendedTooltip name="DataExchangeFTPUserExtendedTooltip" id="27"/>
+										</InputField>
+										<UsualGroup name="GroupFTPUser" id="62">
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupFTPUserExtendedTooltip" id="63"/>
+											<ChildItems>
+												<InputField name="DataExchangeFTPUserPassword" id="28">
+													<DataPath>Object.DataExchangeFTPUserPassword</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>FTP server login password</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>FTP Server Login Passwort</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пароль пользователя FTP сервера</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="DataExchangeFTPUserPasswordContextMenu" id="29"/>
+													<ExtendedTooltip name="DataExchangeFTPUserPasswordExtendedTooltip" id="30"/>
+												</InputField>
+												<CheckBoxField name="DataExchangeFTPUsePassiveMode" id="31">
+													<DataPath>Object.DataExchangeFTPUsePassiveMode</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Use passive mode</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Passiv-Modus verwenden</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Использовать пассивный режим</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DataExchangeFTPUsePassiveModeContextMenu" id="32"/>
+													<ExtendedTooltip name="DataExchangeFTPUsePassiveModeExtendedTooltip" id="33"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+								<Page name="GroupWebService" id="89">
+									<ExtendedTooltip name="GroupWebServiceExtendedTooltip" id="90"/>
+									<ChildItems>
+										<InputField name="DataExchangeWSDLHost" id="13">
+											<DataPath>Object.DataExchangeWSDLHost</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="DataExchangeWSDLHostContextMenu" id="14"/>
+											<ExtendedTooltip name="DataExchangeWSDLHostExtendedTooltip" id="15"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="GroupHTTP" id="104">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group HTTP</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="GroupHTTPExtendedTooltip" id="105"/>
+									<ChildItems>
+										<UsualGroup name="GroupServer" id="120">
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupServerExtendedTooltip" id="121"/>
+											<ChildItems>
+												<InputField name="HttpServer" id="106">
+													<DataPath>Object.HttpServer</DataPath>
+													<ContextMenu name="HttpServerContextMenu" id="107"/>
+													<ExtendedTooltip name="HttpServerExtendedTooltip" id="108"/>
+												</InputField>
+												<InputField name="HttpPort" id="109">
+													<DataPath>Object.HttpPort</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ContextMenu name="HttpPortContextMenu" id="110"/>
+													<ExtendedTooltip name="HttpPortExtendedTooltip" id="111"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="HttpAddress" id="117">
+											<DataPath>Object.HttpAddress</DataPath>
+											<ContextMenu name="HttpAddressContextMenu" id="118"/>
+											<ExtendedTooltip name="HttpAddressExtendedTooltip" id="119"/>
+										</InputField>
+										<CheckBoxField name="HttpUseSsl" id="114">
+											<DataPath>Object.HttpUseSsl</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="HttpUseSslContextMenu" id="115"/>
+											<ExtendedTooltip name="HttpUseSslExtendedTooltip" id="116"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="GroupCheck" id="66">
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCheckExtendedTooltip" id="67"/>
+			<ChildItems>
+				<CheckBoxField name="DeletionMark" id="68">
+					<DataPath>Object.DeletionMark</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="DeletionMarkContextMenu" id="69"/>
+					<ExtendedTooltip name="DeletionMarkExtendedTooltip" id="70"/>
+				</CheckBoxField>
+				<CheckBoxField name="IgnoreMessagesWithChanges" id="101">
+					<DataPath>Object.IgnoreMessagesWithChanges</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IgnoreMessagesWithChangesContextMenu" id="102"/>
+					<ExtendedTooltip name="IgnoreMessagesWithChangesExtendedTooltip" id="103"/>
+				</CheckBoxField>
+				<CheckBoxField name="IsDebugMode" id="49">
+					<DataPath>Object.IsDebugMode</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsDebugModeContextMenu" id="50"/>
+					<ExtendedTooltip name="IsDebugModeExtendedTooltip" id="51"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:ExchangePlanObject.CentralOfficeExchangePlan</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

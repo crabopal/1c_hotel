@@ -1,0 +1,2365 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormWriteAndClose" id="44">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="FormWriteAndCloseExtendedTooltip" id="45"/>
+			</Button>
+			<Button name="FormWrite" id="469">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="FormWriteExtendedTooltip" id="470"/>
+			</Button>
+			<Button name="FormChangeHistory" id="412">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.ChangeHistory</CommandName>
+				<ExtendedTooltip name="FormChangeHistoryExtendedTooltip" id="413"/>
+			</Button>
+			<Button name="FormClose" id="46">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="FormCloseExtendedTooltip" id="47"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="2"/>
+			<ChildItems>
+				<InputField name="Code" id="3">
+					<DataPath>Object.Code</DataPath>
+					<ContextMenu name="CodeContextMenu" id="4"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="5"/>
+				</InputField>
+				<InputField name="Hotel" id="6">
+					<DataPath>Object.Hotel</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="HotelContextMenu" id="7"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="8"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupHeader2" id="408">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header2</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeader2ExtendedTooltip" id="409"/>
+			<ChildItems>
+				<InputField name="Description" id="396">
+					<DataPath>Object.Description</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DescriptionContextMenu" id="397"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="398"/>
+				</InputField>
+				<InputField name="Parent" id="9">
+					<DataPath>Object.Parent</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parent folder</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Elterngruppe</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Родительская группа</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ParentContextMenu" id="10"/>
+					<ExtendedTooltip name="ParentExtendedTooltip" id="11"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="GroupPages" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="GroupPagesExtendedTooltip" id="13"/>
+			<ChildItems>
+				<Page name="PagePermissions" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permissions</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rechte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Права</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Appointment</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PagePermissionsExtendedTooltip" id="15"/>
+					<ChildItems>
+						<InputField name="SearchString" id="399">
+							<DataPath>SearchString</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="SearchStringContextMenu" id="400"/>
+							<ExtendedTooltip name="SearchStringExtendedTooltip" id="401"/>
+							<Events>
+								<Event name="AutoComplete">SearchStringAutoComplete</Event>
+								<Event name="Clearing">SearchStringClearing</Event>
+							</Events>
+						</InputField>
+						<Table name="Permissions" id="16">
+							<Representation>List</Representation>
+							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Permissions</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<SearchStringLocation>None</SearchStringLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="PermissionsContextMenu" id="17"/>
+							<AutoCommandBar name="PermissionsCommandBar" id="18">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="CheckAll" id="402">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.CheckAll</CommandName>
+										<ExtendedTooltip name="CheckAllExtendedTooltip" id="403"/>
+									</Button>
+									<Button name="UnCheckAll" id="404">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.UnCheckAll</CommandName>
+										<ExtendedTooltip name="UnCheckAllExtendedTooltip" id="405"/>
+									</Button>
+									<Button name="ShowActivePermission" id="406">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ShowActivePermission</CommandName>
+										<ExtendedTooltip name="ShowActivePermissionExtendedTooltip" id="407"/>
+									</Button>
+									<Button name="ShowInactivePermission" id="410">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ShowInactivePermission</CommandName>
+										<ExtendedTooltip name="ShowInactivePermissionExtendedTooltip" id="411"/>
+									</Button>
+									<Button name="PermissionsOutputList" id="414">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Permissions.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="PermissionsOutputListExtendedTooltip" id="415"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="PermissionsExtendedTooltip" id="19">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Height>2</Height>
+								<HorizontalStretch>true</HorizontalStretch>
+								<Font ref="style:NormalTextFont" bold="true" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+							</ExtendedTooltip>
+							<SearchStringAddition name="PermissionsSearchString" id="20">
+								<AdditionSource>
+									<Item>Permissions</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionsSearchStringContextMenu" id="21"/>
+								<ExtendedTooltip name="PermissionsSearchStringExtendedTooltip" id="22"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="PermissionsViewStatus" id="23">
+								<AdditionSource>
+									<Item>Permissions</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionsViewStatusContextMenu" id="24"/>
+								<ExtendedTooltip name="PermissionsViewStatusExtendedTooltip" id="25"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="PermissionsSearchControl" id="26">
+								<AdditionSource>
+									<Item>Permissions</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionsSearchControlContextMenu" id="27"/>
+								<ExtendedTooltip name="PermissionsSearchControlExtendedTooltip" id="28"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">PermissionsOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="PermissionsPermissionValue" id="29">
+									<DataPath>Permissions.PermissionValue</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Yes/No</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>liegt vor / liegt nicht vor</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Есть/Нет</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PermissionsPermissionValueContextMenu" id="30"/>
+									<ExtendedTooltip name="PermissionsPermissionValueExtendedTooltip" id="31"/>
+									<Events>
+										<Event name="OnChange">PermissionsPermissionValueOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="PermissionsPermissionName" id="32">
+									<DataPath>Permissions.PermissionName</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PermissionsPermissionNameContextMenu" id="33"/>
+									<ExtendedTooltip name="PermissionsPermissionNameExtendedTooltip" id="34"/>
+								</InputField>
+								<InputField name="PermissionsPermissionDescription" id="35">
+									<DataPath>Permissions.PermissionDescription</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Permission description</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Beschreibung des Rechts</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание права</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PermissionsPermissionDescriptionContextMenu" id="36"/>
+									<ExtendedTooltip name="PermissionsPermissionDescriptionExtendedTooltip" id="37"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PagePaymentMethodsAllowed" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payment methods and client types allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verfügbare Zahlungsmethoden und Kundentypen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные способы оплаты и типы клиентов</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.AccumulationRegister</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="PagePaymentMethodsAllowedExtendedTooltip" id="49"/>
+					<ChildItems>
+						<UsualGroup name="GroupPaymentMethodsAllowed" id="66">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group payment methods allowed</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPaymentMethodsAllowedExtendedTooltip" id="67"/>
+							<ChildItems>
+								<Table name="PaymentMethodsAllowed" id="50">
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Object.PaymentMethodsAllowed</DataPath>
+									<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="PaymentMethodsAllowedContextMenu" id="51"/>
+									<AutoCommandBar name="PaymentMethodsAllowedCommandBar" id="52">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="PaymentMethodsAllowedAdd" id="86">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.PaymentMethodsAllowed.StandardCommand.Add</CommandName>
+												<Picture>
+													<xr:Ref>CommonPicture.Add</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="PaymentMethodsAllowedAddExtendedTooltip" id="87"/>
+											</Button>
+											<Button name="PaymentMethodsAllowedDelete" id="88">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.PaymentMethodsAllowed.StandardCommand.Delete</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="PaymentMethodsAllowedDeleteExtendedTooltip" id="89"/>
+											</Button>
+											<Button name="PaymentMethodsAllowedOutputList" id="416">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.PaymentMethodsAllowed.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="PaymentMethodsAllowedOutputListExtendedTooltip" id="417"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="PaymentMethodsAllowedExtendedTooltip" id="53">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Payment methods allowed (nothing allowed to choose if table is empty)</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Verfügbare Zahlungsmethoden (für Zahlungen muss die Tabelle Zeilen enthalten) </v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Доступные способы оплаты (для проведения платежей в таблице должны быть строки) </v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<SearchStringAddition name="PaymentMethodsAllowedSearchString" id="54">
+										<AdditionSource>
+											<Item>PaymentMethodsAllowed</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="PaymentMethodsAllowedSearchStringContextMenu" id="55"/>
+										<ExtendedTooltip name="PaymentMethodsAllowedSearchStringExtendedTooltip" id="56"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="PaymentMethodsAllowedViewStatus" id="57">
+										<AdditionSource>
+											<Item>PaymentMethodsAllowed</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="PaymentMethodsAllowedViewStatusContextMenu" id="58"/>
+										<ExtendedTooltip name="PaymentMethodsAllowedViewStatusExtendedTooltip" id="59"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="PaymentMethodsAllowedSearchControl" id="60">
+										<AdditionSource>
+											<Item>PaymentMethodsAllowed</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="PaymentMethodsAllowedSearchControlContextMenu" id="61"/>
+										<ExtendedTooltip name="PaymentMethodsAllowedSearchControlExtendedTooltip" id="62"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="PaymentMethodsAllowedPaymentMethod" id="63">
+											<DataPath>Object.PaymentMethodsAllowed.PaymentMethod</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="PaymentMethodsAllowedPaymentMethodContextMenu" id="64"/>
+											<ExtendedTooltip name="PaymentMethodsAllowedPaymentMethodExtendedTooltip" id="65"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupClientTypesAllowed" id="68">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group client types allowed</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupClientTypesAllowedExtendedTooltip" id="69"/>
+							<ChildItems>
+								<Table name="ClientTypesAllowed" id="70">
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Object.ClientTypesAllowed</DataPath>
+									<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ClientTypesAllowedContextMenu" id="71"/>
+									<AutoCommandBar name="ClientTypesAllowedCommandBar" id="72">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ClientTypesAllowedAdd" id="90">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.ClientTypesAllowed.StandardCommand.Add</CommandName>
+												<Picture>
+													<xr:Ref>CommonPicture.Add</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ClientTypesAllowedAddExtendedTooltip" id="91"/>
+											</Button>
+											<Button name="ClientTypesAllowedDelete" id="92">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Item.ClientTypesAllowed.StandardCommand.Delete</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ClientTypesAllowedDeleteExtendedTooltip" id="93"/>
+											</Button>
+											<Button name="ClientTypesAllowedOutputList" id="418">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ClientTypesAllowed.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="ClientTypesAllowedOutputListExtendedTooltip" id="419"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ClientTypesAllowedExtendedTooltip" id="73">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Client types allowed (all client types are allowed to choose if table is empty)</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>de</v8:lang>
+												<v8:content>Verfügbare Kundentypen (wenn die Tabelle leer ist, sind alle Kundentypen verfügbar)</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Доступные типы клиентов (если таблица пустая, то для выбора будут доступны все типы клиентов)</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<SearchStringAddition name="ClientTypesAllowedSearchString" id="74">
+										<AdditionSource>
+											<Item>ClientTypesAllowed</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ClientTypesAllowedSearchStringContextMenu" id="75"/>
+										<ExtendedTooltip name="ClientTypesAllowedSearchStringExtendedTooltip" id="76"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ClientTypesAllowedViewStatus" id="77">
+										<AdditionSource>
+											<Item>ClientTypesAllowed</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ClientTypesAllowedViewStatusContextMenu" id="78"/>
+										<ExtendedTooltip name="ClientTypesAllowedViewStatusExtendedTooltip" id="79"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ClientTypesAllowedSearchControl" id="80">
+										<AdditionSource>
+											<Item>ClientTypesAllowed</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ClientTypesAllowedSearchControlContextMenu" id="81"/>
+										<ExtendedTooltip name="ClientTypesAllowedSearchControlExtendedTooltip" id="82"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ClientTypesAllowedClientType" id="83">
+											<DataPath>Object.ClientTypesAllowed.ClientType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ClientTypesAllowedClientTypeContextMenu" id="84"/>
+											<ExtendedTooltip name="ClientTypesAllowedClientTypeExtendedTooltip" id="85"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="PageRoomRatesAllowed" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room rates and discount types allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verfügbare Tarife und Preisnachlasstypen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные тарифы и типы скидок</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.InputFieldCalculator</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="PageRoomRatesAllowedExtendedTooltip" id="95"/>
+					<ChildItems>
+						<Table name="RoomRatesAllowed" id="96">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.RoomRatesAllowed</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="RoomRatesAllowedContextMenu" id="97"/>
+							<AutoCommandBar name="RoomRatesAllowedCommandBar" id="98">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="RoomRatesAllowedAdd" id="115">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.RoomRatesAllowed.StandardCommand.Add</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.Add</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="RoomRatesAllowedAddExtendedTooltip" id="116"/>
+									</Button>
+									<Button name="RoomRatesAllowedDelete" id="117">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.RoomRatesAllowed.StandardCommand.Delete</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="RoomRatesAllowedDeleteExtendedTooltip" id="118"/>
+									</Button>
+									<Button name="RoomRatesAllowedOutputList" id="420">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.RoomRatesAllowed.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="RoomRatesAllowedOutputListExtendedTooltip" id="421"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="RoomRatesAllowedExtendedTooltip" id="99">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<HorizontalStretch>true</HorizontalStretch>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Room rates allowed (all room rates are allowed if table is empty)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Verfügbare Tarife (wenn die Tabelle leer ist, sind alle Tarife verfügbar)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступные тарифы (если таблица пустая, то будут доступны все тарифы)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="RoomRatesAllowedSearchString" id="100">
+								<AdditionSource>
+									<Item>RoomRatesAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomRatesAllowedSearchStringContextMenu" id="101"/>
+								<ExtendedTooltip name="RoomRatesAllowedSearchStringExtendedTooltip" id="102"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="RoomRatesAllowedViewStatus" id="103">
+								<AdditionSource>
+									<Item>RoomRatesAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomRatesAllowedViewStatusContextMenu" id="104"/>
+								<ExtendedTooltip name="RoomRatesAllowedViewStatusExtendedTooltip" id="105"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="RoomRatesAllowedSearchControl" id="106">
+								<AdditionSource>
+									<Item>RoomRatesAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomRatesAllowedSearchControlContextMenu" id="107"/>
+								<ExtendedTooltip name="RoomRatesAllowedSearchControlExtendedTooltip" id="108"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="RoomRatesAllowedRoomRate" id="112">
+									<DataPath>Object.RoomRatesAllowed.RoomRate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomRatesAllowedRoomRateContextMenu" id="113"/>
+									<ExtendedTooltip name="RoomRatesAllowedRoomRateExtendedTooltip" id="114"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="DiscountTypesAllowed" id="119">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.DiscountTypesAllowed</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="DiscountTypesAllowedContextMenu" id="120"/>
+							<AutoCommandBar name="DiscountTypesAllowedCommandBar" id="121">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="DiscountTypesAllowedAdd" id="138">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.DiscountTypesAllowed.StandardCommand.Add</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.Add</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="DiscountTypesAllowedAddExtendedTooltip" id="139"/>
+									</Button>
+									<Button name="DiscountTypesAllowedDelete" id="140">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.DiscountTypesAllowed.StandardCommand.Delete</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="DiscountTypesAllowedDeleteExtendedTooltip" id="141"/>
+									</Button>
+									<Button name="DiscountTypesAllowedOutputList" id="422">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.DiscountTypesAllowed.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="DiscountTypesAllowedOutputListExtendedTooltip" id="423"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="DiscountTypesAllowedExtendedTooltip" id="122">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Discount types allowed (all discount types are allowed if table is empty)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Verfügbare Preisnachlasstypen (wenn die Tabelle leer ist sind alle Preisnachlasstypen verfügbar)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступные типы скидок (если таблица пустая, то будут доступны все типы скидок)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="DiscountTypesAllowedSearchString" id="123">
+								<AdditionSource>
+									<Item>DiscountTypesAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DiscountTypesAllowedSearchStringContextMenu" id="124"/>
+								<ExtendedTooltip name="DiscountTypesAllowedSearchStringExtendedTooltip" id="125"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="DiscountTypesAllowedViewStatus" id="126">
+								<AdditionSource>
+									<Item>DiscountTypesAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DiscountTypesAllowedViewStatusContextMenu" id="127"/>
+								<ExtendedTooltip name="DiscountTypesAllowedViewStatusExtendedTooltip" id="128"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="DiscountTypesAllowedSearchControl" id="129">
+								<AdditionSource>
+									<Item>DiscountTypesAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="DiscountTypesAllowedSearchControlContextMenu" id="130"/>
+								<ExtendedTooltip name="DiscountTypesAllowedSearchControlExtendedTooltip" id="131"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="DiscountTypesAllowedDiscountType" id="135">
+									<DataPath>Object.DiscountTypesAllowed.DiscountType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DiscountTypesAllowedDiscountTypeContextMenu" id="136"/>
+									<ExtendedTooltip name="DiscountTypesAllowedDiscountTypeExtendedTooltip" id="137"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageRoomStatusesAllowed" id="142">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Room statuses allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verfügbare Zimmerstatus</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные статусы номеров</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.TidyingUp</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageRoomStatusesAllowedExtendedTooltip" id="143"/>
+					<ChildItems>
+						<Table name="RoomStatusesAllowed" id="144">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.RoomStatusesAllowed</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="RoomStatusesAllowedContextMenu" id="145"/>
+							<AutoCommandBar name="RoomStatusesAllowedCommandBar" id="146">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="RoomStatusesAllowedAdd" id="163">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.RoomStatusesAllowed.StandardCommand.Add</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.Add</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="RoomStatusesAllowedAddExtendedTooltip" id="164"/>
+									</Button>
+									<Button name="RoomStatusesAllowedDelete" id="165">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.RoomStatusesAllowed.StandardCommand.Delete</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="RoomStatusesAllowedDeleteExtendedTooltip" id="166"/>
+									</Button>
+									<Button name="RoomStatusesAllowedOutputList" id="424">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.RoomStatusesAllowed.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="RoomStatusesAllowedOutputListExtendedTooltip" id="425"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="RoomStatusesAllowedExtendedTooltip" id="147">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Room statuses allowed (room statuses change will not be possible if table is empty)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Verfügbare Zimmerstatus (Zimmerstatus ändern wird nicht möglich sein, wenn Tabelle leer ist)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступные статусы номеров (если таблица пустая, то изменение статусов будет не возможно)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="RoomStatusesAllowedSearchString" id="148">
+								<AdditionSource>
+									<Item>RoomStatusesAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomStatusesAllowedSearchStringContextMenu" id="149"/>
+								<ExtendedTooltip name="RoomStatusesAllowedSearchStringExtendedTooltip" id="150"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="RoomStatusesAllowedViewStatus" id="151">
+								<AdditionSource>
+									<Item>RoomStatusesAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomStatusesAllowedViewStatusContextMenu" id="152"/>
+								<ExtendedTooltip name="RoomStatusesAllowedViewStatusExtendedTooltip" id="153"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="RoomStatusesAllowedSearchControl" id="154">
+								<AdditionSource>
+									<Item>RoomStatusesAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="RoomStatusesAllowedSearchControlContextMenu" id="155"/>
+								<ExtendedTooltip name="RoomStatusesAllowedSearchControlExtendedTooltip" id="156"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="RoomStatusesAllowedRoomStatus" id="160">
+									<DataPath>Object.RoomStatusesAllowed.RoomStatus</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomStatusesAllowedRoomStatusContextMenu" id="161"/>
+									<ExtendedTooltip name="RoomStatusesAllowedRoomStatusExtendedTooltip" id="162"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageDoorLockSystemAuthorizationsAllowed" id="167">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Door lock auth. sets allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verfügbare Zugangsregeln für den Zugang zum Schlosssystem</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные правила доступа в замк. системе</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Vacant</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageDoorLockSystemAuthorizationsAllowedExtendedTooltip" id="168"/>
+					<ChildItems>
+						<Table name="DoorLockSystemAuthorizations" id="169">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.DoorLockSystemAuthorizations</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="DoorLockSystemAuthorizationsContextMenu" id="170"/>
+							<AutoCommandBar name="DoorLockSystemAuthorizationsCommandBar" id="171">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="DoorLockSystemAuthorizationsAdd" id="188">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.DoorLockSystemAuthorizations.StandardCommand.Add</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.Add</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="DoorLockSystemAuthorizationsAddExtendedTooltip" id="189"/>
+									</Button>
+									<Button name="DoorLockSystemAuthorizationsDelete" id="190">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.DoorLockSystemAuthorizations.StandardCommand.Delete</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="DoorLockSystemAuthorizationsDeleteExtendedTooltip" id="191"/>
+									</Button>
+									<Button name="DoorLockSystemAuthorizationsOutputList" id="426">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.DoorLockSystemAuthorizations.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="DoorLockSystemAuthorizationsOutputListExtendedTooltip" id="427"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="DoorLockSystemAuthorizationsExtendedTooltip" id="172">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Door lock system authorization rule sets allowed (all Door lock system authorization are allowed if table is empty)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Verfügbare Regelpakete für den Zugang zum System elektronischer Schlösser (wenn die Tabelle leer ist, sind alle  verfügbar)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступные наборы правил доступа в системе электронных замков(если таблица пустая, то будут доступны все)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="DoorLockSystemAuthorizationsSearchString" id="173">
+								<AdditionSource>
+									<Item>DoorLockSystemAuthorizations</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DoorLockSystemAuthorizationsSearchStringContextMenu" id="174"/>
+								<ExtendedTooltip name="DoorLockSystemAuthorizationsSearchStringExtendedTooltip" id="175"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="DoorLockSystemAuthorizationsViewStatus" id="176">
+								<AdditionSource>
+									<Item>DoorLockSystemAuthorizations</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="DoorLockSystemAuthorizationsViewStatusContextMenu" id="177"/>
+								<ExtendedTooltip name="DoorLockSystemAuthorizationsViewStatusExtendedTooltip" id="178"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="DoorLockSystemAuthorizationsSearchControl" id="179">
+								<AdditionSource>
+									<Item>DoorLockSystemAuthorizations</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="DoorLockSystemAuthorizationsSearchControlContextMenu" id="180"/>
+								<ExtendedTooltip name="DoorLockSystemAuthorizationsSearchControlExtendedTooltip" id="181"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="DoorLockSystemAuthorizationsDoorLockSystemAuthorization" id="185">
+									<DataPath>Object.DoorLockSystemAuthorizations.DoorLockSystemAuthorization</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DoorLockSystemAuthorizationsDoorLockSystemAuthorizationContextMenu" id="186"/>
+									<ExtendedTooltip name="DoorLockSystemAuthorizationsDoorLockSystemAuthorizationExtendedTooltip" id="187"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageHotelAllowed" id="192">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotels allowed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Erschwingliche Hotels</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные гостиницы</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Rooms</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageHotelAllowedExtendedTooltip" id="193"/>
+					<ChildItems>
+						<Table name="HotelAllowed" id="194">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.HotelAllowed</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="HotelAllowedContextMenu" id="195"/>
+							<AutoCommandBar name="HotelAllowedCommandBar" id="196">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="HotelAllowedAdd" id="324">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.HotelAllowed.StandardCommand.Add</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.Add</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="HotelAllowedAddExtendedTooltip" id="325"/>
+									</Button>
+									<Button name="HotelAllowedDelete" id="326">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.HotelAllowed.StandardCommand.Delete</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="HotelAllowedDeleteExtendedTooltip" id="327"/>
+									</Button>
+									<Button name="HotelAllowedOutputList" id="428">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.HotelAllowed.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="HotelAllowedOutputListExtendedTooltip" id="429"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="HotelAllowedExtendedTooltip" id="197">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Hotels available for employees (all Hotels are allowed if table is empty)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Verfügbare Hotelangestellten (wenn die Tabelle leer ist, sind alle  verfügbar)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступные гостиницы сотрудника  (если таблица пустая, то будут доступны все гостиницы)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="HotelAllowedSearchString" id="198">
+								<AdditionSource>
+									<Item>HotelAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelAllowedSearchStringContextMenu" id="199"/>
+								<ExtendedTooltip name="HotelAllowedSearchStringExtendedTooltip" id="200"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="HotelAllowedViewStatus" id="201">
+								<AdditionSource>
+									<Item>HotelAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelAllowedViewStatusContextMenu" id="202"/>
+								<ExtendedTooltip name="HotelAllowedViewStatusExtendedTooltip" id="203"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="HotelAllowedSearchControl" id="204">
+								<AdditionSource>
+									<Item>HotelAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="HotelAllowedSearchControlContextMenu" id="205"/>
+								<ExtendedTooltip name="HotelAllowedSearchControlExtendedTooltip" id="206"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="HotelAllowedHotel" id="210">
+									<DataPath>Object.HotelAllowed.Hotel</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="HotelAllowedHotelContextMenu" id="211"/>
+									<ExtendedTooltip name="HotelAllowedHotelExtendedTooltip" id="212"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageFolioOperationsAllowed" id="217">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio operations allowed per folio types</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio Operationen pro Folio Typen erlaubt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разрешенные операции по типам лицевых счетов</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Settings</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageFolioOperationsAllowedExtendedTooltip" id="218"/>
+					<ChildItems>
+						<Table name="FolioOperationsAllowed" id="219">
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.FolioOperationsAllowed</DataPath>
+							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="FolioOperationsAllowedContextMenu" id="220"/>
+							<AutoCommandBar name="FolioOperationsAllowedCommandBar" id="221">
+								<ChildItems>
+									<Button name="FolioOperationsAllowedOutputList" id="430">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.FolioOperationsAllowed.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="FolioOperationsAllowedOutputListExtendedTooltip" id="431"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="FolioOperationsAllowedExtendedTooltip" id="222">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Folio operations allowed per folio types</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>Folio Operationen pro Folio Typen erlaubt</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Разрешенные операции по типам лицевых счетов</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<SearchStringAddition name="FolioOperationsAllowedSearchString" id="223">
+								<AdditionSource>
+									<Item>FolioOperationsAllowed</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FolioOperationsAllowedSearchStringContextMenu" id="224"/>
+								<ExtendedTooltip name="FolioOperationsAllowedSearchStringExtendedTooltip" id="225"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="FolioOperationsAllowedViewStatus" id="226">
+								<AdditionSource>
+									<Item>FolioOperationsAllowed</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="FolioOperationsAllowedViewStatusContextMenu" id="227"/>
+								<ExtendedTooltip name="FolioOperationsAllowedViewStatusExtendedTooltip" id="228"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="FolioOperationsAllowedSearchControl" id="229">
+								<AdditionSource>
+									<Item>FolioOperationsAllowed</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="FolioOperationsAllowedSearchControlContextMenu" id="230"/>
+								<ExtendedTooltip name="FolioOperationsAllowedSearchControlExtendedTooltip" id="231"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="FolioOperationsAllowedLineNumber" id="232">
+									<DataPath>Object.FolioOperationsAllowed.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FolioOperationsAllowedLineNumberContextMenu" id="233"/>
+									<ExtendedTooltip name="FolioOperationsAllowedLineNumberExtendedTooltip" id="234"/>
+								</LabelField>
+								<InputField name="FolioOperationsAllowedFolioType" id="235">
+									<DataPath>Object.FolioOperationsAllowed.FolioType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FolioOperationsAllowedFolioTypeContextMenu" id="236"/>
+									<ExtendedTooltip name="FolioOperationsAllowedFolioTypeExtendedTooltip" id="237"/>
+								</InputField>
+								<InputField name="FolioOperationsAllowedServiceGroup" id="238">
+									<DataPath>Object.FolioOperationsAllowed.ServiceGroup</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FolioOperationsAllowedServiceGroupContextMenu" id="239"/>
+									<ExtendedTooltip name="FolioOperationsAllowedServiceGroupExtendedTooltip" id="240"/>
+								</InputField>
+								<CheckBoxField name="FolioOperationsAllowedStornoForbidden" id="241">
+									<DataPath>Object.FolioOperationsAllowed.StornoForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedStornoForbiddenContextMenu" id="242"/>
+									<ExtendedTooltip name="FolioOperationsAllowedStornoForbiddenExtendedTooltip" id="243"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedChargeTransfersToFolioForbidden" id="244">
+									<DataPath>Object.FolioOperationsAllowed.ChargeTransfersToFolioForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedChargeTransfersToFolioForbiddenContextMenu" id="245"/>
+									<ExtendedTooltip name="FolioOperationsAllowedChargeTransfersToFolioForbiddenExtendedTooltip" id="246"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedChargeTransfersFromFolioForbidden" id="247">
+									<DataPath>Object.FolioOperationsAllowed.ChargeTransfersFromFolioForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedChargeTransfersFromFolioForbiddenContextMenu" id="248"/>
+									<ExtendedTooltip name="FolioOperationsAllowedChargeTransfersFromFolioForbiddenExtendedTooltip" id="249"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedPaymentsForbidden" id="250">
+									<DataPath>Object.FolioOperationsAllowed.PaymentsForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedPaymentsForbiddenContextMenu" id="251"/>
+									<ExtendedTooltip name="FolioOperationsAllowedPaymentsForbiddenExtendedTooltip" id="252"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedReturnsForbidden" id="253">
+									<DataPath>Object.FolioOperationsAllowed.ReturnsForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedReturnsForbiddenContextMenu" id="254"/>
+									<ExtendedTooltip name="FolioOperationsAllowedReturnsForbiddenExtendedTooltip" id="255"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedDepositTransfersToFolioForbidden" id="256">
+									<DataPath>Object.FolioOperationsAllowed.DepositTransfersToFolioForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedDepositTransfersToFolioForbiddenContextMenu" id="257"/>
+									<ExtendedTooltip name="FolioOperationsAllowedDepositTransfersToFolioForbiddenExtendedTooltip" id="258"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedDepositTransfersFromFolioForbidden" id="259">
+									<DataPath>Object.FolioOperationsAllowed.DepositTransfersFromFolioForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedDepositTransfersFromFolioForbiddenContextMenu" id="260"/>
+									<ExtendedTooltip name="FolioOperationsAllowedDepositTransfersFromFolioForbiddenExtendedTooltip" id="261"/>
+								</CheckBoxField>
+								<CheckBoxField name="FolioOperationsAllowedPreauthorisationsForbidden" id="262">
+									<DataPath>Object.FolioOperationsAllowed.PreauthorisationsForbidden</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="FolioOperationsAllowedPreauthorisationsForbiddenContextMenu" id="263"/>
+									<ExtendedTooltip name="FolioOperationsAllowedPreauthorisationsForbiddenExtendedTooltip" id="264"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageDefaults" id="265">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Defaults and settings</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Einstellungen und Parameter als Standard</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки и параметры по умолчанию</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.PaperClip</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageDefaultsExtendedTooltip" id="266"/>
+					<ChildItems>
+						<InputField name="FillDefaultRoomPolicy" id="267">
+							<DataPath>Object.FillDefaultRoomPolicy</DataPath>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="FillDefaultRoomPolicyContextMenu" id="268"/>
+							<ExtendedTooltip name="FillDefaultRoomPolicyExtendedTooltip" id="269"/>
+						</InputField>
+						<InputField name="DepartmentAllowed" id="270">
+							<DataPath>Object.DepartmentAllowed</DataPath>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="DepartmentAllowedContextMenu" id="271"/>
+							<ExtendedTooltip name="DepartmentAllowedExtendedTooltip" id="272"/>
+						</InputField>
+						<InputField name="ServicesServiceGroup" id="477">
+							<DataPath>Object.ServicesServiceGroup</DataPath>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ServicesServiceGroupContextMenu" id="478"/>
+							<ExtendedTooltip name="ServicesServiceGroupExtendedTooltip" id="479"/>
+						</InputField>
+						<InputField name="EmployeesFolder" id="474">
+							<DataPath>Object.EmployeesFolder</DataPath>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="EmployeesFolderContextMenu" id="475"/>
+							<ExtendedTooltip name="EmployeesFolderExtendedTooltip" id="476"/>
+						</InputField>
+						<InputField name="TimeToShowVacantRooms" id="273">
+							<DataPath>Object.TimeToShowVacantRooms</DataPath>
+							<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+							<ContextMenu name="TimeToShowVacantRoomsContextMenu" id="274"/>
+							<ExtendedTooltip name="TimeToShowVacantRoomsExtendedTooltip" id="275">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>(23:59:59 by default)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>de</v8:lang>
+										<v8:content>(23:59:59 Standard-Einstellung)</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>(23:59:59 по умолчанию)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+						<UsualGroup name="GroupCheckOut" id="279">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group check out</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCheckOutExtendedTooltip" id="280"/>
+							<ChildItems>
+								<InputField name="AllowedCheckOutDelayTime" id="276">
+									<DataPath>Object.AllowedCheckOutDelayTime</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<Width>5</Width>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="AllowedCheckOutDelayTimeContextMenu" id="277"/>
+									<ExtendedTooltip name="AllowedCheckOutDelayTimeExtendedTooltip" id="278"/>
+								</InputField>
+								<InputField name="RoomExaminationFreeOfChargeTime" id="281">
+									<DataPath>Object.RoomExaminationFreeOfChargeTime</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<Width>5</Width>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="RoomExaminationFreeOfChargeTimeContextMenu" id="282"/>
+									<ExtendedTooltip name="RoomExaminationFreeOfChargeTimeExtendedTooltip" id="283"/>
+								</InputField>
+								<InputField name="AllowedAnnulationDelayTime" id="284">
+									<DataPath>Object.AllowedAnnulationDelayTime</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<Width>5</Width>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="AllowedAnnulationDelayTimeContextMenu" id="285"/>
+									<ExtendedTooltip name="AllowedAnnulationDelayTimeExtendedTooltip" id="286"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupAllowedAnnulationDelayTime" id="287">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group allowed annulation delay time</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupAllowedAnnulationDelayTimeExtendedTooltip" id="288"/>
+							<ChildItems>
+								<CheckBoxField name="DoNotHideOneRoomGuestsAttributes" id="289">
+									<DataPath>Object.DoNotHideOneRoomGuestsAttributes</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DoNotHideOneRoomGuestsAttributesContextMenu" id="290"/>
+									<ExtendedTooltip name="DoNotHideOneRoomGuestsAttributesExtendedTooltip" id="291"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="DoNotShowBalancesInLists" id="292">
+							<DataPath>Object.DoNotShowBalancesInLists</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotShowBalancesInListsContextMenu" id="293"/>
+							<ExtendedTooltip name="DoNotShowBalancesInListsExtendedTooltip" id="294"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotFillDefaultPaymentMethodInPayments" id="354">
+							<DataPath>Object.DoNotFillDefaultPaymentMethodInPayments</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotFillDefaultPaymentMethodInPaymentsContextMenu" id="355"/>
+							<ExtendedTooltip name="DoNotFillDefaultPaymentMethodInPaymentsExtendedTooltip" id="356"/>
+						</CheckBoxField>
+						<CheckBoxField name="ShowReturnPaymentMethodsInReturnDocumentsOnly" id="295">
+							<DataPath>Object.ShowReturnPaymentMethodsInReturnDocumentsOnly</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowReturnPaymentMethodsInReturnDocumentsOnlyContextMenu" id="296"/>
+							<ExtendedTooltip name="ShowReturnPaymentMethodsInReturnDocumentsOnlyExtendedTooltip" id="297"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotCopyGroupClientsAddresses" id="298">
+							<DataPath>Object.DoNotCopyGroupClientsAddresses</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotCopyGroupClientsAddressesContextMenu" id="299"/>
+							<ExtendedTooltip name="DoNotCopyGroupClientsAddressesExtendedTooltip" id="300"/>
+						</CheckBoxField>
+						<CheckBoxField name="ShowReservationNumbersInConfirmation" id="303">
+							<DataPath>Object.ShowReservationNumbersInConfirmation</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowReservationNumbersInConfirmationContextMenu" id="304"/>
+							<ExtendedTooltip name="ShowReservationNumbersInConfirmationExtendedTooltip" id="305"/>
+						</CheckBoxField>
+						<CheckBoxField name="ServicesChoiceIsByCodes" id="306">
+							<DataPath>Object.ServicesChoiceIsByCodes</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ServicesChoiceIsByCodesContextMenu" id="307"/>
+							<ExtendedTooltip name="ServicesChoiceIsByCodesExtendedTooltip" id="308"/>
+						</CheckBoxField>
+						<UsualGroup name="GroupShowReservations" id="301">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group show reservations</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group show reservations</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupShowReservationsExtendedTooltip" id="302"/>
+						</UsualGroup>
+						<CheckBoxField name="ShowGuestGroupDescriptionInCustomerColumns" id="309">
+							<DataPath>Object.ShowGuestGroupDescriptionInCustomerColumns</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowGuestGroupDescriptionInCustomerColumnsContextMenu" id="310"/>
+							<ExtendedTooltip name="ShowGuestGroupDescriptionInCustomerColumnsExtendedTooltip" id="311"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotUseGuestsSubstringSearch" id="312">
+							<DataPath>Object.DoNotUseGuestsSubstringSearch</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotUseGuestsSubstringSearchContextMenu" id="313"/>
+							<ExtendedTooltip name="DoNotUseGuestsSubstringSearchExtendedTooltip" id="314"/>
+						</CheckBoxField>
+						<CheckBoxField name="UseCurrentDateAsDefaultReservationCheckInDate" id="315">
+							<DataPath>Object.UseCurrentDateAsDefaultReservationCheckInDate</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="UseCurrentDateAsDefaultReservationCheckInDateContextMenu" id="316"/>
+							<ExtendedTooltip name="UseCurrentDateAsDefaultReservationCheckInDateExtendedTooltip" id="317"/>
+						</CheckBoxField>
+						<CheckBoxField name="ShowAllGuestsInTheRoomByDefault" id="318">
+							<DataPath>Object.ShowAllGuestsInTheRoomByDefault</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowAllGuestsInTheRoomByDefaultContextMenu" id="319"/>
+							<ExtendedTooltip name="ShowAllGuestsInTheRoomByDefaultExtendedTooltip" id="320"/>
+						</CheckBoxField>
+						<CheckBoxField name="AskForChangeRoomDateAndTime" id="321">
+							<DataPath>Object.AskForChangeRoomDateAndTime</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="AskForChangeRoomDateAndTimeContextMenu" id="322"/>
+							<ExtendedTooltip name="AskForChangeRoomDateAndTimeExtendedTooltip" id="323"/>
+						</CheckBoxField>
+						<CheckBoxField name="AskForCheckInOnReservationOpen" id="342">
+							<DataPath>Object.AskForCheckInOnReservationOpen</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="AskForCheckInOnReservationOpenContextMenu" id="343"/>
+							<ExtendedTooltip name="AskForCheckInOnReservationOpenExtendedTooltip" id="344"/>
+						</CheckBoxField>
+						<CheckBoxField name="NoDebtAllowedForGroupInhouseGuests" id="357">
+							<DataPath>Object.NoDebtAllowedForGroupInhouseGuests</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="NoDebtAllowedForGroupInhouseGuestsContextMenu" id="358"/>
+							<ExtendedTooltip name="NoDebtAllowedForGroupInhouseGuestsExtendedTooltip" id="359"/>
+						</CheckBoxField>
+						<CheckBoxField name="ShowExpectedCheckInListByGuestsByDefault" id="432">
+							<DataPath>Object.ShowExpectedCheckInListByGuestsByDefault</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowExpectedCheckInListByGuestsByDefaultContextMenu" id="433"/>
+							<ExtendedTooltip name="ShowExpectedCheckInListByGuestsByDefaultExtendedTooltip" id="434"/>
+						</CheckBoxField>
+						<CheckBoxField name="ShowGuestPassportNumberInExpectedArrivalAndInHouseLists" id="435">
+							<DataPath>Object.ShowGuestPassportNumberInExpectedArrivalAndInHouseLists</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ShowGuestPassportNumberInExpectedArrivalAndInHouseListsContextMenu" id="436"/>
+							<ExtendedTooltip name="ShowGuestPassportNumberInExpectedArrivalAndInHouseListsExtendedTooltip" id="437"/>
+						</CheckBoxField>
+						<CheckBoxField name="IfFoliosListIsOpenedFromGroupItemThenShowReservationFoliosToo" id="438">
+							<DataPath>Object.IfFoliosListIsOpenedFromGroupItemThenShowReservationFoliosToo</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IfFoliosListIsOpenedFromGroupItemThenShowReservationFoliosTooContextMenu" id="439"/>
+							<ExtendedTooltip name="IfFoliosListIsOpenedFromGroupItemThenShowReservationFoliosTooExtendedTooltip" id="440"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotOpenFoliosListAfterAccommodationChange" id="471">
+							<DataPath>Object.DoNotOpenFoliosListAfterAccommodationChange</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotOpenFoliosListAfterAccommodationChangeContextMenu" id="472"/>
+							<ExtendedTooltip name="DoNotOpenFoliosListAfterAccommodationChangeExtendedTooltip" id="473"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="PageExtensions" id="328">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Extensions</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Erweiterungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расширения</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.InputFieldOpen</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageExtensionsExtendedTooltip" id="329"/>
+					<ChildItems>
+						<UsualGroup name="GroupDesktopOverrides" id="486">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Desktop override</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Desktop-Überschreibung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Переопределение рабочего стола</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupDesktopOverridesExtendedTooltip" id="487"/>
+							<ChildItems>
+								<UsualGroup name="GroupDesktopOverridesLeft" id="488">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Left</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Links</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Левая</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDesktopOverridesLeftExtendedTooltip" id="489"/>
+									<ChildItems>
+										<InputField name="DesktopExternalDataProcessor" id="330">
+											<DataPath>Object.DesktopExternalDataProcessor</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ClearButton>true</ClearButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="DesktopExternalDataProcessorContextMenu" id="331"/>
+											<ExtendedTooltip name="DesktopExternalDataProcessorExtendedTooltip" id="332"/>
+											<Events>
+												<Event name="OnChange">DesktopExternalDataProcessorOnChange</Event>
+											</Events>
+										</InputField>
+										<LabelDecoration name="DecorationOr" id="483">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:BorderColor</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>- or -</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>- oder -</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>- или -</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="DecorationOrContextMenu" id="484"/>
+											<ExtendedTooltip name="DecorationOrExtendedTooltip" id="485"/>
+										</LabelDecoration>
+										<InputField name="DesktopForm" id="480">
+											<DataPath>Object.DesktopForm</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="DesktopFormContextMenu" id="481"/>
+											<ExtendedTooltip name="DesktopFormExtendedTooltip" id="482"/>
+											<Events>
+												<Event name="OnChange">DesktopFormOnChange</Event>
+												<Event name="StartChoice">DesktopFormStartChoice</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupColumns" id="497">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Columns</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Spalte</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Колонки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupColumnsExtendedTooltip" id="498"/>
+							<ChildItems>
+								<UsualGroup name="GroupLaunchModePermissions" id="447">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Launch modes</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Startmodus</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Режимы запуска</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="GroupLaunchModePermissionsExtendedTooltip" id="448"/>
+									<ChildItems>
+										<InputField name="DesktopApplicationWindowMode" id="492">
+											<DataPath>Object.DesktopApplicationWindowMode</DataPath>
+											<CreateButton>false</CreateButton>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Normal</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Normal</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Обычный</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Workplace (no main menue and home window)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Arbeitsplatz (kein Hauptmenü und Home-Fenster)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Рабочее место (нет главного меню и домашнего экрана)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Kiosk (Full screen and no system controls and menues)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Kiosk (Vollbild und keine Systemsteuerungen und Menüs)</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Киоск (Полноэкранный режим без системных меню)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="DesktopApplicationWindowModeContextMenu" id="493"/>
+											<ExtendedTooltip name="DesktopApplicationWindowModeExtendedTooltip" id="494"/>
+										</InputField>
+										<CheckBoxField name="EmployeesAreNotAllowedToRunMoreThenOneSessionPerWorkstation" id="441">
+											<DataPath>Object.EmployeesAreNotAllowedToRunMoreThenOneSessionPerWorkstation</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="EmployeesAreNotAllowedToRunMoreThenOneSessionPerWorkstationContextMenu" id="442"/>
+											<ExtendedTooltip name="EmployeesAreNotAllowedToRunMoreThenOneSessionPerWorkstationExtendedTooltip" id="443"/>
+										</CheckBoxField>
+										<CheckBoxField name="ThickClientLaunchIsForbidden" id="444">
+											<DataPath>Object.ThickClientLaunchIsForbidden</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ThickClientLaunchIsForbiddenContextMenu" id="445"/>
+											<ExtendedTooltip name="ThickClientLaunchIsForbiddenExtendedTooltip" id="446"/>
+										</CheckBoxField>
+										<CheckBoxField name="ThinClientLaunchIsForbidden" id="449">
+											<DataPath>Object.ThinClientLaunchIsForbidden</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ThinClientLaunchIsForbiddenContextMenu" id="450"/>
+											<ExtendedTooltip name="ThinClientLaunchIsForbiddenExtendedTooltip" id="451"/>
+										</CheckBoxField>
+										<CheckBoxField name="WebClientLaunchIsForbidden" id="456">
+											<DataPath>Object.WebClientLaunchIsForbidden</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="WebClientLaunchIsForbiddenContextMenu" id="457"/>
+											<ExtendedTooltip name="WebClientLaunchIsForbiddenExtendedTooltip" id="458"/>
+										</CheckBoxField>
+										<CheckBoxField name="MobileClientLaunchIsForbidden" id="459">
+											<DataPath>Object.MobileClientLaunchIsForbidden</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="MobileClientLaunchIsForbiddenContextMenu" id="460"/>
+											<ExtendedTooltip name="MobileClientLaunchIsForbiddenExtendedTooltip" id="461"/>
+										</CheckBoxField>
+										<CheckBoxField name="LogOffAfterProgramExit" id="369">
+											<DataPath>Object.LogOffAfterProgramExit</DataPath>
+											<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="LogOffAfterProgramExitContextMenu" id="370"/>
+											<ExtendedTooltip name="LogOffAfterProgramExitExtendedTooltip" id="371"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupRightColumn" id="499">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Right column</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Rechte Spalte</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Правая колонка</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupRightColumnExtendedTooltip" id="500"/>
+									<ChildItems>
+										<UsualGroup name="OnlineBooking" id="464">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Online booking</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Online-Buchung</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Онлайн бронирование</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>\</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="OnlineBookingExtendedTooltip" id="465"/>
+											<ChildItems>
+												<CheckBoxField name="ReturnAvailableRoomsForExternalSystems" id="360">
+													<DataPath>Object.ReturnAvailableRoomsForExternalSystems</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ReturnAvailableRoomsForExternalSystemsContextMenu" id="361"/>
+													<ExtendedTooltip name="ReturnAvailableRoomsForExternalSystemsExtendedTooltip" id="362"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="GroupChatBot" id="462">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Chat-bot</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Chat-bot</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Chat-bot</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ExtendedTooltip name="GroupChatBotExtendedTooltip" id="463"/>
+											<ChildItems>
+												<InputField name="ChatRole" id="339">
+													<DataPath>Object.ChatRole</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Chat role</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Chat role</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Роль в чате</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Left</TitleLocation>
+													<ContextMenu name="ChatRoleContextMenu" id="340"/>
+													<ExtendedTooltip name="ChatRoleExtendedTooltip" id="341"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupDeprecated" id="495">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Deprecated</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Deprecated</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Устаревшие параметры</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupDeprecatedExtendedTooltip" id="496"/>
+							<ChildItems>
+								<CheckBoxField name="ShowUnassignedRoomsEmpty" id="345">
+									<DataPath>Object.ShowUnassignedRoomsEmpty</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ShowUnassignedRoomsEmptyContextMenu" id="346"/>
+									<ExtendedTooltip name="ShowUnassignedRoomsEmptyExtendedTooltip" id="347"/>
+								</CheckBoxField>
+								<CheckBoxField name="AlwaysCheckInOneSelectedPerson" id="348">
+									<DataPath>Object.AlwaysCheckInOneSelectedPerson</DataPath>
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Always check-in one selected person even if there are other this group one room guests</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content> Immer den gewählten Gast check-in, wuch wenn es andere Gäste aus dieser Gruppe aus demselben Zimmer gibt</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Всегда селить одного выбранного гостя даже в случаях, когда есть другие гости этой группы из того же номера</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="AlwaysCheckInOneSelectedPersonContextMenu" id="349"/>
+									<ExtendedTooltip name="AlwaysCheckInOneSelectedPersonExtendedTooltip" id="350"/>
+								</CheckBoxField>
+								<CheckBoxField name="DoNotUseGuestGroupFilterForNewOperations" id="351">
+									<DataPath>Object.DoNotUseGuestGroupFilterForNewOperations</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DoNotUseGuestGroupFilterForNewOperationsContextMenu" id="352"/>
+									<ExtendedTooltip name="DoNotUseGuestGroupFilterForNewOperationsExtendedTooltip" id="353"/>
+								</CheckBoxField>
+								<LabelDecoration name="Decoration1" id="366">
+									<Visible>false</Visible>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<ContextMenu name="Decoration1ContextMenu" id="367"/>
+									<ExtendedTooltip name="Decoration1ExtendedTooltip" id="368"/>
+								</LabelDecoration>
+								<CheckBoxField name="SimpleMode" id="363">
+									<DataPath>Object.SimpleMode</DataPath>
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Simple mode (accommodation templates catalog should be filled)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Einfach-Modus (Vorlagen für die Unterbringung der Gäste Katalog sollte ausgefüllt werden)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Режим простых (тонких) форм (должен быть заполнен справочник шаблонов размещения гостей)</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="SimpleModeContextMenu" id="364"/>
+									<ExtendedTooltip name="SimpleModeExtendedTooltip" id="365"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="PageInfobaseUserRoles" id="372">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Infobase user roles</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Infobase user roles</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Роли пользователя ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Occupied</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PageInfobaseUserRolesExtendedTooltip" id="373"/>
+					<ChildItems>
+						<Table name="InfobaseUserRoles" id="374">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>TableBoxInfobaseUserRoles</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="InfobaseUserRolesContextMenu" id="375"/>
+							<AutoCommandBar name="InfobaseUserRolesCommandBar" id="376">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="InfobaseUserRolesExtendedTooltip" id="377"/>
+							<SearchStringAddition name="InfobaseUserRolesSearchString" id="378">
+								<AdditionSource>
+									<Item>InfobaseUserRoles</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="InfobaseUserRolesSearchStringContextMenu" id="379"/>
+								<ExtendedTooltip name="InfobaseUserRolesSearchStringExtendedTooltip" id="380"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="InfobaseUserRolesViewStatus" id="381">
+								<AdditionSource>
+									<Item>InfobaseUserRoles</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="InfobaseUserRolesViewStatusContextMenu" id="382"/>
+								<ExtendedTooltip name="InfobaseUserRolesViewStatusExtendedTooltip" id="383"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="InfobaseUserRolesSearchControl" id="384">
+								<AdditionSource>
+									<Item>InfobaseUserRoles</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="InfobaseUserRolesSearchControlContextMenu" id="385"/>
+								<ExtendedTooltip name="InfobaseUserRolesSearchControlExtendedTooltip" id="386"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeRowChange">InfobaseUserRolesBeforeRowChange</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="InfobaseUserRolesEnabled" id="393">
+									<DataPath>TableBoxInfobaseUserRoles.Enabled</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Yes/No</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>liegt vor / liegt nicht vor</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Есть/Нет</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="InfobaseUserRolesEnabledContextMenu" id="394"/>
+									<ExtendedTooltip name="InfobaseUserRolesEnabledExtendedTooltip" id="395"/>
+									<Events>
+										<Event name="OnChange">InfobaseUserRolesEnabledOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="InfobaseUserRolesRoleDescription" id="390">
+									<DataPath>TableBoxInfobaseUserRoles.RoleDescription</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Role description</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Beschreibung des Rolle</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание роли</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InfobaseUserRolesRoleDescriptionContextMenu" id="391"/>
+									<ExtendedTooltip name="InfobaseUserRolesRoleDescriptionExtendedTooltip" id="392"/>
+								</InputField>
+								<InputField name="InfobaseUserRolesRole" id="387">
+									<DataPath>TableBoxInfobaseUserRoles.Role</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Role</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Rolle</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Роль</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="InfobaseUserRolesRoleContextMenu" id="388"/>
+									<ExtendedTooltip name="InfobaseUserRolesRoleExtendedTooltip" id="389"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.PermissionGroups</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Permissions" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Permissions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Rechte</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="PermissionValue" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permission value</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="PermissionName" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permission name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="PermissionDescription" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permission description</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="PermissionSpecification" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permission specification</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="TableBoxInfobaseUserRoles" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Table box infobase user roles</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Role" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Role</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="RoleDescription" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Role description</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Enabled" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Enabled</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="SearchString" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Search &amp;string</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Suche nach &amp;Zeile</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск по &amp;строке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CheckAll" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check all</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Alle einschalten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CheckAll</Action>
+		</Command>
+		<Command name="UnCheckAll" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Uncheck all</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Uncheck all</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Un check all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UnCheckAll</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ShowActivePermission" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show active permissions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aktivierte Berechtigung anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать действующие права</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ShowActivePermission</Action>
+		</Command>
+		<Command name="ShowInactivePermission" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show inactive permissions</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Inaktive Berechtigung anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать недействующие права</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ShowInactivePermission</Action>
+		</Command>
+	</Commands>
+</Form>

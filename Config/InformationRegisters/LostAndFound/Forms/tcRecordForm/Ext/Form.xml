@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Popup name="FormGroupPrinting" id="59">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Print</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="FormGroupPrintingExtendedTooltip" id="60"/>
+				<ChildItems>
+					<ButtonGroup name="FormGroupPrintingDefault" id="61">
+						<ExtendedTooltip name="FormGroupPrintingDefaultExtendedTooltip" id="62"/>
+					</ButtonGroup>
+					<ButtonGroup name="FormGroupPrintingNotDefault" id="63">
+						<ExtendedTooltip name="FormGroupPrintingNotDefaultExtendedTooltip" id="64"/>
+						<ChildItems>
+							<ButtonGroup name="FormGroupPrintingNotDefaultMain" id="65">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Form group printing not default main</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="FormGroupPrintingNotDefaultMainExtendedTooltip" id="66"/>
+							</ButtonGroup>
+							<ButtonGroup name="FormGroupPrintingNotDefaultExtra" id="67">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Form group printing not default main</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="FormGroupPrintingNotDefaultExtraExtendedTooltip" id="68"/>
+							</ButtonGroup>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="FormPrintItemCard" id="115">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.PrintItemCard</CommandName>
+						<ExtendedTooltip name="FormPrintItemCardExtendedTooltip" id="116"/>
+					</Button>
+					<Button name="FormPrintItemsList" id="69">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.PrintItemsList</CommandName>
+						<ExtendedTooltip name="FormPrintItemsListExtendedTooltip" id="70"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnReadAtServer">OnReadAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopfzeile</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="41"/>
+			<ChildItems>
+				<UsualGroup name="Group1" id="117">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Group1ExtendedTooltip" id="118"/>
+					<ChildItems>
+						<InputField name="Code" id="1">
+							<DataPath>Record.Code</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<TitleLocation>Left</TitleLocation>
+							<Width>15</Width>
+							<ContextMenu name="CodeContextMenu" id="2"/>
+							<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+						</InputField>
+						<InputField name="CreateDate" id="106">
+							<DataPath>Record.CreateDate</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<TitleLocation>Left</TitleLocation>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="CreateDateContextMenu" id="107"/>
+							<ExtendedTooltip name="CreateDateExtendedTooltip" id="108"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Owner" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Owner</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Inhaber</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="OwnerExtendedTooltip" id="52"/>
+					<ChildItems>
+						<InputField name="Hotel" id="48">
+							<DataPath>Record.Hotel</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<TitleLocation>Left</TitleLocation>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="HotelContextMenu" id="49"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="50"/>
+						</InputField>
+						<InputField name="Author" id="13">
+							<DataPath>Record.Author</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Author</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Autor</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Автор</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ChoiceButton>false</ChoiceButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="AuthorContextMenu" id="14"/>
+							<ExtendedTooltip name="AuthorExtendedTooltip" id="15"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="DecorationSplitter2" id="74">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что найдено и где</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>What was found and where</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Was wurde gefunden und wo</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter2ContextMenu" id="75"/>
+			<ExtendedTooltip name="DecorationSplitter2ExtendedTooltip" id="76"/>
+		</LabelDecoration>
+		<InputField name="Remarks" id="19">
+			<DataPath>Record.Remarks</DataPath>
+			<DefaultItem>true</DefaultItem>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>What found</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Was gefunden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что найдено</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>None</TitleLocation>
+			<Width>2</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="RemarksContextMenu" id="20"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="21"/>
+		</InputField>
+		<InputField name="Room" id="7">
+			<DataPath>Record.Room</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>true</ClearButton>
+			<OpenButton>true</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Filter.Hotel</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Record.Hotel</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="RoomContextMenu" id="8"/>
+			<ExtendedTooltip name="RoomExtendedTooltip" id="9"/>
+			<Events>
+				<Event name="OnChange">RoomOnChange</Event>
+			</Events>
+		</InputField>
+		<LabelDecoration name="DecorationSplitter1" id="71">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кому принадлежит (если известно)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Owner (if known)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Inhaber (falls bekannt)</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter1ContextMenu" id="72"/>
+			<ExtendedTooltip name="DecorationSplitter1ExtendedTooltip" id="73"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupWhereFound" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Where found and owner</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wo gefunden und Inhaber</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Где найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupWhereFoundExtendedTooltip" id="43"/>
+			<ChildItems>
+				<UsualGroup name="Where" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Where</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wo</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Где</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="WhereExtendedTooltip" id="54"/>
+					<ChildItems>
+						<UsualGroup name="GroupGuest" id="101">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Guest</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gast</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Гость</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupGuestExtendedTooltip" id="102"/>
+							<ChildItems>
+								<InputField name="Guest" id="10">
+									<DataPath>Record.Guest</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="GuestContextMenu" id="11"/>
+									<ExtendedTooltip name="GuestExtendedTooltip" id="12"/>
+								</InputField>
+								<CheckBoxField name="HasMessage" id="37">
+									<DataPath>Record.HasMessage</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="HasMessageContextMenu" id="38"/>
+									<ExtendedTooltip name="HasMessageExtendedTooltip" id="39"/>
+									<Events>
+										<Event name="OnChange">HasMessageOnChange</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Group2" id="119">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Group2ExtendedTooltip" id="120"/>
+							<ChildItems>
+								<InputField name="GuestGroup" id="103">
+									<DataPath>Record.GuestGroup</DataPath>
+									<HorizontalStretch>false</HorizontalStretch>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Record.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="GuestGroupContextMenu" id="104"/>
+									<ExtendedTooltip name="GuestGroupExtendedTooltip" id="105"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="DecorationSplitter3" id="81">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто нашел и где хранится</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wer fand und wo lagerte</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Who found and where is stored</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter3ContextMenu" id="82"/>
+			<ExtendedTooltip name="DecorationSplitter3ExtendedTooltip" id="83"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupWhoFoundAndWhereStored" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Who found and where stored</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wer fand und wo lagerte</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто нашел и где хранится</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupWhoFoundAndWhereStoredExtendedTooltip" id="58"/>
+			<ChildItems>
+				<InputField name="DateWhenFound" id="4">
+					<DataPath>Record.DateWhenFound</DataPath>
+					<ContextMenu name="DateWhenFoundContextMenu" id="5"/>
+					<ExtendedTooltip name="DateWhenFoundExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="FoundBy" id="16">
+					<DataPath>Record.FoundBy</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Found by</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gefunden von</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кем найдено</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="FoundByContextMenu" id="17"/>
+					<ExtendedTooltip name="FoundByExtendedTooltip" id="18"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="StorePlace" id="22">
+			<DataPath>Record.StorePlace</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="StorePlaceContextMenu" id="23"/>
+			<ExtendedTooltip name="StorePlaceExtendedTooltip" id="24"/>
+			<Events>
+				<Event name="StartChoice">StorePlaceStartChoice</Event>
+			</Events>
+		</InputField>
+		<LabelDecoration name="DecorationSplitter4" id="84">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возврат</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Return</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zurückgekommen</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter4ContextMenu" id="85"/>
+			<ExtendedTooltip name="DecorationSplitter4ExtendedTooltip" id="86"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupIsReturned" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Return</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zurückgekommen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возврат</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupIsReturnedExtendedTooltip" id="45"/>
+			<ChildItems>
+				<UsualGroup name="WhenReturned" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>When returned</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wenn zurückgegeben</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Когда возвращено</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="WhenReturnedExtendedTooltip" id="47"/>
+					<ChildItems>
+						<CheckBoxField name="IsReturned" id="25">
+							<DataPath>Record.IsReturned</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Switcher</CheckBoxType>
+							<ContextMenu name="IsReturnedContextMenu" id="26"/>
+							<ExtendedTooltip name="IsReturnedExtendedTooltip" id="27"/>
+							<Events>
+								<Event name="OnChange">IsReturnedOnChange</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="WhoAndWhom" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Who and whom</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Wer und wen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кем и кому</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="WhoAndWhomExtendedTooltip" id="56"/>
+					<ChildItems>
+						<InputField name="DeliveredTo" id="34">
+							<DataPath>Record.DeliveredTo</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="DeliveredToContextMenu" id="35"/>
+							<ExtendedTooltip name="DeliveredToExtendedTooltip" id="36"/>
+						</InputField>
+						<InputField name="DeliveryRemarks" id="109">
+							<DataPath>Record.DeliveryRemarks</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="DeliveryRemarksContextMenu" id="110"/>
+							<ExtendedTooltip name="DeliveryRemarksExtendedTooltip" id="111"/>
+						</InputField>
+						<InputField name="DeliveredByPowerOfAttorney" id="112">
+							<DataPath>Record.DeliveredByPowerOfAttorney</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="DeliveredByPowerOfAttorneyContextMenu" id="113"/>
+							<ExtendedTooltip name="DeliveredByPowerOfAttorneyExtendedTooltip" id="114"/>
+						</InputField>
+						<UsualGroup name="GroupReturnTimestamp" id="121">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Returned by whom and when</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Von wem und wann zurückgegeben</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кем и когда возвращено</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupReturnTimestampExtendedTooltip" id="122"/>
+							<ChildItems>
+								<InputField name="DateWhenReturned" id="28">
+									<DataPath>Record.DateWhenReturned</DataPath>
+									<ContextMenu name="DateWhenReturnedContextMenu" id="29"/>
+									<ExtendedTooltip name="DateWhenReturnedExtendedTooltip" id="30"/>
+								</InputField>
+								<InputField name="ReturnedBy" id="31">
+									<DataPath>Record.ReturnedBy</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>By whom</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Von wem</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Кем возвращено</v8:content>
+										</v8:item>
+									</Title>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="ReturnedByContextMenu" id="32"/>
+									<ExtendedTooltip name="ReturnedByExtendedTooltip" id="33"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="DecorationSplitter5" id="87">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#009646</TextColor>
+			<Font bold="true" kind="AutoFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Утилизировано</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disposed of</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Entsorgt</v8:content>
+				</v8:item>
+			</Title>
+			<Border width="1">
+				<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+			</Border>
+			<ContextMenu name="DecorationSplitter5ContextMenu" id="88"/>
+			<ExtendedTooltip name="DecorationSplitter5ExtendedTooltip" id="89"/>
+		</LabelDecoration>
+		<CheckBoxField name="IsDisposaled" id="98">
+			<DataPath>Record.IsDisposaled</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Switcher</CheckBoxType>
+			<ContextMenu name="IsDisposaledContextMenu" id="99"/>
+			<ExtendedTooltip name="IsDisposaledExtendedTooltip" id="100"/>
+			<Events>
+				<Event name="OnChange">IsDisposaledOnChange</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="GroupDisposed" id="90">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group disposed</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupDisposedExtendedTooltip" id="91"/>
+			<ChildItems>
+				<InputField name="DisposedDate" id="95">
+					<DataPath>Record.DisposedDate</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="DisposedDateContextMenu" id="96"/>
+					<ExtendedTooltip name="DisposedDateExtendedTooltip" id="97"/>
+				</InputField>
+				<InputField name="DisposedBy" id="92">
+					<DataPath>Record.DisposedBy</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>By whom</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Von wem</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кем утилизировано</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="DisposedByContextMenu" id="93"/>
+					<ExtendedTooltip name="DisposedByExtendedTooltip" id="94"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.LostAndFound</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="IsNewRecord" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is new record</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="PrintItemsList" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Lost item return form</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Rücksendeformular</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формуляр возврата утерянной вещи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Print items list</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrintItemReturnForm</Action>
+		</Command>
+		<Command name="PrintItemCard" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Lost item registration form</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Registrierungsformular</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формуляр регистрации утерянной вещи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Print item card</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PrintItemRegisterForm</Action>
+		</Command>
+	</Commands>
+</Form>

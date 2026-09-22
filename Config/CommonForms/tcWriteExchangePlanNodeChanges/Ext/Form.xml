@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Write exchange plan node changes</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Änderungen für den Datenaustauschplanknoten schreiben</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Записать изменения для узла плана обмена данными</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionOK" id="4">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionOK</CommandName>
+				<ExtendedTooltip name="FormActionOKExtendedTooltip" id="5"/>
+			</Button>
+			<Button name="FormWriteConfigurationChanges" id="48">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.WriteConfigurationChanges</CommandName>
+				<ExtendedTooltip name="FormWriteConfigurationChangesExtendedTooltip" id="49"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">BeforeClose</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="SelNode" id="1">
+			<DataPath>SelNode</DataPath>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<CreateButton>false</CreateButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="SelNodeContextMenu" id="2"/>
+			<ExtendedTooltip name="SelNodeExtendedTooltip" id="3"/>
+		</InputField>
+		<InputField name="SelPath" id="6">
+			<DataPath>SelPath</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="SelPathContextMenu" id="7"/>
+			<ExtendedTooltip name="SelPathExtendedTooltip" id="8"/>
+			<Events>
+				<Event name="StartChoice">SelPathStartChoice</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="GroupZip" id="42">
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupZipExtendedTooltip" id="43"/>
+			<ChildItems>
+				<CheckBoxField name="SelUseZip" id="9">
+					<DataPath>SelUseZip</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SelUseZipContextMenu" id="10"/>
+					<ExtendedTooltip name="SelUseZipExtendedTooltip" id="11"/>
+					<Events>
+						<Event name="OnChange">SelUseZipOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="SelZIPPwd" id="12">
+					<DataPath>SelZIPPwd</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="SelZIPPwdContextMenu" id="13"/>
+					<ExtendedTooltip name="SelZIPPwdExtendedTooltip" id="14"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFTP" id="44">
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupFTPExtendedTooltip" id="45"/>
+			<ChildItems>
+				<CheckBoxField name="SelUseFTP" id="15">
+					<DataPath>SelUseFTP</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="SelUseFTPContextMenu" id="16"/>
+					<ExtendedTooltip name="SelUseFTPExtendedTooltip" id="17"/>
+					<Events>
+						<Event name="OnChange">SelUseFTPOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="SelFTPAddress" id="18">
+					<DataPath>SelFTPAddress</DataPath>
+					<ContextMenu name="SelFTPAddressContextMenu" id="19"/>
+					<ExtendedTooltip name="SelFTPAddressExtendedTooltip" id="20"/>
+				</InputField>
+				<InputField name="SelFTPUser" id="21">
+					<DataPath>SelFTPUser</DataPath>
+					<ContextMenu name="SelFTPUserContextMenu" id="22"/>
+					<ExtendedTooltip name="SelFTPUserExtendedTooltip" id="23"/>
+				</InputField>
+				<InputField name="SelFTPPwd" id="24">
+					<DataPath>SelFTPPwd</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="SelFTPPwdContextMenu" id="25"/>
+					<ExtendedTooltip name="SelFTPPwdExtendedTooltip" id="26"/>
+				</InputField>
+				<UsualGroup name="GroupFTPInfo" id="46">
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupFTPInfoExtendedTooltip" id="47"/>
+					<ChildItems>
+						<InputField name="SelFTPPort" id="27">
+							<DataPath>SelFTPPort</DataPath>
+							<ContextMenu name="SelFTPPortContextMenu" id="28"/>
+							<ExtendedTooltip name="SelFTPPortExtendedTooltip" id="29"/>
+						</InputField>
+						<InputField name="SelFTPConnectionTimeout" id="30">
+							<DataPath>SelFTPConnectionTimeout</DataPath>
+							<ContextMenu name="SelFTPConnectionTimeoutContextMenu" id="31"/>
+							<ExtendedTooltip name="SelFTPConnectionTimeoutExtendedTooltip" id="32"/>
+						</InputField>
+						<CheckBoxField name="SelUsePassiveMode" id="33">
+							<DataPath>SelUsePassiveMode</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="SelUsePassiveModeContextMenu" id="34"/>
+							<ExtendedTooltip name="SelUsePassiveModeExtendedTooltip" id="35"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="SelInternetConnectionSettings" id="36">
+					<DataPath>SelInternetConnectionSettings</DataPath>
+					<ContextMenu name="SelInternetConnectionSettingsContextMenu" id="37"/>
+					<ExtendedTooltip name="SelInternetConnectionSettingsExtendedTooltip" id="38"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="SelObjectsInTranCount" id="39">
+			<DataPath>SelObjectsInTranCount</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>(Leave 0 to process all changes in one transaction)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>(lassen Sie 0, um alle Änderungen in einer Transaktion zu bearbeiten)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>(Оставьте 0 для того чтобы обработать все изменения в одной транзакции)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ClearButton>true</ClearButton>
+			<SpinButton>true</SpinButton>
+			<ContextMenu name="SelObjectsInTranCountContextMenu" id="40"/>
+			<ExtendedTooltip name="SelObjectsInTranCountExtendedTooltip" id="41"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="SelNode" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Node</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Knoten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Узел</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:ExchangePlanRef.ReplicationExchangePlan</v8:Type>
+				<v8:Type>cfg:ExchangePlanRef.CentralOfficeExchangePlan</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelPath" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Path to write to</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Pfad für die Auslagerung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь для выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>SelPath</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelUseZip" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use ZIP compresssion</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Im ZIP-Archiv archivieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Архивировать в ZIP архив</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>SelUseZip</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelZIPPwd" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ZIP password</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Passwort für ZIP</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль для ZIP</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>256</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelUseFTP" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use FTP connection</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>An den FTP-Server senden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на FTP сервер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>SelUseFTP</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelFTPAddress" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FTP server address</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>FTP-Server-Adresse</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес FTP сервера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>SelFTPAddress</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelFTPUser" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FTP server user</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>FTP-Nutzer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь FTP</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>SelFTPUser</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelFTPPwd" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FTP server password</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Passwort für den FTP-Server</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль на FTP сервер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelFTPPort" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FTP server port</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>FTP-Server-Port</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порт FTP сервера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>SelFTPPort</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelFTPConnectionTimeout" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FTP connection timeout</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Time-out FTP Verbindung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таймаут FTP соединения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>SelFTPConnectionTimeout</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelUsePassiveMode" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use passive mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>passive mode nutzen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать passive mode</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>SelUsePassiveMode</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelInternetConnectionSettings" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Proxy settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Proxy-Parameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры прокси</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.InternetConnectionSettings</v8:Type>
+			</Type>
+			<Save>
+				<Field>SelInternetConnectionSettings</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelObjectsInTranCount" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Number of objects in transaction</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl von Objekten in einer Transaktion</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во объектов в одной транзакции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>SelObjectsInTranCount</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="SelFileName" id="14">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelExchangeFileName" id="15">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelTempAddress" id="16">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionOK" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.CheckMark</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ActionOK</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="WriteConfigurationChanges" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Write configuration changes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Konfigurationsänderungen schreiben</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать изменения конфигурации</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ActionOK</Action>
+		</Command>
+	</Commands>
+</Form>

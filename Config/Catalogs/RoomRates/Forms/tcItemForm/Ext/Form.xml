@@ -1,0 +1,4262 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormCommandCopy" id="323">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CommandCopy</CommandName>
+				<ExtendedTooltip name="FormCommandCopyExtendedTooltip" id="324"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHotel" id="450">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гостиница</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="GroupHotelExtendedTooltip" id="451"/>
+			<ChildItems>
+				<InputField name="Hotel" id="33">
+					<DataPath>Object.Hotel</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гостиница</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hotel</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>false</QuickChoice>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="HotelContextMenu" id="34"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="125"/>
+					<Events>
+						<Event name="OnChange">HotelOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="CodeAndSotCode" id="95">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Code and sot code</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="CodeAndSotCodeExtendedTooltip" id="118"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Code</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Code</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>18</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="119"/>
+				</InputField>
+				<InputField name="Description" id="3">
+					<DataPath>Object.Description</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Description</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bezeichnung</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="DescriptionContextMenu" id="4"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="121"/>
+				</InputField>
+				<InputField name="SortCode" id="9">
+					<DataPath>Object.SortCode</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Порядок сортировки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sort code</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Sortierungsreihenfolge</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="SortCodeContextMenu" id="10"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="120"/>
+				</InputField>
+				<CheckBoxField name="RoomRatesApproved" id="347">
+					<DataPath>Object.RoomRatesApproved</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Prohibits to change room rate prices</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Verbietet Änderungen an den Tarifpreisen.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрещает вносить изменения в цены тарифа.
+</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="RoomRatesApprovedContextMenu" id="348"/>
+					<ExtendedTooltip name="RoomRatesApprovedExtendedTooltip" id="349"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="MainAttributesGroup" id="306">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main attributes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные атрибуты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hauptattribute</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:BackgroundColorImportant</BackColor>
+			<ExtendedTooltip name="MainAttributesGroupExtendedTooltip" id="307"/>
+			<ChildItems>
+				<InputField name="Calendar" id="19">
+					<DataPath>Object.Calendar</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Календарь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Calendar</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Kalender</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ClearButton>true</ClearButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="CalendarContextMenu" id="20"/>
+					<ExtendedTooltip name="CalendarExtendedTooltip" id="128"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupPeriod" id="490">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group period</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupPeriodExtendedTooltip" id="491"/>
+			<ChildItems>
+				<InputField name="DateValidFrom" id="15">
+					<DataPath>Object.DateValidFrom</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует с</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Valid from date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Gilt ab</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateValidFromContextMenu" id="16"/>
+					<ExtendedTooltip name="DateValidFromExtendedTooltip" id="130"/>
+				</InputField>
+				<InputField name="DateValidTo" id="17">
+					<DataPath>Object.DateValidTo</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по и включая</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>to (inclusive)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>bis und einschließlich</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateValidToContextMenu" id="18"/>
+					<ExtendedTooltip name="DateValidToExtendedTooltip" id="131"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Pages" id="82">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="116"/>
+			<ChildItems>
+				<Page name="MainPage" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные данные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Hauptdaten</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Catalog</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="MainPageExtendedTooltip" id="117"/>
+					<ChildItems>
+						<UsualGroup name="HotelAndCompany" id="96">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Hotel and company</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="HotelAndCompanyExtendedTooltip" id="124"/>
+							<ChildItems>
+								<InputField name="Company" id="35">
+									<DataPath>Object.Company</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Фирма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Company</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Firma</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="CompanyContextMenu" id="36"/>
+									<ExtendedTooltip name="CompanyExtendedTooltip" id="126"/>
+								</InputField>
+								<InputField name="Parent" id="5">
+									<DataPath>Object.Parent</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Родительская группа</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Parent folder</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Elterngruppe</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="ParentContextMenu" id="6"/>
+									<ExtendedTooltip name="ParentExtendedTooltip" id="123"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="FeeTerms" id="107">
+							<DataPath>Object.FeeTerms</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="FeeTermsContextMenu" id="108"/>
+							<ExtendedTooltip name="FeeTermsExtendedTooltip" id="192"/>
+						</InputField>
+						<UsualGroup name="GroupFlags" id="430">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Flags</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Flaggen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Флажки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupFlagsExtendedTooltip" id="431"/>
+							<ChildItems>
+								<CheckBoxField name="IsRackRate" id="31">
+									<DataPath>Object.IsRackRate</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>1) Discounts marked as "For Open rates only" will apply to this rate
+2) A user with the right to "See only open rates" will get access to the rate</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>1) Rabatte, die als "Nur für den Offener-Tarif" gekennzeichnet sind, gelten für diesen Tarif
+2) Der Benutzer mit dem Recht "Nur Offener-Tarife sehen" erhält Zugriff auf den Tarif</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>1) Скидки отмеченные как "Только для открытых тарифов" будут применяться к этому тарифу
+2) Пользователь с правом "Видеть только открытые тарифы" получит доступ к тарифу</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsRackRateContextMenu" id="32"/>
+									<ExtendedTooltip name="IsRackRateExtendedTooltip" id="143"/>
+									<Events>
+										<Event name="OnChange">IsRackRateOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="IsComplimentary" id="51">
+									<DataPath>Object.IsComplimentary</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бесплатный тариф</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Is complimentary rate</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Rooms rented for this rate will be reflected in the statistics as "Number of complimentary rooms"</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nächte mit dieser Rate werden in der Statistik als "Anzahl der freien Nächte" ausgewiesen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ночи по этому тарифу отразятся в статистике как "Число бесплатных ночей"</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsComplimentaryContextMenu" id="52"/>
+									<ExtendedTooltip name="IsComplimentaryExtendedTooltip" id="144"/>
+									<Events>
+										<Event name="OnChange">IsComplimentaryOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="IsHouseUse" id="257">
+									<DataPath>Object.IsHouseUse</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Is house use rate</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тариф для внутреннего использования (House use)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Ist für Hausgebrauch Rate</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Rooms rented for this rate will be reflected in the statistics as "Number of house use rooms"</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nächte mit dieser Rate werden in der Statistik als "Anzahl der Nächte für den Hausgebrauch" ausgewiesen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ночи по этому тарифу отразятся в статистике как "Число ночей для внутреннего использования (house use)"</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsHouseUseContextMenu" id="258"/>
+									<ExtendedTooltip name="IsHouseUseExtendedTooltip" id="259"/>
+									<Events>
+										<Event name="OnChange">IsHouseUseOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="IsStateContract" id="498">
+									<DataPath>Object.IsStateContract</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsStateContractContextMenu" id="499"/>
+									<ExtendedTooltip name="IsStateContractExtendedTooltip" id="500"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="PricesPage" id="395">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Prices</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Anpassen Preis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цены</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.CashRegister</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="PricesPageExtendedTooltip" id="396"/>
+					<ChildItems>
+						<UsualGroup name="GroupPriceMethodAndMode" id="488">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>price method and mode</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>preistyp und mode wahl</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Метод и способ определения цены</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group price method and mode</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupPriceMethodAndModeExtendedTooltip" id="489"/>
+							<ChildItems>
+								<UsualGroup name="GroupPriceTypeChoice" id="403">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>price type choice</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>preis typ wahl</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выбор задания цены</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:BackgroundColorImportant</BackColor>
+									<ExtendedTooltip name="GroupPriceTypeChoiceExtendedTooltip" id="404"/>
+									<ChildItems>
+										<RadioButtonField name="PriceSettingMethod" id="295">
+											<DataPath>PriceSettingMethod</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Prices are</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Preise</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цены по тарифу</v8:content>
+												</v8:item>
+											</Title>
+											<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<TitleLocation>Top</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>managed independently</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>unabhängig verwaltet</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>устанавливаются независимо</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>derived from another room rate</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>abgeleitet von einem anderen Tarifs</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>по формулам от цен другого тарифа</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>dynamic pricing</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Dynamischer Zimmerpreis</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>динамически</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="PriceSettingMethodContextMenu" id="296"/>
+											<ExtendedTooltip name="PriceSettingMethodExtendedTooltip" id="297"/>
+											<Events>
+												<Event name="OnChange">PriceSettingMethodOnChange</Event>
+											</Events>
+										</RadioButtonField>
+										<UsualGroup name="CalendarPricesGroup" id="473">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Default parameters for calendar prices</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Standardparameter für Kalenderpreise</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройки по-умолчанию для цен в календарях</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Vertical</Group>
+											<Behavior>Collapsible</Behavior>
+											<ControlRepresentation>Picture</ControlRepresentation>
+											<Representation>NormalSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="CalendarPricesGroupExtendedTooltip" id="474"/>
+											<ChildItems>
+												<RadioButtonField name="PriceSettingMode" id="483">
+													<DataPath>PriceSettingMode</DataPath>
+													<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Price specification by day type.
+For each day type fill in the price specification by room type and accommodation type, and specify day type for the date in the calendar.
+
+Value in the calendar - in this case, the "Price Specification" sets formulas for room types and accommodation types, while the price value for each day  is set directly in the calendar.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Preise Spezifikationen nach Tagestyp.
+Geben Sie für jeden Tagestyp die Preisangabe nach Zimmertyp und Unterbringungstypen ein und geben Sie den Tagestyp für das Datum im Kalender an.
+
+Der Wert im Kalender - in diesem Fall legt die "Preise Spezifikationen" Formeln für Zimmertypen und Unterbringungstypen fest, während der Preiswert für jeden Tag direkt im Kalender festgelegt wird.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Спецификация цен по типу дня.
+Для каждого типа дня нужно заполнить спецификацию цен по типам номеров и видам размещений.
+В календаре указать какой тип дня действует на дату.
+
+Значение в календаре - в этом случае "Спецификация цен" задает формулы по типам номеров и видам размещения, а цена задается на каждый день в непосредственно в календаре.</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Price specification by day type</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Preise Spezifikationen nach Tagestyp.</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Спецификация цен по типу дня</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xs:decimal">0</Value>
+															</xr:Value>
+														</xr:Item>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>en</v8:lang>
+																		<v8:content>Value in the calendar</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>de</v8:lang>
+																		<v8:content>Der Wert im Kalender</v8:content>
+																	</v8:item>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Значение в календаре</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xs:decimal">1</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="PriceSettingModeContextMenu" id="484"/>
+													<ExtendedTooltip name="PriceSettingModeExtendedTooltip" id="485"/>
+													<Events>
+														<Event name="OnChange">PriceSettingModeOnChange</Event>
+													</Events>
+												</RadioButtonField>
+												<InputField name="DefaultCurrency" id="475">
+													<DataPath>Object.DefaultCurrency</DataPath>
+													<TitleLocation>Top</TitleLocation>
+													<Width>6</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ClearButton>true</ClearButton>
+													<OpenButton>false</OpenButton>
+													<CreateButton>false</CreateButton>
+													<ContextMenu name="DefaultCurrencyContextMenu" id="476"/>
+													<ExtendedTooltip name="DefaultCurrencyExtendedTooltip" id="477"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="DependenciesGroup" id="255">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Dependencies</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Abhängigkeiten</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Зависисмости</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>NormalSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:BackgroundColorImportant</BackColor>
+											<ExtendedTooltip name="DependenciesGroupExtendedTooltip" id="256"/>
+											<ChildItems>
+												<InputField name="BasedOnRoomRate" id="234">
+													<DataPath>Object.BasedOnRoomRate</DataPath>
+													<TitleLocation>Top</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Price will be calculated based on the choosen room rate. Discount or formulas could be applied to the base room rate prices in the Room rate formulas specifications menu.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Der Preis wird auf der gewählten Zimmerpreis berechnet werden. Rabatt oder Formeln wird auf die Basis-Zimmerpreis werden beinhaltet. Preis Rundungsregeln werden angewendet.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Цена будет рассчитана на основе выбранного тарифа. К ценам этого тарифа применится скидка или формулы, которые указываются в меню Спецификации формул тарифа. Полученные цены будут округлены по правилам округления, указанным внизу формы.</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="BasedOnRoomRateContextMenu" id="235"/>
+													<ExtendedTooltip name="BasedOnRoomRateExtendedTooltip" id="236"/>
+													<Events>
+														<Event name="OnChange">BasedOnRoomRateOnChange</Event>
+													</Events>
+												</InputField>
+												<InputField name="BasedOnPriceTag" id="252">
+													<DataPath>Object.BasedOnPriceTag</DataPath>
+													<TitleLocation>Top</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>It is specified only if a dynamic rate is selected as the base rate, the current rate is not dynamic and its prices must be calculated using formulas based on the prices of a certain price tag.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Er wird nur dann angegeben, wenn als Basistarif ein dynamischer Tarif ausgewählt ist, der aktuelle Tarif nicht dynamisch ist und seine Preise anhand der Preise eines bestimmten Preisattributs anhand von Formeln berechnet werden müssen.</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Если выбрать признак цены то этот тариф не будет динамическим, а будет задан по формуле от указанного признака цены. Если оставить пустым, то этот тариф будет также динамический с теми же порогами признака цены.</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="BasedOnPriceTagContextMenu" id="253"/>
+													<ExtendedTooltip name="BasedOnPriceTagExtendedTooltip" id="254"/>
+													<Events>
+														<Event name="OnChange">BasedOnPriceTagOnChange</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupPriceSettingsChoice" id="486">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Group price settings choice</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>auswahl der Preiseinstellungen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выбор способа задания цены</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group price settings choice</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupPriceSettingsChoiceExtendedTooltip" id="487"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupPriceTags" id="419">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Dynamic pricing</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Dynamischer Zimmerpreis</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Динамический тариф</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<BackColor>style:ResourceReservationBackColor</BackColor>
+							<ExtendedTooltip name="GroupPriceTagsExtendedTooltip" id="420"/>
+							<ChildItems>
+								<InputField name="PriceTagType" id="308">
+									<DataPath>Object.PriceTagType</DataPath>
+									<ClearButton>true</ClearButton>
+									<CreateButton>false</CreateButton>
+									<ContextMenu name="PriceTagTypeContextMenu" id="309"/>
+									<ExtendedTooltip name="PriceTagTypeExtendedTooltip" id="310"/>
+									<Events>
+										<Event name="OnChange">PriceTagTypeOnChange</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="DoNotRefillOccupationPercentsAfterInHouseRoomChange" id="333">
+									<DataPath>Object.DoNotRefillOccupationPercentsAfterInHouseRoomChange</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DoNotRefillOccupationPercentsAfterInHouseRoomChangeContextMenu" id="334"/>
+									<ExtendedTooltip name="DoNotRefillOccupationPercentsAfterInHouseRoomChangeExtendedTooltip" id="335"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupRestrictions" id="428">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Restrictions</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ограничения</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="GroupRestrictionsExtendedTooltip" id="429"/>
+							<ChildItems>
+								<CheckBoxField name="MLOSIsBlocking" id="330">
+									<DataPath>Object.MLOSIsBlocking</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>If it is enabled and the rate restrictions are triggered, the reservation will not be saved. If disabled, the reservation will be saved, but the amount of the reservation will be calculated based on the restriction value. For example, if the value of MLOS = 5 and the reservation is for 2 days, the amount for the stay will be calculated as for 5 nights.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Wenn es aktiviert ist und die Preisbeschränkungen ausgelöst werden, wird die Reservierung nicht gespeichert. Wenn deaktiviert, wird die Reservierung gespeichert, aber der Betrag der Reservierung wird basierend auf dem Einschränkungswert berechnet. Wenn beispielsweise der Wert von MLOS = 5 ist und die Reservierung für 2 Tage gilt, wird der Betrag für den Aufenthalt wie für 5 Nächte berechnet.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если включено и срабатывают ограничения по тарифу, то бронь не будет проведена.
+Если выключено - то бронь будет проведена, но сумма брони будет рассчитана по значению ограничения. 
+Например при значении MLOS = 5 и при бронировании на 2 дня сумма за проживание будет рассчитана как за 5 ночей.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="MLOSIsBlockingContextMenu" id="331"/>
+									<ExtendedTooltip name="MLOSIsBlockingExtendedTooltip" id="332"/>
+								</CheckBoxField>
+								<CheckBoxField name="NoDiscounts" id="47">
+									<DataPath>Object.NoDiscounts</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скидки запрещены</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>No discounts could be applied</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preisnachlässe verboten</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="NoDiscountsContextMenu" id="48"/>
+									<ExtendedTooltip name="NoDiscountsExtendedTooltip" id="166"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="RateServicesGroup" id="88">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default parameters for "Rate prices specifications"</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Voreinstellungen für Preisangaben</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки по-умолчанию для спецификаций цен</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="RateServicesGroupExtendedTooltip" id="151"/>
+							<ChildItems>
+								<UsualGroup name="GroupAccommodationService" id="439">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Accommodation service</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zimmerservice</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проживание</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupAccommodationServiceExtendedTooltip" id="440"/>
+									<ChildItems>
+										<InputField name="AccommodationService" id="325">
+											<DataPath>Object.AccommodationService</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>If is filled then the "Service" column in the "Rate prices specification" documents will be hidden, and the value of this attribute will be used instead.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wenn ausgefüllt ist, wird die Spalte "Service" in den Dokumenten "Preisspezifikation" ausgeblendet und stattdessen der Wert dieses Attributs verwendet.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Если заполнить, то колонка "Услуга" в документах "Спецификации цен тарифа" будет скрыта и будет использовано значение этого реквизита.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="AccommodationServiceContextMenu" id="326"/>
+											<ExtendedTooltip name="AccommodationServiceExtendedTooltip" id="327"/>
+											<Events>
+												<Event name="OnChange">AccommodationServiceOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="QuantityCalculationRule" id="358">
+											<DataPath>Object.QuantityCalculationRule</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Room revenue service quantity calculation rule</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Mengenberechnungsregel für zimmer revenue Service</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Правило вычисления кол-ва для услуги проживания</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Should be filled if room revenue service is filled</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Sollte ausgefüllt werden, wenn der zimmer revenue Service ausgefüllt ist</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должно быть заполнено, если заполнена услуга проживания</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="QuantityCalculationRuleContextMenu" id="359"/>
+											<ExtendedTooltip name="QuantityCalculationRuleExtendedTooltip" id="360"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupEarlyCheckIn" id="401">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Early check-in/late check-out settings</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Früh-check-in-Einstellungen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ранний заезд/Поздний выезд</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupEarlyCheckInExtendedTooltip" id="402"/>
+									<ChildItems>
+										<InputField name="EarlyCheckInService" id="262">
+											<DataPath>Object.EarlyCheckInService</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Fill if you want early check-in service to be charged automatically</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Ausfüllen, wenn Sie möchten, dass der Service für den frühen Check-in automatisch berechnet wird</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Заполните, если хотите, чтобы услуга раннего заезда начислялась автоматически</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ClearButton>true</ClearButton>
+											<SpinButton>false</SpinButton>
+											<ContextMenu name="EarlyCheckInServiceContextMenu" id="263"/>
+											<ExtendedTooltip name="EarlyCheckInServiceExtendedTooltip" id="264"/>
+											<Events>
+												<Event name="OnChange">EarlyCheckInServiceOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="LateCheckOutService" id="265">
+											<DataPath>Object.LateCheckOutService</DataPath>
+											<TitleLocation>Top</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Fill in if you want the late check-out service to be charged automatically</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Ausfüllen, wenn Sie möchten, dass der Late-Check-out-Service automatisch berechnet wird</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Заполните, если хотите, чтобы услуга позднего выезда начислялась автоматически</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ClearButton>true</ClearButton>
+											<SpinButton>false</SpinButton>
+											<ContextMenu name="LateCheckOutServiceContextMenu" id="266"/>
+											<ExtendedTooltip name="LateCheckOutServiceExtendedTooltip" id="267"/>
+											<Events>
+												<Event name="OnChange">LateCheckOutServiceOnChange</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="RoomRateServiceGroup" id="37">
+									<DataPath>Object.RoomRateServiceGroup</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Room rate service group</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Tarifdienstleistungen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При сохранении спецификаций цен оставлять только услуги из набора</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>an empty value is recommended</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>ein leerer Wert wird empfohlen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>рекомендуется не заполнять</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="RoomRateServiceGroupContextMenu" id="38"/>
+									<ExtendedTooltip name="RoomRateServiceGroupExtendedTooltip" id="152"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupDiscount" id="279">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Discount that will be automatically applied to all rate price specifications</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rabatt, der automatisch auf alle Tarifpreisspezifikationen angewendet wird</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Cкидка, которая будет автоматически применяться ко всем спецификациям цен</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Discount</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rabatt</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скидка</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>NormalSeparation</Representation>
+							<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
+							<ExtendedTooltip name="GroupDiscountExtendedTooltip" id="280"/>
+							<ChildItems>
+								<InputField name="Discount" id="281">
+									<DataPath>Object.Discount</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скидка %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preisnachlass %</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="DiscountContextMenu" id="282"/>
+									<ExtendedTooltip name="DiscountExtendedTooltip" id="283"/>
+									<Events>
+										<Event name="OnChange">DiscountOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="DiscountServiceGroup" id="284">
+									<DataPath>Object.DiscountServiceGroup</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Набор услуг, к которому применяется скидка</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount service group</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Gruppe Dienstleistungen, für die Preisnachlässe gelten</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="DiscountServiceGroupContextMenu" id="285"/>
+									<ExtendedTooltip name="DiscountServiceGroupExtendedTooltip" id="286"/>
+									<Events>
+										<Event name="OnChange">DiscountServiceGroupOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="PriceRoundingRulesGroup" id="287">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правила округления цены</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Price rounding rules</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Preisrundungsregeln</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="PriceRoundingRulesGroupExtendedTooltip" id="288"/>
+							<ChildItems>
+								<CheckBoxField name="RoundPrice" id="289">
+									<DataPath>Object.RoundPrice</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Округлять цену</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Round price</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preis runden</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="RoundPriceContextMenu" id="290"/>
+									<ExtendedTooltip name="RoundPriceExtendedTooltip" id="291"/>
+								</CheckBoxField>
+								<InputField name="RoundPriceDigits" id="292">
+									<DataPath>Object.RoundPriceDigits</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Digit capacity</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Bitbreite</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрядность округления цены </v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Round price digits 
+(...; -2 to 100; -1 to 10; 0 to 1; 1 to 0.1; 2 to 0.01;...)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Stelligkeit der Preisrundung 
+(...; -2 bis 100; -1 bis 10; 0 bis 1; 1 bis 0.1; 2 bis 0.01; ...):</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>(...; -2 до 100; -1 до 10; 0 до 1; 1 до 0.1; 2 до 0.01; ...):</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="RoundPriceDigitsContextMenu" id="293"/>
+									<ExtendedTooltip name="RoundPriceDigitsExtendedTooltip" id="294"/>
+								</InputField>
+								<InputField name="RoundPriceServiceGroup" id="444">
+									<DataPath>Object.RoundPriceServiceGroup</DataPath>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="RoundPriceServiceGroupContextMenu" id="445"/>
+									<ExtendedTooltip name="RoundPriceServiceGroupExtendedTooltip" id="446"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ParametersPage" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reservation parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Reservierungs-Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры брони</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Task</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ParametersPageExtendedTooltip" id="150"/>
+					<ChildItems>
+						<UsualGroup name="GroupPostingServices" id="426">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Posting transaction</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Buchungstransaktionen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начисление услуг</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:BackgroundColorImportant</BackColor>
+							<ExtendedTooltip name="GroupPostingServicesExtendedTooltip" id="427"/>
+							<ChildItems>
+								<InputField name="RateChargeDirection" id="355">
+									<DataPath>Object.RateChargeDirection</DataPath>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Separately to each room guest</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Separat zu jedem Zimmergast</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отдельно каждому гостю комнаты</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="RateChargeDirectionContextMenu" id="356"/>
+									<ExtendedTooltip name="RateChargeDirectionExtendedTooltip" id="357"/>
+									<Events>
+										<Event name="OnChange">RateChargeDirectionOnChange</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="CloseOfPeriodDoChargeServices" id="268">
+									<DataPath>Object.CloseOfPeriodDoChargeServices</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="CloseOfPeriodDoChargeServicesContextMenu" id="269"/>
+									<ExtendedTooltip name="CloseOfPeriodDoChargeServicesExtendedTooltip" id="270"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupCheckMarks" id="328">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Checkmarks</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Häkchen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Галочки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCheckMarksExtendedTooltip" id="329"/>
+							<ChildItems>
+								<CheckBoxField name="RoomTypeChangeUpdatesPriceCalculationDate" id="492">
+									<DataPath>Object.RoomTypeChangeUpdatesPriceCalculationDate</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="RoomTypeChangeUpdatesPriceCalculationDateContextMenu" id="493"/>
+									<ExtendedTooltip name="RoomTypeChangeUpdatesPriceCalculationDateExtendedTooltip" id="494"/>
+								</CheckBoxField>
+								<CheckBoxField name="MealBoardTermsIsMandatory" id="495">
+									<DataPath>Object.MealBoardTermsIsMandatory</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="MealBoardTermsIsMandatoryContextMenu" id="496"/>
+									<ExtendedTooltip name="MealBoardTermsIsMandatoryExtendedTooltip" id="497"/>
+								</CheckBoxField>
+								<CheckBoxField name="UseNewFolioIfCheckOutDateChanged" id="104">
+									<DataPath>Object.UseNewFolioIfCheckOutDateChanged</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="UseNewFolioIfCheckOutDateChangedContextMenu" id="105"/>
+									<ExtendedTooltip name="UseNewFolioIfCheckOutDateChangedExtendedTooltip" id="160"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupReservationParameters" id="410">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Default reservation parameters</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Standard-Reservierung Parameter</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры брони по-умолчанию</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupReservationParametersExtendedTooltip" id="411"/>
+							<ChildItems>
+								<InputField name="DefaultDuration" id="320">
+									<DataPath>Object.DefaultDuration</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>duration</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Dauer</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжительность</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DefaultDurationContextMenu" id="321"/>
+									<ExtendedTooltip name="DefaultDurationExtendedTooltip" id="322"/>
+								</InputField>
+								<InputField name="DefaultCheckInTime" id="29">
+									<DataPath>Object.DefaultCheckInTime</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check-in time</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Anreisezeit</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Время заезда</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="DefaultCheckInTimeContextMenu" id="30"/>
+									<ExtendedTooltip name="DefaultCheckInTimeExtendedTooltip" id="159"/>
+								</InputField>
+								<InputField name="DefaultCheckOutTime" id="317">
+									<DataPath>Object.DefaultCheckOutTime</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check-out time</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Abreisezeit</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Время выезда</v8:content>
+										</v8:item>
+									</Title>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>DF=HH:mm</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="DefaultCheckOutTimeContextMenu" id="318"/>
+									<ExtendedTooltip name="DefaultCheckOutTimeExtendedTooltip" id="319"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupDurationCalculation" id="414">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Parameters for calculating the length of stay</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Parametern zur Berechnung der Aufenthaltsdauer</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры для вычисления продолжительности периода проживания</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupDurationCalculationExtendedTooltip" id="415"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationLengthOfStay" id="416">
+									<TextColor>style:ButtonTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>используются на форме брони при измении даты и времени выезда для вычисления продолжительности проживания в днях/часах</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>wird im Buchungsformular verwendet, wenn Datum und Uhrzeit der Abreise geändert werden, um die Aufenthaltsdauer in Tagen/Stunden zu berechnen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>are used on the reservation form to calculate the duration of stay in days/hours when changing the date and time of departure</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationLengthOfStayContextMenu" id="417"/>
+									<ExtendedTooltip name="DecorationLengthOfStayExtendedTooltip" id="418"/>
+								</LabelDecoration>
+								<UsualGroup name="GroupDurationOfStayCalculation" id="437">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Duration of stay calculation</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Berechnung der Aufenthaltsdauer</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расчет продолжительности пребывания</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDurationOfStayCalculationExtendedTooltip" id="438"/>
+									<ChildItems>
+										<InputField name="DurationCalculationRuleType" id="23">
+											<DataPath>Object.DurationCalculationRuleType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Duration calculation rule</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Berechnungstyp Aufenthaltsdauer</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Алгоритм расчета продолжительности проживания</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="DurationCalculationRuleTypeContextMenu" id="24"/>
+											<ExtendedTooltip name="DurationCalculationRuleTypeExtendedTooltip" id="155"/>
+										</InputField>
+										<InputField name="PeriodInHours" id="21">
+											<DataPath>Object.PeriodInHours</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период прожив. в часах</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Accomm. period in hours</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Unterbringungszeit in Stunden</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>For daily rates = 24, for hourly rates = 1.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Für Tagestarife = 24, für Stundentarife = 1.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для суточных тарифов = 24, для почасовых тарифов = 1.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ChoiceButton>false</ChoiceButton>
+											<ContextMenu name="PeriodInHoursContextMenu" id="22"/>
+											<ExtendedTooltip name="PeriodInHoursExtendedTooltip" id="153"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupReferenceHour" id="435">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Reference hour</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Referenzstunde</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расчетный час</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupReferenceHourExtendedTooltip" id="436"/>
+									<ChildItems>
+										<InputField name="ReferenceHour" id="25">
+											<DataPath>Object.ReferenceHour</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>ref. hour</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Stunde der Errechnung</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расчетный час</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>DF=HH:mm</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>DF=HH:mm</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>DF=HH:mm</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ReferenceHourContextMenu" id="26"/>
+											<ExtendedTooltip name="ReferenceHourExtendedTooltip" id="156"/>
+										</InputField>
+										<CheckBoxField name="FirstDayEndsAtReferenceHourTime" id="27">
+											<DataPath>Object.FirstDayEndsAtReferenceHourTime</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Первые сутки проживания строго до расчетного часа</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>First day ends at reference hour time</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Der erste Unterbringungstag streng bis zur Berechnungsstunde</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>When the flag is enabled (recommended value) and checking in in the evening, after check-out time, for 1 day, the check-out time will be set to the reference hour. Otherwise, there will be a check-in time.
+If you check in for 2 days or more, the check-out time will always be equal to the reference hour.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Wenn das Flag aktiviert ist (empfohlener Wert) und abends nach der Check-out-Zeit für 1 Tag einchecken, wird die Check-out-Zeit auf die Referenzstunde eingestellt. Andernfalls wird es eine Check-in-Zeit geben.
+Wenn Sie 2 Tage oder länger einchecken, entspricht die Check-out-Zeit immer der Referenzstunde.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Когда флаг включен (рекомендуемое значение), то при заселении вечером, после расчетного часа, на 1 сутки, время выезда будет автоматически подставлено равным расчетному часу. Иначе будет время заезда.
+При заезде на 2 суток и более время выезда всегда будет равно расчетному часу. </v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="FirstDayEndsAtReferenceHourTimeContextMenu" id="28"/>
+											<ExtendedTooltip name="FirstDayEndsAtReferenceHourTimeExtendedTooltip" id="157"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupFixReservationTerms" id="412">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Fix reservation conditions</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Buchungsbedingungen fixieren</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки для "Строго по брони"</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Fix reservation conditions settings</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Buchungsbedingungen fixieren einstellungen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки строго по брони</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupFixReservationTermsExtendedTooltip" id="413"/>
+							<ChildItems>
+								<InputField name="RackRate" id="300">
+									<DataPath>Object.RackRate</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>If the "Fix reservation terms" flag is enabled in the accommodation, the price for dates beyond the booking period will be calculated by the selected rate. If not specified, the default rate from the hotel settings is used</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Wenn das Flag "Reservierungsbedingungen festlegen" in der Unterkunft aktiviert ist, wird der Preis für Daten, die über den Buchungszeitraum hinausgehen, nach dem ausgewählten Tarif berechnet. Wenn nicht angegeben, wird der Standardtarif aus den Hoteleinstellungen verwendet</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При включении флага "Строго по брони" в размещении, цена на даты сверх периода брони будет рассчитана по выбранному тарифу. Если не указан, то используется тариф по-умолчанию из настроек гостницы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="RackRateContextMenu" id="301"/>
+									<ExtendedTooltip name="RackRateExtendedTooltip" id="302"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="AgentCommissionRulesGroup" id="91">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правила начисления комиссии</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Agent commission rules</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Komissionsanrechnungsregeln</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="AgentCommissionRulesGroupExtendedTooltip" id="170"/>
+							<ChildItems>
+								<CheckBoxField name="NoAgentCommission" id="49">
+									<DataPath>Object.NoAgentCommission</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Агентские отчисления запрещены</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>No agent commission could be charged</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Vertreterzahlungen sind verboten</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="NoAgentCommissionContextMenu" id="50"/>
+									<ExtendedTooltip name="NoAgentCommissionExtendedTooltip" id="171"/>
+								</CheckBoxField>
+								<LabelDecoration name="DecorationOr" id="111">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>or</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>или</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>oder</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="DecorationOrContextMenu" id="112"/>
+									<ExtendedTooltip name="DecorationOrExtendedTooltip" id="172"/>
+								</LabelDecoration>
+								<InputField name="MaxAgentCommission" id="109">
+									<DataPath>Object.MaxAgentCommission</DataPath>
+									<ContextMenu name="MaxAgentCommissionContextMenu" id="110"/>
+									<ExtendedTooltip name="MaxAgentCommissionExtendedTooltip" id="173"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupTouristTax" id="504">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Tourist tax</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Kurtax</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Туристический налог</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupTouristTaxExtendedTooltip" id="505"/>
+							<ChildItems>
+								<CheckBoxField name="DoNotMergeTouristTaxBaseToTheMainRoomGuest" id="506">
+									<DataPath>Object.DoNotMergeTouristTaxBaseToTheMainRoomGuest</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DoNotMergeTouristTaxBaseToTheMainRoomGuestContextMenu" id="507"/>
+									<ExtendedTooltip name="DoNotMergeTouristTaxBaseToTheMainRoomGuestExtendedTooltip" id="508"/>
+								</CheckBoxField>
+								<CheckBoxField name="TouristTaxAddToRate" id="512">
+									<DataPath>Object.TouristTaxAddToRate</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="TouristTaxAddToRateContextMenu" id="513"/>
+									<ExtendedTooltip name="TouristTaxAddToRateExtendedTooltip" id="514"/>
+									<Events>
+										<Event name="OnChange">TouristTaxAddToRateOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="TouristTaxSubtractFromRateIfExemption" id="515">
+									<DataPath>Object.TouristTaxSubtractFromRateIfExemption</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="TouristTaxSubtractFromRateIfExemptionContextMenu" id="516"/>
+									<ExtendedTooltip name="TouristTaxSubtractFromRateIfExemptionExtendedTooltip" id="517"/>
+									<Events>
+										<Event name="OnChange">TouristTaxSubtractFromRateIfExemptionOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="TouristTaxService" id="509">
+									<DataPath>Object.TouristTaxService</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Tourist tax will be charged as a separate service for guests with this room rate if service is filled. Hotel tourist tax charging settings will be ignored</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Wenn diese Leistung angegeben ist, wird die Kurtaxe den Gästen, die zu diesem Tarif im Transaktionsplan übernachten, als separate Leistung in Rechnung gestellt, unabhängig von den in der Hotelkarte festgelegten Berechnungsregeln für die Kurtaxe</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Если услуга указана, то туристический налог у гостей проживающих по этому тарифу будет начислен в плане транзакций отдельной услугой независимо от настроек правил начисления тур. налога указанных в карточке гостиницы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ClearButton>true</ClearButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="TouristTaxServiceContextMenu" id="510"/>
+									<ExtendedTooltip name="TouristTaxServiceExtendedTooltip" id="511"/>
+									<Events>
+										<Event name="OnChange">TouristTaxServiceOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="DependenciesPage" id="193">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Formulas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Formeln</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формулы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Dependencies</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зависимости</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Abhängigkeiten</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Picture>
+						<xr:Ref>StdPicture.CustomExpression</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="DependenciesPageExtendedTooltip" id="194"/>
+					<ChildItems>
+						<UsualGroup name="GroupDiscountDependencies" id="232">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Discount</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скидка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rabatt</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupDiscountDependenciesExtendedTooltip" id="233"/>
+							<ChildItems>
+								<InputField name="DiscountDependency" id="39">
+									<DataPath>Object.Discount</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скидка %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount %</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preisnachlass %</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="DiscountDependencyContextMenu" id="40"/>
+									<ExtendedTooltip name="DiscountDependencyExtendedTooltip" id="164"/>
+									<Events>
+										<Event name="OnChange">DiscountOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="DiscountServiceGroupDependency" id="41">
+									<DataPath>Object.DiscountServiceGroup</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа услуг, на которую действует скидка</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Discount service group</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Gruppe Dienstleistungen, für die Preisnachlässe gelten</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="DiscountServiceGroupDependencyContextMenu" id="42"/>
+									<ExtendedTooltip name="DiscountServiceGroupDependencyExtendedTooltip" id="163"/>
+									<Events>
+										<Event name="OnChange">DiscountServiceGroupOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupFormulasDependencies" id="237">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Formulas</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Формулы</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Formel</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupFormulasDependenciesExtendedTooltip" id="238"/>
+							<ChildItems>
+								<Table name="Formulas" id="195">
+									<Representation>List</Representation>
+									<HeightControlVariant>UseContentHeight</HeightControlVariant>
+									<HorizontalLines>false</HorizontalLines>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Object.Formulas</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Formulas</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Формулы</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Formel</v8:content>
+										</v8:item>
+									</Title>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="FormulasContextMenu" id="196"/>
+									<AutoCommandBar name="FormulasCommandBar" id="197">
+										<ChildItems>
+											<ButtonGroup name="FormulasActionsGroup" id="380">
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Actions</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Actionen</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Действия</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="FormulasActionsGroupExtendedTooltip" id="381"/>
+												<ChildItems>
+													<Button name="FormulasAdd" id="382">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.Formulas.StandardCommand.Add</CommandName>
+														<ExtendedTooltip name="FormulasAddExtendedTooltip" id="383"/>
+													</Button>
+													<Button name="FormulasCopy" id="245">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.Formulas.StandardCommand.Copy</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="FormulasCopyExtendedTooltip" id="246"/>
+													</Button>
+													<Button name="FormulasDelete" id="247">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.Formulas.StandardCommand.Delete</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="FormulasDeleteExtendedTooltip" id="248"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="FormulasMoveRowsGroup" id="384">
+												<Title>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Move rows</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>de</v8:lang>
+														<v8:content>Zeilen verschieben</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Перемещение строк</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="FormulasMoveRowsGroupExtendedTooltip" id="385"/>
+												<ChildItems>
+													<Button name="FormulasMoveUp" id="386">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Formulas.StandardCommand.MoveUp</CommandName>
+														<ExtendedTooltip name="FormulasMoveUpExtendedTooltip" id="387"/>
+													</Button>
+													<Button name="FormulasMoveDown" id="388">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Formulas.StandardCommand.MoveDown</CommandName>
+														<ExtendedTooltip name="FormulasMoveDownExtendedTooltip" id="389"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="FormulasExtendedTooltip" id="198"/>
+									<SearchStringAddition name="FormulasSearchString" id="199">
+										<AdditionSource>
+											<Item>Formulas</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="FormulasSearchStringContextMenu" id="200"/>
+										<ExtendedTooltip name="FormulasSearchStringExtendedTooltip" id="201"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="FormulasViewStatus" id="202">
+										<AdditionSource>
+											<Item>Formulas</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="FormulasViewStatusContextMenu" id="203"/>
+										<ExtendedTooltip name="FormulasViewStatusExtendedTooltip" id="204"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="FormulasSearchControl" id="205">
+										<AdditionSource>
+											<Item>Formulas</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="FormulasSearchControlContextMenu" id="206"/>
+										<ExtendedTooltip name="FormulasSearchControlExtendedTooltip" id="207"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="FormulasLineNumber" id="208">
+											<DataPath>Object.Formulas.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="FormulasLineNumberContextMenu" id="209"/>
+											<ExtendedTooltip name="FormulasLineNumberExtendedTooltip" id="210"/>
+										</LabelField>
+										<InputField name="FormulasDateValidFrom" id="211">
+											<DataPath>Object.Formulas.DateValidFrom</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Valid from</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Действует с</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Gültig ab</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ContextMenu name="FormulasDateValidFromContextMenu" id="212"/>
+											<ExtendedTooltip name="FormulasDateValidFromExtendedTooltip" id="213"/>
+										</InputField>
+										<InputField name="FormulasHotel" id="239">
+											<DataPath>Object.Formulas.Hotel</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>13</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ContextMenu name="FormulasHotelContextMenu" id="240"/>
+											<ExtendedTooltip name="FormulasHotelExtendedTooltip" id="241"/>
+										</InputField>
+										<InputField name="FormulasRoomClass" id="390">
+											<DataPath>Object.Formulas.RoomClass</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>13</Width>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.Formulas.CurrentData.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="FormulasRoomClassContextMenu" id="391"/>
+											<ExtendedTooltip name="FormulasRoomClassExtendedTooltip" id="392"/>
+											<Events>
+												<Event name="OnChange">FormulasRoomClassOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="FormulasRoomType" id="242">
+											<DataPath>Object.Formulas.RoomType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>13</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Filter.Owner</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.Formulas.CurrentData.Hotel</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="FormulasRoomTypeContextMenu" id="243"/>
+											<ExtendedTooltip name="FormulasRoomTypeExtendedTooltip" id="244"/>
+											<Events>
+												<Event name="OnChange">FormulasRoomTypeOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="FormulasClientType" id="214">
+											<DataPath>Object.Formulas.ClientType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="FormulasClientTypeContextMenu" id="215"/>
+											<ExtendedTooltip name="FormulasClientTypeExtendedTooltip" id="216"/>
+										</InputField>
+										<InputField name="FormulasService" id="217">
+											<DataPath>Object.Formulas.Service</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Service price = </v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цена услуги =</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Servicepreis =</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>15</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ContextMenu name="FormulasServiceContextMenu" id="218"/>
+											<ExtendedTooltip name="FormulasServiceExtendedTooltip" id="219"/>
+										</InputField>
+										<InputField name="FormulasAccommodationType" id="220">
+											<DataPath>Object.Formulas.AccommodationType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>(Accommodation type price</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(Цена вида размещения</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>(Pries der Unterbringungen Typ</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>13</Width>
+											<ChoiceButton>true</ChoiceButton>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ContextMenu name="FormulasAccommodationTypeContextMenu" id="221"/>
+											<ExtendedTooltip name="FormulasAccommodationTypeExtendedTooltip" id="222"/>
+										</InputField>
+										<InputField name="FormulasBracketsConstant" id="226">
+											<DataPath>Object.Formulas.BracketsConstant</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>+ Constant)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>+ Константа)</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>+ Konstant)</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ContextMenu name="FormulasBracketsConstantContextMenu" id="227"/>
+											<ExtendedTooltip name="FormulasBracketsConstantExtendedTooltip" id="228"/>
+										</InputField>
+										<InputField name="FormulasMultiplier" id="223">
+											<DataPath>Object.Formulas.Multiplier</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>* Multiplier</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>* Множитель</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>* Multiplier</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ContextMenu name="FormulasMultiplierContextMenu" id="224"/>
+											<ExtendedTooltip name="FormulasMultiplierExtendedTooltip" id="225"/>
+										</InputField>
+										<InputField name="FormulasConstant" id="229">
+											<DataPath>Object.Formulas.Constant</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>+ Constant</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>+ Константа</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>+ Konstant</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ContextMenu name="FormulasConstantContextMenu" id="230"/>
+											<ExtendedTooltip name="FormulasConstantExtendedTooltip" id="231"/>
+										</InputField>
+										<InputField name="FormulasReplaceWithService" id="366">
+											<DataPath>Object.Formulas.ReplaceWithService</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="FormulasReplaceWithServiceContextMenu" id="367"/>
+											<ExtendedTooltip name="FormulasReplaceWithServiceExtendedTooltip" id="368"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ServicePackagesPage" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пакеты услуг</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Service packages</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dienstleistungspakete</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Deal</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:TransparentPixel x="13" y="1"/>
+					</Picture>
+					<ExtendedTooltip name="ServicePackagesPageExtendedTooltip" id="176"/>
+					<ChildItems>
+						<InputField name="ServicePackage" id="13">
+							<DataPath>Object.ServicePackage</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пакет услуг</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Service package</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Dienstleistungspaket</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ServicePackageContextMenu" id="14"/>
+							<ExtendedTooltip name="ServicePackageExtendedTooltip" id="177"/>
+							<Events>
+								<Event name="OnChange">ServicePackageOnChange</Event>
+							</Events>
+						</InputField>
+						<Table name="ServicePackages" id="75">
+							<Representation>List</Representation>
+							<HeightControlVariant>UseContentHeight</HeightControlVariant>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.ServicePackages</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ServicePackagesContextMenu" id="76"/>
+							<AutoCommandBar name="ServicePackagesCommandBar" id="77"/>
+							<ExtendedTooltip name="ServicePackagesExtendedTooltip" id="178"/>
+							<SearchStringAddition name="ServicePackagesSearchString" id="179">
+								<AdditionSource>
+									<Item>ServicePackages</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicePackagesSearchStringContextMenu" id="180"/>
+								<ExtendedTooltip name="ServicePackagesSearchStringExtendedTooltip" id="181"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ServicePackagesViewStatus" id="182">
+								<AdditionSource>
+									<Item>ServicePackages</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicePackagesViewStatusContextMenu" id="183"/>
+								<ExtendedTooltip name="ServicePackagesViewStatusExtendedTooltip" id="184"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ServicePackagesSearchControl" id="185">
+								<AdditionSource>
+									<Item>ServicePackages</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ServicePackagesSearchControlContextMenu" id="186"/>
+								<ExtendedTooltip name="ServicePackagesSearchControlExtendedTooltip" id="187"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">ServicePackagesOnChange</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ServicePackagesLineNumber" id="78">
+									<DataPath>Object.ServicePackages.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicePackagesLineNumberContextMenu" id="79"/>
+									<ExtendedTooltip name="ServicePackagesLineNumberExtendedTooltip" id="188"/>
+								</LabelField>
+								<InputField name="ServicePackagesServicePackage" id="80">
+									<DataPath>Object.ServicePackages.ServicePackage</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пакет услуг</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Service package</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Dienstleistungspaket</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ServicePackagesServicePackageContextMenu" id="81"/>
+									<ExtendedTooltip name="ServicePackagesServicePackageExtendedTooltip" id="189"/>
+								</InputField>
+								<CheckBoxField name="ServicePackagesPacketPriceIsIncludedInRoomRate" id="249">
+									<DataPath>Object.ServicePackages.PacketPriceIsIncludedInRoomRate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ServicePackagesPacketPriceIsIncludedInRoomRateContextMenu" id="250"/>
+									<ExtendedTooltip name="ServicePackagesPacketPriceIsIncludedInRoomRateExtendedTooltip" id="251"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="OnlinePage" id="397">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Online</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Online</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Онлайн</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.HTMLPage</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="OnlinePageExtendedTooltip" id="398"/>
+					<ChildItems>
+						<InputField name="ReservationConditionsShort" id="314">
+							<DataPath>Object.ReservationConditionsShort</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Short name</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Kurznamen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Краткое имя</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Displayed on the room search page</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Auf der Seite Raumsuche angezeigt</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображается на странице поиска номеров</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>1</Height>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<ContextMenu name="ReservationConditionsShortContextMenu" id="315"/>
+							<ExtendedTooltip name="ReservationConditionsShortExtendedTooltip" id="316"/>
+						</InputField>
+						<InputField name="ReservationConditionsOnline" id="311">
+							<DataPath>Object.ReservationConditionsOnline</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Short rate description (html)</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Kurze Tarifbeschreibung (html)</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Краткое описание тарифа (html)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>A short text describing rate differences. It is displayed on the room search page and helps to select the price and rate.
+One or two lines.</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Einen kurzen text zu beschreiben-tariff Unterschiede. Es wird auf der Zimmersuchseite angezeigt und hilft bei der Auswahl von Preis und Preis.
+Eine oder zwei Zeilen.</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Короткий текст, описывающий, чем один тариф отличается от другого. Отображается на странице поиска номеров, на этапе выбора цены и тарифа.
+Одна, две строки.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>2</Height>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>2</MaxHeight>
+							<ContextMenu name="ReservationConditionsOnlineContextMenu" id="312"/>
+							<ExtendedTooltip name="ReservationConditionsOnlineExtendedTooltip" id="313"/>
+						</InputField>
+						<CheckBoxField name="IsOnlineRate" id="271">
+							<DataPath>Object.IsOnlineRate</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsOnlineRateContextMenu" id="272"/>
+							<ExtendedTooltip name="IsOnlineRateExtendedTooltip" id="273"/>
+						</CheckBoxField>
+						<InputField name="OnlineDiscount" id="447">
+							<DataPath>Object.OnlineDiscount</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>If specified, the API for the booking module fills in attributes for displaying the amount before the discount and discount % lable:
+discount % is filled with the value of this field;
+the amount before the discount is filled by reverse calculation</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Falls angegeben, werden in der API für das Buchungsmodul die Details ausgefüllt, um den% Rabatt und den Betrag vor dem Rabatt anzuzeigen:
+ % Rabatt wird mit dem Wert dieses Feldes ausgefüllt;
+der Betrag, bevor der Rabatt angewendet wird, wird in umgekehrter Berechnung berechnet</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если указан, то в АПИ для модуля бронирования будут заполнены реквизиты для отображения % скидки и суммы до скидки:
+ % скидки заполняется значением этого поля;
+сумма до применения скидки будет вычислена обратным рассчетом</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="OnlineDiscountContextMenu" id="448"/>
+							<ExtendedTooltip name="OnlineDiscountExtendedTooltip" id="449"/>
+						</InputField>
+						<CheckBoxField name="IsHiddenRateForAuthorizedClients" id="274">
+							<DataPath>Object.IsHiddenRateForAuthorizedClients</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsHiddenRateForAuthorizedClientsContextMenu" id="275"/>
+							<ExtendedTooltip name="IsHiddenRateForAuthorizedClientsExtendedTooltip" id="276"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsRateForCRS" id="303">
+							<DataPath>Object.IsRateForCRS</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsRateForCRSContextMenu" id="304"/>
+							<ExtendedTooltip name="IsRateForCRSExtendedTooltip" id="305"/>
+						</CheckBoxField>
+						<InputField name="PaymentMethodCodesAllowedOnline" id="350">
+							<DataPath>Object.PaymentMethodCodesAllowedOnline</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Limit the choice of payment option to the codes</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Auswahl der Zahlungsoption auf Codes beschränken</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ограничить выбор варианта оплаты кодами</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<ContextMenu name="PaymentMethodCodesAllowedOnlineContextMenu" id="351"/>
+							<ExtendedTooltip name="PaymentMethodCodesAllowedOnlineExtendedTooltip" id="352"/>
+						</InputField>
+						<UsualGroup name="GroupUpgradeDiscount" id="361">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Room upgrade</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Upgrade der Zimmerkategorie</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Повышение картегории номера</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="GroupUpgradeDiscountExtendedTooltip" id="362"/>
+							<ChildItems>
+								<CheckBoxField name="ShowUpgrades" id="377">
+									<DataPath>Object.ShowUpgrades</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ShowUpgradesContextMenu" id="378"/>
+									<ExtendedTooltip name="ShowUpgradesExtendedTooltip" id="379"/>
+								</CheckBoxField>
+								<InputField name="UpgradeDiscount" id="363">
+									<DataPath>Object.UpgradeDiscount</DataPath>
+									<TitleLocation>Left</TitleLocation>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="UpgradeDiscountContextMenu" id="364"/>
+									<ExtendedTooltip name="UpgradeDiscountExtendedTooltip" id="365"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ReservationConditionsPage" id="86">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reservation confirmation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Buchungsbestätigung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подтверждение бронирования</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Print</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:TransparentPixel x="6" y="1"/>
+					</Picture>
+					<ExtendedTooltip name="ReservationConditionsPageExtendedTooltip" id="190"/>
+					<ChildItems>
+						<InputField name="DescriptionTranslations" id="7">
+							<DataPath>Object.DescriptionTranslations</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description translations</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Übersetzung der Bezeichnung</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Переводы наименования</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="DescriptionTranslationsContextMenu" id="8"/>
+							<ExtendedTooltip name="DescriptionTranslationsExtendedTooltip" id="122"/>
+							<Events>
+								<Event name="Opening">DescriptionTranslationsOpening</Event>
+							</Events>
+						</InputField>
+						<InputField name="ReservationConditions" id="57">
+							<DataPath>Object.ReservationConditions</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Reservation terms for printout</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Reservierungsbedingungen für druck</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст условий бронирования для печати</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MultiLine>true</MultiLine>
+							<OpenButton>true</OpenButton>
+							<HeightControlVariant>UseHeightInFormRows</HeightControlVariant>
+							<ContextMenu name="ReservationConditionsContextMenu" id="58"/>
+							<ExtendedTooltip name="ReservationConditionsExtendedTooltip" id="191"/>
+							<Events>
+								<Event name="Opening">ReservationConditionsOpening</Event>
+							</Events>
+						</InputField>
+						<InputField name="ServicesIncludedDescription" id="432">
+							<DataPath>Object.ServicesIncludedDescription</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MultiLine>true</MultiLine>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ServicesIncludedDescriptionContextMenu" id="433"/>
+							<ExtendedTooltip name="ServicesIncludedDescriptionExtendedTooltip" id="434"/>
+							<Events>
+								<Event name="Opening">ServicesIncludedDescriptionOpening</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="DoNotPrintRate" id="53">
+							<DataPath>Object.DoNotPrintRate</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не печатать тариф</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Do not print rate</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Tarif nicht drucken</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotPrintRateContextMenu" id="54"/>
+							<ExtendedTooltip name="DoNotPrintRateExtendedTooltip" id="145"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="AnalyticsCodes" id="399">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Analytics codes</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Analytics-Codes</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коды аналитики</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Report</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="AnalyticsCodesExtendedTooltip" id="400"/>
+					<ChildItems>
+						<UsualGroup name="RateAttributeGroup" id="99">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Атрибуты тарифа</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Rate attributes</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Tarifattribute</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="RateAttributeGroupExtendedTooltip" id="132"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationRateReportAttributes" id="423">
+									<TextColor>style:FieldSelectionBackColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>при выборе тарифа в брони значения соответствующих реквизитов брони устанавливаются автоматически</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>bei der Auswahl eines Tarifs im Reservierungsformular werden die Werte der entsprechenden Attribute automatisch festgelegt.</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>when selecting a rate on the reservation form, the values of the corresponding attributes are set automatically.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationRateReportAttributesContextMenu" id="424"/>
+									<ExtendedTooltip name="DecorationRateReportAttributesExtendedTooltip" id="425"/>
+								</LabelDecoration>
+								<UsualGroup name="GroupTypes" id="113">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Types</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Типы</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Typen</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupTypesExtendedTooltip" id="133"/>
+									<ChildItems>
+										<InputField name="RoomRateType" id="11">
+											<DataPath>Object.RoomRateType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип тарифа</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Room rate type</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Tariftyp</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="RoomRateTypeContextMenu" id="12"/>
+											<ExtendedTooltip name="RoomRateTypeExtendedTooltip" id="134"/>
+										</InputField>
+										<InputField name="ContractType" id="114">
+											<DataPath>Object.ContractType</DataPath>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="ContractTypeContextMenu" id="115"/>
+											<ExtendedTooltip name="ContractTypeExtendedTooltip" id="135"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="MarkCodeAndSOB" id="100">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Mark code and SOB</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="MarkCodeAndSOBExtendedTooltip" id="136"/>
+									<ChildItems>
+										<InputField name="MarketingCode" id="59">
+											<DataPath>Object.MarketingCode</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Направл. маркетинга</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Marketing code</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Marketingrichtung</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="MarketingCodeContextMenu" id="60"/>
+											<ExtendedTooltip name="MarketingCodeExtendedTooltip" id="137"/>
+										</InputField>
+										<InputField name="SourceOfBusiness" id="61">
+											<DataPath>Object.SourceOfBusiness</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Источник информации</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Source of business</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Informationsquelle</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<QuickChoice>true</QuickChoice>
+											<ChoiceParameters>
+												<app:item name="Filter.DeletionMark">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">false</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<ContextMenu name="SourceOfBusinessContextMenu" id="62"/>
+											<ExtendedTooltip name="SourceOfBusinessExtendedTooltip" id="138"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ClientTypeGroup" id="101">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Client type group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ClientTypeGroupExtendedTooltip" id="139"/>
+									<ChildItems>
+										<InputField name="ClientType" id="63">
+											<DataPath>Object.ClientType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип клиента</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Client type</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Kundentyp</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="ClientTypeContextMenu" id="64"/>
+											<ExtendedTooltip name="ClientTypeExtendedTooltip" id="140"/>
+											<Events>
+												<Event name="OnChange">ClientTypeOnChange</Event>
+											</Events>
+										</InputField>
+										<LabelField name="ClientTypeConfirmationText" id="65">
+											<DataPath>Object.ClientTypeConfirmationText</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ClientTypeConfirmationTextContextMenu" id="66"/>
+											<ExtendedTooltip name="ClientTypeConfirmationTextExtendedTooltip" id="141"/>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="RateDiscountsGroup" id="89">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скидки по тарифу</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Rate discounts</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Preisnachlässe nach Tarif</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="RateDiscountsGroupExtendedTooltip" id="161"/>
+									<ChildItems>
+										<InputField name="DiscountType" id="71">
+											<DataPath>Object.DiscountType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Discount type</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип скидки</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>RabattTyp</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="DiscountTypeContextMenu" id="72"/>
+											<ExtendedTooltip name="DiscountTypeExtendedTooltip" id="165"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="OtherTypesGroup" id="339">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Other types</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Andere Arten</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Другие типы</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="OtherTypesGroupExtendedTooltip" id="340"/>
+									<ChildItems>
+										<InputField name="Allotment" id="336">
+											<DataPath>Object.Allotment</DataPath>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="AllotmentContextMenu" id="337"/>
+											<ExtendedTooltip name="AllotmentExtendedTooltip" id="338"/>
+										</InputField>
+										<InputField name="IdentificationCardType" id="341">
+											<DataPath>Object.IdentificationCardType</DataPath>
+											<ClearButton>true</ClearButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<ContextMenu name="IdentificationCardTypeContextMenu" id="342"/>
+											<ExtendedTooltip name="IdentificationCardTypeExtendedTooltip" id="343"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="Parameters" id="501">
+									<DataPath>Object.Parameters</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ParametersContextMenu" id="502"/>
+									<ExtendedTooltip name="ParametersExtendedTooltip" id="503"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="HotelProductsGroup" id="93">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Vouchers</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gutscheine</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Путевки</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="HotelProductsGroupExtendedTooltip" id="174"/>
+							<ChildItems>
+								<InputField name="HotelProductType" id="73">
+									<DataPath>Object.HotelProductType</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Voucher type</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Gutscheintyp</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип путевки</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ClearButton>true</ClearButton>
+									<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+									<ContextMenu name="HotelProductTypeContextMenu" id="74"/>
+									<ExtendedTooltip name="HotelProductTypeExtendedTooltip" id="175"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="GroupRemarks" id="452">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Remarks</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bemerkungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Примечания</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Change</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="GroupRemarksExtendedTooltip" id="453"/>
+					<ChildItems>
+						<InputField name="RoomRateRemarks" id="454">
+							<DataPath>Object.Remarks</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="RoomRateRemarksContextMenu" id="455"/>
+							<ExtendedTooltip name="RoomRateRemarksExtendedTooltip" id="456"/>
+						</InputField>
+						<UsualGroup name="GroupReservationRemarks" id="457">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group reservation remarks</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group reservation remarks</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupReservationRemarksExtendedTooltip" id="458"/>
+							<ChildItems>
+								<InputField name="ReservationRemarksAmenity" id="461">
+									<DataPath>Object.ReservationRemarksAmenity</DataPath>
+									<ContextMenu name="ReservationRemarksAmenityContextMenu" id="462"/>
+									<ExtendedTooltip name="ReservationRemarksAmenityExtendedTooltip" id="463"/>
+								</InputField>
+								<InputField name="ReservationRemarksTaskArea" id="464">
+									<DataPath>Object.ReservationRemarksTaskArea</DataPath>
+									<ContextMenu name="ReservationRemarksTaskAreaContextMenu" id="465"/>
+									<ExtendedTooltip name="ReservationRemarksTaskAreaExtendedTooltip" id="466"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupReservationHousekeepingRemarks" id="459">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group reservation housekeeping remarks</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group reservation housekeeping remarks</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupReservationHousekeepingRemarksExtendedTooltip" id="460"/>
+							<ChildItems>
+								<InputField name="ReservationHousekeepingRemarksAmenity" id="467">
+									<DataPath>Object.ReservationHousekeepingRemarksAmenity</DataPath>
+									<ContextMenu name="ReservationHousekeepingRemarksAmenityContextMenu" id="468"/>
+									<ExtendedTooltip name="ReservationHousekeepingRemarksAmenityExtendedTooltip" id="469"/>
+								</InputField>
+								<InputField name="ReservationHousekeepingRemarksTaskArea" id="470">
+									<DataPath>Object.ReservationHousekeepingRemarksTaskArea</DataPath>
+									<ContextMenu name="ReservationHousekeepingRemarksTaskAreaContextMenu" id="471"/>
+									<ExtendedTooltip name="ReservationHousekeepingRemarksTaskAreaExtendedTooltip" id="472"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="AuthorAndCreateDate" id="103">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Who and when has created this room rate</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто и когда создал тариф</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Wer und wann hat erstellt Tarif</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="AuthorAndCreateDateExtendedTooltip" id="147"/>
+			<ChildItems>
+				<LabelField name="Author" id="67">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Author</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Autor</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="AuthorContextMenu" id="68"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="148"/>
+				</LabelField>
+				<LabelField name="CreateDate" id="69">
+					<DataPath>Object.CreateDate</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата регистрации</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Erfassungsdatum</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Format>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>DF='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="CreateDateContextMenu" id="70"/>
+					<ExtendedTooltip name="CreateDateExtendedTooltip" id="149"/>
+				</LabelField>
+				<LabelField name="LimitsLastChangeDate" id="344">
+					<DataPath>Object.LimitsLastChangeDate</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<ContextMenu name="LimitsLastChangeDateContextMenu" id="345"/>
+					<ExtendedTooltip name="LimitsLastChangeDateExtendedTooltip" id="346"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.RoomRates</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="PricesRepostIsNeeded" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Prices specifications need to be reposted</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Prices specifications need to be reposted</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Необходимо перепровести спецификации цен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EmptyHotel" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Empty hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустая гостиница</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Leere Hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Hotels</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EmptyRoomType" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Empty room type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустой тип номера</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Leere Zimmertyp</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EmptyService" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Empty service</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустая услуга</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Leere Dienstleistung</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Services</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EmptyAccommodationType" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Empty accommodation type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустой вид размещения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Leere Unterbringentyp</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.AccommodationTypes</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="BasedOnRoomRateOnOpen" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Based on room rate on open</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тариф основание при открытии формы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Basierend auf den Zimmerpreis auf offenen</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomRates</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="WasModified" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Was modified</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PriceSettingMethod" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Price setting method</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ установки цен</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Preiseinstellmethode</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="AccommodationServicesHasBeingChanged" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PriceSettingMode" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Price setting method</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ установки цен</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Preiseinstellmethode</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="FillRoomRateDailyPricesIsNeeded" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Fill room rate daily prices is needed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fill room rate daily prices is needed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Fill room rate daily prices is needed</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasHotel</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.Hotel</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">EmptyHotel</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;For any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;По всем&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;Für alle&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasRoomType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.RoomType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">EmptyRoomType</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;For any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;По всем&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;Für alle&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasService</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.Service</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">EmptyService</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;For any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;По всем&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;Für alle&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>FormulasAccommodationType</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Object.Formulas.AccommodationType</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">EmptyAccommodationType</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Green</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Text</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>&lt;For any&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>&lt;По всем&gt;</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>de</v8:lang>
+								<v8:content>&lt;Für alle&gt;</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="CommandCopy" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Make a copy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Start assistant to copy calendar and prices</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Starten Sie den Assistenten, um den Kalender und die Preise zu kopieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить помощник для копирования календаря и приказов по ценам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CommandCopy</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.RoomRateCardTypeBindings.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>9</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">false</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.SetRoomRatePrices</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">true</xr:Value>
+					<xr:Value name="Role.Administrator">true</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">true</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">true</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">true</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">true</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRateChangeHistory.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>4</Index>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRateRestrictions.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>5</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRates.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>10</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRateDailyPrices.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>12</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRatePrices.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>11</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.SpecialOffersForRates.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>6</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRateFormulas.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>13</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">false</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">false</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.SetRoomRateFormulas</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Accountant">true</xr:Value>
+					<xr:Value name="Role.Administrator">true</xr:Value>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.General">true</xr:Value>
+					<xr:Value name="Role.InternalControllerDivisionUser">true</xr:Value>
+					<xr:Value name="Role.ReadOnlyUser">true</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="3a419922-52d1-4e06-9e71-b5c9d6a1b30e">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">true</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomRateOverrides.StandardCommand.OpenByValue.RoomRate</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>8</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>true</xr:Common>
+					<xr:Value name="Role.Agent">false</xr:Value>
+					<xr:Value name="Role.BackgroundMode">false</xr:Value>
+					<xr:Value name="Role.RightsToChooseHotel">false</xr:Value>
+					<xr:Value name="Role.RightsToMergeCatalogItemsAndChangeHistory">false</xr:Value>
+					<xr:Value name="Role.RightsToOpenExternalReportsAndDataProcessorsInteractively">false</xr:Value>
+					<xr:Value name="Role.RightsToRunMobileClient">false</xr:Value>
+					<xr:Value name="Role.RightsToRunThinClient">false</xr:Value>
+					<xr:Value name="Role.SelfService">false</xr:Value>
+					<xr:Value name="Role.SubsystemCRM">false</xr:Value>
+					<xr:Value name="Role.SubsystemDesktopAccess">false</xr:Value>
+					<xr:Value name="Role.SubsystemFrontOffice">false</xr:Value>
+					<xr:Value name="Role.SubsystemHousekeeping">false</xr:Value>
+					<xr:Value name="Role.SubsystemIntegration">false</xr:Value>
+					<xr:Value name="Role.SubsystemInvoices">false</xr:Value>
+					<xr:Value name="Role.SubsystemLoyalty">false</xr:Value>
+					<xr:Value name="Role.SubsystemOrders">false</xr:Value>
+					<xr:Value name="Role.SubsystemRatesAndServices">false</xr:Value>
+					<xr:Value name="Role.SubsystemResources">false</xr:Value>
+					<xr:Value name="Role.SubsystemRestaurant">false</xr:Value>
+					<xr:Value name="Role.SubsystemTasks">false</xr:Value>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>Document.SetRoomRateFormulas.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<Index>1</Index>
+			</Item>
+			<Item>
+				<Command>Document.SetRoomRatePrices.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

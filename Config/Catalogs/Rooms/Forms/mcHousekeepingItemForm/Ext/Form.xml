@@ -1,0 +1,1472 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>ChangeHistory</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+		<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+		<ExcludedCommand>Reread</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>ShowInList</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormWriteAndClose" id="57">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="FormWriteAndCloseExtendedTooltip" id="58"/>
+			</Button>
+			<Button name="FormWrite" id="59">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="FormWriteExtendedTooltip" id="60"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Pages" id="162">
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="163"/>
+			<ChildItems>
+				<Page name="PageMain" id="164">
+					<ExtendedTooltip name="PageMainExtendedTooltip" id="165"/>
+					<ChildItems>
+						<InputField name="DescriptionRoom" id="15">
+							<DataPath>DescriptionRoom</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleFont ref="style:MobileImportantFont" kind="StyleItem"/>
+							<Font ref="style:MobileImportantFont" height="11" kind="StyleItem"/>
+							<ContextMenu name="DescriptionRoomContextMenu" id="16"/>
+							<ExtendedTooltip name="DescriptionRoomExtendedTooltip" id="17"/>
+						</InputField>
+						<UsualGroup name="GroupStatus" id="68">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupStatusExtendedTooltip" id="69"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationStatus" id="70">
+									<Font ref="style:MobileImportantFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Room status:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Status des Zimmers:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус номера:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationStatusContextMenu" id="71"/>
+									<ExtendedTooltip name="DecorationStatusExtendedTooltip" id="72"/>
+								</LabelDecoration>
+								<Button name="ChangeStatus" id="66">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<HorizontalStretch>true</HorizontalStretch>
+									<CommandName>Form.Command.ChangeStatus</CommandName>
+									<Font ref="style:MobileImportantFont" kind="StyleItem"/>
+									<ExtendedTooltip name="ChangeStatusExtendedTooltip" id="67"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="BedsSetup" id="279">
+							<DataPath>Object.BedsSetup</DataPath>
+							<ClearButton>false</ClearButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<Font ref="style:NormalTextFont" height="11" kind="StyleItem" scale="100"/>
+							<ContextMenu name="BedsSetupContextMenu" id="280"/>
+							<ExtendedTooltip name="BedsSetupExtendedTooltip" id="281"/>
+						</InputField>
+						<UsualGroup name="GroupEmployees" id="271">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupEmployeesExtendedTooltip" id="272"/>
+							<ChildItems>
+								<InputField name="EmployeeWhoChangedRoomStatus" id="273">
+									<DataPath>EmployeeWhoChangedRoomStatus</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="EmployeeWhoChangedRoomStatusContextMenu" id="274"/>
+									<ExtendedTooltip name="EmployeeWhoChangedRoomStatusExtendedTooltip" id="275"/>
+								</InputField>
+								<InputField name="DateChangedRoomStatus" id="276">
+									<DataPath>DateChangedRoomStatus</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="DateChangedRoomStatusContextMenu" id="277"/>
+									<ExtendedTooltip name="DateChangedRoomStatusExtendedTooltip" id="278"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="SelOperation" id="12">
+							<DataPath>SelOperation</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>false</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+							<ContextMenu name="SelOperationContextMenu" id="13"/>
+							<ExtendedTooltip name="SelOperationExtendedTooltip" id="14"/>
+						</InputField>
+						<InputField name="SelAccommodationTemplates" id="21">
+							<DataPath>SelAccommodationTemplates</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+							<ContextMenu name="SelAccommodationTemplatesContextMenu" id="22"/>
+							<ExtendedTooltip name="SelAccommodationTemplatesExtendedTooltip" id="23"/>
+						</InputField>
+						<UsualGroup name="GroupAccommodation" id="32">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupAccommodationExtendedTooltip" id="33"/>
+							<ChildItems>
+								<UsualGroup name="GroupGuestAccommodation" id="24">
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupGuestAccommodationExtendedTooltip" id="25"/>
+								</UsualGroup>
+								<InputField name="SelHousekeepingRemarksAccommodation" id="29">
+									<DataPath>SelHousekeepingRemarksAccommodation</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MultiLine>true</MultiLine>
+									<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+									<ContextMenu name="SelHousekeepingRemarksAccommodationContextMenu" id="30"/>
+									<ExtendedTooltip name="SelHousekeepingRemarksAccommodationExtendedTooltip" id="31"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="SelReservationTemplates" id="41">
+							<DataPath>SelReservationTemplates</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+							<ContextMenu name="SelReservationTemplatesContextMenu" id="42"/>
+							<ExtendedTooltip name="SelReservationTemplatesExtendedTooltip" id="43"/>
+						</InputField>
+						<UsualGroup name="GroupReservation" id="34">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupReservationExtendedTooltip" id="35"/>
+							<ChildItems>
+								<UsualGroup name="GroupGuestReservation" id="36">
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupGuestReservationExtendedTooltip" id="37"/>
+								</UsualGroup>
+								<InputField name="SelHousekeepingRemarksReservation" id="38">
+									<DataPath>SelHousekeepingRemarksReservation</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MultiLine>true</MultiLine>
+									<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+									<ContextMenu name="SelHousekeepingRemarksReservationContextMenu" id="39"/>
+									<ExtendedTooltip name="SelHousekeepingRemarksReservationExtendedTooltip" id="40"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupTasks" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Tasks</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Fehlfunktion</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Неисправности</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupTasksExtendedTooltip" id="45"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationTasks" id="46">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Decoration tasks</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="DecorationTasksContextMenu" id="47"/>
+									<ExtendedTooltip name="DecorationTasksExtendedTooltip" id="48"/>
+									<Events>
+										<Event name="Click">DecorationTasksClick</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="NewTaskButton" id="49">
+							<Type>UsualButton</Type>
+							<HorizontalStretch>true</HorizontalStretch>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<CommandName>Form.Command.NewTask</CommandName>
+							<Shape>Oval</Shape>
+							<ExtendedTooltip name="NewTaskButtonExtendedTooltip" id="50"/>
+						</Button>
+						<Button name="Minibar" id="51">
+							<Type>UsualButton</Type>
+							<Visible>false</Visible>
+							<HorizontalStretch>true</HorizontalStretch>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<CommandName>Form.Command.Minibar</CommandName>
+							<Shape>Oval</Shape>
+							<ExtendedTooltip name="MinibarExtendedTooltip" id="52"/>
+						</Button>
+						<Button name="Consumption" id="53">
+							<Type>UsualButton</Type>
+							<Visible>false</Visible>
+							<HorizontalStretch>true</HorizontalStretch>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<CommandName>Form.Command.Consumption</CommandName>
+							<Shape>Oval</Shape>
+							<ExtendedTooltip name="ConsumptionExtendedTooltip" id="54"/>
+						</Button>
+					</ChildItems>
+				</Page>
+				<Page name="PageConsumption" id="166">
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="PageConsumptionExtendedTooltip" id="167"/>
+					<ChildItems>
+						<UsualGroup name="ArticleActions" id="234">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ArticleActionsExtendedTooltip" id="235"/>
+							<ChildItems>
+								<Button name="ArticlesSave" id="238">
+									<Type>UsualButton</Type>
+									<HorizontalStretch>true</HorizontalStretch>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<CommandName>Form.Command.ArticlesSave</CommandName>
+									<ExtendedTooltip name="ArticlesSaveExtendedTooltip" id="239"/>
+								</Button>
+								<Button name="ArticlesCancel" id="236">
+									<Type>UsualButton</Type>
+									<HorizontalStretch>true</HorizontalStretch>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<CommandName>Form.Command.ArticlesCancel</CommandName>
+									<ExtendedTooltip name="ArticlesCancelExtendedTooltip" id="237"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Articles" id="168">
+							<Representation>List</Representation>
+							<SelectionMode>SingleRow</SelectionMode>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Articles</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RefreshRequest>PullFromTop</RefreshRequest>
+							<BehaviorOnHorizontalCompression>MoveItemsByImportance</BehaviorOnHorizontalCompression>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ArticlesContextMenu" id="169">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ArticlesContextMenuDelete" id="218">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Articles.StandardCommand.Delete</CommandName>
+										<ExtendedTooltip name="ArticlesContextMenuDeleteExtendedTooltip" id="219"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ArticlesCommandBar" id="170">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ArticlesArticlesAdd" id="216">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ArticlesAdd</CommandName>
+										<ExtendedTooltip name="ArticlesArticlesAddExtendedTooltip" id="217"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ArticlesExtendedTooltip" id="171"/>
+							<SearchStringAddition name="ArticlesSearchString" id="172">
+								<AdditionSource>
+									<Item>Articles</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ArticlesSearchStringContextMenu" id="173"/>
+								<ExtendedTooltip name="ArticlesSearchStringExtendedTooltip" id="174"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ArticlesViewStatus" id="175">
+								<AdditionSource>
+									<Item>Articles</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ArticlesViewStatusContextMenu" id="176"/>
+								<ExtendedTooltip name="ArticlesViewStatusExtendedTooltip" id="177"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ArticlesSearchControl" id="178">
+								<AdditionSource>
+									<Item>Articles</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ArticlesSearchControlContextMenu" id="179"/>
+								<ExtendedTooltip name="ArticlesSearchControlExtendedTooltip" id="180"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ArticlesSelection</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ArticlesArticleRow" id="181">
+									<DataPath>Articles.Article</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>20</MaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ArticlesArticleRowContextMenu" id="182"/>
+									<ExtendedTooltip name="ArticlesArticleRowExtendedTooltip" id="183"/>
+								</InputField>
+								<ColumnGroup name="ArticlesGroupQuantity" id="251">
+									<ExtendedTooltip name="ArticlesGroupQuantityExtendedTooltip" id="252"/>
+									<ChildItems>
+										<ColumnGroup name="ArticlesGroupUnit" id="269">
+											<Group>InCell</Group>
+											<ExtendedTooltip name="ArticlesGroupUnitExtendedTooltip" id="270"/>
+											<ChildItems>
+												<InputField name="ArticlesQuantityRow" id="184">
+													<DataPath>Articles.Quantity</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>8</Width>
+													<MaxWidth>8</MaxWidth>
+													<ContextMenu name="ArticlesQuantityRowContextMenu" id="185"/>
+													<ExtendedTooltip name="ArticlesQuantityRowExtendedTooltip" id="186"/>
+												</InputField>
+												<InputField name="ArticlesUnitRow" id="187">
+													<DataPath>Articles.Unit</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<MaxWidth>10</MaxWidth>
+													<ContextMenu name="ArticlesUnitRowContextMenu" id="188"/>
+													<ExtendedTooltip name="ArticlesUnitRowExtendedTooltip" id="189"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ArticlesQuantityPerUnit1" id="255">
+											<DataPath>Articles.QuantityPerUnit</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Quantity per Unit</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Menge pro Einheit.</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество на Ед. изм.</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<ContextMenu name="ArticlesQuantityPerUnit1ContextMenu" id="256"/>
+											<ExtendedTooltip name="ArticlesQuantityPerUnit1ExtendedTooltip" id="257"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ArticlesGroupPerUnit" id="253">
+									<ExtendedTooltip name="ArticlesGroupPerUnitExtendedTooltip" id="254"/>
+									<ChildItems>
+										<InputField name="ArticlesPlannedQuantity1" id="258">
+											<DataPath>Articles.PlannedQuantity</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Planned quantity</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Geplante Menge</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Кол-во по нормативу</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ArticlesPlannedQuantity1ContextMenu" id="259"/>
+											<ExtendedTooltip name="ArticlesPlannedQuantity1ExtendedTooltip" id="260"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ArticlesGroupCheck" id="261">
+									<ExtendedTooltip name="ArticlesGroupCheckExtendedTooltip" id="262"/>
+									<ChildItems>
+										<LabelField name="ArticlesIsPerPerson1" id="263">
+											<DataPath>Articles.IsPerPerson</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>For each guest</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Für jeden Gast</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На каждого гостя</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ArticlesIsPerPerson1ContextMenu" id="264"/>
+											<ExtendedTooltip name="ArticlesIsPerPerson1ExtendedTooltip" id="265"/>
+										</LabelField>
+										<LabelField name="ArticlesIsPerRoomSpaceUnit1" id="266">
+											<DataPath>Articles.IsPerRoomSpaceUnit</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Is per room space unit</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Pro Einheit der Zimmerfläche</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На единицу площади номера</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ArticlesIsPerRoomSpaceUnit1ContextMenu" id="267"/>
+											<ExtendedTooltip name="ArticlesIsPerRoomSpaceUnit1ExtendedTooltip" id="268"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageChangeArticle" id="194">
+					<ExtendedTooltip name="PageChangeArticleExtendedTooltip" id="195"/>
+					<ChildItems>
+						<InputField name="ArticlesRef" id="196">
+							<DataPath>ArticlesRef</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>false</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<InputHint>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Article</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Nomenklatur</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номенклатура</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ArticlesRefContextMenu" id="197"/>
+							<ExtendedTooltip name="ArticlesRefExtendedTooltip" id="198"/>
+							<Events>
+								<Event name="OnChange">ArticlesRefOnChange</Event>
+							</Events>
+						</InputField>
+						<LabelField name="ArticlesPlannedQuantityPerUnit" id="213">
+							<DataPath>ArticlesPlannedQuantity</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ArticlesPlannedQuantityPerUnitContextMenu" id="214"/>
+							<ExtendedTooltip name="ArticlesPlannedQuantityPerUnitExtendedTooltip" id="215"/>
+						</LabelField>
+						<UsualGroup name="GroupArticlesQuantity" id="205">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupArticlesQuantityExtendedTooltip" id="206"/>
+							<ChildItems>
+								<LabelField name="ArticlesQuantity" id="199">
+									<DataPath>ArticlesQuantity</DataPath>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ArticlesQuantityContextMenu" id="200"/>
+									<ExtendedTooltip name="ArticlesQuantityExtendedTooltip" id="201"/>
+								</LabelField>
+								<InputField name="ArticlesUnit" id="202">
+									<DataPath>ArticlesUnit</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ArticlesUnitContextMenu" id="203"/>
+									<ExtendedTooltip name="ArticlesUnitExtendedTooltip" id="204"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupArticlesQuantityPerUnit" id="240">
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupArticlesQuantityPerUnitExtendedTooltip" id="241"/>
+							<ChildItems>
+								<LabelField name="ArticlesQuantityPerUnit" id="242">
+									<DataPath>ArticlesQuantityPerUnit</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ArticlesQuantityPerUnitContextMenu" id="243"/>
+									<ExtendedTooltip name="ArticlesQuantityPerUnitExtendedTooltip" id="244"/>
+								</LabelField>
+								<UsualGroup name="GroupArticlesAction1" id="245">
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupArticlesAction1ExtendedTooltip" id="246"/>
+									<ChildItems>
+										<Button name="ArticlesQuantityPerUnitPlus" id="247">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ArticlesQuantityPerUnitPlus</CommandName>
+											<ExtendedTooltip name="ArticlesQuantityPerUnitPlusExtendedTooltip" id="248"/>
+										</Button>
+										<Button name="ArticlesQuantityPerUnitMinus" id="249">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ArticlesQuantityPerUnitMinus</CommandName>
+											<ExtendedTooltip name="ArticlesQuantityPerUnitMinusExtendedTooltip" id="250"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupCheck" id="220">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCheckExtendedTooltip" id="221"/>
+							<ChildItems>
+								<CheckBoxField name="ArticlesIsPerPerson" id="222">
+									<DataPath>ArticlesIsPerPerson</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ArticlesIsPerPersonContextMenu" id="223"/>
+									<ExtendedTooltip name="ArticlesIsPerPersonExtendedTooltip" id="224"/>
+									<Events>
+										<Event name="OnChange">ArticlesIsPerPersonOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ArticlesIsPerRoomSpaceUnit" id="225">
+									<DataPath>ArticlesIsPerRoomSpaceUnit</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ArticlesIsPerRoomSpaceUnitContextMenu" id="226"/>
+									<ExtendedTooltip name="ArticlesIsPerRoomSpaceUnitExtendedTooltip" id="227"/>
+									<Events>
+										<Event name="OnChange">ArticlesIsPerRoomSpaceUnitOnChange</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupAction" id="228">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupActionExtendedTooltip" id="229"/>
+							<ChildItems>
+								<Button name="ArticlesCancelChange" id="230">
+									<Type>UsualButton</Type>
+									<HorizontalStretch>true</HorizontalStretch>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<CommandName>Form.Command.ArticlesCancelChange</CommandName>
+									<ExtendedTooltip name="ArticlesCancelChangeExtendedTooltip" id="231"/>
+								</Button>
+								<Button name="ArticlesSaveChange" id="232">
+									<Type>UsualButton</Type>
+									<HorizontalStretch>true</HorizontalStretch>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<CommandName>Form.Command.ArticlesSaveChange</CommandName>
+									<ExtendedTooltip name="ArticlesSaveChangeExtendedTooltip" id="233"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Rooms</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="SelOperation" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Operation type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Arbeitentyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид работы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="DescriptionRoom" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zimmer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelAccommodationTemplates" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In-house</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>In-house</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проживает</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHousekeepingRemarksAccommodation" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Remarks</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bemerkungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примечания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelHousekeepingRemarksReservation" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Remarks</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bemerkungen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Примечания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelReservationTemplates" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check-in</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anreise</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заезд</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SelStatusRoomList" id="8">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ConsumptionRef" id="15">
+			<Type>
+				<v8:Type>cfg:DocumentRef.EmployeeOperation</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Articles" id="16">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Article" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Article</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nomenklatur</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Articles</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Quantity" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Quantity</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Anzahl</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Unit" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Unit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Maßeinheit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица измерения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="QuantityPerUnit" id="4">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="PlannedQuantity" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Planned quantity</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Geplante Menge</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кол-во по нормативу</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="IsPerPerson" id="6">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="IsPerRoomSpaceUnit" id="7">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ArticlesRef" id="17">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Articles</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesQuantity" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesUnit" id="19">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesPlannedQuantity" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Planned quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Geplante Menge</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во по нормативу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesSelectedRow" id="21">
+			<Type/>
+		</Attribute>
+		<Attribute name="ArticlesIsPerPerson" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is per person (guest)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Pro Person (Gast)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На каждого человека (гостя)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesIsPerRoomSpaceUnit" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is per room space unit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Pro Einheit der Zimmerfläche</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На единицу площади номера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesAction" id="24">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ArticlesQuantityPerUnit" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Article quantity per unit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Anzahl der Nomenklatur pro Maßeinheit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество номенклатуры на единицу измерения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EmployeeWhoChangedRoomStatus" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Employee</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Mitarbeiter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="DateChangedRoomStatus" id="27">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SavBedsSetup" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Beds setup at open event</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.BedsSetups</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SavRoomStatus" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room status at on open event</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.RoomStatuses</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Minibar" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Mini bar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Minibar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мини бар</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Minibar</v8:content>
+				</v8:item>
+			</ToolTip>
+		</Command>
+		<Command name="Consumption" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Consumption</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kosten</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Consumption</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Consumption</Action>
+		</Command>
+		<Command name="NewTask" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Malfunction</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Fehlfunktion</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Неисправность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New task</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>NewTask</Action>
+		</Command>
+		<Command name="ChangeStatus" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change status</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Nderungsst</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить статус</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ChangeStatus</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ArticlesAdd" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hinzufügen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ArticlesAdd</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ArticlesCancelChange" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cancel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Stornieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ArticlesCancelChange</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="ArticlesSaveChange" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ArticlesSaveChange</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ArticlesCancel" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cancel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Stornieren</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ArticlesCancel</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="ArticlesSave" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ArticlesSave</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ArticlesQuantityPerUnitPlus" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hinzufügen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Articles quantity per unit plus</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ArrowGreenUp</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ArticlesQuantityPerUnitPlus</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ArticlesQuantityPerUnitMinus" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hinzufügen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Articles quantity per unit minus</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ArrowRedDown</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ArticlesQuantityPerUnitMinus</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.RoomChangeHistory.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ShowRoomInventoryJournal</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.LostAndFound.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomProperties.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>4</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomCharacteristics.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomStatusChangeHistory.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>5</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.SafetySystemEvents.StandardCommand.OpenByValue.Room</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>6</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.RoomStatusChangeHistory.Command.CommandOpenMobileListFormForRoom</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>Document.AddRoom.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ChangeRoom.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.RoomInterfaceStatus.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.SetRoomBlock.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

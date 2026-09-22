@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="PanelOperation" id="157">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Panel operation</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bedienung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель управления </v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="PanelOperationExtendedTooltip" id="158"/>
+			<ChildItems>
+				<Page name="OperationPage" id="159">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Operation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Operation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Операция</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="OperationPageExtendedTooltip" id="160"/>
+					<ChildItems>
+						<UsualGroup name="GroupCodeAndIsActive" id="163">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group code and is active</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Gruppencode Und Ist Aktiv</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код Группы И Активен</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupCodeAndIsActiveExtendedTooltip" id="164"/>
+							<ChildItems>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+								<CheckBoxField name="IsActive" id="19">
+									<DataPath>Object.IsActive</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsActiveContextMenu" id="20"/>
+									<ExtendedTooltip name="IsActiveExtendedTooltip" id="21"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Description" id="4">
+							<DataPath>Object.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="DescriptionContextMenu" id="5"/>
+							<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+						</InputField>
+						<InputField name="Parent" id="7">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ParentContextMenu" id="8"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="9"/>
+						</InputField>
+						<InputField name="Hotel" id="13">
+							<DataPath>Object.Hotel</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="HotelContextMenu" id="14"/>
+							<ExtendedTooltip name="HotelExtendedTooltip" id="15"/>
+						</InputField>
+						<InputField name="ObjectTypeStr" id="198">
+							<DataPath>ObjectTypeStr</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>true</DropListButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ObjectTypeStrContextMenu" id="199"/>
+							<ExtendedTooltip name="ObjectTypeStrExtendedTooltip" id="200"/>
+							<Events>
+								<Event name="OnChange">ObjectTypeStrOnChange</Event>
+							</Events>
+						</InputField>
+						<InputField name="Remarks" id="22">
+							<DataPath>Object.Remarks</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>7</Height>
+							<ContextMenu name="RemarksContextMenu" id="23"/>
+							<ExtendedTooltip name="RemarksExtendedTooltip" id="24"/>
+						</InputField>
+						<CheckBoxField name="IsDefault" id="16">
+							<DataPath>Object.IsDefault</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsDefaultContextMenu" id="17"/>
+							<ExtendedTooltip name="IsDefaultExtendedTooltip" id="18"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="CommonPage" id="161">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Common parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Allgemeine Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="CommonPageExtendedTooltip" id="162"/>
+					<ChildItems>
+						<UsualGroup name="GroupLeftColumn" id="177">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Left column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Linke Spalte</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Левая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupLeftColumnExtendedTooltip" id="178"/>
+							<ChildItems>
+								<InputField name="RoomType" id="25">
+									<DataPath>Object.RoomType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="RoomTypeContextMenu" id="26"/>
+									<ExtendedTooltip name="RoomTypeExtendedTooltip" id="27"/>
+								</InputField>
+								<InputField name="MarketingCode" id="34">
+									<DataPath>Object.MarketingCode</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="MarketingCodeContextMenu" id="35"/>
+									<ExtendedTooltip name="MarketingCodeExtendedTooltip" id="36"/>
+								</InputField>
+								<InputField name="ClientType" id="43">
+									<DataPath>Object.ClientType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ClientTypeContextMenu" id="44"/>
+									<ExtendedTooltip name="ClientTypeExtendedTooltip" id="45"/>
+								</InputField>
+								<InputField name="RoomRate" id="52">
+									<DataPath>Object.RoomRate</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomRateContextMenu" id="53"/>
+									<ExtendedTooltip name="RoomRateExtendedTooltip" id="54"/>
+								</InputField>
+								<InputField name="DiscountType" id="61">
+									<DataPath>Object.DiscountType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DiscountTypeContextMenu" id="62"/>
+									<ExtendedTooltip name="DiscountTypeExtendedTooltip" id="63"/>
+								</InputField>
+								<InputField name="DiscountServiceGroup" id="70">
+									<DataPath>Object.DiscountServiceGroup</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DiscountServiceGroupContextMenu" id="71"/>
+									<ExtendedTooltip name="DiscountServiceGroupExtendedTooltip" id="72"/>
+								</InputField>
+								<InputField name="RoomRateType" id="55">
+									<DataPath>Object.RoomRateType</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomRateTypeContextMenu" id="56"/>
+									<ExtendedTooltip name="RoomRateTypeExtendedTooltip" id="57"/>
+								</InputField>
+								<InputField name="AccommodationType" id="28">
+									<DataPath>Object.AccommodationType</DataPath>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="AccommodationTypeContextMenu" id="29"/>
+									<ExtendedTooltip name="AccommodationTypeExtendedTooltip" id="30"/>
+								</InputField>
+								<InputField name="SourceOfBusiness" id="31">
+									<DataPath>Object.SourceOfBusiness</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Source of business</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Informationsquelle</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Источник информации</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="SourceOfBusinessContextMenu" id="32"/>
+									<ExtendedTooltip name="SourceOfBusinessExtendedTooltip" id="33"/>
+								</InputField>
+								<InputField name="RoomQuota" id="49">
+									<DataPath>Object.RoomQuota</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomQuotaContextMenu" id="50"/>
+									<ExtendedTooltip name="RoomQuotaExtendedTooltip" id="51"/>
+								</InputField>
+								<InputField name="ReportingCurrency" id="94">
+									<DataPath>Object.ReportingCurrency</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ReportingCurrencyContextMenu" id="95"/>
+									<ExtendedTooltip name="ReportingCurrencyExtendedTooltip" id="96"/>
+								</InputField>
+								<InputField name="PaymentMethod" id="118">
+									<DataPath>Object.PaymentMethod</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PaymentMethodContextMenu" id="119"/>
+									<ExtendedTooltip name="PaymentMethodExtendedTooltip" id="120"/>
+								</InputField>
+								<InputField name="Company" id="97">
+									<DataPath>Object.Company</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CompanyContextMenu" id="98"/>
+									<ExtendedTooltip name="CompanyExtendedTooltip" id="99"/>
+								</InputField>
+								<InputField name="Customer" id="106">
+									<DataPath>Object.Customer</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CustomerContextMenu" id="107"/>
+									<ExtendedTooltip name="CustomerExtendedTooltip" id="108"/>
+								</InputField>
+								<InputField name="Contract" id="109">
+									<DataPath>Object.Contract</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Customer</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ContractContextMenu" id="110"/>
+									<ExtendedTooltip name="ContractExtendedTooltip" id="111"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="GroupRightColumn" id="179">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Right column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rechte Spalte</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupRightColumnExtendedTooltip" id="180"/>
+							<ChildItems>
+								<InputField name="Room" id="133">
+									<DataPath>Object.Room</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Filter.Owner</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="RoomContextMenu" id="134"/>
+									<ExtendedTooltip name="RoomExtendedTooltip" id="135"/>
+								</InputField>
+								<InputField name="MarketingCodeConfirmationText" id="37">
+									<DataPath>Object.MarketingCodeConfirmationText</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>confirmation text</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zeile für die Bestätigung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>строка подтверждения</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="MarketingCodeConfirmationTextContextMenu" id="38"/>
+									<ExtendedTooltip name="MarketingCodeConfirmationTextExtendedTooltip" id="39"/>
+								</InputField>
+								<InputField name="ClientTypeConfirmationText" id="46">
+									<DataPath>Object.ClientTypeConfirmationText</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>confirmation text</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zeile für die Bestätigung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>строка подтверждения</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ClientTypeConfirmationTextContextMenu" id="47"/>
+									<ExtendedTooltip name="ClientTypeConfirmationTextExtendedTooltip" id="48"/>
+								</InputField>
+								<InputField name="RoomRateServiceGroup" id="58">
+									<DataPath>Object.RoomRateServiceGroup</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="RoomRateServiceGroupContextMenu" id="59"/>
+									<ExtendedTooltip name="RoomRateServiceGroupExtendedTooltip" id="60"/>
+								</InputField>
+								<InputField name="DiscountConfirmationText" id="64">
+									<DataPath>Object.DiscountConfirmationText</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>confirmation text</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Zeile für die Bestätigung</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>строка подтверждения</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DiscountConfirmationTextContextMenu" id="65"/>
+									<ExtendedTooltip name="DiscountConfirmationTextExtendedTooltip" id="66"/>
+								</InputField>
+								<InputField name="Discount" id="67">
+									<DataPath>Object.Discount</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DiscountContextMenu" id="68"/>
+									<ExtendedTooltip name="DiscountExtendedTooltip" id="69"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="AccommodationPage" id="181">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Accommodation specific</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parameter der Unterbringungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры размещения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="AccommodationPageExtendedTooltip" id="182"/>
+					<ChildItems>
+						<InputField name="AccommodationStatus" id="85">
+							<DataPath>Object.AccommodationStatus</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="AccommodationStatusContextMenu" id="86"/>
+							<ExtendedTooltip name="AccommodationStatusExtendedTooltip" id="87"/>
+						</InputField>
+						<CheckBoxField name="IsOneTimeChargeNecessary" id="88">
+							<DataPath>Object.IsOneTimeChargeNecessary</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsOneTimeChargeNecessaryContextMenu" id="89"/>
+							<ExtendedTooltip name="IsOneTimeChargeNecessaryExtendedTooltip" id="90"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="ReservationPage" id="183">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Reservation specific</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Reservierungsparameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры брони</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ReservationPageExtendedTooltip" id="184"/>
+					<ChildItems>
+						<InputField name="ReservationStatus" id="73">
+							<DataPath>Object.ReservationStatus</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>30</Width>
+							<MaxWidth>10</MaxWidth>
+							<ContextMenu name="ReservationStatusContextMenu" id="74"/>
+							<ExtendedTooltip name="ReservationStatusExtendedTooltip" id="75"/>
+						</InputField>
+						<InputField name="Rating" id="82">
+							<DataPath>Object.Rating</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>40</Width>
+							<ContextMenu name="RatingContextMenu" id="83"/>
+							<ExtendedTooltip name="RatingExtendedTooltip" id="84"/>
+						</InputField>
+						<InputField name="ConfirmationReply" id="79">
+							<DataPath>Object.ConfirmationReply</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>2</Height>
+							<ContextMenu name="ConfirmationReplyContextMenu" id="80"/>
+							<ExtendedTooltip name="ConfirmationReplyExtendedTooltip" id="81"/>
+						</InputField>
+						<CheckBoxField name="DoCharging" id="76">
+							<DataPath>Object.DoCharging</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoChargingContextMenu" id="77"/>
+							<ExtendedTooltip name="DoChargingExtendedTooltip" id="78"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="FolioPage" id="185">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Folio specific</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Folio-Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры фолио</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="FolioPageExtendedTooltip" id="186"/>
+					<ChildItems>
+						<InputField name="FolioCurrency" id="100">
+							<DataPath>Object.FolioCurrency</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<ContextMenu name="FolioCurrencyContextMenu" id="101"/>
+							<ExtendedTooltip name="FolioCurrencyExtendedTooltip" id="102"/>
+						</InputField>
+						<InputField name="FolioDescription" id="103">
+							<DataPath>Object.FolioDescription</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="FolioDescriptionContextMenu" id="104"/>
+							<ExtendedTooltip name="FolioDescriptionExtendedTooltip" id="105"/>
+						</InputField>
+						<InputField name="PaymentSection" id="115">
+							<DataPath>Object.PaymentSection</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="PaymentSectionContextMenu" id="116"/>
+							<ExtendedTooltip name="PaymentSectionExtendedTooltip" id="117"/>
+						</InputField>
+						<InputField name="PlannedPaymentMethod" id="91">
+							<DataPath>Object.PlannedPaymentMethod</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="PlannedPaymentMethodContextMenu" id="92"/>
+							<ExtendedTooltip name="PlannedPaymentMethodExtendedTooltip" id="93"/>
+						</InputField>
+						<InputField name="Agent" id="112">
+							<DataPath>Object.Agent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="AgentContextMenu" id="113"/>
+							<ExtendedTooltip name="AgentExtendedTooltip" id="114"/>
+						</InputField>
+						<InputField name="Client" id="40">
+							<DataPath>Object.Client</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ClientContextMenu" id="41"/>
+							<ExtendedTooltip name="ClientExtendedTooltip" id="42"/>
+						</InputField>
+						<InputField name="GuestGroup" id="130">
+							<DataPath>Object.GuestGroup</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>15</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>15</MaxWidth>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="GuestGroupContextMenu" id="131"/>
+							<ExtendedTooltip name="GuestGroupExtendedTooltip" id="132"/>
+						</InputField>
+						<InputField name="DateTimeFrom" id="136">
+							<DataPath>Object.DateTimeFrom</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="DateTimeFromContextMenu" id="137"/>
+							<ExtendedTooltip name="DateTimeFromExtendedTooltip" id="138"/>
+						</InputField>
+						<InputField name="DateTimeTo" id="139">
+							<DataPath>Object.DateTimeTo</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<MaxWidth>1</MaxWidth>
+							<ContextMenu name="DateTimeToContextMenu" id="140"/>
+							<ExtendedTooltip name="DateTimeToExtendedTooltip" id="141"/>
+						</InputField>
+						<InputField name="CreditLimit" id="142">
+							<DataPath>Object.CreditLimit</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>16</Width>
+							<MaxWidth>15</MaxWidth>
+							<ContextMenu name="CreditLimitContextMenu" id="143"/>
+							<ExtendedTooltip name="CreditLimitExtendedTooltip" id="144"/>
+						</InputField>
+						<CheckBoxField name="UseCurrentDateForTheFolioPeriod" id="154">
+							<DataPath>Object.UseCurrentDateForTheFolioPeriod</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="UseCurrentDateForTheFolioPeriodContextMenu" id="155"/>
+							<ExtendedTooltip name="UseCurrentDateForTheFolioPeriodExtendedTooltip" id="156"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotUpdateCompany" id="145">
+							<DataPath>Object.DoNotUpdateCompany</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotUpdateCompanyContextMenu" id="146"/>
+							<ExtendedTooltip name="DoNotUpdateCompanyExtendedTooltip" id="147"/>
+						</CheckBoxField>
+						<CheckBoxField name="DoNotFillAgent" id="201">
+							<DataPath>Object.DoNotFillAgent</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoNotFillAgentContextMenu" id="202"/>
+							<ExtendedTooltip name="DoNotFillAgentExtendedTooltip" id="203"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsMaster" id="124">
+							<DataPath>Object.IsMaster</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsMasterContextMenu" id="125"/>
+							<ExtendedTooltip name="IsMasterExtendedTooltip" id="126"/>
+						</CheckBoxField>
+						<CheckBoxField name="IsClosed" id="127">
+							<DataPath>Object.IsClosed</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsClosedContextMenu" id="128"/>
+							<ExtendedTooltip name="IsClosedExtendedTooltip" id="129"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="ResourceReservationPage" id="187">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Resource reservation specific</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Ressourcenreservierungsparameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры брони ресурсов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ResourceReservationPageExtendedTooltip" id="188"/>
+					<ChildItems>
+						<InputField name="ResourceReservationStatus" id="121">
+							<DataPath>Object.ResourceReservationStatus</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ResourceReservationStatusContextMenu" id="122"/>
+							<ExtendedTooltip name="ResourceReservationStatusExtendedTooltip" id="123"/>
+						</InputField>
+						<InputField name="ResourceType" id="148">
+							<DataPath>Object.ResourceType</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ResourceTypeContextMenu" id="149"/>
+							<ExtendedTooltip name="ResourceTypeExtendedTooltip" id="150"/>
+						</InputField>
+						<InputField name="Resource" id="151">
+							<DataPath>Object.Resource</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Filter.Owner</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Object.ResourceType</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ResourceContextMenu" id="152"/>
+							<ExtendedTooltip name="ResourceExtendedTooltip" id="153"/>
+						</InputField>
+						<InputField name="FolioCurrency1" id="189">
+							<DataPath>Object.FolioCurrency</DataPath>
+							<ContextMenu name="FolioCurrency1ContextMenu" id="190"/>
+							<ExtendedTooltip name="FolioCurrency1ExtendedTooltip" id="191"/>
+						</InputField>
+						<InputField name="ConfirmationReply1" id="192">
+							<DataPath>Object.ConfirmationReply</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>2</Height>
+							<ContextMenu name="ConfirmationReply1ContextMenu" id="193"/>
+							<ExtendedTooltip name="ConfirmationReply1ExtendedTooltip" id="194"/>
+						</InputField>
+						<CheckBoxField name="DoCharging1" id="195">
+							<DataPath>Object.DoCharging</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoCharging1ContextMenu" id="196"/>
+							<ExtendedTooltip name="DoCharging1ExtendedTooltip" id="197"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ObjectTemplates</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ObjectTypeStr" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Object type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Objecttyp</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

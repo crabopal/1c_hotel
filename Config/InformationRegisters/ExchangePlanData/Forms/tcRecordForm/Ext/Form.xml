@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormLoadFromFile" id="50">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.LoadFromFile</CommandName>
+				<ExtendedTooltip name="FormLoadFromFileExtendedTooltip" id="51"/>
+			</Button>
+			<Button name="FormSaveToFile" id="52">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.SaveToFile</CommandName>
+				<ExtendedTooltip name="FormSaveToFileExtendedTooltip" id="53"/>
+			</Button>
+			<Button name="FormClearData" id="54">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ClearData</CommandName>
+				<ExtendedTooltip name="FormClearDataExtendedTooltip" id="55"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="GroupChangeDataInfo" id="48">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupChangeDataInfoExtendedTooltip" id="49"/>
+			<ChildItems>
+				<InputField name="MessageNo" id="1">
+					<DataPath>Record.MessageNo</DataPath>
+					<ContextMenu name="MessageNoContextMenu" id="2"/>
+					<ExtendedTooltip name="MessageNoExtendedTooltip" id="3"/>
+				</InputField>
+				<LabelField name="MessageID" id="64">
+					<DataPath>Record.MessageID</DataPath>
+					<ContextMenu name="MessageIDContextMenu" id="65"/>
+					<ExtendedTooltip name="MessageIDExtendedTooltip" id="66"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupNode" id="31">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupNodeExtendedTooltip" id="32"/>
+			<ChildItems>
+				<InputField name="SenderNode" id="4">
+					<DataPath>Record.SenderNode</DataPath>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<TypeLink>
+						<xr:DataPath>Record.ReceiverNode</xr:DataPath>
+						<xr:LinkItem>0</xr:LinkItem>
+					</TypeLink>
+					<ContextMenu name="SenderNodeContextMenu" id="5"/>
+					<ExtendedTooltip name="SenderNodeExtendedTooltip" id="6"/>
+					<Events>
+						<Event name="OnChange">NodeOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ReceiverNode" id="7">
+					<DataPath>Record.ReceiverNode</DataPath>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<TypeLink>
+						<xr:DataPath>Record.SenderNode</xr:DataPath>
+						<xr:LinkItem>0</xr:LinkItem>
+					</TypeLink>
+					<ContextMenu name="ReceiverNodeContextMenu" id="8"/>
+					<ExtendedTooltip name="ReceiverNodeExtendedTooltip" id="9"/>
+					<Events>
+						<Event name="OnChange">NodeOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupInfo" id="37">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupInfoExtendedTooltip" id="38"/>
+			<ChildItems>
+				<UsualGroup name="GroupSentToESB" id="56">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupSentToESBExtendedTooltip" id="57"/>
+					<ChildItems>
+						<CheckBoxField name="IsSentToESB" id="58">
+							<DataPath>Record.IsSentToESB</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsSentToESBContextMenu" id="59"/>
+							<ExtendedTooltip name="IsSentToESBExtendedTooltip" id="60"/>
+						</CheckBoxField>
+						<InputField name="DateSentToESB" id="61">
+							<DataPath>Record.DateSentToESB</DataPath>
+							<ContextMenu name="DateSentToESBContextMenu" id="62"/>
+							<ExtendedTooltip name="DateSentToESBExtendedTooltip" id="63"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupSent" id="39">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupSentExtendedTooltip" id="40"/>
+					<ChildItems>
+						<CheckBoxField name="IsSent" id="13">
+							<DataPath>Record.IsSent</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsSentContextMenu" id="14"/>
+							<ExtendedTooltip name="IsSentExtendedTooltip" id="15"/>
+						</CheckBoxField>
+						<InputField name="DateSent" id="16">
+							<DataPath>Record.DateSent</DataPath>
+							<ContextMenu name="DateSentContextMenu" id="17"/>
+							<ExtendedTooltip name="DateSentExtendedTooltip" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupReceived" id="41">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupReceivedExtendedTooltip" id="42"/>
+					<ChildItems>
+						<CheckBoxField name="IsReceived" id="19">
+							<DataPath>Record.IsReceived</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsReceivedContextMenu" id="20"/>
+							<ExtendedTooltip name="IsReceivedExtendedTooltip" id="21"/>
+						</CheckBoxField>
+						<InputField name="DateReceived" id="22">
+							<DataPath>Record.DateReceived</DataPath>
+							<ContextMenu name="DateReceivedContextMenu" id="23"/>
+							<ExtendedTooltip name="DateReceivedExtendedTooltip" id="24"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="GroupLoaded" id="43">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupLoadedExtendedTooltip" id="44"/>
+					<ChildItems>
+						<CheckBoxField name="IsLoaded" id="25">
+							<DataPath>Record.IsLoaded</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsLoadedContextMenu" id="26"/>
+							<ExtendedTooltip name="IsLoadedExtendedTooltip" id="27"/>
+						</CheckBoxField>
+						<InputField name="DateLoaded" id="28">
+							<DataPath>Record.DateLoaded</DataPath>
+							<ContextMenu name="DateLoadedContextMenu" id="29"/>
+							<ExtendedTooltip name="DateLoadedExtendedTooltip" id="30"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="FileSize" id="45">
+			<DataPath>Record.FileSize</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>KB</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>KB</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>KB</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<ContextMenu name="FileSizeContextMenu" id="46"/>
+			<ExtendedTooltip name="FileSizeExtendedTooltip" id="47"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Record" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ExchangePlanData</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ClearData" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Delete file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Datei löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear data</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить картинку</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Bild löschen</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearData</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="LoadFromFile" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Datei hochladen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load from file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из файла</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Aus der Datei löschen</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.OpenFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>LoadFromFile</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SaveToFile" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Datei speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save to file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в файл</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>in Datei speichern</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SaveToFile</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

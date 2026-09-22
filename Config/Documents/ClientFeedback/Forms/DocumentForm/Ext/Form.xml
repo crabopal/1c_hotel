@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Group_NumberDate" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group number date</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер и дата</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group number date</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group_NumberDateExtendedTooltip" id="48"/>
+			<ChildItems>
+				<InputField name="Number" id="1">
+					<DataPath>Object.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="NumberContextMenu" id="2"/>
+					<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Date" id="4">
+					<DataPath>Object.Date</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateContextMenu" id="5"/>
+					<ExtendedTooltip name="DateExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="Author" id="22">
+					<DataPath>Object.Author</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="AuthorContextMenu" id="23"/>
+					<ExtendedTooltip name="AuthorExtendedTooltip" id="24"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Survey" id="16">
+			<DataPath>Object.Survey</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>true</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>false</ClearButton>
+			<CreateButton>false</CreateButton>
+			<QuickChoice>false</QuickChoice>
+			<TextEdit>false</TextEdit>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="SurveyContextMenu" id="17"/>
+			<ExtendedTooltip name="SurveyExtendedTooltip" id="18"/>
+			<Events>
+				<Event name="OnChange">SurveyOnChange</Event>
+				<Event name="StartChoice">SurveyStartChoice</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Group_ParentDocHotel" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group parent doc hotel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа владелец и отель</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group parent doc hotel</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group_ParentDocHotelExtendedTooltip" id="55"/>
+			<ChildItems>
+				<InputField name="Room" id="10">
+					<DataPath>Object.Room</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ClearButton>false</ClearButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+					<AutoMarkIncomplete>false</AutoMarkIncomplete>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Filter.Owner</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Object.Hotel</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="RoomContextMenu" id="11"/>
+					<ExtendedTooltip name="RoomExtendedTooltip" id="12"/>
+					<Events>
+						<Event name="OnChange">RoomOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="Hotel" id="56">
+					<DataPath>Object.Hotel</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="HotelContextMenu" id="57"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="58"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group_RoomClient" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group room client</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер и гость</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group room client</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Group_RoomClientExtendedTooltip" id="50"/>
+			<ChildItems>
+				<InputField name="Client" id="13">
+					<DataPath>Object.Client</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ClearButton>false</ClearButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="ClientContextMenu" id="14"/>
+					<ExtendedTooltip name="ClientExtendedTooltip" id="15"/>
+					<Events>
+						<Event name="OnChange">ClientOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="ParentDoc" id="7">
+					<DataPath>Object.ParentDoc</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>false</ClearButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ParentDocContextMenu" id="8"/>
+					<ExtendedTooltip name="ParentDocExtendedTooltip" id="9"/>
+					<Events>
+						<Event name="OnChange">ParentDocOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Answers" id="25">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.Answers</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="AnswersContextMenu" id="26"/>
+			<AutoCommandBar name="AnswersCommandBar" id="27"/>
+			<ExtendedTooltip name="AnswersExtendedTooltip" id="28"/>
+			<SearchStringAddition name="AnswersSearchString" id="29">
+				<AdditionSource>
+					<Item>Answers</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="AnswersSearchStringContextMenu" id="30"/>
+				<ExtendedTooltip name="AnswersSearchStringExtendedTooltip" id="31"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="AnswersViewStatus" id="32">
+				<AdditionSource>
+					<Item>Answers</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="AnswersViewStatusContextMenu" id="33"/>
+				<ExtendedTooltip name="AnswersViewStatusExtendedTooltip" id="34"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="AnswersSearchControl" id="35">
+				<AdditionSource>
+					<Item>Answers</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="AnswersSearchControlContextMenu" id="36"/>
+				<ExtendedTooltip name="AnswersSearchControlExtendedTooltip" id="37"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeEditEnd">AnswersBeforeEditEnd</Event>
+				<Event name="OnActivateRow">AnswersOnActivateRow</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="AnswersLineNumber" id="38">
+					<DataPath>Object.Answers.LineNumber</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>No.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Nr.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="AnswersLineNumberContextMenu" id="39"/>
+					<ExtendedTooltip name="AnswersLineNumberExtendedTooltip" id="40"/>
+				</LabelField>
+				<InputField name="AnswersLinkedFeedbackQuestion" id="65">
+					<DataPath>Object.Answers.LinkedFeedbackQuestion</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="AnswersLinkedFeedbackQuestionContextMenu" id="66"/>
+					<ExtendedTooltip name="AnswersLinkedFeedbackQuestionExtendedTooltip" id="67"/>
+				</InputField>
+				<InputField name="AnswersFeedbackQuestion" id="41">
+					<DataPath>Object.Answers.FeedbackQuestion</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="AnswersFeedbackQuestionContextMenu" id="42"/>
+					<ExtendedTooltip name="AnswersFeedbackQuestionExtendedTooltip" id="43"/>
+				</InputField>
+				<LabelField name="AnswersFeedbackQuestionQuestionText" id="59">
+					<DataPath>Object.Answers.FeedbackQuestion.QuestionText</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoCellHeight>true</AutoCellHeight>
+					<Height>3</Height>
+					<ContextMenu name="AnswersFeedbackQuestionQuestionTextContextMenu" id="60"/>
+					<ExtendedTooltip name="AnswersFeedbackQuestionQuestionTextExtendedTooltip" id="61"/>
+				</LabelField>
+				<InputField name="AnswersAnswer" id="44">
+					<DataPath>Object.Answers.Answer</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<HorizontalAlign>Left</HorizontalAlign>
+					<EditMode>EnterOnInput</EditMode>
+					<ChooseType>false</ChooseType>
+					<ContextMenu name="AnswersAnswerContextMenu" id="45"/>
+					<ExtendedTooltip name="AnswersAnswerExtendedTooltip" id="46"/>
+					<Events>
+						<Event name="StartChoice">AnswersAnswerStartChoice</Event>
+					</Events>
+				</InputField>
+				<InputField name="AnswersAnswerWeight" id="68">
+					<DataPath>Object.Answers.AnswerWeight</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="AnswersAnswerWeightContextMenu" id="69"/>
+					<ExtendedTooltip name="AnswersAnswerWeightExtendedTooltip" id="70"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Remarks" id="19">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="RemarksContextMenu" id="20"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="21"/>
+		</InputField>
+		<InputField name="ExternalCode" id="62">
+			<DataPath>Object.ExternalCode</DataPath>
+			<SkipOnInput>true</SkipOnInput>
+			<TitleTextColor>style:BorderColor</TitleTextColor>
+			<TextColor>style:BorderColor</TextColor>
+			<ContextMenu name="ExternalCodeContextMenu" id="63"/>
+			<ExtendedTooltip name="ExternalCodeExtendedTooltip" id="64"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ClientFeedback</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Object.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="Clients" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clients</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Kunden</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Client" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Client</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Kunde</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Clients</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ParentDoc" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parent document</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ основание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Parent document</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Accommodation</v8:Type>
+						<v8:Type>cfg:DocumentRef.Reservation</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:DocumentRef.ResourceReservation</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+</Form>

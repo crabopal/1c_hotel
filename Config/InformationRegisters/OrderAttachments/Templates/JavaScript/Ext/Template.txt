@@ -1,0 +1,94 @@
+﻿const imgWidth = 450;
+const imgHeight = 600;
+var CColumns;
+var root;
+
+function addJSOrderAttachments(orderAttachments) {
+	let scanConfigurationItem, scanConfigurationItemInfo;
+	
+	let scanConfigurationParent = document.getElementById('scanConfigurationParent');
+	if (!scanConfigurationParent)
+	{
+		scanConfigurationParent = root.appendChild(document.createElement("ul"));
+		scanConfigurationParent.setAttribute('id', 'scanConfigurationParent');
+		scanConfigurationParent.setAttribute('class', 'scanConfigurationParent');
+		scanConfigurationParent.setAttribute('style', 'grid-Template-Columns: repeat(' + CColumns + ', 1fr)')
+	}
+	
+	JSON.parse(orderAttachments).forEach(elements => {	
+		
+		scanConfigurationItemInfo = document.createElement("div");
+		scanConfigurationItemInfo.setAttribute('style', 'width: ' + (imgWidth - 8) + 'px; height: ' + (imgHeight-8) + 'px; display: grid; grid-template-rows: 10% 80% 10%;');
+		
+		scanConfigurationHeader = document.createElement("div");
+		scanConfigurationHeader.setAttribute('style', 'display: grid; grid-template-columns: 5% 92% 3%;');
+		scanConfigurationItemInfo.append(scanConfigurationHeader);
+		
+		scanConfigurationName = document.createElement("a");
+		scanConfigurationName.append(" ✎");
+		scanConfigurationName.setAttribute('title', elements.settings);
+		scanConfigurationName.setAttribute('href', elements.UUID);
+		scanConfigurationName.setAttribute('name', 'Settings');
+		scanConfigurationHeader.append(scanConfigurationName);
+		
+		scanConfigurationName = document.createElement("div");
+		scanConfigurationName.append(elements.name);
+		scanConfigurationHeader.append(scanConfigurationName);
+		
+		scanConfigurationName = document.createElement("a");
+		scanConfigurationName.append("x");
+		scanConfigurationName.setAttribute('title', elements.title);
+		scanConfigurationName.setAttribute('href', elements.UUID);
+		scanConfigurationName.setAttribute('name', 'DeleteFile');
+		scanConfigurationHeader.append(scanConfigurationName);
+		
+		scanConfigurationImgA = document.createElement("a"); 
+		scanConfigurationImgA.setAttribute('id', 'scanConfigurationItemInfo_' + elements.UUID);
+		scanConfigurationImgA.setAttribute('title', elements.opentitle);
+		scanConfigurationImgA.setAttribute('href', elements.UUID);
+		scanConfigurationItemInfo.append(scanConfigurationImgA);
+		
+		scanConfigurationImg = document.createElement("img");
+		scanConfigurationImg.setAttribute('src', elements.img);
+		scanConfigurationImg.setAttribute('style', 'max-width: ' + (imgWidth - 8)  + 'px; max-height: ' + ((imgHeight-8)/100)*79 + 'px;');
+		scanConfigurationImgA.append(scanConfigurationImg);
+			
+		scanConfigurationDetailedInfo = document.createElement("div");
+		scanConfigurationDetailedInfo.setAttribute('class', 'scanInfo');
+		scanConfigurationItemInfo.append(scanConfigurationDetailedInfo);
+		
+		scanConfigurationHotel = document.createElement("div");
+		scanConfigurationHotel.append(elements.date + ' ' + elements.author + ' (' + elements.hotel + ')');
+		scanConfigurationDetailedInfo.append(scanConfigurationHotel);
+		
+		scanConfigurationItem = document.createElement("li");
+		scanConfigurationItem.setAttribute('id', 'scanConfigurationColumn_' + elements.UUID);
+		scanConfigurationItem.setAttribute('class', 'scanConfigurationColumn');			
+		scanConfigurationItem.setAttribute('style', 'width: ' + imgWidth + 'px; height: ' + imgHeight + 'px;');
+		scanConfigurationItem.append(scanConfigurationItemInfo);
+					
+		scanConfigurationParent.append(scanConfigurationItem);
+	});
+}
+
+function Refresh() {
+	let NColumns = parseInt(document.documentElement.clientWidth / (imgWidth + 24));
+	if (CColumns !== NColumns)
+	{
+		CColumns = NColumns;
+		let scanConfigurationParent = document.getElementById('scanConfigurationParent');
+		if (scanConfigurationParent)
+		{
+			scanConfigurationParent.setAttribute('style', 'grid-Template-Columns: repeat(' + CColumns + ', 1fr)');
+		}
+	}
+}
+
+window.addEventListener("resize", function() {
+	Refresh();
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+	CColumns = parseInt(document.documentElement.clientWidth / (imgWidth + 24));
+	root = document.body;
+});

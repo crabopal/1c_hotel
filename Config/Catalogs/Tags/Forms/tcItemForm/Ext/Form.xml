@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="FormGroupColor" id="87">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Color</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Farbe</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Цвет</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form group color</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="FormGroupColorExtendedTooltip" id="88"/>
+				<ChildItems>
+					<Button name="SetColor" id="83">
+						<Type>CommandBarButton</Type>
+						<HorizontalStretch>true</HorizontalStretch>
+						<CommandName>Form.Command.SetColor</CommandName>
+						<ExtendedTooltip name="SetColorExtendedTooltip" id="84"/>
+					</Button>
+					<Button name="ClearColor" id="85">
+						<Type>CommandBarButton</Type>
+						<Width>3</Width>
+						<CommandName>Form.Command.ClearColor</CommandName>
+						<ExtendedTooltip name="ClearColorExtendedTooltip" id="86"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupCodeAndDescription" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Code and description group</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Группа кода и наименований</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Code and description group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group code and description</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCodeAndDescriptionExtendedTooltip" id="55"/>
+			<ChildItems>
+				<InputField name="Description" id="4">
+					<DataPath>Object.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DescriptionContextMenu" id="5"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupMode" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Mode</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Mode</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group mode</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupModeExtendedTooltip" id="53"/>
+			<ChildItems>
+				<CheckBoxField name="IsManual" id="10">
+					<DataPath>Object.IsManual</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsManualContextMenu" id="11"/>
+					<ExtendedTooltip name="IsManualExtendedTooltip" id="12"/>
+					<Events>
+						<Event name="OnChange">IsManualOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="SegmentationAlgorithmType" id="25">
+					<DataPath>Object.SegmentationAlgorithmType</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="SegmentationAlgorithmTypeContextMenu" id="26"/>
+					<ExtendedTooltip name="SegmentationAlgorithmTypeExtendedTooltip" id="27"/>
+					<Events>
+						<Event name="OnChange">SegmentationAlgorithmTypeOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupParameters" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="GroupParametersExtendedTooltip" id="29"/>
+			<ChildItems>
+				<Table name="Parameters" id="56">
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Object.Parameters</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ParametersContextMenu" id="57"/>
+					<AutoCommandBar name="ParametersCommandBar" id="58"/>
+					<ExtendedTooltip name="ParametersExtendedTooltip" id="59"/>
+					<SearchStringAddition name="ParametersSearchString" id="60">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersSearchStringContextMenu" id="61"/>
+						<ExtendedTooltip name="ParametersSearchStringExtendedTooltip" id="62"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ParametersViewStatus" id="63">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersViewStatusContextMenu" id="64"/>
+						<ExtendedTooltip name="ParametersViewStatusExtendedTooltip" id="65"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ParametersSearchControl" id="66">
+						<AdditionSource>
+							<Item>Parameters</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ParametersSearchControlContextMenu" id="67"/>
+						<ExtendedTooltip name="ParametersSearchControlExtendedTooltip" id="68"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ParametersLineNumber" id="69">
+							<DataPath>Object.Parameters.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParametersLineNumberContextMenu" id="70"/>
+							<ExtendedTooltip name="ParametersLineNumberExtendedTooltip" id="71"/>
+						</LabelField>
+						<InputField name="ParametersParameter" id="72">
+							<DataPath>Object.Parameters.Parameter</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParametersParameterContextMenu" id="73"/>
+							<ExtendedTooltip name="ParametersParameterExtendedTooltip" id="74"/>
+						</InputField>
+						<InputField name="ParametersValue" id="75">
+							<DataPath>Object.Parameters.Value</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParametersValueContextMenu" id="76"/>
+							<ExtendedTooltip name="ParametersValueExtendedTooltip" id="77"/>
+						</InputField>
+						<InputField name="ParametersDescription" id="78">
+							<DataPath>Object.Parameters.Description</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParametersDescriptionContextMenu" id="79"/>
+							<ExtendedTooltip name="ParametersDescriptionExtendedTooltip" id="80"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Tags</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="SetColor" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Color...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set group color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenfarbe einstellen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить цвет группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetColor</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ClearColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить цвет</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Farbe entfernen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear group color</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Gruppenfarbe löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить цвет группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearColor</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

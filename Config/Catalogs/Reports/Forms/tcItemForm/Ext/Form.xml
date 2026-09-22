@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ReportSettings" id="177">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Report settings</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>de</v8:lang>
+						<v8:content>Berichtseinstellungen</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Настройки отчета</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ReportSettingsExtendedTooltip" id="178"/>
+				<ChildItems>
+					<Button name="FormSaveReportSettingsToXMLFile" id="179">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.SaveReportSettingsToXMLFile</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormSaveReportSettingsToXMLFileExtendedTooltip" id="180"/>
+					</Button>
+					<Button name="FormLoadReportSettingsFromXMLFile" id="181">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.LoadReportSettingsFromXMLFile</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormLoadReportSettingsFromXMLFileExtendedTooltip" id="182"/>
+					</Button>
+					<Button name="FormResetReportSettings" id="183">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ResetReportSettings</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="FormResetReportSettingsExtendedTooltip" id="184"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupCodes" id="123">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>\</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCodesExtendedTooltip" id="124"/>
+			<ChildItems>
+				<InputField name="Description" id="8">
+					<DataPath>Object.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="DescriptionContextMenu" id="9"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="10"/>
+					<Events>
+						<Event name="Opening">DescriptionOpening</Event>
+					</Events>
+				</InputField>
+				<InputField name="Code" id="5">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="6"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="7"/>
+				</InputField>
+				<InputField name="SortCode" id="34">
+					<DataPath>Object.SortCode</DataPath>
+					<TitleHeight>1</TitleHeight>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="SortCodeContextMenu" id="35"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="36"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupMainParameters" id="171">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Hauptparameter</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupMainParametersExtendedTooltip" id="172"/>
+			<ChildItems>
+				<UsualGroup name="Header" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Шапка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="HeaderExtendedTooltip" id="2"/>
+					<ChildItems>
+						<UsualGroup name="LeftColumn" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Левая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="LeftColumnExtendedTooltip" id="4"/>
+							<ChildItems>
+								<CheckBoxField name="IsExternal" id="14">
+									<DataPath>Object.IsExternal</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Report type</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Berichtstyp</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип отчета</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Tumbler</CheckBoxType>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>BF=System; BT=External</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>BF=System; BT=Extern</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>BF=Системный; BT=Внешний</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="IsExternalContextMenu" id="15"/>
+									<ExtendedTooltip name="IsExternalExtendedTooltip" id="16"/>
+									<Events>
+										<Event name="OnChange">IsExternalOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<UsualGroup name="Group2" id="196">
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group2ExtendedTooltip" id="197"/>
+									<ChildItems>
+										<InputField name="Parent" id="11">
+											<DataPath>Object.Parent</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ParentContextMenu" id="12"/>
+											<ExtendedTooltip name="ParentExtendedTooltip" id="13"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="LockSettings" id="193">
+									<DataPath>Object.LockSettings</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="LockSettingsContextMenu" id="194"/>
+									<ExtendedTooltip name="LockSettingsExtendedTooltip" id="195"/>
+								</CheckBoxField>
+								<CheckBoxField name="DoNotGenerateOnOpen" id="188">
+									<DataPath>Object.DoNotGenerateOnOpen</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="DoNotGenerateOnOpenContextMenu" id="189"/>
+									<ExtendedTooltip name="DoNotGenerateOnOpenExtendedTooltip" id="190"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="RightColumn" id="29">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Правая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="RightColumnExtendedTooltip" id="30"/>
+							<ChildItems>
+								<InputField name="Report" id="17">
+									<DataPath>Object.Report</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>false</ClearButton>
+									<SpinButton>false</SpinButton>
+									<CreateButton>false</CreateButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ReportContextMenu" id="18"/>
+									<ExtendedTooltip name="ReportExtendedTooltip" id="19"/>
+									<Events>
+										<Event name="OnChange">ReportOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="Hotel" id="185">
+									<DataPath>Object.Hotel</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="HotelContextMenu" id="186"/>
+									<ExtendedTooltip name="HotelExtendedTooltip" id="187"/>
+								</InputField>
+								<InputField name="Key" id="31">
+									<DataPath>Object.Key</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="KeyContextMenu" id="32"/>
+									<ExtendedTooltip name="KeyExtendedTooltip" id="33"/>
+								</InputField>
+								<CheckBoxField name="IsSystem" id="200">
+									<DataPath>Object.IsSystem</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="IsSystemContextMenu" id="201"/>
+									<ExtendedTooltip name="IsSystemExtendedTooltip" id="202"/>
+								</CheckBoxField>
+								<UsualGroup name="Group1" id="198">
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Group1ExtendedTooltip" id="199"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Pages" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="53"/>
+			<ChildItems>
+				<Page name="PermissionGroupsPage" id="102">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permission groups</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Rechte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наборы прав</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PermissionGroupsPageExtendedTooltip" id="103"/>
+					<ChildItems>
+						<InputField name="PermissionGroup" id="26">
+							<DataPath>Object.PermissionGroup</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="PermissionGroupContextMenu" id="27"/>
+							<ExtendedTooltip name="PermissionGroupExtendedTooltip" id="28"/>
+						</InputField>
+						<Table name="PermissionGroups" id="104">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.PermissionGroups</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="PermissionGroupsContextMenu" id="105"/>
+							<AutoCommandBar name="PermissionGroupsCommandBar" id="106"/>
+							<ExtendedTooltip name="PermissionGroupsExtendedTooltip" id="107"/>
+							<SearchStringAddition name="PermissionGroupsSearchString" id="108">
+								<AdditionSource>
+									<Item>PermissionGroups</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionGroupsSearchStringContextMenu" id="109"/>
+								<ExtendedTooltip name="PermissionGroupsSearchStringExtendedTooltip" id="110"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="PermissionGroupsViewStatus" id="111">
+								<AdditionSource>
+									<Item>PermissionGroups</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionGroupsViewStatusContextMenu" id="112"/>
+								<ExtendedTooltip name="PermissionGroupsViewStatusExtendedTooltip" id="113"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="PermissionGroupsSearchControl" id="114">
+								<AdditionSource>
+									<Item>PermissionGroups</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="PermissionGroupsSearchControlContextMenu" id="115"/>
+								<ExtendedTooltip name="PermissionGroupsSearchControlExtendedTooltip" id="116"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="PermissionGroupsLineNumber" id="117">
+									<DataPath>Object.PermissionGroups.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PermissionGroupsLineNumberContextMenu" id="118"/>
+									<ExtendedTooltip name="PermissionGroupsLineNumberExtendedTooltip" id="119"/>
+								</LabelField>
+								<InputField name="PermissionGroupsPermissionGroup" id="120">
+									<DataPath>Object.PermissionGroups.PermissionGroup</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PermissionGroupsPermissionGroupContextMenu" id="121"/>
+									<ExtendedTooltip name="PermissionGroupsPermissionGroupExtendedTooltip" id="122"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="DynamicParametersPage" id="138">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Dynamic parameters</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dynamische Parameter</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Динамические параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="DynamicParametersPageExtendedTooltip" id="139"/>
+					<ChildItems>
+						<UsualGroup name="GroupLeftColumn" id="142">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Left column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Linke Spalte</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Левая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupLeftColumnExtendedTooltip" id="143"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationTitle" id="144">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Expression:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Expression:</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выражение:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationTitleContextMenu" id="145"/>
+									<ExtendedTooltip name="DecorationTitleExtendedTooltip" id="146"/>
+								</LabelDecoration>
+								<LabelDecoration name="DecorationHelp" id="147">
+									<Width>20</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Verfügbare Variable:
+REP - Berichtsobjekt;
+PARM - Eingangsparameter;
+SessionParameters - Parameter der Sitzung:
+SessionParameters.CurrentHotel;
+SessionParameters.CurrentUser;
+
+Beispiel der Datumseinstellung im Bericht für das aktuelle Datum und der Eingabe des Parameters "Hotel" aus dem Eingangsparameter:
+REP.Period = BegOfDay(CurrentSessionDate());
+REP.Hotel = PARM;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доступные переменные:
+REP - объект отчета;
+PARM - входной параметр;
+SessionParameters - параметры сеанса:
+SessionParameters.CurrentHotel;
+SessionParameters.CurrentUser;
+
+Пример установки даты в отчете на текущую дату и заполнения параметра "Гостиница" из входного параметра:
+REP.Period = BegOfDay(CurrentSessionDate());
+REP.Hotel = PARM;</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Available variables:
+REP - report object;
+PARM - input parameter;
+SessionParameters - session parameters:
+SessionParameters.CurrentHotel;
+SessionParameters.CurrentUser;
+
+Example of setting report Period and Hotel attributes:
+REP.Period = BegOfDay(CurrentSessionDate());
+REP.Hotel = PARM;</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationHelpContextMenu" id="148"/>
+									<ExtendedTooltip name="DecorationHelpExtendedTooltip" id="149"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<TextDocumentField name="DynamicParameters" id="20">
+							<DataPath>Object.DynamicParameters</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Expression</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Expression</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выражение</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Expression in a programming language</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Expression in einer Programmiersprache</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выражение на языке программирования</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="DynamicParametersContextMenu" id="21"/>
+							<ExtendedTooltip name="DynamicParametersExtendedTooltip" id="22"/>
+						</TextDocumentField>
+						<UsualGroup name="GroupRightColumn" id="150">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Right column</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Rechte Spalte</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Правая колонка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupRightColumnExtendedTooltip" id="151"/>
+							<ChildItems>
+								<Table name="AvailableAttributes" id="152">
+									<Representation>List</Representation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Width>25</Width>
+									<SelectionMode>SingleRow</SelectionMode>
+									<HeaderHeight>2</HeaderHeight>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<HorizontalStretch>false</HorizontalStretch>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>AvailableAttributes</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="AvailableAttributesContextMenu" id="153"/>
+									<AutoCommandBar name="AvailableAttributesCommandBar" id="154">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="AvailableAttributesCopyToClipboard" id="175">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.AvailableAttributes.StandardCommand.CopyToClipboard</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="AvailableAttributesCopyToClipboardExtendedTooltip" id="176"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="AvailableAttributesExtendedTooltip" id="155"/>
+									<SearchStringAddition name="AvailableAttributesSearchString" id="156">
+										<AdditionSource>
+											<Item>AvailableAttributes</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="AvailableAttributesSearchStringContextMenu" id="157"/>
+										<ExtendedTooltip name="AvailableAttributesSearchStringExtendedTooltip" id="158"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="AvailableAttributesViewStatus" id="159">
+										<AdditionSource>
+											<Item>AvailableAttributes</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="AvailableAttributesViewStatusContextMenu" id="160"/>
+										<ExtendedTooltip name="AvailableAttributesViewStatusExtendedTooltip" id="161"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="AvailableAttributesSearchControl" id="162">
+										<AdditionSource>
+											<Item>AvailableAttributes</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="AvailableAttributesSearchControlContextMenu" id="163"/>
+										<ExtendedTooltip name="AvailableAttributesSearchControlExtendedTooltip" id="164"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="DragStart">AvailableAttributesDragStart</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="AvailableAttributesAttribute" id="165">
+											<DataPath>AvailableAttributes.Attribute</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Attributes available and some system functions</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>de</v8:lang>
+													<v8:content>Verfügbare Attribute und einige Systemfunktionen</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доступные реквизиты и некоторые системные функции</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="AvailableAttributesAttributeContextMenu" id="166"/>
+											<ExtendedTooltip name="AvailableAttributesAttributeExtendedTooltip" id="167"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<LabelDecoration name="DecorationFooter" id="168">
+									<Width>25</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Используйте операции Перетаскивания или Копирования/Вставки для переноса имен переменных в код</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Nutzen Sie Drag/Drop oder Kopieren/Einfügen Funktionen, um die Namen der Variablen in den Code zu übertragen</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Use Drag/Drop or Copy/Paste functions to insert variables into the code</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="DecorationFooterContextMenu" id="169"/>
+									<ExtendedTooltip name="DecorationFooterExtendedTooltip" id="170"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ExternalTemplatePage" id="125">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>External template</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Externe Vorlage</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внешний шаблон</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ExternalTemplatePageExtendedTooltip" id="126"/>
+					<ChildItems>
+						<UsualGroup name="GroupNameAndCommands" id="127">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Name and actions</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Name und Aktionen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя и действия</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupNameAndCommandsExtendedTooltip" id="128"/>
+							<ChildItems>
+								<LabelField name="ExternalTemplateFileName" id="40">
+									<DataPath>Object.ExternalTemplateFileName</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>File name</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>de</v8:lang>
+											<v8:content>Dateiname</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя файла</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ExternalTemplateFileNameContextMenu" id="41"/>
+									<ExtendedTooltip name="ExternalTemplateFileNameExtendedTooltip" id="42"/>
+								</LabelField>
+								<Button name="LoadFile" id="132">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.LoadFile</CommandName>
+									<ExtendedTooltip name="LoadFileExtendedTooltip" id="133"/>
+								</Button>
+								<Button name="SaveFile" id="134">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.SaveFile</CommandName>
+									<ExtendedTooltip name="SaveFileExtendedTooltip" id="135"/>
+								</Button>
+								<Button name="ClearFile" id="136">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ClearFile</CommandName>
+									<ExtendedTooltip name="ClearFileExtendedTooltip" id="137"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelField name="ExternalTemplateFileLoadTime" id="43">
+							<DataPath>Object.ExternalTemplateFileLoadTime</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>File loaded</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Datei geladen</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файл загружен</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ExternalTemplateFileLoadTimeContextMenu" id="44"/>
+							<ExtendedTooltip name="ExternalTemplateFileLoadTimeExtendedTooltip" id="45"/>
+						</LabelField>
+						<LabelField name="ExternalTemplateFileLastChangeTime" id="46">
+							<DataPath>Object.ExternalTemplateFileLastChangeTime</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>File changed</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>de</v8:lang>
+									<v8:content>Datei geändert</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файл изменен</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ExternalTemplateFileLastChangeTimeContextMenu" id="47"/>
+							<ExtendedTooltip name="ExternalTemplateFileLastChangeTimeExtendedTooltip" id="48"/>
+						</LabelField>
+					</ChildItems>
+				</Page>
+				<Page name="ReportTitlePage" id="140">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Report title</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Berichtstitel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заголовок отчета</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ReportTitlePageExtendedTooltip" id="141"/>
+					<ChildItems>
+						<TextDocumentField name="ReportHeaderText" id="37">
+							<DataPath>Object.ReportHeaderText</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ReportHeaderTextContextMenu" id="38"/>
+							<ExtendedTooltip name="ReportHeaderTextExtendedTooltip" id="39"/>
+						</TextDocumentField>
+					</ChildItems>
+				</Page>
+				<Page name="RemarksPage" id="173">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Remarks</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Bemerkungen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Примечания</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="RemarksPageExtendedTooltip" id="174"/>
+					<ChildItems>
+						<InputField name="Remarks" id="49">
+							<DataPath>Object.Remarks</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="RemarksContextMenu" id="50"/>
+							<ExtendedTooltip name="RemarksExtendedTooltip" id="51"/>
+							<Events>
+								<Event name="Opening">RemarksOpening</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="PackagePage" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Report package</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Berichtspaket</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пакет отчетов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PackagePageExtendedTooltip" id="55"/>
+					<ChildItems>
+						<CheckBoxField name="IsPackage" id="23">
+							<DataPath>Object.IsPackage</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="IsPackageContextMenu" id="24"/>
+							<ExtendedTooltip name="IsPackageExtendedTooltip" id="25"/>
+							<Events>
+								<Event name="OnChange">IsPackageOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<Table name="Package" id="56">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Object.Package</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="PackageContextMenu" id="57"/>
+							<AutoCommandBar name="PackageCommandBar" id="58"/>
+							<ExtendedTooltip name="PackageExtendedTooltip" id="59"/>
+							<SearchStringAddition name="PackageSearchString" id="60">
+								<AdditionSource>
+									<Item>Package</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PackageSearchStringContextMenu" id="61"/>
+								<ExtendedTooltip name="PackageSearchStringExtendedTooltip" id="62"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="PackageViewStatus" id="63">
+								<AdditionSource>
+									<Item>Package</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="PackageViewStatusContextMenu" id="64"/>
+								<ExtendedTooltip name="PackageViewStatusExtendedTooltip" id="65"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="PackageSearchControl" id="66">
+								<AdditionSource>
+									<Item>Package</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="PackageSearchControlContextMenu" id="67"/>
+								<ExtendedTooltip name="PackageSearchControlExtendedTooltip" id="68"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">PackageOnStartEdit</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="PackageLineNumber" id="69">
+									<DataPath>Object.Package.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PackageLineNumberContextMenu" id="70"/>
+									<ExtendedTooltip name="PackageLineNumberExtendedTooltip" id="71"/>
+								</LabelField>
+								<CheckBoxField name="PackageIsActive" id="72">
+									<DataPath>Object.Package.IsActive</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageIsActiveContextMenu" id="73"/>
+									<ExtendedTooltip name="PackageIsActiveExtendedTooltip" id="74"/>
+								</CheckBoxField>
+								<InputField name="PackageReport" id="75">
+									<DataPath>Object.Package.Report</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="PackageReportContextMenu" id="76"/>
+									<ExtendedTooltip name="PackageReportExtendedTooltip" id="77"/>
+									<Events>
+										<Event name="OnChange">PackageReportOnChange</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="PackageDoNotUseParentReportAttributes" id="78">
+									<DataPath>Object.Package.DoNotUseParentReportAttributes</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageDoNotUseParentReportAttributesContextMenu" id="79"/>
+									<ExtendedTooltip name="PackageDoNotUseParentReportAttributesExtendedTooltip" id="80"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutReportHeader" id="81">
+									<DataPath>Object.Package.ReportDoNotPutReportHeader</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutReportHeaderContextMenu" id="82"/>
+									<ExtendedTooltip name="PackageReportDoNotPutReportHeaderExtendedTooltip" id="83"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutTableHeader" id="84">
+									<DataPath>Object.Package.ReportDoNotPutTableHeader</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutTableHeaderContextMenu" id="85"/>
+									<ExtendedTooltip name="PackageReportDoNotPutTableHeaderExtendedTooltip" id="86"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutDetailRecords" id="87">
+									<DataPath>Object.Package.ReportDoNotPutDetailRecords</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutDetailRecordsContextMenu" id="88"/>
+									<ExtendedTooltip name="PackageReportDoNotPutDetailRecordsExtendedTooltip" id="89"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutTableFooter" id="90">
+									<DataPath>Object.Package.ReportDoNotPutTableFooter</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutTableFooterContextMenu" id="91"/>
+									<ExtendedTooltip name="PackageReportDoNotPutTableFooterExtendedTooltip" id="92"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutOveralls" id="93">
+									<DataPath>Object.Package.ReportDoNotPutOveralls</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutOverallsContextMenu" id="94"/>
+									<ExtendedTooltip name="PackageReportDoNotPutOverallsExtendedTooltip" id="95"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportDoNotPutReportFooter" id="96">
+									<DataPath>Object.Package.ReportDoNotPutReportFooter</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportDoNotPutReportFooterContextMenu" id="97"/>
+									<ExtendedTooltip name="PackageReportDoNotPutReportFooterExtendedTooltip" id="98"/>
+								</CheckBoxField>
+								<CheckBoxField name="PackageReportPutHorizontalPageBreakBefore" id="99">
+									<DataPath>Object.Package.ReportPutHorizontalPageBreakBefore</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="PackageReportPutHorizontalPageBreakBeforeContextMenu" id="100"/>
+									<ExtendedTooltip name="PackageReportPutHorizontalPageBreakBeforeExtendedTooltip" id="101"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Reports</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="AvailableAttributes" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Attributes available</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Attribute" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Attribute</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Attribut</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизит</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ClearExternalTemplate" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear external template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Clear external template</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить внешний макет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ValueStorageDataTempStorageAddress" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value storage data temp storage address</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Value storage data temp storage address</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Value storage data temp storage address</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ClearFile" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Löschen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Remove</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearFile</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="LoadFile" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Laden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.LevelUp</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>LoadFile</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SaveFile" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.SaveToFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SaveFile</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="SaveReportSettingsToXMLFile" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save report settings to XML file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Berichtseinstellungen in XML-Datei speichern</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки отчета в XML файл</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.SaveValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SaveReportSettingsToXMLFile</Action>
+		</Command>
+		<Command name="LoadReportSettingsFromXMLFile" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load report settings from XML file</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Berichtseinstellungen aus XML-Datei laden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки отчета из XML файла</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>LoadReportSettingsFromXMLFile</Action>
+		</Command>
+		<Command name="ResetReportSettings" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reset report settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Berichteinstellungen zurücksetzen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить настройки отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizardReplaceTable</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ResetReportSettings</Action>
+		</Command>
+	</Commands>
+</Form>

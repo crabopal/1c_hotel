@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="FillCheckProcessingAtServer">FillCheckProcessingAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupHeader" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group header</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupHeaderExtendedTooltip" id="39"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="Parent" id="43">
+					<DataPath>Object.Parent</DataPath>
+					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ParentContextMenu" id="44"/>
+					<ExtendedTooltip name="ParentExtendedTooltip" id="45"/>
+				</InputField>
+				<CheckBoxField name="IsActive" id="40">
+					<DataPath>Object.IsActive</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsActiveContextMenu" id="41"/>
+					<ExtendedTooltip name="IsActiveExtendedTooltip" id="42"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="4">
+			<DataPath>Object.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="DescriptionContextMenu" id="5"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="FormItem" id="7">
+			<DataPath>Object.Form</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Form</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="FormItemContextMenu" id="8"/>
+			<ExtendedTooltip name="FormItemExtendedTooltip" id="9"/>
+			<Events>
+				<Event name="OnChange">FormItemOnChange</Event>
+				<Event name="ChoiceProcessing">FormItemChoiceProcessing</Event>
+			</Events>
+		</InputField>
+		<Table name="PropertiesForms" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.PropertiesForm</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="PropertiesFormsContextMenu" id="11"/>
+			<AutoCommandBar name="PropertiesFormsCommandBar" id="12">
+				<ChildItems>
+					<Button name="PropertiesFormsAdd" id="51">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.PropertiesForms.StandardCommand.Add</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="PropertiesFormsAddExtendedTooltip" id="52"/>
+					</Button>
+					<Button name="PropertiesFormsDelete" id="49">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Item.PropertiesForms.StandardCommand.Delete</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="PropertiesFormsDeleteExtendedTooltip" id="50"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="PropertiesFormsExtendedTooltip" id="13"/>
+			<SearchStringAddition name="PropertiesFormsSearchString" id="14">
+				<AdditionSource>
+					<Item>PropertiesForms</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PropertiesFormsSearchStringContextMenu" id="15"/>
+				<ExtendedTooltip name="PropertiesFormsSearchStringExtendedTooltip" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="PropertiesFormsViewStatus" id="17">
+				<AdditionSource>
+					<Item>PropertiesForms</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="PropertiesFormsViewStatusContextMenu" id="18"/>
+				<ExtendedTooltip name="PropertiesFormsViewStatusExtendedTooltip" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="PropertiesFormsSearchControl" id="20">
+				<AdditionSource>
+					<Item>PropertiesForms</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="PropertiesFormsSearchControlContextMenu" id="21"/>
+				<ExtendedTooltip name="PropertiesFormsSearchControlExtendedTooltip" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="PropertiesFormsLineNumber" id="23">
+					<DataPath>Object.PropertiesForm.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PropertiesFormsLineNumberContextMenu" id="24"/>
+					<ExtendedTooltip name="PropertiesFormsLineNumberExtendedTooltip" id="25"/>
+				</LabelField>
+				<InputField name="PropertiesFormsItem" id="26">
+					<DataPath>Object.PropertiesForm.Item</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>true</ClearButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="PropertiesFormsItemContextMenu" id="27"/>
+					<ExtendedTooltip name="PropertiesFormsItemExtendedTooltip" id="28"/>
+					<Events>
+						<Event name="ChoiceProcessing">PropertiesFormsItemChoiceProcessing</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="PropertiesFormsVisible" id="29">
+					<DataPath>Object.PropertiesForm.Visible</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PropertiesFormsVisibleContextMenu" id="30"/>
+					<ExtendedTooltip name="PropertiesFormsVisibleExtendedTooltip" id="31"/>
+				</CheckBoxField>
+				<CheckBoxField name="PropertiesFormsEnabled" id="32">
+					<DataPath>Object.PropertiesForm.Enabled</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PropertiesFormsEnabledContextMenu" id="33"/>
+					<ExtendedTooltip name="PropertiesFormsEnabledExtendedTooltip" id="34"/>
+				</CheckBoxField>
+				<CheckBoxField name="PropertiesFormsFilling" id="35">
+					<DataPath>Object.PropertiesForm.FillItem</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="PropertiesFormsFillingContextMenu" id="36"/>
+					<ExtendedTooltip name="PropertiesFormsFillingExtendedTooltip" id="37"/>
+				</CheckBoxField>
+				<InputField name="PropertiesFormsTitle" id="46">
+					<DataPath>Object.PropertiesForm.Title</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="PropertiesFormsTitleContextMenu" id="47"/>
+					<ExtendedTooltip name="PropertiesFormsTitleExtendedTooltip" id="48"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.FormOpenOptions</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="CheckedAttributesManual" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Checked attributes manual</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

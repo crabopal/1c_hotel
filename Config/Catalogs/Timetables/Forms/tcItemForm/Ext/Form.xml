@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupCodes" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Codes</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коды</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupCodesExtendedTooltip" id="42"/>
+			<ChildItems>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+				<InputField name="SortCode" id="10">
+					<DataPath>Object.SortCode</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="SortCodeContextMenu" id="11"/>
+					<ExtendedTooltip name="SortCodeExtendedTooltip" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Description" id="4">
+			<DataPath>Object.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="DescriptionContextMenu" id="5"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="Parent" id="7">
+			<DataPath>Object.Parent</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ParentContextMenu" id="8"/>
+			<ExtendedTooltip name="ParentExtendedTooltip" id="9"/>
+		</InputField>
+		<InputField name="WorkingHoursPerDay" id="13">
+			<DataPath>Object.WorkingHoursPerDay</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="WorkingHoursPerDayContextMenu" id="14"/>
+			<ExtendedTooltip name="WorkingHoursPerDayExtendedTooltip" id="15"/>
+		</InputField>
+		<Table name="WorkingTimes" id="19">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Object.WorkingTimes</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="WorkingTimesContextMenu" id="20"/>
+			<AutoCommandBar name="WorkingTimesCommandBar" id="21"/>
+			<ExtendedTooltip name="WorkingTimesExtendedTooltip" id="22"/>
+			<SearchStringAddition name="WorkingTimesSearchString" id="23">
+				<AdditionSource>
+					<Item>WorkingTimes</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="WorkingTimesSearchStringContextMenu" id="24"/>
+				<ExtendedTooltip name="WorkingTimesSearchStringExtendedTooltip" id="25"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="WorkingTimesViewStatus" id="26">
+				<AdditionSource>
+					<Item>WorkingTimes</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="WorkingTimesViewStatusContextMenu" id="27"/>
+				<ExtendedTooltip name="WorkingTimesViewStatusExtendedTooltip" id="28"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="WorkingTimesSearchControl" id="29">
+				<AdditionSource>
+					<Item>WorkingTimes</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="WorkingTimesSearchControlContextMenu" id="30"/>
+				<ExtendedTooltip name="WorkingTimesSearchControlExtendedTooltip" id="31"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="WorkingTimesLineNumber" id="32">
+					<DataPath>Object.WorkingTimes.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="WorkingTimesLineNumberContextMenu" id="33"/>
+					<ExtendedTooltip name="WorkingTimesLineNumberExtendedTooltip" id="34"/>
+				</LabelField>
+				<InputField name="WorkingTimesTimeFrom" id="35">
+					<DataPath>Object.WorkingTimes.TimeFrom</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="WorkingTimesTimeFromContextMenu" id="36"/>
+					<ExtendedTooltip name="WorkingTimesTimeFromExtendedTooltip" id="37"/>
+				</InputField>
+				<InputField name="WorkingTimesTimeTo" id="38">
+					<DataPath>Object.WorkingTimes.TimeTo</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="WorkingTimesTimeToContextMenu" id="39"/>
+					<ExtendedTooltip name="WorkingTimesTimeToExtendedTooltip" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Remarks" id="16">
+			<DataPath>Object.Remarks</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="RemarksContextMenu" id="17"/>
+			<ExtendedTooltip name="RemarksExtendedTooltip" id="18"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Timetables</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
