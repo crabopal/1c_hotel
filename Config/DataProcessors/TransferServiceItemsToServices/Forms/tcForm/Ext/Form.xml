@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormActionsExecute" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ActionsExecute</CommandName>
+				<ExtendedTooltip name="FormActionsExecuteExtendedTooltip" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Decoration" id="3">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Creates services from menu items (catalog Service items). Hierarchy, descriptions, units, remarks and prices are copied. Already transferred items (same external code) are skipped.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Erstellt Dienstleistungen aus Menüpositionen. Hierarchie, Bezeichnungen, Maßeinheiten, Anmerkungen und Preise werden kopiert. Bereits übertragene Positionen (gleicher externer Code) werden übersprungen.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создает услуги по позициям меню. Копируются иерархия, наименования, единицы измерения, примечания и цены. Уже перенесенные позиции (тот же код во внешней системе) пропускаются.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DecorationContextMenu" id="4"/>
+			<ExtendedTooltip name="DecorationExtendedTooltip" id="5"/>
+		</LabelDecoration>
+		<UsualGroup name="GroupSource" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Source and destination</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Quelle und Ziel</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник и приемник</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="GroupSourceExtendedTooltip" id="7"/>
+			<ChildItems>
+				<InputField name="Hotel" id="8">
+					<DataPath>Object.Hotel</DataPath>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="HotelContextMenu" id="9"/>
+					<ExtendedTooltip name="HotelExtendedTooltip" id="10"/>
+				</InputField>
+				<InputField name="ServiceItemFolder" id="11">
+					<DataPath>Object.ServiceItemFolder</DataPath>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="ServiceItemFolderContextMenu" id="12"/>
+					<ExtendedTooltip name="ServiceItemFolderExtendedTooltip" id="13"/>
+				</InputField>
+				<InputField name="ServiceFolder" id="14">
+					<DataPath>Object.ServiceFolder</DataPath>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="ServiceFolderContextMenu" id="15"/>
+					<ExtendedTooltip name="ServiceFolderExtendedTooltip" id="16"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupService" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Service parameters</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Parameter der Dienstleistung</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="GroupServiceExtendedTooltip" id="18"/>
+			<ChildItems>
+				<InputField name="VATRate" id="19">
+					<DataPath>Object.VATRate</DataPath>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="VATRateContextMenu" id="20"/>
+					<ExtendedTooltip name="VATRateExtendedTooltip" id="21"/>
+				</InputField>
+				<InputField name="ServiceType" id="22">
+					<DataPath>Object.ServiceType</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ServiceTypeContextMenu" id="23"/>
+					<ExtendedTooltip name="ServiceTypeExtendedTooltip" id="24"/>
+				</InputField>
+				<InputField name="PaymentSection" id="25">
+					<DataPath>Object.PaymentSection</DataPath>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="PaymentSectionContextMenu" id="26"/>
+					<ExtendedTooltip name="PaymentSectionExtendedTooltip" id="27"/>
+				</InputField>
+				<InputField name="PriceDate" id="28">
+					<DataPath>Object.PriceDate</DataPath>
+					<ContextMenu name="PriceDateContextMenu" id="29"/>
+					<ExtendedTooltip name="PriceDateExtendedTooltip" id="30"/>
+				</InputField>
+				<InputField name="CodePrefix" id="31">
+					<DataPath>Object.CodePrefix</DataPath>
+					<ContextMenu name="CodePrefixContextMenu" id="32"/>
+					<ExtendedTooltip name="CodePrefixExtendedTooltip" id="33"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFlags" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Options</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Optionen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опции</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="GroupFlagsExtendedTooltip" id="35"/>
+			<ChildItems>
+				<CheckBoxField name="IsStockArticle" id="36">
+					<DataPath>Object.IsStockArticle</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="IsStockArticleContextMenu" id="37"/>
+					<ExtendedTooltip name="IsStockArticleExtendedTooltip" id="38"/>
+				</CheckBoxField>
+				<CheckBoxField name="FillServiceItemsTabularSection" id="39">
+					<DataPath>Object.FillServiceItemsTabularSection</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="FillServiceItemsTabularSectionContextMenu" id="40"/>
+					<ExtendedTooltip name="FillServiceItemsTabularSectionExtendedTooltip" id="41"/>
+				</CheckBoxField>
+				<CheckBoxField name="TransferOutOfSale" id="42">
+					<DataPath>Object.TransferOutOfSale</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TransferOutOfSaleContextMenu" id="43"/>
+					<ExtendedTooltip name="TransferOutOfSaleExtendedTooltip" id="44"/>
+				</CheckBoxField>
+				<CheckBoxField name="TransferMarkedForDeletion" id="45">
+					<DataPath>Object.TransferMarkedForDeletion</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="TransferMarkedForDeletionContextMenu" id="46"/>
+					<ExtendedTooltip name="TransferMarkedForDeletionExtendedTooltip" id="47"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.TransferServiceItemsToServices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ActionsExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transfer service items to services</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Menüpositionen in Dienstleistungen übertragen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести позиции меню в услуги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ActionsExecute</Action>
+		</Command>
+	</Commands>
+</Form>
