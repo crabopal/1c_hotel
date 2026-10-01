@@ -343,9 +343,7 @@ Procedure FillService(pService, pRow, pTargetRef, pIsNew, pContext)
 		pService.OnlineAvaliable = pRow.IsOnlineRate;
 		pService.Composition = pRow.ServicesIncludedDescription;
 		pService.IsInPrice = True;
-		If pIsNew Then
-			pService.IsRoomRevenue = True;
-		EndIf;
+		pService.IsRoomRevenue = False;
 	EndIf;
 	
 	If pIsNew Then
