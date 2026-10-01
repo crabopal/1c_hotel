@@ -2,6 +2,8 @@
 
 Перегрузка элементов справочника **Тарифы** (`Catalog.RoomRates`) в справочник **Услуги** (`Catalog.Services`).
 
+Реализовано обработкой `DataProcessor.TransferRoomRatesToServices`.
+
 Оба справочника иерархические (группы и элементы). Владельца нет.
 
 | | Тарифы | Услуги |
@@ -11,13 +13,15 @@
 
 ## Ключ соответствия элементов
 
+Ключ — UUID ссылки тарифа. Услуга ищется и создаётся как `Catalogs.Services.GetRef(Тариф.UUID())`, для нового элемента вызывается `SetNewObjectRef`. Повторный запуск обновляет эту же услугу.
+
 | Тарифы | Услуги | Правило |
 |---|---|---|
-| `Code` — Код | `ExternalCode` — Код во внешней системе | Всегда. Полный код тарифа (до 25 символов) помещается в строку 36 и сохраняет связь после перегрузки. |
-| `AccommodationService` — Услуга - проживание | ссылка на элемент `Services` | Если реквизит заполнен, обновлять эту услугу. Иначе создавать новый элемент. |
-| `Code` — Код | `Code` — Код | Копировать, когда длина кода без хвостовых пробелов не больше 11 и такой код в услугах свободен. Иначе оставить автонумерацию услуг, полный код остаётся в `ExternalCode`. |
+| `Ref.UUID()` | `Ref` услуги | Ключ поиска и идентификатор новой услуги |
+| `Code` — Код | `Code` — Код | У новой услуги копируется, если длина без хвостовых пробелов не больше 11 и код свободен. Иначе назначается новый код. У уже существующей услуги код не меняется |
+| `Parent` — Группа | `Parent` — Родитель | `Catalogs.Services.GetRef(ГруппаТарифа.UUID())`. Группы записываются раньше элементов |
 
-Группы переносятся раньше элементов. `Parent` тарифа указывает на группу тарифов, поэтому в услугу пишется группа услуг, созданная из той же группы тарифа (по `ExternalCode` = код группы тарифа).
+`ExternalCode` услуги не заполняется: связь хранится в UUID ссылки.
 
 ## Прямое копирование
 
@@ -64,4 +68,4 @@
 
 Остаются значениями по умолчанию нового или уже существующего элемента: `GroupByDescriptionTranslations`, `Unit`, `UnitTranslations`, `GetUnitFromRule`, `AllowChangePrice`, `RecalculatePriceWhenSumChanged`, `IsRoomRevenue`, `RoomRevenueAmountsOnly`, `IsInPrice`, `IsResourceRevenue`, `DoNotGroupIntoRoomRateOnPrint`, `SplitToSeparateSettlements`, `DoNotExportToTheAccountingSystem`, `IsNotInvoiced`, `BreakdownListFormula`, `ServiceRegistrationIsTurnedOn`, `MaxOneServicePerDayIsAllowed`, `ServiceType`, `PaymentSection`, `TaxationSystem`, `ChargePerPerson`, `IsStockArticle`, `IsAgentService`, `Principal`, `PrincipalType`, `IsNotOurService`, `IsHotelProductService`, `IsPricePerMinute`, `ResourceType`, `Resource`, `BoundService`, `ChequeItemType`, `HideIntoServiceOnPrint`, `IsGiftCertificate`, `BonusPaymentsNotAllowed`, `BarCode`, `IsResortFee`, `AvailableQuantity`, `DepartmentCode`, `CorrectionService`, `NoPrepaymentIsAllowed`, `CashRegisterItemCode`, `ChargeToEachGuestSeparately`, `AlwaysChargeInAdvance`, `IsQuantitativeAccounting`, `InvoiceGroupingName`, `UseMarking`, `UpgradeFromTerms`, `UpgradeToTerms`, `ExciseDutyType`, `Volume`, `MarkingCodeType`, `ChargeOnCreditIsAllowed`.
 
-Для услуги, созданной из тарифа проживания, отдельно от маппинга полей имеет смысл выставить `IsRoomRevenue` = Истина. В тарифе такого реквизита нет.
+Для новой услуги (не группы) обработка ставит `IsRoomRevenue` = Истина. В тарифе такого реквизита нет. При повторном запуске уже записанное значение не меняется.

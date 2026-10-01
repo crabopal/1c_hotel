@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Перенос тарифов в услуги</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Transfer room rates to services</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Tarife in Dienstleistungen übertragen</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="FormFormExecute" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.FormExecute</CommandName>
+				<ExtendedTooltip name="FormFormExecuteExtendedTooltip" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="Hotel" id="3">
+			<DataPath>Object.Hotel</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<ContextMenu name="HotelContextMenu" id="4"/>
+			<ExtendedTooltip name="HotelExtendedTooltip" id="5"/>
+		</InputField>
+		<LabelDecoration name="Hint" id="6">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустая гостиница — перенос всех тарифов. Если гостиница указана, переносятся её тарифы и тарифы без гостиницы, вместе с группами-родителями. Услуга ищется и создаётся с тем же UUID, что и ссылка тарифа.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>An empty hotel transfers all room rates. A filled hotel transfers its room rates and room rates without a hotel, including parent folders. The service is found and created with the same UUID as the room rate reference.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ein leeres Hotel überträgt alle Tarife. Ein ausgefülltes Hotel überträgt seine Tarife und Tarife ohne Hotel, einschließlich der übergeordneten Gruppen. Die Dienstleistung wird mit derselben UUID wie die Tarifreferenz gesucht und erstellt.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="HintContextMenu" id="7"/>
+			<ExtendedTooltip name="HintExtendedTooltip" id="8"/>
+		</LabelDecoration>
+		<InputField name="Result" id="9">
+			<DataPath>Object.Result</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<Height>12</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<ContextMenu name="ResultContextMenu" id="10"/>
+			<ExtendedTooltip name="ResultExtendedTooltip" id="11"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.TransferRoomRatesToServices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="FormExecute" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Ausführen</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести тарифы в услуги</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transfer room rates to services</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Tarife in Dienstleistungen übertragen</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>FormExecute</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
