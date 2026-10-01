@@ -34,21 +34,79 @@
 			<ContextMenu name="HotelContextMenu" id="4"/>
 			<ExtendedTooltip name="HotelExtendedTooltip" id="5"/>
 		</InputField>
+		<Table name="RoomRateGroups" id="12">
+			<Height>6</Height>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Object.RoomRateGroups</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группы тарифов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Room rate groups</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Tarifgruppen</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="RoomRateGroupsContextMenu" id="13"/>
+			<AutoCommandBar name="RoomRateGroupsCommandBar" id="14"/>
+			<ExtendedTooltip name="RoomRateGroupsExtendedTooltip" id="15"/>
+			<SearchStringAddition name="RoomRateGroupsSearchString" id="16">
+				<AdditionSource>
+					<Item>RoomRateGroups</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="RoomRateGroupsSearchStringContextMenu" id="17"/>
+				<ExtendedTooltip name="RoomRateGroupsSearchStringExtendedTooltip" id="18"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="RoomRateGroupsViewStatus" id="19">
+				<AdditionSource>
+					<Item>RoomRateGroups</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="RoomRateGroupsViewStatusContextMenu" id="20"/>
+				<ExtendedTooltip name="RoomRateGroupsViewStatusExtendedTooltip" id="21"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="RoomRateGroupsSearchControl" id="22">
+				<AdditionSource>
+					<Item>RoomRateGroups</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="RoomRateGroupsSearchControlContextMenu" id="23"/>
+				<ExtendedTooltip name="RoomRateGroupsSearchControlExtendedTooltip" id="24"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="RoomRateGroupsRoomRateGroup" id="25">
+					<DataPath>Object.RoomRateGroups.RoomRateGroup</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="RoomRateGroupsRoomRateGroupContextMenu" id="26"/>
+					<ExtendedTooltip name="RoomRateGroupsRoomRateGroupExtendedTooltip" id="27"/>
+				</InputField>
+			</ChildItems>
+		</Table>
 		<LabelDecoration name="Hint" id="6">
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Title formatted="false">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Пустая гостиница — перенос всех тарифов. Если гостиница указана, переносятся её тарифы и тарифы без гостиницы, вместе с группами-родителями. Услуга ищется и создаётся с тем же UUID, что и ссылка тарифа.</v8:content>
+					<v8:content>Пустая гостиница — тарифы всех гостиниц. Если гостиница указана, переносятся её тарифы и тарифы без гостиницы. Пустой список групп — все группы. Если группы указаны, переносятся они и всё, что лежит внутри, вместе с группами-родителями выше отбора. Услуга ищется и создаётся с тем же UUID, что и ссылка тарифа.</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>An empty hotel transfers all room rates. A filled hotel transfers its room rates and room rates without a hotel, including parent folders. The service is found and created with the same UUID as the room rate reference.</v8:content>
+					<v8:content>An empty hotel transfers room rates of every hotel. A filled hotel transfers its room rates and room rates without a hotel. An empty group list transfers all groups. Filled groups transfer those groups and everything inside them, including parent folders above the filter. The service is found and created with the same UUID as the room rate reference.</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>de</v8:lang>
-					<v8:content>Ein leeres Hotel überträgt alle Tarife. Ein ausgefülltes Hotel überträgt seine Tarife und Tarife ohne Hotel, einschließlich der übergeordneten Gruppen. Die Dienstleistung wird mit derselben UUID wie die Tarifreferenz gesucht und erstellt.</v8:content>
+					<v8:content>Ein leeres Hotel überträgt Tarife aller Hotels. Ein ausgefülltes Hotel überträgt seine Tarife und Tarife ohne Hotel. Eine leere Gruppenliste überträgt alle Gruppen. Ausgefüllte Gruppen übertragen diese Gruppen und alles darin, einschließlich der übergeordneten Gruppen über dem Filter. Die Dienstleistung wird mit derselben UUID wie die Tarifreferenz gesucht und erstellt.</v8:content>
 				</v8:item>
 			</Title>
 			<ContextMenu name="HintContextMenu" id="7"/>

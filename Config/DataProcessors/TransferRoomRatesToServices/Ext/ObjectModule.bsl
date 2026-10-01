@@ -15,9 +15,14 @@ Procedure pmExecute() Export
 	vContext.Insert("Messages", New Array);
 	
 	vRates = RoomRatesToTransfer();
+	vGroupFilter = SelectedRoomRateGroups(vRates);
+	If GroupFilterIsFilled() And vGroupFilter.Count() = 0 Then
+		Result = NStr("en='The specified room rate groups were not found.'; ru='Указанные группы тарифов не найдены.'; de='Die angegebenen Tarifgruppen wurden nicht gefunden.'");
+		Return;
+	EndIf;
 	vSelected = New Map;
 	For Each vRow In vRates Do
-		If RoomRateMatchesHotel(vRow) Then
+		If RoomRateMatchesHotel(vRow) And RoomRateMatchesGroups(vRow, vRates, vGroupFilter) Then
 			vSelected.Insert(vRow.Ref, True);
 		EndIf;
 	EndDo;
@@ -112,6 +117,59 @@ Function RoomRatesToTransfer()
 	Return vRates;
 	
 EndFunction // RoomRatesToTransfer
+
+// -----------------------------------------------------------------------------
+Function GroupFilterIsFilled()
+	
+	For Each vRow In RoomRateGroups Do
+		If ValueIsFilled(vRow.RoomRateGroup) Then
+			Return True;
+		EndIf;
+	EndDo;
+	Return False;
+	
+EndFunction // GroupFilterIsFilled
+
+// -----------------------------------------------------------------------------
+Function SelectedRoomRateGroups(pRates)
+	
+	vGroups = New Map;
+	For Each vRow In RoomRateGroups Do
+		If Not ValueIsFilled(vRow.RoomRateGroup) Then
+			Continue;
+		EndIf;
+		vRateRow = pRates.Find(vRow.RoomRateGroup, "Ref");
+		If vRateRow <> Undefined And vRateRow.IsFolder Then
+			vGroups.Insert(vRow.RoomRateGroup, True);
+		EndIf;
+	EndDo;
+	Return vGroups;
+	
+EndFunction // SelectedRoomRateGroups
+
+// -----------------------------------------------------------------------------
+Function RoomRateMatchesGroups(pRow, pRates, pGroups)
+	
+	If pGroups.Count() = 0 Then
+		Return True;
+	EndIf;
+	
+	vRef = pRow.Ref;
+	vGuard = 0;
+	While ValueIsFilled(vRef) And vGuard < 100 Do
+		If pGroups.Get(vRef) <> Undefined Then
+			Return True;
+		EndIf;
+		vParentRow = pRates.Find(vRef, "Ref");
+		If vParentRow = Undefined Then
+			Return False;
+		EndIf;
+		vRef = vParentRow.Parent;
+		vGuard = vGuard + 1;
+	EndDo;
+	Return False;
+	
+EndFunction // RoomRateMatchesGroups
 
 // -----------------------------------------------------------------------------
 Function RoomRateMatchesHotel(pRow)
