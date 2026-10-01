@@ -34,6 +34,7 @@ Procedure pmExecute() Export
 	
 	LoadUsedServiceCodes(vContext);
 	vContext.Insert("Prices", LoadServicePricesFromTemplate());
+	vContext.Insert("VATRate", MainVATRate());
 	
 	vPending = New Array;
 	For Each vItem In vSelected Do
@@ -218,7 +219,7 @@ Function ParentIsReady(pRow, pSelected, pWritten)
 EndFunction // ParentIsReady
 
 // -----------------------------------------------------------------------------
-Procedure EnsureServicePrice(pService, pHotel, pPrices)
+Procedure EnsureServicePrice(pService, pHotel, pPrices, pVATRate)
 	
 	vPriceInfo = pPrices.Get(NormalizeUUID(pService.UUID()));
 	If vPriceInfo = Undefined Then
@@ -229,6 +230,18 @@ Procedure EnsureServicePrice(pService, pHotel, pPrices)
 		vPeriod = vPriceInfo.Period;
 	EndIf;
 	
+	vHotel = pHotel;
+	If Not ValueIsFilled(vHotel) Then
+		vHotel = Hotel;
+	EndIf;
+	If Not ValueIsFilled(vHotel) Then
+		vHotel = SessionParameters.CurrentHotel;
+	EndIf;
+	vVATRate = pVATRate;
+	If Not ValueIsFilled(vVATRate) And ValueIsFilled(vHotel) And ValueIsFilled(vHotel.Company) Then
+		vVATRate = vHotel.Company.VATRate;
+	EndIf;
+	
 	vQuery = New Query;
 	vQuery.Text =
 	"SELECT TOP 1
@@ -236,7 +249,8 @@ Procedure EnsureServicePrice(pService, pHotel, pPrices)
 	|	ServicePrices.Hotel AS Hotel,
 	|	ServicePrices.Service AS Service,
 	|	ServicePrices.ClientType AS ClientType,
-	|	ServicePrices.Price AS Price
+	|	ServicePrices.Price AS Price,
+	|	ServicePrices.VATRate AS VATRate
 	|FROM
 	|	InformationRegister.ServicePrices AS ServicePrices
 	|WHERE
@@ -244,7 +258,7 @@ Procedure EnsureServicePrice(pService, pHotel, pPrices)
 	vQuery.SetParameter("Service", pService);
 	vSelection = vQuery.Execute().Select();
 	If vSelection.Next() Then
-		If vSelection.Price <> vPrice Then
+		If vSelection.Price <> vPrice Or (ValueIsFilled(vVATRate) And vSelection.VATRate <> vVATRate) Then
 			vRecord = InformationRegisters.ServicePrices.CreateRecordManager();
 			vRecord.Period = vSelection.Period;
 			vRecord.Hotel = vSelection.Hotel;
@@ -253,18 +267,13 @@ Procedure EnsureServicePrice(pService, pHotel, pPrices)
 			vRecord.Read();
 			If vRecord.Selected() Then
 				vRecord.Price = vPrice;
+				If ValueIsFilled(vVATRate) Then
+					vRecord.VATRate = vVATRate;
+				EndIf;
 				vRecord.Write();
 			EndIf;
 		EndIf;
 		Return;
-	EndIf;
-	
-	vHotel = pHotel;
-	If Not ValueIsFilled(vHotel) Then
-		vHotel = Hotel;
-	EndIf;
-	If Not ValueIsFilled(vHotel) Then
-		vHotel = SessionParameters.CurrentHotel;
 	EndIf;
 	
 	vRecord = InformationRegisters.ServicePrices.CreateRecordManager();
@@ -273,15 +282,28 @@ Procedure EnsureServicePrice(pService, pHotel, pPrices)
 	vRecord.Service = pService;
 	vRecord.ClientType = Catalogs.ClientTypes.EmptyRef();
 	vRecord.Price = vPrice;
+	vRecord.VATRate = vVATRate;
 	If ValueIsFilled(vHotel) Then
 		vRecord.Currency = vHotel.BaseCurrency;
-		If ValueIsFilled(vHotel.Company) And ValueIsFilled(vHotel.Company.VATRate) Then
-			vRecord.VATRate = vHotel.Company.VATRate;
-		EndIf;
 	EndIf;
 	vRecord.Write();
 	
 EndProcedure // EnsureServicePrice
+
+// -----------------------------------------------------------------------------
+Function MainVATRate()
+	
+	vRate = Catalogs.VATRates.FindByDescription("Осн.", True);
+	If ValueIsFilled(vRate) And Not vRate.DeletionMark Then
+		Return vRate;
+	EndIf;
+	vRate = Catalogs.VATRates.FindByDescription("Основная", True);
+	If ValueIsFilled(vRate) And Not vRate.DeletionMark Then
+		Return vRate;
+	EndIf;
+	Return Catalogs.VATRates.EmptyRef();
+	
+EndFunction // MainVATRate
 
 // -----------------------------------------------------------------------------
 Function LoadServicePricesFromTemplate()
@@ -399,7 +421,7 @@ Function WriteService(pRow, pContext)
 			vService.SetDeletionMark(pRow.DeletionMark);
 		EndIf;
 		If Not pRow.IsFolder Then
-			EnsureServicePrice(vService.Ref, vService.Hotel, pContext.Prices);
+			EnsureServicePrice(vService.Ref, vService.Hotel, pContext.Prices, pContext.VATRate);
 		EndIf;
 		CommitTransaction();
 	Except
