@@ -291,7 +291,7 @@ Function LoadServicePricesFromTemplate()
 	GetTemplate("PriceTable").Write(vFileName);
 	vSheet = New SpreadsheetDocument;
 	Try
-		vSheet.Read(vFileName, SpreadsheetDocumentValueReadingMode.Value);
+		vSheet.Read(vFileName);
 	Except
 		DeleteFiles(vFileName);
 		Raise;
