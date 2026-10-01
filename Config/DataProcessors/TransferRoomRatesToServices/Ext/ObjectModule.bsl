@@ -217,6 +217,46 @@ Function ParentIsReady(pRow, pSelected, pWritten)
 EndFunction // ParentIsReady
 
 // -----------------------------------------------------------------------------
+Procedure EnsureServicePrice(pService, pHotel)
+	
+	vQuery = New Query;
+	vQuery.Text =
+	"SELECT TOP 1
+	|	ServicePrices.Service AS Service
+	|FROM
+	|	InformationRegister.ServicePrices AS ServicePrices
+	|WHERE
+	|	ServicePrices.Service = &Service";
+	vQuery.SetParameter("Service", pService);
+	If Not vQuery.Execute().IsEmpty() Then
+		Return;
+	EndIf;
+	
+	vHotel = pHotel;
+	If Not ValueIsFilled(vHotel) Then
+		vHotel = Hotel;
+	EndIf;
+	If Not ValueIsFilled(vHotel) Then
+		vHotel = SessionParameters.CurrentHotel;
+	EndIf;
+	
+	vRecord = InformationRegisters.ServicePrices.CreateRecordManager();
+	vRecord.Period = Date(2010, 1, 1);
+	vRecord.Hotel = vHotel;
+	vRecord.Service = pService;
+	vRecord.ClientType = Catalogs.ClientTypes.EmptyRef();
+	vRecord.Price = 0;
+	If ValueIsFilled(vHotel) Then
+		vRecord.Currency = vHotel.BaseCurrency;
+		If ValueIsFilled(vHotel.Company) And ValueIsFilled(vHotel.Company.VATRate) Then
+			vRecord.VATRate = vHotel.Company.VATRate;
+		EndIf;
+	EndIf;
+	vRecord.Write();
+	
+EndProcedure // EnsureServicePrice
+
+// -----------------------------------------------------------------------------
 Procedure LoadUsedServiceCodes(pContext)
 	
 	vQuery = New Query;
@@ -262,6 +302,9 @@ Function WriteService(pRow, pContext)
 		vService.Write();
 		If vService.DeletionMark <> pRow.DeletionMark Then
 			vService.SetDeletionMark(pRow.DeletionMark);
+		EndIf;
+		If Not pRow.IsFolder Then
+			EnsureServicePrice(vService.Ref, vService.Hotel);
 		EndIf;
 		CommitTransaction();
 	Except
