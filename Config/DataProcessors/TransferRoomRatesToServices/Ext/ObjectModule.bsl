@@ -33,6 +33,7 @@ Procedure pmExecute() Export
 	EndIf;
 	
 	LoadUsedServiceCodes(vContext);
+	vContext.Insert("Prices", LoadServicePricesFromTemplate());
 	
 	vPending = New Array;
 	For Each vItem In vSelected Do
@@ -217,18 +218,44 @@ Function ParentIsReady(pRow, pSelected, pWritten)
 EndFunction // ParentIsReady
 
 // -----------------------------------------------------------------------------
-Procedure EnsureServicePrice(pService, pHotel)
+Procedure EnsureServicePrice(pService, pHotel, pPrices)
+	
+	vPriceInfo = pPrices.Get(NormalizeUUID(pService.UUID()));
+	If vPriceInfo = Undefined Then
+		vPrice = 0;
+		vPeriod = Date(2010, 1, 1);
+	Else
+		vPrice = vPriceInfo.Price;
+		vPeriod = vPriceInfo.Period;
+	EndIf;
 	
 	vQuery = New Query;
 	vQuery.Text =
 	"SELECT TOP 1
-	|	ServicePrices.Service AS Service
+	|	ServicePrices.Period AS Period,
+	|	ServicePrices.Hotel AS Hotel,
+	|	ServicePrices.Service AS Service,
+	|	ServicePrices.ClientType AS ClientType,
+	|	ServicePrices.Price AS Price
 	|FROM
 	|	InformationRegister.ServicePrices AS ServicePrices
 	|WHERE
 	|	ServicePrices.Service = &Service";
 	vQuery.SetParameter("Service", pService);
-	If Not vQuery.Execute().IsEmpty() Then
+	vSelection = vQuery.Execute().Select();
+	If vSelection.Next() Then
+		If vSelection.Price <> vPrice Then
+			vRecord = InformationRegisters.ServicePrices.CreateRecordManager();
+			vRecord.Period = vSelection.Period;
+			vRecord.Hotel = vSelection.Hotel;
+			vRecord.Service = vSelection.Service;
+			vRecord.ClientType = vSelection.ClientType;
+			vRecord.Read();
+			If vRecord.Selected() Then
+				vRecord.Price = vPrice;
+				vRecord.Write();
+			EndIf;
+		EndIf;
 		Return;
 	EndIf;
 	
@@ -241,11 +268,11 @@ Procedure EnsureServicePrice(pService, pHotel)
 	EndIf;
 	
 	vRecord = InformationRegisters.ServicePrices.CreateRecordManager();
-	vRecord.Period = Date(2010, 1, 1);
+	vRecord.Period = vPeriod;
 	vRecord.Hotel = vHotel;
 	vRecord.Service = pService;
 	vRecord.ClientType = Catalogs.ClientTypes.EmptyRef();
-	vRecord.Price = 0;
+	vRecord.Price = vPrice;
 	If ValueIsFilled(vHotel) Then
 		vRecord.Currency = vHotel.BaseCurrency;
 		If ValueIsFilled(vHotel.Company) And ValueIsFilled(vHotel.Company.VATRate) Then
@@ -255,6 +282,74 @@ Procedure EnsureServicePrice(pService, pHotel)
 	vRecord.Write();
 	
 EndProcedure // EnsureServicePrice
+
+// -----------------------------------------------------------------------------
+Function LoadServicePricesFromTemplate()
+	
+	vPrices = New Map;
+	vFileName = GetTempFileName("xlsx");
+	GetTemplate("PriceTable").Write(vFileName);
+	vSheet = New SpreadsheetDocument;
+	Try
+		vSheet.Read(vFileName, SpreadsheetDocumentValueReadingMode.Value);
+	Except
+		DeleteFiles(vFileName);
+		Raise;
+	EndTry;
+	DeleteFiles(vFileName);
+	
+	For vRow = 2 To vSheet.TableHeight Do
+		vId = NormalizeUUID(vSheet.Area(vRow, 2).Text);
+		If StrLen(vId) < 32 Then
+			Continue;
+		EndIf;
+		vPriceInfo = New Structure("Period, Price");
+		vPriceInfo.Period = PricePeriodFromText(vSheet.Area(vRow, 1).Text);
+		vPriceInfo.Price = PriceFromText(vSheet.Area(vRow, 3).Text);
+		vPrices.Insert(vId, vPriceInfo);
+	EndDo;
+	Return vPrices;
+	
+EndFunction // LoadServicePricesFromTemplate
+
+// -----------------------------------------------------------------------------
+Function NormalizeUUID(pValue)
+	
+	vText = Lower(TrimAll(String(pValue)));
+	vText = StrReplace(vText, "{", "");
+	vText = StrReplace(vText, "}", "");
+	vText = StrReplace(vText, " ", "");
+	Return vText;
+	
+EndFunction // NormalizeUUID
+
+// -----------------------------------------------------------------------------
+Function PricePeriodFromText(pText)
+	
+	vText = TrimAll(String(pText));
+	vSpace = StrFind(vText, " ");
+	If vSpace > 0 Then
+		vText = Left(vText, vSpace - 1);
+	EndIf;
+	vParts = StrSplit(vText, ".");
+	If vParts.Count() < 3 Then
+		Return Date(2010, 1, 1);
+	EndIf;
+	Return Date(Number(vParts[2]), Number(vParts[1]), Number(vParts[0]));
+	
+EndFunction // PricePeriodFromText
+
+// -----------------------------------------------------------------------------
+Function PriceFromText(pText)
+	
+	vText = TrimAll(StrReplace(String(pText), ",", "."));
+	vText = StrReplace(vText, " ", "");
+	If IsBlankString(vText) Then
+		Return 0;
+	EndIf;
+	Return Number(vText);
+	
+EndFunction // PriceFromText
 
 // -----------------------------------------------------------------------------
 Procedure LoadUsedServiceCodes(pContext)
@@ -304,7 +399,7 @@ Function WriteService(pRow, pContext)
 			vService.SetDeletionMark(pRow.DeletionMark);
 		EndIf;
 		If Not pRow.IsFolder Then
-			EnsureServicePrice(vService.Ref, vService.Hotel);
+			EnsureServicePrice(vService.Ref, vService.Hotel, pContext.Prices);
 		EndIf;
 		CommitTransaction();
 	Except
