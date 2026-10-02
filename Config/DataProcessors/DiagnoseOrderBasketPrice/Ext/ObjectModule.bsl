@@ -133,17 +133,29 @@ Function pmDiagnose() Export
 	
 	// 5. RoomRatePrices rows for each accommodation type from first template
 	vFirstTemplate = vAccTypesWithAgeList.Get(0).AccTemplate;
+	If Not ValueIsFilled(vFirstTemplate) Then
+		AddStep(vSteps, "ACC_TEMPLATE", "WARN",
+			NStr("en='Accommodation type found, but AccommodationTemplate is empty'; ru='Вид размещения найден, но шаблон размещения пустой'; de='Unterkunftstyp gefunden, Vorlage aber leer'"),
+			NStr("en='With empty template and RateChargeDirection=MergeToTheMainRoomGuest calculation may skip packages / change price path'; ru='При пустом шаблоне и направлении начисления «на основного гостя» расчёт может идти другим путём'; de='Leere Vorlage kann Berechnungspfad ändern'"));
+	EndIf;
 	vPricesFound = False;
+	vExactTagFound = False;
 	vPricesDetails = "";
 	vMissingPrices = "";
+	vPriceRowsDump = "";
 	For Each vAccRow In vAccTypesWithAgeList Do
 		If vAccRow.AccTemplate <> vFirstTemplate And ValueIsFilled(vFirstTemplate) Then
 			Break;
 		EndIf;
-		vPriceRowsCount = CountMatchingRoomRatePrices(vAccRow.AccommodationType, vActiveOrders);
-		If vPriceRowsCount > 0 Then
+		vPriceInfo = GetMatchingRoomRatePricesInfo(vAccRow.AccommodationType, vActiveOrders);
+		If vPriceInfo.TotalCount > 0 Then
 			vPricesFound = True;
-			vPricesDetails = vPricesDetails + String(vAccRow.AccommodationType) + "=" + Format(vPriceRowsCount, "NG=") + "; ";
+			vPricesDetails = vPricesDetails + String(vAccRow.AccommodationType) + "=" + Format(vPriceInfo.TotalCount, "NG=") +
+				"(tagMatch=" + Format(vPriceInfo.ExactPriceTagCount, "NG=") + "); ";
+			If vPriceInfo.ExactPriceTagCount > 0 Then
+				vExactTagFound = True;
+			EndIf;
+			vPriceRowsDump = vPriceRowsDump + vPriceInfo.RowsInfo;
 		Else
 			vMissingPrices = vMissingPrices + String(vAccRow.AccommodationType) + "; ";
 		EndIf;
@@ -153,12 +165,18 @@ Function pmDiagnose() Export
 			NStr("en='No RoomRatePrices rows for room type + accommodation types'; ru='Нет строк RoomRatePrices для типа номера + видов размещения'; de='Keine RoomRatePrices-Zeilen'"),
 			NStr("en='Missing accommodation types: '; ru='Нет цен для видов: '; de='Fehlende Typen: '") + vMissingPrices +
 			NStr("en=' (empty AccommodationType in prices is also accepted)'; ru=' (пустой вид в ценах тоже подходит)'; de=' (leerer Typ in Preisen ist auch OK)'"));
+	ElsIf Not vExactTagFound Then
+		AddStep(vSteps, "ROOM_RATE_PRICES", "FAIL",
+			NStr("en='RoomRatePrices exist, but PriceTag does not match active RoomRates order'; ru='RoomRatePrices есть, но PriceTag не совпадает с активным документом в RoomRates'; de='RoomRatePrices vorhanden, PriceTag stimmt nicht'"),
+			NStr("en='Found: '; ru='Найдено: '; de='Gefunden: '") + vPricesDetails + " " + vPriceRowsDump +
+			NStr("en=' Fix: in SetRoomRatePrices rows PriceTag must equal PriceTag from register RoomRates for the calendar day type'; ru=' Исправление: в строках установки цен PriceTag должен совпадать с PriceTag в регистре RoomRates для типа дня'; de=' PriceTag angleichen'"));
 	Else
 		vStatus = ?(IsBlankString(vMissingPrices), "OK", "WARN");
 		AddStep(vSteps, "ROOM_RATE_PRICES", vStatus,
 			NStr("en='RoomRatePrices rows found'; ru='Строки RoomRatePrices найдены'; de='RoomRatePrices gefunden'"),
 			NStr("en='Found: '; ru='Найдено: '; de='Gefunden: '") + vPricesDetails +
-			?(IsBlankString(vMissingPrices), "", NStr("en='; without prices: '; ru='; без цен: '; de='; ohne Preise: '") + vMissingPrices));
+			?(IsBlankString(vMissingPrices), "", NStr("en='; without prices: '; ru='; без цен: '; de='; ohne Preise: '") + vMissingPrices) +
+			" " + vPriceRowsDump);
 	EndIf;
 	
 	// 6. Probe calculation like GetOrderBasketPrice / cmGetRoomTypeBalancesTable
@@ -328,12 +346,18 @@ Function GetKidsAgesArray()
 EndFunction
 
 Function CountMatchingRoomRatePrices(pAccommodationType, pActiveOrders)
+	Return GetMatchingRoomRatePricesInfo(pAccommodationType, pActiveOrders).TotalCount;
+EndFunction
+
+Function GetMatchingRoomRatePricesInfo(pAccommodationType, pActiveOrders)
+	vResult = New Structure("TotalCount, ExactPriceTagCount, RowsInfo", 0, 0, "");
 	If pActiveOrders = Undefined Or pActiveOrders.Count() = 0 Then
-		Return 0;
+		Return vResult;
 	EndIf;
 	
 	vSetDocs = New ValueList();
 	vDayTypes = New ValueList();
+	vPriceTags = New ValueList();
 	For Each vOrderRow In pActiveOrders Do
 		If ValueIsFilled(vOrderRow.SetRoomRatePrices) And vSetDocs.FindByValue(vOrderRow.SetRoomRatePrices) = Undefined Then
 			vSetDocs.Add(vOrderRow.SetRoomRatePrices);
@@ -341,12 +365,27 @@ Function CountMatchingRoomRatePrices(pAccommodationType, pActiveOrders)
 		If ValueIsFilled(vOrderRow.CalendarDayType) And vDayTypes.FindByValue(vOrderRow.CalendarDayType) = Undefined Then
 			vDayTypes.Add(vOrderRow.CalendarDayType);
 		EndIf;
+		If vPriceTags.FindByValue(vOrderRow.PriceTag) = Undefined Then
+			vPriceTags.Add(vOrderRow.PriceTag);
+		EndIf;
 	EndDo;
 	
 	vQry = New Query();
 	vQry.Text =
 	"SELECT
-	|	COUNT(*) AS Cnt
+	|	RoomRatePrices.CalendarDayType AS CalendarDayType,
+	|	RoomRatePrices.PriceTag AS PriceTag,
+	|	RoomRatePrices.Hotel AS Hotel,
+	|	RoomRatePrices.RoomType AS RoomType,
+	|	RoomRatePrices.AccommodationType AS AccommodationType,
+	|	RoomRatePrices.ClientType AS ClientType,
+	|	RoomRatePrices.Service AS Service,
+	|	RoomRatePrices.Price AS Price,
+	|	CASE
+	|		WHEN RoomRatePrices.PriceTag IN (&qPriceTags)
+	|			THEN TRUE
+	|		ELSE FALSE
+	|	END AS PriceTagMatchesOrder
 	|FROM
 	|	InformationRegister.RoomRatePrices AS RoomRatePrices
 	|WHERE
@@ -367,15 +406,29 @@ Function CountMatchingRoomRatePrices(pAccommodationType, pActiveOrders)
 	vQry.SetParameter("qRoomRate", ?(ValueIsFilled(RoomRate.BasedOnRoomRate), RoomRate.BasedOnRoomRate, RoomRate));
 	vQry.SetParameter("qSetDocs", vSetDocs);
 	vQry.SetParameter("qDayTypes", vDayTypes);
+	vQry.SetParameter("qPriceTags", vPriceTags);
 	vQry.SetParameter("qHotel", Hotel);
 	vQry.SetParameter("qRoomType", RoomType);
 	vQry.SetParameter("qAccommodationType", pAccommodationType);
 	vQry.SetParameter("qClientType", ClientType);
-	vSel = vQry.Execute().Select();
-	If vSel.Next() Then
-		Return vSel.Cnt;
-	EndIf;
-	Return 0;
+	vTable = vQry.Execute().Unload();
+	vResult.TotalCount = vTable.Count();
+	vExact = 0;
+	vInfo = "";
+	For Each vRow In vTable Do
+		If vRow.PriceTagMatchesOrder Then
+			vExact = vExact + 1;
+		EndIf;
+		vInfo = vInfo + String(vRow.Service) + " Price=" + Format(vRow.Price, "NG=0; NDS=.") +
+			" DayType=" + String(vRow.CalendarDayType) +
+			" PriceTag=" + ?(ValueIsFilled(vRow.PriceTag), String(vRow.PriceTag), "<empty>") +
+			" AccType=" + ?(ValueIsFilled(vRow.AccommodationType), String(vRow.AccommodationType), "<empty>") +
+			" RoomType=" + ?(ValueIsFilled(vRow.RoomType), String(vRow.RoomType), "<empty>") +
+			" MatchTag=" + ?(vRow.PriceTagMatchesOrder, "Y", "N") + "; ";
+	EndDo;
+	vResult.ExactPriceTagCount = vExact;
+	vResult.RowsInfo = vInfo;
+	Return vResult;
 EndFunction
 
 Procedure DiagnoseProbeServices(pSteps, pCheckInDate, pCheckOutDate, pAccommodationType, pAccommodationTemplate)
@@ -400,9 +453,56 @@ Procedure DiagnoseProbeServices(pSteps, pCheckInDate, pCheckOutDate, pAccommodat
 		vProbe.Discount = DiscountType.GetObject().pmGetDiscount(vProbe.CheckInDate, , Hotel);
 	EndIf;
 	
+	AddStep(pSteps, "PROBE_PARAMS", "INFO",
+		NStr("en='Probe reservation parameters'; ru='Параметры пробной брони'; de='Probe-Reservierungsparameter'"),
+		NStr("en='CheckIn='; ru='Заезд='; de='Anreise='") + Format(vProbe.CheckInDate, "DF=dd.MM.yyyy HH:mm:ss") +
+		"; " + NStr("en='CheckOut='; ru='Выезд='; de='Abreise='") + Format(vProbe.CheckOutDate, "DF=dd.MM.yyyy HH:mm:ss") +
+		"; " + NStr("en='Duration='; ru='Длит.='; de='Dauer='") + Format(vProbe.Duration, "NG=") +
+		"; " + NStr("en='Status='; ru='Статус='; de='Status='") + String(vProbe.ReservationStatus) +
+		"; " + NStr("en='RateChargeDirection='; ru='НаправлениеНачисления='; de='RateChargeDirection='") +
+		?(ValueIsFilled(RoomRate), String(RoomRate.RateChargeDirection), "") +
+		"; " + NStr("en='Template filled='; ru='Шаблон заполнен='; de='Vorlage gefüllt='") +
+		?(ValueIsFilled(pAccommodationTemplate), "Y", "N"));
+	
+	// Direct prices API used by pmCalculateServices
+	vPriceCalculationDate = CurrentSessionDate();
+	If vPriceCalculationDate = BegOfDay(vPriceCalculationDate) Then
+		vPriceCalculationDate = vPriceCalculationDate + 1;
+	EndIf;
+	vBasePricesCount = 0;
+	vBasePricesInfo = "";
+	Try
+		vBasePrices = RoomRate.GetObject().pmGetRoomRatePrices(pCheckInDate, vPriceCalculationDate, ClientType, RoomType, pAccommodationType, , , pCheckInDate, pCheckOutDate, , , , , pAccommodationTemplate, IsForFolioSplit);
+		vBasePricesCount = vBasePrices.Count();
+		For Each vPriceRow In vBasePrices Do
+			If vPriceRow.IsRoomRevenue Then
+				vBasePricesInfo = vBasePricesInfo + String(vPriceRow.Service) + " Price=" + Format(vPriceRow.Price, "NG=0; NDS=.") +
+					" DayType=" + String(vPriceRow.CalendarDayType) +
+					" AccType=" + String(vPriceRow.AccommodationType) +
+					" PriceTag=" + String(vPriceRow.PriceTag) + "; ";
+			EndIf;
+		EndDo;
+	Except
+		AddStep(pSteps, "GET_PRICES", "FAIL",
+			NStr("en='pmGetRoomRatePrices error'; ru='Ошибка pmGetRoomRatePrices'; de='Fehler pmGetRoomRatePrices'"),
+			ErrorDescription());
+		CleanupProbeReservation(vProbe);
+		Return;
+	EndTry;
+	
+	If vBasePricesCount = 0 Then
+		AddStep(pSteps, "GET_PRICES", "FAIL",
+			NStr("en='pmGetRoomRatePrices returned 0 rows — calculation has nothing to charge'; ru='pmGetRoomRatePrices вернул 0 строк — рассчитывать нечего'; de='pmGetRoomRatePrices lieferte 0 Zeilen'"),
+			NStr("en='Usually PriceTag in RoomRatePrices does not match active RoomRates order, or AccommodationType/Hotel/RoomType filter excludes rows'; ru='Чаще всего PriceTag в RoomRatePrices не совпадает с активным RoomRates, либо отбор по виду/отелю/типу номера отсекает строки'; de='Meist stimmt PriceTag nicht mit aktivem RoomRates überein'"));
+	Else
+		AddStep(pSteps, "GET_PRICES", "OK",
+			NStr("en='pmGetRoomRatePrices returned rows'; ru='pmGetRoomRatePrices вернул строки'; de='pmGetRoomRatePrices lieferte Zeilen'"),
+			NStr("en='Count='; ru='Кол-во='; de='Anzahl='") + Format(vBasePricesCount, "NG=") + "; " + vBasePricesInfo);
+	EndIf;
+	
 	Try
 		vProbe.pmCalculateResources(True);
-		vProbe.pmCalculateServices(, , , , , IsForFolioSplit, False);
+		vProbe.pmCalculateServices(, , , , , IsForFolioSplit, True);
 	Except
 		AddStep(pSteps, "SERVICES", "FAIL",
 			NStr("en='pmCalculateServices raised an error'; ru='Ошибка pmCalculateServices'; de='Fehler in pmCalculateServices'"),
@@ -415,7 +515,8 @@ Procedure DiagnoseProbeServices(pSteps, pCheckInDate, pCheckOutDate, pAccommodat
 		AddStep(pSteps, "SERVICES", "FAIL",
 			NStr("en='pmCalculateServices returned empty Services table'; ru='pmCalculateServices вернул пустую таблицу Services'; de='pmCalculateServices lieferte leere Services'"),
 			NStr("en='AccommodationType='; ru='ВидРазмещения='; de='Unterkunftstyp='") + String(pAccommodationType) + "; " +
-			NStr("en='Template='; ru='Шаблон='; de='Vorlage='") + String(pAccommodationTemplate));
+			NStr("en='Template='; ru='Шаблон='; de='Vorlage='") + String(pAccommodationTemplate) + "; " +
+			NStr("en='pmGetRoomRatePrices rows='; ru='Строк pmGetRoomRatePrices='; de='Zeilen pmGetRoomRatePrices='") + Format(vBasePricesCount, "NG="));
 	Else
 		vSrvInfo = "";
 		vTotal = 0;
