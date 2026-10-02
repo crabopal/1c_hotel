@@ -133,10 +133,19 @@ Function pmDiagnose() Export
 	
 	// 5. RoomRatePrices rows for each accommodation type from first template
 	vFirstTemplate = vAccTypesWithAgeList.Get(0).AccTemplate;
+	vRateChargeDirection = RoomRate.RateChargeDirection;
 	If Not ValueIsFilled(vFirstTemplate) Then
-		AddStep(vSteps, "ACC_TEMPLATE", "WARN",
-			NStr("en='Accommodation type found, but AccommodationTemplate is empty'; ru='Вид размещения найден, но шаблон размещения пустой'; de='Unterkunftstyp gefunden, Vorlage aber leer'"),
-			NStr("en='With empty template and RateChargeDirection=MergeToTheMainRoomGuest calculation may skip packages / change price path'; ru='При пустом шаблоне и направлении начисления «на основного гостя» расчёт может идти другим путём'; de='Leere Vorlage kann Berechnungspfad ändern'"));
+		If vRateChargeDirection = Enums.RateChargeDirections.MergeToTheMainRoomGuest Then
+			AddStep(vSteps, "EMPTY_TEMPLATE_MERGE", "FAIL",
+				NStr("en='Empty AccommodationTemplate + RateChargeDirection=MergeToTheMainRoomGuest — GetRoomRatePrices skips RoomRatePrices (WHERE FALSE)'; ru='Пустой шаблон размещения + направление начисления «Объединять на основного гостя» — GetRoomRatePrices не читает RoomRatePrices (ветка WHERE FALSE)'; de='Leere Vorlage + MergeToTheMainRoomGuest — GetRoomRatePrices überspringt RoomRatePrices'"),
+				NStr("en='Fix: create AccommodationTemplates for this hotel/guest composition (1 adult) including accommodation type: '; ru='Исправление: создайте шаблон размещения (AccommodationTemplates) для гостиницы и состава гостей (1 взрослый) с видом: '; de='Fix: AccommodationTemplates anlegen für: '") +
+				String(vAccTypesWithAgeList.Get(0).AccommodationType) +
+				NStr("en='. Or change room rate RateChargeDirection.'; ru='. Либо смените RateChargeDirection у тарифа.'; de='. Oder RateChargeDirection am Tarif ändern.'"));
+		Else
+			AddStep(vSteps, "ACC_TEMPLATE", "WARN",
+				NStr("en='Accommodation type found, but AccommodationTemplate is empty'; ru='Вид размещения найден, но шаблон размещения пустой'; de='Unterkunftstyp gefunden, Vorlage aber leer'"),
+				"");
+		EndIf;
 	EndIf;
 	vPricesFound = False;
 	vExactTagFound = False;
@@ -491,9 +500,15 @@ Procedure DiagnoseProbeServices(pSteps, pCheckInDate, pCheckOutDate, pAccommodat
 	EndTry;
 	
 	If vBasePricesCount = 0 Then
+		vGetPricesHint = "";
+		If Not ValueIsFilled(pAccommodationTemplate) And ValueIsFilled(RoomRate) And RoomRate.RateChargeDirection = Enums.RateChargeDirections.MergeToTheMainRoomGuest Then
+			vGetPricesHint = NStr("en='Root cause: empty AccommodationTemplate with MergeToTheMainRoomGuest uses code path that does not read RoomRatePrices.'; ru='Корневая причина: пустой шаблон размещения при MergeToTheMainRoomGuest — код не читает RoomRatePrices (WHERE FALSE).'; de='Ursache: leere Vorlage bei MergeToTheMainRoomGuest liest RoomRatePrices nicht.'");
+		Else
+			vGetPricesHint = NStr("en='Check PriceTag / AccommodationType / Hotel / RoomType filters.'; ru='Проверьте отборы PriceTag / вид размещения / отель / тип номера.'; de='Filter PriceTag / Typ / Hotel prüfen.'");
+		EndIf;
 		AddStep(pSteps, "GET_PRICES", "FAIL",
 			NStr("en='pmGetRoomRatePrices returned 0 rows — calculation has nothing to charge'; ru='pmGetRoomRatePrices вернул 0 строк — рассчитывать нечего'; de='pmGetRoomRatePrices lieferte 0 Zeilen'"),
-			NStr("en='Usually PriceTag in RoomRatePrices does not match active RoomRates order, or AccommodationType/Hotel/RoomType filter excludes rows'; ru='Чаще всего PriceTag в RoomRatePrices не совпадает с активным RoomRates, либо отбор по виду/отелю/типу номера отсекает строки'; de='Meist stimmt PriceTag nicht mit aktivem RoomRates überein'"));
+			vGetPricesHint);
 	Else
 		AddStep(pSteps, "GET_PRICES", "OK",
 			NStr("en='pmGetRoomRatePrices returned rows'; ru='pmGetRoomRatePrices вернул строки'; de='pmGetRoomRatePrices lieferte Zeilen'"),
